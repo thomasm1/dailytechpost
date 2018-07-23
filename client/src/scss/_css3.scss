@@ -1,0 +1,142 @@
+
+/* GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
+    grid-template-rows: 150px [row-foo] 150px [row-bar];
+    grid-template-areas: "a b b"
+                        "a b b";
+}
+
+.item {
+    grid-column-start: col-foo;
+    grid-column-end: col-bar;
+    grid-row-start: row-foo;
+    grid-row-end: row-bar;
+}
+
+.item-1 {
+    grid-area: a;
+}
+.item-2 {
+    grid-area: b;
+}
+
+/* :before */
+.element {
+    position: relative;
+}
+.element:before {
+    content: "";
+    display:block;
+    width:3em;
+    height:.75em;
+    margin: 0 auto .8em;
+    background: $color;
+    position: absolute;
+    top: -6em;
+    margin-top: -4rem;
+}
+/* ANIMATION */
+@keyframes bounce {
+    0%, 100% {
+        top:0;
+    }
+    50% {
+        top: -10px;
+    }
+}
+
+.bouncy-box:hover {
+    animation-name: bounce;
+    animation-duration: 4s; /* or: Xms */
+    animation-iteration-count: 10;
+    animation-direction: alternate; /* or: normal */
+    animation-timing-function:ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2) */
+    animation-fill-mode: forwards; /* or: backwards, both, none */
+    animation-delay: 2s; /* or: Xms */
+}
+.transition {
+transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay], [transition-property];
+
+transition: background-color .2s;
+}
+/* timing function:  Ease, Linear, Ease-in, ease-in-out
+: Step-start, Step-end
+: cubic-bezier(0,0,0.58,1)
+
+*/
+
+/* PHOTOSHOP */
+.colordodge {
+mix-blend-mode: color-dodge;
+background: url(image.jpg) blue;
+background-blend-mode: color-burn;
+}
+
+.screen {
+    mix-blend-mode: screen;
+    background: url(image.jpg) blue;
+    background-blend-mode: lighten;
+    }
+.multiply {
+    mix-blend-mode: multiply;
+    background: url(image.jpg) blue;
+    background-blend-mode: color-burn;
+    }
+    
+.difference {
+    mix-blend-mode: difference;
+    background: url(image.jpg) blue;
+        background-blend-mode: normal;
+        }
+/*
+
+mix-blend-mode: value;
+background: url(image.jpg) blue;
+background-blend-mode: value;
+VALUES - 
+:initial/inherit/normal
+:multiply
+:screen
+:overlay
+:darken
+:lighten
+:color-dodge
+:color-burn
+:hard-light
+:soft-light
+:difference
+:exclusion
+:hue
+:saturation
+:color
+:luminosity
+*/
+
+/* SVG   Transparency */
+.svgTransparent {
+    background:url('../dist/img/TMM.svg') repeat center 80%;
+    background-size:1000px;
+    color:rgba(255,2565,255,.1);
+    -webkit-font-smoothing:antialiased;
+    -webkit-background-clip:text;
+    -moz-background-cip:text;
+    background-clip:text;
+    -webkit-text-fill-color:rgba(255,255,255,.1);
+};
+/* Solid Texture */
+.svgTexture {
+    background:url('../dist/img/TMM.gif') repeat center top;
+    background-position:random(100) + rem;
+    background-size:60%;
+    color:transparent;
+    -webkit-font-smoothing:antialiased;
+    -webkit-background-clip:text;
+    -moz-background-cip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+};
+
+
+/* ANIMATION */

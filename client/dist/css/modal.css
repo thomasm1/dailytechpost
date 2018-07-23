@@ -1,0 +1,76 @@
+.mbutton {
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  min-width: 100%;
+  background-color: rgba(0, 0, 200, 0.5);
+  background-image: url("../img/MaestasReykjavikBanner.jpg"); }
+
+#mmodalBtn {
+  border: outset 6px rgba(174, 131, 255, 0.568);
+  background-color: transparent;
+  text-align: center; }
+
+.mmodal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.mmodal-content {
+  margin: 20% auto;
+  width: 90%;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 1.5s; }
+
+@media (max-width: 750px) {
+  .mmodal-content {
+    width: 100%; } }
+
+.mmodal-header h2, .modal-footer h3 {
+  margin: 0; }
+
+.mmodal-header {
+  background-color: rgba(0, 0, 200, 0.9);
+  background-image: url("../img/MaestasReykjavikBanner.jpg");
+  padding: 15px;
+  color: #fff; }
+
+.mmodal-body {
+  padding: 0px 0px;
+  background-color: rgba(0, 0, 200, 0.5);
+  background-image: url("../img/MaestasReykjavikBanner.jpg"); }
+
+.mmodal-footer {
+  background-color: rgba(0, 0, 200, 0.5);
+  background-image: url("../img/MaestasReykjavikBanner.jpg");
+  padding: 10px;
+  color: #fff;
+  text-align: center; }
+
+.mcloseBtn {
+  color: #ccc;
+  font-size: 30px;
+  color: #fff;
+  width: 100%;
+  float: right;
+  padding: 0px 20px;
+  margin: 0px; }
+
+.mcloseBtn:hover, .mcloseBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(0, 176, 236, 0.5); }
+
+@keyframes modalopen {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

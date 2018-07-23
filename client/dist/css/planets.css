@@ -1,0 +1,44 @@
+.form {
+  position: absolute;
+  opacity: .7;
+  top: 50rem;
+  left: 0rem;
+  padding: 10px;
+  margin: 10px;
+  color: blue;
+  text-align: left;
+  text-decoration: none;
+  font-family: 'Monoton';
+  background-color: #6baed6;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7); }
+
+.form:hover {
+  font-weight: 500;
+  border: solid 1px silver;
+  transition: margin 0.3s; }
+
+path {
+  fill-rule: evenodd;
+  stroke: #bcbcf5;
+  stroke-width: 2px; }
+
+.sun path {
+  fill: darkblue;
+  opacity: .5; }
+
+.planet path {
+  fill: #9ecae1;
+  opacity: .6; }
+
+.annulus path {
+  fill: #281050;
+  opacity: .6; }
+
+div#planet {
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  color: blue;
+  text-decoration: none;
+  background-color: #dfeef7;
+  box-shadow: 0px 10px 50px rgba(102, 57, 207, 0.7); }

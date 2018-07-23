@@ -1,0 +1,91 @@
+#secret-button {
+    color:aliceblue;
+}
+.secret {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    padding: 10px;
+    font-family: 'Monoton';
+    cursor: pointer;
+    outline: none;
+}
+
+.secret:hover {
+    background-color: steelblue;
+    color: #0b5e9c;
+    cursor: pointer;
+}
+
+#secret-paragraph {
+    padding: 5% 5%;
+a {
+    color:purple;
+}
+}
+
+
+
+    #secret-buttonMP {
+    padding:5% 5% 1%; 
+    font-family:'monoton';
+    }
+    #secret-buttonMP:hover { 
+    color:darkslateblue;
+    font-weight:bold;
+    cursor: pointer;
+    } 
+    #secret-paragraphMP {
+    padding:5% 5% 1%; 
+    font-family:'monoton';
+    max-width:100%;
+    }
+
+    #secret-paragraphMP .firstparagraph::first-letter {
+        font-size: 200%;
+        font-weight: bold;
+        border: solid thin white;
+        padding: 4pt;
+        margin: 15px 4px 0px 0px;
+    }
+
+
+/*  MPB feb, MPBmarch      ARCHIVES            */
+#secret-buttonMPB {
+    padding:5% 5% 1%; 
+    font-family:'monoton';
+    cursor:pointer;
+    } 
+    #secret-buttonMPB:hover { 
+        color:darkslateblue;
+        font-weight:bold;
+        cursor: pointer;
+        }  
+#secret-buttonMAR {
+    padding:5% 5% 1%; 
+    font-family:'monoton';
+    cursor:pointer;
+    } 
+    #secret-buttonMAR:hover { 
+        color:darkslateblue;
+        font-weight:bold;
+        cursor: pointer;
+    } 
+
+    
+#secret-buttonAPR {
+    padding:5% 5% 1%; 
+    font-family:'monoton';
+    cursor:pointer;
+    } 
+    #secret-buttonAPR:hover { 
+        color:darkslateblue;
+        font-weight:bold;
+        cursor: pointer;
+        } 
+
+
+        .paragraph {
+            max-height:750px;
+            overflow-y:scroll;
+        }
