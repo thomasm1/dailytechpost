@@ -26,6 +26,27 @@
  .featured {
      font-weight: 300;
  }
+ .white {
+    color: white !important;
+}
+.sky {
+    color: skyblue !important;
+}
+#headerquote {
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: justify;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(212, 229, 250);
+    line-height: 1.1rem;
+overflow-y:hidden;
+}
+
+#headerquote>.mb-4 {
+    line-height: 2rem;
+}
 
  .author {
      font-size: 125%;

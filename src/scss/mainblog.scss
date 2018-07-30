@@ -1,0 +1,227 @@
+ .fixed-top {
+     opacity: .9;
+ }
+
+ .mod-behave {
+     text-align: justify;
+     padding: 4%;
+     margin: 2%;
+     max-height: 800px;
+     color: darkslategray;
+     background-color: rgb(206, 229, 248);
+     overflow-y: scroll;
+ }
+
+ .longtitle * {
+     margin-top: 20px;
+ }
+
+ .title {
+     color: darkblue;
+     text-align: center;
+     font-size: 105%;
+     margin-top: 10px;
+ }
+
+ .featured {
+     font-weight: 300;
+ }
+ .white {
+    color: white !important;
+}
+.sky {
+    color: skyblue !important;
+}
+#headerquote {
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: justify;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(212, 229, 250);
+    line-height: 1.1rem;
+overflow-y:hidden;
+}
+
+#headerquote>.mb-4 {
+    line-height: 2rem;
+}
+
+ .author {
+     font-size: 125%;
+     text-align: center;
+     color: slategray;
+     border-bottom: 1px solid black;
+     padding-bottom: 12pt;
+     margin-left: 30pt;
+     margin-right: 30pt;
+ }
+
+ .chapternumber {
+     margin: 4px 0px 8px;
+     color: blue;
+ }
+
+ .dailytitle {
+     text-align: left;
+     color: darkslategray;
+     font-family: 'Roboto';
+     padding: 3px 0px;
+     margin: 5px 0px 5px;
+ }
+
+ h6.dailytitle.chapternumber {
+     margin-bottom: 5px;
+     padding-bottom: 10px;
+     line-height: 1.2rem;
+ }
+
+ h6.dailytitle {
+     text-align: center;
+     font-weight: 600;
+ }
+
+ i {
+     font-weight: 600;
+ }
+
+ strong {
+     font-weight: 700;
+ }
+
+ .chaptertitle {
+     margin-left: 30pt;
+ }
+
+ .firstparagraph::first-letter {
+     font-size: 200%;
+     font-weight: bold;
+     border: solid thin darkslategrey;
+     padding: 4pt;
+     margin: 5px 4px 0px 0px;
+ }
+.firstp::first-letter {
+    font-size:200%;
+    font-weight:bold;
+    border: solid thin white;
+    padding: 4pt;
+    margin: 5px 4px 0px 0px;
+
+}
+ img.rounded-circle {
+     opacity: 1;
+ }
+
+ img#tom {
+     opacity: 1;
+     background-color: white;
+ }
+
+ a.trans-back {
+     background-color: blue;
+ }
+
+ .quote {
+     margin: 0px 20px 10px 20px;
+     line-height: 1.3rem;
+     font-weight: 500;
+ }
+.quotelong {
+
+    margin: 0px  0px 10px 20px;
+    line-height: 1.2rem;
+    font-weight: 500;
+}
+ .footnotes {
+     margin-top: 30px;
+     text-align: left;
+ }
+
+ #toggler {
+     border: 1px solid darkblue;
+     padding: 15px;
+     text-align: left;
+ }
+
+ .dailytech {
+     padding-top: 3%;
+     padding-bottom: 2%;
+     font-family: 'Monoton';
+     font-weight: 100;
+     font-size: 2rem;
+ }
+
+ .subdailytech {
+     font-family: 'Monoton';
+     font-weight: 100;
+     font-size: 1.2rem;
+     line-height: 1.3rem;
+     text-align: center;
+     color: darkblue;
+ }
+
+ #tom {
+     opacity: 1;
+ }
+
+ .hidden {
+     display: none;
+ }
+
+ .border {
+     border: 1px solid white;
+ }
+
+ /*   mb-4       2        to mb4card */
+
+ p.mb4card {
+     margin-top: 20px;
+     margin-bottom: 10px;
+     padding: 5px;
+ }
+
+ .mb4card {
+     font-weight: 300;
+     list-style-type: none;
+     text-align: center;
+     color: white;
+     border: 0px solid red;
+     box-shadow: 0px 10px 50px silver;
+     background-color: rgba(0, 0, 200, .5);
+     background-image: url('../img/MaestasReykjavikBanner.jpg');
+     border-radius: 0px;
+     border: 0px solid red;
+     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+ }
+
+ .mb4card a {
+     color: blue;
+     text-align: center;
+ }
+
+ .opacity5 {
+     opacity: .3;
+     transform: translateY(-50px);
+     margin-bottom: -50px;
+ }
+ .green {
+     color:green;
+ }
+.side {
+    text-align:justify;  
+    color:darkgreen;
+    padding-left:15px !important;
+    margin-left:15px;
+} 
+ .archive button{
+
+    width:100%;
+} 
+.archive { list-style-type:none;
+  li { padding-bottom:4px;
+}}
+
+.new {
+    color:rgb(56, 56, 173);
+}

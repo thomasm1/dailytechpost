@@ -38,10 +38,7 @@ const postSchema = mongoose.Schema({
 	blogcite:{
 		type: String,
 		required: true
-	},
-	words:{
-		type: String
-	},
+	} ,
 	image_url:{
 		type: String
 	} 
@@ -52,17 +49,17 @@ const Post = module.exports = mongoose.model('Post', postSchema);
 // Get Posts
 module.exports.getPosts = (callback, limit) => {
 	Post.find(callback).limit(limit);
-}
+};
 
 // Get Post
 module.exports.getPostById = (id, callback) => {
 	Post.findById(id, callback);
-}
+};
 
 // Add Post
 module.exports.addPost = (post, callback) => {
 	Post.create(post, callback);
-}
+};
 
 // Update Post
 module.exports.updatePost = (id, post, options, callback) => {
@@ -76,15 +73,14 @@ module.exports.updatePost = (id, post, options, callback) => {
 		description: post.description,
 		author: post.author,
 		blogpost: post.blogpost,
-		blogcite: post.blogcite,
-		words: post.words, 
+		blogcite: post.blogcite, 
 		image_url: post.image_url 
-	}
+	};
 	Post.findOneAndUpdate(query, update, options, callback);
-}
+};
 
 // Delete Post
 module.exports.removePost = (id, callback) => {
 	var query = {_id: id};
 	Post.remove(query, callback);
-}
+};

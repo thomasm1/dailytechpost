@@ -31,71 +31,90 @@
     <script src="dist/js/lib/jquery-3.2.1.min.js"></script>
     <script src="dist/js/d3/d3v4.min.js"></script>
     <link href="dist/css/style.css" rel="stylesheet" />
+
+  <style>
+
+    h3.panel-title.dailytech   {
+        color:rgba(102, 209, 244, 0.753);}
+      .container {
   
-    <!-- calcule script-->
+      background-image:url("dist/img/bluechipTileT8.png");
+      }
+      div.panel-heading {
+  border:none;
+      background-image:url("dist/img/bluechiptile.jpg")
+      }
+      .panel-body {
+        height:200px;
+        background-color:rgba(118, 77, 168, 0.507); 
+        background-image:url("dist/img/bluechiptile.jpg")
+      }
+    .panel-title {
+      background-color:lightsteelblue;
+      background-image:url("dist/img/bluechipTileT8.png");
+    }
+  a.nav-link :hover {
+  background-color:transparent;
+  color:blue;
   
-    <script type="text/javascript">
-    </script>
+    }
+    .fixed-top {
+      min-height:100px;
+    }
+ div#foreground.container {
+      margin-top:30px;
+    }
+    div.container.pt-4 {
+      width:100%;
+    }
+    .view {
+      border:solid transparent 1px;
+      overflow-y:scroll;
+    }
+    div.panel-body {
+border:none;
+    }
+    label {
+      color:lightsteelblue;
+    }
+    
+    </style>
+   
   
   
-    <nav class="navbar navbar-toggleable-sm  fixed-top navbar-inverse bg-primary app-navbar">
+    <nav class="navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar">
       <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-center hidden-md-up"
-        data-target="#navbarResponsive" data-toggle="collapse" type="button" id="toggler"> </button>
-      <a class="navbar-brand bg-blue" title="thomasmaestas.net" href="http://www.thomasmaestas.net">
-        <img alt="tmm logo" id="bluelogo" src="dist/img/TMMblueTrans.png" /> </a>
-      <div class="collapse navbar-collapse multi_drop_menu  " id="navbarResponsive">
-  
-  
-  
-  
-  
-  
-        <ul class="navbar-nav mr-auto">
+        data-target="#navbarResponsive" data-toggle="collapse" type="button" id="toggler"> </button> 
+
+      <div class="collapse navbar-collapse   multi_drop_menu " id="navbarResponsive">  
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item active ">
+            <a class="nav-link" href="#/">
+              <span class=" "> TECH
+              <br />BLOG </span>
+            </a>
+          </li> 
           <li class="nav-item active">
-            <a class="nav-link" href="#mmodalBtn">
-              <span class="caret"> TECH
-                <br />BLOG </span>
+            <a class="nav-link" href="#/posts/">
+              <span class=" ">BLOG
+                <br /> ARCHIVES </span>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#blogs">
-              <span class="caret">BLOG
-                <br />ARCHIVE </span>
+            <a class="nav-link" href="#/posts/add">
+              <span class=" ">ADD <br />
+                POST </span>
             </a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="dag-dagre/index.html">
-              <span class="caret">DAG
-                <br />TOOL </span>
+          <li class="nav-item active ">
+            <a class="nav-link" href="#/about">
+              <span class=" "> ABOUT
+              <br />BLOG </span>
             </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" title="tmm FICTION" href="_For_Cat_Eyes_Only_.html">
-              <span class="caret">FOR_CAT
-                <br />EYES_ONLY</span>
-            </a>
-            <ul>
-              <li style="z-index:100 ;">
-                <small>tmm FICTION</small>
-                <a title="tmm FICTION" href="_For_Cat_Eyes_Only_.html">For Cat Eyes Only:
-                  <i>Early Months of Win&#39;s Campaign</i>
-                </a>
-              </li>
-              <li style="z-index:100; ">
-                <small>&nbsp; tmm FICTION</small>
-                <a title="tmm FICTION" href="_For_Cat_Eyes_Only_.html#capturing">Fiction Excerpts From:
-                  <br />
-                  <i>The Casperian Ancestries</i>
-                  <br />
-                  <small>Capturing One Cat&#39;s Past and Present</small>
-                </a>
-                <small>&nbsp; tmm FICTION</small>
-              </li>
-            </ul>
-          </li>
+          </li>  
           <li class="nav-item active">
             <a class="nav-link">
-              <span class="caret">CODING
+              <span class=" ">CODING
                 <br /> TOOLS
               </span>
             </a>
@@ -112,8 +131,8 @@
   
             <a title="github" href="https://github.com/thomasm1" target="_blank">
   
-              <i class="fa fa-github"></i>
-  
+
+              <i class="fa fa-github"></i> 
             </a>
   
           </li>
@@ -148,64 +167,28 @@
           </li>
         </ul>
       </div>
-  
-  
-      <ul class="nav navbar-nav hidden-xs-up" id="js-popoverContent">
-        <li class="nav-item">&nbsp;</li>
-        <li class="nav-item title" id="title">&nbsp;</li>
-      </ul>
-  
-      <div class="main " id="main">&nbsp;</div>
-  
-      <ul>
-      </ul>
+   
     </nav>
 <br />
-  
-	<nav class="navbar navbar-default">
-      <div class="container">
-       
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Our Daily Tech</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav   navbar-left">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
-                  TECH BLOG
-                    
-                </a>
-            </li>
-           
-          
-            
-          </ul>
-        <ul  class="nav navbar-nav   navbar-right">  
-          <li><a href="#/posts/add">Add Post
-          </a></li>
-      </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+   
 
-    <div class="container">
+    <div class="container" id="foreground">
     	<div class="row">
     		<div class="col-md-12">
 
-          <div ng-view> </div>
+          <div ng-view class="view"> </div>
           
 	<div class="container pt-4">
       <div class="row">
         <div class="col-lg-3">
           <div class="card card-profile mb-4 mb-top circle">
-  
-            <abbr title="Our Daily Tech">
+           <!-- <ul ng-controller="archive">
+							<li style="display:none;" ng-repeat="arch">{{ ctrl.post in ctrl.posts }}
+
+							</li>
+						</ul>
+          -->
+           <abbr title="Our Daily Tech">
               <img class="card-profile-img zoom" alt="image of Le Mont Real" src="dist/img/rouColorTriomphe.jpg" />
             </abbr>
   
@@ -214,12 +197,15 @@
               </h1>
    
               <button id="mmodalBtn" class="mbutton title dailytech longtitle hover">
+                  <h6 class="    subdailytech white  " title="Machine Learning">
+                      <a class="cover   ">A.I.NOW</a>
+                    </h6>
                 <h6 class="subtitle my-0 subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
-                  <a class="well text-inherit mb-4  hover">MUSING  BLOCKCHAIN</a>
+                  <a class=" text-inherit mb-4  hover">MUSING  BLOCKCHAIN</a>
                 </h6> <hr>
-                <h6  class="        subtitle  my-0 subdailytech sky hover"><a class="well text-inherit mb-4 ">WEB   DEV &nbsp; AFFAIRS &nbsp; </a></h6> <hr>
+                <h6  class="        subtitle  my-0 subdailytech white hover"><a class="  text-inherit mb-4 ">WEB   DEV &nbsp; AFFAIRS &nbsp; </a></h6> <hr>
                 <h6 class="subtitle  my-0 subdailytech white hover" title="Social Data &amp; Statistics ">
-                  <a class="well text-inherit mb-4 hover">SOCIOLOGY   TOMORROW!</a>
+                  <a class="  text-inherit mb-4 hover">SOCIOLOGY   TOMORROW!</a>
                 </h6> 
               </button>
          <hr >
@@ -313,11 +299,11 @@
                 <h6 class="dailytech">Twython Space API </h6>
                 <h5 id="apod_title"></h5>
                 <p id="apod_explaination"></p>
-                <pre id="returnObject"></pre>
+                 <!--    <pre id="returnObject"></pre>
   
-                <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+            <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
               </div>
-              <!--end APOD Mars Reader -->
+             end APOD Mars Reader -->
   
   
   
@@ -338,14 +324,19 @@
   
               <div id="form"></div>
               <script src="dist/js/cal.js"></script>
-  
-              <h5 class="    secretMP" id="secret-buttonMP">DAILY &nbsp;&nbsp; TECH &nbsp;&nbsp; MISSION &nbsp;&nbsp; STATEMENT</h5>
-              <p id="secret-paragraphMP">&nbsp;</p>
-            
               <ul class="  dailytech  archive">
                 <h3>Daily Tech Archives</h3>
                
               <p id="blogs">&nbsp;</p>
+    
+              <li>
+                <h5 class="secretJUNE" id="secret-buttonJUNE">
+                  <button>
+                    JUNE 2018
+                  </button>
+                </h5>
+                <p class="mod-behave" id="secret-paragraphJUNE">&nbsp;</p>
+              </li>
                 <li>
                   <h5 class="secretMAY" id="secret-buttonMAY">
                     <button>
@@ -354,7 +345,7 @@
                   </h5>
                   <p class="mod-behave" id="secret-paragraphMAY">&nbsp;</p>
                 </li>
-  
+    
                 <li>
                   <h5 class="secretAPR" id="secret-buttonAPR">
                     <button>
@@ -363,7 +354,7 @@
                   </h5>
                   <p class="mod-behave" id="secret-paragraphAPR">&nbsp;</p>
                 </li>
-  
+    
                 <li>
                   <h5 class="secretMAR" id="secret-buttonMAR">
                     <button>
@@ -381,17 +372,16 @@
                   <p class="mod-behave" id="secret-paragraphMPB">&nbsp;</p>
                 </li>
               </ul>
-  
-  
-  
+    
+          
+              <h5 class="secretMP" id="secret-buttonMP">DAILY &nbsp;&nbsp; TECH &nbsp;&nbsp; MISSION &nbsp;&nbsp; STATEMENT</h5>
+              <p id="secret-paragraphMP">&nbsp;</p>
+              <h5 class="secret" id="secret-button">About the Author</h5>
+              <p id="secret-paragraph">&nbsp;</p>
+         
             </div>
           </div>
         </div>
-  
-  
-        <h5 class="  secret" id="secret-button">About the Author</h5>
-        <p id="secret-paragraph">&nbsp;</p>
-  
   
   
   
@@ -400,6 +390,17 @@
   
     </div>
   
+	<div class="card-block" id="footer">
+
+		<p>Copyright &copy; 2018 All Rights Reserved. &nbsp; | &nbsp;
+			<a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
+				thomasmaestas.net</a>&nbsp; | &nbsp;
+			<img src="dist/img/paypal.PNG" alt="PayPal Emblem" height="
+	   15"></img>
+			<a href="https://www.paypal.com/paypalme/ThomasMaestas" style="color:white;text-decoration:none;">
+				&nbsp; Blog Support Appreciated!</a>
+		</p>
+	</div>
   
     		</div>
     	</div>
@@ -413,10 +414,14 @@
 	<script src="dist/js/lib/tether.min.js"></script>
 	<script src="dist/js/lib/popper.min.js"></script>
 	<script src="dist/js/lib/bootstrap.min.js"></script>
-	<script src="/app.js"></script>
-	<script src="/controllers/posts.js"></script>
+  <script src="/app.js"></script>
+  <!--
+	<script src="/controllers/about.js"></script>
+	<script src="/controllers/archives.js"></script>
   <script src="/controllers/cat3s.js"></script>
-  <script src="dist/bundle_tmm.js"></script>
-  <script src="dist/dom-loader.js"></script>
+  -->
+  <script src="/controllers/posts.js"></script>
+  <script src="dist/bundle_daily_july-2.js"></script>
+  <script src="dist/dom-loader_daily.js"></script>
 </body> 
 </html>

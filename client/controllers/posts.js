@@ -8,20 +8,7 @@ dailyTech.controller('PostsController', ['$scope', '$http', '$location', '$route
 			$scope.posts = response;
 		});
 	}
-
-	$scope.getPost = function(){
-		var id = $routeParams.id;
-		$http.get('/api/posts/'+id).success(function(response){
-			$scope.post = response;
-		});
-	}
-
-	$scope.addPost = function(){
-		console.log($scope.post);
-		$http.post('/api/posts/', $scope.post).success(function(response){
-			window.location.href='#/posts';
-		});
-	}
+ 
 
 	$scope.updatePost = function(){
 		var id = $routeParams.id;

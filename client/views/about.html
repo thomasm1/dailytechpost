@@ -1,0 +1,40 @@
+<div class="panel panel-default" ng-init="getAbouts()">
+		<style>
+		h3, h2, h1, p, a {
+			color:lightsteelblue;
+
+			font-family:'Roboto', Arial, Helvetica, sans-serif;
+		}
+		div.panel-body {
+			color:white;
+		}
+		div.col-md-6 > p,h3,h4 {
+			min-height:25px;
+		}
+		.thumb {
+			max-width:30px;
+		}
+		.repeat {
+			height:50px;
+		}
+		.btn {
+			opacity:.5;
+		}
+		</style>
+  <div class="panel-heading"  >
+			<a class="navbar-brand bg-blue" title="thomasmaestas.net" href="http://www.thomasmaestas.net">
+				<img alt="tmm logo" id="bluelogo" src="dist/img/TMMblueTrans.png" /> </a>
+			 
+    <h3 class="panel-title dailytech ">{{about.title}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row"> 
+  
+            <h5 class="secretMP" id="secret-buttonMP">DAILY &nbsp;&nbsp; TECH &nbsp;&nbsp; MISSION &nbsp;&nbsp; STATEMENT</h5>
+            <p id="secret-paragraphMP">&nbsp;</p>
+            <h5 class="secret" id="secret-button">About the Author</h5>
+            <p id="secret-paragraph">&nbsp;</p>
+       
+    </div>
+  </div>
+</div>

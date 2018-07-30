@@ -1,7 +1,7 @@
-<a href="#/posts">Go Back</a>
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Add Post</h3>
+    <a href="#/posts">Go Back</a>
+    <div class="panel-heading">
+    <h3 class="panel-title dailytech">Add Post</h3>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -12,8 +12,8 @@
           <input type="text" class="form-control" ng-model="post.title" placeholder="Title">
         </div>
         <div class="form-group">
-          <label>Cat3</label>
-          <select ng-model="post.genre" class="form-control">
+          <label>Category</label>
+          <select ng-model="post.cat3" class="form-control">
             <option value="Suspense">Sociology Tomorrow!</option>
             <option value="Drama">A.I.Now</option>
             <option value="Romance">Musing Blockchain</option>
@@ -22,16 +22,16 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Author</label>
-          <input type="text" class="form-control" ng-model="post.author" placeholder="Author">
+          <label>Date</label>
+          <input type="text" class="form-control" ng-model="post.date" placeholder="Author">
         </div>
         <div class="form-group">
-          <label>Publisher</label>
-          <input type="text" class="form-control" ng-model="post.publisher" placeholder="Publisher">
+          <label>Post</label>
+          <input type="text" class="form-control" ng-model="post.blogpost" placeholder="Blog Post">
         </div>
         <div class="form-group">
-          <label>Pages</label>
-          <input type="text" class="form-control" ng-model="post.pages" placeholder="Pages">
+          <label>Citations</label>
+          <input type="text" class="form-control" ng-model="post.blogcite" placeholder="Citations">
         </div>
         <div class="form-group">
           <label>Description</label>
@@ -40,11 +40,7 @@
         <div class="form-group">
           <label>Image URL</label>
           <input type="text" class="form-control" ng-model="post.image_url" placeholder="Image URL">
-        </div>
-        <div class="form-group">
-          <label>Buy URL</label>
-          <input type="text" class="form-control" ng-model="post.buy_url" placeholder="Buy URL">
-        </div>
+        </div> 
        
         <button type="submit" class="btn btn-default">Submit</button>
       </form>

@@ -25,8 +25,9 @@
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "jshint-loader": "^0.8.4",
-    "mongoose": "^5.1.6",
-    "popper.js": "^1.11.1"
+    "mongoose": "^5.2.5",
+    "popper.js": "^1.11.1",
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -41,6 +42,7 @@
     "d3": "^4.13.0",
     "file-loader": "^0.7.2",
     "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^3.1.0",

@@ -4,7 +4,48 @@ import bloggerDetail from './data/blog-textDetails-july';
  
 cat = postImport.cat;
 detailer = postDetail.catDetail; 
- 
+ vars = {
+id:{ 
+  type: String,
+  required: true
+},
+title:{ 
+  type: String,
+  required: true
+},
+date:{ 
+  type: String,
+  required: true
+},
+did:{ 
+  type: String,
+  required: true
+},
+cat3:{
+  type: String,
+  required: true
+},
+description:{
+  type: String
+},
+author:{
+  type: String,
+  required: true
+},
+blogpost:{
+  type: String,
+  required: true
+},
+blogcite:{
+  type: String,
+  required: true
+},
+words:{
+  type: String
+},
+image_url:{
+  type: String
+} }
 
 for (i=0;i<cat.length;i++){ 
   var url =   

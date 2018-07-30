@@ -1,69 +1,57 @@
-## Our Daily Tech 
-### npm
-nodemon server
-
-/Users/tm/Public/www/git/dailytech/server 
-{
-  "name": "ourdailytechblog",
-  "version": "1.0.0",
-  "description": "Blog Commentaries on Technology",
-  "main": "index.js",
-  "keywords": [
-    "tech",
-    "blog",
-    "web",
-    "development",
-    "sociology",
-    "AI"
-  ],
+# webpack --mode production 
+ "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --output-public-path=/"
-  },
-  "author": "thomas maestas",
-  "license": "ISC",
-  "homepage": "http://www.thomasmaestas.com",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "bootstrap": "4.0.0-beta",
-    "d3": "^4.13.0",
-    "express": "^4.16.3",
-    "font-awesome": "^4.7.0",
-    "jshint-loader": "^0.8.4",
-    "mongoose": "^5.1.6",
-    "popper.js": "^1.11.1"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "browser-sync": "^2.24.5",
-    "bundle-loader": "^0.5.0",
-    "chartjs": "^0.3.24",
-    "css-loader": "^0.28.10",
-    "d3": "^4.13.0",
-    "file-loader": "^0.7.2",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "jquery": "^3.3.1",
-    "json-loader": "^0.5.7",
-    "just.randomcolor": "^0.1.1",
-    "style-loader": "^0.20.3",
-    "url-loader": "^0.5.5",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/github.com/thomasm1/bs5.git"
-  },
-  "bugs": {
-    "url": "https://github.com/github.com/thomasm1/issues"
-  }
-}
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode production",
+    "serve": "webpack-dev-server --output-public-path=/dist/"
+# webpack.config.js
+const path = require('path');
 
+module.exports = {
+  entry: './src/index.js',
+  output: {
+      path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle_tmm.js'
+  }
+};
+# Babel Webpack Starter
+
+A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+
+### Version
+1.1.0
+
+## Usage
+
+### Installation
+
+Install the dependencies
+
+```sh
+$ npm install
+```
+
+### Serve
+To serve in the browser  - Runs webpack-dev-server
+
+```sh
+$ npm start
+```
+
+### Build
+Compile and build
+
+```sh
+$ npm run build
+```
+
+## More Info
+
+### Author
+
+Brad Traversy
+[Traversy Media](http://www.traversymedia.com)
+
+### License
+
+This project is licensed under the MIT License

@@ -9,6 +9,15 @@ dailyTech.config(function($routeProvider){
 		controller:'PostsController',
 		templateUrl: 'views/posts.html'
 	})
+	 
+	.when('/archives', {
+		controller:'ArchivesController',
+		templateUrl: 'views/archives.html'
+	}) 
+	.when('/about', {
+		controller:'AboutController',
+		templateUrl: 'views/about.html'
+	})  
 	.when('/posts/details/:id',{
 		controller:'PostsController',
 		templateUrl: 'views/post_details.html'
