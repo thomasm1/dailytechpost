@@ -28,7 +28,7 @@ body {
   display: grid;
   grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
   grid-template-rows: 150px [row-foo] 150px [row-bar];
-  grid-template-areas: "a b b" "a b b"; }
+  grid-template-areas: "a b b" "a b b"; }
 
 .item {
   grid-column-start: col-foo;
@@ -145,7 +145,7 @@ VALUES -
 /* Solid Texture */
 .svgTexture {
   background: url("../dist/img/TMM.gif") repeat center top;
-  background-position: 27rem;
+  background-position: 17rem;
   background-size: 60%;
   color: transparent;
   -webkit-font-smoothing: antialiased;
@@ -10329,7 +10329,7 @@ h6.dailytitle {
   font-weight: 600; }
 
 i {
-  font-weight: 600; }
+  font-weight: 500; }
 
 strong {
   font-weight: 700; }
@@ -10363,7 +10363,7 @@ a.trans-back {
 
 .quote {
   margin: 0px 20px 10px 20px;
-  line-height: 1.3rem;
+  line-height: 1.2rem;
   font-weight: 500; }
 
 .quotelong {
