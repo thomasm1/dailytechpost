@@ -27,7 +27,7 @@ body {
   display: grid;
   grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
   grid-template-rows: 150px [row-foo] 150px [row-bar];
-  grid-template-areas: "a b b" "a b b"; }
+  grid-template-areas: "a b b" "a b b"; }
 
 .item {
   grid-column-start: col-foo;
