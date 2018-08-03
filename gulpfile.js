@@ -13,49 +13,49 @@ const browserSync = require('browser-sync').create();
 gulp.task('sass', function() {
    // return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'])
     // return gulp.src(['src/scss/bootstrap.css', 'src/scss/*.css','src/scss/*.scss'])
-      return gulp.src(['src/scss/bootstrap.css', 'src/scss/*.css','src/scss/*.scss'])
+      return gulp.src(['client/src/scss/bootstrap.css', 'client/src/scss/*.css','client/src/scss/*.scss'])
         .pipe(sass())
-        .pipe(gulp.dest("dist/css"))
+        .pipe(gulp.dest("client/dist/css"))
         .pipe(browserSync.stream());
 });
 
 // Copy All HTML files
 gulp.task('copyHtml', function(){
     gulp.src('/*.html')
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('client/dist/'));
   });
   
 // Optimize img
 gulp.task('imageMin', () =>
-	gulp.src('src/img/*')
+	gulp.src('client/src/img/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/img'))
+		.pipe(gulp.dest('client/dist/img'))
 ); 
  
 // Watch Sass & Serve
 gulp.task('serve', ['sass'], function() { 
     browserSync.init({
-        server: "./"  
+        server: "./client/"  
     });
 
-   // gulp.watch('dist/js/*.js', ['wjs']);
+   // gulp.watch('client/dist/js/*.js', ['wjs']);
   //  gulp.watch('src/js/*.js', ['js']);
-    gulp.watch(['src/img/*.jpg', 'src/img/*.PNG', 'src/img/*.png'], ['imageMin']);
-    gulp.watch(['src/scss/*.css', 'src/scss/*.scss'], ['sass']);
-    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch(['client/src/img/*.jpg', 'client/src/img/*.PNG', 'client/src/img/*.png'], ['imageMin']);
+    gulp.watch(['client/src/scss/*.css', 'client/src/scss/*.scss'], ['sass']);
+    gulp.watch("client/index.html").on('change', browserSync.reload);
 });
 
-// Move Fonts to src/fonts
+// Move Fonts to client/src/fonts
 gulp.task('fonts', function() {
   return gulp.src('node_modules/font-awesome/fonts/*')
-    .pipe(gulp.dest('dist/fonts'))
-})
+    .pipe(gulp.dest('client/dist/fonts'));
+});
 
 // Move Font Awesome CSS to src/css
 gulp.task('fa', function() {
   return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
-    .pipe(gulp.dest('dist/css'))
-})
+    .pipe(gulp.dest('client/dist/css'));
+});
 
 gulp.task('default', [ 'imageMin','serve', 'fa', 'fonts']);
 
@@ -65,13 +65,13 @@ gulp.task('default', [ 'imageMin','serve', 'fa', 'fonts']);
 gulp.task('js', function() {
     return gulp.src(['src/js/bootstrap.js','src/js/*.js'])
   //  .pipe(uglify())
-    .pipe(gulp.dest("dist/js"))
+    .pipe(gulp.dest("client/dist/js"))
         .pipe(browserSync.stream());
 });
 
 // Move JS Files to src/js
 gulp.task('wjs', function() {
-    return gulp.src('dist/js/*.js')
+    return gulp.src('client/dist/js/*.js')
   //  .pipe(uglify())
     
         .pipe(browserSync.stream());

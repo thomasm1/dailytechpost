@@ -11,7 +11,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
       path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle_tmm.js'
+    filename: 'bundle_tmm_july-3.js'
   }
 };
 # Babel Webpack Starter
