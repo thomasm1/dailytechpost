@@ -2,7 +2,7 @@
  
 require('./js/application.min');  
 require('./js/modal');  
-//require('./js/multi_drop_menu');  
+require('./js/menu');  
 require('./js/force');  
 
 require('./js/blog-draft-july');

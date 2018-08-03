@@ -1,40 +1,208 @@
-<div class="panel panel-default" ng-init="getAbouts()">
-		<style>
-		h3, h2, h1, p, a {
-			color:lightsteelblue;
+ <style>
+ main.ng-enter.ng-enter-active {
+	 opacity:1;
+ }
+ #ninja-list li.ng-enter {
+	 transition: 0.2s linear all;
+	 opacity:0;
+	 transform: translateY(30px);
+ }
+ #ninja-list li.ng-enter.ng-enter-active{
+	 opacity: 1;
+	 transform: translateY(0);
+ }
+#ninja-list li.ng-leave {
+	transition: 0.2s linear all;
+	opacity:1;
+	transform: translateX(0);
 
-			font-family:'Roboto', Arial, Helvetica, sans-serif;
+}
+#ninja-list li.ng-leave.ng-leave-active {
+	opacity:0;
+	transform:translateX(-100%);
+}
+#ninja-list li.ng-leave-stagger{
+	transition-delay:0.2s;
+	transition-duration:0;
+}
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+	border-color:red;
+	border-width:1px;
+	border-style:solid;
+}
+/*
+input[disabled-"disabled"]{
+	opacity:0.4;
+	cursor:not-allowed !important;
+}
+*/
+</style> 
+<style>
+	
+ input, textarea {
+			background-color:silver;
 		}
-		div.panel-body {
-			color:white;
-		}
-		div.col-md-6 > p,h3,h4 {
-			min-height:25px;
-		}
-		.thumb {
-			max-width:30px;
-		}
-		.repeat {
-			height:50px;
-		}
-		.btn {
-			opacity:.5;
-		}
-		</style>
-  <div class="panel-heading"  >
-			<a class="navbar-brand bg-blue" title="thomasmaestas.net" href="http://www.thomasmaestas.net">
-				<img alt="tmm logo" id="bluelogo" src="dist/img/TMMblueTrans.png" /> </a>
-			 
-    <h3 class="panel-title dailytech ">{{about.title}}</h3>
+.belt{
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+#menu-bar{
+  background: crimson;
+  color: #fff;
+  padding: 10px;
+}
+
+#menu-bar h1{
+  font-size: 24px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+#menu-bar ul{
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 6px 0;
+}
+
+#menu-bar li{
+  float: right;
+  margin-left: 20px;
+}
+
+#menu-bar a{
+  color: #fff
+}
+
+main{
+  background: #eee;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+.content{
+  padding: 20px;
+}
+
+.content button,
+.content input[type="submit"]{
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #777;
+  border: 0;
+  box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
+  font-size: 16px;
+}
+
+.content button:nth-child(2){
+  float: right;
+}
+
+.content ul{
+  padding: 0;
+  list-style-type: none;
+  margin: 30px 0;
+}
+
+.content li{
+  padding: 15px 0;
+  border-top: 1px solid #e2e2e2;
+  color: #444;
+}
+
+.content li span{
+  float: right;
+}
+
+.content li h3{
+  display: inline-block;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.content input{
+  width: 90%;
+  padding: 10px 5%;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin: 10px 0;
+}
+
+.content input[type="submit"]:last-child{
+  width: 150px;
+  display: block;
+  margin: 15px auto;
+}
+
+.remove{
+  float: right;
+  padding: 5px;
+  background: #fff;
+  width: 18px;
+  text-align: center;
+  border-radius: 20px;
+  color: crimson;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.panel-body {
+	margin-top:50px;
+	min-height:800px;
+	color: yellow;
+}
+</style>
+		 <div  class="panel-heading" >
+		
+				<h1 class="panel-title title dailytech sky">OUR DAILY TECH 
+					</h1>
   </div>
   <div class="panel-body">
     <div class="row"> 
-  
+  <div class="col">
             <h5 class="secretMP" id="secret-buttonMP">DAILY &nbsp;&nbsp; TECH &nbsp;&nbsp; MISSION &nbsp;&nbsp; STATEMENT</h5>
-            <p id="secret-paragraphMP">&nbsp;</p>
+			<p id="secret-paragraphMP">&nbsp;</p>
+			</div>
+			<div class="col">
             <h5 class="secret" id="secret-button">About the Author</h5>
-            <p id="secret-paragraph">&nbsp;</p>
-       
+			<p id="secret-paragraph">&nbsp;</p>
+			</div>
+
+	   </div>
+
+	   <div class="content">
+		   <form name="contactForm" novalidate>
+
+			   <input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true"/>
+			   <span><br />
+
+					$pristine - {{contactForm.name.$pristine}},
+					$dirty - {{contactForm.name.$dirty}},<br />
+					$untouched - {{contactForm.name.$untouched}},
+					$touched - {{contactForm.name.$touched}},<br />
+					$invalid - {{contactForm.name.$invalid}},
+					$valid - {{contactForm.name.$valid}},
+				</span>
+			   <input type="text" placeholder="email" name="email" ng-model="contact.email" ng-required="true" />
+			  
+			   <textarea placeholder="Comment" name="comment" ng-model="contact.comment" ></textarea>
+			   <input type="submit" value="Send" /> 
+		   </form>
+		   <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+			   <small style="color:red; display:block; text-align: center;">Enter a valid number between 1024 and 65535</small>
+		   </div> 
+		   
+		   <div ng-show="contactForm.name.$touched && contactForm.name.$valid">
+				<small style="color:red; display:block; text-align: center;">Enter a valid number between 1024 and 65535</small>
+			</div>
+	   </div>
     </div>
   </div>
-</div>
+</div></div>

@@ -20,6 +20,25 @@
   #secret-paragraph a {
     color: purple; }
 
+.secretMP {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  padding: 10px;
+  font-family: 'Monoton';
+  cursor: pointer;
+  outline: none; }
+
+.secretMP:hover {
+  background-color: steelblue;
+  color: #0b5e9c;
+  cursor: pointer; }
+
+#secretMP-paragraph {
+  padding: 5% 5%; }
+  #secretMP-paragraph a {
+    color: purple; }
+
 #secret-buttonMP {
   padding: 5% 5% 1%;
   font-family: 'monoton'; }

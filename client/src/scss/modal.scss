@@ -1,18 +1,18 @@
  
   .mbutton{ 
-    padding:1em 2em;
+    padding:1em 2em ;
     color:#fff;
     border:0;
     min-width:100%;
     background-color: rgba(0,0,200,.5);    
   }
   
-  #mmodalBtn { 
-    background-color:transparent;
+  #mmodalBtn {  
     max-width:80%; 
     line-height:130%;
     border-radius:5%;
     cursor:pointer;
+    padding-bottom:1em;
   }
  .cover:hover {
    color:blue !important;

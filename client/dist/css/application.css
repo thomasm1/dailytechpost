@@ -297,16 +297,6 @@ div.col-lg-3 {
   background: transparent; }
 
 /* blocks 2, 3 */
-div.card.visible-md-block.visible-lg-block {
-  margin-top: 0px;
-  background-color: #00b0ec;
-  background-image: url("../img/MaestasReykjavikBanner.jpg");
-  padding-top: 30px;
-  min-height: 230px;
-  border-radius: 0px;
-  border: 0px solid red;
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3); }
-
 div.card-header {
   min-height: 520px;
   background-color: #00b0ec; }
@@ -379,14 +369,6 @@ li.map2.media.list-group-item.p-4 {
 
 .app-navbar .form-control {
   background-color: #00b0ec; }
-
-@media (min-width: 100px) {
-  .app-navbar .navbar-collapse:after {
-    height: auto; } }
-
-@media (max-width: 100px) {
-  .app-search {
-    margin-top: -10px; } }
 
 /*  SECTION misc */
 .app-login-form {
@@ -465,28 +447,10 @@ li.nav-item > a.nav-link {
   min-height: 115px;
   background: transparent; }
 
-div#map0 {
-  min-height: 700px; }
-
 #bluelogo {
   background-color: #14c8d4;
   height: 35px;
   width: 55px; }
-
-@media (max-width: 800px) {
-  .nav-link.caret * {
-    z-index: 1000;
-    opacity: .9; }
-  #tom.profile {
-    display: none; }
-  #bluelogo {
-    transform: translate(180px, -5px);
-    float: right;
-    margin-top: 0px;
-    background-color: blue;
-    height: 35px;
-    border-radius: 10%;
-    width: 55px; } }
 
 ul.dailytech.archive {
   color: lightskyblue; }
