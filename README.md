@@ -1,4 +1,8 @@
-# webpack --mode production 
+## npm run gulp
+## npm run build
+## mongo, db poststore, collection posts 
+
+webpack --mode production 
  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

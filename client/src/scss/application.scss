@@ -370,10 +370,7 @@ div.card-header {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     font-size: 1.2em;
 }
-
-.list-group-item {
-    background-color: transparent;
-}
+ 
 
 div.col-lg-6 {
     background-color: transparent;
@@ -517,8 +514,9 @@ li.map2.media.list-group-item.p-4 {
 }
 
 
-a.nav-link {
-    background-color: transparent;
+li.nav-item > a.nav-link {
+    background-color: lightsteelblue;
+    opacity:.8;
 }
 
 /* SECTION visual */
@@ -635,7 +633,9 @@ ul.dailytech.archive {
 }
 
 @media(min-width:700px){
-  #bluelogo { 
+    #dailylogo { 
+        float:right;
+        margin-right:50%;
       height:35px;
       width:55px;
   }

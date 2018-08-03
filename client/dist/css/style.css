@@ -6,10 +6,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: white;
-  background-image: url("../img/silverchip.png");
+  color: #3d3a97;
+  background-image: url("../img/bluechipTileT8.png");
   opacity: .9;
-  background-color: rgba(0, 247, 255, 0.4);
+  background-color: #2e4998;
   max-width: 950px;
   margin: 0;
   padding: 0;
@@ -23,138 +23,6 @@ body {
 
 /* @import "font-awesome.min.css";
 */
-/* GRID */
-.grid-container {
-  display: grid;
-  grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
-  grid-template-rows: 150px [row-foo] 150px [row-bar];
-  grid-template-areas: "a b b" "a b b"; }
-
-.item {
-  grid-column-start: col-foo;
-  grid-column-end: col-bar;
-  grid-row-start: row-foo;
-  grid-row-end: row-bar; }
-
-.item-1 {
-  grid-area: a; }
-
-.item-2 {
-  grid-area: b; }
-
-/* :before */
-.element {
-  position: relative; }
-
-.element:before {
-  content: "";
-  display: block;
-  width: 3em;
-  height: .75em;
-  margin: 0 auto .8em;
-  background: #fff;
-  position: absolute;
-  top: -6em;
-  margin-top: -4rem; }
-
-/* ANIMATION */
-@keyframes bounce {
-  0%, 100% {
-    top: 0; }
-  50% {
-    top: -10px; } }
-
-.bouncy-box:hover {
-  animation-name: bounce;
-  animation-duration: 4s;
-  /* or: Xms */
-  animation-iteration-count: 10;
-  animation-direction: alternate;
-  /* or: normal */
-  animation-timing-function: ease-out;
-  /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2) */
-  animation-fill-mode: forwards;
-  /* or: backwards, both, none */
-  animation-delay: 2s;
-  /* or: Xms */ }
-
-.transition {
-  transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay], [transition-property];
-  transition: background-color .2s; }
-
-/* timing function:  Ease, Linear, Ease-in, ease-in-out
-: Step-start, Step-end
-: cubic-bezier(0,0,0.58,1)
-
-*/
-/* PHOTOSHOP */
-.colordodge {
-  mix-blend-mode: color-dodge;
-  background: url(image.jpg) blue;
-  background-blend-mode: color-burn; }
-
-.screen {
-  mix-blend-mode: screen;
-  background: url(image.jpg) blue;
-  background-blend-mode: lighten; }
-
-.multiply {
-  mix-blend-mode: multiply;
-  background: url(image.jpg) blue;
-  background-blend-mode: color-burn; }
-
-.difference {
-  mix-blend-mode: difference;
-  background: url(image.jpg) blue;
-  background-blend-mode: normal; }
-
-/*
-
-mix-blend-mode: value;
-background: url(image.jpg) blue;
-background-blend-mode: value;
-VALUES - 
-:initial/inherit/normal
-:multiply
-:screen
-:overlay
-:darken
-:lighten
-:color-dodge
-:color-burn
-:hard-light
-:soft-light
-:difference
-:exclusion
-:hue
-:saturation
-:color
-:luminosity
-*/
-/* SVG   Transparency */
-.svgTransparent {
-  background: url("../dist/img/TMM.svg") repeat center 80%;
-  background-size: 1000px;
-  color: rgba(255, 255, 255, 0.1);
-  -webkit-font-smoothing: antialiased;
-  -webkit-background-clip: text;
-  -moz-background-cip: text;
-  background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.1); }
-
-/* Solid Texture */
-.svgTexture {
-  background: url("../dist/img/TMM.gif") repeat center top;
-  background-position: 17rem;
-  background-size: 60%;
-  color: transparent;
-  -webkit-font-smoothing: antialiased;
-  -webkit-background-clip: text;
-  -moz-background-cip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
-/* ANIMATION */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -9417,9 +9285,6 @@ div.card-header {
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
   font-size: 1.2em; }
 
-.list-group-item {
-  background-color: transparent; }
-
 div.col-lg-6 {
   background-color: transparent; }
 
@@ -9533,8 +9398,9 @@ li.map2.media.list-group-item.p-4 {
 .app-brand img {
   width: 100%; }
 
-a.nav-link {
-  background-color: transparent; }
+li.nav-item > a.nav-link {
+  background-color: lightsteelblue;
+  opacity: .8; }
 
 /* SECTION visual */
 /*SECTION functional addition */
@@ -9621,7 +9487,9 @@ ul.dailytech.archive {
   color: lightskyblue; }
 
 @media (min-width: 700px) {
-  #bluelogo {
+  #dailylogo {
+    float: right;
+    margin-right: 50%;
     height: 35px;
     width: 55px; } }
 
@@ -9872,7 +9740,7 @@ div.media-body.thesis {
   text-align: left;
   text-decoration: none;
   font-family: 'Monoton';
-  background-color: #6baed6;
+  background-color: #227bbac6;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7); }
 
 .form:hover {
@@ -9886,7 +9754,7 @@ path {
   stroke-width: 2px; }
 
 .sun path {
-  fill: darkblue;
+  fill: rgba(19, 67, 163, 0.863);
   opacity: .5; }
 
 .planet path {
@@ -9894,7 +9762,7 @@ path {
   opacity: .6; }
 
 .annulus path {
-  fill: #281050;
+  fill: #101e79a9;
   opacity: .6; }
 
 div#planet {
@@ -10018,6 +9886,18 @@ div#planet {
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
   animation-duration: 1.5s; }
+
+@media (min-width: 100px) {
+  .d3-tip {
+    max-width: 100%; } }
+
+@media (min-width: 100px) {
+  .app-navbar .navbar-collapse:after {
+    height: auto; } }
+
+@media (max-width: 100px) {
+  .app-search {
+    margin-top: -10px; } }
 
 @media (max-width: 750px) {
   .mmodal-content {
@@ -10146,7 +10026,7 @@ h1, h2, h3, h4, h5, h6 {
 .multi_drop_menu a {
   display: block;
   color: blue;
-  background-color: transparent;
+  background-color: #00b0ec;
   padding: .3em 1em;
   border-width: 4px;
   border-color: transparent; }
@@ -10220,7 +10100,6 @@ ul.list-unstyled.list-spaced.left li:hover {
 
 .multi_drop_menu li li {
   float: none;
-  background-color: transparent;
   width: 150px; }
 
 .multi_drop_menu li li ul {
@@ -10512,3 +10391,113 @@ p.mb4card {
 
 div#tech {
   box-shadow: 0px 10px 50px 0px rgba(34, 6, 105, 0.8) !important; }
+
+/* GRID */
+.grid-container {
+  display: grid;
+  grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
+  grid-template-rows: 150px [row-foo] 150px [row-bar];
+  grid-template-areas: "a b b" "a b b"; }
+
+.item {
+  grid-column-start: col-foo;
+  grid-column-end: col-bar;
+  grid-row-start: row-foo;
+  grid-row-end: row-bar; }
+
+.item-1 {
+  grid-area: a; }
+
+.item-2 {
+  grid-area: b; }
+
+/* :before */
+.element {
+  position: relative; }
+
+.element:before {
+  content: "";
+  display: block;
+  width: 3em;
+  height: .75em;
+  margin: 0 auto .8em;
+  background: #fff;
+  position: absolute;
+  top: -6em;
+  margin-top: -4rem; }
+
+/* ANIMATION */
+@keyframes bounce {
+  0%, 100% {
+    top: 0; }
+  50% {
+    top: -10px; } }
+
+.bouncy-box:hover {
+  animation-name: bounce;
+  animation-duration: 4s;
+  /* or: Xms */
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+  /* or: normal */
+  animation-timing-function: ease-out;
+  /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2) */
+  animation-fill-mode: forwards;
+  /* or: backwards, both, none */
+  animation-delay: 2s;
+  /* or: Xms */ }
+
+.transition {
+  transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay], [transition-property];
+  transition: background-color .2s; }
+
+/* timing function:  Ease, Linear, Ease-in, ease-in-out
+  : Step-start, Step-end
+  : cubic-bezier(0,0,0.58,1)
+  
+  */
+/* PHOTOSHOP */
+.colordodge {
+  mix-blend-mode: color-dodge;
+  background: url(image.jpg) blue;
+  background-blend-mode: color-burn; }
+
+.screen {
+  mix-blend-mode: screen;
+  background: url(image.jpg) blue;
+  background-blend-mode: lighten; }
+
+.multiply {
+  mix-blend-mode: multiply;
+  background: url(image.jpg) blue;
+  background-blend-mode: color-burn; }
+
+.difference {
+  mix-blend-mode: difference;
+  background: url(image.jpg) blue;
+  background-blend-mode: normal; }
+
+/*
+  
+  mix-blend-mode: value;
+  background: url(image.jpg) blue;
+  background-blend-mode: value;
+  VALUES - 
+  :initial/inherit/normal
+  :multiply
+  :screen
+  :overlay
+  :darken
+  :lighten
+  :color-dodge
+  :color-burn
+  :hard-light
+  :soft-light
+  :difference
+  :exclusion
+  :hue
+  :saturation
+  :color
+  :luminosity
+  */
+/*   overrides */
