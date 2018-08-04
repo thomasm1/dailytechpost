@@ -73,8 +73,7 @@ app.delete('/api/posts/:_id', (req, res) => {
 		res.json(post);
 	});
 });
-
-/*
+ /*
 app.get('/api/about', (req, res) => {
 	About.getAbouts((err, about) => {
 		if(err){
@@ -89,7 +88,7 @@ app.get('/api/archives', (req, res) => {
 		if(err){
 			throw err;
 		}
-		res.json(archives);`
+		res.json(archives);
 	});
 });
  
@@ -101,8 +100,7 @@ app.get('/api/cat3s', (req, res) => {
 		res.json(cat3s);
 	});
 });
-
-*/
+ */
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port 3000`)); 
 console.log(`Running on port ${port}`);

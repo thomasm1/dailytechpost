@@ -9,6 +9,13 @@
 /* july 23 final merge */
 
 /*   overrides */
+
+.card {
+    box-shadow: 0px 10px 50px 0px  rgba(34, 6, 105, 0.8) !important; 
+}
+div#tech {
+    box-shadow: 0px 10px 50px 0px rgba(34, 6, 105, 0.8) !important; 
+}
 #blogs {
     cursor:pointer;
     padding:0px;
@@ -71,8 +78,7 @@ img.media-object {
     background-color: #24abe9;
     background-color: #00b0ec !important;
 }
-
-#navbarResponsive ul {}
+ 
 
 #text {
     display: none;
@@ -149,7 +155,7 @@ img.media-object {
 }
 
 .media-object.d-flex.aligh-self-start.mr-3 {
-    background-image: url('../img/TMMblueTrans.png');
+    background-image: url('img/TMMblueTrans.png');
     max-width: 30px;
 }
 
@@ -275,45 +281,6 @@ div.card-block#cal {
     color: white;
 }
 
-/*   mb-4           1   to mb4card */
-
-p.mb-4 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-div.card.card-profile.mb-4#div5 {
-    background-color: #00b0ec;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
-}
-
-div.card.card-profile.mb-4 {
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-}
-
-.mb-top {
-    padding-top: 80px;
-}
-
-.mb-4 {
-    font-weight: 300;
-    list-style-type: none;
-    text-align: center;
-    color: white;
-    border: 0px solid red;
-    box-shadow: 0px 10px 50px silver;
-    background-color: blue;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
-    border-radius: 0px;
-    border: 0px solid red;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-}
-
-.mb-4 a {
-    color: blue;
-    text-align: center;
-}
 .card-block {
     padding:1.0rem;
 }
@@ -363,7 +330,7 @@ div.card.card-link-list {
 
 div.card-header {
     background-color: #00b0ec;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
+    background-image: url('img/MaestasReykjavikBanner.jpg');
     padding-top: 20px;
     min-height: 230px;
     border: 0px solid red;
@@ -404,12 +371,12 @@ div.card-block img {
 div.card-block.text-center a {
     background-color: #00b0ec;
     color: blue;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
+    background-image: url('img/MaestasReykjavikBanner.jpg');
 }
 
 div.card-block.text-center {
     background-color: #00b0ec;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
+    background-image: url('img/MaestasReykjavikBanner.jpg');
     box-shadow: 0px 10px 50px transparent;
     font-weight: 800;
 }
@@ -424,7 +391,7 @@ div.card.mb-4 {
 
 #center-col {
     background-color: #00b0ec;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
+    background-image: url('img/MaestasReykjavikBanner.jpg');
     padding-top: 0px;
     min-height: 180px;
     border-radius: 0px;
@@ -433,7 +400,7 @@ div.card.mb-4 {
 
 li.map2.media.list-group-item.p-4 {
     background-color: blue;
-    background-image: url('../img/MaestasReykjavikBanner.jpg');
+    background-image: url('img/MaestasReykjavikBanner.jpg');
     padding-top: 0px;
     min-height: 1400px;
     border-radius: 0px;
@@ -491,11 +458,6 @@ li.map2.media.list-group-item.p-4 {
     width: 100%;
 }
 
-
-li.nav-item > a.nav-link {
-    background-color: lightsteelblue;
-    opacity:.8;
-}
 
 /* SECTION visual */
 
@@ -587,7 +549,7 @@ ul.dailytech.archive {
         float:right;
         margin-right:50%;
       height:35px;
-      width:55px;
+      width:35px;
   }
 }
 
@@ -656,8 +618,7 @@ h5 > button:hover {
 }
 #apod_explaination {
 max-height:250px;
-padding:2%;
-overflow-y:scroll; 
+padding:2%; 
 background-color:rgba(4, 142, 196, 0.459);
 }
 h2.title {
@@ -669,4 +630,146 @@ div.media-body.thesis {
  
 .hover:hover {
   color:rgba(59, 41, 156, 0.603);
+}
+
+
+
+h3.panel-title.dailytech   {
+    color:rgba(102, 209, 244, 0.753);}
+  .container {
+
+  background-image:url("dist/img/bluechipTileT8.png");
+  }
+  div.panel-heading {
+border:none;
+  background-image:url("dist/img/bluechiptile.jpg")
+  }
+  .panel-body {
+    height:200px;
+    background-color:rgba(118, 77, 168, 0.507); 
+    background-image:url("dist/img/bluechiptile.jpg")
+  }
+.panel-title {
+  background-color:lightsteelblue;
+  background-image:url("dist/img/bluechipTileT8.png");
+}
+a.nav-link :hover {
+background-color:transparent;
+color:blue;
+
+} 
+.view {
+  border:solid transparent 1px; 
+}
+div.panel-body {
+border:none;
+}
+label {
+  color:lightsteelblue;
+}
+#dailylogo { 
+  float:right;
+  transform:translate(-70px,5px);
+  margin-top:5px;
+  padding:0px;
+  margin-right:20px;
+
+}
+.menu {
+line-height:130%;
+font-size:1.5rem;
+} 
+.dropdown-toggle {
+font-size:1.1rem;
+}  
+
+#view {
+padding-top:100px;
+} 
+
+
+p.mb-4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+div.card.card-profile.mb-4#div5 {
+    background-color: #00b0ec;
+    background-image: url('img/MaestasReykjavikBanner.jpg');
+}
+
+div.card.card-profile.mb-4 {
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.mb-top {
+    padding-top: 80px;
+}
+
+.mb-4 {
+    font-weight: 300;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    border: 0px solid red;
+    box-shadow: 0px 10px 50px silver;
+    background-color: blue;
+    background-image: url('img/MaestasReykjavikBanner.jpg');
+    border-radius: 0px;
+    border: 0px solid red;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.mb-4 a {
+    color: blue;
+    text-align: center;
+}
+
+
+/*   mb-4           1   to mb4card */
+ p.mb4card {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.mb4card {
+    font-weight: 300;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    border: 0px solid red;
+    box-shadow: 0px 10px 50px silver;
+    background-color: rgba(0, 0, 200, .5);
+    background-image: url('img/MaestasReykjavikBanner.jpg');
+    border-radius: 0px;
+    border: 0px solid red;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.mb4card a {
+    color: blue;
+    text-align: center;
+}
+ 
+ .green {
+     color:green;
+ }
+.side {
+    text-align:justify;  
+    color:darkgreen;
+    padding-left:15px !important;
+    margin-left:15px;
+} 
+ .archive button{
+
+    width:100%;
+} 
+.archive { list-style-type:none;
+  li { padding-bottom:4px;
+}}
+
+.new {
+    color:rgb(56, 56, 173);
 }

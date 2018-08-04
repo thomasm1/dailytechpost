@@ -1,155 +1,10 @@
-<html ng-app="dailyTech">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
   
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-  
-      gtag('config', 'UA-114267362-1');
-    </script>
-    <meta charset="utf-8" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="Technology Blog: Musing Blockchain | Web Dev Affairs | Sociology Tomorrow! Latest Developments in Technology Culture, Technology News, Tech Tools, Tech Talk Too! I explore daily tech topics on one of my three tech blog topics: Blockchain, Web Dev, and Sociology in Tech"
-	  name="description" />
-	<meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests" name="keywords"
-	/>
-	<link rel="manifest" href="/manifest.json">
-	<meta content="Thomas M. Maestas" name="author" />
-  <title>OUR DAILY TECH</title>
-  
-  <script src="/bower_components/d3/d3.min.js"></script>
-
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> 
-</head>
-<body  class="with-top-navbar"> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-    <script src="dist/js/d3/d3v4.min.js"></script>
-    <link href="dist/css/style.css" rel="stylesheet" />
-
-  <style>
-
-    h3.panel-title.dailytech   {
-        color:rgba(102, 209, 244, 0.753);}
-      .container {
-  
-      background-image:url("dist/img/bluechipTileT8.png");
-      }
-      div.panel-heading {
-  border:none;
-      background-image:url("dist/img/bluechiptile.jpg")
-      }
-      .panel-body {
-        height:200px;
-        background-color:rgba(118, 77, 168, 0.507); 
-        background-image:url("dist/img/bluechiptile.jpg")
-      }
-    .panel-title {
-      background-color:lightsteelblue;
-      background-image:url("dist/img/bluechipTileT8.png");
-    }
-  a.nav-link :hover {
-  background-color:transparent;
-  color:blue;
-  
-    }
-    .fixed-top {
-      min-height:75px;
-    }
- div#foreground.container {
-      margin-top:30px;
-    }
-    div.container.pt-4 {
-      width:100%;
-    }
-    .view {
-      border:solid transparent 1px;
-      overflow-y:scroll;
-    }
-    div.panel-body {
-border:none;
-    }
-    label {
-      color:lightsteelblue;
-    }
-    #dailylogo { 
-      float:right;
-      transform:translate(-70px,5px);
-      margin-top:5px;
-      padding:0px;
-      margin-right:20px;
-
-    }
-.menu {
-  line-height:130%;
-  font-size:1.5rem;
-} 
-.dropdown-toggle {
-  font-size:1.1rem;
-}  
-.multi_drop_menu li li a {
-  font-size:1rem;
-} </style>
-   
-  
-  
-    <nav class="navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar">
-      <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-center hidden-md-up"
-        data-target="#navbarResponsive" data-toggle="collapse" type="button" id="toggler"> </button> 
-
-      <div class="collapse navbar-collapse   multi_drop_menu dailytech menu" id="navbarResponsive">  
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item active ">
-            <a class="nav-link" href="#/posts">
-              <span class=" dailytech"> TECH
-              <br />BLOG </span>
-            </a>
-          </li> 
-          <li class="nav-item active">
-            <a class="nav-link" href="#/archives/">
-              <span class="dailytech ">BLOG
-                <br /> ARCHIVES </span>
-            </a>
-          </li>
-         
-          <li class="nav-item active ">
-            <a class="nav-link" href="#/about">
-              <span class="dailytech "> ABOUT
-              <br />BLOG </span>
-            </a>
-          </li>  
-          <li class="nav-item active">
-            <a class="nav-link">
-              <span class=" dailytech">CODING
-                <br /> TOOLS
-              </span>
-            </a> 
-            <!--end UL-->
-  
-  
-          </li>
-        </ul>
-     
-        <abbr title="Our Daily Tech">
-          <img class="card-profile-img " id="dailylogo" alt="image of Le Mont Real" width="90px" height="90px"  src="dist/img/rouColorTriomphe.jpg" />
-        </abbr>
- 
-      </div>
-   
-    </nav>  
-<br />
    
 
     <div class="container" id="foreground">
     	<div class="row">
     		<div class="col-md-12">
-
-          <div ng-view class="view"> </div>
+ 
           
 	<div class="container pt-4">
       <div class="row">
@@ -198,8 +53,7 @@ border:none;
               <div class="mmodal-header">
   
               </div>
-              <div class="mod-behave ">
-                <!-- blog-text.js MODAL MODAL MODAL  BEGINS HERE -->
+              <div class="mod-behave "> 
                 <div id="top-mod"></div>
                 <div id="paragraph-july-mod"></div>
                 <div id="paragraph-june-mod"></div>
@@ -278,7 +132,7 @@ border:none;
                 </div>
               </div>
   
-              <div class="map mb-4" data-target-height="140">
+              <div class="map mb-4"  height="140">
                 <img src="dist/img/TMMmoonscape_450.jpg" class="zoom" style="max-width:100%" />
   
               </div>
@@ -294,40 +148,11 @@ border:none;
       <!-- end card card-link-list -->
   
     </div>
-  
-	<div class="card-block" id="footer">
-
-		<p>Copyright &copy; 2018 All Rights Reserved. &nbsp; | &nbsp;
-			<a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
-				thomasmaestas.net</a>&nbsp; | &nbsp;
-			<img src="dist/img/paypal.PNG" alt="PayPal Emblem" height="
-	   15"></img>
-			<a href="https://www.paypal.com/paypalme/ThomasMaestas" style="color:white;text-decoration:none;">
-				&nbsp; Blog Support Appreciated!</a>
-		</p>
-	</div>
+   Z
   
     		</div>
     	</div>
      </div>
 
     </div><!-- /.container -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular-route.min.js"></script>
-
-	<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a89e0d5ca214cf7"></script>
-
-	<script src="dist/js/lib/tether.min.js"></script>
-	<script src="dist/js/lib/popper.min.js"></script>
-	<script src="dist/js/lib/bootstrap.min.js"></script>
-  <script src="/app.js"></script>
-  <!--
-	<script src="/controllers/about.js"></script>
-	<script src="/controllers/archives.js"></script>
-  <script src="/controllers/cat3s.js"></script>
-  -->
-  <script src="/controllers/posts.js"></script>
-  <script src="/dist/bundle_tmm_july-3.js"></script>
-  <script src="/dist/dom-loader_daily.js"></script>
-</body> 
-</html>
+  
