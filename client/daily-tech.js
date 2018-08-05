@@ -2,7 +2,7 @@ var dailyTech = angular.module('dailyTech',['ngRoute']);
 
 dailyTech.config(function($routeProvider){
 	$routeProvider.when('/', { 
-		templateUrl: 'views/posts.html'
+		templateUrl: 'views/home.html'
 	})
 	.when('/posts', {
 		controller:'PostsController',
