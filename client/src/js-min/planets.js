@@ -1,6 +1,7 @@
-					var width = 340,
 
-						height = 340,
+					var width = 3,
+
+						height = 325,
 
 						radius = 80,
 
@@ -12,13 +13,13 @@
 
 					var offset = 0,
 
-						speed = 4,
+						speed = 3,
 
 						start = Date.now();
 
 
 
-					var svg = d3.select("#map0").append("svg")
+					var svg = d3.selectAll(".map0").append("svg")
 
 						.attr("width", width)
 
@@ -26,7 +27,7 @@
 
 						.append("g")
 
-						.attr("transform", "translate(" + width / 2 + "," + height / 2.3 + ")scale(.35)")
+						.attr("transform", "translate(" + width / 2 + "," + height / 2.3 + ")scale(.5)")
 
 						.append("g");
 
@@ -204,3 +205,15 @@
 						frame.attr("transform", transform); // frame of reference
 
 					});
+
+					document.getElementById("planets").innerHTML = `<form class="form">
+<input type="radio" name="reference" id="ref-annulus">
+<label for="ref-annulus">Annulus</label>
+<br>
+<input type="radio" name="reference" id="ref-planet" checked>
+<label for="ref-planet">Planets</label>
+<br>
+<input type="radio" name="reference" id="ref-sun">
+<label for="ref-sun">Sun</label>
+</form>
+					`

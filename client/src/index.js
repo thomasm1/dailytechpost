@@ -1,6 +1,6 @@
  
  
-require('./js/application.min');  
+require('./js/lib/application.min');  
 require('./js/modal');  
 require('./js/menu');  
 require('./js/force');  
