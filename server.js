@@ -1,17 +1,28 @@
 const express = require('express'); 
 const app = express();
+const path = require('path');
+//const expressValidator = require('express-validator');
 //const request = require('request'); 
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose'); 
+// const db = mongojs('bloggerapp', ['citations']);
 
-app.use(express.static(__dirname + '/client'));
-//app.use(express.jsion());
-app.use(bodyParser.json());
- 
 About = require('./models/about');
 Archives = require('./models/archive');
 Cat3 =require('./models/cat3'); 
 Post = require('./models/post'); 
+
+app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended: false}));
+ 
+app.use(express.static(path.join(__dirname + '/client')));
+
+// Global vars
+app.use(function(req, res, next){
+	res.locals.errors = null;
+	next();
+});
+
  
 mongoose.connect('mongodb://localhost/poststore');
 var db = mongoose.connection;
@@ -101,8 +112,8 @@ app.get('/api/cat3s', (req, res) => {
 	});
 });
  */
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port 3000`)); 
+const port = process.env.PORT || 3010;
+app.listen(port, () => console.log(`Listening on port 3010`)); 
 console.log(`Running on port ${port}`);
 
  

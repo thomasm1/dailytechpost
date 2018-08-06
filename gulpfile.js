@@ -13,12 +13,12 @@ gulp.task('sass', function() {
         .pipe(gulp.dest("client/dist/"))
         .pipe(browserSync.stream());
 });
- 
+ /*
  gulp.task('copyHtml', function(){
     gulp.src('/*.html')
         .pipe(gulp.dest('client/dist/'));
   });
-  
+  */
 // Optimize img
 gulp.task('imageMin', function(){
 	gulp.src('client/src/img/*')

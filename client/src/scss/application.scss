@@ -256,8 +256,7 @@ li.nav-item.ml-2 {
    height: 40px; 
    border: none;
 } 
-.card-profile-img {
-horizontal-align:middle;
+.card-profile-img { 
 min-width:100px;
 max-width: 100px;
 min-height:100px;
@@ -319,15 +318,7 @@ div.card-block#footer a {
     color: #00d5f6;
     background-color: teal;
 }
-
-div.card.card-link-list {
-    border: solid 0px transparent;
-}
-
-#div5 {
-    overflow: hidden;
-}
-
+ 
 div.card-header {
     background-color: #00b0ec;
     background-image: url('img/MaestasReykjavikBanner.jpg');
@@ -382,10 +373,6 @@ div.card-block.text-center {
 }
 div.card-block#right-col {
     min-height: 200px;
-}
-
-div.card.mb-4 {
-    min-height: 700px;
 }
 /* SECTION blocks 2, 3 */
 
@@ -682,22 +669,26 @@ font-size:1.5rem;
 .dropdown-toggle {
 font-size:1.1rem;
 }  
-
+/* main*/
 #view {
-padding-top:100px;
+padding-top:120px;
 } 
 
 /*   mb-4           1   to mb4card */
 
+
+div.card.mb-4 {
+    height:100%;
+}
 p.mb-4 {
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 5px;
 }
-
-div.card.card-profile.mb-4#div5 {
+/* main*/
+div.card.card-profile  {
     background-color: #00b0ec;
-    background-image: url('img/MaestasReykjavikBanner.jpg');
+    background-image: url('img/MaestasReykjavikBanner.jpg'); 
 }
 
 div.card.card-profile.mb-4 {
@@ -775,4 +766,22 @@ div.card.card-profile.mb-4 {
 
 .new {
     color:rgb(56, 56, 173);
+}	h3, h2, h1,   a {
+    color:lightsteelblue;
+
+}
+div.panel-body {
+    color:white;
+}
+div.col-md-4 > p,h3,h4 {
+    min-height:25px;
+} 
+div.row#row-posts {
+    overflow:scroll;
+}
+div.card.card-profile {
+    height:100%;
+}
+#center-col {
+    height:75%;
 }
