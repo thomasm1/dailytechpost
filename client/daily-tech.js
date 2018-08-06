@@ -1,5 +1,5 @@
 var dailyTech = angular.module('dailyTech',['ngRoute']);
-
+//
 dailyTech.config(function($routeProvider){
 	$routeProvider.when('/', { 
 		templateUrl: 'views/home.html'
