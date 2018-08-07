@@ -60,6 +60,11 @@
     background-clip: padding-box;
     text-decoration: none;
 }
+.menu {
+    line-height:120%;
+    font-size:1.5rem;
+    } 
+
 
 ul.list-unstyled.list-spaced.left {
     list-style-image: url('img/montrealbullet.png');

@@ -1,6 +1,33 @@
- .fixed-top {
-     opacity: .9;
- }
+ 
+#blogs {
+    cursor:pointer;
+    padding:0px;
+}
+.blog {
+    float: left;
+    min-height: 500px;
+    max-height: 500px;
+    width: 100%;
+    border: inset 2px silver;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.blog h2, h3 {
+    text-shadow: 3px 3px 3px #aaa;
+    font-size: 1em;
+    border: solid .5px brown;
+    padding: 3px 4px 3px 4px;   
+    margin-bottom: 5px;
+    color: #59f3ff;  
+    text-shadow: 3px 3px 3px #aaa;
+}
+
+.blog p {
+    line-height: 1.2em;
+}
+
 
  .mod-behave {
      text-align: justify;

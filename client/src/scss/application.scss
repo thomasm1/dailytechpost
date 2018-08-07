@@ -1,14 +1,4 @@
-/*
- * Application level styles
- * (things that dont make sense in a toolkit :)
- * copyright @colossal 2015
- */
-
-/* docs overrides */
-
-/* july 23 final merge */
-
-/*   overrides */
+ 
 
 .card {
     box-shadow: 0px 10px 50px 0px  rgba(34, 6, 105, 0.8) !important; 
@@ -16,21 +6,11 @@
 div#tech {
     box-shadow: 0px 10px 50px 0px rgba(34, 6, 105, 0.8) !important; 
 }
-#blogs {
-    cursor:pointer;
-    padding:0px;
-}
 #thomasm {
     padding: 5px 10px;
 }
 
-#divContainer {
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 95%;
-}
-
+ 
 div.col-lg-3 {
     background-color: #00d9f9;
 }
@@ -46,6 +26,19 @@ div.col-lg-3 {
     line-height: 1.1;
 }
 
+.list-group-item .glyphicon {
+    line-height: 1.4;
+}
+
+li.map2.media.list-group-item.p-4 {
+    background-color: blue;
+    background-image: url('img/MaestasReykjavikBanner.jpg');
+    padding-top: 0px;
+    min-height: 1400px;
+    border-radius: 0px;
+    border: 0px solid red;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
 .modal-header .close {
     margin-top: 4px;
 }
@@ -74,11 +67,13 @@ img.media-object {
     max-width: 110%;
 }
 
-.navbar.navbar-toggleable-sm-fixed-top {
-    background-color: #24abe9;
+.navbar.navbar-toggleable-sm-fixed-top { 
     background-color: #00b0ec !important;
 }
  
+.fixed-top {
+    opacity: .9;
+}
 
 #text {
     display: none;
@@ -190,10 +185,6 @@ img.media-object {
 
 /* general overrides */
 
-.list-group-item .glyphicon {
-    line-height: 1.4;
-}
-
 div#userModal.modal.fade {
     display: none;
 }
@@ -206,10 +197,6 @@ div#userModal.modal.fade {
     display: none;
 }
 
-strong {
-    font-weight: bold;
-}
-
 /*
 
   adjusting headline bg color
@@ -218,10 +205,6 @@ strong {
 
 .bg-primary {
     background-color: #6aa0e6 !important;
-    background-color: #00b0ec;
-}
-
-nav#divContainer {
     background-color: #00b0ec;
 }
 
@@ -237,31 +220,10 @@ img.rounded-circle.profile {
     min-width: 90px;
     max-width: 110px;
 }
-
-li.nav-item.ml-2 {
-    position: relative;
-}
-
-.ml-2 {
-    list-style-type: none;
-    margin-top: 0px;
-    margin-right: 10px;
-}
-
+ 
 /* welcome and text*/
 
 
-.card-profile-img { 
-    width: 40px;
-   height: 40px; 
-   border: none;
-} 
-.card-profile-img { 
-min-width:100px;
-max-width: 100px;
-min-height:100px;
-max-height: 100px;
-}
 img {
    vertical-align: middle;
 
@@ -382,18 +344,10 @@ div.card-block#right-col {
     padding-top: 0px;
     min-height: 180px;
     border-radius: 0px;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-}
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3); 
+    height:75%;
+    }
 
-li.map2.media.list-group-item.p-4 {
-    background-color: blue;
-    background-image: url('img/MaestasReykjavikBanner.jpg');
-    padding-top: 0px;
-    min-height: 1400px;
-    border-radius: 0px;
-    border: 0px solid red;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-}
 
 /* navbar  SECTION */
 
@@ -454,35 +408,6 @@ li.map2.media.list-group-item.p-4 {
     max-width: 100%;
 }
 
-.blog {
-    float: left;
-    min-height: 500px;
-    max-height: 500px;
-    width: 100%;
-    border: inset 2px silver;
-    background-color: white;
-    padding: 0px;
-    margin: 0px;
-}
-
-.blog h2 {
-    text-shadow: 3px 3px 3px #aaa;
-    font-size: 1em;
-    border: solid .5px brown;
-    padding: 3px 4px 3px 4px;   
-    margin-bottom: 5px;
-    color: #59f3ff;
-}
-
-.blog h3 {
-    color: #59f3ff;
-    text-shadow: 3px 3px 3px #aaa;
-}
-
-.blog p {
-    line-height: 1.2em;
-}
-
 .center {
     text-align: center;
 }
@@ -503,9 +428,9 @@ li.map2.media.list-group-item.p-4 {
 .dropdown-toggle * {
     z-index: 1000;
     opacity: 1;
-    color: darkblue;
-}
-
+    color: darkblue; 
+    font-size:1.1rem;
+    }  
 .left {
     text-align: left;
 }
@@ -514,10 +439,6 @@ li.map2.media.list-group-item.p-4 {
     margin-top: 33px;
 }
 
-#divContainer {
-    min-height: 115px;
-    background: transparent;
-}
  
 #bluelogo {
     background-color: rgb(20, 200, 212);  
@@ -531,14 +452,6 @@ ul.dailytech.archive {
     color:lightskyblue;
 }
 
-@media(min-width:700px){
-    #dailylogo { 
-        float:right;
-        margin-right:50%;
-      height:35px;
-      width:35px;
-  }
-}
 
 img#moonscape {
     max-width: 100%
@@ -623,8 +536,9 @@ div.media-body.thesis {
 
 h3.panel-title.dailytech   {
     color:rgba(102, 209, 244, 0.753);}
-  .container {
 
+  .container {
+min-height:1100px;
   background-image:url("dist/img/bluechipTileT8.png");
   }
   div.panel-heading {
@@ -636,6 +550,11 @@ border:none;
     background-color:rgba(118, 77, 168, 0.507); 
     background-image:url("dist/img/bluechiptile.jpg")
   }
+
+div.panel-body {
+    border:none;  
+        color:white;
+    }
 .panel-title {
   background-color:lightsteelblue;
   background-image:url("dist/img/bluechipTileT8.png");
@@ -648,33 +567,41 @@ color:blue;
 .view {
   border:solid transparent 1px; 
 }
-div.panel-body {
-border:none;
-}
 label {
   color:lightsteelblue;
 }
 #dailylogo { 
   float:right;
-  transform:translate(-70px,5px);
+  transform:translate(50%,0px);
   margin-top:5px;
   padding:0px;
   margin-right:20px;
 
 }
-.menu {
-line-height:130%;
-font-size:1.5rem;
-} 
-.dropdown-toggle {
-font-size:1.1rem;
-}  
+
 /* main*/
 #view {
 padding-top:120px;
 } 
-
-/*   mb-4           1   to mb4card */
+ 
+.card-profile-img { 
+    width: 40px;
+   height: 40px; 
+   border: none; 
+min-width:100px;
+max-width: 100px;
+min-height:100px;
+max-height: 100px;
+}
+div.card.card-profile  {
+    background-color: #00b0ec;
+    background-image: url('img/MaestasReykjavikBanner.jpg');  
+    height:100%;
+}
+div.card.card-profile.mb-4 {
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+ 
 
 
 div.card.mb-4 {
@@ -685,20 +612,6 @@ p.mb-4 {
     margin-bottom: 10px;
     padding: 5px;
 }
-/* main*/
-div.card.card-profile  {
-    background-color: #00b0ec;
-    background-image: url('img/MaestasReykjavikBanner.jpg'); 
-}
-
-div.card.card-profile.mb-4 {
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-}
-
-.mb-top {
-    padding-top: 80px;
-}
-
 .mb-4 {
     font-weight: 300;
     list-style-type: none;
@@ -717,6 +630,7 @@ div.card.card-profile.mb-4 {
     color: blue;
     text-align: center;
 }
+
  p.mb4card {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -750,6 +664,7 @@ div.card.card-profile.mb-4 {
  .green {
      color:green;
  }
+ //ie fitbit blog apr
 .side {
     text-align:justify;  
     color:darkgreen;
@@ -766,22 +681,17 @@ div.card.card-profile.mb-4 {
 
 .new {
     color:rgb(56, 56, 173);
-}	h3, h2, h1,   a {
+}	
+h3, h2, h1,   a {
     color:lightsteelblue;
 
 }
-div.panel-body {
-    color:white;
-}
+
 div.col-md-4 > p,h3,h4 {
     min-height:25px;
 } 
+
+/* POSTS */
 div.row#row-posts {
     overflow:scroll;
-}
-div.card.card-profile {
-    height:100%;
-}
-#center-col {
-    height:75%;
 }

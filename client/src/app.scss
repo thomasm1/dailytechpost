@@ -38,6 +38,10 @@ body{
     }
 } 
 
+strong {
+  font-weight: bold;
+}
+
 @import "css/bootstrap.css";
 @import "css/d3-style";
 @import "css/dag";
@@ -55,6 +59,16 @@ body{
 @import "scss/marsreader"; 
 @import "scss/mainblog";
  
+
+@media(min-width:700px){
+  #dailylogo { 
+      float:right;
+      margin-right:50%;
+    height:35px;
+    width:35px;
+}
+}
+
 @media (min-width: 100px) {
     .app-navbar .navbar-collapse:after {
         height: auto;
@@ -82,8 +96,12 @@ body{
         width:55px;
     }
   }
-   
-
+  
+@media (max-width:700px) {
+#view {
+  padding-top:60px;
+  }  
+}
 @media (display-mode: standalone),
 (display-mode: fullscreen) {
     .backButton {
