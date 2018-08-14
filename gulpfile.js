@@ -51,15 +51,8 @@ gulp.task('fa', function() {
     .pipe(gulp.dest('client/dist/css'));
 });
 
-gulp.task('default', [ 'serve','imageMin',  'fa', 'fonts']);
+gulp.task('default', [ 'serve','imageMin', 'sass', 'fa', 'fonts']);
 // 'js', 'sass',  'copyHtml'
 
  
- 
-gulp.task('js', function() {
-      gulp.src(['client/src/js-min/lib/*.js','client/src/js-min/*.js'])
-    .pipe(concat('main.js'))
-   .pipe(uglify())
-    .pipe(gulp.dest('client/dist/js-min'));
-      //  .pipe(browserSync.stream());
-}); 
+  

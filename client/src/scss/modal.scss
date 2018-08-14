@@ -1,10 +1,11 @@
  
-  .mbutton{ 
-    padding:1em 2em ;
+  .mbutton{  
     color:#fff;
     border:0;
+    font-weight:300;
     min-width:100%;
-    background-color: rgba(0,0,200,.5);    
+    font-size:1.2rem;
+    background-color:rgba(116, 186, 255, 0.363);    
   }
   
   #mmodalBtn {  
@@ -14,9 +15,6 @@
     cursor:pointer;
     padding-bottom:1em;
   }
- .cover:hover {
-   color:blue !important;
- }
   .mmodal{
     display:none;
     position: fixed;
@@ -27,7 +25,7 @@
     width:100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.5);
-  }
+  } 
   
   .mmodal-content{ 
     margin:20% auto;

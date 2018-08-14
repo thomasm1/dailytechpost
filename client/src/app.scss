@@ -42,16 +42,14 @@ strong {
   font-weight: bold;
 }
 
-@import "css/bootstrap.css";
-@import "css/d3-style";
-@import "css/dag";
-@import "css/multi_drop_menu";
-@import "css/calc";
-@import "css/force";
-@import "css/planets";
-
 @import "scss/application-toolkit"; 
-@import "scss/application";
+@import "scss/application";  
+@import "scss/dag";
+@import "scss/multi_drop_menu";
+@import "scss/calc";
+@import "scss/force";
+@import "scss/planets";
+
 @import "scss/functions";
 @import "scss/customVariables"; 
 @import "scss/paragraph";
@@ -145,275 +143,24 @@ strong {
         max-height: 7%;
     }
 }
-/* GRID */
-.grid-container {
-    display: grid;
-    grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
-    grid-template-rows: 150px [row-foo] 150px [row-bar];
-    grid-template-areas: "a b b"
-                        "a b b";
-  }
-  
-  .item {
-    grid-column-start: col-foo;
-    grid-column-end: col-bar;
-    grid-row-start: row-foo;
-    grid-row-end: row-bar;
-  }
-  
-  .item-1 {
-    grid-area: a;
-  }
-  .item-2 {
-    grid-area: b;
-  }
-  
-  /* :before */
-  .element {
-    position: relative;
-  }
-  .element:before {
-    content: "";
-    display:block;
-    width:3em;
-    height:.75em;
-    margin: 0 auto .8em;
-    background: $color;
-    position: absolute;
-    top: -6em;
-    margin-top: -4rem;
-  }
-  /* ANIMATION */
-  @keyframes bounce {
-    0%, 100% {
-        top:0;
-    }
-    50% {
-        top: -10px;
-    }
-  }
-  
-  .bouncy-box:hover {
-    animation-name: bounce;
-    animation-duration: 4s; /* or: Xms */
-    animation-iteration-count: 10;
-    animation-direction: alternate; /* or: normal */
-    animation-timing-function:ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1,y1,x2,y2) */
-    animation-fill-mode: forwards; /* or: backwards, both, none */
-    animation-delay: 2s; /* or: Xms */
-  }
-  .transition {
-  transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay], [transition-property];
-  
-  transition: background-color .2s;
-  }
-  /* timing function:  Ease, Linear, Ease-in, ease-in-out
-  : Step-start, Step-end
-  : cubic-bezier(0,0,0.58,1)
-  
-  */
-  
-  /* PHOTOSHOP */
-  .colordodge {
-  mix-blend-mode: color-dodge;
-  background: url(image.jpg) blue;
-  background-blend-mode: color-burn;
-  }
-  
-  .screen {
-    mix-blend-mode: screen;
-    background: url(image.jpg) blue;
-    background-blend-mode: lighten;
-    }
-  .multiply {
-    mix-blend-mode: multiply;
-    background: url(image.jpg) blue;
-    background-blend-mode: color-burn;
-    }
-    
-  .difference {
-    mix-blend-mode: difference;
-    background: url(image.jpg) blue;
-        background-blend-mode: normal;
-        }
-  
 
-/*
-:initial/inherit/normal
-  :multiply
-  :screen
-  :overlay
-  :darken
-  :lighten
-  :color-dodge
-  :color-burn
-  :hard-light
-  :soft-light
-  :difference
-  :exclusion
-  :hue
-  :saturation
-  :color
-  :luminosity
-*/  
+    @media (min-width: 401px) {
+      .multi_drop_menu li li a {
+          color: silver;
+          background-color: teal;
+      }
+  }
 
-  /* CURSOR */
-.alias {cursor: alias;}
-.all-scroll {cursor: all-scroll;}
-.auto {cursor: auto;}
-.cell {cursor: cell;}
-.context-menu {cursor: context-menu;}
-.col-resize {cursor: col-resize;}
-.copy {cursor: copy;}
-.crosshair {cursor: crosshair;}
-.default {cursor: default;}
-.e-resize {cursor: e-resize;}
-.ew-resize {cursor: ew-resize;}
-.grab {cursor: grab;}
-.grabbing {cursor: grabbing;}
-.help {cursor: help;}
-.move {cursor: move;}
-.n-resize {cursor: n-resize;}
-.ne-resize {cursor: ne-resize;}
-.nesw-resize {cursor: nesw-resize;}
-.ns-resize {cursor: ns-resize;}
-.nw-resize {cursor: nw-resize;}
-.nwse-resize {cursor: nwse-resize;}
-.no-drop {cursor: no-drop;}
-.none {cursor: none;}
-.not-allowed {cursor: not-allowed;}
-.pointer {cursor: pointer;}
-.progress {cursor: progress;}
-.row-resize {cursor: row-resize;}
-.s-resize {cursor: s-resize;}
-.se-resize {cursor: se-resize;}
-.sw-resize {cursor: sw-resize;}
-.text {cursor: text;}
-.url {cursor: url(myBall.cur),auto;}
-.w-resize {cursor: w-resize;}
-.wait {cursor: wait;}
-.zoom-in {cursor: zoom-in;}
-.zoom-out {cursor: zoom-out;}
 
-  /* SUPERS */
-  
-html {
-
-  mix-blend-mode: value;
-  background: url(image.jpg) blue;
-  background-blend-mode: value;
+@media (min-width: 768px) {
+  .app-navbar .navbar-collapse:after {
+      height: auto;
+  }
 }
-  main{
-    background: #eee;
-    width: 80%;
-    margin: 30px auto;
-    border-radius: 10px;
+
+@media (max-width:768) {
+  .map {
+      max-width: 50%;
+      border: solid .5px white;
   }
-  
-  .content{
-    padding: 20px;
-  }
-  
-  .content button,
-  .content input[type="submit"]{
-    background: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #777;
-    border: 0;
-    box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
-    font-size: 16px;
-  }
-  
-  .content button:nth-child(2){
-    float: right;
-  }
-  
-  .content ul{
-    padding: 0;
-    list-style-type: none;
-    margin: 30px 0;
-  }
-  
-  .content li{
-    padding: 15px 0;
-    border-top: 1px solid #e2e2e2;
-    color: #444;
-  }
-  
-  .content li span{
-    float: right;
-  }
-  
-  .content li h3{
-    display: inline-block;
-    font-weight: normal;
-    font-size: 22px;
-  }
-  
-  .content input{
-    width: 90%;
-    padding: 10px 5%;
-    border-radius: 10px;
-    border: 2px solid #ddd;
-    margin: 10px 0;
-  }
-  
-  .content input[type="submit"]:last-child{
-    width: 150px;
-    display: block;
-    margin: 15px auto;
-  }
-  
-  .remove{
-    float: right;
-    padding: 5px;
-    background: #fff;
-    width: 18px;
-    text-align: center;
-    border-radius: 20px;
-    color: crimson;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  .belt{
-    padding: 5px 10px;
-    border-radius: 10px;
-    margin-left: 5px;
-    color: #fff;
-    font-size: 15px;
-    text-transform: uppercase;
-  }
-  
-  #menu-bar{
-    background: crimson;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  #menu-bar h1{
-    font-size: 24px;
-    font-weight: normal;
-    display: inline-block;
-  }
-  
-  #menu-bar ul{
-    float: right;
-    list-style-type: none;
-    padding: 0;
-    margin: 6px 0;
-  }
-  
-  #menu-bar li{
-    float: right;
-    margin-left: 20px;
-  }
-  
-  #menu-bar a{
-    color: #fff
-  }
-  
-  /*   overrides */
-  
- 
+} 

@@ -14,14 +14,14 @@
 	<meta content="Thomas M. Maestas" name="author" />
   <title>OUR DAILY TECH</title>
    
- 
+  <link href="dist/app.css" rel="stylesheet" />
   <script src="dist/js/d3/d3v4.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular-route.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-  <link href="dist/app.css" rel="stylesheet" />
+
   
 </head>
 
@@ -34,40 +34,53 @@
       <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-center hidden-md-up"
         data-target="#navbarResponsive" data-toggle="collapse" type="button" id="toggler"> </button> 
 
-      <div class="collapse navbar-collapse   multi_drop_menu dailytech menu" id="navbarResponsive">  
+      <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">  
         <ul class="navbar-nav mr-auto ">
           <li class="nav-item   ">
             <a class="nav-link" href="#/home">
-              <span class=" dailytech"> TECH
-              <br />BLOG </span>
-            </a>
-          </li> 
-
-         
-          <li class="nav-item">
-            <a class="nav-link" href="#/posts">
-              <span class="dailytech "> BLOG
-              <br />INDEX</span>
-            </a>
-          </li>  
-          <li class="nav-item  ">
-            <a class="nav-link" href="#/archives/">
-              <span class="dailytech ">BLOG
-                <br /> ARCHIVES </span>
-            </a>
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link" href="#/about">
-              <span class="dailytech "> ABOUT
+              <span class=" subdailytech"> TECH
               <br />BLOG </span>
             </a>
           </li>   
-          <li class="nav-item">
+          <li class="nav-item  ">
+            <a class="nav-link" href="#/archives">
+              <span class="subdailytech ">BLOG
+                <br /> ARCHIVES </span>
+            </a>
+          </li> 
+          
+					<li class="nav-item active">
+						<a class="nav-link" title="tmm FICTION" href="http://www.ourdailytechblog.net/_For_Cat_Eyes_Only_/index.html">
+							<span class="caret subdailytech">FOR_CAT
+								<br />EYES_ONLY</span>
+						</a>
+						<ul style="z-index:0" class="menu-left">
+							<li   >
+						 tmm FICTION 
+								<a style="z-index:199; " title="tmm FICTION" href="http://www.ourdailytechblog.net/_For_Cat_Eyes_Only_/index.html">For Cat Eyes Only:
+									<i>Early Months of Win&#39;s Campaign</i>
+								</a>
+							</li>
+							<li style="z-index:199; ">
+							  tmm FICTION 
+								<a style="z-index:199; " title="tmm FICTION" href="http://www.ourdailytechblog.net/_For_Cat_Eyes_Only_/index.html#capturing">Fiction Excerpts From:
+									<br />
+									<i>The Casperian Ancestries</i>
+									<br />
+									<small>Capturing One Cat&#39;s Past and Present</small>
+								</a>
+							 tmm FICTION 
+							</li>
+						</ul>
+					</li> 
+          <li style="z-index:5" class="nav-item">
             <a class="nav-link">
-              <span class=" dailytech">CODING
+              <span class=" subdailytech">CODING
                 <br /> TOOLS
               </span>
             </a> 
+						<ul id="ul">
+						</ul> 
             <!--end UL-->
   
   
@@ -75,7 +88,7 @@
         </ul>
      
         <abbr title="Our Daily Tech">
-          <img class="card-profile-img " id="dailylogo" alt="image of Le Mont Real" width="80px" height="80px"  src="dist/img/rouColorTriomphe.jpg" />
+          <img class="card-profile-img zoom" id="dailylogo" alt="image of Le Mont Real" src="dist/img/blueColorTriomphe.png" />
         </abbr>
  
       </div>
@@ -91,32 +104,27 @@
         <div class="container pt-4">
             <div class="row">
               <div class="col-lg-3">
-                <div class="card card-profile   ">
+                <div class="card card-profile">
                
+             
+                    <div ng-view="home" class="view"> </div>
               
-                  <div class="    card-header" >
-         
-
-                    <button id="mmodalBtn" class="mbutton title dailytech longtitle hover">
-                        <h6 class="    subdailytech white  " title="Machine Learning">
-                            <a class="cover   ">A.I.NOW</a>
+                  <div class=" card-header"   > 
+                    <button id="mmodalBtn" class="mbutton title     hover">
+                        <h6 class=" subdailytech white" title="Machine Learning"><br />
+                            <a class="cover">A.I.NOW</a>
                           </h6>
-                      <h6 class="   subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
-                        <a class=" text-inherit   hover">MUSING  BLOCKCHAIN</a>
+                      <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
+                        <a class="cover">MUSING  BLOCKCHAIN</a>
                       </h6>  
-                      <h6  class="            subdailytech white hover"><a class="  text-inherit   ">WEB   DEV &nbsp; AFFAIRS &nbsp; </a></h6>  
+                      <h6  class="            subdailytech white hover"><a class="cover">WEB   DEV &nbsp; AFFAIRS &nbsp; </a></h6>  
                       <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
-                        <a class="subdailytech  text-inherit  hover">SOCIOLOGY   TOMORROW!</a>
+                        <a class="cover  ">SOCIOLOGY   TOMORROW!</a>
                       </h6> 
                     </button>
-             
-                    <div ng-view class="view"> </div>
-                    <div class="featured" id="featured">
-        
-                    </div>
-                    <a class="well text-inherit mb-4 "> </a>
-                    <div id="planets"></div>
-                    <script src="dist/js/d3/planets.js"></script> 
+
+                  <div  id="map0"></div> 
+                    <script src="dist/js/planets.js"></script> 
                     <div id="dag0" class="dag"></div>
         
         
@@ -217,12 +225,16 @@
         
                     </div>
          
-                      
+                  <div ng-controller="ArchivesController">
+                  
+
+                  </div>
+        
                   </div>
                 </div>
               </div>
         
-        
+         
         
             </div>
             <!-- end card card-link-list -->
@@ -237,7 +249,7 @@
         
   
 	<div class="card-block" id="footer">
-
+    <a class="nav-link" href="#/posts">post</a>
 		<p>Copyright &copy; 2018 All Rights Reserved. &nbsp; | &nbsp;
 			<a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
 				thomasmaestas.net</a>&nbsp; | &nbsp;
@@ -263,5 +275,7 @@
   <script src="/controllers/cat3s.js"></script>
  
   <script src="/controllers/posts.js"></script>
+
+	<script src="dist/bundle_daily_aug.js"></script>
 </body> 
 </html>

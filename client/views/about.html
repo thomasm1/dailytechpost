@@ -1,33 +1,11 @@
  
-		 <div  class="panel-heading" >
-		
-				<h1 class="panel-title title dailytech sky">OUR DAILY TECH 
-					</h1>
-  </div>
-  <div class="panel-body">
-    <div class="row"> 
-  <div class="col">
-            <h5 class="secretMP" id="secret-buttonMP">DAILY &nbsp;&nbsp; TECH &nbsp;&nbsp; MISSION &nbsp;&nbsp; STATEMENT</h5>
-			<p id="secret-paragraphMP">&nbsp;</p>
-			</div>
-			<div class="col">
-            <h5 class="secret" id="secret-button">About the Author</h5>
-			<p id="secret-paragraph">&nbsp;</p>
-			</div>
-
-	   </div>
 
 	   <div class="content">
 		   <form name="contactForm" novalidate>
 
 			   <input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true"/>
 			   <span><br /> 
-					$pristine - {{contactForm.name.$pristine}},
-					$dirty - {{contactForm.name.$dirty}},<br />
-					$untouched - {{contactForm.name.$untouched}},
-					$touched - {{contactForm.name.$touched}},<br />
-					$invalid - {{contactForm.name.$invalid}},
-					$valid - {{contactForm.name.$valid}},
+					 
 				</span>
 			   <input type="text" placeholder="email" name="email" ng-model="contact.email" ng-required="true" />
 			  
@@ -41,7 +19,4 @@
 		   <div ng-show="contactForm.name.$touched && contactForm.name.$valid">
 				<small style="color:red; display:block; text-align: center;">Enter a valid number between 1024 and 65535</small>
 			</div>
-	   </div>
-    </div>
-  </div>
-</div></div>
+	   </div> 

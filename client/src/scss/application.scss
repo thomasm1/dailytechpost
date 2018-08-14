@@ -93,62 +93,6 @@ img.media-object {
     text-align: left;
 }
 
-/* navbar */
-
-.app-navbar {
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-}
-
-.app-navbar .form-control {
-    box-shadow: none;
-}
-
-.app-navbar .navbar-brand img {
-    width: 85px;
-}
-
-.app-navbar .navbar-collapse {
-    max-height: inherit;
-}
-
-.app-navbar .navbar-collapse:after {
-    height: 100vh;
-}
-
-.app-navbar .form-control {
-    border-color: #1C73A5;
-}
-
-.app-navbar .app-notifications {
-    margin-left: 1rem;
-    padding-bottom: 4px !important;
-    padding-top: 4px !important;
-}
-
-.app-notifications .icon:before {
-    font-size: 20px;
-}
-
-@media (min-width: 768px) {
-    .app-navbar .navbar-collapse:after {
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .app-search {
-        margin-top: -1px;
-    }
-}
-
-@media (max-width:768) {
-    .map {
-        max-width: 50%;
-        border: solid .5px white;
-    }
-}
-
 .media-object.d-flex.aligh-self-start.mr-3 {
     background-image: url('img/TMMblueTrans.png');
     max-width: 30px;
@@ -279,12 +223,11 @@ div.card-block#footer a {
 .card.card-link-list#footer a:active {
     color: #00d5f6;
     background-color: teal;
-}
- 
+} 
 div.card-header {
     background-color: #00b0ec;
     background-image: url('img/MaestasReykjavikBanner.jpg');
-    padding-top: 20px;
+    padding-top: 10px;
     min-height: 230px;
     border: 0px solid red;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
@@ -299,13 +242,7 @@ div.col-lg-6 {
 div.col-lg-3 {
     background: transparent;
 }
-
-/* blocks 2, 3 */ 
-
-div.card-header {
-    min-height: 520px;
-    background-color: #00b0ec;
-}
+ 
 
 li.card-menu-item {
     padding: 0px;
@@ -347,36 +284,6 @@ div.card-block#right-col {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3); 
     height:75%;
     }
-
-
-/* navbar  SECTION */
-
-.app-navbar {
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-}
-
-.app-navbar .form-control {
-    box-shadow: none;
-}
-
-.app-navbar .navbar-brand img {
-    width: 140px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
-.app-navbar .navbar-collapse {
-    max-height: inherit;
-}
-
-.app-navbar .navbar-collapse:after {
-    height: 100vh;
-}
-
-.app-navbar .form-control {
-    background-color: #00b0ec;
-}
 
 
 /*  SECTION misc */
@@ -453,6 +360,9 @@ ul.dailytech.archive {
 }
 
 
+h3.panel-title.dailytech   {
+    color:rgba(102, 209, 244, 0.753);}
+
 img#moonscape {
     max-width: 100%
 }
@@ -488,8 +398,7 @@ h5 > button:hover {
 }
 
 .zoom:hover {
-    transform: scale(2);
-    overflow:hidden;
+    transform: scale(2); 
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
@@ -534,21 +443,18 @@ div.media-body.thesis {
 
 
 
-h3.panel-title.dailytech   {
-    color:rgba(102, 209, 244, 0.753);}
-
   .container {
 min-height:1100px;
-  background-image:url("dist/img/bluechipTileT8.png");
+  background-image:url("img/bluechipTileT8.png");
   }
   div.panel-heading {
 border:none;
-  background-image:url("dist/img/bluechiptile.jpg")
+  background-image:url("img/bluechiptile.jpg")
   }
   .panel-body {
     height:200px;
     background-color:rgba(118, 77, 168, 0.507); 
-    background-image:url("dist/img/bluechiptile.jpg")
+    background-image:url("img/bluechiptile.jpg")
   }
 
 div.panel-body {
@@ -557,13 +463,10 @@ div.panel-body {
     }
 .panel-title {
   background-color:lightsteelblue;
-  background-image:url("dist/img/bluechipTileT8.png");
+  background-image:url("wellsfar/bluechipTileT8.png");
 }
-a.nav-link :hover {
-background-color:transparent;
-color:blue;
 
-} 
+
 .view {
   border:solid transparent 1px; 
 }
@@ -578,20 +481,23 @@ label {
   margin-right:20px;
 
 }
-
+a.cover {
+    font-size:1.2rem;
+}
+.cover:hover {
+    color:blue !important;
+  }
 /* main*/
 #view {
 padding-top:120px;
 } 
  
-.card-profile-img { 
-    width: 40px;
-   height: 40px; 
+.card-profile-img {  
    border: none; 
-min-width:100px;
-max-width: 100px;
-min-height:100px;
-max-height: 100px;
+min-width: 60px;
+max-width: 60px;
+min-height:60px;
+max-height: 60px;
 }
 div.card.card-profile  {
     background-color: #00b0ec;

@@ -4,18 +4,18 @@ dailyTech.config(function($routeProvider){
 	$routeProvider.when('/', { 
 		templateUrl: 'views/home.html'
 	})
-	.when('/posts', {
-		controller:'PostsController',
-		templateUrl: 'views/posts.html'
-	}) 
 	.when('/archives', {
 		controller:'ArchivesController',
 		templateUrl: 'views/archives.html'
-	}) 
-	.when('/about', {
-		controller:'AboutController',
-		templateUrl: 'views/about.html'
-	})   
+	})  
+	.when('/posts', {
+		controller:'PostsController',
+		templateUrl: 'views/posts.html'
+	})  
+	.when('/_For_Cat_Eyes_Only_', {
+		controller:'CatsController',
+		templateUrl: 'views/cats.html'
+	})  
 	.when('/posts/details/:id',{
 		controller:'PostsController',
 		templateUrl: 'views/post_details.html'
@@ -28,7 +28,14 @@ dailyTech.config(function($routeProvider){
 		controller:'PostsController',
 		templateUrl: 'views/edit_post.html'
 	})
+	/*
+	*/
 	.otherwise({
 		redirectTo: '/'
 	});
+ 
+	dailyTech.controller('CatsController', ['$scope', function ($scope){
+var cats = '';
+	}]);
+	
 });

@@ -1,7 +1,7 @@
 					
-						var width = 350,
+						var width = 340,
 						
-								height = 350,
+								height = 340,
 						
 								radius = 80,
 						
@@ -27,7 +27,7 @@
 						
 							.append("g")
 						
-								.attr("transform", "translate(" + width / 2 + "," + height / 2.3 + ")scale(.5)")
+								.attr("transform", "translate(" + width / 2 + "," + height / 2.3 + ")scale(.35)")
 						
 							.append("g");
 						
