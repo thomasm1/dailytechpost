@@ -6120,7 +6120,7 @@ body {
   background: steelblue;
   color: #fff;
   font-family: "Roboto";
-  background: steelblue url("../img/MaestasReykjavikBanner20.png") repeat;
+  background: steelblue url("views/img/MaestasReykjavikBanner20.png") repeat;
   margin-left: auto;
   margin-right: auto; }
 
@@ -6137,7 +6137,8 @@ h6 {
   display: grid;
   grid-template-columns: 150px [col-foo] 150px 150px [col-bar];
   grid-template-rows: 150px [row-foo] 150px [row-bar];
-  grid-template-areas: "a b b" "a b b"; }
+  grid-template-areas: "a b b"
+ "a b b"; }
 
 .item {
   grid-column-start: col-foo;
@@ -6196,7 +6197,7 @@ h6 {
 : cubic-bezier(0,0,0.58,1)
 
 */
-/* PHOTOSHOP */
+/* PHOTOSHOP 
 .colordodge {
   mix-blend-mode: color-dodge;
   background: url(image.jpg) blue;
@@ -6240,7 +6241,7 @@ VALUES -
 :color
 :luminosity
 */
-/* SVG   Transparency */
+/* SVG   Transparency 
 .svgTransparent {
   background: url("../dist/img/TMM.svg") repeat center 80%;
   background-size: 1000px;
@@ -6251,7 +6252,7 @@ VALUES -
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.1); }
 
-/* Solid Texture */
+/* Solid Texture 
 .svgTexture {
   background: url("../dist/img/TMM.gif") repeat center top;
   background-position: 61rem;
@@ -6461,7 +6462,7 @@ li.nav-item.ml-2 {
 #head {
   font-size: 28px;
   color: darkslateblue;
-  background-image: url("../img/T30.png");
+  background-image: url("views/img/T30.png");
   margin-bottom: 1px;
   text-align: center;
   padding-right: 10px;
@@ -6479,14 +6480,14 @@ body {
   background-color: #ff8707;
   font-family: "courier new", courier, monospace;
   opacity: .9;
-  background-image: url("../img/TMcaliforniaCruisingJungleSunday.jpg");
+  background-image: url("views/img/TMcaliforniaCruisingJungleSunday.jpg");
   opacity: .9;
   font-size: 1.0rem;
   color: darkslateblue; }
 
 .blog {
   background-color: #ff8707;
-  background-image: url("../img/NACKhalifax60.png");
+  background-image: url("views/img/NACKhalifax60.png");
   color: darkslateblue;
   height: 600px;
   overflow-y: scroll;
@@ -6549,7 +6550,7 @@ body {
   border-radius: 5%;
   border: solid .5px darkslateblue;
   background-color: #ff8707;
-  background-image: url("../img/NACKhalifax60.png");
+  background-image: url("views/img/NACKhalifax60.png");
   line-height: .5em;
   padding-right: 5px;
   padding-left: 5px;
@@ -6592,11 +6593,11 @@ div#form {
   font-size: 16px;
   background: none;
   color: white;
-  background-image: url("../img/T30s.png"); }
+  background-image: url("views/img/T30s.png"); }
 
 #bu {
   width: 40px;
-  background-image: url("../img/T30s.png"); }
+  background-image: url("views/img/T30s.png"); }
 
 #head {
   line-height: 0.7em; }
@@ -6616,7 +6617,7 @@ div#form {
   float: left; }
 
 .links {
-  background-image: url("../img/T30.png");
+  background-image: url("views/img/T30.png");
   font-family: "courier new", courier, monospace;
   font-size: 14px;
   width: 665px;
@@ -6630,11 +6631,11 @@ div#form {
   color: white; }
 
 .yellow {
-  background-image: url("../img/tmm40.PNG"); }
+  background-image: url("views/img/tmm40.PNG"); }
 
-/* background-image: url('../img/1330moonscape.jpg'); */
+/* background-image: url('views/img/1330moonscape.jpg'); */
 .black {
-  background-image: url("../img/19990123_040428.jpg"); }
+  background-image: url("views/img/19990123_040428.jpg"); }
 
 .links a {
   text-decoration: none;
@@ -6737,7 +6738,7 @@ h1 {
   border: solid .5px darkslateblue;
   background-color: #ff8707;
   opacity: .8;
-  background-image: url("../img/NACKhalifax60.png");
+  background-image: url("views/img/NACKhalifax60.png");
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.8);
   padding: 5% 2%;
   margin: 5%;
@@ -6782,11 +6783,11 @@ div#form {
   font-size: 16px;
   background: none;
   color: white;
-  background-image: url("../img/T30s.png"); }
+  background-image: url("views/img/T30s.png"); }
 
 #bu {
   width: 35px;
-  background-image: url("../img/T30s.png"); }
+  background-image: url("views/img/T30s.png"); }
 
 .container {
   width: 800px;
@@ -6820,7 +6821,7 @@ div#form {
   text-decoration: none;
   border-radius: 85%;
   background-color: #ff8707;
-  background-image: url("../img/bluechipTileT8.png");
+  background-image: url("views/img/bluechipTileT8.png");
   border: solid .5px darkslateblue;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6);
   font-family: 'Monoton'; }
@@ -6945,7 +6946,7 @@ div#capturing.links {
   float: left;
   line-height: 1.3rem;
   font-size: 1rem;
-  background-image: url("../img/iceland.jpg");
+  background-image: url("views/img/iceland.jpg");
   padding: 2% 4%;
   margin-top: 25px;
   max-height: 800px;
@@ -6981,4 +6982,65 @@ h1 {
   float: right;
   line-height: 1.5em;
   font-size: 1.3rem;
-  background-image: url("../img/T30.png"); }
+  background-image: url("views/img/T30.png"); }
+
+      
+.kcbb-ears {
+  opacity: .1;
+  font-family: "courier new", courier, monospace;
+  float: left;
+  
+  width: 0; 
+  height: 0; 
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent; 
+  border-bottom: 75px solid orange;
+}
+#kcbb-ears1 {
+ 
+  min-width: 30%;
+  position: fixed;
+  top: 15px; 
+
+}
+
+#kcbb-ears1:hover {
+  box-shadow: 0px 10px 50px #ff87074c;
+}
+
+#kcbb-ears1:after {
+  content: "FICTION " ;
+}
+
+#kcbb-ears1:before {
+  content: url("dist/txt/kcbb-ears.txt");
+}
+
+#kcbb-ears2 {
+  position: fixed;
+  top: 22px;
+  left: 60%;
+  float: right;
+  box-shadow: 0px 10px 50px #ff8707dc;
+  min-width: 30%; 
+}
+
+#kcbb-ears2:hover {
+  box-shadow: 0px 10px 50px #ff87074c;
+}
+
+#kcbb-ears2:after {
+  content: " ACCOUNTS";
+}
+
+#kcbb-ears2:before {
+  content: url("dist/txt/kcbb-ears.txt");
+}
+
+.ears { 
+  text-align: justify;
+  font-size: 13;
+  float: right;
+  max-width: 100%;
+
+}

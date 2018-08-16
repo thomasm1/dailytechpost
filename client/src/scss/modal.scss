@@ -4,16 +4,16 @@
     border:0;
     font-weight:300;
     min-width:100%;
-    font-size:1.2rem;
-    background-color:rgba(116, 186, 255, 0.363);    
+    font-size:1.1rem;
+    background-color:rgba(116, 186, 255, 0.2);    
   }
   
   #mmodalBtn {  
-    max-width:80%; 
+    max-width:100%; 
     line-height:130%;
     border-radius:5%;
     cursor:pointer;
-    padding-bottom:1em;
+    padding-bottom:.5em;
   }
   .mmodal{
     display:none;

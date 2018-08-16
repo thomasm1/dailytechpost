@@ -1,7 +1,8 @@
 @media (min-width: 401px) {
     .multi_drop_menu li li a {
-        color: silver;
+        color: aliceblue;
         background-color: teal;
+        z-index:60;
     }
 }
 .multi_drop_menu * {
@@ -35,7 +36,7 @@
 
 
 .multi_drop_menu ul {
-    width: 20%; 
+    width: 30%; 
 } 
 .multi_drop_menu ul li {
     z-index: 1;
@@ -74,7 +75,7 @@ ul.list-unstyled.list-spaced.left li:hover {
 }
  
 .multi_drop_menu li:hover>a {
-    color: #8d39fc;
+    color: yellow;
     opacity: 1;
     background-color: #004ea5;
 }
@@ -88,7 +89,7 @@ ul.list-unstyled.list-spaced.left li:hover {
 .multi_drop_menu li li {
     color: white; 
     float: none; 
-    width: 250px;
+    width: 300px;
 }
 
 .multi_drop_menu li li a {
@@ -135,6 +136,7 @@ li:hover>ul {
 li.nav-item > a.nav-link {
     background: color #9bc7ff;
     opacity:.8;
+    z-index:60;
 
 } 
 a.nav-link {
@@ -150,7 +152,9 @@ color:yellow;
  
 
 /******************** Navbar **********/
-
+li.nav-item.active { 
+    z-index:50;
+}
 
 .app-navbar {
     font-weight: 400;

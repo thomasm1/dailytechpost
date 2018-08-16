@@ -50,20 +50,20 @@
           </li> 
           
 					<li class="nav-item active">
-						<a class="nav-link" title="tmm FICTION" href="http://www.ourdailytechblog.net/_For_Cat_Eyes_Only_/index.html">
+						<a class="nav-link" title="tmm FICTION" href="#/_For_Cat_Eyes_Only_">
 							<span class="caret subdailytech">FOR_CAT
 								<br />EYES_ONLY</span>
 						</a>
 						<ul style="z-index:0" class="menu-left">
 							<li   >
 						 tmm FICTION 
-								<a style="z-index:199; " title="tmm FICTION" href="http://www.ourdailytechblog.net/_For_Cat_Eyes_Only_/index.html">For Cat Eyes Only:
+								<a style="z-index:199; " title="tmm FICTION" href="#/_For_Cat_Eyes_Only_">For Cat Eyes Only:
 									<i>Early Months of Win&#39;s Campaign</i>
 								</a>
 							</li>
 							<li style="z-index:199; ">
 							  tmm FICTION 
-								<a style="z-index:199; " title="tmm FICTION" href="http://www.ourdailytechblog.net/_For_Cat_Eyes_Only_/index.html#capturing">Fiction Excerpts From:
+								<a style="z-index:199; " title="tmm FICTION" href="#/_For_Cat_Eyes_Only_#capturing">Fiction Excerpts From:
 									<br />
 									<i>The Casperian Ancestries</i>
 									<br />
@@ -95,7 +95,11 @@
    
     </nav>   
 
-    <div class="container" id="foreground">
+
+
+    
+    <div class="container" id="foreground"><!-- /.container --> 
+   
     	<div class="row">
     		<div class="col-md-12" id="view">
 
@@ -107,8 +111,20 @@
                 <div class="card card-profile">
                
              
-                    <div ng-view="home" class="view"> </div>
-              
+                    <div ng-view class="view"> </div>
+                    <div id="planets"><form class="form">
+                      <input type="radio" name="reference" id="ref-annulus">
+                      <label for="ref-annulus">Annulus</label>
+                      <br>
+                      <input type="radio" name="reference" id="ref-planet" checked>
+                      <label for="ref-planet">Planets</label>
+                      <br>
+                      <input type="radio" name="reference" id="ref-sun">
+                      <label for="ref-sun">Sun</label>
+                      </form></div> 
+                  <div  id="map0"></div> 
+  
+          <script src="dist/js/planets.js"></script>  
                   <div class=" card-header"   > 
                     <button id="mmodalBtn" class="mbutton title     hover">
                         <h6 class=" subdailytech white" title="Machine Learning"><br />
@@ -122,19 +138,12 @@
                         <a class="cover  ">SOCIOLOGY   TOMORROW!</a>
                       </h6> 
                     </button>
-
-                  <div  id="map0"></div> 
-                    <script src="dist/js/planets.js"></script> 
-                    <div id="dag0" class="dag"></div>
-        
-        
+           
                   </div>
                 </div>
               </div>
         
-              <div class="col-lg-6"> 
-        
-        
+              <div class="col-lg-6">  
                 <div id="msimpleModal" class="mmodal">
                   <div class="mmodal-content">
                     <span class="mcloseBtn"> &nbsp;&times; &nbsp; </span>
@@ -173,6 +182,7 @@
                 <ul class="list-group media-list media-list-stream mb-4" id="center-col">
                   <li>
                     <div id="tech">
+                      
                       <div class="mod-behave ">
                         <div id="top"></div>
                         <div id="paragraph-july"></div>
@@ -184,7 +194,7 @@
         
                       </div>
                       <!-- blog-text.js  BEGINS HERE -->
-        
+                     
          
                       <div id="febarchive">
                       </div>
@@ -246,7 +256,7 @@
            </div>
       
           </div><!-- /.container -->
-        
+   
   
 	<div class="card-block" id="footer">
     <a class="nav-link" href="#/posts">post</a>

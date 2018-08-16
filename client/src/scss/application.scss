@@ -444,7 +444,7 @@ div.media-body.thesis {
 
 
   .container {
-min-height:1100px;
+min-height:1000px;
   background-image:url("img/bluechipTileT8.png");
   }
   div.panel-heading {
@@ -489,15 +489,15 @@ a.cover {
   }
 /* main*/
 #view {
-padding-top:120px;
+padding-top:80px;
 } 
  
 .card-profile-img {  
    border: none; 
-min-width: 60px;
-max-width: 60px;
-min-height:60px;
-max-height: 60px;
+min-width: 75px;
+max-width: 75px;
+min-height:75px;
+max-height: 75px;
 }
 div.card.card-profile  {
     background-color: #00b0ec;
@@ -514,7 +514,7 @@ div.card.mb-4 {
     height:100%;
 }
 p.mb-4 {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;
 }
@@ -600,4 +600,8 @@ div.col-md-4 > p,h3,h4 {
 /* POSTS */
 div.row#row-posts {
     overflow:scroll;
+}
+div#map0 {
+    max-height:280px;
+    max-width:330px;
 }

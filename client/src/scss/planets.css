@@ -1,21 +1,21 @@
  
   .form {
     position: absolute;
-    opacity:.7;
-    top:50rem;
+    opacity:.6;
+    top:0px;
     left: 0rem;
-    padding:10px;
+    padding:5px;
     margin:10px;
       color:blue;
       text-align:left;
       text-decoration:none; 
       font-family:'Monoton';
       background-color: #227bbac6;
-      box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+      box-shadow: 0px 10px 50px rgba(128, 182, 245, 0.877);
   } 
   .form:hover {
       font-weight: 500;
-      border:solid 1px silver; 
+      border:solid 1px lightsteelblue; 
       transition: margin 0.3s; 	}
   
   path {
@@ -23,9 +23,9 @@
     stroke: rgb(188, 188, 245);
     stroke-width: 2px;
   }
-  
+   
   .sun path {
-    fill: rgba(19, 67, 163, 0.863);
+    fill: rgba(121, 130, 250, 0.925);
     opacity:.5;
   }
   
@@ -34,7 +34,7 @@
     opacity:.6;
   }
   .annulus path {
-    fill: #101e79a9;
+    fill: #191f47a9;
     opacity:.6;
   } 
   div#planet {

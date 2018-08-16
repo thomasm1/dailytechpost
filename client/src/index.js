@@ -3,7 +3,8 @@
 require('./js/lib/application.min');  
 require('./js/modal');  
 require('./js/menu');  
-require('./js/force');  
+require('./js/force'); 
+// require('./js/planets'); 
 
 require('./js/blog-draft-aug');
 require('./js/blog-draft-june');
