@@ -7,6 +7,7 @@ require('./js/force');
 // require('./js/planets'); 
 
 require('./js/blog-draft-aug');
+require('./js/blog-draft-jul');
 require('./js/blog-draft-june');
 require('./js/blog-draft-may');
 require('./js/blog-draft-apr');

@@ -1,20 +1,28 @@
-console.log('blogger-july');
-var bloggerJuly = function () {
-blogpost24 = `<p class="firstparagraph">Planet Green dodged a bullet recently, as activists' climate change research officially gains legitimacy from the Supreme Court, albeit a few of their qualms ... But who could deny that if there is one thing that will save the earth, it's knowledge, knowledge far outweighs any other salvo. This is because the more data, the more accurate the models to indicate specific environmental needs and threats--<i>not to mention all the clues the data could reveal toward helping earth regain balance. </i></p><p>A.I. training would starve if the Supreme Court would have allowed administration clamp-downs on knowledge. After all, the overwhelming popular and professional opinions favor earth-friendly policies. 
+console.log('blogger-july');  
+
+  var bloggerJuly = function () {
+
+ 
+
+ blogpost24 = `<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka's of Technological Candy at a free tour's view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>
+ <p class="quote">While Google is still looking up at Amazon Web Services and Microsoft Azure when it comes to infrastructure cloud computing, it appears to be finding the balance between keeping engineers happy with cloud-native computing tools and courting enterprise company suits with service-level agreements and steak dinners.<sup>1</sup></p>`;
+ blogcite24 =   `
+ 
+ <p class="cite">1. <a href="https://cloud.google.com"   target="_blank">https://cloud.google.com
+ </a>
+ </p><p class="cite">1. <a href="https://www.geekwire.com/2018/google-cloud-ceo-diane-greene-wane-cloud-pricing-wars-never-want-win-price/"   target="_blank">https://www.geekwire.com/2018/google-cloud-ceo-diane-greene-wane-cloud-pricing-wars-never-want-win-price/
+ </a>
+ </p>`;
+
+ blogpost23 = `<p class="firstparagraph">Planet Green dodged a bullet recently, as activists' climate change research officially gains legitimacy from the Supreme Court, albeit a few of their qualms ... But who could deny that if there is one thing that will save the earth, it's knowledge, knowledge far outweighs any other salvo. This is because the more data, the more accurate the models to indicate specific environmental needs and threats--<i>not to mention all the clues the data could reveal toward helping earth regain balance. </i></p><p>A.I. training would starve if the Supreme Court would have allowed administration clamp-downs on knowledge. After all, the overwhelming popular and professional opinions favor earth-friendly policies. 
 <p class="quote">The Supreme Court on Monday denied the Trump administration’s plea to halt proceedings in a landmark lawsuit by young people seeking stronger federal action on climate change.<sup>1</sup>
 </p>`;
-blogcite24 = `<p class="footnotes">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
+blogcite23 = `<p class="footnotes">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
 </a>
 </p>
 <p class="cite">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
 </a>
 </p>
- `;
- 
-blogpost23 = `<p class="firstparagraph"> 
-</p>`;
-blogcite23 = `<p class="footnotes">1. <a href=" "   target="_blank"> 
-</a> </p>
  `;
 blogpost22 = `
 <p class="quote"><i>“It feels like a magical mirror that reflects your moves with images of all kinds of human activity – from sports and dance to martial arts, acting and beyond.”</i></br></br>
@@ -40,7 +48,7 @@ blogcite21 = `
 
   blogpost20 =  `<p class="firstparagraph">Space.com ...</p>
   <p class="quote">"NASA's Robonaut program and Roscosmos' FEDOR program seem to share the goal of creating robots that make it safer for humans to accomplish things in space that otherwise would be too dangerous for humans to attempt.<i> Still, the FEDOR androids' gun-wielding design might raise a few eyebrows."</i><sup>1</sup></p>
-  <img src="dist/img/droid.png" class="zoom" width="350px" />
+  <img src="dist/img/droid.jpg" class="zoom" width="288px" />
   `;
 blogcite20 = ` 
 <p class="footnotes">1. <a href="https://www.space.com/41253-russian-robots-fly-to-space.html"   target="_blank">https://www.space.com/41253-russian-robots-fly-to-space.html
@@ -252,9 +260,7 @@ Every technology follows a similar path of diszcovery, engineering, and transfor
 <sup>2</sup></p>
 <p>As the saying goes, <i>One crowded hour of glorious life is worth an age without a name.</i><sup>3</sup> And now the tide is high for Tech to venture out into the world and make a name for herself!
 `;
-  blogcite9 = ` 
-
-<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
+  blogcite9 = `<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
 </p>
 <p class="footnotes">2. <a href="https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era"   target="_blank">https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era</a>
 </p>
@@ -281,7 +287,7 @@ The genie is definitely out of the bottle, yet he or she is now at the keyboards
 Snapchat currently has 166 million users globally. <sup>2</sup>
 </p>
 <p> A chronic technical problem before May 2018 when SnapCrash went public   dating to October. <sup>1</sup> -- scalability challenges strike again!</p> 
-<img src="dist/img/snapchat.PNG" width="350" class="zoom" /><br /><br />
+<img src="dist/img/snapchat.jpg" width="350" class="zoom" /><br /><br />
 <p>But inquiring minds want to know, <i>What's the Story with Snapchat? </i>Not to mention the Conspiracy Theorists that blame Snapchat's devotion to Advertisers--too many distractions?</p>
 <p class="quote">
 [Snapchat] tweeted: “Some Snapchatters are having trouble with the app. We’re aware of the issue and working on a fix! We recommend staying logged into your account.”
@@ -297,7 +303,7 @@ This development has been coming for some time as Snapchat looks to placate adve
 <p class="footnotes">2. <a href=" http://www.tribuneindia.com/news/science-technology/snapchat-outage-hits-users-globally/480068.html"   target="_blank"> http://www.tribuneindia.com/news/science-technology/snapchat-outage-hits-users-globally/480068.html</a>
 </p>    
 <p class="footnotes">3. <a href="https://outage.report/snapchat" target="_blank">https://outage.report/snapchat</a></p>
- `
+ `;
   blogpost6 = `
  <p class="quote"><sup>0</sup><strong><small>
  The term “extropy,” coined in 1967, is generally used to describe life’s capacity to reverse the spread of entropy across space and time. </small></strong><sup>1</sup>
@@ -415,33 +421,34 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 
 `;
 
-  blogpost1 = `
-<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
+  blogpost1 = `<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
 </p>
 `;
 
   blogcite1 = `<p class="footnotes">1. <a href="https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632"   target="_blank">https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632</a>
 </p> 
 `;
-  var url =  [   {
- id: '24',
-    did: '07-30-18',
-    date: 'July 30, 2018',
+  var url =  [   
+       { id: '24',
+       did: '07-28-18',
+        date: 'July 28-29, 2018<br />Weekend',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: '',
+        post: blogpost24,
+        blogcite: blogcite24
+      }, 
+       {
+ id: '23',
+    did: '07-27-18',
+    date: 'July 27, 2018',
     author: 'by Thomas Maestas',
     cat3: 'Sociology Tomorrow!',
     title: 'Hooray for Planet Green!',
-    post: blogpost24,
-    blogcite: blogcite24
-   }, 
-   { id: '23',
-   did: '07-28-18',
-    date: 'July 28-29, 2018<br />Weekend',
-    author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: '',
     post: blogpost23,
     blogcite: blogcite23
-  }, 
+   }, 
+  
     {
       id: '22',
       did: '07-26-18',
@@ -566,7 +573,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
       did: '07-12-18',
       date: 'July 12, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'A.I.Now',
+      cat3: 'A.I.Now.',
       title: 'Tools of the A.I. Trade, Part III:<br />  Operation Architecture Drilldown',
       post: blogpost10,
       blogcite: blogcite10
@@ -587,7 +594,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
       did: '07-10-18',
       date: 'July 10, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'A.I.Now',
+      cat3: 'A.I.Now.',
       title: 'Tools of the A.I. Trade, Part I: <br />The Proliferation of Machine Learning Modeling Libraries ',
       post: blogpost8,
       blogcite: blogcite8
@@ -617,7 +624,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
       did: '07-06-18',
       date: 'July 6, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'A.I.Now',
+      cat3: 'A.I.Now.',
       title: 'The Canadian Mafia, Part II.<br />Data Better Recollected',
       post: blogpost5,
       blogcite: blogcite5
@@ -628,7 +635,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
       did: '07-05-18',
       date: 'July 5, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'A.I.Now',
+      cat3: 'A.I.Now.',
       title: 'The Canadian Mafia, Part I.<br /> On the Good-Natured Vision of the Godfathers of A.I.',
       post: blogpost4,
       blogcite: blogcite4
@@ -638,7 +645,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
       did: '07-04-18',
       date: 'July 4, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'A.I.Now',
+      cat3: 'A.I.Now.',
       title: 'Training Data, Big and Beloved Data<br />Big Data\s Most Notorious Rule-Breaker and Rule-Enforcer: A.I.',
       post: blogpost3,
       blogcite: blogcite3

@@ -81,7 +81,8 @@ __webpack_require__(7);
 __webpack_require__(8);
 __webpack_require__(9);
 __webpack_require__(10);
-__webpack_require__(11);      
+__webpack_require__(11);
+__webpack_require__(12);      
    
 
 
@@ -549,21 +550,54 @@ document.getElementById("ul").innerHTML = `
 console.log('blogger-july');  
 
   var bloggerJuly = function () {
+    blogpost10 =  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
 
-    blogpost32 =  `<p class="firstparagraph">Classification and Regression (Decision) Trees are not just accurate, multipurpose and foundational to predictive machine learning algorithms (e.g. random forests, bayesian trees, bagging), but the trees' final product reveals the different rationale for the output. Printed onto a sheet   of paper, both statistical practitioner and the domain professional intuitively and heuristically understand practical use for an analysis. This July 2017 Cancer study exemplifies the utility of healthcare-based algorithms of analysis ... 
+    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    </p><br />
+    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p > </p>.
+ `;
+    blogcite10 = ` 
+    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    </a>
+    </p>`
+    ;
+     
+    blogpost9 =  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
+
+    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    </p><br />
+    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p > </p>.
+ `;
+    blogcite9 = ` https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
+    <p class="cite">1. <a href="https://www.xlstat.com/en/solutions/features/classification-and-regression-trees"   target="_blank">https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
+    </a>
+    </p>`
+    ;
+     
+    blogpost8 =  `<p class="firstparagraph">Classification and Regression (Decision) Trees are not just accurate, multipurpose and foundational to predictive machine learning algorithms (e.g. random forests, bayesian trees, bagging), but the trees' final product reveals the different rationale for the output. Printed onto a sheet   of paper, both statistical practitioner and the domain professional intuitively and heuristically understand practical use for an analysis. This July 2017 Cancer study exemplifies the utility of healthcare-based algorithms of analysis ... 
     </p>
     <p class="quote">The aim of this study was to develop and validate a clinical predictive model for 1-year mortality among patients with colon cancer who survive for at least 30 days after surgery.<br /><br />Random forest, genetic algorithms and classification and regression trees were combined in order to identify the variables and partition points that optimally classify patients by risk of mortality. The resulting decision tree was categorized into four risk categories. Split-sample and bootstrap validation were performed.<sup>1</sup>
     </p><br />
     <img src="dist/img/irisCART.jpg" width="350px" class="zoom" /><br />
     <p >And, now that sound methodology meets an increasingly user-friendly Machine Learning software toolset for wider practical applications, beginning firstly within healthcare technologies <i>and that second opinion!</i></p>.
  `;
-    blogcite32  = `Image credits: https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
+    blogcite8 = `Image credits: https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
     <p class="cite">1. <a href="https://www.dovepress.com/combining-statistical-techniques-to-predict-postsurgical-risk-of-1-yea-peer-reviewed-article-CLEP#"   target="_blank">https://www.dovepress.com/combining-statistical-techniques-to-predict-postsurgical-risk-of-1-yea-peer-reviewed-article-CLEP#
     </a>
     </p>`
     ;
     
-    blogpost31 =  `<p class="firstparagraph">Predictive analytics  has slowly progressed in sophistication over the past 45 years, and the current nexus with powerful machine-learning tools changes the health game: </p>
+    blogpost7 =  `<p class="firstparagraph">Predictive analytics  has slowly progressed in sophistication over the past 45 years, and the current nexus with powerful machine-learning tools changes the health game: </p>
     <p class="quote"> A report by ABI Research June 2018 report highlighted a significant rise in patient monitoring devices, including AI for home-based preventative healthcare and predictive analytics, which could save hospitals around $52bn by 2021.<br /><br />
 
     Accenture’s Digital Health Technology Vision 2018 report also claims that 85% of health executives in the US believe that every human will be directly impacted on a daily basis by an AI-based decision within the next three years.<br /><br />
@@ -600,7 +634,7 @@ console.log('blogger-july');
     studies in which selection bias or confounding is
     likely to occur .<sup>3</sup></p>
     <p>So, nowadays we don't ask for a second opinion when we can ask for a trillion opinions narrowed down to one heck of a second opinion!</p>`;
-    blogcite31  = `
+    blogcite7  = `
     <p class="cite">1. <a href="https://www.healthcareglobal.com/technology/ai-seen-less-threat-and-welcomed-health-professionals-research-reveals"   target="_blank">https://www.healthcareglobal.com/technology/ai-seen-less-threat-and-welcomed-health-professionals-research-reveals
     </a>
     </p>
@@ -611,7 +645,7 @@ console.log('blogger-july');
     </p>`
     ;
     
-    blogpost30 = `<p class="quote">  <i>[Intel's]  i9-8950HK processor is the first mobile Intel processor with six cores and 12 threads. It comes fully unlocked. It has the new Intel thermal Velocity Boost, which automatically increases clock frequency up to 200 MHz if the processor temperature is low enough and there's enough turbo power, giving a turbo frequency of up to 4.8 GHz.</i></p>
+    blogpost6 = `<p class="quote">  <i>[Intel's]  i9-8950HK processor is the first mobile Intel processor with six cores and 12 threads. It comes fully unlocked. It has the new Intel thermal Velocity Boost, which automatically increases clock frequency up to 200 MHz if the processor temperature is low enough and there's enough turbo power, giving a turbo frequency of up to 4.8 GHz.</i></p>
     <p class="quote" The i9-8950HK processor is the first mobile Intel processor with six cores and 12 threads. It comes fully unlocked. It has the new Intel thermal Velocity Boost, which automatically increases clock frequency up to 200 MHz if the processor temperature is low enough and there's enough turbo power, giving a turbo frequency of up to 4.8 GHz.</i>
     </p>
     <p class="firstparagraph"> Needs shape our inventions and our inventions shape our needs: With the brand new set of mobile computing requirements serve up utility for the i9.  Intel's advances pale in comparison, however, to GPU and newer computing trends. This theme arises time after time in my posts, but mathematics will rewrite the rules of performance . . .</p>
@@ -635,7 +669,7 @@ The result of this predictive problem solving is that AI calculations can be don
 Developers may not benefit much from the new processors, Enderle said, because "with IDF shut down, Intel's developer efforts are largely moot."
 </p> `;
 
-    blogcite30 = ` 
+    blogcite6 = ` 
     <p class="cite">1. <a href="https://www.technewsworld.com/story/85252.html"   target="_blank">https://www.technewsworld.com/story/85252.html
     </a>
     </p>
@@ -644,37 +678,37 @@ Developers may not benefit much from the new processors, Enderle said, because "
     </a>
     </p>
      `;
-    blogpost29 = `<p class="firstparagraph">Batteries optimized by machine learning is a feature in the latest version of Android OS, Pie. Some may roll theirs, but the only of desserts that share nameship with the great constant, pi. <i>Mystical 3-1-4 also features A.I.-empowered Textual Analysis, which opens to multiple new possibilities:</i></p>
+    blogpost5 = `<p class="firstparagraph">Batteries optimized by machine learning is a feature in the latest version of Android OS, Pie. Some may roll theirs, but the only of desserts that share nameship with the great constant, pi. <i>Mystical 3-1-4 also features A.I.-empowered Textual Analysis, which opens to multiple new possibilities:</i></p>
     <p class="quote">The other new machine learning-powered feature is the smart text selection tool that recognizes the meaning of the text you selected and then allows you to suggest relevant actions like opening Google Maps or bringing up the share dialog for an address.<sup>1</sup></p>
     <p>Further, Android Pie's <i>Digital Wellness</i> features offer all the trending self-obedience features--not the least of which FitBit's guilt-inducing, and highly effective,<strong>walk prompts--already the bots are running my life and I obey!</p></strong>`;
-    blogcite29 = ` 
+    blogcite5 = ` 
     <p class="cite">1. <a href="https://techcrunch.com/2018/08/06/say-hello-to-android-9-pie/"   target="_blank">https://techcrunch.com/2018/08/06/say-hello-to-android-9-pie/
     </a>
     </p>
      `;
-     blogpost28 =  `<p class="quote"><i>Bone is constantly turning over through a process in which cells called osteoclasts dig tunnels through bone, and then cells called osteoblasts re-pave those tunnels with new bone. Econs acknowledges that it sounds like an inefficient system, but it has to work this way because you obviously need to be able to use your bones while those repairs are taking place.</i><br /><br />
+     blogpost4 =  `<p class="quote"><i>Bone is constantly turning over through a process in which cells called osteoclasts dig tunnels through bone, and then cells called osteoblasts re-pave those tunnels with new bone. Econs acknowledges that it sounds like an inefficient system, but it has to work this way because you obviously need to be able to use your bones while those repairs are taking place.</i><br /><br />
      --Michael Econ, physician and member of the American Society for Bone and Mineral Research   
      <p class="firstparagraph"><i>Bone loss in space can reach 5 to 10% over the course of a year, however the sure cure is Digital Responsibility, the trending fad of 2018, spans from the upcoming Android Pie's in-device digital behavioral tools across the spectrum to Fitbit, Youtube, and others' timed get-up-and-walk push notifications.       </p>  `;
-     blogcite28 = `<p class="cite">1. <a href="https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones"   target="_blank">https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones
+     blogcite4 = `<p class="cite">1. <a href="https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones"   target="_blank">https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones
      </a>
      </p> 
      `;
-  blogpost27 =  `<p class="quote"><i>Responsive experience with real-time inferencing. There are many tasks where speed matters. This includes interactive speech, visual search, and video recommendations. As AI models increase in accuracy and complexity, traditional CPUs can’t keep up, and the Tesla P4 GPUs can cut latency by an order of magnitude.<br /><br />
+  blogpost3 =  `<p class="quote"><i>Responsive experience with real-time inferencing. There are many tasks where speed matters. This includes interactive speech, visual search, and video recommendations. As AI models increase in accuracy and complexity, traditional CPUs can’t keep up, and the Tesla P4 GPUs can cut latency by an order of magnitude.<br /><br />
   Video decoding. The Tesla P4 has a dedicated hardware-accelerated decode engine that works in parallel with the GPU, enabling it to transcode and infer up to 35 HD video streams in real time. The integration of deep learning into video pipelines lets organizations offer smarter video services.<br /><br />
   The inferencing engine that the Tesla P4 uses is based on Nvidia’s Pascal architecture and is designed to increase the performance of servers running deep learning workloads. Google didn’t give a date for general availability other than saying it’s “coming soon” to its public cloud.</i></p>  
   <p class="firstparagraph">Toys, if they are offered as presents remain unconditional gifts, and yet the devotion they procure make for a reciprocal gift: Google's Developer Tools and little to no cost serve the same purpose as Microsoft's free provisions of Integrated Develepment Environments, i.e. VS Code and recent purchase of GitHub. The New Data Economy, applies as much to the developers' field as it does to consumers'. </p>  `;
-  blogcite27 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
+  blogcite3 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
   </a>
   </p> 
   `;
-  blogpost26 = `<p class="quote"><i>Google announced it is making Nvidia's Tesla P4 GPU available as a cloud service, enabling more businesses to get started with AI projects quicklyi><sup>1</sup></p>
+  blogpost2  = `<p class="quote"><i>Google announced it is making Nvidia's Tesla P4 GPU available as a cloud service, enabling more businesses to get started with AI projects quicklyi><sup>1</sup></p>
   <p class="firstparagraph">API Services &agrave; la Google Cloud have become a new Hallmark--available for 12-month free trial--of <i>Google's ambitious  kit: Cloud IoT (Internet of Things) API, Cloud Genomics API, Cloud Machine Learning Engine API, among dozens of others.</i> Rivers of Kubernetes Data,Tensor-Processing-Unit Automotons for Oompah-Loompahs, and the ever-lasting flavor of chewing gum in the name of publicly available data for your tasting pleasure!   </p>`;
-  blogcite26 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
+  blogcite2  = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
   </a>
   </p>`; 
 
    
-   blogpost25 = `<p class="quote"><i>In July, Blackrock — the world’s largest exchange-traded fund (ETF) — announced that it has launched a working group to assess the potential of investing in Bitcoin.  <br /><br />
+   blogpost1 = `<p class="quote"><i>In July, Blackrock — the world’s largest exchange-traded fund (ETF) — announced that it has launched a working group to assess the potential of investing in Bitcoin.  <br /><br />
     Blackrock’s move could be described as a preemptive strike to avoid missing the crypto bus. Goldman Sachs is making headway with cryptocurrency involvement and Blackrock is following suit.</i><sup>1</sup></p>
     <p class="firstparagraph">
     <p class="quote">Fintech broke onto the scene as a disruptive force following the 2008 crisis, but the industry's influence on the broader financial services system is changing.
@@ -688,7 +722,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
     As this happens, the fintech industry is on the cusp of becoming an integral component of the broader financial services ecosystem. But it will likely first have to go through a complete credit cycle, and survive an economic downturn like the one that set the stage for its arrival in 2008, for this to happen.<sup>2</sup>
     </p>
     `;
-    blogcite25 = `
+    blogcite1 = `
     <p class="cite">1. <a href="https://cointelegraph.com/news/institutional-investors-and-fintech-will-wall-street-go-head-first-into-crypto"   target="_blank">https://cointelegraph.com/news/institutional-investors-and-fintech-will-wall-street-go-head-first-into-crypto
     </a>
     </p> 
@@ -696,6 +730,201 @@ Developers may not benefit much from the new processors, Enderle said, because "
   </a>
   </p> 
     `; 
+ 
+  var url =  [ 
+    {
+      id: '14',
+      did: '08-16-18',
+      date: 'August 16, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: 'Annual Prime Day , Part II:<br /> The Credit Card Hangover',
+      post: blogpost14,
+      blogcite: blogcite14
+    },
+    {
+      id: '13',
+      did: '08-15-18',
+      date: 'August 15, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Web Dev Affairs',
+      title: 'Prime Day\'s Annual All-You-Can-Eat Buffet, Part I<br />',
+      post: blogpost13,
+      blogcite: blogcite13
+    },
+    {
+      id: '12',
+      did: '08-14-18',
+      date: 'August 14, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Musing Blockchain',
+      title: 'Crypto Valley, Switzerland',
+      post: blogpost12,
+      blogcite: blogcite12
+    },
+ 
+    {
+      id: '11',
+      did: '08-12-18',
+      date: 'August 12-13, 2018<br />Weekend',
+      author: 'by Thomas Maestas',
+      cat3: 'A.I.Now.',
+      title: 'Tools of the A.I. Trade, Part III:<br />  Operation Architecture Drilldown',
+      post: blogpost11,
+      blogcite: blogcite11
+    },
+
+    {
+      id: '10',
+      did: '08-11-18',
+      date: 'August 11, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Web Dev Affairs',
+      title: 'The Good Doctor, Part IV: Good Doctor, Heal Thyself!',
+      post: blogpost10,
+      blogcite: blogcite10
+    },
+    {
+      id: '9',
+      did: '08-10-18',
+      date: 'August 10, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'A.I.Now.',
+      title: 'The Good Doctor, Part III: Magneto Encephelop',
+      post: blogpost9,
+      blogcite: blogcite9
+    }, 
+    {
+    id: '8',
+       did: '08-09-18',
+       date: 'August 9, 2018',
+       author: 'by Thomas Maestas',
+       cat3: 'Sociology Tomorrow!',
+       title: 'The Good Doctor, Part II:  <br />About that Second Opinion . . . <br />',
+       post: blogpost8,
+       blogcite: blogcite8
+     },
+     {
+       id: '7',
+       did: '08-08-18',
+       date: 'August 8, 2018',
+       author: 'by Thomas Maestas',
+       cat3: 'A.I.Now.',
+       title: 'The Good Doctor, Part I: <br /> How A.I.-Driven Predictive Analytics Rewrites Healthcare',
+       post: blogpost7,
+       blogcite: blogcite7
+     },
+     {
+       id: '6',
+           did: '08-07-18',
+           date: 'August 7, 2018',
+           author: 'by Thomas Maestas',
+           cat3: 'Web Dev Affairs',
+           title: 'New Math &amp; the Speed of Antiquation, a Case Study:<br />Mobile 8th Generation Intel',
+           post: blogpost6,
+           blogcite: blogcite6
+         },
+         {
+           id: '5',
+       did: '08-06-18',
+       date: 'August 6, 2018',
+       author: 'by Thomas Maestas',
+       cat3: 'Web Dev Affairs',
+       title: 'Android Pi(e) Day',
+       post: blogpost5,
+       blogcite: blogcite5
+     },
+     {
+       id: '4',
+       did: '08-04-18',
+       date: 'August 4-5, 2018<br />Weekend',
+       author: 'by Thomas Maestas',
+       cat3: 'Sociology Tomorrow!',
+       title: 'The New Age of Digital Responsibility',
+       post: blogpost4,
+       blogcite: blogcite4
+     },
+     {
+       id: '3',
+       did: '08-03-18',
+       date: 'August 3, 2018',
+       author: 'by Thomas Maestas',
+       cat3: ' ',
+       title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Glass Elevator into the Cloud',
+       post: blogpost3,
+       blogcite: blogcite3
+     },
+     {
+       id: '2',
+      did: '08-02-18',
+       date: 'August 02, 2018<br />Weekend',
+       author: 'by Thomas Maestas',
+       cat3: 'Web Dev Affairs',
+       title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Google\'s Golden Ticket',
+       post: blogpost2,
+       blogcite: blogcite2
+     },
+     {
+       id: '1', 
+         did: '08-01-18',
+         date: 'August 1, 2018',
+         author: 'by Thomas Maestas',
+         cat3: 'Musing Blockchain',
+         title: 'Fintech Auchtung!',
+         post: blogpost1,
+         blogcite: blogcite1
+       } 
+
+  ];
+
+  for (i = 0; i < url.length; i++) {
+    var cat = ` 
+    <div id="${url[i].did}" class="blogDiv"> 
+    <hr />  
+    <a href="#top"><button>Top</button></a>  
+    <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
+    <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5> 
+    <p id="author" class="  author">${url[i].author}</p>   
+    <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+    <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
+    <br />
+    <div id="post">${url[i].post}
+    </div>
+    <div id="blogcite">${url[i].blogcite}
+    </div>`;
+    document.getElementById("paragraph-aug").innerHTML += cat;
+  }
+
+  for (i = 0; i < url.length; i++) {
+    var catMod = `
+  <div id="mod_${url[i].did}" class="blogDivMod"> 
+  <hr />  
+  <a href="#top-mod"><button>Top</button></a>   
+  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
+  <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5>  
+  <p id="author" class="  author">${url[i].author}</p>   
+  <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+  <h6  id="title"   class="dailytitle cha-pternumber">${url[i].title}</h6>
+  <br />
+  <div id="post">${url[i].post}</div>
+  </div>
+ <div id="blogcite">${url[i].blogcite}
+ </div>`;
+    document.getElementById("paragraph-aug-mod").innerHTML += catMod;
+  }
+
+};
+bloggerJuly();
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+console.log('blogger-july');  
+
+  var bloggerJuly = function () {
+
+ 
 
  blogpost24 = `<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka's of Technological Candy at a free tour's view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>
  <p class="quote">While Google is still looking up at Amazon Web Services and Microsoft Azure when it comes to infrastructure cloud computing, it appears to be finding the balance between keeping engineers happy with cloud-native computing tools and courting enterprise company suits with service-level agreements and steak dinners.<sup>1</sup></p>`;
@@ -953,9 +1182,7 @@ Every technology follows a similar path of diszcovery, engineering, and transfor
 <sup>2</sup></p>
 <p>As the saying goes, <i>One crowded hour of glorious life is worth an age without a name.</i><sup>3</sup> And now the tide is high for Tech to venture out into the world and make a name for herself!
 `;
-  blogcite9 = ` 
-
-<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
+  blogcite9 = `<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
 </p>
 <p class="footnotes">2. <a href="https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era"   target="_blank">https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era</a>
 </p>
@@ -1116,88 +1343,14 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 
 `;
 
-  blogpost1 = `
-<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
+  blogpost1 = `<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
 </p>
 `;
 
   blogcite1 = `<p class="footnotes">1. <a href="https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632"   target="_blank">https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632</a>
 </p> 
 `;
-  var url =  [  {
-    id: '32',
-       did: '08-09-18',
-       date: 'August 9, 2018',
-       author: 'by Thomas Maestas',
-       cat3: 'Sociology Tomorrow!',
-       title: 'The Good Doctor, Part II:  <br />About that Second Opinion . . . <br />',
-       post: blogpost32,
-       blogcite: blogcite32
-      },    {
-    id: '31',
-       did: '08-08-18',
-       date: 'August 8, 2018',
-       author: 'by Thomas Maestas',
-       cat3: 'A.I.Now.',
-       title: 'The Good Doctor, Part I: <br /> How A.I.-Driven Predictive Analytics Rewrites Healthcare',
-       post: blogpost31,
-       blogcite: blogcite31
-      },  {
-        id: '30',
-           did: '08-07-18',
-           date: 'August 7, 2018',
-           author: 'by Thomas Maestas',
-           cat3: 'Web Dev Affairs',
-           title: 'New Math &amp; the Speed of Antiquation, a Case Study:<br />Mobile 8th Generation Intel',
-           post: blogpost30,
-           blogcite: blogcite30
-          }, {
-    id: '29',
-       did: '08-06-18',
-       date: 'August 6, 2018',
-       author: 'by Thomas Maestas',
-       cat3: 'Web Dev Affairs',
-       title: 'Android Pi(e) Day',
-       post: blogpost29,
-       blogcite: blogcite29
-      },  {
-    id: '28',
-       did: '08-04-18',
-       date: 'August 4-5, 2018<br />Weekend',
-       author: 'by Thomas Maestas',
-       cat3: 'Sociology Tomorrow!',
-       title: 'The New Age of Digital Responsibility',
-       post: blogpost28,
-       blogcite: blogcite28
-      },   {
-    id: '27',
-       did: '08-03-18',
-       date: 'August 3, 2018',
-       author: 'by Thomas Maestas',
-       cat3: ' ',
-       title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Glass Elevator into the Cloud',
-       post: blogpost27,
-       blogcite: blogcite27
-      }, 
-      { id: '26',
-      did: '08-02-18',
-       date: 'August 02, 2018<br />Weekend',
-       author: 'by Thomas Maestas',
-       cat3: 'Web Dev Affairs',
-       title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Google\'s Golden Ticket',
-       post: blogpost26,
-       blogcite: blogcite26
-     }, 
-       {
-         id: '25',
-         did: '08-01-18',
-         date: 'August 1, 2018',
-         author: 'by Thomas Maestas',
-         cat3: 'Musing Blockchain',
-         title: 'Fintech Auchtung!',
-         post: blogpost25,
-         blogcite: blogcite25
-       }, 
+  var url =  [   
        { id: '24',
        did: '07-28-18',
         date: 'July 28-29, 2018<br />Weekend',
@@ -1209,8 +1362,8 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
       }, 
        {
  id: '23',
-    did: '07-30-18',
-    date: 'July 30, 2018',
+    did: '07-27-18',
+    date: 'July 27, 2018',
     author: 'by Thomas Maestas',
     cat3: 'Sociology Tomorrow!',
     title: 'Hooray for Planet Green!',
@@ -1482,7 +1635,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 bloggerJuly();
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
  
@@ -2128,7 +2281,7 @@ bloggerJune();
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
  
@@ -2565,7 +2718,7 @@ bloggerMay();
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 console.log('blogger-apr');
@@ -3207,7 +3360,7 @@ var bloggerApr = function () {
 bloggerApr();
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 console.log('blogger-mar');
@@ -4280,7 +4433,7 @@ document.getElementById("paragraph-mar-mod").innerHTML += catMod;
 bloggerMar();
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 console.log('blogger-feb');
@@ -5490,7 +5643,7 @@ document.getElementById("paragraph-feb-mod").innerHTML += catMod;
 bloggerFeb();
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
  
