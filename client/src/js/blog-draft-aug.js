@@ -1,6 +1,55 @@
-console.log('blogger-july');  
+console.log('blogger-aug');  
 
-  var bloggerJuly = function () {
+  var bloggerAug= function () {
+blogpost13 =  `<p class="firstparagraph"> 
+</p>
+<p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
+
+The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+</p><br />
+<img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+<p > </p>.
+`;
+blogcite13 = `
+<p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+</a>
+</p>
+`;
+    blogpost12=  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
+
+    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    </p><br />
+    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p > </p>.
+ `;
+    blogcite12 = ` 
+    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    </a>
+    </p>`
+    ;   
+     blogpost11 =  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
+
+    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    </p><br />
+    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p > </p>.
+ `;
+    blogcite11 = ` 
+    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    </a>
+    </p>`
+    ;
+
     blogpost10 =  `<p class="firstparagraph"> 
     </p>
     <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
@@ -20,11 +69,7 @@ console.log('blogger-july');
      
     blogpost9 =  `<p class="firstparagraph"> 
     </p>
-    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
-
-    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
-
-    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    <p class="quote">. Arrays of SQUIDs (superconducting quantum interference devices) are currently the most common magnetometer, while the SERF (spin exchange relaxation-free) magnetometer is being investigated for future machines.<sup>1</sup>
     </p><br />
     <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
     <p > </p>.
@@ -182,14 +227,14 @@ Developers may not benefit much from the new processors, Enderle said, because "
   </p> 
     `; 
  
-  var url =  [ 
+  var url =  [  
     {
       id: '14',
       did: '08-16-18',
       date: 'August 16, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: 'Annual Prime Day , Part II:<br /> The Credit Card Hangover',
+      title: ' ',
       post: blogpost14,
       blogcite: blogcite14
     },
@@ -199,17 +244,17 @@ Developers may not benefit much from the new processors, Enderle said, because "
       date: 'August 15, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Web Dev Affairs',
-      title: 'Prime Day\'s Annual All-You-Can-Eat Buffet, Part I<br />',
+      title: 'Quantum Data',
       post: blogpost13,
       blogcite: blogcite13
-    },
+    }, 
     {
       id: '12',
       did: '08-14-18',
       date: 'August 14, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Musing Blockchain',
-      title: 'Crypto Valley, Switzerland',
+      title: ' ',
       post: blogpost12,
       blogcite: blogcite12
     },
@@ -220,7 +265,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
       date: 'August 12-13, 2018<br />Weekend',
       author: 'by Thomas Maestas',
       cat3: 'A.I.Now.',
-      title: 'Tools of the A.I. Trade, Part III:<br />  Operation Architecture Drilldown',
+      title: ' ',
       post: blogpost11,
       blogcite: blogcite11
     },
@@ -365,4 +410,4 @@ Developers may not benefit much from the new processors, Enderle said, because "
   }
 
 };
-bloggerJuly();
+bloggerAug();

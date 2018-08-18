@@ -2,7 +2,9 @@ var dailyTech = angular.module('dailyTech',['ngRoute']);
 //
 dailyTech.config(function($routeProvider){
 	$routeProvider.when('/', { 
-		templateUrl: 'views/home.html'
+		controller:'HomeController',
+		templateUrl: 'views/home.html',
+
 	})
 	.when('/archives', {
 		controller:'ArchivesController',
@@ -34,8 +36,8 @@ dailyTech.config(function($routeProvider){
 		redirectTo: '/'
 	});
  
-	dailyTech.controller('CatsController', ['$scope', function ($scope){
-var cats = '';
+	dailyTech.controller('HomeController', ['$scope', function ($scope){
+console.log("home");
 	}]);
 	
 });

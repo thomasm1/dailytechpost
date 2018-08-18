@@ -547,9 +547,42 @@ document.getElementById("ul").innerHTML = `
 /* 5 */
 /***/ (function(module, exports) {
 
-console.log('blogger-july');  
+console.log('blogger-aug');  
 
-  var bloggerJuly = function () {
+  var bloggerAug= function () {
+    blogpost12=  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
+
+    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    </p><br />
+    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p > </p>.
+ `;
+    blogcite12 = ` 
+    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    </a>
+    </p>`
+    ;   
+     blogpost11 =  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
+
+    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
+
+    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    </p><br />
+    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p > </p>.
+ `;
+    blogcite11 = ` 
+    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    </a>
+    </p>`
+    ;
+
     blogpost10 =  `<p class="firstparagraph"> 
     </p>
     <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
@@ -569,11 +602,7 @@ console.log('blogger-july');
      
     blogpost9 =  `<p class="firstparagraph"> 
     </p>
-    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
-
-    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
-
-    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
+    <p class="quote">. Arrays of SQUIDs (superconducting quantum interference devices) are currently the most common magnetometer, while the SERF (spin exchange relaxation-free) magnetometer is being investigated for future machines.<sup>1</sup>
     </p><br />
     <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
     <p > </p>.
@@ -731,7 +760,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
   </p> 
     `; 
  
-  var url =  [ 
+  var url =  [ /*
     {
       id: '14',
       did: '08-16-18',
@@ -751,7 +780,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
       title: 'Prime Day\'s Annual All-You-Can-Eat Buffet, Part I<br />',
       post: blogpost13,
       blogcite: blogcite13
-    },
+    },*/
     {
       id: '12',
       did: '08-14-18',
@@ -914,7 +943,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
   }
 
 };
-bloggerJuly();
+bloggerAug();
 
 /***/ }),
 /* 6 */
