@@ -1,54 +1,58 @@
 console.log('blogger-aug');  
 
-  var bloggerAug= function () {
+  var bloggerAug= function () { 
+   
+    blogpost15 =  ` `;
+    blogcite15 = `<p class="cite">1. <a href="https://seas.yale.edu/news-events/news/quantum-technology-chip"   target="_blank">https://seas.yale.edu/news-events/news/quantum-technology-chip
+    </a>
+    </p>
+    <p class="cite">1. <a href="https://arxiv.org/abs/1302.5621"   target="_blank">https://arxiv.org/abs/1302.5621
+    </p>
+    <p class="cite">1. <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
+    </a>
+    </p>
+    
+    `;
+    blogpost14 =  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote"> 
+    <p > </p>.
+    `;
+    blogcite14 = ` 
+    <p class="cite">1. <a href="https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/"   target="_blank">https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/
+    </a>
+    </p>
+    <p class="cite">1. <a href="https://scitechdaily.com/physicists-teleport-information-in-a-solid-state-system/amp/"   target="_blank">https://scitechdaily.com/physicists-teleport-information-in-a-solid-state-system/amp/
+    </a>
+    </p>
+    `;
 blogpost13 =  `<p class="firstparagraph"> 
-</p>
-<p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
-
-The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
-
-Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
-</p><br />
-<img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
-<p > </p>.
+</p><p class="quote"> 
+<p >“Historically, magnetism and superconductivity were very disparate fields of physics,” Birge said. “The 1960s’ point of view was that if you were to bring a ferromagnet near a superconductor, you would kill the conductivity.<br /><br />
+“It was found that you can put a ferromagnet near a superconductor; in fact, you can even make a ‘sandwich’—superconductor, ferromagnet, superconductor,” said Joseph Glick, a former doctorate student in Birge’s lab and the paper’s lead author. “Any sandwich of this type is called a Josephson junction, which is at the heart of everything we are doing.<sup>1</sup> </p> 
 `;
-blogcite13 = `
-<p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+blogcite13 = `  
+<p class="cite">1. <a href="https://msutoday.msu.edu/news/2018/msu-physicists-solve-a-storied-problem/"   target="_blank">https://msutoday.msu.edu/news/2018/msu-physicists-solve-a-storied-problem/
 </a>
 </p>
 `;
     blogpost12=  `<p class="firstparagraph"> 
     </p>
-    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
-
-    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
-
-    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
-    </p><br />
-    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
-    <p > </p>.
- `;
-    blogcite12 = ` 
-    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    <p class="quote"> <sup>1</sup>
+    </p><br />    <p > </p>`;
+    blogcite12 =  `<p class="cite">1. <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
     </a>
-    </p>`
-    ;   
-     blogpost11 =  `<p class="firstparagraph"> 
+    </p>`;   
+     blogpost11 =  `<p class="firstparagraph"> 2
     </p>
-    <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
-
-    The main element in this predictive maintenance (PM) is condition-based monitoring (CBM)
-
-    Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
-    </p><br />
-    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    <p class="quote">While some attempts to detect social-media accounts of malicious actors rely on content or language filters that terrorists and disinformers have proved capable of confusing, Mr. Alvari’s algorithm looks for accounts that spread content further and fas                                                                                                         ter than expected. Since this is the goal of terrorist recruiters and propagandists alike, the method could be on the front lines of algorithmic filtering across social networks. Humans still need to make the final determination, to avoid false positives. <sup>1</sup>
+    </p><br />  
     <p > </p>.
  `;
     blogcite11 = ` 
-    <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
+    <p class="cite">1. <a href="https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h"   target="_blank">https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h
     </a>
-    </p>`
-    ;
+    </p>`;
 
     blogpost10 =  `<p class="firstparagraph"> 
     </p>
@@ -59,8 +63,7 @@ blogcite13 = `
     Addressing Sensor Challenges and Demands for Future Servicing<sup>1</sup>
     </p><br />
     <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
-    <p > </p>.
- `;
+    <p > </p>`;
     blogcite10 = ` 
     <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
     </a>
@@ -70,11 +73,10 @@ blogcite13 = `
     blogpost9 =  `<p class="firstparagraph"> 
     </p>
     <p class="quote">. Arrays of SQUIDs (superconducting quantum interference devices) are currently the most common magnetometer, while the SERF (spin exchange relaxation-free) magnetometer is being investigated for future machines.<sup>1</sup>
-    </p><br />
-    <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
+    </p><br /> 
     <p > </p>.
  `;
-    blogcite9 = ` https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
+    blogcite9 = `  
     <p class="cite">1. <a href="https://www.xlstat.com/en/solutions/features/classification-and-regression-trees"   target="_blank">https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
     </a>
     </p>`
@@ -238,12 +240,13 @@ Developers may not benefit much from the new processors, Enderle said, because "
       post: blogpost14,
       blogcite: blogcite14
     },
+ 
     {
       id: '13',
       did: '08-15-18',
       date: 'August 15, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
+      cat3: 'Sociology Tomorrow!',
       title: 'Quantum Data',
       post: blogpost13,
       blogcite: blogcite13
@@ -253,8 +256,8 @@ Developers may not benefit much from the new processors, Enderle said, because "
       did: '08-14-18',
       date: 'August 14, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'Musing Blockchain',
-      title: ' ',
+      cat3: 'Quantum Data',
+      title: '',
       post: blogpost12,
       blogcite: blogcite12
     },

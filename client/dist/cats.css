@@ -6525,21 +6525,9 @@ body {
 .p:hover {
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2); }
 
-#tmm-button {
-  background-color: #ff8707;
-  font-family: sans-serif;
-  padding: 1px;
-  opacity: .9;
-  font-size: 1.1rem;
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6);
-  color: darkslateblue;
-  padding: 5px; }
-
-#tmm-button:hover {
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2); }
-
 .active {
-  background-color: yellow; }
+  background-color: rgba(255, 151, 15, 0.856);
+border-radius:14px; }
 
 .catlist {
   list-style-image: none;
@@ -6622,7 +6610,7 @@ div#form {
   font-size: 14px;
   width: 665px;
   float: right;
-  padding-bottom: 10px;
+  padding: 20px 3px 0px 3px;
   border-radius: 5%;
   border: solid .5px darkslateblue;
   background-color: #ff8707;
@@ -6717,15 +6705,15 @@ h1 {
 
 #tmm-button {
   background-color: #ff8707;
-  font-family: sans-serif;
-  padding: 1px;
-  opacity: .9;
-  font-size: 1.1rem;
+  font-family: sans-serif; 
+  opacity: .9; 
   color: darkslateblue;
-  padding: 5px; }
+  padding: 5px;    
+  font-size: 1.1rem;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6); }
 
-.active {
-  background-color: yellow; }
+#tmm-button:hover {
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2); }
 
 .catlist {
   list-style-image: none;
@@ -6841,10 +6829,7 @@ div#form {
   color: #3b3286;
   opacity: .9;
   font-family: "courier new", courier, monospace; }
-
-header {
-  margin-top: 100px; }
-
+ 
 #head {
   line-height: 0.5rem; }
 
@@ -6866,7 +6851,7 @@ header {
   box-shadow: 0px 10px 50px #ff8707dc;
   min-width: 30%;
   position: fixed;
-  top: 2150px;
+  top: 50px;
   border-radius: 5% 35%; }
 
 #kcbb1:hover {
@@ -6876,11 +6861,11 @@ header {
   content: "FOR   CAT  "; }
 
 #kcbb:before {
-  content: url("../txt/kcbb.txt"); }
+  content: url("../data/kcbb.txt"); }
 
 #kcbb2 {
   position: fixed;
-  top: 2150px;
+  top: 50px;
   left: 60%;
   float: right;
   box-shadow: 0px 10px 50px #ff8707dc;
@@ -6894,7 +6879,7 @@ header {
   content: "  EYES ONLY"; }
 
 #kcbb2:before {
-  content: url("../txt/kcbb.txt"); }
+  content: url("../data/kcbb.txt"); }
 
 .kcbb {
   padding: 3%;
@@ -6924,8 +6909,7 @@ header {
 .links {
   font-family: "courier new", courier, monospace;
   font-size: 14px;
-  float: right;
-  padding: 2% 4%;
+  float: right; 
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6);
   border-radius: 25%;
   border: solid .5px darkslateblue;
@@ -6947,18 +6931,21 @@ div#capturing.links {
   line-height: 1.3rem;
   font-size: 1rem;
   background-image: url("img/cats/iceland.jpg");
-  padding: 2% 4%;
-  margin-top: 25px;
+  padding: 2% 4% 0% 4%;
+  margin-top: 40px;
   max-height: 800px;
   overflow-y: scroll;
-  margin: 1%;
+  margin-top: 3%;
   color: aliceblue;
   z-index: 1000; }
   div#capturing.links p {
-    padding: 0px 2%; }
+    padding: 15px 2%; }
 
+    div#capturing.links h4 {
+      padding-top: 130px; }
 .lightpurple {
-  color: #8880b9; }
+  color: #8880b9; 
+margin-bottom:10px;}
 
 h6,
 h5,
@@ -6986,7 +6973,7 @@ h1 {
 
       
 .kcbb-ears {
-  opacity: .1;
+  opacity: .1; 
   font-family: "courier new", courier, monospace;
   float: left;
   
@@ -7013,9 +7000,9 @@ h1 {
 }
 
 #kcbb-ears1:before {
-  content: url("dist/txt/kcbb-ears.txt");
+  content: url("../data/kcbb-ears.txt");
 }
-
+/*
 #kcbb-ears2 {
   position: fixed;
   top: 22px;
@@ -7034,9 +7021,9 @@ h1 {
 }
 
 #kcbb-ears2:before {
-  content: url("dist/txt/kcbb-ears.txt");
+  content: url("../data/kcbb-ears.txt");
 }
-
+*/
 .ears { 
   text-align: justify;
   font-size: 13;
@@ -7056,13 +7043,27 @@ div.row {
 div.col-lg-6{
   display:none;
 }
-.ears {
-position:relative;
-left:1% !important;
+
+@media (min-width: 990px) {
+  div.ears {
+position:absolute;
+left:30% !important;
 }
+  div.card-header {
+    display:none;
+  }
+  div#footer {
+    display:none;
+  }}
 div.container.pt-4 {
   background-image:none;
 }
 div.card.mb-4 {
   display:none;
+}
+.fixed-top {
+display:none;
+}
+h5.tmm-bck a {
+  z-index:140;
 }

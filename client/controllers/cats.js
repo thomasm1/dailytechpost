@@ -1,8 +1,10 @@
 var dailyTech = angular.module('dailyTech');
 
 dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeParams', function ArchivesController($scope, $http, $location, $routeParams){
- 
+  
+
 	var kcbb = document.getElementById("kcbb") ;
+
 
 	kcbb.innerHTML =   `<p>
 	<strong>
@@ -686,7 +688,7 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 	
 	
 	
-	<h5>Content Below For Cat Eyes Only</h5>
+	<h4>Content Below For Cat Eyes Only</h4>
 	<br />
 	
 	
@@ -949,7 +951,14 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 	
 	
 	</form>
-	`
+	`;
+	
+	$( function() {
+    $( "div#draggable" ).draggable();
+	} );
+	
+
+
 	/*
 	$scope.getCats = function(){
 		$http.get('/api/cats').success(function(response){
