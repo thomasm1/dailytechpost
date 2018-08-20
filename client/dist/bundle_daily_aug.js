@@ -551,16 +551,24 @@ console.log('blogger-aug');
 
   var bloggerAug= function () { 
    
-    blogpost15 =  ` `;
-    blogcite15 = `<p class="cite">1. <a href="https://seas.yale.edu/news-events/news/quantum-technology-chip"   target="_blank">https://seas.yale.edu/news-events/news/quantum-technology-chip
-    </a>
+    blogpost15 =  `
+    <p class="quote"><i>
+    In a quantum process known as teleportation the unknown state of a quantum bit can be relayed to a distant party using shared entanglement and classical information. Here we present experiments in a solid-state system based on superconducting quantum circuits demonstrating the teleportation of the state of a qubit at the macroscopic scale. In our experiments teleportation is realized deterministically with high efficiency and achieves a high rate of transferred qubit states. This constitutes a significant step towards the realization of repeaters for quantum communication at microwave frequencies and broadens the tool set for quantum information processing with superconducting circuits. </i><sup>1</sup></p>
+    <p class="firstparagraph">Quantum communication of data offers instant data transfer, and impenatrability from 3rd parties ... Yale researchers write of their re </p>
+    <p class="quote">The two essential requirements for a scalable quantum information processor are quantum interference (in which a photon – able to be in more than one place at a time – crosses its own path) and single-photon detectors. The chip that the researchers designed contains a nanophotonic waveguide, which can guide light into small spaces and to wherever is needed on the chip. It also has a directional coupler that can split a light beam into two identical beams, or conversely, combine two beams into one output.
+    <br /><br />
+    With this research, Schuck said the research team should eventually realize a programmable optical quantum processor that can run a quantum algorithm. The scalability of the nanofabrication routines for silicon chips will then allow them to solve problems difficult for classical computers.<sup>1</sup></p>
+     `;
+    blogcite15 = `
     </p>
     <p class="cite">1. <a href="https://arxiv.org/abs/1302.5621"   target="_blank">https://arxiv.org/abs/1302.5621
     </p>
-    <p class="cite">1. <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
+    <p class="cite">2. <a href="https://seas.yale.edu/news-events/news/quantum-technology-chip"   target="_blank">https://seas.yale.edu/news-events/news/quantum-technology-chip
+    </a>
+    
+    <p class="cite"> <a href="https://www.nature.com/articles/ncomms10352"   target="_blank"> more...
     </a>
     </p>
-    
     `;
     blogpost14 =  `<p class="firstparagraph"> 
     </p>
@@ -780,12 +788,22 @@ Developers may not benefit much from the new processors, Enderle said, because "
  
   var url =  [  
     {
+      id: '15',
+      did: '08-17-18',
+      date: 'August 17, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: 'Quantum Data, Part II:<br /><br />Solid State',
+      post: blogpost15,
+      blogcite: blogcite15
+    },
+    {
       id: '14',
       did: '08-16-18',
       date: 'August 16, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: ' ',
+      title: 'Quantum Data, Part I:<br /><br />Light',
       post: blogpost14,
       blogcite: blogcite14
     },

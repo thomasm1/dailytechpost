@@ -7067,3 +7067,12 @@ display:none;
 h5.tmm-bck a {
   z-index:140;
 }
+div#kcbb {
+  max-height:600px;
+  overflow-y:scroll;
+}
+div#blogcat {
+  
+  max-height:600px;
+  overflow-y:scroll;
+}
