@@ -68,10 +68,8 @@ console.log('blogger-aug');
     </a>
     </p> 
     `;
-    blogpost14 =  `<p class="firstparagraph"> 
-    </p>
-    <p class="quote"> 
-    <p > </p>.
+    blogpost14 =  `<p class="firstparagraph">      </p>
+    <p class="quote">   </p> 
     `;
     blogcite14 = ` 
     <p class="cite">1. <a href="https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/"   target="_blank">https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/
@@ -88,17 +86,17 @@ blogcite13 = `
 </a>
 </p>
 `;
-    blogpost12=  `<p class="firstparagraph"> 
-    </p>
-    <p class="quote"> <sup>1</sup>
+    blogpost12=  `<p class="firstparagraph">      </p>
+    <p class="quote"> <sup> </sup>
     </p><br />    <p > </p>`;
-    blogcite12 =  `<p class="cite">1. <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
+    blogcite12 =  `<p class="cite">  <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
     </a>
     </p>`;   
-     blogpost11 =  `<p class="firstparagraph"> 2
+     blogpost11 =  `<p class="firstparagraph">Marvels of anomaly detection extend from business and state security to software integriy -- why not extend the use to <i>social integrity traced by network interaction signatures ...</i> 
     </p>
-    <p class="quote">While some attempts to detect social-media accounts of malicious actors rely on content or language filters that terrorists and disinformers have proved capable of confusing, Mr. Alvari’s algorithm looks for accounts that spread content further and fas                                                                                                         ter than expected. Since this is the goal of terrorist recruiters and propagandists alike, the method could be on the front lines of algorithmic filtering across social networks. Humans still need to make the final determination, to avoid false positives. <sup>1</sup>
-    </p> 
+    <p class="quote">While some attempts to detect social-media accounts of malicious actors rely on content or language filters that terrorists and disinformers have proved capable of confusing, Mr. Alvari’s algorithm looks for accounts that spread content further and faster than expected. Since this is the goal of terrorist recruiters and propagandists alike, the method could be on the front lines of algorithmic filtering across social networks. Humans still need to make the final determination, to avoid false positives. <sup>1</sup>
+    </p>
+     
  `;
     blogcite11 = ` 
     <p class="cite">1. <a href="https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h"   target="_blank">https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h
