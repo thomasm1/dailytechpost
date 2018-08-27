@@ -1,78 +1,28 @@
 console.log('blogger-aug');  
 
   var bloggerAug= function () { 
-    /*
-    blogpost19 =  `<p class="firstparagraph">Silicon Valley's tide has rolled in and the ships are tucked away for the night. At dawn, Silicon Valley arises and inherits the kingdom. So   becomes the intractable data needs of all institution, public or private, big and small. </p><p>And why not? Cloud data storage offers security, direct service providers with big data jobs, Netflix and Linkedin's extensive real-time network analsyis using Kafka speeds up their ever-ready recommendations.  This week's Wired magazine shows a glimpse of the Pentagon and other nations's accelerating need to secure data as the intertwining networks of world data migrates to distributed, cloud storage.</p>
-    <p class="quote"></p>
-    `;
-    blogcite19 = 
-   `   <p class="cite">1. <a   href="https://www.reuters.com/article/us-usa-pentagon-breakingviews/breakingviews-viewsroom-amazons-jedi-rebellion-idUSKCN1L802Z"   target="_blank">https://www.reuters.com/article/us-usa-pentagon-breakingviews/breakingviews-viewsroom-amazons-jedi-rebellion-idUSKCN1L802Z
-    </a></p> https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS
-    `;
-*/
-   blogpost18 = `<p class="firstparagraph">Quantum research has finally progressed beyond proof-of-concept to practical utility. First photon state transfer, and  now solid state transfer of "entangled states" allowing for binary, instant data transfer. Beyond medical and enterprise use, quantum entanglement's incremental progress now raises a few eyebrows: </p>
-   <p class="quote">
-   That’s because Google, IBM, and others have decided it’s time to invest heavily in the technology, which, in turn, has helped quantum computing earn a bullet point on the corporate strategy PowerPoint slides of big companies in areas such as finance, like JPMorgan, and aerospace, like Airbus. In 2017, venture investors plowed $241 million into startups working on quantum computing hardware or software worldwide, according to CB Insights. That’s triple the amount in the previous year.<sup>1</sup></p>
-   <p>
-   The cause for excitement   accelerates at the pace of progress on the technical engineering side: </p>
-   <p class="quote">
-   Physicists have experimentally demonstrated 18-qubit entanglement, which is the largest entangled state achieved so far with individual control of each qubit. As each qubit has two possible values, the 18 qubits can generate a total of 218 (or 262,144) combinations of output states. Since quantum information can be encoded in these states, the results have potential applications anywhere quantum information processing is used. <sup>2</sup>
-   </p>
-   `;
-   blogcite18 =
-   `  <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
-   </a></p> 
    
-   <p class="cite">2. <a   href="https://phys.org/news/2018-07-qubit-entanglement.html"   target="_blank">https://phys.org/news/2018-07-qubit-entanglement.html
-   </a></p>  
-   `;
-
-   
-    blogpost17 =  `<p class="firstparagraph">Silicon Valley's tide has rolled in and the ships are tucked away for the night. At dawn, Silicon Valley arises and inherits the kingdom, along with Seattle: And, so   become <i> the intractable data needs of all institutions, public or private, big and small--needs only the cloud can answer.</i> </p>
-    <p>And why not? Cloud data storage offers security, direct service providers with big data jobs, Netflix and Linkedin's extensive real-time network analsyis using Kafka speeds up their ever-ready recommendations.  Reuters shows a glimpse of the Pentagon's (and other nations's) accelerating need to secure data as the intertwining networks of world data migrates to distributed, cloud storage. In this domain, public infrastructure, whether platform-as-a-service or servers, technology -- as usual -- must swoop to save the day. </p>
-
-    <p class="quote">Consultants associated with the $927 billion Seattle juggernaut occupied top positions at the Pentagon ahead of the rollout of a massive cloud contract worth some $10 billion that Amazon looks poised to snag. Rivals complain the requirements were written to favor Bezos’s company. Either way, investors should be prepared for its government business to attract greater scrutiny.<sup>1</sup> 
-    </p>
-    <p>Surely controversy awaits any bid decision down here on earth, but all things that go up to the cloud need not come down.</p>
-    `;
-    blogcite17 = 
-   `   <p class="cite">1. <a   href="https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS"   target="_blank">https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS
-    </a></p> 
-    `;
-    
-    blogpost16 =  `<p class="firstparagraph">Einstein's remark on quantum entanglement's 'spooky' characteristics holds for those caught off-guard, but sudden isn't spooky when sudden is expected. Tokyo's first photon to satellite back to earth with a button switch control almost leads to banality. Yet, transmitting data through a shared quantum state from the first party to second party appears intuitive, even if it is literally other-worldly. Wired Magazine describes,  </p>
-    <p class="quote">You may have heard that a qubit in superposition is both 0 and 1 at the same time. That’s not quite true and also not quite false—there’s just no equivalent in Homo sapiens’ humdrum classical reality. If you have a yearning to truly grok it, you must make a mathematical odyssey WIRED cannot equip you for. But in the simplified and dare we say perfect world of this explainer, the important thing to know is that the math of a superposition describes the probability of discovering either a 0 or 1 when a qubit is read out—an operation that crashes it out of a quantum superposition into classical reality.<sup>1</sup>  
-    </p>
-    <p>Yale researchers on the topic:</p>
-    <p class="quote">
-    In a quantum process known as teleportation the unknown state of a quantum bit can be relayed to a distant party using shared entanglement and classical information. Here we present experiments in a solid-state system based on superconducting quantum circuits demonstrating the teleportation of the state of a qubit at the macroscopic scale. In our experiments teleportation is realized deterministically with high efficiency and achieves a high rate of transferred qubit states. This constitutes a significant step towards the realization of repeaters for quantum communication at microwave frequencies and broadens the tool set for quantum information processing with superconducting circuits. </i><sup>2</sup></p>
-    `;
-    blogcite16 = `<p class="cite">1. <a href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
-    </a></p>
-    <p class="cite">2. <a href="https://seas.yale.edu/news-events/news/quantum-technology-chip"   target="_blank">https://seas.yale.edu/news-events/news/quantum-technology-chip
-    </a></p>`;
-
-    blogpost15 = `
-    <p class="firstparagraph">Quantum communication of data offers instant data transfer, and impenatrability from 3rd parties ... Among the exciting on events on New Haven's public space Green Park, Yale researchers' quantum advances steal the headlines: </p>
-    <p class="quote">The two essential requirements for a scalable quantum information processor are quantum interference (in which a photon – able to be in more than one place at a time – crosses its own path) and single-photon detectors. The chip that the researchers designed contains a nanophotonic waveguide, which can guide light into small spaces and to wherever is needed on the chip. It also has a directional coupler that can split a light beam into two identical beams, or conversely, combine two beams into one output.
-    <br /><br />
-    With this research, Schuck said the research team should eventually realize a programmable optical quantum processor that can run a quantum algorithm. The scalability of the nanofabrication routines for silicon chips will then allow them to solve problems difficult for classical computers.<sup>1</sup></p>
-    <p>Besides the quantum characteristic of a third party's observation/interference, the state is broken and data transfer disappears--and, yet another state is but a button flip's switch away!</p> `
-     ;
-    blogcite15 = `
+    blogpost15 =  ` `;
+    blogcite15 = `<p class="cite">1. <a href="https://seas.yale.edu/news-events/news/quantum-technology-chip"   target="_blank">https://seas.yale.edu/news-events/news/quantum-technology-chip
+    </a>
     </p>
     <p class="cite">1. <a href="https://arxiv.org/abs/1302.5621"   target="_blank">https://arxiv.org/abs/1302.5621
     </p>
-    
-    <p class="cite">1. <a href="https://scitechdaily.com/physicists-teleport-information-in-a-solid-state-system/amp/"   target="_blank">https://scitechdaily.com/physicists-teleport-information-in-a-solid-state-system/amp/
+    <p class="cite">1. <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
     </a>
-    </p> 
+    </p>
+    
     `;
-    blogpost14 =  `<p class="firstparagraph">      </p>
-    <p class="quote">   </p> 
+    blogpost14 =  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote"> 
+    <p > </p>.
     `;
     blogcite14 = ` 
     <p class="cite">1. <a href="https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/"   target="_blank">https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/
+    </a>
+    </p>
+    <p class="cite">1. <a href="https://scitechdaily.com/physicists-teleport-information-in-a-solid-state-system/amp/"   target="_blank">https://scitechdaily.com/physicists-teleport-information-in-a-solid-state-system/amp/
     </a>
     </p>
     `;
@@ -86,17 +36,18 @@ blogcite13 = `
 </a>
 </p>
 `;
-    blogpost12=  `<p class="firstparagraph">      </p>
-    <p class="quote"> <sup> </sup>
+    blogpost12=  `<p class="firstparagraph"> 
+    </p>
+    <p class="quote"> <sup>1</sup>
     </p><br />    <p > </p>`;
-    blogcite12 =  `<p class="cite">  <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
+    blogcite12 =  `<p class="cite">1. <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
     </a>
     </p>`;   
-     blogpost11 =  `<p class="firstparagraph">Marvels of anomaly detection extend from business and state security to software integriy -- why not extend the use to <i>social integrity traced by network interaction signatures ...</i> 
+     blogpost11 =  `<p class="firstparagraph"> 2
     </p>
-    <p class="quote">While some attempts to detect social-media accounts of malicious actors rely on content or language filters that terrorists and disinformers have proved capable of confusing, Mr. Alvari’s algorithm looks for accounts that spread content further and faster than expected. Since this is the goal of terrorist recruiters and propagandists alike, the method could be on the front lines of algorithmic filtering across social networks. Humans still need to make the final determination, to avoid false positives. <sup>1</sup>
-    </p>
-     
+    <p class="quote">While some attempts to detect social-media accounts of malicious actors rely on content or language filters that terrorists and disinformers have proved capable of confusing, Mr. Alvari’s algorithm looks for accounts that spread content further and fas                                                                                                         ter than expected. Since this is the goal of terrorist recruiters and propagandists alike, the method could be on the front lines of algorithmic filtering across social networks. Humans still need to make the final determination, to avoid false positives. <sup>1</sup>
+    </p><br />  
+    <p > </p>.
  `;
     blogcite11 = ` 
     <p class="cite">1. <a href="https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h"   target="_blank">https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h
@@ -278,66 +229,14 @@ Developers may not benefit much from the new processors, Enderle said, because "
   </p> 
     `; 
  
-  var url =  [ 
-    /* {
-    id: '19',
-    did: '08-22-18',
-    date: 'August 22, 2018',
-    author: 'by Thomas Maestas',
-    cat3: 'Sociology Tomorrow!',
-    title: 'Quantum Data',
-    post: blogpost19,
-    blogcite: blogcite19
-  },*/
-  {
-    id: '18',
-    did: '08-21-18',
-    date: 'August 21, 2018 ',
-    author: 'by Thomas Maestas',
-    cat3: 'Quantum Data',
-    title: 'Quantum Data IV:<br />The Business of Quantum Data  ',
-    post: blogpost18,
-    blogcite: blogcite18
-  },
-
-    {
-      id: '17',
-      did: '08-20-18',
-      date: 'August 20, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
-      title: 'Data that Go Up but Do not Go Down',
-      post: blogpost17,
-      blogcite: blogcite17
-    },
-    {
-      id: '16',
-      did: '08-18-18',
-      date: 'August 18-19, 2018<br />Weekend',
-      author: 'by Thomas Maestas',
-      cat3: 'Quantum Data',
-      title: 'Quantum Data III: Sudden Data ',
-      post: blogpost16,
-      blogcite: blogcite16
-    },
- 
-    {
-      id: '15',
-      did: '08-17-18',
-      date: 'August 17, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: 'Quantum Data, Part II:<br /> Quantum State-Entanglement across a Solid State',
-      post: blogpost15,
-      blogcite: blogcite15
-    },
+  var url =  [  
     {
       id: '14',
       did: '08-16-18',
       date: 'August 16, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: 'Quantum Data, Part I:<br /><br />Binary Photon Data',
+      title: ' ',
       post: blogpost14,
       blogcite: blogcite14
     },
@@ -348,7 +247,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
       date: 'August 15, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: 'Quantum Data Zero',
+      title: 'Quantum Data',
       post: blogpost13,
       blogcite: blogcite13
     }, 
