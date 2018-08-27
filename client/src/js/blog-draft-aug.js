@@ -1,35 +1,49 @@
 console.log('blogger-aug');
 
 var bloggerAug = function () {
-/*https://quantumexperience.ng.bluemix.net/qx/experience*/
-  blogpost21 = `<p class="firstparagraph"> </p><p class="quote">The Lamborghini Aventador SVJ already made a splash last month when it set a new Nürburgring Nordschleife record for production cars, running an incredible 6:44.97 lap time. Now, it sheds its camouflage, and yep, it looks exactly as crazy as we hoped. This might be one of the wildest Lamborghinis yet.<br /><br />
-
-  Since we've tackled the SVJ's Nürburgring lap time, let's cover some other numbers. Its 6.5-liter V12 produces 770 horsepower, making this one of the most powerful naturally aspirated road cars of all time. Maximum torque is 531 lb-ft at 6750 rpm, while the power peak comes at 8500 rpm. Lamborghini claims a dry weight of 3362 lbs, which is 110 lbs lighter than an Aventador S coupe according to the factory. Acceleration is jaw-dropping, too, with 62 mph arriving in 2.8 seconds and 124 mph coming in 8.6. Top speed is 217 mph.</p>
-    <p class="quote"></p>
+  blogpost22 = `<p class="firstparagraph">Quantum computing, now readily available for science-venturing public consumption: IBM's Quantum Community and Resources offer cloud access to quantum hardware:
+  </p>
+  <p class="quote">Check out our User Guides and interactive Demos to learn more about quantum principles. Or, dive right in to create and run algorithms on real quantum computing hardware, using the Quantum Composer and QISKit software developer kit.</p>`;
+  blogcite22 = `<p class="cite">. <a   href="https://quantumexperience.ng.bluemix.net/qx/experience"   target="_blank">https://quantumexperience.ng.bluemix.net/qx/experience
+  </a>
+  </p>`
+ 
+  blogpost21 = ` 
+  <p class="quote">The Lamborghini Aventador SVJ already made a splash last month when it set a new Nürburgring Nordschleife record for production cars, running an incredible 6:44.97 lap time. Now, it sheds its camouflage, and yep, it looks exactly as crazy as we hoped. This might be one of the wildest Lamborghinis yet.<br /><br />
+  Since we've tackled the SVJ's Nürburgring lap time, let's cover some other numbers. Its 6.5-liter V12 produces 770 horsepower, making this one of the most powerful naturally aspirated road cars of all time. Maximum torque is 531 lb-ft at 6750 rpm, while the power peak comes at 8500 rpm. Lamborghini claims a dry weight of 3362 lbs, which is 110 lbs lighter than an Aventador S coupe according to the factory. Acceleration is jaw-dropping, too, with 62 mph arriving in 2.8 seconds and 124 mph coming in 8.6. Top speed is 217 mph.<sup>1</sup></p>
+ 
     `;
   blogcite21 = `   <p class="cite">1. <a   href="https://www.roadandtrack.com/car-shows/monterey-car-week/a22822020/2019-lamborghini-aventador-svj-debut-specs-photos-price/"   target="_blank">https://www.roadandtrack.com/car-shows/monterey-car-week/a22822020/2019-lamborghini-aventador-svj-debut-specs-photos-price/
     </a></p> 
     `;
-    blogpost20 = `<p class="firstparagraph"> </p><p class="quote">The Fortnite Installer was easily exploitable to hijack the request to download the full game.      The problem, as Google's security team discovered, was that the Fortnite Installer was very easily exploitable to hijack the request to download Fortnite from Epic and instead download anything when you tap the button to download the game. It's what's known as a "man-in-the-disk" attack: an app on your phone looks for requests to download something from the internet and intercepts that request to download something else instead, unbeknownst to the original downloading app.<br /><br />Here's where things get really bad. Because of the way Android's permissions model works, you won't have to accept installation of an app from "unknown sources" beyond the time you accepted that installation for Fortnite.  </p>
+    blogpost20 = `<p class="firstparagraph">Security patches that couldn't have arrived sooner ... </p><p class="quote">The Fortnite Installer was easily exploitable to hijack the request to download the full game.      The problem, as Google's security team discovered, was that the Fortnite Installer was very easily exploitable to hijack the request to download Fortnite from Epic and instead download anything when you tap the button to download the game. It's what's known as a "man-in-the-disk" attack: an app on your phone looks for requests to download something from the internet and intercepts that request to download something else instead, unbeknownst to the original downloading app.<br /><br />Here's where things get really bad. Because of the way Android's permissions model works, you won't have to accept installation of an app from "unknown sources" beyond the time you accepted that installation for Fortnite.  </p>
       <p class="quote"></p>
       `;
     blogcite20 = `   <p class="cite">1. <a   href="https://www.androidcentral.com/epic-games-first-fortnite-installer-allowed-hackers-download-install-silently"   target="_blank"> 
     https://www.androidcentral.com/epic-games-first-fortnite-installer-allowed-hackers-download-install-silently </a></p> 
       `;
-      blogpost19 = `<p class="firstparagraph"> </p><p class="quote"> </p>
-        <p class="quote"></p>
+      blogpost19 = `<p class="firstparagraph"> </p>
+  <p class="quote">
+Computers do calculations using bits, too. After all, we want them to plug into our existing data and computers. But quantum bits, or qubits, have unique and powerful properties that allow a group of them to do much more than an equivalent number of conventional bits.
+
+Qubits can be built in various ways, but they all represent digital 0s and 1s using the quantum properties of something that can be controlled electronically. Popular examples—at least among a very select slice of humanity—include superconducting circuits, or individual atoms levitated inside electromagnetic fields. The magic power of quantum computing is that this arrangement lets qubits do more than just flip between 0 and 1. Treat them right and they can flip into a mysterious extra mode called a superposition.<sup>1</sup>
+</p> 
+<p class="quote">For some problems that are very time consuming for conventional computers, this allows a quantum computer to find a solution in far fewer steps than a conventional computer would need. Grover’s algorithm, a famous quantum search algorithm, could find you in a phone book with 100 million names with just 10,000 operations. If a classical search algorithm just spooled through all the listings to find you, it would require 50 million operations, on average. </p>
+        
         `;
-      blogcite19 = `   <p class="cite">1. <a   href=" "   target="_blank"> 
-        </a></p>       `;
+      blogcite19 = ` <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
+      </a></p>     `;
       
-  blogpost18 = `<p class="firstparagraph">  </p>
-   <p class="quote">
- .<sup>1</sup></p>
-   <p>
- </p>
-   <p class="quote">
-  <sup>2</sup>
+  blogpost18 = `<p class="firstparagraph">Quantum research has finally progressed beyond proof-of-concept to practical utility. First photon state transfer, and now solid state transfer of "entangled states" allowing for binary, instant data transfer. Beyond medical and enterprise use, quantum entanglement's incremental progress now raises a few eyebrows: 
+    </p>
+   <p class="quote">That’s because Google, IBM, and others have decided it’s time to invest heavily in the technology, which, in turn, has helped quantum computing earn a bullet point on the corporate strategy PowerPoint slides of big companies in areas such as finance, like JPMorgan, and aerospace, like Airbus. In 2017, venture investors plowed $241 million into startups working on quantum computing hardware or software worldwide, according to CB Insights. That’s triple the amount in the previous year. <br /><br /><sup>1</sup></p>
+  
+<p>   The cause for excitement accelerates at the pace of progress on the technical engineering side:
    </p>
+<p class="quote">Physicists have experimentally demonstrated 18-qubit entanglement, which is the largest entangled state achieved so far with individual control of each qubit. As each qubit has two possible values, the 18 qubits can generate a total of 218 (or 262,144) combinations of output states. Since quantum information can be encoded in these states, the results have potential applications anywhere quantum information processing is used.
+ .<sup>2</sup></p>
+   <p>So, while there are algorithms, like <i>Shor's SHA-defeating algorithm, that have only existed in theory, can now be applied using capable computational power for the job.</i>
+ </p> 
    `;
   blogcite18 =
     `  <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
@@ -52,7 +66,7 @@ var bloggerAug = function () {
     </a></p> 
     `;
 
-  blogpost16 = `<p class="firstparagraph">Einstein's remark on quantum entanglement's 'spooky' characteristics holds for those caught off-guard, but sudden isn't spooky when sudden is expected. Tokyo's first photon to satellite back to earth with a button switch control almost leads to banality. Yet, transmitting data through a shared quantum state from the first party to second party appears intuitive, even if it is literally other-worldly. Wired Magazine describes,  </p>
+  blogpost16 = `<p class="firstparagraph">Einstein's remark on quantum entanglement's 'spooky' characteristics holds for those caught off-guard, but sudden isn't spooky when sudden is expected. Tokyo's first photon to satellite back to earth with a button switch control almost leads to banality. Yet, transmitting data through a shared quantum state from the first party to second party appears intuitive, even if it is   other-worldly. Wired Magazine:  </p>
     <p class="quote">You may have heard that a qubit in superposition is both 0 and 1 at the same time. That’s not quite true and also not quite false—there’s just no equivalent in Homo sapiens’ humdrum classical reality. If you have a yearning to truly grok it, you must make a mathematical odyssey WIRED cannot equip you for. But in the simplified and dare we say perfect world of this explainer, the important thing to know is that the math of a superposition describes the probability of discovering either a 0 or 1 when a qubit is read out—an operation that crashes it out of a quantum superposition into classical reality.<sup>1</sup>  
     </p>
     <p>Yale researchers on the topic:</p>
@@ -292,12 +306,22 @@ Developers may not benefit much from the new processors, Enderle said, because "
 
   var url = [  
     {
+      id: '22',
+      did: '08-25-18',
+      date: 'August 25-26, 2018<br />Weekend',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: '',
+      post: blogpost22,
+      blogcite: blogcite22
+    }, 
+    {
       id: '21',
       did: '08-24-18',
       date: 'August 24, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: 'Air, More Air, and Fast Timing',
+      title: 'Air, More Air, and the Tech of Fast Air',
       post: blogpost21,
       blogcite: blogcite21
     }, 
@@ -307,8 +331,8 @@ Developers may not benefit much from the new processors, Enderle said, because "
     date: 'August 23, 2018',
     author: 'by Thomas Maestas',
     cat3: 'Web Dev Affairs',
-    title: ' ',
-    post: blogcite20,
+    title: 'The Best Offense is a Good Defense',
+    post: blogpost20,
     blogcite: blogcite20
   }, 
    {
@@ -316,8 +340,8 @@ Developers may not benefit much from the new processors, Enderle said, because "
     did: '08-22-18',
     date: 'August 22, 2018',
     author: 'by Thomas Maestas',
-    cat3: 'Musing Blockchain',
-    title: ' ',
+    cat3: 'Quantum Data',
+    title: 'Quantum Data V:<br />The Bits and Bolts of Zero, One, and the Superposed Third State',
     post: blogpost19,
     blogcite: blogcite19
   }, 
