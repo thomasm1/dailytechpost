@@ -56,7 +56,11 @@ strong {
 @import "scss/marsreader"; 
 @import "scss/mainblog";
  
-
+@media(max-width:700px){
+    #dailylogo { 
+     display:none;
+  }
+  }
 @media(min-width:700px){
   #dailylogo { 
       float:right;
@@ -65,7 +69,7 @@ strong {
     width:35px;
 }
 }
-
+ 
 @media (min-width: 100px) {
     .app-navbar .navbar-collapse:after {
         height: auto;

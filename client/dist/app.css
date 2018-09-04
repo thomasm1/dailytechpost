@@ -9265,7 +9265,16 @@ h5 > button:hover {
 
 #toggler {
   background-color: #00b0ec;
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid yellow;
+  padding: 15px;
+  text-align: left; }
+
+#toggler:hover {
+  border: blue; }
+
+#toggler:visited {
+  border: white; }
 
 .zoom {
   transition: transform .3s;
@@ -9334,13 +9343,6 @@ div.panel-body {
 
 label {
   color: lightsteelblue; }
-
-#dailylogo {
-  float: right;
-  transform: translate(50%, 0px);
-  margin-top: 5px;
-  padding: 0px;
-  margin-right: 20px; }
 
 a.cover {
   font-size: 1.2rem; }
@@ -9452,6 +9454,19 @@ div.row#row-posts {
 div#map0 {
   max-height: 280px;
   max-width: 330px; }
+
+/* social media icons */
+#media li a {
+  background-color: transparent;
+  opacity: .7; }
+
+.ourdailytechblog {
+  width: 200px;
+  max-height: 90px;
+  font-size: 1.02em;
+  font-family: Monoton;
+  background-color: transparent;
+  background-image: url("../img/RBTriomphe.png"); }
 
 .node rect,
 .node circle,
@@ -10074,11 +10089,6 @@ a.trans-back {
   margin-top: 30px;
   text-align: left; }
 
-#toggler {
-  border: 1px solid darkblue;
-  padding: 15px;
-  text-align: left; }
-
 .dailytech {
   padding-top: 3%;
   padding-bottom: 2%;
@@ -10104,6 +10114,10 @@ a.trans-back {
 
 .border {
   border: 1px solid white; }
+
+@media (max-width: 700px) {
+  #dailylogo {
+    display: none; } }
 
 @media (min-width: 700px) {
   #dailylogo {
