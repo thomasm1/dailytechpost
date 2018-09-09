@@ -1,0 +1,121 @@
+
+
+<div class="container-fluid">
+<div class="post-images">
+  <img ng-src="{{img}}" class="post"
+      ng-class="{selected: img === $ctrl.mainImageUrl}"
+      ng-repeat="img in $ctrl.post.images" />
+</div>
+
+<h1>{{$ctrl.post.title}}</h1>
+
+<p>{{$ctrl.post.description}}</p>
+
+<ul class="post-thumbs">
+  <li ng-repeat="img in $ctrl.post.images">
+    <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Tags</span>
+    <dl>
+      <dt>Tags</dt>
+      <dd ng-repeat="availability in $ctrl.post.availability">{{availability}}</dd>
+    </dl>
+ 
+      <span>Related Books</span>
+      <dl>
+        <dt>Statistics</dt>
+        <dd>{{$ctrl.post.camera.primary}}</dd>
+        <dt>Features</dt>
+        <dd>{{$ctrl.post.camera.features.join(', ')}}</dd>
+      </dl>
+    </li>
+  <li>
+    <span>
+        Citations
+    </span>
+    <dl>
+      <dt>Citation Details</dt>
+      <dd>{{$ctrl.post.laterCite.cat3}}</dd>
+      <dt>Subsequent post-blog Citations</dt>
+      <dd>{{$ctrl.post.laterCite.url}}</dd>
+      <dt>Citations Count </dt>
+      <dd>{{$ctrl.post.laterCite.length}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Word Details</span>
+    <dl>
+      <dt>Word Count </dt>
+      <dd>{{$ctrl.post.wordStat.length}}</dd>
+      <dt>Word Modes and Stats</dt>
+      <dd>{{$ctrl.post.wordStat.mean}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Categories</span>
+    <dl>
+      <dt>Category Tags  </dt>
+      <dd>{{$ctrl.post.connectivity.story}}</dd>
+      <dt>Related Blogs</dt>
+      <dd>{{$ctrl.post.connectivity.media}}</dd>
+      <dt>External Blogs</dt>
+      <dd>{{$ctrl.post.connectivity.related}}</dd>
+      <dt>Latest Research</dt>
+      <dd>{{$ctrl.post.connectivity.country | checkmark}}</dd>
+      <dt>Gossip</dt>
+      <dd>{{$ctrl.post.connectivity.gps | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Citation Trustworthiness</span>
+    <dl>
+      <dt>Publisher</dt>
+      <dd>{{$ctrl.post.publisher.readerCount}}</dd>
+      <dt>Source</dt>
+      <dd>{{$ctrl.post.publisher.pop}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Updates Since Original Post</span>
+    <dl>
+      <dt>Topic</dt>
+      <dd ng-repeat="dim in $ctrl.post.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt>Popularity</dt>
+      <dd>{{$ctrl.post.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Tech Display</span>
+    <dl>
+      <dt>Machine Learning</dt>
+      <dd>{{$ctrl.post.display.screenSize}}</dd>
+      <dt>AI</dt>
+      <dd>{{$ctrl.post.display.screenResolution}}</dd>
+      <dt>Blockchain</dt>
+      <dd>{{$ctrl.post.display.touchScreen | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Statistics</span>
+    <dl>
+      <dt> </dt>
+      <dd>{{$ctrl.post.hardware.cpu}}</dd>
+      <dt>Statistics</dt>
+      <dd>{{$ctrl.post.hardware.usb}}</dd>
+      <dt>Audio Statistics</dt>
+      <dd>{{$ctrl.post.hardware.audioJack}}</dd>
+      
+      <dt>Statistics</dt>
+      <dd>{{$ctrl.post.hardware.accelerometer | checkmark}}</dd>
+    </dl>
+  </li>
+  
+   
+</ul>
+
+
+</div>
