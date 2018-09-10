@@ -12,9 +12,14 @@
     max-width:100%; 
     line-height:130%;
     border-radius:5%;
+    border:1px solid purple;
     cursor:pointer;
     padding-bottom:.5em;
   }
+  
+  #mmodalBtn:hover {
+    border:1px solid white;
+    }  
   .mmodal{
     display:none;
     position: fixed;

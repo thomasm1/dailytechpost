@@ -435,8 +435,9 @@ h5 > button:hover {
     color: purple;
 }
 #apod_explaination {
-max-height:250px;
-padding:2%; 
+max-height:350px;
+padding:1%; 
+overflow-y:scroll;
 background-color:rgba(4, 142, 196, 0.459);
 }
 h2.title {
