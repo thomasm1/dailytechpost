@@ -47,7 +47,9 @@ That strategy is getting close to hitting a dead end.  The next step will be get
      </p> 
      <p class="cite">2. <a href="https://qz.com/1355945/why-have-cryptocurrencies-like-bitcoin-and-ethereum-fallen-so-much/"   target="_blank">https://qz.com/1355945/why-have-cryptocurrencies-like-bitcoin-and-ethereum-fallen-so-much/
      </a>
-     </p> 
+     </p>   <p class="cite">2. <a href="https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/"   target="_blank">https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/
+     </a>
+     </p> https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/
         `;
 
      blogpost6 = `

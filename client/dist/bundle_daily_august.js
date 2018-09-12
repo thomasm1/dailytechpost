@@ -557,12 +557,11 @@ var bloggerSep = function () {
   <p>The story is less dramatic and mysterious than it is simply the natural course of market novelties' <i>transition from Early Adapters to General Acceptance</i>: The underlying value transitions from increasing public awareness to mainstream acceptance, which requires new, ensuing <i>expectations that differ from the previous period</i>. The substance of perceived value dictates actual value. Buterin opines to Bloomberg News...
     <p class="quote"> 
      The blockchain space is getting to the point where there’s a ceiling in sight. If you talk to the average educated person at this point, they probably have heard of blockchain at least once. There isn’t an opportunity for yet another 1,000-times growth in anything in the space anymore ... Growth in Bitcoin and other cryptocurrencies in the blockchain community through its first six or seven years was dependent on marketing and trying to get wider adoption. <br /><br /> 
-That strategy is getting close to hitting a dead end.  The next step will be getting people who are already interested in cryptocurrencies to be involved in a more in-depth way. "Go from just people being interested to real applications of real economic activity" [Buterin] said.
-      <sup>2</sup></p>
+That strategy is getting close to hitting a dead end.  The next step will be getting people who are already interested in cryptocurrencies to be involved in a more in-depth way. "Go from just people being interested to real applications of real economic activity" [Buterin] said.  <sup>2</sup></p> 
+    <img src="dist/img/diffusion.jpg" class="zoom" />
     <p>So, the old expectations generated a very low bar to prove actual utility, whereas present-day collective knowledge demands clearer practical proof; inherently the bar is raised. And now, by technical sweat of the brow, crypto-based fintech now faces the realities of what will be needed for wide-spread use: technical solutions to scalability problems, security issues, and of course speed, availability and consistency of data transfer. Yet, now more importantly, ease-of-mainstream-use. </p>
     <p>For example, Ethereum contract writers must learn a new language, Solidity; and Ethereum currency holders must grapple with browser-to-ledger interfaces like MetaMask, which are far from intuitive for even the most enthusiastic of early adopters!  </p>
     <p> This concept is laid bare in sociological terms, citing Rogers and Shumacher's 1971 article from my Feb. 15 post: the general sociological Early Adopter theory--based on Everett M. Rogers' Diffusion of Innovations theory, describing the timeline of the Innovation Adoption Lifecycle as fairly ordinary, or better stated, fairly historical--again repeating itself.<sup>3</sup> </p>
-    <img src="dist/img/diffusion.jpg" class="zoom" />
     `;
   blogcite8 = ` 
     
@@ -587,7 +586,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
        <p>Others still, they blame ease-of-use and accesibility ... </p>
        <p class="quote">Cryptocurrency investors (and especially ethereum backers) may be disappointed (paywall) by the low usage of decentralized applications (dapps) like IDEX, Bancor, and CryptoKitties. These apps run on crypto tokens, and thus generate demand for the assets.
 <br /><br />
-       But when investors visit a cryptocurrency exchange, they aren’t presented with information about the daily active users on various dapps. They’re generally only presented with the price of an asset and a chart of its history.
+       But when investors visit a cryptocurrency exchange, they aren’t presented with information about the daily active users on various dapps. They’re generally only presented with the price of an asset and a chart of its history.<sup>2</sup>
        </p>
        <p>However one distributes the blame, psychological and economic explanations only fail where sociological explanations offer coherent explanations ... Look no further than my September 10th post ...
        </p>
@@ -599,7 +598,9 @@ That strategy is getting close to hitting a dead end.  The next step will be get
      </p> 
      <p class="cite">2. <a href="https://qz.com/1355945/why-have-cryptocurrencies-like-bitcoin-and-ethereum-fallen-so-much/"   target="_blank">https://qz.com/1355945/why-have-cryptocurrencies-like-bitcoin-and-ethereum-fallen-so-much/
      </a>
-     </p> 
+     </p>   <p class="cite">2. <a href="https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/"   target="_blank">https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/
+     </a>
+     </p> https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/
         `;
 
      blogpost6 = `
@@ -669,7 +670,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
       did: '09-10-18',
       date: 'September 10, 2018',
       author: 'by Thomas Maestas',
-      cat3: 'Musing Blockchain',
+      cat3: 'Sociology Tomorrow!',
       title: 'Where Did All the Crypto-Cash Go? Part II:<br />Investment Expectations',
       post: blogpost8,
       blogcite: blogcite8
