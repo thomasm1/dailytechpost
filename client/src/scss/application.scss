@@ -169,6 +169,7 @@ img.rounded-circle.profile {
 
 
 img {
+   margin:5px;
    vertical-align: middle;
 
 }
@@ -402,12 +403,16 @@ h5 > button:hover {
     border:white;
 }
 .zoom {
-    transition: transform .3s;
+    float:right;
+width:350px;
+    transition: transform .8s;
     /* Animation */
 }
 
 .zoom:hover {
-    transform: scale(2); 
+
+    max-width:100%;
+    transform: scale(1.5); 
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 

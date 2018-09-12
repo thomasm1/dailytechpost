@@ -126,27 +126,9 @@ strong {
         height: auto;
     }
 }
-
-.navbarResponsive {
-    max-height: 100px;
-}
-
-@media (max-width:700px) {
-    .navbarResponsive {
-        max-height: 19%;
-    }
-}
-
-.fixed-top {
-    max-height: 11%;
-}
-
-@media (max-width:750px) {
-    .fixed-top {
-        max-height: 7%;
-    }
-}
-
+ 
+ 
+ 
     @media (min-width: 401px) {
       .multi_drop_menu li li a {
           color: silver;

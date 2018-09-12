@@ -9089,6 +9089,7 @@ img.rounded-circle.profile {
 
 /* welcome and text*/
 img {
+  margin: 5px;
   vertical-align: middle; }
 
 div.card-block#cal {
@@ -9277,11 +9278,14 @@ h5 > button:hover {
   border: white; }
 
 .zoom {
-  transition: transform .3s;
+  float: right;
+  width: 350px;
+  transition: transform .8s;
   /* Animation */ }
 
 .zoom:hover {
-  transform: scale(2);
+  max-width: 100%;
+  transform: scale(1.5);
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */ }
 
 .zoom4 {
@@ -10171,20 +10175,6 @@ a.trans-back {
 @media (min-width: 100px) {
   .app-navbar .navbar-collapse:after {
     height: auto; } }
-
-.navbarResponsive {
-  max-height: 100px; }
-
-@media (max-width: 700px) {
-  .navbarResponsive {
-    max-height: 19%; } }
-
-.fixed-top {
-  max-height: 11%; }
-
-@media (max-width: 750px) {
-  .fixed-top {
-    max-height: 7%; } }
 
 @media (min-width: 401px) {
   .multi_drop_menu li li a {

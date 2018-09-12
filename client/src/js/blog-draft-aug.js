@@ -14,7 +14,7 @@ var bloggerAug = function () {
   blogpost21 = ` 
   <p class="quote">The Lamborghini Aventador SVJ already made a splash last month when it set a new Nürburgring Nordschleife record for production cars, running an incredible 6:44.97 lap time. Now, it sheds its camouflage, and yep, it looks exactly as crazy as we hoped. This might be one of the wildest Lamborghinis yet.<br /><br />
   Since we've tackled the SVJ's Nürburgring lap time, let's cover some other numbers. Its 6.5-liter V12 produces 770 horsepower, making this one of the most powerful naturally aspirated road cars of all time. Maximum torque is 531 lb-ft at 6750 rpm, while the power peak comes at 8500 rpm. Lamborghini claims a dry weight of 3362 lbs, which is 110 lbs lighter than an Aventador S coupe according to the factory. Acceleration is jaw-dropping, too, with 62 mph arriving in 2.8 seconds and 124 mph coming in 8.6. Top speed is 217 mph.<sup>1</sup></p>
-  <img src="dist/img/aventador.jpg" /><br />
+  <img src="dist/img/aventador.jpg" width="350" class="zoom"  /><br />
   <p>Image credit: Road &amp; Track</p>
  
     `;
