@@ -41,6 +41,7 @@
 .multi_drop_menu ul li {
     z-index: 1;
     padding-right: 5%;
+    font-size:.6em;
     float: left;
     list-style-type: none;
     position: relative;
@@ -54,6 +55,8 @@
 
 .multi_drop_menu li a {
     text-align: center;
+    padding:4px;
+    font-size:.6em;
     display: block;
     border-right-style: none;
     background-clip: padding-box;

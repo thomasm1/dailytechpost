@@ -552,6 +552,27 @@ document.getElementById("ul").innerHTML = `
 console.log('blogger-sep');
 
 var bloggerSep = function () {
+  blogpost10 = `<p class="firstparagraph">
+  Invisible upgrades are the true talking points of new mobile device  releases as they hint big things under the hood... Last year's iPhone X may have been alot of hardware show (with the X/8/8plus providing the first A.I.-dedicated chip), but 2018 augurs big things ahead and bigger muscle:
+  <p class="quote">
+  On Wednesday Apple announced that the neural engine is now significantly more powerful. Last year’s debut model could crank through 600 billion operations per second. The new version can work almost 10 times faster, reaching 5 trillion operations per second. Some of that speedup may come from using smaller transistors inside the A12, with features as small as 7 nanometers.<sup>1</sup>
+  </p>
+  <p>So, just as Apple tends to future-proof its technology, this year's release does not disappoint the constellation of iOS developers that can take advantage of the tech, with  better battery efficiency ...</p>
+  <p class="quote">App developers can play with the power of Apple’s new neural engine through Core ML, a framework the company offers to help programmers deploy machine learning on Apple devices. The company says that this allows developers to run machine learning code nine times faster than on the iPhone X, while using a tenth of the energy. 
+  </p>
+  <p>Thanks to Apple's commitment to A.I., the iPhone Xs,   Xs Max, and   Xr offer all the joys of smart video/camera, processing, augmented reality, --<i>and with battery <strong>savings?</strong>   Ooh L&aacute; L&aacute;!</i>
+
+  `
+  blogcite10=  `
+  <p class="cite"><a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
+  `
+  blogpost9 = `
+  <p class="quote"> 
+  </p>
+  `
+  blogcite9=  `
+  <p class="cite"><a href=" "> </a></p>
+  `
   blogpost8 = `
   <p class="firstparagraph">Vitalik Buterin, architect of Ethereum crypto-contract/currency, presented at the recent TechCrunch Disrupt! conference with no shortage of opinions on the direction of blockchain and crypto-currency/contract investments... This, after the Ethereum (WEI) declines nearly ten-fold along with Bitcoin's 70% drop<sup>1</sup>, along with other major crypto-currencies. </p>
   <p>The story is less dramatic and mysterious than it is simply the natural course of market novelties' <i>transition from Early Adapters to General Acceptance</i>: The underlying value transitions from increasing public awareness to mainstream acceptance, which requires new, ensuing <i>expectations that differ from the previous period</i>. The substance of perceived value dictates actual value. Buterin opines to Bloomberg News...
@@ -635,11 +656,16 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   </a>
   </p>
      `;
-  blogpost3 = `<p class="firstparagraph"> </p>
-  <p class="quote"> <sup> </sup></p>
-  <p> </p> `;
+  blogpost3 = `<p class="firstparagraph">Browser URLs are the constant of the web's evolutions over the years. After all, they are the solid, predictable workhorse for transporting web surfers' requests and web servers' responses. But could there be improvements even with this, beyond the HTTPS' security upgrade? Wired reports: </p>
+  <p class="quote">Chrome looks ahead to its next 10 years, the team is mulling its most controversial initiative yet: fundamentally rethinking URLs across the web.
+<br /><br />
+  Uniform Resource Locators are the familiar web addresses you use every day. They are listed in the web's DNS address book and direct browsers to the right Internet Protocol addresses that identify and differentiate web servers. <br /><br />
+  As web functionality has expanded, URLs have increasingly become unintelligible strings of gibberish combining components from third-parties or being masked by link shorteners and redirect schemes. And on mobile devices there isn't room to display much of a URL at all.  The resulting opacity has been a boon for cyber criminals who build malicious sites to exploit the confusion.
+  <br /><br />
+  The focus right now, they say, is on identifying all the ways people use URLs to try to find an alternative that will enhance security and identity integrity on the web while also adding convenience for everyday tasks like sharing links on mobile devices.<sup>1</sup></p>
+  <p>Bring it on, Google, and save us from the increasing flood of &;@# ampersands &% and excessive #_&% URL parameters that grow longer and longer ... and longer ... but how?</p> `;
   blogcite3 = `
-  <p class="cite"> <br /> <br />... to be continued. <a href=""   target="_blank">
+  <p class="cite">1 <a href="https://www.wired.com/story/google-wants-to-kill-the-url/"   target="_blank">https://www.wired.com/story/google-wants-to-kill-the-url/
   </a>
   </p>
   `;
@@ -666,12 +692,32 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   var url = [  
       
     {
+      id: '10',
+      did: '09-12-18',
+      date: 'September 12, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'A.I.Now.',
+      title: 'Apple\'s New A12 Chip with A.I. Neural Engine:<br /> Ooh L&aacute; L&aacute;!',
+      post: blogpost10,
+      blogcite: blogcite10
+    },
+    {
+      id: '9',
+      did: '09-11-18',
+      date: 'September 11, 2018',
+      author: ' ',
+      cat3: ' ',
+      title: ' ',
+      post: blogpost9,
+      blogcite: blogcite9
+    },
+    {
       id: '8',
       did: '09-10-18',
       date: 'September 10, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: 'Where Did All the Crypto-Cash Go? Part II:<br />Investment Expectations',
+      title: 'Where Did All the Crypto-Cash Go? Part II:<br />Why the Long Crash ...',
       post: blogpost8,
       blogcite: blogcite8
     },
@@ -721,7 +767,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
       date: 'September 4, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: '',
+      title: 'The Cumbersome, Multipurpose and Sometimes Unsecure URL ...<br />Is There a Better way?',
       post: blogpost3,
       blogcite: blogcite3
     },

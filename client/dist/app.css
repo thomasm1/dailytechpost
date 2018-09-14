@@ -9280,6 +9280,7 @@ h5 > button:hover {
 .zoom {
   float: right;
   width: 350px;
+  max-width: 100%;
   transition: transform .8s;
   /* Animation */ }
 
