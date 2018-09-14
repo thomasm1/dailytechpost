@@ -169,6 +169,7 @@ img.rounded-circle.profile {
 
 
 img {
+   margin:5px;
    vertical-align: middle;
 
 }
@@ -402,12 +403,17 @@ h5 > button:hover {
     border:white;
 }
 .zoom {
-    transition: transform .3s;
+    float:right;
+width:350px;
+max-width:100%;
+    transition: transform .8s;
     /* Animation */
 }
 
 .zoom:hover {
-    transform: scale(2); 
+
+    max-width:100%;
+    transform: scale(1.5); 
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
@@ -435,8 +441,9 @@ h5 > button:hover {
     color: purple;
 }
 #apod_explaination {
-max-height:250px;
-padding:2%; 
+max-height:350px;
+padding:1%; 
+overflow-y:scroll;
 background-color:rgba(4, 142, 196, 0.459);
 }
 h2.title {

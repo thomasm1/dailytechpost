@@ -6,6 +6,8 @@ require('./js/menu');
 require('./js/force'); 
 // require('./js/planets'); 
 
+
+require('./js/blog-draft-sep');
 require('./js/blog-draft-aug');
 require('./js/blog-draft-jul');
 require('./js/blog-draft-june');

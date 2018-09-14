@@ -9089,6 +9089,7 @@ img.rounded-circle.profile {
 
 /* welcome and text*/
 img {
+  margin: 5px;
   vertical-align: middle; }
 
 div.card-block#cal {
@@ -9277,11 +9278,15 @@ h5 > button:hover {
   border: white; }
 
 .zoom {
-  transition: transform .3s;
+  float: right;
+  width: 350px;
+  max-width: 100%;
+  transition: transform .8s;
   /* Animation */ }
 
 .zoom:hover {
-  transform: scale(2);
+  max-width: 100%;
+  transform: scale(1.5);
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */ }
 
 .zoom4 {
@@ -9304,8 +9309,9 @@ h5 > button:hover {
   color: purple; }
 
 #apod_explaination {
-  max-height: 250px;
-  padding: 2%;
+  max-height: 350px;
+  padding: 1%;
+  overflow-y: scroll;
   background-color: rgba(4, 142, 196, 0.459); }
 
 h2.title {
@@ -9854,8 +9860,12 @@ div#planet {
   max-width: 100%;
   line-height: 130%;
   border-radius: 5%;
+  border: 1px solid purple;
   cursor: pointer;
   padding-bottom: .5em; }
+
+#mmodalBtn:hover {
+  border: 1px solid white; }
 
 .mmodal {
   display: none;
@@ -9976,7 +9986,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
   padding: 4%;
   margin: 2%;
-  max-height: 800px;
+  max-height: 1000px;
   color: darkslategray;
   background-color: #cee5f8;
   overflow-y: scroll; }
@@ -10166,20 +10176,6 @@ a.trans-back {
 @media (min-width: 100px) {
   .app-navbar .navbar-collapse:after {
     height: auto; } }
-
-.navbarResponsive {
-  max-height: 100px; }
-
-@media (max-width: 700px) {
-  .navbarResponsive {
-    max-height: 19%; } }
-
-.fixed-top {
-  max-height: 11%; }
-
-@media (max-width: 750px) {
-  .fixed-top {
-    max-height: 7%; } }
 
 @media (min-width: 401px) {
   .multi_drop_menu li li a {
