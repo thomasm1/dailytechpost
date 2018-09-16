@@ -9532,6 +9532,7 @@ div#map0 {
 .multi_drop_menu ul li {
   z-index: 1;
   padding-right: 5%;
+  font-size: 0.1 0.1em;
   float: left;
   list-style-type: none;
   position: relative; }
@@ -9543,6 +9544,8 @@ div#map0 {
 
 .multi_drop_menu li a {
   text-align: center;
+  padding: 5px;
+  font-size: .7em;
   display: block;
   border-right-style: none;
   background-clip: padding-box;

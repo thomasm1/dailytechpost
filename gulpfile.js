@@ -35,7 +35,7 @@ gulp.task('serve', ['sass'], function() {
    // gulp.watch('client/dist/js/*.js', ['wjs']);
     gulp.watch('src/js/*.js', ['js']);
     gulp.watch(['client/src/img/*.jpg', 'client/src/img/*.PNG', 'client/src/img/*.png'], ['imageMin']);
-    gulp.watch(['client/src/app.scss','client/src/css/*.css', 'client/src/scss/*.scss'], ['sass']).on('change', browserSync.reload);;
+    gulp.watch(['client/src/app.scss','client/src/scss/*.css', 'client/src/scss/*.scss'], ['sass']).on('change', browserSync.reload);;
     //gulp.watch('client/index.html','client/views/*.html')
 });
 

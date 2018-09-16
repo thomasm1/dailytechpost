@@ -40,56 +40,52 @@ document.getElementById("ul").innerHTML = `
     <li style="z-index:98.5">
         <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md">d3.v3</a>
     </li>
-    <li style="z-index:98.5">
+<!--    <li style="z-index:98.5">
         <a href="https://chartio.com/" target="_blank">chartio</a>
     </li>
     <li style="z-index:98.5">
-        <a href="http://code.shutterstock.com/rickshaw/" target="_blank">rickshaw</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="http://rawgraphs.io/" target="_blank">rawgraphs.io </a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="http://dimplejs.org" target="_blank">dimplejs</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="http://nvd3.org/" target="_blank">nvd3</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank">SVG</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="https://www.khronos.org/webgl/" target="_blank">WebGL</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="http://alignedleft.com/tutorials/d3/binding-data" target="_blank">binding-data</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="http://datajournalismhandbook.org/1.0/en/getting_data_3.html" target="_blank">getting_data</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
-    </li>
-    <li style="z-index:98.5">
-        <a href="https://github.com/d3/d3/blob/master/CHANGES.md" target="_blank">d3.v4 changes</a>
-    </li>
-    <li style="z-index:98">
-        <a href="https://github.com/d3/d3/blob/master/API.md" target="_blank">D3js APIs</a>
-    </li>
+    <a href="http://code.shutterstock.com/rickshaw/" target="_blank">rickshaw</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://rawgraphs.io/" target="_blank">rawgraphs.io </a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://dimplejs.org" target="_blank">dimplejs</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://nvd3.org/" target="_blank">nvd3</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank">SVG</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://www.khronos.org/webgl/" target="_blank">WebGL</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://alignedleft.com/tutorials/d3/binding-data" target="_blank">binding-data</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://datajournalismhandbook.org/1.0/en/getting_data_3.html" target="_blank">getting_data</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://github.com/d3/d3/blob/master/CHANGES.md" target="_blank">d3.v4 changes</a>
+</li>
+-->
+<li style="z-index:98">
+    <a href="https://github.com/d3/d3/blob/master/API.md" target="_blank">D3js APIs</a>
+</li>
+   
 </ul>
 </li>
 <li style="z-index:98;">
 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" role="button">Javascript &nbsp;&nbsp; </a>
 <ul class="dropdown-menu">
-    <li style="z-index:98">
-        <a href="http://jqueryui.com" target="_blank">jQueryUI</a>
-    </li>
-    <li style="z-index:98">
-        <a href=" http://jquery.com/" target="_blank">jQuery</a>
-    </li>
     <li style="z-index:98">
         <a href="https://jsbin.com" target="_blank">JS Bin</a>
     </li>
