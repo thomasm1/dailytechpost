@@ -6,6 +6,6 @@ module.exports = {
       './client/src/index.js'   ,
   output: {
       path: path.resolve(__dirname, 'client/dist'),
-    filename: 'bundle_daily_august.js'
+    filename: 'bundle_daily_september.js'
   } 
 };

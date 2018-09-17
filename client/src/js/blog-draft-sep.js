@@ -1,27 +1,52 @@
 console.log('blogger-sep');
 
 var bloggerSep = function () {
+
+  blogpost13 = `
+  <p class="quote">This year, the ban on motorized traffic will apply to the whole of Paris, except for the Bois (woods) and the périphérique (inner ring road). 
+  The Parisians themselves will not be able to drive their own vehicle, including electric vehicles, 'clean' energy vehicles, and Autolib vehicles.<br /><br />
+  
+  The following vehicles will be allowed to circulate, at a maximum of 30 km/h: non-motorized vehicles, emergency vehicles, vehicles for disabled people, taxis, public transport, BigBus and Open Tour, and VTC (the latter (private hire taxis) were not allowed to circulate last year). There are also numerous alternative modes of transport - bicycle, horse & carriage, cyclopolitain (pedicabs) … <sup>1</sup>
+  </p>
+`;
+  blogcite13 = `
+
+  <p class="cite">1<a href="https://en.convention.parisinfo.com/travel-trade/car-free-day-paris">
+  https://en.convention.parisinfo.com/travel-trade/car-free-day-paris</a></p>
+  `;
+  blogpost12 = `    <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
+  <br /><br />
+    But the city is in the midst of a metamorphosis. With fewer, yet stronger storms on the horizon, it’s begun an ambitious plan to cut its reliance on imported water in half by 2025. And it’s emerging as a leader in the frantic international quest to curb emissions—in 2016 alone, it slashed emissions by 11 percent, the equivalent of taking more than 700,000 cars off the road.
+    <br /><br />
+    We generated 30,000 new green jobs since I've been mayor, so in five years. To put that in perspective, there's 50,000 coal jobs left in America. So this town that’s just 1 percent, roughly, of the US population has created the equivalent of 60 percent of the remaining coal jobs left in America. Appalachia should be doing that, areas that have been hard hit by a recession and not recovered. These are generally good middle class jobs too, not just minimum wage.<sup>1</sup>
+    </p>`;
+  blogcite12 = `
+  <p class="cite">1. <a href="https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/">https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/</a></p>
+   `;
+  blogpost11 = `  <p class="quote"> 
+  </p>`;
+  blogcite11 = ` `;
   blogpost10 = `<p class="firstparagraph">
   Invisible upgrades are the true talking points of new mobile device  releases as they hint big things under the hood... Last year's iPhone X may have been alot of hardware show (with the X/8/8plus providing the first A.I.-dedicated chip), but 2018 augurs big things ahead and bigger muscle:
   <p class="quote">
   On Wednesday Apple announced that the neural engine is now significantly more powerful. Last year’s debut model could crank through 600 billion operations per second. The new version can work almost 10 times faster, reaching 5 trillion operations per second. Some of that speedup may come from using smaller transistors inside the A12, with features as small as 7 nanometers.<sup>1</sup>
   </p>
   <p>So, just as Apple tends to future-proof its technology, this year's release does not disappoint the constellation of iOS developers that can take advantage of the tech, with  better battery efficiency ...</p>
-  <p class="quote">App developers can play with the power of Apple’s new neural engine through Core ML, a framework the company offers to help programmers deploy machine learning on Apple devices. The company says that this allows developers to run machine learning code nine times faster than on the iPhone X, while using a tenth of the energy. 
+  <p class="quote">App developers can play with the power of Apple’s new neural engine through Core ML, a framework the company offers to help programmers deploy machine learning on Apple devices. The company says that this allows developers to run machine learning code nine times faster than on the iPhone X, while using a tenth of the energy.<sup>1</sup>
   </p>
   <p>Thanks to Apple's commitment to A.I., the iPhone Xs,   Xs Max, and   Xr offer all the joys of smart video/camera, processing, augmented reality, --<i>and with battery <strong>savings?</strong>   Ooh L&aacute; L&aacute;!</i>
 
-  `
+  `;
   blogcite10=  `
-  <p class="cite"><a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
-  `
+  <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
+  `;
   blogpost9 = `
   <p class="quote"> 
   </p>
-  `
+  `;
   blogcite9=  `
   <p class="cite"><a href=" "> </a></p>
-  `
+  `;
   blogpost8 = `
   <p class="firstparagraph">Vitalik Buterin, architect of Ethereum crypto-contract/currency, presented at the recent TechCrunch Disrupt! conference with no shortage of opinions on the direction of blockchain and crypto-currency/contract investments... This, after the Ethereum (WEI) declines nearly ten-fold along with Bitcoin's 70% drop<sup>1</sup>, along with other major crypto-currencies. </p>
   <p>The story is less dramatic and mysterious than it is simply the natural course of market novelties' <i>transition from Early Adapters to General Acceptance</i>: The underlying value transitions from increasing public awareness to mainstream acceptance, which requires new, ensuing <i>expectations that differ from the previous period</i>. The substance of perceived value dictates actual value. Buterin opines to Bloomberg News...
@@ -139,7 +164,36 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     `;
 
   var url = [  
-      
+    {
+      id: '13',
+      did: '09-15-18',
+      date: 'September 15-16, 2018<br />Weekend',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: 'The End of Traffic Jams, Part II: <br />A Car-Free Paris',
+      post: blogpost13,
+      blogcite: blogcite13
+    },
+    {
+      id: '12',
+      did: '09-14-18',
+      date: 'September 14, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: 'The End of Traffic Jams, Part I: <br />A Green Los Angeles',
+      post: blogpost12,
+      blogcite: blogcite12
+    },
+    {
+      id: '11',
+      did: '09-13-18',
+      date: 'September 13, 2018',
+      author: ' ',
+      cat3: ' ',
+      title: ' ',
+      post: blogpost11,
+      blogcite: blogcite11
+    },
     {
       id: '10',
       did: '09-12-18',
@@ -154,7 +208,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
       id: '9',
       did: '09-11-18',
       date: 'September 11, 2018',
-      author: ' ',
+      author: 'Thomas Maestas',
       cat3: ' ',
       title: ' ',
       post: blogpost9,
@@ -166,7 +220,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
       date: 'September 10, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: 'Where Did All the Crypto-Cash Go? Part II:<br />Why the Long Crash ...',
+      title: 'Where Did All the Crypto-Cash Go? Part II:<br />Expectations of Speculation',
       post: blogpost8,
       blogcite: blogcite8
     },

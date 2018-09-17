@@ -316,7 +316,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
       date: 'August 25-26, 2018<br />Weekend',
       author: 'by Thomas Maestas',
       cat3: 'Sociology Tomorrow!',
-      title: '',
+      title: 'The Quantum Chip for All',
       post: blogpost22,
       blogcite: blogcite22
     }, 
