@@ -87,7 +87,7 @@
     .app-notifications .icon:before {
         font-size: 20px;
     }
-
+/*
     @media (min-width: 768px) {
         .app-navbar .navbar-collapse:after {
             height: auto;
@@ -290,7 +290,7 @@
         color: darkslateblue;
     }
 
-    .blog {
+    .catblog {
         background-color: #ff8707;
         background-image: url("dist/img/cats/NACKhalifax60.png");
         color: darkslateblue;
@@ -302,12 +302,15 @@
         border-radius: 5%;
         width: 99%;
     }
-
+.catblog h2 {
+    font-size:bold;
+    text-align:center;
+}
     #innerform {
         width: 100%;
     }
 
-    #blogcat {
+    #blogcat { 
         text-align: justify;
         border-radius: 5%;
         padding: 5px;
@@ -320,6 +323,7 @@
         height: 800px;
         overflow-y: scroll;
     }
+    
 
     .p {
         font-family: "courier new", courier, monospace;
@@ -481,9 +485,9 @@
     }
 
     .container {
-        width: 800px;
+        max-width: 800px;
         margin-right: auto;
-        margin-left: auto;
+        margin-left: auto; 
     }
 
     .container #center {
@@ -502,11 +506,9 @@
     h3,
     h2,
     h1 {
-        color: darkslateblue;
-        opacity: .9;
-        line-height: 1.3em;
-        font-weight: bolder;
-        text-align: right;
+        color: darkslateblue; 
+        line-height: 1.2em;
+        font-weight: bolder; 
         margin-right: 20px;
     }
 
@@ -852,13 +854,15 @@
         color: aliceblue;
     }
 
-    #campaign {
+    #campaign { 
         float: right;
-        line-height: 1.5em;
-        font-size: 1.3rem;
+        line-height: 1.5em; 
         background-image: url("dist/img/cats/T30.png");
     }
-
+div#campaign {
+    margin-top:15px;
+    margin-bottom:15px;
+}
 
     .kcbb-ears {
         opacity: .1;
@@ -933,19 +937,11 @@
     div.row {
         background-image: none;
     }
-
+/*
     div.col-lg-6 {
         display: none;
     }
-
-    @media (min-width: 990px) {
-        div.ears {
-            position: absolute;
-            left: 30% !important;
-        }
-    }
-
-
+*/
     div#footer {
         display: none;
     }
@@ -970,13 +966,12 @@
         z-index: 140;
     }
 
-    div#kcbb {
-        max-height: 600px;
-        overflow-y: scroll;
+    div#kcbb { 
+        
+        max-width: 100%;
     }
 
     div#blogcat {
-
         max-height: 600px;
         overflow-y: scroll;
     }
@@ -988,6 +983,27 @@
     .form {
         display: none;
     }
+   .map0 {
+       display:none;
+   }
+   header {
+       display:none;
+   }
+   div.mod-behave {
+       display:none;
+   }
+   #view {
+       width:90%;
+       max-width:990px;
+   }
+   
+  
+   @media (min-width: 990px) {
+    div.ears {
+        position: inherit !important;
+        left: 30% !important;
+    }}
+
 </style>
 <div class="ears">
     <div id="kcbb-ears1" class="kcbb-ears left"></div>
@@ -1039,24 +1055,20 @@
 
     </header>
 
-    <div class="p mission" id="kcbb">
 
-    </div>
-
-
+    <div class="catblog" id="blogcat">
+        
     <div id="campaign" class="links">
 
-        <p class="excerpts">
-            <i> Excerpts from: </i>
-        </p>
-        <span style="color:orange;">
-            <h2> Early Months of Win's Campaign</h2>
-        </span>
-
-        <span class="excerpts" style="float:right;margin-right:30px;">by t. milton maestas</span>
-    </div>
-
-    <div class="blog" id="blogcat">
+            <p class="excerpts">
+                <i> Excerpts from: </i>
+            </p>
+            <span style="color:orange;">
+                <h2> Early Months of Win's Campaign</h2>
+            </span>
+    
+            <span class="excerpts" style="float:right;margin-right:30px;">by t. milton maestas</span>
+        </div>
         <div id="tales"></div>
         <div id="winslow_casper"></div>
 
@@ -1071,6 +1083,13 @@
     <div id="capturing" class="links">
 
     </div>
+
+    
+    <div class="p mission" id="kcbb">
+
+        </div>
+    
+    
     <div id="form">
     </div>
 

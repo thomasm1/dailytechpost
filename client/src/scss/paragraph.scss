@@ -42,16 +42,14 @@ a {
     cursor: pointer;
 }
 
-#secretMP-paragraph {
-    padding: 5% 5%;
+#secretMP-paragraph { 
 a {
     color:purple;
 }
 }
 
 
-    #secret-buttonMP {
-    padding:5% 5% 1%; 
+    #secret-buttonMP { 
     font-family:'monoton';
     }
     #secret-buttonMP:hover { 
@@ -59,8 +57,7 @@ a {
     font-weight:bold;
     cursor: pointer;
     } 
-    #secret-paragraphMP {
-    padding:5% 5% 1%; 
+    #secret-paragraphMP { 
     font-family:'monoton';
     max-width:100%;
     }
@@ -74,41 +71,7 @@ a {
     }
 
 
-/*  MPB feb, MPBmarch      ARCHIVES            */
-#secret-buttonMPB {
-    padding:5% 5% 1%; 
-    font-family:'monoton';
-    cursor:pointer;
-    } 
-    #secret-buttonMPB:hover { 
-        color:darkslateblue;
-        font-weight:bold;
-        cursor: pointer;
-        }  
-#secret-buttonMAR {
-    padding:5% 5% 1%; 
-    font-family:'monoton';
-    cursor:pointer;
-    } 
-    #secret-buttonMAR:hover { 
-        color:darkslateblue;
-        font-weight:bold;
-        cursor: pointer;
-    } 
-
-    
-#secret-buttonAPR {
-    padding:5% 5% 1%; 
-    font-family:'monoton';
-    cursor:pointer;
-    } 
-    #secret-buttonAPR:hover { 
-        color:darkslateblue;
-        font-weight:bold;
-        cursor: pointer;
-        } 
-
-
+ 
         .paragraph {
             max-height:750px;
             overflow-y:scroll;

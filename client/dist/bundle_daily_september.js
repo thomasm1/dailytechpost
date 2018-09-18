@@ -72,9 +72,7 @@
 __webpack_require__(1);  
 __webpack_require__(2);  
 __webpack_require__(3);  
-__webpack_require__(4); 
-// require('./js/planets'); 
-
+__webpack_require__(4);  
 
 __webpack_require__(5);
 __webpack_require__(6);
@@ -568,7 +566,7 @@ var bloggerSep = function () {
     We generated 30,000 new green jobs since I've been mayor, so in five years. To put that in perspective, there's 50,000 coal jobs left in America. So this town that’s just 1 percent, roughly, of the US population has created the equivalent of 60 percent of the remaining coal jobs left in America. Appalachia should be doing that, areas that have been hard hit by a recession and not recovered. These are generally good middle class jobs too, not just minimum wage.<sup>1</sup>
     </p>`;
   blogcite12 = `
-  <p class="cite">1<a href="https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/">https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/</a></p>
+  <p class="cite">1. <a href="https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/">https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/</a></p>
    `;
   blogpost11 = `  <p class="quote"> 
   </p>`;
@@ -579,13 +577,13 @@ var bloggerSep = function () {
   On Wednesday Apple announced that the neural engine is now significantly more powerful. Last year’s debut model could crank through 600 billion operations per second. The new version can work almost 10 times faster, reaching 5 trillion operations per second. Some of that speedup may come from using smaller transistors inside the A12, with features as small as 7 nanometers.<sup>1</sup>
   </p>
   <p>So, just as Apple tends to future-proof its technology, this year's release does not disappoint the constellation of iOS developers that can take advantage of the tech, with  better battery efficiency ...</p>
-  <p class="quote">App developers can play with the power of Apple’s new neural engine through Core ML, a framework the company offers to help programmers deploy machine learning on Apple devices. The company says that this allows developers to run machine learning code nine times faster than on the iPhone X, while using a tenth of the energy. 
+  <p class="quote">App developers can play with the power of Apple’s new neural engine through Core ML, a framework the company offers to help programmers deploy machine learning on Apple devices. The company says that this allows developers to run machine learning code nine times faster than on the iPhone X, while using a tenth of the energy.<sup>1</sup>
   </p>
   <p>Thanks to Apple's commitment to A.I., the iPhone Xs,   Xs Max, and   Xr offer all the joys of smart video/camera, processing, augmented reality, --<i>and with battery <strong>savings?</strong>   Ooh L&aacute; L&aacute;!</i>
 
   `;
   blogcite10=  `
-  <p class="cite"><a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
+  <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
   `;
   blogpost9 = `
   <p class="quote"> 

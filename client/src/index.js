@@ -3,9 +3,7 @@
 require('./js/lib/application.min');  
 require('./js/modal');  
 require('./js/menu');  
-require('./js/force'); 
-// require('./js/planets'); 
-
+require('./js/force');  
 
 require('./js/blog-draft-sep');
 require('./js/blog-draft-aug');

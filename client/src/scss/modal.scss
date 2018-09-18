@@ -1,25 +1,32 @@
  
-  .mbutton{  
-    color:#fff;
+  .mbutton{   
     border:0;
     font-weight:300;
     min-width:100%;
     font-size:1.1rem;
     background-color:rgba(116, 186, 255, 0.2);    
   }
-  
+ 
+.cover:hover {
+    color:blue !important;
+  }
+ .steel {
+   color:rgb(205, 226, 252) !important;
+ }
   #mmodalBtn {  
     max-width:100%; 
     line-height:130%;
     border-radius:5%;
     border:1px solid purple;
-    cursor:pointer;
     padding-bottom:.5em;
+    padding-top:1em;
   }
   
   #mmodalBtn:hover {
-    border:1px solid white;
-    }  
+    border:2px inset white; 
+    opacity:.8; 
+    cursor:pointer;
+        }  
   .mmodal{
     display:none;
     position: fixed;

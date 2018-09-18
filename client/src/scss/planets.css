@@ -26,7 +26,7 @@
  }
 
  .sun path {
-   fill: rgba(121, 130, 250, 0.925);
+   fill: rgba(0, 9, 129, 0.925);
    opacity: .5;
  }
 
@@ -40,8 +40,7 @@
    opacity: .6;
  }
 
- div#planet {
-   float: left;
+ div#planet { 
    padding: 5px;
    margin: 5px;
    color: blue;
@@ -49,3 +48,7 @@
    background-color: #dfeef7;
    box-shadow: 0px 10px 50px rgba(102, 57, 207, 0.7);
  }
+ 
+div#map0 {
+  max-height:215px; 
+}

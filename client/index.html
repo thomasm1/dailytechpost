@@ -142,7 +142,7 @@
 
 
 
-  <div class="container" id="foreground">
+  <div class="container" id="foreground" ng-hide="CatsController">
     <!-- /.container -->
 
     <div class="row">
@@ -154,8 +154,6 @@
           <div class="row">
             <div class="col-lg-3">
               <div class="card card-profile">
-
-                <div ng-view class="view"></div>
 
                 <div id="planets">
                   <form class="form">
@@ -169,24 +167,25 @@
                     <label for="ref-sun">Sun</label>
                   </form>
                 </div>
-                <div id="map0"></div>
-
-                <script src="dist/js/planets.js"></script>
-                <div class=" card-header">
-                  <button id="mmodalBtn" class="mbutton title     hover">
-                    <h6 class=" subdailytech white" title="Machine Learning">
-                      <br />
-                      <a class="cover">A.I.NOW</a>
+                <div id="map0" class="map0"></div> <div style="float:left" class="map0"></div>
+                <script src="dist/planets.js"></script>
+                <div class=" card-header" >
+                  <button id="mmodalBtn" class="mbutton title   hover">
+                    <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
+                          <a class="cover  ">SOCIOLOGY TOMORROW!</a>
+                     </h6>
+                    <h6 class="            subdailytech white hover">
+                      <a class="cover steel">WEB DEV &nbsp; AFFAIRS &nbsp; </a>
+                    </h6> 
+                    <h6 class=" subdailytech white" title="Machine Learning"> 
+                      <a class="cover ">A.I.NOW</a>
+                    </h6>
+                    <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
+                      <a class="cover steel">QUANTUM DATA</a>
                     </h6>
                     <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
                       <a class="cover">MUSING BLOCKCHAIN</a>
-                    </h6>
-                    <h6 class="            subdailytech white hover">
-                      <a class="cover">WEB DEV &nbsp; AFFAIRS &nbsp; </a>
-                    </h6>
-                    <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
-                      <a class="cover  ">SOCIOLOGY TOMORROW!</a>
-                    </h6>
+                    </h6> 
                   </button>
 
                 </div>
@@ -231,9 +230,8 @@
 
 
 
-              <ul class="list-group media-list media-list-stream mb-4" id="center-col">
-
-
+              <ul class="list-group media-list media-list-stream mb-4" id="center-col"> 
+                <div ng-view class="view"></div> 
                 <li>
                   <div id="tech">
 

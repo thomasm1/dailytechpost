@@ -377,13 +377,12 @@ div.mod-behave button {
    h5 > button {
     font-family: monoton !important;
     cursor:pointer;
-    margin: 0px;  
-    font-size:120%;
+    margin: 0px;   
     background-color:transparent;
     color:white;
     border:none;
     text-transform: uppercase;
-    padding: 3% 1% 3%; 
+   padding-top:10px;
 }
 h5 > button:hover {
     color:lightblue;
@@ -489,12 +488,7 @@ div.panel-body {
 label {
   color:lightsteelblue;
 }
-a.cover {
-    font-size:1.2rem;
-}
-.cover:hover {
-    color:blue !important;
-  }
+
 /* main*/
 #view {
 padding-top:80px;
@@ -609,10 +603,6 @@ div.col-md-4 > p,h3,h4 {
 div.row#row-posts {
     overflow:scroll;
 }
-div#map0 {
-    max-height:280px;
-    max-width:330px;
-}
 /* social media icons */
 #media li a  { 
     background-color:transparent; 
@@ -629,3 +619,6 @@ div#map0 {
     background-image: url('../img/RBTriomphe.png');
   }
    
+  h3#blogs {
+      pointer:inherit;
+  }
