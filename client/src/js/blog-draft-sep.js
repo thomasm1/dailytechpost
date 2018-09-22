@@ -1,7 +1,18 @@
 console.log('blogger-sep');
 
 var bloggerSep = function () {
-  blogpost17 = `
+  blogpost18 = ` There has been a collapse in the number of ICOs that have tried to raise financing.
+
+  This has been driven by a number of factors including uncertainty around regulation, falling crypto market prices and of course, disillusionment in the previous ICOs that raised funding.    Given that the Ethereum blockchain was the premier platform for ICOs to raise their funding, it is feeling the brunt of this slowdown.<br /><br />
+  
+  Not only is this lack of “ICO demand” for ETH having an adverse effect on the price but the previous ICOs are also driving the price lower as they try to convert their ETH into Fiat currency to meet expenses.  </p>
+  `;
+  blogcite18   =  `
+  <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
+  `;
+
+  blogcite17 = ` 
+
   <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/ SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
 <br /><br />
   At press time, BTC/USD was trading around $6,707 an increase of about 5 percent on the day, taking prices back to the range they hovered in during mid-August. In altcoin markets, Ethereum’s (ETH) reversal of fortunes continued after weeks of beating Bitcoin on losses. Prices at press time for ETH/USD hit $225, also a first since September 7, having fallen as low as $171 in the meantime.<sup>1</sup>
@@ -10,7 +21,7 @@ var bloggerSep = function () {
   blogcite17   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains</a></p>
   `;
-  blogpost16 = `
+  blogpost16 = `<p class="firstparagraph">Altering Market States and technology-advancement forces among crypto-currencies
   <p class="quote"> According to a local report, as a result of a security breach on September 14, hackers managed to steal 4.5 billion yen from users' hot wallets, as well as 2.2 billion yen from the assets of the company, with total losses amounting to 6.7 billion yen or around $59.7 million.
 <br />
   Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup>
@@ -232,7 +243,18 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   </p>
     `;
 
-  var url = [   {
+  var url = [   
+        {
+    id: '18',
+    did: '09-21-18',
+    date: 'September 21, 2018',
+    author: 'by Thomas Maestas',
+    cat3: 'Musing Blockchain',
+    title: 'On the Other Side of the Coin: Part IV<br />Democratized Markets',
+    post: blogpost17,
+    blogcite: blogcite17
+  },
+    {
     id: '17',
     did: '09-20-18',
     date: 'September 20, 2018',
@@ -247,7 +269,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     date: 'September 19, 2018',
     author: 'by Thomas Maestas',
     cat3: 'Musing Blockchain',
-    title: 'On the Other Side of the Coin: Part II<br />The How of the Hack',
+    title: 'On the Other Side of the Coin: Part II<br />Altering Crypto-Market States from Technology Advancements Help Determine the Wide Crypto-Currency Variances between Ripple Coin, Bitcoin, and Ethereum',
       post: blogpost16,
       blogcite: blogcite16
     },
@@ -257,7 +279,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
       date: 'September 18, 2018',
       author: 'by Thomas Maestas',
       cat3: 'Musing Blockchain',
-      title: 'On the Other Side of the Coin: Part I<br />SEC Concerns',
+      title: 'On the Other Side of the Coin: Part I<br />SEC Concerns About the Top Three Crypto-Currencies',
         post: blogpost15,
         blogcite: blogcite15
       }, {

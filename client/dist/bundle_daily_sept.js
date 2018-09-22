@@ -2292,8 +2292,7 @@ bloggerJuly();
 /* 8 */
 /***/ (function(module, exports) {
 
- 
-console.log('blogger-june');
+
 var bloggerJune = function () {
  
 blogpost14 = 
@@ -2928,7 +2927,9 @@ for (i=0;i<url.length;i++){
  </div>`;
 document.getElementById("paragraph-june-mod").innerHTML += catMod; 
 }; 
-
+ 
+console.log('blogger-june');
+console.log(angular.toJson(bloggerJune));
 };
 bloggerJune();  
 
