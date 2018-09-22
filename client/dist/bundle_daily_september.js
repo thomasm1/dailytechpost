@@ -553,18 +553,27 @@ var bloggerSep = function () {
   
   The following vehicles will be allowed to circulate, at a maximum of 30 km/h: non-motorized vehicles, emergency vehicles, vehicles for disabled people, taxis, public transport, BigBus and Open Tour, and VTC (the latter (private hire taxis) were not allowed to circulate last year). There are also numerous alternative modes of transport - bicycle, horse & carriage, cyclopolitain (pedicabs) … <sup>1</sup>
   </p>
+  <p class="firstparagraph">Paris, as a City foremost, has led global discussion and awareness on climate-change related action. Paris' smog-dispelling culture presents itself as <i>The City at the center of action</i> with respect to global, macro-level problems. Why the city? It only makes sense that collective action and mobilization requires the correct ratio of community leaders and actors to engage enough social momentum to overcome apathy. On a national-level, action is highly effective but practically impossible, while the community-level can hardly muster the type of leverage to influence other communities. <i> The city, often composed of multiple millions and spanning larger geographies, resembles the powerful cities that governed nation-states from the middle ages forward.</i> Examples include 16th century Florence, 17th century Istanbul, 18th century Paris, and 19th century London--not to mention the first global city-state power, Rome. In terms of collection action, this historical nuance of the city takes a new role:    
+  </p>
+  <p class="quote">Last week at the Global Climate Action Summit, many of the best minds the human species can muster gathered to right the course.
+
+  These people included but were not limited to: environmentalists, mayors from around the world, human rights activists, technologists, academics, business leaders, labor leaders, and former secretaries of state. The kinds of folks with noble pursuits. This was climate change activism without borders. If the Paris Agreement, drafted in 2015, was about governments coming together to fight, last week’s event showed that the most ambitious climate action isn’t happening on the national scale—it’s cities and states that are leading the way.<sup>2</sup></p>
+  <p>Granted, the city is the center of climate-change peril and so it is only natural they are the first to act, and are the defacto center of action ... and hope.</p>
 `;
   blogcite13 = `
 
   <p class="cite">1<a href="https://en.convention.parisinfo.com/travel-trade/car-free-day-paris">
   https://en.convention.parisinfo.com/travel-trade/car-free-day-paris</a></p>
+    <p class="cite">2<a href="https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/">
+    https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/</a></p>
   `;
-  blogpost12 = `    <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
+  blogpost12 = `<p class="firstparagraph">Los Angeles' technological centality has always been overshadowed by Silicon Valley and Seattle; however, Santa Monica's trendy tech hub has begun to make a name for itself with respect to one <strong>hugely important sector: climate-change related technology</strong>.     <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
   <br /><br />
     But the city is in the midst of a metamorphosis. With fewer, yet stronger storms on the horizon, it’s begun an ambitious plan to cut its reliance on imported water in half by 2025. And it’s emerging as a leader in the frantic international quest to curb emissions—in 2016 alone, it slashed emissions by 11 percent, the equivalent of taking more than 700,000 cars off the road.
     <br /><br />
     We generated 30,000 new green jobs since I've been mayor, so in five years. To put that in perspective, there's 50,000 coal jobs left in America. So this town that’s just 1 percent, roughly, of the US population has created the equivalent of 60 percent of the remaining coal jobs left in America. Appalachia should be doing that, areas that have been hard hit by a recession and not recovered. These are generally good middle class jobs too, not just minimum wage.<sup>1</sup>
-    </p>`;
+    </p>
+    <p>The expanse of L.A.'s reach, now touching San Diego, makes climate-friendly commuting a top issue: The two are agglomerating into one city after all, neatly and merely divided by Camp Pendleton. Now, about that ever-elusive high-speed rail system connecting the two ... `;
   blogcite12 = `
   <p class="cite">1. <a href="https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/">https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/</a></p>
    `;

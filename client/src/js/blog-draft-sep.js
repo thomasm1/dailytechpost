@@ -3,29 +3,57 @@ console.log('blogger-sep');
 var bloggerSep = function () {
 
   blogpost13 = `
+ 
+  <p class="firstparagraph">Paris, as a City foremost, has led global discussion and awareness on climate-change related action. Paris' smog-dispelling culture presents itself as <i>The City at the center of action</i> with respect to global, macro-level problems. Why the city? It only makes sense that collective action and mobilization requires the correct ratio of community leaders and actors to engage enough social momentum to overcome apathy. </p>
   <p class="quote">This year, the ban on motorized traffic will apply to the whole of Paris, except for the Bois (woods) and the périphérique (inner ring road). 
   The Parisians themselves will not be able to drive their own vehicle, including electric vehicles, 'clean' energy vehicles, and Autolib vehicles.<br /><br />
   
   The following vehicles will be allowed to circulate, at a maximum of 30 km/h: non-motorized vehicles, emergency vehicles, vehicles for disabled people, taxis, public transport, BigBus and Open Tour, and VTC (the latter (private hire taxis) were not allowed to circulate last year). There are also numerous alternative modes of transport - bicycle, horse & carriage, cyclopolitain (pedicabs) … <sup>1</sup>
   </p>
+    <p>On a national-level, action is highly effective but practically impossible, while the community-level can hardly muster the type of leverage to influence other communities. <i> The city, often composed of multiple millions and spanning larger geographies, resembles the powerful cities that governed nation-states from the middle ages forward.</i> Examples include 16th century Florence, 17th century Istanbul, 18th century Paris, and 19th century London--not to mention the first global city-state power, Rome. In terms of collection action, this historical nuance of the city takes a new role:    
+  </p>
+  <p class="quote">Last week at the Global Climate Action Summit, many of the best minds the human species can muster gathered to right the course.
+
+  These people included but were not limited to: environmentalists, mayors from around the world, human rights activists, technologists, academics, business leaders, labor leaders, and former secretaries of state. The kinds of folks with noble pursuits. This was climate change activism without borders. If the Paris Agreement, drafted in 2015, was about governments coming together to fight, last week’s event showed that the most ambitious climate action isn’t happening on the national scale—it’s cities and states that are leading the way.<sup>2</sup></p>
+  <p>Granted, the city is the center of climate-change peril and so it is only natural they are the first to act, and are the defacto center of action ... and hope.</p>
 `;
   blogcite13 = `
 
   <p class="cite">1<a href="https://en.convention.parisinfo.com/travel-trade/car-free-day-paris">
   https://en.convention.parisinfo.com/travel-trade/car-free-day-paris</a></p>
+    <p class="cite">2<a href="https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/">
+    https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/</a></p>
   `;
-  blogpost12 = `    <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
+  blogpost12 = `<p class="firstparagraph">Los Angeles' technological centality has always been overshadowed by Silicon Valley and Seattle; however, Santa Monica's trendy tech hub has begun to make a name for itself with respect to one <strong>hugely important sector: climate-change related technology</strong>.     <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
   <br /><br />
     But the city is in the midst of a metamorphosis. With fewer, yet stronger storms on the horizon, it’s begun an ambitious plan to cut its reliance on imported water in half by 2025. And it’s emerging as a leader in the frantic international quest to curb emissions—in 2016 alone, it slashed emissions by 11 percent, the equivalent of taking more than 700,000 cars off the road.
     <br /><br />
     We generated 30,000 new green jobs since I've been mayor, so in five years. To put that in perspective, there's 50,000 coal jobs left in America. So this town that’s just 1 percent, roughly, of the US population has created the equivalent of 60 percent of the remaining coal jobs left in America. Appalachia should be doing that, areas that have been hard hit by a recession and not recovered. These are generally good middle class jobs too, not just minimum wage.<sup>1</sup>
-    </p>`;
+    </p>
+    <p>The expanse of L.A.'s reach, now touching San Diego, makes climate-friendly commuting a top issue: The two are agglomerating into one city after all, neatly and merely divided by Camp Pendleton. Now, about that ever-elusive high-speed rail system connecting the two ... `;
   blogcite12 = `
   <p class="cite">1. <a href="https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/">https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/</a></p>
    `;
-  blogpost11 = `  <p class="quote"> 
-  </p>`;
-  blogcite11 = ` `;
+  blogpost11 = ` <p class="firstparagraph">World Economic Forum, most notable for its annual convocation of world leaders, works around the clock, with no shortage of resources for socio-economic research:
+  </p> <p class="quote"> As technological breakthroughs rapidly shift the frontier between the work tasks performed by humans and those performed by machines and algorithms, global labour markets are likely to undergo major transformations. These transformations, if managed wisely, could lead to a new age of good work, good jobs and improved quality of life for all, but if managed poorly, pose the risk of widening skills gaps, greater inequality and broader polarization. In many ways, the time to shape the future of work is now. The Future of Jobs report provides tools which can support responses to the critical questions confronting businesses, governments and workers in the horizon up to 2022.<sup>1</sup>
+  </p>
+  <p>One clear take-away from the report features the urgent short-term need to responsibily fill vast holes in the labor market:</p>
+  <p class="quote">Machines Will Do More Tasks Than Humans by 2025 but Robot Revolution Will Still Create 58 Million Net New Jobs in Next Five Years:<br /><br />
+  <ul><li>
+  Latest research from the World Economic Forum forecasts that by 2025, machines will perform more current work tasks than humans, compared to 71% being performed by humans today.</li>
+  <li>
+  The rapid evolution of machines and algorithms in the workplace could create 133 million new roles in place of 75 million that will be displaced between now and 2022</li><li>
+  Urgent challenges include providing reskilling opportunities, enabling remote work and building safety nets to protect at-risk workers and communities
+  </li>
+  </ul>
+  </p>
+  <p><strong>... to which I say, <i>H.R. Managers of the World: Unite!</i></strong></p>
+  `;
+  blogcite11 = ` 
+  <p class="cite">1. <a href="http://reports.weforum.org/future-of-jobs-2018/">http://reports.weforum.org/future-of-jobs-2018/</a></p>
+  
+  <p class="cite">PDF Download<br /><a href="http://www3.weforum.org/docs/WEF_Future_of_Jobs_2018.pdf">http://www3.weforum.org/docs/WEF_Future_of_Jobs_2018.pdf</a></p>
+  `;
   blogpost10 = `<p class="firstparagraph">
   Invisible upgrades are the true talking points of new mobile device  releases as they hint big things under the hood... Last year's iPhone X may have been alot of hardware show (with the X/8/8plus providing the first A.I.-dedicated chip), but 2018 augurs big things ahead and bigger muscle:
   <p class="quote">
