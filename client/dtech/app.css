@@ -1,0 +1,282 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Monoton:100,200,300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #3d3a97;
+  background-image: url("img/bluechipTileT8.png");
+  opacity: .9;
+  background-color: #2e4998;
+  max-width: 950px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100%;
+  *width: 100%; }
+  body h1, body h2, body h3 {
+    margin: 0; }
+  body p {
+    font-weight: 400;
+    font-size: 1rem; }
+
+ 
+  
+/* **************** dTech **************************  */
+#title {
+  font-size:1.4em;
+  max-width:80%;
+
+}
+h1 { 
+  margin-top: 0;
+}
+#headerWrapper {
+    width: 100%;
+	height: 80px;
+  background-color:darkslateblue;
+  color:aliceblue;
+  background-image:url('/imgs/bluechipTileT8.png');  
+}
+
+.logo {
+    padding: 10px;
+    margin-right: 10x;
+    font-size: 35px;
+    font-family: fantasy;
+}
+
+.tagline {
+    font-size: 10px;
+    margin-top: 50px;
+    margin-left: -123px;
+    font-family: monospace;
+}
+.nav-pills  {
+  
+  background-color:lightsteelblue;
+ 
+}
+.nav-pills {
+  color:white;
+}
+.nav-wrapper {
+    margin-left: 100px;
+    margin-top: 15px;
+}
+li.book {
+  /*background: rgb(255, 0, 0) url('imgs/{{book.imgUrl}}') no-repeat
+  */ 
+
+  max-height:150px;  
+  background: rgba(90, 189, 255, 0.404) url('imgs/icon.png') no-repeat;
+ 
+}
+#bookListWrapper {
+	width: 90%;
+  padding: 10px; 
+  background-color:lightsteelblue;
+  color:aliceblue;
+  background-image:url('/imgs/bluechipTileT8.png');  
+}
+
+#bookListWrapper select {
+  width: 200px;
+  margin-top:10px;
+}
+#bookListWrapper input {
+	width: 200px;
+  margin-top:10px;
+}
+
+#bookListWrapper .book { 
+	padding: 5px;
+	margin-bottom: 10px;	
+	position: relative;
+}
+
+#bookListWrapper .book .book-details { 
+  color:aliceblue; 
+  /*background: rgb(255, 0, 0) url('imgs/{{book.imgUrl}}') no-repeat
+  */
+ /* background: rgb(255, 0, 0) url('/imgs/bluechipTileT8.png') no-repeat;
+  */
+  background-color: darkblue;
+  background-image:url('/imgs/bluechipTileT8.png'); 
+    padding:10px;
+	margin-left: 160px;
+}
+.form-group {
+  display:inline-block;
+  width:100%;
+}
+.form-group p {
+  float:left;
+width:30%;
+margin:auto;
+}
+
+.container-fluid {
+  background-color:blue;
+  color:aliceblue;
+  background-image:url('/imgs/bluechipTileT8.png'); 
+  padding:20px; 
+}
+.container-fluid.ng-enter {
+  
+	-webkit-transition:0.5s linear all;
+	 -moz-transition:0.5s linear all;
+	 -o-transition:0.5s linear all;
+	 transition:0.5s linear all;
+	 opacity:0;
+}
+
+.container-fluid.ng-enter-active {
+	 opacity:.9;
+}
+
+.book.ng-leave {
+	-webkit-transition:0.5s linear all;
+	 -moz-transition:0.5s linear all;
+	 -o-transition:0.5s linear all;
+	 transition:0.5s linear all;
+	 opacity:1;
+	 left: 0;
+}
+
+.book.ng-leave-active {
+	opacity:0;
+	left: 600px;
+}
+
+.book.ng-enter {
+	-webkit-transition:0.5s linear all;
+	 -moz-transition:0.5s linear all;
+	 -o-transition:0.5s linear all;
+	 transition:0.5s linear all;
+	 opacity:0;
+	 left: 600px;
+}
+
+.book.ng-enter-active {
+	opacity:1;
+	left: 0;
+}
+/*                     *************** */
+
+.thumb {
+
+  background-image:url('/imgs/bluechipTileT8.png');
+  padding:20px 0 0 10px;
+  min-width: 150px;
+}
+.search {
+  min-width:120px;
+}
+.posts  {
+  color:darkblue;
+  padding:5px ; 
+} 
+.center-text { 
+   line-height:160%;
+   color:white;
+   font-size:1.2em;
+   text-align:center;
+   
+ }
+.specs {
+  padding-top:15px;
+}
+
+/* View: Post list */
+.posts {
+  list-style: none;
+}
+
+.posts li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+
+.post-thumbs {
+  float: left;
+  height: 100px;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  width: 100px;
+}
+
+/* View: Post detail */
+.post {
+  background-color: white;
+  display: none;
+  float: left;
+  height: 300px;
+  margin-bottom: 2em;
+  margin-right: 3em;
+  padding: 2em;
+  width: 300px;
+}
+
+.post:first-child {
+  display: block;
+}
+
+.post-images {
+  background-color: white;
+  float: left;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  width: 450px;
+}
+
+.post-thumbs {
+  list-style: none;
+  margin: 0;
+}
+
+.post-thumbs img {
+  height: 100px;
+  padding: 1em;
+  width: 100px;
+}
+
+.post-thumbs li {
+  background-color:blue;
+  color:aliceblue;
+  background-image:url('/imgs/bluechipTileT8.png');  
+  border: 1px solid black;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1em;
+}
+
+.specs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.specs dt {
+  font-weight: bold;
+}
+
+.specs > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+}
+
+.specs > li > span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+ 
+.blue {
+  color:blue;
+}
+ 

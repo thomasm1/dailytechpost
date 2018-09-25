@@ -1,4 +1,4 @@
-console.log('blogger-mar');
+
 
 var bloggerMar = function () {
 
@@ -1058,11 +1058,10 @@ https://digiconomist.net/bitcoin-energy-consumption
     </div>`;
 
 document.getElementById("paragraph-mar-mod").innerHTML += catMod;
-};
-
-
-
-
+}
+ 
+console.log('blogger-mar');
+ // console.log(angular.toJson(url));
 };
 
 bloggerMar();

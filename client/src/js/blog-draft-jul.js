@@ -421,7 +421,9 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 
 `;
 
-  blogpost1 = `<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
+  blogpost1 = 
+    `
+  <p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
 </p>
 `;
 
@@ -709,5 +711,6 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
     document.getElementById("paragraph-july-mod").innerHTML += catMod;
   }
 
+  console.log(angular.toJson(url));
 };
 bloggerJuly();

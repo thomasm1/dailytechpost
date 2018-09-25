@@ -1,7 +1,6 @@
  
 //Top Vars Above
 
-console.log('blogger-may');
 var bloggerMay = function () {
  
  
@@ -424,6 +423,10 @@ for (i=0;i<url.length;i++){
  </div>`;
 document.getElementById("paragraph-may-mod").innerHTML += catMod;
 }
+
+
+console.log('blogger-may'); 
+// console.log(angular.toJson(url));
 }; 
 
 

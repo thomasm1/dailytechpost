@@ -1,4 +1,3 @@
-console.log('blogger-sep');
 
 var bloggerSep = function () {
   blogpost18 = ` There has been a collapse in the number of ICOs that have tried to raise financing.
@@ -11,7 +10,7 @@ var bloggerSep = function () {
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
   `;
 
-  blogcite17 = ` 
+  blogpost17 = ` 
 
   <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/ SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
 <br /><br />
@@ -461,5 +460,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     document.getElementById("paragraph-sep-mod").innerHTML += catMod;
   }
 
+  console.log('blogger-sep'); 
+ // console.log(angular.toJson(url));
 };
 bloggerSep();

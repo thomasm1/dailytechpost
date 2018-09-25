@@ -1,4 +1,4 @@
-console.log('blogger-feb');
+
 
 var bloggerFeb = function () {
 
@@ -1195,10 +1195,10 @@ target="_blank">https://www.trustnodes.com/2017/11/28/ethereums-proof-stake-casp
     </div>`;
     
 document.getElementById("paragraph-feb-mod").innerHTML += catMod;
-};
+} 
 
-
-
+console.log('blogger-feb');
+ // console.log(angular.toJson(url));
 
 };
 

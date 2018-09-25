@@ -1,5 +1,4 @@
-console.log('blogger-apr');
-
+ 
 var bloggerApr = function () {
 
 
@@ -632,6 +631,7 @@ var bloggerApr = function () {
     </div>`;
      document.getElementById("paragraph-apr-mod").innerHTML += catMod;  
 } 
-
+console.log('blogger-apr');
+ // console.log(angular.toJson(url));
 };
 bloggerApr();

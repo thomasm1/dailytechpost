@@ -1,4 +1,3 @@
-console.log('blogger-aug');
 
 var bloggerAug = function () {
   blogpost22 = `<p class="firstparagraph">Quantum computing, now readily available for science-venturing public consumption: IBM's Quantum Community and Resources offer cloud access to quantum hardware:
@@ -573,6 +572,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
  </div>`;
     document.getElementById("paragraph-aug-mod").innerHTML += catMod;
   }
-
+  console.log('blogger-aug'); 
+  // console.log(angular.toJson(url));
 };
 bloggerAug();
