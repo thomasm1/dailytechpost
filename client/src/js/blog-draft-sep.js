@@ -1,6 +1,20 @@
 
 var bloggerSep = function () {
-  blogpost18 = ` There has been a collapse in the number of ICOs that have tried to raise financing.
+
+  
+  blogpost20 = ` <p class="quote"> <br /><br />
+  </p>
+  `;
+  blogcite20   =  `
+  <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
+  `;
+  blogpost19= `<p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. 
+    </p>
+  `;
+  blogcite19   =  `
+  <p class="cite">1. <a href="https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc">https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc</a></p>
+  `;
+  blogpost18 = `<p class="quote"> There has been a collapse in the number of ICOs that have tried to raise financing.
 
   This has been driven by a number of factors including uncertainty around regulation, falling crypto market prices and of course, disillusionment in the previous ICOs that raised funding.    Given that the Ethereum blockchain was the premier platform for ICOs to raise their funding, it is feeling the brunt of this slowdown.<br /><br />
   
@@ -117,14 +131,21 @@ var bloggerSep = function () {
 
   `;
   blogcite10=  `
-  <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
+  <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts"> https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
   `;
-  blogpost9 = `
-  <p class="quote"> 
+  blogpost9 = `<p class="firstparagraph">International hubs of technical specializations--from haptic touchscreens to battery tech--implicates global cooperation--beyond merely rare metals and resources. 
   </p>
+  <p class="quote"> Last week, dozens of manufacturing companies testified before US Trade Representatives about how Trump's next round of duties against China could affect them. Some showed concerns of layoffs for American people and harm to US economic interests.<sup>1</sup>
+  </p>
+  <p>Global Tech presuppposes global trading cooperation primarily because of rare metals. But more importantly, fabrication specialties growing up in foreign <i>Research Parks</i>.  And, entreched technological specializations are a function of the depth of itemized specializations that sprout around universities and public/privately funded research parks, coupled with the technical workforce to put glass to screen.</p>
+  <p class="quote">Even if every part was made in the US, an iPhone would cost about $100 more, Kakaes concluded, assuming raw materials were still purchased on global markets.<br /><br />
+
+  The issue is not so much cost of putting an iPhone together, or even the cost per part on paper. The issue is skill, scale, expertise, and infrastructure — all of which require money, time and long-term investment. Unlike other manufacturing jobs that have migrated from the United States, Apple wouldn’t be bringing them “back” so much as starting from scratch. The cost would come in attempting to build a system that’s never been in the US, but has been built over decades abroad.<sup>2</sup>
+  </p><p>So, at the end of the day, we can only hope that foreign tech resources along with associated human/social capital would just be left alone from economic tiffs ... Periodic table of rare metals and precious elements aside, the true gems are the diverse people!    
   `;
   blogcite9=  `
-  <p class="cite"><a href=" "> </a></p>
+  <p class="cite">1._<a href="https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247">https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247</a></p>
+  <p class="cite">2._<a href="https://www.vox.com/technology/2018/9/13/17851052/apple-iphone-price-china-trump-us-trade"> https://www.vox.com/technology/2018/9/13/17851052/apple-iphone-price-china-trump-us-trade</a></p>
   `;
   blogpost8 = `
   <p class="firstparagraph">Vitalik Buterin, architect of Ethereum crypto-contract/currency, presented at the recent TechCrunch Disrupt! conference with no shortage of opinions on the direction of blockchain and crypto-currency/contract investments... This, after the Ethereum (WEI) declines nearly ten-fold along with Bitcoin's 70% drop<sup>1</sup>, along with other major crypto-currencies. </p>
@@ -232,17 +253,38 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   `;
 
 
-  blogpost1 = `<p class="firstparagraph"> </p>
-  <p class="quote"> <sup> </sup></p>
-  <p> </p>
+  blogpost1 = `<p class="quote"><i>At first the computer drew a blank; seconds later, it decided it was dealing with another car, expecting it to drive away and require no special action. Only at the last second was a clear identification found – a woman with a bike, shopping bags hanging confusingly from handlebars, doubtless assuming the Volvo would route around her as any ordinary vehicle would. Barred from taking evasive action on its own, the computer abruptly handed control back to its human master, but the master wasn’t paying attention. Elaine Herzberg, aged 49, was struck and killed, leaving more reflective members of the tech community with two uncomfortable questions: was this algorithmic tragedy inevitable? And how used to such incidents would we, should we, be prepared to get?</i><sup>1 </sup></p>
+  <p class="firstparagraph">Mistakes in code are a given. But not inevitable, with less haste, more testing, and more corrective reduncencies. This however is not the trend:</p>
+  <p class="quote">“In some ways we’ve lost agency. When programs pass into code and code passes into algorithms and then algorithms start to create new algorithms, it gets farther and farther from human agency. Software is released into a code universe which no one can fully understand.”<sup> </sup></p>
+  <p></p>
     `;
   blogcite1 = `
-  <p class="cite">  <a href=""   target="_blank">
+  <p class="cite">  <a href="https://www.theguardian.com/technology/2018/aug/29/coding-algorithms-frankenalgos-program-danger"   target="_blank">https://www.theguardian.com/technology/2018/aug/29/coding-algorithms-frankenalgos-program-danger
   </a>
   </p>
     `;
 
-  var url = [   
+  var url = [  
+    {
+			 id: "20",
+       did: "09-24-18",
+       date: "September 24, 2018",
+       author: "Thomas Maestas",
+       cat3: "A.I.Now.",
+       title: "Sociology Tomorrow!",
+       post: blogpost19,
+       blogcite: blogcite19
+		},
+			{
+				id: "19",
+				did: "09-22-18",
+				date: "September 22-23, 2018 ",
+				author: "Thomas Maestas",
+				cat3: "A.I.Now.",
+				title: "A.I. Personalities: Techanthropormorphism Misgivings",
+				post: blogpost18,
+				blogcite: blogcite18
+			}, 
         {
     id: '18',
     did: '09-21-18',

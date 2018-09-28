@@ -38,6 +38,7 @@ dTech.factory("bookService", function() {
 	var books = 
  
 		[
+			
 			{
 				"id": "18",
 				"did": "09-21-18",
