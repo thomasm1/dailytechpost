@@ -82,7 +82,7 @@ __webpack_require__(9);
 __webpack_require__(10);
 __webpack_require__(11);
 __webpack_require__(12);
-__webpack_require__(13);      
+ __webpack_require__(13);      
    
 
 
@@ -545,36 +545,60 @@ document.getElementById("ul").innerHTML = `
 
 
 var bloggerSep = function () {
-  blogpost18 = ` There has been a collapse in the number of ICOs that have tried to raise financing.
+
+  /*
+  blogpost20 = ` <p class="quote"> <br /><br />
+  </p>
+  `;
+  blogcite20   =  `
+   
+  `;
+  */
+  blogpost19= `<p class="firstparagraph">For every article and blog on the sci-fi imaginations of tech writers, real A.I. presents itself every so often as what it is essentially: a tool.<i> A multi-purpose toolset, tracing its algorithmic root to &Eacute;mile Durkheim\'s 1870s era classification science</i> of human epidiology using national population data from Paris. </p><p>
+  Earlier  Statisticians and Scientists, i.e. modern Developers and Engineers also took their generation's Information Technology, applying it toward human-driven purposes. </p>
+  <p>I'm an optimist at heart, so this blog post stands out: </p><p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. <sup>1</sup>
+  </p>
+  <p> Now, A.I. that is attached to robototics? That is an entirely different story, and more akin to another technology, gun weapon proliferation and advancement. Apples and Oranges: Two completely different timelines and analogies that only imaginatively relate according to Hollywood-esque journalists that can assume malevalent intent from a tool, whether a utensil, a car, or an algorithm. 
+    </p>
+  `;
+  blogcite19   =  `
+  <p class="cite">1. <a href="https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc">https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc</a></p>
+  `;
+  blogpost18 = `<p>The 2000's Silicon Valley-led boom and bust resulted from overspeculation. The crypto-phenomenon moreso resembles the derivatives packages from the 2007-8 recession bust because value was placed on real estate's miscalculated worth based on the assumption the homeowners didn't borrow over their income. Likewise crypto-ICO's values wasn't based on a currency comprised of real cash, but <i> rather, ICO's and crypto-platforms were investments of crypto-currency!</i>So, if the one does well, the other continues to do well, multiplied. But exponential gain also means logarithmic loss ...
+   <p class="quote"> There has been a collapse in the number of ICOs that have tried to raise financing.
 
   This has been driven by a number of factors including uncertainty around regulation, falling crypto market prices and of course, disillusionment in the previous ICOs that raised funding.    Given that the Ethereum blockchain was the premier platform for ICOs to raise their funding, it is feeling the brunt of this slowdown.<br /><br />
   
-  Not only is this lack of “ICO demand” for ETH having an adverse effect on the price but the previous ICOs are also driving the price lower as they try to convert their ETH into Fiat currency to meet expenses.  </p>
+  Not only is this lack of “ICO demand” for ETH having an adverse effect on the price but the previous ICOs are also driving the price lower as they try to convert their ETH into Fiat currency to meet expenses.<sup>1</sup>  </p>
+  <p>Notwithstanding, <i> We can also are miscalculating about crypto-platforms'   center of value  ... it's   about the upcoming actual and inevitable practicality for everyday uses.</i> So, three cheers to a long, slow ramp--to another  great  and lasting crypto-currency resurgence!</p>.0
+
   `;
   blogcite18   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
   `;
 
   blogpost17 = ` 
-
-  <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/ SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
+<p class="firstparagraph">Regulation of crypto-currencies remains the bane of wider acceptance--while it <i>also shores up trust among fintech instiutions, toward a more certain future. </p>
+  <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
 <br /><br />
   At press time, BTC/USD was trading around $6,707 an increase of about 5 percent on the day, taking prices back to the range they hovered in during mid-August. In altcoin markets, Ethereum’s (ETH) reversal of fortunes continued after weeks of beating Bitcoin on losses. Prices at press time for ETH/USD hit $225, also a first since September 7, having fallen as low as $171 in the meantime.<sup>1</sup>
-  </p>
+  </p><p>
+  Imagine if a bank had staked pension portfolio's the value of Ether last fall. <i>That</i> would have been a Winter of Discontent value precipitously plummeted by April.</p>
   `;
   blogcite17   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains</a></p>
   `;
-  blogpost16 = `<p class="firstparagraph">Altering Market States and technology-advancement forces among crypto-currencies
+  blogpost16 = ` <p class="firstparagraph">Altering Market States and technology-advancement forces introspection among crypto-currency hubs.</p>
   <p class="quote"> According to a local report, as a result of a security breach on September 14, hackers managed to steal 4.5 billion yen from users' hot wallets, as well as 2.2 billion yen from the assets of the company, with total losses amounting to 6.7 billion yen or around $59.7 million.
 <br />
-  Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup>
+  Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup> 
+  </p><p>Fintech regulations have been long in coming, but a thorough SEC-pushed security overhaul could at least dispell fears about what amounts to bank robberies.</p>
   </p>
   `;
   blogcite16   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported">https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported</a></p>
   `;
-  blogpost15 = `
+  blogpost15 = `<p class="firstparagraph">Crypto-currency dealers, developers and owners should welcome more regulation, scrupulous examination from financial authorities...the value of trust far outweighs the value of speed to market.</p>
   <p class="quote"> The recent report examines the practices of ten crypto trading platforms based in the U.S. and abroad, as well data collected by the Attorney General’s office about the state of digital currency markets as a whole.<br /><br />
 
   The study found that the absence of accepted methods for auditing virtual assets results in the lack of a consistent and transparent approach to independently auditing digital currency traded on exchanges. This puts customers’ funds held on their exchange accounts at risk of attacks from hackers or theft. The report subsequently questions the issue of public protection and the sufficiency of the commercial insurance to cover possible losses.<br /><br />
@@ -582,18 +606,19 @@ var bloggerSep = function () {
   The report further outlines abusive trading practices, emphasizing that the majority of crypto trading platforms deploy automated traders, offering them special conditions, which leaves retail customers at a disadvantage. It also states that digital currency exchanges involve numerous, overlapping lines of business that represent serious conflicts of interest. The report explains:
   <br /><br />
   “Automated trading activities could also allow a single trader or group of traders to command multiple accounts simultaneously to obscure coordinated trading, in order to manipulate prices.”<sup>1</sup>
-  </p>
+  </p><p>So, whether before or after breeches of trust, that are inevitable on digital platforms, wouldn't you prefer SEC scrutiny along with its guarantees?
   `;
   blogcite15   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation"> https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation</a></p>
   `;
-  blogpost14 = `
+  blogpost14 = `<p class="firstparagraph">Security of a network can be measured by the degree of carefulness from any node on a network. Likewise, bridging, central hubs can work to bottle-neck the spread of network dangers...  </p>
   <p class="quote"> As an international data hub and digital entry point to Europe, the Netherlands plays an important role when it comes to tackling these threats and optimally guaranteeing the cybersecurity of our critical infrastructure.
 
   Saskia Bruines, Deputy Mayor for Education, Knowledge Economy and International Affairs in the Municipality of The Hague:<br /><br />
   
   "Technological developments are continuing apace and the current shortage of talent will increase if we fail to take action as a society. For that reason, public authorities, educational institutions and businesses need to join forces to train, attract and retain more talent. That is why it is important to teach children digital skills from an early age. From primary school to university, educating cybertalent has to be high on the agenda. We want everyone to participate so we can all work together to create a safe society."<sup>1</sup>
   </p>
+  <p>Whether or not the security hole is breeched is immaterial--what counts is loss mitigation and insurance!</p>
   `;
   blogcite14 =  `
   <p class="cite">1. <a href="https://www.benzinga.com/pressreleases/18/09/r12366605/cyber-security-week-together-we-secure-the-future-2-5-october-2018-the">https://www.benzinga.com/pressreleases/18/09/r12366605/cyber-security-week-together-we-secure-the-future-2-5-october-2018-the</a></p>
@@ -662,14 +687,21 @@ var bloggerSep = function () {
 
   `;
   blogcite10=  `
-  <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts">https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
+  <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts"> https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
   `;
-  blogpost9 = `
-  <p class="quote"> 
+  blogpost9 = `<p class="firstparagraph">International hubs of technical specializations--from haptic touchscreens to battery tech--implicates global cooperation--beyond merely rare metals and resources. 
   </p>
+  <p class="quote"> Last week, dozens of manufacturing companies testified before US Trade Representatives about how Trump's next round of duties against China could affect them. Some showed concerns of layoffs for American people and harm to US economic interests.<sup>1</sup>
+  </p>
+  <p>Global Tech presuppposes global trading cooperation primarily because of rare metals. But more importantly, fabrication specialties growing up in foreign <i>Research Parks</i>.  And, entreched technological specializations are a function of the depth of itemized specializations that sprout around universities and public/privately funded research parks, coupled with the technical workforce to put glass to screen.</p>
+  <p class="quote">Even if every part was made in the US, an iPhone would cost about $100 more, Kakaes concluded, assuming raw materials were still purchased on global markets.<br /><br />
+
+  The issue is not so much cost of putting an iPhone together, or even the cost per part on paper. The issue is skill, scale, expertise, and infrastructure — all of which require money, time and long-term investment. Unlike other manufacturing jobs that have migrated from the United States, Apple wouldn’t be bringing them “back” so much as starting from scratch. The cost would come in attempting to build a system that’s never been in the US, but has been built over decades abroad.<sup>2</sup>
+  </p><p>So, at the end of the day, we can only hope that foreign tech resources along with associated human/social capital would just be left alone from economic tiffs ... Periodic table of rare metals and precious elements aside, the true gems are the diverse people!    
   `;
   blogcite9=  `
-  <p class="cite"><a href=" "> </a></p>
+  <p class="cite">1._<a href="https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247">https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247</a></p>
+  <p class="cite">2._<a href="https://www.vox.com/technology/2018/9/13/17851052/apple-iphone-price-china-trump-us-trade"> https://www.vox.com/technology/2018/9/13/17851052/apple-iphone-price-china-trump-us-trade</a></p>
   `;
   blogpost8 = `
   <p class="firstparagraph">Vitalik Buterin, architect of Ethereum crypto-contract/currency, presented at the recent TechCrunch Disrupt! conference with no shortage of opinions on the direction of blockchain and crypto-currency/contract investments... This, after the Ethereum (WEI) declines nearly ten-fold along with Bitcoin's 70% drop<sup>1</sup>, along with other major crypto-currencies. </p>
@@ -777,17 +809,40 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   `;
 
 
-  blogpost1 = `<p class="firstparagraph"> </p>
-  <p class="quote"> <sup> </sup></p>
-  <p> </p>
+  blogpost1 = `<p class="quote"><i>At first the computer drew a blank; seconds later, it decided it was dealing with another car, expecting it to drive away and require no special action. Only at the last second was a clear identification found – a woman with a bike, shopping bags hanging confusingly from handlebars, doubtless assuming the Volvo would route around her as any ordinary vehicle would. Barred from taking evasive action on its own, the computer abruptly handed control back to its human master, but the master wasn’t paying attention. Elaine Herzberg, aged 49, was struck and killed, leaving more reflective members of the tech community with two uncomfortable questions: was this algorithmic tragedy inevitable? And how used to such incidents would we, should we, be prepared to get?</i><sup>1 </sup></p>
+  <p class="firstparagraph">Mistakes in code are a given. But not inevitable, with less haste, more testing, and more corrective reduncencies. This however is not the trend:</p>
+  <p class="quote">“In some ways we’ve lost agency. When programs pass into code and code passes into algorithms and then algorithms start to create new algorithms, it gets farther and farther from human agency. Software is released into a code universe which no one can fully understand.”<sup> </sup></p>
+  <p></p>
     `;
   blogcite1 = `
-  <p class="cite">  <a href=""   target="_blank">
+  <p class="cite">  <a href="https://www.theguardian.com/technology/2018/aug/29/coding-algorithms-frankenalgos-program-danger"   target="_blank">https://www.theguardian.com/technology/2018/aug/29/coding-algorithms-frankenalgos-program-danger
   </a>
   </p>
     `;
 
-  var url = [   
+  var url = [  
+      /*
+      {
+			 id: "20",
+       did: "09-24-18",
+       date: "September 24, 2018",
+       author: "Thomas Maestas",
+       cat3: "A.I.Now.",
+       title: "Sociology Tomorrow!",
+       post: blogpost20,
+       blogcite: blogcite20
+    },
+    */
+			{
+				id: "19",
+				did: "09-22-18",
+				date: "September 22-23, 2018 ",
+				author: "Thomas Maestas",
+				cat3: "A.I.Now.",
+				title: "A.I. Personalities: Techanthropormorphism Misgivings",
+				post: blogpost19,
+				blogcite: blogcite19
+			}, 
         {
     id: '18',
     did: '09-21-18',
@@ -795,8 +850,8 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     author: 'by Thomas Maestas',
     cat3: 'Musing Blockchain',
     title: 'On the Other Side of the Coin: Part IV<br />Democratized Markets',
-    post: blogpost17,
-    blogcite: blogcite17
+    post: blogpost18,
+    blogcite: blogcite18
   },
     {
     id: '17',

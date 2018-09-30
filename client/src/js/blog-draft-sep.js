@@ -1,49 +1,59 @@
 
 var bloggerSep = function () {
 
-  
+  /*
   blogpost20 = ` <p class="quote"> <br /><br />
   </p>
   `;
   blogcite20   =  `
-  <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
+   
   `;
-  blogpost19= `<p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. 
+  */
+  blogpost19= `<p class="firstparagraph">For every article and blog on the sci-fi imaginations of tech writers, real A.I. presents itself every so often as what it is essentially: a tool.<i> A multi-purpose toolset, tracing its algorithmic root to &Eacute;mile Durkheim\'s 1870s era classification science</i> of human epidiology using national population data from Paris. </p><p>
+  Earlier  Statisticians and Scientists, i.e. modern Developers and Engineers also took their generation's Information Technology, applying it toward human-driven purposes. </p>
+  <p>I'm an optimist at heart, so this blog post stands out: </p><p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. <sup>1</sup>
+  </p>
+  <p> Now, A.I. that is attached to robototics? That is an entirely different story, and more akin to another technology, gun weapon proliferation and advancement. Apples and Oranges: Two completely different timelines and analogies that only imaginatively relate according to Hollywood-esque journalists that can assume malevalent intent from a tool, whether a utensil, a car, or an algorithm. 
     </p>
   `;
   blogcite19   =  `
   <p class="cite">1. <a href="https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc">https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc</a></p>
   `;
-  blogpost18 = `<p class="quote"> There has been a collapse in the number of ICOs that have tried to raise financing.
+  blogpost18 = `<p>The 2000's Silicon Valley-led boom and bust resulted from overspeculation. The crypto-phenomenon moreso resembles the derivatives packages from the 2007-8 recession bust because value was placed on real estate's miscalculated worth based on the assumption the homeowners didn't borrow over their income. Likewise crypto-ICO's values wasn't based on a currency comprised of real cash, but <i> rather, ICO's and crypto-platforms were investments of crypto-currency!</i>So, if the one does well, the other continues to do well, multiplied. But exponential gain also means logarithmic loss ...
+   <p class="quote"> There has been a collapse in the number of ICOs that have tried to raise financing.
 
   This has been driven by a number of factors including uncertainty around regulation, falling crypto market prices and of course, disillusionment in the previous ICOs that raised funding.    Given that the Ethereum blockchain was the premier platform for ICOs to raise their funding, it is feeling the brunt of this slowdown.<br /><br />
   
-  Not only is this lack of “ICO demand” for ETH having an adverse effect on the price but the previous ICOs are also driving the price lower as they try to convert their ETH into Fiat currency to meet expenses.  </p>
+  Not only is this lack of “ICO demand” for ETH having an adverse effect on the price but the previous ICOs are also driving the price lower as they try to convert their ETH into Fiat currency to meet expenses.<sup>1</sup>  </p>
+  <p>Notwithstanding, <i> We can also are miscalculating about crypto-platforms'   center of value  ... it's   about the upcoming actual and inevitable practicality for everyday uses.</i> So, three cheers to a long, slow ramp--to another  great  and lasting crypto-currency resurgence!</p>.0
+
   `;
   blogcite18   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
   `;
 
   blogpost17 = ` 
-
-  <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/ SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
+<p class="firstparagraph">Regulation of crypto-currencies remains the bane of wider acceptance--while it <i>also shores up trust among fintech instiutions, toward a more certain future. </p>
+  <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
 <br /><br />
   At press time, BTC/USD was trading around $6,707 an increase of about 5 percent on the day, taking prices back to the range they hovered in during mid-August. In altcoin markets, Ethereum’s (ETH) reversal of fortunes continued after weeks of beating Bitcoin on losses. Prices at press time for ETH/USD hit $225, also a first since September 7, having fallen as low as $171 in the meantime.<sup>1</sup>
-  </p>
+  </p><p>
+  Imagine if a bank had staked pension portfolio's the value of Ether last fall. <i>That</i> would have been a Winter of Discontent value precipitously plummeted by April.</p>
   `;
   blogcite17   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains</a></p>
   `;
-  blogpost16 = `<p class="firstparagraph">Altering Market States and technology-advancement forces among crypto-currencies
+  blogpost16 = ` <p class="firstparagraph">Altering Market States and technology-advancement forces introspection among crypto-currency hubs.</p>
   <p class="quote"> According to a local report, as a result of a security breach on September 14, hackers managed to steal 4.5 billion yen from users' hot wallets, as well as 2.2 billion yen from the assets of the company, with total losses amounting to 6.7 billion yen or around $59.7 million.
 <br />
-  Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup>
+  Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup> 
+  </p><p>Fintech regulations have been long in coming, but a thorough SEC-pushed security overhaul could at least dispell fears about what amounts to bank robberies.</p>
   </p>
   `;
   blogcite16   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported">https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported</a></p>
   `;
-  blogpost15 = `
+  blogpost15 = `<p class="firstparagraph">Crypto-currency dealers, developers and owners should welcome more regulation, scrupulous examination from financial authorities...the value of trust far outweighs the value of speed to market.</p>
   <p class="quote"> The recent report examines the practices of ten crypto trading platforms based in the U.S. and abroad, as well data collected by the Attorney General’s office about the state of digital currency markets as a whole.<br /><br />
 
   The study found that the absence of accepted methods for auditing virtual assets results in the lack of a consistent and transparent approach to independently auditing digital currency traded on exchanges. This puts customers’ funds held on their exchange accounts at risk of attacks from hackers or theft. The report subsequently questions the issue of public protection and the sufficiency of the commercial insurance to cover possible losses.<br /><br />
@@ -51,18 +61,19 @@ var bloggerSep = function () {
   The report further outlines abusive trading practices, emphasizing that the majority of crypto trading platforms deploy automated traders, offering them special conditions, which leaves retail customers at a disadvantage. It also states that digital currency exchanges involve numerous, overlapping lines of business that represent serious conflicts of interest. The report explains:
   <br /><br />
   “Automated trading activities could also allow a single trader or group of traders to command multiple accounts simultaneously to obscure coordinated trading, in order to manipulate prices.”<sup>1</sup>
-  </p>
+  </p><p>So, whether before or after breeches of trust, that are inevitable on digital platforms, wouldn't you prefer SEC scrutiny along with its guarantees?
   `;
   blogcite15   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation"> https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation</a></p>
   `;
-  blogpost14 = `
+  blogpost14 = `<p class="firstparagraph">Security of a network can be measured by the degree of carefulness from any node on a network. Likewise, bridging, central hubs can work to bottle-neck the spread of network dangers...  </p>
   <p class="quote"> As an international data hub and digital entry point to Europe, the Netherlands plays an important role when it comes to tackling these threats and optimally guaranteeing the cybersecurity of our critical infrastructure.
 
   Saskia Bruines, Deputy Mayor for Education, Knowledge Economy and International Affairs in the Municipality of The Hague:<br /><br />
   
   "Technological developments are continuing apace and the current shortage of talent will increase if we fail to take action as a society. For that reason, public authorities, educational institutions and businesses need to join forces to train, attract and retain more talent. That is why it is important to teach children digital skills from an early age. From primary school to university, educating cybertalent has to be high on the agenda. We want everyone to participate so we can all work together to create a safe society."<sup>1</sup>
   </p>
+  <p>Whether or not the security hole is breeched is immaterial--what counts is loss mitigation and insurance!</p>
   `;
   blogcite14 =  `
   <p class="cite">1. <a href="https://www.benzinga.com/pressreleases/18/09/r12366605/cyber-security-week-together-we-secure-the-future-2-5-october-2018-the">https://www.benzinga.com/pressreleases/18/09/r12366605/cyber-security-week-together-we-secure-the-future-2-5-october-2018-the</a></p>
@@ -265,16 +276,18 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     `;
 
   var url = [  
-    {
+      /*
+      {
 			 id: "20",
        did: "09-24-18",
        date: "September 24, 2018",
        author: "Thomas Maestas",
        cat3: "A.I.Now.",
        title: "Sociology Tomorrow!",
-       post: blogpost19,
-       blogcite: blogcite19
-		},
+       post: blogpost20,
+       blogcite: blogcite20
+    },
+    */
 			{
 				id: "19",
 				did: "09-22-18",
@@ -282,8 +295,8 @@ That strategy is getting close to hitting a dead end.  The next step will be get
 				author: "Thomas Maestas",
 				cat3: "A.I.Now.",
 				title: "A.I. Personalities: Techanthropormorphism Misgivings",
-				post: blogpost18,
-				blogcite: blogcite18
+				post: blogpost19,
+				blogcite: blogcite19
 			}, 
         {
     id: '18',
@@ -292,8 +305,8 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     author: 'by Thomas Maestas',
     cat3: 'Musing Blockchain',
     title: 'On the Other Side of the Coin: Part IV<br />Democratized Markets',
-    post: blogpost17,
-    blogcite: blogcite17
+    post: blogpost18,
+    blogcite: blogcite18
   },
     {
     id: '17',

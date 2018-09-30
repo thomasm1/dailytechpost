@@ -38,7 +38,7 @@
 
     <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
       <ul class="navbar-nav mr-auto ">
-        <li class="nav-item   ">
+        <li class="nav-item   "> 
           <a class="nav-link" href="#/">
             <span class=" subdailytech"> TECH
               <br />BLOG </span>
@@ -151,7 +151,7 @@
 
         <div class="container pt-4">
           <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3"  ng-controller="nasaApiCtrl">
               <div class="card card-profile">
 
                 <div id="planets">
@@ -168,6 +168,7 @@
                 </div>
                 <div id="map0" class="map0"></div> <div style="float:left" class="map0"></div>
                 <script src="dist/planets.js"></script>
+                
                 <div class=" card-header" >
                   <button id="mmodalBtn" class="mbutton title   hover">
                     <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
@@ -186,8 +187,11 @@
                       <a class="cover">MUSING BLOCKCHAIN</a>
                     </h6> 
                   </button>
-
+               
+               
+                 
                 </div>
+                
               </div>
             </div>
 
@@ -257,12 +261,12 @@
               </ul>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3"   ng-controller="nasaAppController">
               <div class="card mb-4 ">
                 <div class="card-block">
-                  <div id="marsreader" class="marsreader  ">
+                  <div id="marsreader" class="marsreader" >
 
-                    <pre id="reqObject"></pre>
+                    <pre   ng-model="reqObjModel" id="reqObject"></pre>
                     <img id="apod_img_id"   class="zoom" />
                     <p id="copyright"></p>
                     <h6 class="dailytech">Twython NASA API </h6>
@@ -272,29 +276,30 @@
         
                   <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
                     </div>
-                 
-
-
-
+                  
                     <div class="media-body thesis">
 
                     </div>
 
-                    <div class="map mb-4" height="140">
-                      <img src="dist/img/TMMmoonscape_450.jpg" class="zoom" style="max-width:100%" />
 
-                    </div>
-
-                    <div  >
-
-
-                      <div id="force">
-                        <canvas class="canvas" height="880px"></canvas>
-
+                    <div id="force">
+                        <canvas class="canvas" height="700px"></canvas>
+   
                       </div>
+       
+                    <div class="map mb-4" height="140">
+                 
                     </div>
+ 
 
                   </div>
+                  <div class="twython">
+                      <h4 class="subdailytech white">
+                     Twython NASA </h4>
+                   <ul class="imgcol">
+                     <li ng-repeat="nasa in nasas  | orderBy:'-nasas'"><img  src="/dist/img/nasa/{{nasa}}"  class=" zoom4" /></li> <button ng-click="addImage()"  class="pull-right" > more </button>
+                   </ul>   
+                 </div>
                 </div>
               </div>
 
