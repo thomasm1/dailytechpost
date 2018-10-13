@@ -74,6 +74,7 @@ __webpack_require__(2);
 __webpack_require__(3);  
 __webpack_require__(4);  
 
+/*require('./js/blog-draft-oct');*/
 __webpack_require__(5);
 __webpack_require__(6);
 __webpack_require__(7);
@@ -545,50 +546,15 @@ document.getElementById("ul").innerHTML = `
 
 
 var bloggerSep = function () {
-  blogpost22 = ` <p class="firstparagraph">Finally, Microsoft, finally.</p><p class="quote">This new Clipboard lets you store some items, including text and images, eliminating the need to constantly copy the same thing. It’ll save your history of clipped items, and you can pin the ones you use the most; simply do press Ctrl+V to bring up the menu. Our own Napier Lopez tested the feature in May, and found it quite useful, though keep in mind you’re limited to 1MB per item.
+
+  /*
+  blogpost20 = ` <p class="quote"> <br /><br />
   </p>
-  `; 
- 
-  blogcite22    =  `
-  <p class="cite">1. <a href="https://thenextweb.com/microsoft/2018/10/03/the-windows-10-october-2018-update-is-available-now-here-are-the-best-features/">https://thenextweb.com/microsoft/2018/10/03/the-windows-10-october-2018-update-is-available-now-here-are-the-best-features/</a></p>
   `;
-
-  blogpost21 = ` <p class="firstparagraph">Data, precision, precious data has elicited lust from marketers for decades now. With the increasingly accurate depiction of our daily lives tied to an I.P. address, data value couldn't be overestimated. So, beyond the ground-shaking reforms of the U.E.-led General Data Privacy Regulations, Silicon Valley now proclamates newer rules.
-  </p> <p class="quote">
-  California Gov. Jerry Brown has signed into law a broad cybersecurity bill governing Internet of Things devices, making the state the first in the nation to adopt such legislation.
-
-  Brown signed the bill, SB 327, on Friday. The law mandates that any maker of an Internet-connected, or "smart," device ensure the gadget has "reasonable" security features that "protect the device and any information contained therein from unauthorized access, destruction, use, modification, or disclosure."<sup>1</sup>
-  <br /><br /> 
-  </p>
-  <p>These measures couldn't be underestimated for their increasing need: </p>
-  <p class="quote">
-  A whole new digital industry of “data brokers” or “information brokers” has sprung from the nutrient-rich soil of our digital footprint. Our data is cataloged and combined with the traces we leave behind in the physical world, correlated and mined to reach conclusions far beyond those we might perhaps be comfortable with publicizing, and then sold as a commodity or a subscription-based service to any interested party. It is an industry based our ignorance and our nonchalance.<br /><br />
-
-  Let’s look at the kinds of information collected and processed in this industry. Broadly it can be split into three categories: Volunteered data is information we willingly part with in online surveys and social media profiles. Observed data is captured through the observation of actions and interactions of individuals (GPS data and telecoms metadata, for example). Inferred data is used to complete the picture by mining those first two categories.<sup>2</sup></p><p>So whatever form is our most precious natural resource,its pride and profits belong to ourselves. </p>
-  `; 
- 
-  blogcite21   =  `
-  <p class="cite">1. <a href="
-  https://www.cnet.com/news/california-governor-signs-countrys-first-iot-security-law/
-">
-https://www.cnet.com/news/california-governor-signs-countrys-first-iot-security-law/
-</a></p>
-<p class="cite">2. <a href="https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135
-">https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135
-</a></p>
-  `;
-  
-  blogpost20 = ` <p class="quote">Jess Houlgrave, Eleesa Dadiani, JoJo Hubbard and Helen Disney all work in the male-dominated world of blockchain, which is the technology behind most crypto-currencies, including Bitcoin.  <br /><br />
-  
-  As Helen Disney tells me, the blockchain revolution isn’t going suddenly to free us from the shackles of big government or turn us into crypto-millionaires. What it will do is ‘create a lot of new business models which will make data management more efficient’ and subtly improve our lives. When you go to an NHS hospital, say, you won’t have to keep filling out forms, over and over again, as you’re passed from specialist to specialist: all your information will be on one data-secure card. That same card might enable the NHS to run a payment mechanism (too complicated to organise under the current system) whereby you can top up with the extra needed to get private care. And to be sure it’s you, not someone else, the relevant authorities would only be able to access the information by scanning your iris.
-  <br /><br />
-   It won’t be able to tell you whether or not a Van Gogh is a fake, but it will give you as much information as is available to help you make up your mind. Houlgrave concedes, though, that it will work most effectively for contemporary art. When, say, Damien Hirst or Jeff Koons create a new piece, they’ll be to sell it with a token creating its blockchain identity which can then be passed on from seller to seller, validating its authenticity.<sup>1</sup>
-  </p>
-  `; 
- 
   blogcite20   =  `
-  <p class="cite">1. <a href="https://life.spectator.co.uk/2018/09/meet-the-queens-of-cryptocurrency/">https://life.spectator.co.uk/2018/09/meet-the-queens-of-cryptocurrency/</a></p>
+   
   `;
+  */
   blogpost19= `<p class="firstparagraph">For every article and blog on the sci-fi imaginations of tech writers, real A.I. presents itself every so often as what it is essentially: a tool.<i> A multi-purpose toolset, tracing its algorithmic root to &Eacute;mile Durkheim\'s 1870s era classification science</i> of human epidiology using national population data from Paris. </p><p>
   Earlier  Statisticians and Scientists, i.e. modern Developers and Engineers also took their generation's Information Technology, applying it toward human-driven purposes. </p>
   <p>I'm an optimist at heart, so this blog post stands out: </p><p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. <sup>1</sup>
@@ -605,7 +571,7 @@ https://www.cnet.com/news/california-governor-signs-countrys-first-iot-security-
   This has been driven by a number of factors including uncertainty around regulation, falling crypto market prices and of course, disillusionment in the previous ICOs that raised funding.    Given that the Ethereum blockchain was the premier platform for ICOs to raise their funding, it is feeling the brunt of this slowdown.<br /><br />
   
   Not only is this lack of “ICO demand” for ETH having an adverse effect on the price but the previous ICOs are also driving the price lower as they try to convert their ETH into Fiat currency to meet expenses.<sup>1</sup>  </p>
-  <p>Notwithstanding, <i> We can also are miscalculating about crypto-platforms'   center of value  ... it's   about the upcoming actual and inevitable practicality for everyday uses.</i> So, three cheers to a long, slow ramp--to another  great  and lasting crypto-currency resurgence!</p>. 
+  <p>Notwithstanding, <i> We can also are miscalculating about crypto-platforms'   center of value  ... it's   about the upcoming actual and inevitable practicality for everyday uses.</i> So, three cheers to a long, slow ramp--to another  great  and lasting crypto-currency resurgence!</p>.0
 
   `;
   blogcite18   =  `
@@ -628,7 +594,7 @@ https://www.cnet.com/news/california-governor-signs-countrys-first-iot-security-
 <br />
   Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup> 
   </p><p>Fintech regulations have been long in coming, but a thorough SEC-pushed security overhaul could at least dispell fears about what amounts to bank robberies.</p>
- 
+  </p>
   `;
   blogcite16   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported">https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported</a></p>
@@ -641,7 +607,7 @@ https://www.cnet.com/news/california-governor-signs-countrys-first-iot-security-
   The report further outlines abusive trading practices, emphasizing that the majority of crypto trading platforms deploy automated traders, offering them special conditions, which leaves retail customers at a disadvantage. It also states that digital currency exchanges involve numerous, overlapping lines of business that represent serious conflicts of interest. The report explains:
   <br /><br />
   “Automated trading activities could also allow a single trader or group of traders to command multiple accounts simultaneously to obscure coordinated trading, in order to manipulate prices.”<sup>1</sup>
-  </p><p>So, whether before or after breeches of trust, that are inevitable on digital platforms, wouldn't you prefer SEC scrutiny along with its guarantees?</p>
+  </p><p>So, whether before or after breeches of trust, that are inevitable on digital platforms, wouldn't you prefer SEC scrutiny along with its guarantees?
   `;
   blogcite15   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation"> https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation</a></p>
@@ -855,40 +821,19 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   </p>
     `;
 
-  var url = [ 
-    {
-        
-      id: "22",
-      did: "09-25-18",
-      date: "September 26, 2018",
-      author: "Thomas Maestas",
-      cat3: "Musing Blockchain",
-      title: "Many Prayers Answered and Alot of Time Saved:<br />Thanks, M.S.",
-      post: blogpost22,
-      blogcite: blogcite22
-   },  
-    {
-        
-      id: "21",
-      did: "09-25-18",
-      date: "September 25, 2018",
-      author: "Thomas Maestas",
-      cat3: "Musing Blockchain",
-      title: "Many Prayers Answered and Alot of Time Saved",
-      post: blogpost21,
-      blogcite: blogcite21
-   }, 
+  var url = [  
+      /*
       {
-        
 			 id: "20",
        did: "09-24-18",
        date: "September 24, 2018",
        author: "Thomas Maestas",
-       cat3: "Musing Blockchain",
-       title: "Precious, Transcendant Data Records",
+       cat3: "A.I.Now.",
+       title: "Sociology Tomorrow!",
        post: blogpost20,
        blogcite: blogcite20
-    }, 
+    },
+    */
 			{
 				id: "19",
 				did: "09-22-18",

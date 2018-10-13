@@ -1,0 +1,15 @@
+<div ng-app="dTech">
+  <div id="headerWrapper" class="container" ng-controller="HeaderCtrl">
+      <span class="logo pull-left">{{appDetails.title}}</span>
+      <span class="tagline pull-left">{{appDetails.tagline}}</span>
+      <div class="nav-wrapper pull-left">
+          <ul class="nav nav-pills">  
+            <li ng-class="{active: nav.isActive('/books')}"><a href="/books">Daily Tech</a></li> 
+            <li ng-class="{active: nav.isActive('/poster')}"><a href="/poster">Post Filter</a></li>
+              <li ng-class="{active: nav.isActive('/books')}"><a href="/books">DAG Tool</a></li> 
+              <li ng-class="{active: nav.isActive('/poster')}"><a href="/_For_Cat_Eyes_Only_">_For_Cat_Eyes_Only_</a></li>
+          </ul>
+      </div>
+  </div>
+</div>
+

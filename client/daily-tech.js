@@ -8,35 +8,20 @@ dailyTech.controller('nasaAppController', ['$scope', function ($scope) {
  
 	console.log("nasaAppController"); 
 		$scope.nasas =  ['2018_08_12_Bolid_Perseus_1024px.jpg','charon_then_now_1024.jpg','PIA22486CuriositySelf2018dustStorm1024.jpg','NGC1360-Final5D-Cc2_c1024.jpg' ] ;
-		$scope.added = ['PencilNebula_Perez_1080.jpg','PlaneMoon_Kim_960.jpg','CurtainsofLightRohner1024.jpg','enceladusstripes_cassini_960.jpg','AroundSadrNarduzziColombari1024.jpg','Comet-21p-Giacobini-Zinner1060.jpg','2018_08_12_Bolid_Perseus_1024px.jpg','charon_then_now_1024.jpg','PIA22486CuriositySelf2018dustStorm1024.jpg','NGC1360-Final5D-Cc2_c1024.jpg','enceladusstripes_cassini_960.jpg','enceladusstripes_cassini_960.jpg' ]
+		$scope.added = ['PencilNebula_Perez_1080.jpg','PlaneMoon_Kim_960.jpg','CurtainsofLightRohner1024.jpg','enceladusstripes_cassini_960.jpg','AroundSadrNarduzziColombari1024.jpg','Comet-21p-Giacobini-Zinner1060.jpg','2018_08_12_Bolid_Perseus_1024px.jpg','charon_then_now_1024.jpg','PIA22486CuriositySelf2018dustStorm1024.jpg','NGC1360-Final5D-Cc2_c1024.jpg','enceladusstripes_cassini_960.jpg','enceladusstripes_cassini_960.jpg' ];
 				 
  
-			var i = 0; 
-				$scope.addImage = function() {
-					i = 1 +i;
-			 $scope.nasas.push($scope.added[i]); 
-			 
-					console.log($scope.nasas[i]);    
-					
-		};
-		$scope.$watch('nasas', function (newValue, oldValue) { // get out of Angular world ..,
-			console.log('new value is ' + newValue);
-	/*	setTimeout (function() {
-			$scope.imgSearch = 'Search';
-			$scope.$apply(); 
-		},1000);*/
-		})
  
-}])
+ 
+ 
+}]);
 
 
 dailyTech.controller('nasaApiCtrl', ['$scope', function ($scope) {
  
 	console.log("nasaApiCtrl"); 
-	  $scope.$watch('reqObjModel', function (newValue, oldValue) {
-			console.log('new value is ' + newValue);
-		})
-}])
+ 
+}]);
 
 dailyTech.config(function($routeProvider){
 	$routeProvider.when('/', { 
