@@ -1,7 +1,56 @@
+'use strict';
 
 var bloggerOct = function () {
- 
+  /*
+ blogpost13 = `
+  <p class="firstparagraph"> </p><p class="quote"> 
+  <sup>1</sup></p>
+ `;
+  blogcite13 = ` 
+  <p class="cite">1 <a href=" "   target="_blank"> 
+  </a>
+  </p>
+     `;
+*/
+  blogpost12 = `
+  <p class="firstparagraph">Modeling the molecular behavior of organic chemistry, biology has become the specialty of Quantum computing, with its superposed third-state that supports short bursts of ultra-fast algorithm computations. Quantum computing has revolutionized biology, so why not psychology?  ..at least at the molecular level: </p><p class="quote"> According to Zheng Joyce Wang and others who try to model our decision-making processes mathematically, the equations and axioms that most closely match human behavior may be ones that are rooted in quantum physics.
 
+  "We have accumulated so many paradoxical findings in the field of cognition, and especially in decision-making," said Wang, who is an associate professor of communication and director of the Communication and Psychophysiology Lab at The Ohio State University.<br /><br />
+  
+  "Whenever something comes up that isn't consistent with classical theories, we often label it as 'irrational.' But from the perspective of quantum cognition, some findings aren't irrational anymore. They're consistent with quantum theory—and with how people really behave."
+  
+  
+  <sup>1</sup></p>
+  <p>So much for the binary way of thinking--after all, isn't life more colorful than black-and-white reasoning?
+  </p>
+ `;
+  blogcite12 = `  
+  <p class="cite">1 <a href="https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html"   target="_blank">https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html
+  </a>
+  </p>
+  <p class="cite">PDFs <br /> <a href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00099-6"   target="_blank">https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00099-6
+  </a> 
+  </p>
+  <p class="cite">PDFs <br /> <a href="http://journals.sagepub.com/doi/abs/10.1177/0963721414568663"   target="_blank">http://journals.sagepub.com/doi/abs/10.1177/0963721414568663
+  </a> 
+  </p>
+     `;
+  
+  blogpost11 = `
+  <p class="firstparagraph">Quantum <i>'Flat-Earther's</i> have one less argument ...</p><p class="quote">
+  
+
+Straightaway, they saw the droplets exhibit surprisingly quantum-like behaviors — only traversing certain “quantized” orbits around the center of their liquid baths, for instance, and sometimes randomly jumping between orbits, as electrons do in atoms. There and in bouncing-droplet labs that soon sprang up at the Massachusetts Institute of Technology and elsewhere, droplets were seen to tunnel through barriers and perform other acts previously thought to be uniquely quantum. In reproducing quantum phenomena without any of the mystery, the bouncing-droplet experiments rekindled in some physicists de Broglie’s old dream of a reality at the quantum scale that consists of pilot waves and particles instead of probability waves and conundrums.<br /><br />
+
+But a series of bouncing-droplet findings since 2015 has crushed this dream. The results indicate that Couder’s most striking demonstration of quantum-like phenomena, back in 2006 — “the experiment that got me hooked on this problem,” the fluid dynamicist Paul Milewski said — was in error. Repeat runs of the experiment, called the “double-slit experiment,” have contradicted Couder’s initial results and revealed the double-slit experiment to be the breaking point of both the bouncing-droplet analogy and de Broglie’s pilot-wave vision of quantum mechanics.
+  <sup>1</sup></p>
+ `;
+  blogcite11 = ` 
+  <p class="cite"> <a href="https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/"   target="_blank">https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/
+  </a>
+  </p>
+     `;
+  
  
 blogpost10 = `
 <p class="firstparagraph">Climate-change scientist-activists earn their prestige with every research study and every letter written. With less fanfare, economists also earn their due prestige for working toward a sustainable prosperity.     </p>
@@ -183,6 +232,26 @@ Comcast yesterday and T-Mobile Tomorrow or not, the implications of a truly mobi
        `;  
        var url = [   
      
+    {
+      id: '12',
+      did: '10-13-18',
+      date: 'October 13-14, 2018<br /><small>Weekend</small>',
+      author: 'by Thomas Maestas',
+      cat3: 'Quantum Data',
+      title: 'Probabilistic Reality (and Information), Part II<br />Quantum Molecular Psychology',
+      post: blogpost12,
+      blogcite: blogcite12
+    }, 
+    {
+      id: '11',
+      did: '10-12-18',
+      date: 'October 12, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Quantum Data',
+      title: 'Probabilistic Reality (and Information), Part I<br /> Verifiably Determinated Once and For All',
+      post: blogpost11,
+      blogcite: blogcite11
+    }, 
     {
       id: '10',
       did: '10-11-18',

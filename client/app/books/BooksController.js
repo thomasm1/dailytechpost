@@ -1,8 +1,11 @@
+'use strict';
+
 (function() {
 
     angular.module('app')
         .controller('BooksController', ['$q', 'books', 'dataService', 'badgeService', '$cookies', '$cookieStore', '$log', '$route', 'currentUser', BooksController]);
 
+ 
 
     function BooksController($q, books, dataService, badgeService, $cookies, $cookieStore, $log, $route, currentUser) {
 
@@ -16,8 +19,8 @@
         function getUserSummarySuccess(summaryData) {
             //$log.log(summaryData);
             vm.summaryData = summaryData;
-        }
-
+        } 
+ 
 
         dataService.getAllBooks()
             .then(getBooksSuccess, null, getBooksNotification)

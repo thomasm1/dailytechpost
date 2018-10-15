@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
 
     var app = angular.module('app', ['ngRoute', 'ngCookies', 'ngResource']);
@@ -65,8 +67,11 @@
 
         $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
 
-            //console.log('successfully changed routes');
-
+         console.log('successfully changed routes'); 
+         console.log(event);
+         console.log(current);
+         console.log(previous);
+     //    console.log(rejection);
         });
 
         $rootScope.$on('$routeChangeError', function(event, current, previous, rejection) {

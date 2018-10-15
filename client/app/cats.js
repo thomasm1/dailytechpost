@@ -1,10 +1,12 @@
+'use strict';
+
 var dailyTech = angular.module('dailyTech');
 
 dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeParams', function ArchivesController($scope, $http, $location, $routeParams){
   
 
-	var kcbb = document.getElementById("kcbb") ;
-
+	var kcbb = document.getElementById('kcbb') ;
+$scope.kcbb = kcbb;
 
 	kcbb.innerHTML =   `<p>
 	<strong>
@@ -27,9 +29,9 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 	and so each of our franchised locations cater to culturally-competent cat needs, likes, and most of all, delicacies
 	of the wider Cat Kingdoms that are demanded of our services. Each day we aim to prove TMM's eternal passion for
 	serving the Cats and Cat-Households in the vastness of the NorthWestern Continent. </p>
-	` 
+	` ;
 	
-	var tales = document.getElementById("tales") ;
+	var tales = document.getElementById('tales') ;
 	
 	tales.innerHTML =   `
 	<p class="p">The tales I recount below are of the truest and most accurate nature, and they accord with the best and most comprehensive
@@ -43,12 +45,12 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 	
 	</p>
 	<hr>
-	`
+	`;
 	
 	
-	var winslow_casper = document.getElementById("winslow_casper") ;
+	var winslowCasper = document.getElementById('winslow_casper') ;
 	
-	winslow_casper.innerHTML = 
+	winslowCasper.innerHTML = 
 	`
 	<h2>
 	<span class="excerpts">
@@ -681,9 +683,9 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 					outcomes of the power-hungry cat-kingdoms. For c*at Eyes Only </p>
 	
 					<img src="dist/img/casAndTiger.png"></img>
-	`
+	`;
 	
-	var capturing = document.querySelector("#capturing");
+	var capturing = document.querySelector('#capturing');
 	capturing.innerHTML = `
 	
 	
@@ -873,8 +875,8 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 					<br />
 	
 			</div>
-	`
-	var innerform = document.querySelector("#form");
+	`;
+	var innerform = document.querySelector('#form');
 	innerform.innerHTML = `
 	<form id="innerform" action="">
 	<h4>NICK-NACK CALCULATOR</h4>
@@ -954,7 +956,7 @@ dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeP
 	`;
 	
 	$( function() {
-    $( "div#draggable" ).draggable();
+    $( 'div#draggable' ).draggable();
 	} );
 	
 
