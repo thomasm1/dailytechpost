@@ -1,3 +1,5 @@
+##
+✨📦 
 # webpack --mode production 
  "main": "index.js",
   "scripts": {

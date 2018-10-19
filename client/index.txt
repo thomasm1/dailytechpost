@@ -1,3 +1,5 @@
+✨📦 
+
 <!DOCTYPE html>
 <html lang="en"  ng-app="app" lang="en" xml:lang="en">
 
@@ -51,7 +53,7 @@
         </li>
         <li class="nav-item  ">
           <a class="nav-link" href="#/archives">
-            <span class="subdailytech ">BLOG&nbsp;✨📦  
+            <span class="subdailytech ">BLOG&nbsp;  
               <br /> ARCHIVES </span>
           </a>
         </li> 
@@ -161,7 +163,7 @@
 
                 <div id="planets">
                   <form class="form">
-                    <br />
+                      ✨📦 <br />
                     <input type="radio" name="reference" id="ref-annulus">
                     <label for="ref-annulus">Annulus</label>
                     <br>
@@ -364,3 +366,4 @@
 </body>
 
 </html>
+index.

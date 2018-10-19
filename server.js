@@ -8,10 +8,11 @@ var bodyParser = require('body-parser');
 var routes = require('./server/routes/index');
 var readers = require('./server/routes/readers');
 var books = require('./server/routes/books');
+var blogs = require('./server/routes/blogs');
 
 var app = express();
 
-// view engine setup
+// VIEW
 app.set('views', path.join(__dirname, '/server/views'));
 app.set('view engine', 'jade');
 
@@ -22,9 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client')));
 
+//API
 app.use('/', routes);
 app.use('/api/readers', readers);
 app.use('/api/books', books);
+app.use('/api/blogs', blogs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,7 +62,7 @@ app.use(function(err, req, res, next) {
 
 var debug = require('debug')('server');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 
 app.listen(app.get('port'));
 

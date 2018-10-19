@@ -1,6 +1,6 @@
 [
     {
-        "book_id": 1,
+        "blog_id": 1,
         "private":true,
         "title": "rtr11111JavaScript to Rust and Back Again: A wasm-bindgen Tale",
         "citation":"https://hacks.mozilla.org/2018/04/javascript-to-rust-and-back-again-a-wasm-bindgen-tale/",
@@ -8,6 +8,6 @@
         "month_published": "April 4, 2018"
     },
     {
-        "book_id": 2
+        "blog_id": 2
     }
 ]

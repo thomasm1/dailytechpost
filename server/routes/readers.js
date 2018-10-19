@@ -10,8 +10,7 @@ router.route('/')
         res.send(data);
     })
 
-    .post(function(req, res) {
-
+    .post(function(req, res) { 
         var data = getReaderData();
         var nextID = getNextAvailableID(data);
 

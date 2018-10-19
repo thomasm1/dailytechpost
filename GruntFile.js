@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
     // Configurable paths for the application
     var appConfig = {
-        app: 'ui'
+        app: 'client'
     };
 
     grunt.initConfig({

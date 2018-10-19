@@ -3,7 +3,7 @@
 
 var o = 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo';
 var url = "https://api.nasa.gov/planetary/apod?api_key=" + o;
- 
+
 $.ajax({
   url: url,
   success: function(result){
@@ -15,11 +15,11 @@ $.ajax({
   }
   
   if(result.media_type == "video") {
-    $("#apod_img_id").css("display", "none"); 
+    $("#apod_img_id").css("display", "block"); 
     $("#apod_vid_id").attr("src", result.url);
   }
   else {
-    $("#apod_vid_id").css("display", "none"); 
+    $("#apod_vid_id").css("display", "block"); 
     $("#apod_img_id").attr("src", result.url);
   }
   $("#reqObject").text(url);
