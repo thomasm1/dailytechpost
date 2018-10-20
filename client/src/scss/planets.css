@@ -1,7 +1,7 @@
  .form {
    position: absolute;
    opacity: .6;
-   top: 0px;
+   top: 180px;
    left: 0rem;
    padding: 5px;
    margin: 10px;
@@ -50,5 +50,13 @@
  }
  
 div#map0 {
+  max-height:135px;  
+  display:block; 
+}
+.map0 {
+  max-width:20%;
+  float:left; 
   max-height:215px; 
+  transform:translateY(-100px);
+  transform: rotate(300deg);
 }

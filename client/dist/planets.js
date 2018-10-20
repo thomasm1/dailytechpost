@@ -19,7 +19,7 @@
 						
 						
 						
-						var svg = d3.select("#map0").append("svg")
+						var svg = d3.selectAll(".map0").append("svg")
 						
 								.attr("width", width)
 						
@@ -27,7 +27,7 @@
 						
 							.append("g")
 						
-								.attr("transform", "translate(" + width / 2 + "," + height / 3.1 + ")scale(.25)")
+								.attr("transform", "translate(" + width / 2 + "," + height / 8.1 + ")scale(.15)")
 						
 							.append("g");
 						

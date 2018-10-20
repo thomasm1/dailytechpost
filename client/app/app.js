@@ -54,6 +54,10 @@
                 controller:'ArchivesController',
                 templateUrl: '/app/templates/archives.html'
             })  
+            .when('/_For_Cat_Eyes_Only_', {
+                controller:'CatsController',
+                templateUrl: '/app/templates/cats.html'
+            })  
             .when('/EditBook/:bookID', {
                 templateUrl: '/app/templates/editBook.html',
                 controller: 'EditBookController',

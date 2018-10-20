@@ -1,6 +1,6 @@
 'use strict';
 
-var dailyTech = angular.module('dailyTech');
+var dailyTech = angular.module('app');
 
 dailyTech.controller('CatsController', ['$scope', '$http', '$location', '$routeParams', function ArchivesController($scope, $http, $location, $routeParams){
   

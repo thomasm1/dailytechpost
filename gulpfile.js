@@ -11,7 +11,8 @@ gulp.task('sass', function() {
       return gulp.src(['client/src/app.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest("client/dist/"))
-        .pipe(browserSync.stream());
+      //.pipe(browserSync.stream())
+        ;
 });
  /*
  gulp.task('copyHtml', function(){
@@ -51,7 +52,7 @@ gulp.task('fa', function() {
     .pipe(gulp.dest('client/dist/css'));
 });
 
-gulp.task('default', [ 'serve','imageMin', 'sass', 'fa', 'fonts']);
+gulp.task('default', [ 'imageMin', 'sass', 'fa', 'fonts']);
 // 'js', 'sass',  'copyHtml'
 
  

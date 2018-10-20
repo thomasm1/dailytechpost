@@ -30,8 +30,8 @@ display:none;
 <h2 class="subdailytech filter">Filters &nbsp;&nbsp; | &nbsp;&nbsp; Collections &nbsp;&nbsp; | &nbsp;&nbsp; Statistics</h2>
  
 Blogs: {{ books.summaryData.bookCount }}<br />
-    Category Reads {{ books.summaryData.readerCount }}<br />
-    Total Pages {{ books.summaryData.grandTotalMinutes }} 
+    Category   {{ books.summaryData.readerCount }}<br />
+    Blog Count {{ books.summaryData.grandTotalMinutes }} 
 
 <h2 class="subdailytech filter ">All Blogs</h2>
 <div>
@@ -39,11 +39,11 @@ Blogs: {{ books.summaryData.bookCount }}<br />
         <li  class="list"  class="list" ng-repeat="book in books.allBooks">{{ book.title }} - {{ book.author }}
             <a href="#/EditBook/{{ book.book_id }}"> | Edit</a>
             <a ng-click="books.deleteBook(book.book_id)" href=""> | Delete</a>
+            <a href="#/AddBook">Add New Book</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href="#/EditBook/{{ books.currentUser.lastBookEdited.book_id }}"> | Open Last Edited</a> 
         </li>
     </ul>
 </div> 
-<a href="#/AddBook">Add New Book</a>&nbsp;&nbsp; | &nbsp;&nbsp;
-<a href="#/EditBook/{{ books.currentUser.lastBookEdited.book_id }}">Open Last Edited</a> 
 <h4 class="subdailytech  filter ">All Categories</h4>
 <div class="categories">
     <ul>
