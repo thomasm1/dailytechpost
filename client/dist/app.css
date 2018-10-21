@@ -9487,6 +9487,7 @@ h3#blogs {
   pointer: inherit; }
 
 #b-header {
+  z-index: 1001;
   float: right;
   max-width: 50%; }
 
@@ -9770,11 +9771,11 @@ div#planet {
   box-shadow: 0px 10px 50px rgba(102, 57, 207, 0.7); }
 
 div#map0 {
-  max-height: 235px;
+  max-height: 135px;
   display: block; }
 
 .map0 {
-  max-width: 23%;
+  max-width: 20%;
   float: left;
   max-height: 215px;
   transform: translateY(-100px);

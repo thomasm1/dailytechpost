@@ -641,6 +641,7 @@ div.row#row-posts {
       pointer:inherit;
   }
 #b-header {
+    z-index:1001;
     float:right;
     max-width:50%;
 }
