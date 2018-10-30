@@ -40,7 +40,12 @@
         $httpProvider.interceptors.push('bookLoggerInterceptor');
 
         $routeProvider
-            .when('/', {
+        .when('/', {
+                template: '<div><style>div.card-header {display:none;} button {z-index:1001 !important;}</style></div>',
+                controller: 'IndexController',
+                controllerAs: 'iCtrl'
+        })
+            .when('/Books', {
                 templateUrl: '/app/templates/read.html',
                 controller: 'BooksController',
                 controllerAs: 'books'

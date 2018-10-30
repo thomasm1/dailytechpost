@@ -1,7 +1,135 @@
- 
 
-var bloggerOct = function () {
 
+var bloggerOct = function () {  
+
+
+  var     blogpost20 = ` 
+  <p class="firstparagraph">Material technologies too often remain the unsung hero for so much advancement in any field.
+   </p>
+  <p class="quote">The body material itself is what McLaren calls "titanium deposition carbon fiber," where a micron-thin layer of titanium is fused directly into the fiber's weave, becoming an integral part of the construction.<sup>1</sup></p>
+  <img src="dist/img/mclaren.jpg" class="zoom" /><p>
+  McLaren just reinvented the wing--erhum, by doing away with the spoiler wing? By algorithmically adjusting the centers of windflow pressure based on speed, other factors optimizes -- reinvents -- the wing:</p>
+  <p class="quote">The entire body is made from lightweight carbon fiber, parts of which are actually flexible. On each end of the tail, active ailerons can actually bend, reducing turbulence and drag at higher speeds. According to McLaren, these ailerons "adjust to move the center of pressure and provide the required level of downforce precisely when it is needed most." It's airspace tech in an automotive application, and it alleviates the need for a silly rear wing.<sup>1</sup></p>
+  <p>With a little more precision and reliability, what should stop them from inverting air-flow, and strap some wings and a turbine to that 1,000 horse-power engine!<p>
+  `
+    ;
+    var      blogcite20 = ` 
+    <p class="cite"> 1 <a href="https://www.cnet.com/roadshow/news/mclaren-speedtail-official-debut/
+    "   target="_blank">https://www.cnet.com/roadshow/news/mclaren-speedtail-official-debut/
+      </a> 
+     `;
+     var     blogpost19 = ` 
+     <p class="firstparagraph">Data privacy's new hero raises attention to one of the more pressing issue of technology in our lives:
+      </p>
+      <p class="quote">Apple’s chief executive, Tim Cook, called on Wednesday for a federal privacy law in the US to protect against voracious internet companies hoarding so much digital data that the businesses know citizens “better than they know themselves” – and then often sell the information on.
+<br /><br />
+      Cook warned in a keynote speech that personal data was being “weaponized” against the public and endorsed tough privacy laws for both Europe and the US. The iPhone and Mac computer giant has stood out in its explicit declarations that Apple prefers to protect its customers’ personal data.
+      </p>
+      <p>Importantly, Tim Cook addresses the most sensitive of data about ourselves, i.e. the nexus of volunteered and observed data: <i>inferred data</i>:
+     <p class="quote">Broadly [personal data] can be split into three categories: Volunteered data is information we willingly part with in online surveys and social media profiles. Observed data is captured through the observation of actions and interactions of individuals (GPS data and telecoms metadata, for example). Inferred data is used to complete the picture by mining those first two categories.<sup>1</sup></p>`
+       ;
+       var      blogcite19 = `  <p class="cite"> 1 <a href="https://www.theguardian.com/technology/2018/oct/24/tim-cook-us-federal-privacy-law-weaponized-personal-data"   target="_blank">https://www.theguardian.com/technology/2018/oct/24/tim-cook-us-federal-privacy-law-weaponized-personal-data</a> </p>
+       
+       <p class="cite"> 2 <a href="https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135"   target="_blank">
+       https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135</a> </p>
+        `;
+  var     blogpost18 = `       
+  <p class="firstparagraph">Bigger, Faster Image Rendering--especially when data points are tied to the pixels of a page, but especially still pictures should be the browsers' Task #1. Instead, load-times too often fall victim to the graphics ... but the browser world is now willing to work together for  action:
+   </p>
+  <p class="quote">Google revealed WebP eight years ago and since then has built it into its Chrome web browser, Android phone software and many of its online properties in an effort to put websites on a diet and cut network data usage. But Google had trouble encouraging rival browser makers to embrace it.
+  <br /><br />
+  "Mozilla is moving forward with implementing support for WebP," the nonprofit organization said. WebP will work in versions of Firefox based on its Gecko browser engine, Firefox for personal computers and Android but not for iOS. Mozilla plans to add support in the first half of 2019.
+
+Committing to a new image format on the web is a big deal. In addition to technical challenges and new security risks, embracing a new image format means embracing it for years and years, because removing support at some point in the future will break websites that rely on it.
+<br /><br />
+It's one of the central conundrums of the web. Browser makers and website developers want to advance the technology, but they can't remove older aspects of the foundation as readily as Google can with Android or Apple with its rival iOS software. Websites have a long shelf life.<sup>1</sup></p>`
+    ;
+    var      blogcite18 = ` 
+    <p class="cite"> 1 <a href="https://www.cnet.com/news/firefox-to-support-googles-webp-image-format-for-a-faster-web/
+    "   target="_blank">https://www.cnet.com/news/firefox-to-support-googles-webp-image-format-for-a-faster-web/
+      </a> 
+     `;
+     var     blogpost17 = ` 
+     <p class="firstparagraph">Bootstrapping analytic models in any science requires a long, steady climb upon the <i>Shoulders of Giants</i>, years and decades' past research gains--especially  Classification and Regression Trees . 
+      </p>
+     <p class="quote">When approaching any type of Machine Learning (ML) problem there are many different algorithms to choose from. In machine learning, there’s something called the “No Free Lunch” theorem which basically states that no one ML algorithm is best for all problems. The performance of different ML algorithms strongly depends on the size and structure of your data.<sup>1</sup></p>`
+       ;
+       var      blogcite17 = ` 
+       <p class="cite"> 1 <a href="https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef
+       "   target="_blank">
+       https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef
+         </a> 
+        `;
+  var     blogpost16 = ` 
+  <p class="firstparagraph">Apple V. Bloomberg. Bloomberg hit first. Much controversy now surrounds the topic of my October 10th post--that Bloomberg claiming that Apple was aware of potential chip embeds from foreign manufacturers. Whose news can one believe anymore? 
+   </p>
+  <p class="quote"> Apple Inc Chief Executive Tim Cook on Friday told an online news website that Bloomberg should retract a story that claimed Apple’s internal computer systems had been infiltrated by malicious computer chips inserted by Chinese intelligence agents. <br /><br />
+  “There is no truth in their story about Apple,” Cook told BuzzFeed News in an interview with the online publication. “They need to do that right thing and retract it.”<sup>2</sup></p>`
+    ;
+    var      blogcite16 = ` 
+    <p class="cite"> 1 <a href=" https://www.reuters.com/article/us-apple-bloomberg/apple-ceo-urges-bloomberg-to-retract-spy-chip-story-idUSKCN1MT2Z8
+    "   target="_blank">
+    https://www.reuters.com/article/us-apple-bloomberg/apple-ceo-urges-bloomberg-to-retract-spy-chip-story-idUSKCN1MT2Z8
+    
+    
+      </a> 
+     `;
+  var     blogpost15 = ` 
+  <p>
+  Mathematically, reading time   necessarily divides itself up into small pieces now that everyone is a click away from anything readable, every novel written, at a moment's download, without or without easy phone and tablet reading. But given that choice, the trend toward fiction is not without good reason ... </p>
+  <p class="quote">
+  Modern day reading habits continue to evolve in a digital age. Statistics vary on exactly how many people are reading novels this decade compared to decades past. There is a definite trend for general readers to buy more fiction than nonfiction books—and to get facts, news and crystallized knowledge from the internet. In 2012, only four of the top twenty books were nonfiction titles.<br /><br />
+
+"People are interested in escape," says Carol Fitzgerald of the Book Report Network. "In a number of pages, the story will open, evolve and close, and a lot of what's going on in the world today is not like that. You've got this encapsulated escape that you can enjoy."<sup>2</sup></p>`
+    ;
+    var      blogcite15 = ` 
+    <p class="cite"> 1 <a href="https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/
+    "   target="_blank">
+    https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/
+    
+    
+      </a>
+      </p>  
+  <p class="cite"> 2 <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201401/reading-fiction-improves-brain-connectivity-and-function
+"   target="_blank">
+https://www.psychologytoday.com/us/blog/the-athletes-way/201401/reading-fiction-improves-brain-connectivity-and-function
+
+https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/
+  </a>
+  </p>   
+
+     `;
+  var     blogpost14 = ` 
+  <p class="firstparagraph">Technology provides the resources for a better life all around ... </p>
+    <p class="quote"> 
+    The more sophisticated science becomes, the harder it is to communicate results. Papers today are longer than ever and full of jargon and symbols. They depend on chains of computer programs that generate data, and clean up data, and plot data, and run statistical models on data. These programs tend to be both so sloppily written and so central to the results that it’s contributed to a replication crisis, or put another way, a failure of the paper to perform its most basic task: to report what you’ve actually discovered, clearly enough that someone else can discover it for themselves.<br /><br />
+    Perhaps the paper itself is to blame. Scientific methods evolve now at the speed of software; the skill most in demand among physicists, biologists, chemists, geologists, even anthropologists and research psychologists, is facility with programming languages and “data science” packages. And yet the basic means of communicating scientific results hasn’t changed for 400 years. Papers may be posted online, but they’re still text and pictures on a page.<sup>1</sup></p>
+    <p>Anaconda, the programming package bundle features math software with Spyder applications, yet the Jupyter notebook is already revolutionizing academic publications...`
+    ;
+    var      blogcite14 = ` 
+  <p class="cite"> 1 <a href="
+  https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news"   target="_blank">
+  https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news
+  </a>
+  </p>   
+     `;
+  var     blogpost13 = ` 
+  <p class="firstparagraph">The College Term-Paper, the perennial object of dread or elation, of tedium or excitement. Yet, more and more, the needs for communication require the inclusion of programming, analytic language. Paragraphs of eloquently written code with paragraphs of synopsis, from one logical statement to the next, laying out the proofs with each paragraph. Best yet, it is innately online and presentable, and employs the powerful languages like Python and R. But how to communicate these specialized papers to a wide audience?</p>
+    <p class="quote"> 
+    The more sophisticated science becomes, the harder it is to communicate results. Papers today are longer than ever and full of jargon and symbols. They depend on chains of computer programs that generate data, and clean up data, and plot data, and run statistical models on data. These programs tend to be both so sloppily written and so central to the results that it’s contributed to a replication crisis, or put another way, a failure of the paper to perform its most basic task: to report what you’ve actually discovered, clearly enough that someone else can discover it for themselves.<br /><br />
+    Perhaps the paper itself is to blame. Scientific methods evolve now at the speed of software; the skill most in demand among physicists, biologists, chemists, geologists, even anthropologists and research psychologists, is facility with programming languages and “data science” packages. And yet the basic means of communicating scientific results hasn’t changed for 400 years. Papers may be posted online, but they’re still text and pictures on a page.<sup>1</sup></p>
+    <p>Anaconda, the programming package bundle features math software with Spyder applications, yet the Jupyter notebook is already revolutionizing academic publications...`
+    ;
+    var      blogcite13 = ` 
+  <p class="cite"> 1 <a href="
+  https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news"   target="_blank">
+  https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news
+  </a>
+  </p>  
+  <p class="cite"> 2 <a href="https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/"   target="_blank">https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/
+  </a>
+  </p>  
+     `;
  var  blogpost12 = `
   <p class="firstparagraph">Modeling the molecular behavior of organic chemistry, biology has become the specialty of Quantum computing, with its superposed third-state that supports short bursts of ultra-fast algorithm computations. Quantum computing has revolutionized biology, so why not psychology?  ..at least at the molecular level: </p><p class="quote"> According to Zheng Joyce Wang and others who try to model our decision-making processes mathematically, the equations and axioms that most closely match human behavior may be ones that are rooted in quantum physics.
 
@@ -236,7 +364,86 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
     </p>  
        `;  
        var url = [   
-     
+        {
+          id: '20',
+          did: '10-23-18',
+          date: 'October 23, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Material Science',
+          post: blogpost20,
+          blogcite: blogcite20
+        },  
+        {
+          id: '19',
+          did: '10-22-18',
+          date: 'October 22, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'The Reverent Tim Cook:<br />A Modern American Data Privacy Hero',
+          post: blogpost19,
+          blogcite: blogcite19
+        }, 
+        {
+          id: '18',
+          did: '10-20-18',
+          date: 'October 20-21, 2018<br />Weekend',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Image Data on a Diet',
+          post: blogpost18,
+          blogcite: blogcite18
+        }, 
+    {
+      id: '17',
+      did: '10-19-18',
+      date: 'October 19, 2018 ',
+      author: 'by Thomas Maestas',
+      cat3: 'A.I.Now.',
+      title: 'Machine Learning, By Trial and Error',
+      post: blogpost17,
+      blogcite: blogcite17
+    },  
+    {
+      id: '16',
+      did: '10-18-18',
+      date: 'October 18, 2018 ',
+      author: 'by Thomas Maestas',
+      cat3: 'Web Dev Affairs',
+      title: 'Apple  Gossip, and Digital Hearsay About Snooping',
+      post: blogpost16,
+      blogcite: blogcite16
+    }, 
+    {
+      id: '15',
+      did: '10-17-18',
+      date: 'October 17, 2018 ',
+      author: 'by Thomas Maestas',
+      cat3: 'Quantum Data',
+      title: 'Where\'s the Fiction Aisle?',
+      post: blogpost15,
+      blogcite: blogcite15
+    }, 
+    {
+      id: '14',
+      did: '10-16-18',
+      date: 'October 16, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: 'The Better World that Tech Brings',
+      post: blogpost14,
+      blogcite: blogcite14
+    }, 
+    {
+      id: '13',
+      did: '10-15-18',
+      date: 'October 15, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Sociology Tomorrow!',
+      title: 'Economic Prosperity, Democracy, and the Technology that Binds The Two',
+      post: blogpost13,
+      blogcite: blogcite13
+    }, 
     {
       id: '12',
       did: '10-13-18',

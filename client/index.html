@@ -2,6 +2,7 @@
 <html lang="en"  ng-app="app" lang="en" xml:lang="en">
 
 <head>
+    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
 <script>
@@ -44,32 +45,37 @@
     <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
       <ul class="navbar-nav mr-auto ">
         <li class="nav-item   "> 
-          <a class="nav-link" href="#/">
+          <a class="nav-link" href="#/"
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" >
             <span class=" subdailytech"> TECH
               <br />BLOG </span>
           </a>
         </li>
         <li class="nav-item  ">
-          <a class="nav-link" href="#/archives">
+          <a class="nav-link" href="#/archives" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()">
             <span class="subdailytech ">BLOG&nbsp;✨📦  
               <br /> ARCHIVES </span>
           </a>
         </li> 
         <li class="nav-item active">
-          <a class="nav-link" title="tmm FICTION" href="#/_For_Cat_Eyes_Only_">
+          <a class="nav-link" title="tmm FICTION" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" href="#/_For_Cat_Eyes_Only_">
             <span class="caret subdailytech">FOR_CAT
               <br />EYES_ONLY</span>
           </a>
           <ul style="z-index:0" class="menu-left">
             <li>
               tmm FICTION
-              <a style="z-index:199; " title="tmm FICTION" href="#/_For_Cat_Eyes_Only_">For Cat Eyes Only:
+              <a style="z-index:199; " title="tmm FICTION"  
+              data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" ng-href="http://ourdailytech.net/_For_Cat_Eyes_Only_">For Cat Eyes Only:
                 <i>Early Months of Win&#39;s Campaign</i>
               </a>
             </li>
             <li style="z-index:199; ">
               tmm FICTION
-              <a style="z-index:199; " title="tmm FICTION" href="#/_For_Cat_Eyes_Only_#capturing">Fiction Excerpts From:
+              <a style="z-index:199; " title="tmm FICTION"  
+              data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" ng-href="http://ourdailytech.net/_For_Cat_Eyes_Only_/#capturing">Fiction Excerpts From:
                 <br />
                 <i>The Casperian Ancestries</i>
                 <br />
@@ -80,7 +86,8 @@
           </ul>
         </li>
         <li style="z-index:5" class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()">
             <span class=" subdailytech">CODING
               <br /> TOOLS
             </span>
@@ -136,7 +143,9 @@
         </li>
         </ul>  
       <abbr title="Our Daily Tech">
-        <img class="card-profile-img zoom" id="dailylogo" alt="image of Le Mont Real" src="dist/img/redColorTriomphe.png" />
+          <a   href="#/Books"> 
+        <img class="card-profile-img zoom" id="dailylogo" alt="image of Le Mont Real" src="dist/img/blueColorTriomphe.png" />   
+          </a>
       </abbr>
 
     </div>
@@ -163,7 +172,7 @@
                   <form class="form">
                     <br />
                     <input type="radio" name="reference" id="ref-annulus">
-                    <label for="ref-annulus">Annulus</label>
+                    <label for="ref-annulus">Orbit</label>
                     <br>
                     <input type="radio" name="reference" id="ref-planet" checked>
                     <label for="ref-planet">Planets</label>
@@ -193,18 +202,12 @@
                 </button>
               
               <div id="map0" >
-                  <div    class="map0"></div>   
-                  <div    class="map0"></div>   
-              <div    class="map0"></div>   
+                  <div    class="map0"></div>    
               <div    class="map0"></div>   
             </div> 
             <script src="dist/planets.js"></script>
-                <div class=" card-header" >
-                  
-                    <div ng-view class="view"></div> 
-               
-                 
-                 
+                <div class="card-header" ng-class="" > 
+                    <div ng-view class="view"></div>  
                 </div>
                 
                 
@@ -359,6 +362,7 @@
   
 <script src="app/app.js"></script> 
 <script src="app/cats.js"></script> 
+<script src="app/books/IndexController.js"></script>
 <script src="app/books/BooksController.js"></script>
  <script src="app/books/archives.js"></script> 
 <script src="app/books/AddBookController.js"></script>
