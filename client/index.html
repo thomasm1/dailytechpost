@@ -3,6 +3,8 @@
 
 <head>
     <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+      <base href="/">
+    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
 <script>
@@ -45,37 +47,37 @@
     <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
       <ul class="navbar-nav mr-auto ">
         <li class="nav-item   "> 
-          <a class="nav-link" href="#/"
+          <a class="nav-link" href="/"
           data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" >
             <span class=" subdailytech"> TECH
               <br />BLOG </span>
           </a>
         </li>
         <li class="nav-item  ">
-          <a class="nav-link" href="#/archives" 
+          <a class="nav-link" href="/archives" 
           data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()">
-            <span class="subdailytech ">BLOG&nbsp;✨📦  
-              <br /> ARCHIVES </span>
+            <span class="subdailytech ">BLOG ✨📦
+              <br />ARCHIVES </span>
           </a>
         </li> 
-        <li class="nav-item active">
-          <a class="nav-link" title="tmm FICTION" 
-          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" href="#/_For_Cat_Eyes_Only_">
+        <li class="nav-item" style="display:none;">
+          <a class="nav-link" ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html" title="tmm FICTION" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" > 
             <span class="caret subdailytech">FOR_CAT
               <br />EYES_ONLY</span>
           </a>
           <ul style="z-index:0" class="menu-left">
             <li>
               tmm FICTION
-              <a style="z-index:199; " title="tmm FICTION"  
-              data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" ng-href="http://ourdailytech.net/_For_Cat_Eyes_Only_">For Cat Eyes Only:
+              <a style="z-index:199; " ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html" title="tmm FICTION"  
+              data-target="#navbarResponsive" data-toggle="collapse" type="button"   >For Cat Eyes Only:
                 <i>Early Months of Win&#39;s Campaign</i>
               </a>
             </li>
             <li style="z-index:199; ">
               tmm FICTION
-              <a style="z-index:199; " title="tmm FICTION"  
-              data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" ng-href="http://ourdailytech.net/_For_Cat_Eyes_Only_/#capturing">Fiction Excerpts From:
+              <a style="z-index:199; " ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing"  title="tmm FICTION"  
+              data-target="#navbarResponsive" data-toggle="collapse" type="button"  >Fiction Excerpts From:
                 <br />
                 <i>The Casperian Ancestries</i>
                 <br />
@@ -143,7 +145,7 @@
         </li>
         </ul>  
       <abbr title="Our Daily Tech">
-          <a   href="#/Books"> 
+          <a   href="/Books"  data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()"> 
         <img class="card-profile-img zoom" id="dailylogo" alt="image of Le Mont Real" src="dist/img/blueColorTriomphe.png" />   
           </a>
       </abbr>
@@ -364,6 +366,7 @@
 <script src="app/cats.js"></script> 
 <script src="app/books/IndexController.js"></script>
 <script src="app/books/BooksController.js"></script>
+<script src="app/books/CatsController.js"></script>
  <script src="app/books/archives.js"></script> 
 <script src="app/books/AddBookController.js"></script>
 <script src="app/books/EditBookController.js"></script>

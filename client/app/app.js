@@ -30,7 +30,7 @@
 
     }]);
 
-    app.config(['booksProvider', '$routeProvider', '$logProvider', '$httpProvider', '$provide', function (booksProvider, $routeProvider, $logProvider, $httpProvider, $provide) {
+    app.config(['booksProvider', '$routeProvider', '$logProvider', '$httpProvider', '$locationProvider','$provide', function (booksProvider, $routeProvider, $logProvider, $httpProvider, $locationProvider, $provide) {
 
         $provide.decorator('$log', ['$delegate', 'books', logDecorator]);
 
@@ -41,7 +41,7 @@
 
         $routeProvider
         .when('/', {
-                template: '<div><style>div.card-header {display:none;} button {z-index:1001 !important;}</style></div>',
+                template: '<div><style>div.card-header {display:none;} button {z-index:1001 !important;} form {z-index:1001 !important;}</style></div>',
                 controller: 'IndexController',
                 controllerAs: 'iCtrl'
         })
@@ -69,6 +69,7 @@
                 controllerAs: 'bookEditor'
             })
             .otherwise('/');
+            $locationProvider.html5Mode(true);
 
     }]);
 
