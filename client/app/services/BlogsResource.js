@@ -5,7 +5,7 @@
 
     function BlogsResource($resource) {
 
-        return $resource('/api/blogs/:blog_id', {blog_id: '@blog_id'},
+        return $resource('/api/blogs/:id', {id: '@id'},
             {
                 'update': {method: 'PUT'}
             }

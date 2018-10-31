@@ -1,6 +1,5 @@
  
-var bloggerApr = function () {
-
+var bloggerApr = function () { 
 
   blogpost23 = `<p class="firstparagraph">Fitbit and Wearables' Contribution to Health in Society is clear<sup>1</sup>, yet much of the credit is due to increased social, activity-based networks.  And, new features and benefits depend on relaxed data privacy. Given my <a href="#18-04-11">April 11th post</a> on the upcoming data privacy changes <i>in response to both Cambridge Analytica scandal <strong>and</strong> E.U.'s long-planned Data Privacy regulations.</i></p>
   

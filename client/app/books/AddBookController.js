@@ -19,7 +19,7 @@
 
         function addBookSuccess(message) {
             $log.info(message);
-            $location.path('/');
+            $location.path('/Books');
         }
 
         function addBookError(errorMessage) {

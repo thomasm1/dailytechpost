@@ -36,7 +36,7 @@
 
         function updateBookSuccess(message) {
             $log.info(message);
-            $location.path('/');
+            $location.path('/Books');
         }
 
         function updateBookError(errorMessage) {

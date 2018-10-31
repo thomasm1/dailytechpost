@@ -19,7 +19,7 @@
 
         function addBlogSuccess(message) {
             $log.info(message);
-            $location.path('/');
+            $location.path('/Blogs');
         }
 
         function addBlogError(errorMessage) {

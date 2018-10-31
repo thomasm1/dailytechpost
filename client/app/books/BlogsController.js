@@ -63,9 +63,9 @@
 
         vm.currentUser = currentUser;
 
-        vm.deleteBlog = function (bookID) {
+        vm.deleteBlog = function (blogID) {
 
-            dataService.deleteBlog(bookID)
+            dataService.deleteBlog(blogID)
                 .then(deleteBlogSuccess)
                 .catch(deleteBlogError);
 

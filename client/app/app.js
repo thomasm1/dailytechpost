@@ -30,23 +30,23 @@
 
     }]);
 
-    app.config(['booksProvider', '$routeProvider', '$logProvider', '$httpProvider', '$locationProvider','$provide', function (booksProvider, $routeProvider, $logProvider, $httpProvider, $locationProvider, $provide) {
+    app.config(['booksProvider',   '$routeProvider', '$logProvider', '$httpProvider', '$locationProvider','$provide', function (booksProvider,  $routeProvider, $logProvider, $httpProvider, $locationProvider, $provide) {
 
         $provide.decorator('$log', ['$delegate', 'books', logDecorator]);
-
+ 
         booksProvider.setIncludeVersionInTitle(true);
         $logProvider.debugEnabled(true);
 
         $httpProvider.interceptors.push('bookLoggerInterceptor');
 
         $routeProvider
-        .when('/', {
+            .when('/', {
                 template: '<div><style>div.card-header {display:none;} button {z-index:1001 !important;} form {z-index:1001 !important;}</style></div>',
                 controller: 'IndexController',
                 controllerAs: 'iCtrl'
-        })
+        }) 
             .when('/Books', {
-                templateUrl: '/app/templates/read.html',
+                templateUrl: '/app/templates/books.html',
                 controller: 'BooksController',
                 controllerAs: 'books'
             })
@@ -58,6 +58,10 @@
             .when('/archives', {
                 controller:'ArchivesController',
                 templateUrl: '/app/templates/archives.html'
+            })  
+            .when('/Blogs', {
+                controller:'BlogsController',
+                templateUrl: '/app/templates/blogs.html'
             })  
             .when('/_For_Cat_Eyes_Only_', {
                 controller:'CatsController',

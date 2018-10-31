@@ -1,5 +1,5 @@
 <h3>Blogs</h3>
-<div ng-controller="BlogsController" class="read" ng-class="nonStat" >
+<div class="read"  >
     <style>
         .read {
             border:2px inset blue;
@@ -25,8 +25,7 @@
         .toggleBtn {
             display:none;
         }
-    </style>
-    <div ng-click="tog()" ng-class="toggleBtn">
+    </style> 
         
     <h2 class="subdailytech filter">Filters &nbsp;&nbsp; | &nbsp;&nbsp; Collections &nbsp;&nbsp; | &nbsp;&nbsp; Statistics</h2>
      
@@ -38,13 +37,13 @@
     <div>
         <ul>
             <li  class="list"  class="list" ng-repeat="blog in blogs.allBlogs">{{ blog.title }} - {{ blog.author }}
-                <a href="#/EditBlog/{{ blog.blog_id }}"> | Edit</a>
+                <a href="/EditBlog/{{ blog.blog_id }}"> | Edit</a>
                 <a ng-click="blogs.deleteBlog(blog.blog_id)" href=""> | Delete</a>
             </li>
         </ul>
     </div> 
-    <a href="#/AddBlog">Add New Blog</a>&nbsp;&nbsp; | &nbsp;&nbsp;
-    <a href="#/EditBlog/{{ blogs.currentUser.lastBlogEdited.blog_id }}">Open Last Edited</a> 
+    <a href="/AddBlog">Add New Blog</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+    <a href="/EditBlog/{{ blogs.currentUser.lastBlogEdited.blog_id }}">Open Last Edited</a> 
     <h4 class="subdailytech  filter ">All Categories</h4>
     <div class="categories">
         <ul>

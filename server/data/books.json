@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "book_id": 1,
+        "title": "gt",
+        "author": "gt",
+        "year_published": "gt"
+    },
+    {
+        "book_id": 2,
+        "title": "hh",
+        "author": "hh",
+        "year_published": "hh"
+    },
+    {
+        "book_id": 3,
+        "title": "y",
+        "author": "y",
+        "year_published": "y"
+    },
+    {
+        "book_id": 4,
+        "title": "br",
+        "author": "rt",
+        "year_published": "rt"
+    },
+    {
+        "book_id": 5,
+        "title": "tt",
+        "author": "t",
+        "year_published": "t"
+    },
+    {
+        "book_id": 6,
+        "title": "fg",
+        "author": "fg",
+        "year_published": "fgggggg"
+    },
+    {
+        "book_id": 7,
+        "title": "eeee",
+        "author": "eeee",
+        "year_published": "eeee"
+    }
+]

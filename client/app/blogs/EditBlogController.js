@@ -36,7 +36,7 @@
 
         function updateBlogSuccess(message) {
             $log.info(message);
-            $location.path('/');
+            $location.path('/Blogs');
         }
 
         function updateBlogError(errorMessage) {

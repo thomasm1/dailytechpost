@@ -15,11 +15,15 @@ router.route('/')
         var data = getBlogData();
         var nextID = getNextAvailableID(data);
 
-        var newBlog = {
-            blog_id: nextID,
-            title: req.body.title,
+        var newBlog = {  
+            id: nextID,
+            did: req.body.did,
+            date: req.body.date,
             author: req.body.author,
-            year_published: req.body.year_published
+            cat3: req.body.cat3,
+            title: req.body.title,
+            post: req.body.post,
+            blogcite: req.body.blogcite
         };
 
         data.push(newBlog);
@@ -41,7 +45,7 @@ router.route('/:id')
         var data = getBlogData();
 
         var matchingBlogs = data.filter(function(item) {
-            return item.blog_id == req.params.id;
+            return item.id == req.params.id;
         });
 
         if(matchingBlogs.length === 0) {
@@ -56,7 +60,7 @@ router.route('/:id')
         var data = getBlogData();
 
         var pos = data.map(function(e) {
-            return e.blog_id;
+            return e.id;
         }).indexOf(parseInt(req.params.id, 10));
 
         if (pos > -1) {
@@ -75,7 +79,7 @@ router.route('/:id')
         var data = getBlogData();
 
         var matchingBlogs = data.filter(function(item) {
-            return item.blog_id == req.params.id;
+            return item.id == req.params.id;
         });
 
         if(matchingBlogs.length === 0) {
@@ -83,9 +87,12 @@ router.route('/:id')
         } else {
 
             var blogToUpdate = matchingBlogs[0];
+            blogToUpdate.id =  req.body.id,
             blogToUpdate.title = req.body.title;
             blogToUpdate.author = req.body.author;
-            blogToUpdate.year_published = req.body.year_published;
+            blogToUpdate.date = req.body.date;
+            blogToUpdate.cat3 = req.body.cat3;
+            blogToUpdate.blogcite = req.body.blogcite; 
 
             saveBlogData(data);
             res.sendStatus(204);
@@ -99,8 +106,8 @@ function getNextAvailableID(allBlogs) {
 
     allBlogs.forEach(function(element, index, array) {
 
-        if(element.blog_id > maxID) {
-            maxID = element.blog_id;
+        if(element.id > maxID) {
+            maxID = element.id;
         }
 
     });
