@@ -6254,7 +6254,7 @@ VALUES -
 /* Solid Texture */
 .svgTexture {
   background: url("../dist/img/TMM.gif") repeat center top;
-  background-position: 41rem;
+  background-position: 40rem;
   background-size: 60%;
   color: transparent;
   -webkit-font-smoothing: antialiased;
@@ -6865,7 +6865,7 @@ header {
   box-shadow: 0px 10px 50px #ff8707dc;
   min-width: 30%;
   position: fixed;
-  top: 50px;
+  top: 2150px;
   border-radius: 5% 35%; }
 
 #kcbb1:hover {
@@ -6879,7 +6879,7 @@ header {
 
 #kcbb2 {
   position: fixed;
-  top: 50px;
+  top: 2150px;
   left: 60%;
   float: right;
   box-shadow: 0px 10px 50px #ff8707dc;

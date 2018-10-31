@@ -11,74 +11,37 @@
 
         var vm = this;
 
+        function asyncGreet(name) {
+            // perform some asynchronous operation, resolve or reject the promise when appropriate.
+            return $q(function(resolve, reject) {
+              setTimeout(function() {
+                if (okToGreet(name)) {
+                  resolve('Hello, ' + name + '!');
+                } else {
+                  reject('Greeting ' + name + ' is not allowed.');
+                }
+              }, 1000);
+            });
+          }
+          
+          var promise = asyncGreet('Robin Hood');
+          promise.then(function(greeting) {
+            alert('Success: ' + greeting);
+          }, function(reason) {
+            alert('Failed: ' + reason);
+          });
+          
         vm.appName = books.appName;
-
-        dataService.getUserSummary()
-            .then(getUserSummarySuccess);
-
-        function getUserSummarySuccess(summaryData) {
-            //$log.log(summaryData);
-            vm.summaryData = summaryData;
-        } 
  
-
         dataService.getAllBooks()
             .then(getBooksSuccess, null, getBooksNotification)
             .catch(errorCallback)
             .finally(getAllBooksComplete);
-
-        function getBooksSuccess(books) {
-            //throw 'error in success handler';
-            vm.allBooks = books;
-        }
-
-        function getBooksNotification(notification) {
-            //console.log('Promise Notification: ' + notification);
-        }
-
-        function errorCallback(errorMsg) {
-            console.log('Error Message: ' + errorMsg);
-        }
-
+ 
         function getAllBooksComplete() {
             //console.log('getAllBooks has completed');
-        }
-
-        dataService.getAllReaders()
-            .then(getReadersSuccess)
-            .catch(errorCallback)
-            .finally(getAllReadersComplete);
-
-        function getReadersSuccess(readers) {
-            vm.allReaders = readers;
-        }
-
-        function getAllReadersComplete() {
-            $log.awesome('All readers retrieved');
-        }
-
-        vm.getBadge = badgeService.retrieveBadge;
-
-        vm.favoriteBook = $cookies.favoriteBook;
-
-        vm.currentUser = currentUser;
-
-        vm.deleteBook = function (bookID) {
-
-            dataService.deleteBook(bookID)
-                .then(deleteBookSuccess)
-                .catch(deleteBookError);
-
-        };
-
-        function deleteBookSuccess(message) {
-            $log.info(message);
-            $route.reload();
-        }
-
-        function deleteBookError(errorMessage) {
-            $log.error(errorMessage);
-        }
+        } 
+ 
 
     }
 
