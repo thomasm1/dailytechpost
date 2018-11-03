@@ -2,8 +2,26 @@
 
 (function() {
 
-    var app = angular.module('app', ['ngRoute', 'ngCookies', 'ngResource']);
+    var app = angular.module('app', ['ngRoute', 'ngCookies', 'ngResource', 'kendo.directives']);
 
+    app.config(['$routeProvider', function($routeProvider) {
+        $routeProvider 
+          .when('/welcome1',
+              {templateUrl: 'app/welcome/welcome.html'})
+           .when('/dataSource', 
+              {templateUrl: 'app/dataSource/dataSource.html'})
+           .when('/dataVizualization', 
+              {templateUrl: 'app/dataVizualization/dataViz.html'})
+           .when('/modal', 
+              {templateUrl: 'app/modal/modalWindow.html'})
+           .when('/order', 
+              {templateUrl: 'app/order/order.html'}) 
+           .when('/welcome3', 
+              { templateUrl: 'app/welcome/Welcome3.html' })
+           .otherwise({ redirectTo: '/' }); // go to the welcome page
+     }
+     ]);
+     
     app.provider('books', ['constants', function (constants) {
 
         var includeVersionInTitle = false;
@@ -29,7 +47,7 @@
         };
 
     }]);
-
+  
     app.config(['booksProvider',   '$routeProvider', '$logProvider', '$httpProvider', '$locationProvider','$provide', function (booksProvider,  $routeProvider, $logProvider, $httpProvider, $locationProvider, $provide) {
 
         $provide.decorator('$log', ['$delegate', 'books', logDecorator]);

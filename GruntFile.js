@@ -115,7 +115,7 @@ module.exports = function (grunt) {
                         });
                         
                         middlewares.push(connect.static('.tmp'));
-                        middlewares.push(connect().use('/bower_components', connect.static('./bower_components')));
+                        middlewares.push(connect().use('/bower_components', connect.static('/bower_components')));
                         middlewares.push(connect.static(appConfig.app));
 
                         return middlewares;

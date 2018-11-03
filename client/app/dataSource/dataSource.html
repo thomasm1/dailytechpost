@@ -1,0 +1,19 @@
+<h2> Data Source </h2>
+
+<div ng-controller="dataSource as vm">
+
+    <div kendo-grid
+         k-data-source="vm.gridData"
+         k-columns="vm.gridColumns"
+         k-selectable="true"
+         k-on-change="selected = data"></div>
+
+    <p ng-show="selected">
+        <label>Feature: <input ng-model="selected.feature"/></label>
+        <label>Details: <input ng-model="selected.details"/></label>
+
+    </p>
+
+    <button kendo-button ng-click="vm.update()">Update from code</button>
+
+</div>

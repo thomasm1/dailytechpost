@@ -7,9 +7,16 @@
 
  
 
-    function IndexController($q, books, dataService, badgeService, $cookies, $cookieStore, $log, $route, currentUser) {
+    function IndexController($q,  dataService, $cookies, $cookieStore, $log, $route, currentUser) {
 
         var vm = this;
+       const okToGreet = function () {
+          console.log(name);
+          var favoriteName = name;
+          return favoriteName;
+        };
+        
+        vm.favoriteName = $cookies.favoriteName;
 
         function asyncGreet(name) {
             // perform some asynchronous operation, resolve or reject the promise when appropriate.
@@ -26,22 +33,11 @@
           
           var promise = asyncGreet('Robin Hood');
           promise.then(function(greeting) {
-            alert('Success: ' + greeting);
+            console.log('Success: ' + greeting);
           }, function(reason) {
-            alert('Failed: ' + reason);
+            console.log('Failed: ' + reason);
           });
-          
-        vm.appName = books.appName;
- 
-        dataService.getAllBooks()
-            .then(getBooksSuccess, null, getBooksNotification)
-            .catch(errorCallback)
-            .finally(getAllBooksComplete);
- 
-        function getAllBooksComplete() {
-            //console.log('getAllBooks has completed');
-        } 
- 
+           
 
     }
 

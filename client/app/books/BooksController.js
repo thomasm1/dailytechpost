@@ -12,21 +12,15 @@
         var vm = this;
 
         vm.appName = books.appName;
-
-        dataService.getUserSummary()
-            .then(getUserSummarySuccess);
-
+        
         function getUserSummarySuccess(summaryData) {
             //$log.log(summaryData);
             vm.summaryData = summaryData;
         } 
- 
+        dataService.getUserSummary()
+            .then(getUserSummarySuccess);
 
-        dataService.getAllBooks()
-            .then(getBooksSuccess, null, getBooksNotification)
-            .catch(errorCallback)
-            .finally(getAllBooksComplete);
-
+     
         function getBooksSuccess(books) {
             //throw 'error in success handler';
             vm.allBooks = books;
@@ -44,10 +38,12 @@
             //console.log('getAllBooks has completed');
         }
 
-        dataService.getAllReaders()
-            .then(getReadersSuccess)
+
+        dataService.getAllBooks()
+            .then(getBooksSuccess, null, getBooksNotification)
             .catch(errorCallback)
-            .finally(getAllReadersComplete);
+            .finally(getAllBooksComplete);
+
 
         function getReadersSuccess(readers) {
             vm.allReaders = readers;
@@ -55,6 +51,21 @@
 
         function getAllReadersComplete() {
             $log.awesome('All readers retrieved');
+        }
+
+        dataService.getAllReaders()
+            .then(getReadersSuccess)
+            .catch(errorCallback)
+            .finally(getAllReadersComplete);
+
+
+        function deleteBookSuccess(message) {
+            $log.info(message);
+            $route.reload();
+        }
+
+        function deleteBookError(errorMessage) {
+            $log.error(errorMessage);
         }
 
         vm.getBadge = badgeService.retrieveBadge;
@@ -70,15 +81,6 @@
                 .catch(deleteBookError);
 
         };
-
-        function deleteBookSuccess(message) {
-            $log.info(message);
-            $route.reload();
-        }
-
-        function deleteBookError(errorMessage) {
-            $log.error(errorMessage);
-        }
 
     }
 

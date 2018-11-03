@@ -82,7 +82,7 @@ __webpack_require__(9);
 __webpack_require__(10);
 __webpack_require__(11);
 __webpack_require__(12);
- __webpack_require__(13);      
+ //require('./js/marsreader');      
    
 
 
@@ -2365,7 +2365,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
     document.getElementById("paragraph-july-mod").innerHTML += catMod;
   }
 
-  console.log(angular.toJson(url));
+ // console.log(angular.toJson(url));
 };
 bloggerJuly();
 
@@ -3010,7 +3010,7 @@ document.getElementById("paragraph-june-mod").innerHTML += catMod;
 }; 
  
 console.log('blogger-june');
-console.log(angular.toJson(url));
+// console.log(angular.toJson(url));
 };
 bloggerJune();  
 
@@ -3461,8 +3461,7 @@ bloggerMay();
 /***/ (function(module, exports) {
 
  
-var bloggerApr = function () {
-
+var bloggerApr = function () { 
 
   blogpost23 = `<p class="firstparagraph">Fitbit and Wearables' Contribution to Health in Society is clear<sup>1</sup>, yet much of the credit is due to increased social, activity-based networks.  And, new features and benefits depend on relaxed data privacy. Given my <a href="#18-04-11">April 11th post</a> on the upcoming data privacy changes <i>in response to both Cambridge Analytica scandal <strong>and</strong> E.U.'s long-planned Data Privacy regulations.</i></p>
   
@@ -6379,42 +6378,6 @@ console.log('blogger-feb');
 };
 
 bloggerFeb();
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
- 
-
-
-var o = 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo';
-var url = "https://api.nasa.gov/planetary/apod?api_key=" + o;
-
-$.ajax({
-  url: url,
-  success: function(result){
-  if("copyright" in result) {
-    $("#copyright").text("Image Credits: " + result.copyright);
-  }
-  else {
-    $("#copyright").text("Image Credits: " + "Public Domain");
-  }
-  
-  if(result.media_type == "video") {
-    $("#apod_img_id").css("display", "block"); 
-    $("#apod_vid_id").attr("src", result.url);
-  }
-  else {
-    $("#apod_vid_id").css("display", "block"); 
-    $("#apod_img_id").attr("src", result.url);
-  }
-  $("#reqObject").text(url);
-  $("#returnObject").text(JSON.stringify(result, null, 4));  
-  $("#apod_explaination").text(result.explanation);
-  $("#apod_title").text(result.title);
-}
-});
-  
 
 /***/ })
 /******/ ]);

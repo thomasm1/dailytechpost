@@ -1,0 +1,13 @@
+    <h2> Welcome </h2>
+
+    <div ng-controller="welcome as vm">
+
+
+        Loading ...
+        <br>
+         <select kendo-drop-down-list
+                 k-option-label="'Select a computer'"
+                 k-data-text-field="'name'"
+                 k-data-value-field="'id'"
+                 k-data-source="vm.computers"></select>
+    </div>

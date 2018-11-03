@@ -2,9 +2,11 @@
 <html lang="en"  ng-app="app"  xml:lang="en">
 
 <head>
+    <base href="/"> 
+    <!--
     <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-      <base href="/"> 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+   
+ Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -24,14 +26,20 @@
   />
   <link rel="manifest" href="/manifest.json">
   <meta content="Thomas M. Maestas" name="author" />
-  <title>OUR DAILY TECH</title>
-
+  <title>OUR DAILY TECH</title> 
+  <link href="//cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.kendostatic.com/2014.1.318/styles/kendo.silver.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.kendostatic.com/2014.1.318/styles/kendo.silver.mobile.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.kendostatic.com/2014.1.318/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.kendostatic.com/2014.1.318/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
   <link href="dist/app.css" rel="stylesheet" />
+
   <script src="dist/js/d3/d3v4.min.js"></script>
-  <script
+
+<script src="scripts/jquery.2.1.min.js"></script>
+ <!--<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  ></script>--> 
 
  
 </head>
@@ -105,7 +113,7 @@
         </li>
       </ul>
       <ul id="media" class="nav navbar-nav navbar-right">
-       
+        
           <li>
      
             <a title="books" href="/Books"   data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()"> 
@@ -176,6 +184,7 @@
 
 
 
+
   <div class="container" id="foreground"   >
     <!-- /.container -->
 
@@ -200,7 +209,12 @@
                     <br>
                     <input type="radio" name="reference" id="ref-sun">
                     <label for="ref-sun">Sun</label>
+             
                   </form>
+                  
+
+    <div ng-include="'app/layout/topnav.html'"></div>
+
                 </div>
                  
                 
@@ -302,7 +316,8 @@
 
             <div class="col-lg-3"   >
               <div class="card mb-4 ">
-                <div class="card-block">
+                <div class="card-block"> 
+
                   <div id="marsreader" class="marsreader" >
 
                     <pre     id="reqObject"></pre>
@@ -355,7 +370,7 @@
 
 
   <div class="card-block" id="footer">
-    <a class="nav-link" href="#/posts">_</a>
+    <a class="nav-link" href="/posts">_</a>
     <p>Copyright &copy; 2018 All Rights Reserved. &nbsp; | &nbsp;
       <a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
         thomasmaestas.net</a>&nbsp; | &nbsp;
@@ -375,13 +390,24 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-route.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-cookies.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-resource.js"></script>
+  <script src="scripts/kendo.all.min.js"></script>
+  <script src="scripts/angular-kendo.js"></script>
   <script src="dist/js/lib/tether.min.js"></script>
   <script src="dist/js/lib/popper.min.js"></script>
   <script src="dist/js/lib/bootstrap.min.js"></script>
   <script src="dist/blog-draft-oct.js"></script>
-  <script src="dist/bundle_daily_november.js"></script>
-  
-<script src="app/app.js"></script> 
+  <script src="dist/bundle_daily_november.js"></script> 
+
+    
+<!-- my scripts -->
+<script src="app/app.js"></script>
+ 
+<script src="app/welcome/welcome.js"></script> 
+    <script src="app/welcome/welcome3.js"></script>
+    <script src="app/dataSource/dataSource.js"></script>
+    <script src="app/order/order.js"></script>
+    <script src="app/dataVizualization/dataViz.js"></script>
+
 <script src="app/cats.js"></script> 
 <script src="app/books/IndexController.js"></script>
 <script src="app/blogs/BlogsController.js"></script>
@@ -399,7 +425,6 @@
 <script src="app/services/bookLoggerInterceptor.js"></script>
 <script src="app/services/BooksResource.js"></script>
 <script src="app/services/currentUser.js"></script>
-
 </body>
 
 </html>
