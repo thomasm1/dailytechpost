@@ -6,8 +6,8 @@
 
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider 
-          .when('/welcome1',
-              {templateUrl: 'app/welcome/welcome.html'})
+          .when('/chartBlog',
+              {templateUrl: 'app/welcome/chartBlog.html'})
            .when('/dataSource', 
               {templateUrl: 'app/dataSource/dataSource.html'})
            .when('/dataVizualization', 
@@ -16,8 +16,8 @@
               {templateUrl: 'app/modal/modalWindow.html'})
            .when('/order', 
               {templateUrl: 'app/order/order.html'}) 
-           .when('/welcome3', 
-              { templateUrl: 'app/welcome/Welcome3.html' })
+           .when('/gridBlog', 
+              { templateUrl: 'app/welcome/gridBlog.html' })
            .otherwise({ redirectTo: '/' }); // go to the welcome page
      }
      ]);
