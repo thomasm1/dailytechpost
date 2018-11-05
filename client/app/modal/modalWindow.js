@@ -7,7 +7,7 @@
 
   function modalWindow() {
      var vm = this;
-
+  
      vm.activate = activate;
 
      activate();
@@ -16,7 +16,7 @@
 
 
        $("#cal").kendoCalendar({
-          value: new Date(2018, 0 , 1)
+          value: new Date(2018, 10 , 11)
        });
  
      }
