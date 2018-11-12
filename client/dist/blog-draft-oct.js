@@ -1,8 +1,140 @@
 
 
 var bloggerOct = function () {  
+  
+  var blogpost09 =   `
+  <p class="firstparagraph">Thank you Cisco, and Thank you AWS.  Amazon Web Services have now come into their light with new computing power from above --and for us citizens, at fractions of a cent! 
 
+  </p>
+  <p class="quote">
+  Amazon Web Services and Cisco announced on Thursday that they're teaming up on a product that will allow developers to build applications in the cloud or in traditional data centers while making it easier for them to move between the two.<br /><br />
 
+  It's Cisco's latest effort to create hybrid options for customers that want to push work to the cloud but still need to run some projects on their own hardware for privacy and regulatory reasons. Cisco previously announced partnerships with the other two major cloud providers, Google and Microsoft, but Amazon is by far the leader in the cloud infrastructure market.<sup>1</sup>
+  </p>`;
+ 
+  var blogcite09 = `
+  <p class="cite">1<a href="https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html">https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html</a></p>
+  <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
+  `;
+ var blogpost08 =   `
+ <p class="quote">In April 2018, a group at MIT, USA, showed that it is possible to generate a form of superconductivity in a system of two layers of graphene under very specific conditions: To do this, the two hexagonal nets must be twisted against each other by exactly the magic angle of 1.1°. Under this condition a flat band forms in the electronic structure. The preparation of samples from two layers of graphene with such an exactly adjusted twist is complex, and not suitable for mass production. Nevertheless, the study has attracted a lot of attention among experts.
+ </p>`;
+
+ var blogcite08 = `
+ <p class="cite"><a href="https://www.sciencedaily.com/releases/2018/11/181109150124.htm"> https://www.sciencedaily.com/releases/2018/11/181109150124.htm</a></p>
+ `
+  var     blogpost07 = ` 
+  <p class="firstparagraph">Naming conventions make for a linguistic phenomenon in a world whose rapid change far outpaces accurate transfer of meaning into  language. And, because we don't allow our terminology to redefine itself, an increasingly inaccurate language may come to incongruently describe current-day logic, and basically reality...
+   </p>
+  <p class="quote"> But Musk may be right in general about the futility of job titles, which serve largely as a distraction for knowledge workers in today’s economy.
+  We’re all project managers now.<br /><br />
+  
+  According to Roger Martin, a prominent management and strategy expert, and former dean of the Rotman School of Management at the University of Toronto, we may be structuring jobs all wrong. By extension, our addiction to titles as signs of status could be just another example of how humans—whether as individuals or in groups—operate in patterns based on habit, without responding to the world as it really is.<sup>1</sup></p>
+ `
+    ;
+    var      blogcite07 = ` 
+    <p class="cite"> 1 <a href="https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/
+    "   target="_blank">https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/ 
+      </a> 
+      </a> 
+     `;
+
+  var blogpost06 =   `
+  <p class="quote">Tim Berners-Lee has launched a global campaign to save the web from the destructive effects of abuse and discrimination, political manipulation, and other threats that plague the online world.
+
+  In a talk at the opening of the Web Summit in Lisbon on Monday, the inventor of the web called on governments, companies and individuals to back a new “Contract for the Web” that aims to protect people’s rights and freedoms on the internet.
+  </p>`;
+ 
+  var blogcite06 = `
+  <p class="cite"><a href="https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse"> https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse</a></p>
+  `;
+ var blogpost05 =   `
+ <p class="quote">"What would guarantee a paradigm shift would be the ability to effortlessly bring disparate devices together," said Blake Kozak, principal analyst at IHS Markit. "A large proportion of consumer complaints stem from installation challenges to devices not being reliable, e.g. scenes not working, high latency even in local control and lack of control when scenes are performing but broken."
+
+ 5G, with its ability to handle more connected devices, could be an answer down the line. 
+ 
+ But while 5G could provide some consistency across smart home networking standards, it's not a panacea due to a familiar problem: battery life. 
+ </p>`;
+
+ var blogcite05 = `
+ <p class="cite"><a href="https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/"> https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/</a></p>
+ `
+  var     blogpost04 = ` 
+  <p class="firstparagraph">Energy Consciousness around traditional <i>Proof of Work</i> blockchain technologies casts a negative light on Bitcoin Mining. Energy consumption from proof-of-work, energy-intensive blockchain mining parallels annual KiloWatt consumption as small countries like Denmark and Singapore.
+   </p>
+  <p class="quote"> 
+ 
+  Bitcoin is a power-hungry cryptocurrency that is increasingly used as an investment and payment system. Here we show that projected Bitcoin usage, should it follow the rate of adoption of other broadly adopted technologies, could alone produce enough CO2 emissions to push warming above 2 °C within less than three decades.<sup>1</sup>
+   <p>
+  <p class="quote">an article by a team of researchers from Hawaii in the journal Nature Climate Change last week did much the same kind of calculations as de Vries and Krause and found that bitcoin usage resulted in the equivalent of 69 million metric tonnes of CO2 in 2017. If bitcoin grows like other technologies, the authors said, it’d cough out enough greenhouse gas to warm the planet by 2 degrees celsius by the mid-2030s.<sup>2</sup>
+  </p>`
+    ;
+    var      blogcite04 = ` 
+    <p class="cite"> 1 <a href="https://www.nature.com/articles/s41558-018-0321-8
+    "   target="_blank">https://www.nature.com/articles/s41558-018-0321-8
+      </a> 
+    <p class="cite"> 2 <a href="https://www.wired.com/story/bitcoin-will-burn-planet-down-how-fast/
+    "   target="_blank">https://www.wired.com/story/bitcoin-will-burn-planet-down-how-fast/
+      </a> 
+     `;
+     var     blogpost03 = ` 
+     <p class="firstparagraph"> 
+      </p>
+      <p class="quote">The invention provides for systems and devices for hardened remote storage of private cryptography keys used for authentication. The storage device is tamper-responsive, such that receipt of a signal that indicates physical or non-physical tampering with the storage device or its components results in deletion of the private cryptography key(s) from the memory. The storage device is configured to be separate and remote from a computing node that executes an authentication routine requiring the private cryptography key(s) and, as such, the private cryptography key(s) are accessible to, but not communicated to, the computing node only when the computing node is executing the authentication routine.</p><sup>1</sup> 
+      <p >
+   
+      </p>`
+       ;
+       var      blogcite03 = `  <p class="cite"> 1 <a href="https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys"   target="_blank">https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys</a> </p>
+       
+       <p class="cite">2 <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633"   target="_blank">http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633</a> </p>
+        `;
+ 
+  var     blogpost02 = ` 
+  <p class="firstparagraph"> 
+   </p>
+  <p class="quote"> <p>
+  `
+    ;
+    var      blogcite02 = ` 
+    <p class="cite"> <a href=""   target="_blank">
+      </a> </p>
+     `;
+     var     blogpost01 = ` 
+     <p class="firstparagraph"> 
+      </p>
+      <p> </p>`
+       ;
+       var      blogcite01 = `  <p class="cite"> <a href=""   target="_blank"></a> </p>
+        
+        `;
+ 
+        var     blogpost22 = ` 
+        <p class="firstparagraph">Cloud data is at once fast, seamless and powered by limitless computer processing power and partitions!
+         </p>
+        <p class="quote">
+        Responding to a question around slowed capex growth, the Microsoft CEO explained the company’s intelligent cloud and intelligent edge ethos was being spread across every business line; from Azure, of course, to Dynamics 365, to gaming. It is a unified, long-term message, Nadella added. “For the first time, what you see across Microsoft is really one platform which spans all of these businesses and all of the margin structures that are there represented in it,” he said.<sup>1</sup><p>
+        `
+          ;
+          var      blogcite22 = ` 
+          <p class="cite"> 1 <a href="https://www.cloudcomputing-news.net/news/2018/oct/25/microsoft-cites-azure-and-cloud-strength-more-strong-financials-its-all-about-long-term-ethos/
+          "   target="_blank">https://www.cloudcomputing-news.net/news/2018/oct/25/microsoft-cites-azure-and-cloud-strength-more-strong-financials-its-all-about-long-term-ethos/
+            </a> 
+           `;
+           var     blogpost21 = ` 
+           <p class="firstparagraph">Light matters alot more when its attributes power both quantum-based qubit calculations and the process itself making metamaterials they are based on!</p>
+            </p>
+            <p class="quote">Breakthroughs in the field of nanophotonics -- how light behaves on the nanometer scale -- have paved the way for the invention of "metamaterials," human-made materials that have enormous applications, from remote nanoscale sensing to energy harvesting and medical diagnostics. But their impact on daily life has been hindered by a complicated manufacturing process with large margins of error.
+            <br /><br />
+            "The process of designing metamaterials consists of carving nanoscale elements with a precise electromagnetic response," Dr. Mrejen says. "But because of the complexity of the physics involved, the design, fabrication and characterization processes of these elements require a huge amount of trial and error, dramatically limiting their applications."
+            <br /><br />
+            Deep Learning a key to precision manufacturing
+            <br /><br />
+            "Our new approach depends almost entirely on Deep Learning, a computer network inspired by the layered and hierarchical architecture of the human brain," Prof. Wolf explains. "It's one of the most advanced forms of machine learning, responsible for major advances in technology, including speech recognition, translation and image processing. We thought it would be the right approach for designing nanophotonic, metamaterial elements."<sup>1</sup></p>`
+             ;
+             var      blogcite21 = `  <p class="cite"> 1 <a href="https://www.sciencedaily.com/releases/2018/10/181023130502.htm"   target="_blank">https://www.sciencedaily.com/releases/2018/10/181023130502.htm/a> </p>
+              
+              `;
   var     blogpost20 = ` 
   <p class="firstparagraph">Material technologies too often remain the unsung hero for so much advancement in any field.
    </p>
@@ -363,14 +495,123 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
     </a>
     </p>  
        `;  
-       var url = [   
+      var url = [       
+        {
+        id: '09',
+          did: '11-10-18',
+          date: 'November 10, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Thank You, AWS--for your Software Megatron',
+          post: blogpost09,
+          blogcite: blogcite09
+        },  
+          {
+          id: '08',
+            did: '11-09-18',
+            date: 'November 9, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow!',
+            title: 'Graphene Dreams',
+            post: blogpost08,
+            blogcite: blogcite08
+          },  
+          {
+       id: '07',
+        did: '11-08-18',
+        date: 'November 8, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Sociology Tomorrow',
+        title: 'What\'s in a Name',
+        post: blogpost07,
+        blogcite: blogcite07
+          },        
+        {
+        id: '06',
+          did: '11-07-18',
+          date: 'November 7, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'The Uncharted Cloud Territory: A Magna Carta',
+          post: blogpost06,
+          blogcite: blogcite06
+        },  
+          {
+          id: '05',
+            did: '11-06-18',
+            date: 'November 6, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'The 5G IoT SuperHighway',
+            post: blogpost05,
+            blogcite: blogcite05
+          },  
+          {
+       id: '04',
+        did: '11-05-18',
+        date: 'November 5, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: 'Tesla at Work',
+        post: blogpost04,
+        blogcite: blogcite04
+          },     
+            {
+        id: '03',
+        did: '11-03-18',
+        date: 'November 3-4, 2018<br />Weekend',
+        author: 'by Thomas Maestas',
+        cat3: 'Musing Blockchain',
+        title: 'Now that\'s a Safe Keep!',
+        post: blogpost03,
+        blogcite: blogcite03
+      },  
+        {
+        id: '02',
+        did: '11-02-18',
+        date: 'November 2, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: ' ',
+        title: ' ',
+        post: blogpost02,
+        blogcite: blogcite02
+      },         {
+        id: '01',
+        did: '11-01-18',
+        date: 'November 1, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: ' ',
+        title: ' ',
+        post: blogpost01,
+        blogcite: blogcite01
+      },  
+      {
+        id: '22',
+        did: '10-25-18',
+        date: 'October 25, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Sociology Tomorrow!',
+        title: 'Data that goes up must Stay Up',
+        post: blogpost22,
+        blogcite: blogcite22
+      },  
+      {
+        id: '21',
+        did: '10-24-18',
+        date: 'October 24, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: 'Meta-Materials, Part II <br />One, Two, Three, Four--Nanophotonic Metamaterials and More',
+        post: blogpost21,
+        blogcite: blogcite21
+      }, 
         {
           id: '20',
           did: '10-23-18',
           date: 'October 23, 2018 ',
           author: 'by Thomas Maestas',
           cat3: 'Sociology Tomorrow!',
-          title: 'Material Science',
+          title: 'Meta-Materials, Part I <br />Material Science',
           post: blogpost20,
           blogcite: blogcite20
         },  

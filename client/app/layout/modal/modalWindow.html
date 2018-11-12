@@ -1,0 +1,18 @@
+<h2>Modal Window</h2>
+
+<div  ng-controller="modalWindow as vm">
+    <button class="k-button" ng-click="modal.center().open()">Open Window</button>
+    <div kendo-window="modal"
+         k-title="Status"
+         k-width="400"
+         k-height="300"
+         k-visible="false"
+         k-pinned="false"
+         k-resizable="true"
+         k-modal="true">
+         <h2 id="calendar">Calendar</h2>
+         <div id="cal"></div>
+         </div>
+         <h2 id="calendar">Calendar</h2>
+         <div id="cal"></div>
+</div>
