@@ -13,8 +13,7 @@
       activate();
 
       function activate(){
-
-  
+ 
             $('#grid').kendoGrid({
               dataSource: { 
                  //   data: vm.blogs,
