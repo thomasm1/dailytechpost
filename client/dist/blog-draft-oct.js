@@ -2,7 +2,39 @@
 
 var bloggerOct = function () {  
   
-  var blogpost09 =   `
+  var blogpost122 =   `
+  <p class="firstparagraph">Eco-friendly urban commuting options are a gift, and should always be hailed.  
+  </p>
+  <p class="quote">On an earnings before interest, taxes, depreciation and amortization basis (EBIDTA), Uber’s losses were $527 million, up about 21 percent quarter over quarter. And as Uber prepares to go public, the company has started presenting the income statements with stock-based compensation.
+
+  Ten years from now, Uber CEO Dara Khosrowshahi envisions its core ride-hailing business accounting for less than 50 percent of Uber’s overall business, Khosrowshahi told me at TechCrunch Disrupt SF 2018. That means Uber expects businesses like Eats, scooters, bikes and freight to contribute to be more of Uber’s business, which requires Uber to invest heavily in those businesses.<sup>1</sup>
+  </p>`;
+ 
+  var blogcite122 = `
+  <p class="cite">1<a href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
+  <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
+  `;
+ var blogpost111 =   `
+ <p class="quote">Turns out that Google's new Night Sight mode for Pixels, formally released just earlier today, has some non-night utility. In a bit of a twist, you can use it in the daytime as well for "denoising and resolution improvements" inherited from another Google Camera feature: Super Res Zoom. 
+ </p>`;
+
+ var blogcite111 = `
+ <p class="cite"><a href="https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/">https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/</a></p>
+ `
+  var     blogpost100 = ` 
+  <p class="firstparagraph">Plastics and micro-plastic waste just awaits a tech-informed solution!
+   </p>
+  <p class="quote">At the highest levels of government the plastic panic can resemble a scrambled response to a natural disaster, or a public health crisis. The United Nations has declared a “war” on single-use plastic. In Britain, Theresa May has called it a “scourge”, and committed the government to a 25-year plan that would phase out disposable packaging by 2042. India claimed it would do the same, but by 2022.<sup>1</sup></p>
+ `
+    ;
+    var      blogcite100 = ` 
+    <p class="cite"> 1 <a href="https://www.theguardian.com/environment/2018/nov/13/the-plastic-backlash-whats-behind-our-sudden-rage-and-will-it-make-a-difference
+    "   target="_blank">https://www.theguardian.com/environment/2018/nov/13/the-plastic-backlash-whats-behind-our-sudden-rage-and-will-it-make-a-difference
+      </a> 
+      </p> 
+     `;
+ 
+  var blogpost099 =   `
   <p class="firstparagraph">Thank you Cisco, and Thank you AWS.  Amazon Web Services have now come into their light with new computing power from above --and for us citizens, at fractions of a cent! 
 
   </p>
@@ -12,18 +44,18 @@ var bloggerOct = function () {
   It's Cisco's latest effort to create hybrid options for customers that want to push work to the cloud but still need to run some projects on their own hardware for privacy and regulatory reasons. Cisco previously announced partnerships with the other two major cloud providers, Google and Microsoft, but Amazon is by far the leader in the cloud infrastructure market.<sup>1</sup>
   </p>`;
  
-  var blogcite09 = `
+  var blogcite099 = `
   <p class="cite">1<a href="https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html">https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html</a></p>
   <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
- var blogpost08 =   `
+ var blogpost088 =   `
  <p class="quote">In April 2018, a group at MIT, USA, showed that it is possible to generate a form of superconductivity in a system of two layers of graphene under very specific conditions: To do this, the two hexagonal nets must be twisted against each other by exactly the magic angle of 1.1°. Under this condition a flat band forms in the electronic structure. The preparation of samples from two layers of graphene with such an exactly adjusted twist is complex, and not suitable for mass production. Nevertheless, the study has attracted a lot of attention among experts.
  </p>`;
 
- var blogcite08 = `
+ var blogcite088 = `
  <p class="cite"><a href="https://www.sciencedaily.com/releases/2018/11/181109150124.htm"> https://www.sciencedaily.com/releases/2018/11/181109150124.htm</a></p>
  `
-  var     blogpost07 = ` 
+  var     blogpost077 = ` 
   <p class="firstparagraph">Naming conventions make for a linguistic phenomenon in a world whose rapid change far outpaces accurate transfer of meaning into  language. And, because we don't allow our terminology to redefine itself, an increasingly inaccurate language may come to incongruently describe current-day logic, and basically reality...
    </p>
   <p class="quote"> But Musk may be right in general about the futility of job titles, which serve largely as a distraction for knowledge workers in today’s economy.
@@ -32,23 +64,23 @@ var bloggerOct = function () {
   According to Roger Martin, a prominent management and strategy expert, and former dean of the Rotman School of Management at the University of Toronto, we may be structuring jobs all wrong. By extension, our addiction to titles as signs of status could be just another example of how humans—whether as individuals or in groups—operate in patterns based on habit, without responding to the world as it really is.<sup>1</sup></p>
  `
     ;
-    var      blogcite07 = ` 
+    var      blogcite077 = ` 
     <p class="cite"> 1 <a href="https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/
     "   target="_blank">https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/ 
       </a> 
       </a> 
      `;
 
-  var blogpost06 =   `
+  var blogpost066 =   `
   <p class="quote">Tim Berners-Lee has launched a global campaign to save the web from the destructive effects of abuse and discrimination, political manipulation, and other threats that plague the online world.
 
   In a talk at the opening of the Web Summit in Lisbon on Monday, the inventor of the web called on governments, companies and individuals to back a new “Contract for the Web” that aims to protect people’s rights and freedoms on the internet.
   </p>`;
  
-  var blogcite06 = `
+  var blogcite066 = `
   <p class="cite"><a href="https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse"> https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse</a></p>
   `;
- var blogpost05 =   `
+ var blogpost055 =   `
  <p class="quote">"What would guarantee a paradigm shift would be the ability to effortlessly bring disparate devices together," said Blake Kozak, principal analyst at IHS Markit. "A large proportion of consumer complaints stem from installation challenges to devices not being reliable, e.g. scenes not working, high latency even in local control and lack of control when scenes are performing but broken."
 
  5G, with its ability to handle more connected devices, could be an answer down the line. 
@@ -56,10 +88,10 @@ var bloggerOct = function () {
  But while 5G could provide some consistency across smart home networking standards, it's not a panacea due to a familiar problem: battery life. 
  </p>`;
 
- var blogcite05 = `
+ var blogcite055 = `
  <p class="cite"><a href="https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/"> https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/</a></p>
  `
-  var     blogpost04 = ` 
+  var     blogpost044 = ` 
   <p class="firstparagraph">Energy Consciousness around traditional <i>Proof of Work</i> blockchain technologies casts a negative light on Bitcoin Mining. Energy consumption from proof-of-work, energy-intensive blockchain mining parallels annual KiloWatt consumption as small countries like Denmark and Singapore.
    </p>
   <p class="quote"> 
@@ -69,7 +101,7 @@ var bloggerOct = function () {
   <p class="quote">an article by a team of researchers from Hawaii in the journal Nature Climate Change last week did much the same kind of calculations as de Vries and Krause and found that bitcoin usage resulted in the equivalent of 69 million metric tonnes of CO2 in 2017. If bitcoin grows like other technologies, the authors said, it’d cough out enough greenhouse gas to warm the planet by 2 degrees celsius by the mid-2030s.<sup>2</sup>
   </p>`
     ;
-    var      blogcite04 = ` 
+    var      blogcite044 = ` 
     <p class="cite"> 1 <a href="https://www.nature.com/articles/s41558-018-0321-8
     "   target="_blank">https://www.nature.com/articles/s41558-018-0321-8
       </a> 
@@ -77,7 +109,7 @@ var bloggerOct = function () {
     "   target="_blank">https://www.wired.com/story/bitcoin-will-burn-planet-down-how-fast/
       </a> 
      `;
-     var     blogpost03 = ` 
+     var     blogpost033 = ` 
      <p class="firstparagraph"> 
       </p>
       <p class="quote">The invention provides for systems and devices for hardened remote storage of private cryptography keys used for authentication. The storage device is tamper-responsive, such that receipt of a signal that indicates physical or non-physical tampering with the storage device or its components results in deletion of the private cryptography key(s) from the memory. The storage device is configured to be separate and remote from a computing node that executes an authentication routine requiring the private cryptography key(s) and, as such, the private cryptography key(s) are accessible to, but not communicated to, the computing node only when the computing node is executing the authentication routine.</p><sup>1</sup> 
@@ -85,27 +117,27 @@ var bloggerOct = function () {
    
       </p>`
        ;
-       var      blogcite03 = `  <p class="cite"> 1 <a href="https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys"   target="_blank">https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys</a> </p>
+       var      blogcite033 = `  <p class="cite"> 1 <a href="https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys"   target="_blank">https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys</a> </p>
        
        <p class="cite">2 <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633"   target="_blank">http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633</a> </p>
         `;
  
-  var     blogpost02 = ` 
+  var     blogpost022 = ` 
   <p class="firstparagraph"> 
    </p>
   <p class="quote"> <p>
   `
     ;
-    var      blogcite02 = ` 
+    var      blogcite022 = ` 
     <p class="cite"> <a href=""   target="_blank">
       </a> </p>
      `;
-     var     blogpost01 = ` 
+     var     blogpost011 = ` 
      <p class="firstparagraph"> 
       </p>
       <p> </p>`
        ;
-       var      blogcite01 = `  <p class="cite"> <a href=""   target="_blank"></a> </p>
+       var      blogcite011 = `  <p class="cite"> <a href=""   target="_blank"></a> </p>
         
         `;
  
@@ -495,86 +527,116 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
     </a>
     </p>  
        `;  
-      var url = [       
+      var url = [     
+          {
+        id: '122',
+          did: '11-14-18',
+          date: 'November 14, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Green Options',
+          post: blogpost122,
+          blogcite: blogcite122
+        },  
+          {
+          id: '111',
+            did: '11-13-18',
+            date: 'November 13, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'Picture Power',
+            post: blogpost111,
+            blogcite: blogcite111
+          },  
+          {
+       id: '100',
+        did: '11-12-18',
+        date: 'November 12, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Sociology Tomorrow',
+        title: 'Plastic Hangover',
+        post: blogpost100,
+        blogcite: blogcite100
+          },     
         {
-        id: '09',
+        id: '099',
           did: '11-10-18',
-          date: 'November 10, 2018 ',
+          date: 'November 10-11, 2018<br />Weekend ',
           author: 'by Thomas Maestas',
           cat3: 'Web Dev Affairs',
           title: 'Thank You, AWS--for your Software Megatron',
-          post: blogpost09,
-          blogcite: blogcite09
+          post: blogpost099,
+          blogcite: blogcite099
         },  
           {
-          id: '08',
+          id: '088',
             did: '11-09-18',
             date: 'November 9, 2018 ',
             author: 'by Thomas Maestas',
             cat3: 'Sociology Tomorrow!',
             title: 'Graphene Dreams',
-            post: blogpost08,
-            blogcite: blogcite08
+            post: blogpost088,
+            blogcite: blogcite088
           },  
           {
-       id: '07',
+       id: '077',
         did: '11-08-18',
         date: 'November 8, 2018 ',
         author: 'by Thomas Maestas',
         cat3: 'Sociology Tomorrow',
         title: 'What\'s in a Name',
-        post: blogpost07,
-        blogcite: blogcite07
+        post: blogpost077,
+        blogcite: blogcite077
           },        
         {
-        id: '06',
+        id: '066',
           did: '11-07-18',
           date: 'November 7, 2018 ',
           author: 'by Thomas Maestas',
           cat3: 'Web Dev Affairs',
           title: 'The Uncharted Cloud Territory: A Magna Carta',
-          post: blogpost06,
-          blogcite: blogcite06
+          post: blogpost066,
+          blogcite: blogcite066
         },  
           {
-          id: '05',
+          id: '055',
             did: '11-06-18',
             date: 'November 6, 2018 ',
             author: 'by Thomas Maestas',
             cat3: 'Web Dev Affairs',
             title: 'The 5G IoT SuperHighway',
-            post: blogpost05,
-            blogcite: blogcite05
+            post: blogpost055,
+            blogcite: blogcite055
           },  
           {
-       id: '04',
+       id: '044',
         did: '11-05-18',
         date: 'November 5, 2018 ',
         author: 'by Thomas Maestas',
         cat3: 'Web Dev Affairs',
         title: 'Tesla at Work',
-        post: blogpost04,
-        blogcite: blogcite04
+        post: blogpost044,
+        blogcite: blogcite044
           },     
             {
-        id: '03',
+        id: '033',
         did: '11-03-18',
         date: 'November 3-4, 2018<br />Weekend',
         author: 'by Thomas Maestas',
         cat3: 'Musing Blockchain',
         title: 'Now that\'s a Safe Keep!',
-        post: blogpost03,
-        blogcite: blogcite03
+        post: blogpost033,
+        blogcite: blogcite033
       },  
         {
-        id: '02',
+        id: '022',
         did: '11-02-18',
         date: 'November 2, 2018 ',
         author: 'by Thomas Maestas',
         cat3: ' ',
         title: ' ',
-        post: blogpost02,
-        blogcite: blogcite02
+        post: blogpost022,
+        blogcite: blogcite022
       },         {
         id: '01',
         did: '11-01-18',
@@ -582,8 +644,8 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
         author: 'by Thomas Maestas',
         cat3: ' ',
         title: ' ',
-        post: blogpost01,
-        blogcite: blogcite01
+        post: blogpost011,
+        blogcite: blogcite011
       },  
       {
         id: '22',

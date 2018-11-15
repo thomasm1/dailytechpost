@@ -9491,6 +9491,9 @@ h3#blogs {
   float: right;
   max-width: 50%; }
 
+div#planets .form {
+  z-index: 2000; }
+
 .node rect,
 .node circle,
 .node ellipse {

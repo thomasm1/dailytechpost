@@ -638,10 +638,13 @@ div.row#row-posts {
   }
    
   h3#blogs {
-      pointer:inherit;
+      cursor:inherit;
   }
 #b-header {
     z-index:1001;
     float:right;
     max-width:50%;
+}
+div#planets .form {
+    z-index:2000;
 }
