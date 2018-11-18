@@ -1,14 +1,58 @@
 
 var bloggerSep = function () {
+ 
+  var    blogpost25 = `<p class="paragraph">Web's foray into Internet of Things and the upcoming 5G revolution necessitates real-time processing.  Luckily, the dynamic yet slow language of the web, JavaScript now gets a super-speed boost from Web Assembly, a  much lower-level, binary language. Since Web Assembly only recognizes two floating point number types and two integer types, Rust handles string values, etc.</p> <p class="quote"><i>Both Rust and JavaScript have vibrant package ecosystems. Rust has cargo and crates.io. JavaScript has several CLI tools, including the npm CLI, that interface with the npm registry. In order for WebAssembly to be successful, we need these two systems to work well together, specifically:<br/><br/>
 
-  /*
+  Rust developers should be able to produce WebAssembly packages for use in JavaScript without requiring a Node.js development environment
+  JavaScript developers should be able to use WebAssembly without requiring a Rust development environment
+  <br/><br/>
+Enter: wasm-pack. 
+wasm-pack is a tool for assembling and packaging Rust crates that target WebAssembly. These packages can be published to the npm Registry and used alongside other packages. This means you can use them side-by-side with JS and other packages, and in many kind of applications, be it a Node.js server side app, a client-side application bundled by Webpack, or any other sort of application that uses npm dependencies. You can find wasm-pack on crates.io and GitHub.<sup>1 </sup></p>
+<p>Step-by-step, software advances in step-lock with hardware.`;
+
+  var   blogcite25 = `
+  <p class="cite"> 1 <a href="https://hacks.mozilla.org/2018/04/hello-wasm-pack/"   target="_blank">https://hacks.mozilla.org/2018/04/hello-wasm-pack/
+  </a>
+  </p>  
+  `;
+
+  var   blogpost24 = ` 
+  <p class="firstparagraph">Democracy, i.e., power of the people, is often expressed in the tools and resources available to everyone. Data visualization software is prohibitively expensive, and complicated, limiting access to universities and commerce. So, many important data stories are relegated to Excel bar charts. These days, the preeminent medium for graphical representation of data is free to all: <i><strong>Pandas</strong>, short for the  Econometrics term 'Panel Data', that features paragraphs of statistical, programming language with spoken language, coupled with powerful data visualization:  </i> </p>
+    <p class="quote">
+    Millions of people around the world use Pandas. In October 2017 alone, Stack Overflow, a website for programmers, recorded 5 million visits to questions about Pandas from more than 1 million unique visitors. Data scientists at Google, Facebook, JP Morgan, and virtually every other major company that analyze data uses Pandas. Most people haven’t heard of it, but for many people who do heavy data analysis—a rapidly growing group these days—life wouldn’t be the same without it. (Pandas is open source, so it’s free to use.)  <br /><br />Basically, Pandas makes it so that data analysis tasks that would have taken 50 complex lines of code in the past now only take 5 simple lines, because  [Pandas creator] McKinney already did the heavy lifting.  
+    <sup>1</sup></p>
+<p>      Data expression, at the end of the day, and across the land, is now an expression for all!</p>
+    
+    `;
+    var   blogcite24 = `
+  <p class="cite"> 1 <a href="https://qz.com/1126615/the-story-of-the-most-important-tool-in-data-science/"   target="_blank">https://qz.com/1126615/the-story-of-the-most-important-tool-in-data-science/
+  </a>
+  </p>
+  `;
+  var     blogpost23 = ` 
+  <p class="firstparagraph">The College Term-Paper, the perennial object of dread or elation, of tedium or excitement. Yet, more and more, the needs for communication require the inclusion of programming, analytic language. Paragraphs of eloquently written code with paragraphs of synopsis, from one logical statement to the next, laying out the proofs with each paragraph. Best yet, it is innately online and presentable, and employs the powerful languages like Python and R. But how to communicate these specialized papers to a wide audience?</p>
+    <p class="quote"> 
+    The more sophisticated science becomes, the harder it is to communicate results. Papers today are longer than ever and full of jargon and symbols. They depend on chains of computer programs that generate data, and clean up data, and plot data, and run statistical models on data. These programs tend to be both so sloppily written and so central to the results that it’s contributed to a replication crisis, or put another way, a failure of the paper to perform its most basic task: to report what you’ve actually discovered, clearly enough that someone else can discover it for themselves.<br /><br />
+    Perhaps the paper itself is to blame. Scientific methods evolve now at the speed of software; the skill most in demand among physicists, biologists, chemists, geologists, even anthropologists and research psychologists, is facility with programming languages and “data science” packages. And yet the basic means of communicating scientific results hasn’t changed for 400 years. Papers may be posted online, but they’re still text and pictures on a page.<sup>1</sup></p>
+    <p>Anaconda, the programming package bundle features math software with Spyder applications, yet the Jupyter notebook is already revolutionizing academic publications...`
+    ;
+    var      blogcite23= ` 
+  <p class="cite"> 1 <a href="
+  https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/"   target="_blank">
+  https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/ 
+  </a>
+  </p>  
+  <p class="cite"> 2 <a href="https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/"   target="_blank">https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/
+  </a>
+  </p>  
+     `;  
   blogpost20 = ` <p class="quote"> <br /><br />
   </p>
   `;
   blogcite20   =  `
    
   `;
-  */
+ 
   blogpost19= `<p class="firstparagraph">For every article and blog on the sci-fi imaginations of tech writers, real A.I. presents itself every so often as what it is essentially: a tool.<i> A multi-purpose toolset, tracing its algorithmic root to &Eacute;mile Durkheim\'s 1870s era classification science</i> of human epidiology using national population data from Paris. </p><p>
   Earlier  Statisticians and Scientists, i.e. modern Developers and Engineers also took their generation's Information Technology, applying it toward human-driven purposes. </p>
   <p>I'm an optimist at heart, so this blog post stands out: </p><p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. <sup>1</sup>
@@ -276,7 +320,37 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     `;
 
   var url = [  
-      /*
+    {
+      id: '25',
+      did: '9-29-18',
+      date: 'September 29th, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Web Dev Affairs',
+      title: 'Real-Time, 21st Web-Apps\'s',
+      post: blogpost25,
+      blogcite: blogcite25
+    },
+
+    {
+      id: '24',
+      did: '9-28-18',
+      date: 'September 28th, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Web Dev Affairs',
+      title: 'Open Source Democracy: Part II <br />Data Visualization for All',
+      post: blogpost24,
+      blogcite: blogcite24
+    },  
+    {
+      id: '23',
+      did: '9-27-18',
+      date: 'September 27th, 2018',
+      author: 'by Thomas Maestas',
+      cat3: 'Web Dev Affairs',
+      title: 'Open Source Democracy: Part I <br />The Primacy of the Jupyter Notebook',
+      post: blogpost23,
+      blogcite: blogcite23
+    },
       {
 			 id: "20",
        did: "09-24-18",
@@ -286,8 +360,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
        title: "Sociology Tomorrow!",
        post: blogpost20,
        blogcite: blogcite20
-    },
-    */
+    }, 
 			{
 				id: "19",
 				did: "09-22-18",
@@ -515,7 +588,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     document.getElementById("paragraph-sep-mod").innerHTML += catMod;
   }
 
-  console.log('blogger-sep'); 
+ // console.log('blogger-sep'); 
  // console.log(angular.toJson(url));
 };
 bloggerSep();

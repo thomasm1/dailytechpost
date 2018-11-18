@@ -12,7 +12,7 @@
 
 							
 
-							d3.csv("../data/maps.csv", function(error, data) {
+							d3.csv("../data/database/maps.csv", function(error, data) {
 
 							  if (error) throw error;
 

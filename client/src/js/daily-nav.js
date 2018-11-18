@@ -1,4 +1,68 @@
-document.getElementById("ul").innerHTML = `
+document.getElementById("dailyNav").innerHTML = `
+  <nav class="navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar">
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-center hidden-md-up"
+      data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" id="toggler"> </button>
+
+    <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item   "> 
+          <a class="nav-link" href="/"
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()" >
+            <span class=" subdailytech"> TECH
+              <br />BLOG </span>
+          </a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link" href="/archives" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()">
+            <span class="subdailytech ">BLOG ✨📦
+              <br />ARCHIVES </span>
+          </a>
+        </li> 
+        <li class="nav-item hidden"  >
+          <a class="nav-link" ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html" title="tmm FICTION" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" > 
+            <span class="caret subdailytech">FOR_CAT
+              <br />EYES_ONLY</span>
+          </a>
+      
+  <a class="nav-link" ng-href="/_For_Cat_Eyes_Only_" title="tmm FICTION" 
+  data-target="#navbarResponsive" data-toggle="collapse" type="button" > 
+    <span class="caret subdailytech">FOR_CAT
+      <br />EYES_ONLY</span>
+  </a>
+  <ul style="z-index:0" class="menu-left">
+            <li>
+              tmm FICTION
+              <a style="z-index:199; " ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html" title="tmm FICTION"  
+              data-target="#navbarResponsive" data-toggle="collapse" type="button"   >For Cat Eyes Only:
+                <i>Early Months of Win&#39;s Campaign</i>
+              </a>
+            </li>
+            <li style="z-index:199; ">
+              tmm FICTION
+              <a style="z-index:199; " ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing"  title="tmm FICTION"  
+              data-target="#navbarResponsive" data-toggle="collapse" type="button"  >Fiction Excerpts From:
+                <br />
+                <i>The Casperian Ancestries</i>
+                <br />
+                <small>Capturing One Cat&#39;s Past and Present</small>
+              </a>
+              tmm FICTION
+            </li>
+          </ul>
+        </li>
+        <li style="z-index:5" class="nav-item">
+          <a class="nav-link" 
+          data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()">
+            <span class=" subdailytech">CODING
+              <br /> TOOLS
+            </span>
+          </a>
+      
+     
+          <ul >
+          
 <!--START UL -->
                          
 <li style="z-index:100;">
@@ -240,4 +304,81 @@ document.getElementById("ul").innerHTML = `
 <li>
 <a href="https://www.virtualbox.org/" target="_blank">Virtual Box</a>
 </li>
-`
+          </ul>
+          <!--end UL-->
+
+
+        </li>
+      </ul>
+      <ul id="media" class="nav navbar-nav navbar-right">
+        
+          <li>
+     
+            <a title="books" href="/Books"   data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()"> 
+              <i class="fa fa-cog"></i> 
+            </a>
+          
+          </li>
+        <li>
+          
+          <a href="/modal">      <i class="fa fa-cog"></i>  </a> </li>
+        <li>
+     
+          <a title="github" href="https://github.com/thomasm1" target="_blank">
+        
+            <i class="fa fa-github"></i>
+        
+          </a>
+        
+        </li>
+        
+        <li> 
+        
+          <a href="https://www.telerik.com/kendo-ui"  >  <i class="fa fa-cog"></i></a>  
+         
+        </a>
+      
+      </li>
+        <li>
+        
+          <a title="twitter" href="https://twitter.com/ThomasMaestas" target="_blank">
+        
+            <i class="fa fa-twitter"></i>
+        
+          </a>
+        
+        </li>
+        
+        <li>
+        
+          <a title="facebook" href="https://www.facebook.com/thomasm1.maestas" target="_blank">
+        
+            <i class="fa fa-facebook"></i>
+        
+          </a>
+        
+        </li>
+        
+        <li>
+        
+          <a title="linkedin" href="http://linkedin.com/in/thomasmaestas" target="_blank">
+        
+            <i class="fa fa-linkedin"></i>
+        
+          </a>
+        
+        </li>
+
+        <!--End UL -->
+
+        </ul>  
+      <abbr title="Our Daily Tech">
+         
+        <img class="card-profile-img zoom" id="dailylogo" alt="image of Le Mont Real" src="dist/img/blueColorTriomphe.png" />   
+          
+      </abbr>
+
+    </div>
+
+  </nav>
+`;

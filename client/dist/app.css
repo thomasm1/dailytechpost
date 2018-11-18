@@ -9036,20 +9036,6 @@ img.media-object {
   max-width: 30px; }
 
 /* misc */
-.app-login-form {
-  max-width: 280px;
-  margin-top: -60px; }
-
-.app-new-msg {
-  margin-right: 10px; }
-
-.app-brand {
-  width: 40%;
-  display: inline-block; }
-
-.app-brand img {
-  width: 100%; }
-
 #search {
   margin-left: 10px;
   margin-top: -10px;
@@ -9245,7 +9231,7 @@ h3.panel-title.dailytech {
 img#moonscape {
   max-width: 100%; }
 
-/* SECTION UTILITIES */
+/* button #toggler   .zoom   small-tech SECTION UTILITIES */
 div.mod-behave button {
   width: 60px; }
 
@@ -9369,7 +9355,7 @@ div.panel-body {
 label {
   color: lightsteelblue; }
 
-/* main*/
+/* main  */
 #view {
   padding-top: 80px; }
 
@@ -9484,7 +9470,7 @@ div.row#row-posts {
   background-image: url("../img/RBTriomphe.png"); }
 
 h3#blogs {
-  pointer: inherit; }
+  cursor: inherit; }
 
 #b-header {
   z-index: 1001;
@@ -9991,7 +9977,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
   padding: 4%;
   margin: 2%;
-  max-height: 1000px;
+  max-height: 800px;
   color: darkslategray;
   background-color: #cee5f8;
   overflow-y: scroll; }
