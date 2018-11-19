@@ -10,7 +10,7 @@
 
 								height = canvas.height; 
 
-							d3.csv("data/database/maps.csv", function(error, data) {
+							d3.csv("./data/database/maps.csv", function(error, data) {
 
 							  if (error) throw error; 
 							  var root = d3.stratify() 

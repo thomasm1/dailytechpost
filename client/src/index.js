@@ -1,6 +1,6 @@
 
 require('./js/daily-nav');
-require('./js/force');  
+//require('./js/force');  
 
 //require('./js/blog-draft-nov');
 require('./js/blog-draft-oct');
