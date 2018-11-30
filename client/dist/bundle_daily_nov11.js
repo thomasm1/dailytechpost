@@ -500,10 +500,165 @@ document.getElementById("dailyNav").innerHTML = `
 /* 2 */
 /***/ (function(module, exports) {
 
-
+// 'use strict';
 
 var bloggerOct = function () {  
+  
+  var blogpost134 =   `
  
+  <p class="firstparagraph">Compared with so many other options, including smart Currency that doubles as a programmable legal contract like Ethereum or energy-friendly 'Proof-of-Stake' algorithm Currencies, one has to wonder why Bitcoin has managed to hang around as long as it has ... even if name-recognition and simplicity of the ten-year old technology are its two best attributes. 
+  </p>
+  <p>So, with Bitcoin's stumbling, perhaps other options and new technologies can be considered: 
+  </p>
+  <p class="quote">“The Proof of Stake algorithm is a generalization of the Proof of Work algorithm. In PoS, the nodes are known as the ‘validators’ and, rather than mining the blockchain, they validate the transactions to earn a transaction fee. There is no mining to be done, as all coins exist from day one. Simply put, nodes are randomly selected to validate blocks, and the probability of this random selection depends on the amount of stake held. <br />
+  <br />
+  So, if node X owns 2 coins and node Y owns 1 coin, node X is twice as likely to be called upon to validate a block of transactions. The specific implementation of PoS can vary, depending on the use case, or as a matter of software design. Instances include Proof of Deposit and Proof of Burn. The PoS algorithm saves expensive computational resources that are spent in mining under a PoW consensus regime.”
+  </p>
+  <p>Beyond the practicality of programmable currency, security attributes are the unsung hero of Proof of Stake currencies:
+  </p>
+  <p class="quote">
+  Proof of stake (aka POS) cryptos has many technical benefits but apart from that some proof of stake cryptos also give different economic benefits/dividends to its HODLers by giving them the option of running a masternode or staking their coins in a stake-able wallet.
+<br /><br />This provides dual benefits of securing the blockchain network as well as creating an opportunity for users to get incentives or dividends on their holdings.
+<sup>1</sup>
+  </p>`;
+  
+  var blogcite134 = `
+  <p class="cite">1<a href="https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe">https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe</a></p> 
+  <p class="cite">2<a href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a><br /><br />https://bitcoin.org/bitcoin.pdf</p> 
+  `; 
+  var blogpost133 =   `
+  <p class="firstparagraph">Proof-of-Work Blockchain Algorithms that underly <i>some</i> cryptocurrencies--Bitcoin for example--have certainly shortened Earth's Climate Time-Line. Therefore, it's with a silver-lining that the currency caves in.  
+  </p>
+  <p class="quote">
+  Bitcoin is in crisis. 
+  You can never really declare it dead — the idea of an electronic currency that is theoretically borderless and lawless will always live on somewhere — but its price has slumped 80 percent in less than a year, wiping about $700 billion off cryptocurrency markets.
+<br /><br />
+Where does it go from here? True believers are betting on a simple repeat of past asset bubbles, like dot-com stocks or real estate: a system-wide cleansing of bad actors before the roller-coaster ride begins anew. On that argument there’s a price for everything, even niche assets with no intrinsic value. Maybe Bitcoin should be above $3,700.
+
+<br /><br />
+But the virtual currency’s behavior since the start of the year doesn’t just look like a bubble bursting; it looks more like a currency under attack. Most of the price collapse happened between December and February, falling from almost $19,000 to about $7,000. Until this month, the $6,000-to-$7,000 range seemed unbreakable. There was a floor in the price — until it caved.
+<sup>1</sup>
+  </p>`;
+  
+  var blogcite133 = `
+  <p class="cite">1<a href="https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis">https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis</a></p> 
+  `; 
+ 
+  var blogpost132 =   `
+  <p class="firstparagraph">CRISPR tech and the first generation of CRISPR babies heralds a new era ...
+  </p>
+  <p class="quote">According to Chinese medical documents posted online this month, a team at the Southern University of Science and Technology, in Shenzhen, has been recruiting couples in an effort to create the first gene-edited babies. They planned to eliminate a gene called CCR5 in hopes of rendering the offspring resistant to HIV, smallpox, and cholera.
+<br /><br />
+He Jiankui leads a team using the gene-editing technology CRISPR in an effort to prevent disease in newborns [at] 
+SOUTHERN UNIVERSITY OF SCIENCE AND TECHNOLOGY
+The clinical trial documents describe a study in which CRISPR is employed to modify human embryos before they are transferred into women’s uteruses.<sup>1</sup>
+  </p>`;
+  
+  var blogcite132 = `
+  <p class="cite">1<a href="https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/">https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/</a></p> 
+  `;
+  var blogpost131 =   `
+  <p class="firstparagraph">Latency at near-zero terms makes 5G the missing and final ingredient for the imminent IoT revolution--so why not protect the hardware foundation?
+  </p>
+  <p class="quote">Huawei has fallen out of favor with the US government after a congressional report from 2012 called it a national security threat out of concerns that the Chinese government could compel the company to give it access to sensitive data. Just before this year's midterm elections, the country even banned government personnel from using Huawei and ZTE devices.
+  <br /><br /> 
+  The Wall Street Journal says US officials briefed representatives from Germany, Japan and Italy in an effort to dissuade both government and commercially operated networks from using Huawei (and ZTE) components. In addition to discussing the possibility of Beijing forcing the company to comply with requests for data access, the authorities reportedly stressed 5G's susceptibility to cyberattacks and espionage, as well.<sup>1</sup>
+  </p>`;
+  
+  var blogcite131 = `
+  <p class="cite">1<a href="https://www.engadget.com/2018/11/24/us-huawei-warning-5g/">https://www.engadget.com/2018/11/24/us-huawei-warning-5g/</a></p> 
+  `;
+/*
+
+https://coinsutra.com/proof-of-stake-cryptocurrencies/
+
+  var blogpost130 =   `
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">Proof of stake (aka POS) cryptos has many technical benefits but apart from that some proof of stake cryptos also give different economic benefits/dividends to its HODLers by giving them the option of running a masternode or staking their coins in a stake-able wallet.
+<br /><br />This provides dual benefits of securing the blockchain network as well as creating an opportunity for users to get incentives or dividends on their holdings.
+<sup>1</sup>
+  </p>`;
+  
+  var blogcite130 = `
+  <p class="cite">1<a href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a></p> 
+  `; 
+ 
+ */
+var blogpost129 =   `
+<p class="firstparagraph">
+</p>
+<p class="quote">In an essay in the journal JAMA last month, Tamara Tchkonia and Dr. James L. Kirkland of the Mayo Clinic categorized these processes into four broad groups: chronic inflammation; cell dysfunction; changes in stem cells that make them fail to regenerate tissue; and cellular senescence, the accumulation in tissue of aging cells that accompanies disease. Old cells, researchers have found, secrete proteins, lipids and other substances that increase inflammation and tissue destruction. <sup>1</sup>
+</p>`;
+
+var blogcite129 = `
+<p class="cite">1<a href="https://www.nytimes.com/2018/11/19/health/human-life-span.html">https://www.nytimes.com/2018/11/19/health/human-life-span.html</a></p> 
+
+<p class="cite">1<a href="https://jamanetwork.com/journals/jama/article-abstract/2703113">https://www.thelancet.com/action/showPdf?pii=S0140-6736%2818%2931694-5</a>
+</p> 
+`;
+  var blogpost128 =   `
+  <p class="firstparagraph">E.U.'s far-reaching data privacy law--now six months later--reveals how unmanageable and far-flung personal data has propogated. But even personal data has a shelf-life for relevence and value. 
+  </p>
+  <p class="quote">The General Data Protection Regulation is a sweeping personal data privacy law that came into force in late May in the EU. For the rest of the world, it's viewed as a bellwether for whether Big Tech can be held in check when immense data leaks seem to happen with painful regularity.
+  <br /><br />
+  Major data brokers Acxiom and Oracle are among seven companies accused of violating GDPR laws on personal information privacy. Advocates hope the complaints will shed light on the opaque ways that personal data is traded through third parties online both in the EU and the US.
+  <sup>1</sup>
+  </p>`;
+  
+  var blogcite128 = `
+  <p class="cite">1<a href="https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/">https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/</a></p> 
+  `;
+ 
+
+ 
+  var blogpost127=   `
+  <p class="firstparagraph">Trade Wars make for expensive phones and tech luxuries ... Make Love Not War!
+  </p>
+  <p class="quote">It’s important to note that all of these reduced-demand forecasts don’t necessarily mean that nobody is buying the iPhone. Suppliers famously cut their production forecasts shortly before the release of the iPhone 6 — the best-selling iPhone in history — which saw Apple’s supply chain quickly scrambling to meet demand.  <sup>1</sup>
+  </p>`;
+  
+  var blogcite127 = `
+  <p class="cite">1<a href="http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html">http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html</a></p> 
+  `;
+  var blogpost126 =   `
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">Mark Zuckerberg gathered roughly 50 of his top lieutenants earlier this year and told them that Facebook Inc. was at war and he planned to lead the company accordingly.<br />
+<br />
+  During times of peace, executives can move more slowly and ensure that everybody is on board with key decisions, he said during the June meeting, according to people familiar with the remarks. But with Facebook under siege from lawmakers, investors and angry users, he needed to act more decisively, the people said.<sup>1</sup>
+  </p>`;
+  
+  var blogcite126 = `
+  <p class="cite">1<a href="http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html">http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html</a></p> 
+  `;
+  var blogpost125 =   `
+  <p class="firstparagraph">
+  </p>
+  <p class="quote"> At home in Northern California, San Francisco voters overwhelmingly passed a tax designed to extract money from tech companies to help ease homelessness in the city. Across the Bay, Oakland voters passed a progressive property-transfer tax, which was another way of taxing the enormous wealth that’s poured into the Bay Area.
+  <br /><br /> 
+  Locally and nationally, the tech industry has gone from bright young star to death star. Not only have Silicon Valley companies turned out to be roughly as dirty in their corporate maneuvering as any old oil company or military contractor, but because of the Valley’s founder worship, they’ve been almost uniquely controlled by a tiny number of people.
+  <br /><br /> 
+  Read: Were we destined to live in Facebook’s world?
+  
+  And as in most things, Facebook distills, or at least embodies, these industry-wide practices. After a brutal two years that started with the 2016 election, Mark Zuckerberg responded by placing loyalists in charge of all Facebook Inc. properties. The company’s lobbyists pushed a line that its opponents were linked to George Soros, while reporting other enemies to the Anti-Defamation League.
+
+  </p>`;
+  
+  var blogcite125 = `
+  <p class="cite">1<a href="https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/">https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/</a></p> 
+  `;
+  var blogpost124 =   `
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">While most efforts to secure digital infrastructure were fixated on blocking bad guys from getting in, few focused on the reverse: stopping them from leaking information out. Based on that idea, the group founded a new cybersecurity company called Darktrace.
+  <br /><br />
+  he firm partnered with mathematicians at the University of Cambridge to develop a tool that would use machine learning to catch internal breaches. Rather than train the algorithms on historical examples of attacks, however, they needed a way for the system to recognize new instances of anomalous behavior. They turned to unsupervised learning, a technique based on a rare type of machine-learning algorithm that doesn’t require humans to specify what to look for.<sup>1</sup>
+  </p>`;
+  
+  var blogcite124 = `
+  <p class="cite">1<a href="https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/">https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/</a></p> 
+  `;
   var blogpost123 =   `
   <p class="firstparagraph">
   </p>
@@ -550,7 +705,7 @@ var blogcite111 = `
   <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
  var blogpost111 =   `
- <p class="quote">Turns out that Google\'s new Night Sight mode for Pixels, formally released just earlier today, has some non-night utility. In a bit of a twist, you can use it in the daytime as well for "denoising and resolution improvements" inherited from another Google Camera feature: Super Res Zoom. 
+ <p class="quote">Turns out that Google\'s new Night Sight mode for Pixels, formally released just earlier today, has some non-night utility. In a bit of a twist, you can use it in the daytime as well for "denoising and resolution improvements" inherited from another Google Camera feature: Super Res Zoom.<sup>1</sup> 
  </p>`;
 
  var blogcite111 = `
@@ -584,7 +739,7 @@ var blogcite111 = `
   <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
  var blogpost088 =   `
- <p class="quote">In April 2018, a group at MIT, USA, showed that it is possible to generate a form of superconductivity in a system of two layers of graphene under very specific conditions: To do this, the two hexagonal nets must be twisted against each other by exactly the magic angle of 1.1°. Under this condition a flat band forms in the electronic structure. The preparation of samples from two layers of graphene with such an exactly adjusted twist is complex, and not suitable for mass production. Nevertheless, the study has attracted a lot of attention among experts.
+ <p class="quote">In April 2018, a group at MIT, USA, showed that it is possible to generate a form of superconductivity in a system of two layers of graphene under very specific conditions: To do this, the two hexagonal nets must be twisted against each other by exactly the magic angle of 1.1°. Under this condition a flat band forms in the electronic structure. The preparation of samples from two layers of graphene with such an exactly adjusted twist is complex, and not suitable for mass production. Nevertheless, the study has attracted a lot of attention among experts.<sup>1</sup>
  </p>`;
 
  var blogcite088 = `
@@ -609,7 +764,7 @@ var blogcite111 = `
   var blogpost066 =   `
   <p class="quote">Tim Berners-Lee has launched a global campaign to save the web from the destructive effects of abuse and discrimination, political manipulation, and other threats that plague the online world.
 
-  In a talk at the opening of the Web Summit in Lisbon on Monday, the inventor of the web called on governments, companies and individuals to back a new “Contract for the Web” that aims to protect people’s rights and freedoms on the internet.
+  In a talk at the opening of the Web Summit in Lisbon on Monday, the inventor of the web called on governments, companies and individuals to back a new “Contract for the Web” that aims to protect people’s rights and freedoms on the internet.<sup>1</sup>
   </p>`;
  
   var blogcite066 = `
@@ -620,7 +775,7 @@ var blogcite111 = `
 
  5G, with its ability to handle more connected devices, could be an answer down the line. 
  
- But while 5G could provide some consistency across smart home networking standards, it's not a panacea due to a familiar problem: battery life. 
+ But while 5G could provide some consistency across smart home networking standards, it's not a panacea due to a familiar problem: battery life. <sup>1</sup>
  </p>`;
 
  var blogcite055 = `
@@ -1018,8 +1173,118 @@ var   blogcite1 = `
     `;
  
 
-      var url = [     
- 
+      var url = [    
+        {
+          id: '134',
+            did: '11-28-18',
+            date: 'November 28, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'The Great Bitcoin Bust of \'18, Part II:<br />The Costs of Deprecated Technology',
+            post: blogpost134,
+            blogcite: blogcite134
+          },    
+        {
+        id: '133',
+          did: '11-27-18',
+          date: 'November 27, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow',
+          title: 'The Great Bitcoin Bust of \'18, Part I:<br />The Earth-Killer Currency\'s Last Days',
+          post: blogpost133,
+          blogcite: blogcite133
+        },    
+        {
+          id: '132',
+            did: '11-26-18',
+            date: 'November 26, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'Oops, They Did it Again',
+            post: blogpost132,
+            blogcite: blogcite132
+          },  
+        {
+          id: '131',
+            did: '11-24-18',
+            date: 'November 24-25, 2018<br />Weekend ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: '5G Security Foundations for 21st Century Appliances',
+            post: blogpost131,
+            blogcite: blogcite131
+        },  /*
+        {
+          id: '130',
+            did: '11-23-18',
+            date: 'November 23, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'Oops, They Did it Again',
+            post: blogpost130,
+            blogcite: blogcite130
+          },   */
+        {
+          id: '129',
+            did: '11-22-18',
+            date: 'November 22, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Healthy Livin\' Cells',
+            post: blogpost129,
+            blogcite: blogcite129
+          },  
+        {
+          id: '128',
+            did: '11-21-18',
+            date: 'November 21, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'Protecting Data',
+            post: blogpost128,
+            blogcite: blogcite128
+          },  
+    
+        {
+          id: '127',
+            did: '11-20-18',
+            date: 'November 20, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Tech\'s Mortal Dependence on Global Trade Calls for World Peace!',
+            post: blogpost127,
+            blogcite: blogcite127
+          },  
+        {
+          id: '126',
+            did: '11-19-18',
+            date: 'November 19, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow!',
+            title: 'Facebook\'s Struggle with Regulation',
+            post: blogpost126,
+            blogcite: blogcite126
+          },  
+        {
+          id: '125',
+            did: '11-17-18',
+            date: 'November 17-18, 2018<br />Weekend ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'Tech Money\'s Deep Footprint',
+            post: blogpost125,
+            blogcite: blogcite125
+          },  
+        {
+          id: '124',
+            did: '11-16-18',
+            date: 'November 16, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'A More Retrospective A.I.',
+            post: blogpost124,
+            blogcite: blogcite124
+          },  
         {
           id: '123',
             did: '11-15-18',
