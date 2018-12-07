@@ -1,9 +1,75 @@
 // 'use strict';
 
 var bloggerOct = function () {  
-  
-  var blogpost134 =   `
+/*
+  var blogpost139 =   `
  
+  <p class="firstparagraph">  The banality of non-tech jobs is not the reason, rather the humanity of the screen's person-to-machine screen-work can hardly simulate person-to-person industries
+  </p>
+  <p class="quote">Lack of career growth or trajectory was the biggest reason, with 28.1% of respondents saying it caused them to quit. Many of the women also believe that men have an advantage in the field; just 53% said women have the same opportunities to enter senior leadership roles as their male counterparts.<br />
+
+  “Lack of career growth is a problem that women face across industries,” says Kim Williams, Indeed’s senior director of design platform, technology, and operations. 
+<sup>1</sup>
+  </p>`;
+  
+  var blogcite139 = `
+  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
+  `; 
+*/
+  var blogpost138 =   `
+ 
+  <p class="firstparagraph">At the end of the day, why not include tactile messaging? I enjoyed my Samsung Note V, but the material touch is the hardest to replicate.
+  </p>
+  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping.
+<sup>1</sup>
+  </p>
+  <p>Senseless criticism aside, Google's Materialize software is the true winner for replicating paper, at least visually ...`;
+  
+  var blogcite138 = `
+  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  
+  `; 
+
+  var blogpost137 =   `
+ 
+  <p class="firstparagraph">Quantum Nay-Sayers' opinions appear more rooted in <i>a binary form of thinking, while quantum computing itself represents non-binary reasoning! </i>That Quantum allows for a third state, rather than Classical 2 states. This means with two transistors can in one instance yield 2 possibilities, while two Quantum 'qubits' yield exactly four possibilities in an instance: the two qubits can be on, off, <i>and both</i>. Likewise 4 transistors yield four possible states in one instance, 4 qubit transistors <i>yield 16 possible states</i> since all four can carry both states in one instance.</p>
+  <p>So, merely discussing the paradigm-breaking 3 states already implicates one's life into quantum computing's sphere of reality!
+  </p>
+  <p class="quote"> When will useful quantum computers be constructed? The most optimistic experts estimate it will take 5 to 10 years. More cautious ones predict 20 to 30 years. (Similar predictions have been voiced, by the way, for the last 20 years.) I belong to a tiny minority that answers, “Not in the foreseeable future.” Having spent decades conducting research in quantum and condensed-matter physics, I’ve developed my very pessimistic view. It’s based on an understanding of the gargantuan technical challenges that would have to be overcome to ever make quantum computing work.
+<sup>1</sup>
+  </p>`;
+  
+  var blogcite137 = `
+  <p class="cite">1<a target="_blank" href="https://spectrum.ieee.org/computing/hardware/the-case-against-quantum-computing">https://spectrum.ieee.org/computing/hardware/the-case-against-quantum-computing</a></p>  
+  `; 
+  var blogpost136 =   `
+ 
+  <p class="firstparagraph">Co-bots. Algorithm and Human input toward final calculations of real, experienced conditions can be a real puzzle. Whether Doctors with access to patients' A.I.-analyzed patient metrics or Drivers sharing responsibilities with 'semi-automated', self-driving vehicles, the challenge. 
+  </p>
+  <p class="quote">Drawing on four years of ethnographic research among Uber drivers, Rosenblat has produced a thoroughly dystopian report that details how millions of drivers are now managed by a computerized system that combines the hard authoritarianism of Frederick Winslow Taylor with the cynical cheerleading of Michael Scott.
+<sup>1</sup>
+  </p>
+  <p>The cultural management of leader-less automation makes for a less useful tool for humans: The more autonomous the tool  does not necessarily translate to optimal relations:   For example, in-group thinking where ideas are recycled and magnified due to technological effect rather than conscious will. So, the healthier more useful technology can often be the most interactive and highly configurable tools, whether phone devices or application software. So, in sum, the Co-Bot is a go-bot -- a better bot.`;
+  
+  var blogcite136 = `
+  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/11/alex-rosenblats-uberland-review.html">http://nymag.com/intelligencer/2018/11/alex-rosenblats-uberland-review.html</a></p>  
+  `; 
+  var blogpost135 =   ` 
+  <p class="firstparagraph">A.I.'s segmented, expansive landscape ranges from free-wheeling start-ups to DIY hobbyists to University researchers. This diversity of A.I. designs, coupled with free access to open-source tools provides for an entirely unpredictable path.  
+  </p>
+  <p class="quote">This is an unsettled field. It's not like physics."<br />
+
+  AI may seem to be a smooth-running assembly line of startups, products and research projects. The reality, however, is a landscape clouded by uncertainty.
+  [Author] Ford's [A.I.-expert] interviewees could not agree on where their field stands, how to push it forward or when it will reach its ultimate goal: a machine with humanlike intelligence.
+  <br /><br />
+  Why it matters: The embryonic state in which Ford found AI — so early in its development more than a half-century after its birth that the basics are still up for grabs — suggests how far it has to go before reaching maturity. On his blog, Brooks has said that AI is only 1% of the way toward human intelligence.
+<sup>1</sup>
+  </p>`;
+  
+  var blogcite135 = `
+  <p class="cite">1<a target="_blank" href="https://www.axios.com/artificial-intelligence-disagreements-machine-learning-d26ef884-b415-43c6-aff2-d17a05483389.html">https://www.axios.com/artificial-intelligence-disagreements-machine-learning-d26ef884-b415-43c6-aff2-d17a05483389.html</a></p> 
+ 
+  `; 
+  var blogpost134 =   ` 
   <p class="firstparagraph">Compared with so many other options, including smart Currency that doubles as a programmable legal contract like Ethereum or energy-friendly 'Proof-of-Stake' algorithm Currencies, one has to wonder why Bitcoin has managed to hang around as long as it has ... even if name-recognition and simplicity of the ten-year old technology are its two best attributes. 
   </p>
   <p>So, with Bitcoin's stumbling, perhaps other options and new technologies can be considered: 
@@ -21,11 +87,11 @@ var bloggerOct = function () {
   </p>`;
   
   var blogcite134 = `
-  <p class="cite">1<a href="https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe">https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe</a></p> 
-  <p class="cite">2<a href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a><br /><br />https://bitcoin.org/bitcoin.pdf</p> 
+  <p class="cite">1<a target="_blank" href="https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe">https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe</a></p> 
+  <p class="cite">2<a target="_blank" href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a><br /><br />https://bitcoin.org/bitcoin.pdf</p> 
   `; 
   var blogpost133 =   `
-  <p class="firstparagraph">Proof-of-Work Blockchain Algorithms that underly <i>some</i> cryptocurrencies--Bitcoin for example--have certainly shortened Earth's Climate Time-Line. Therefore, it's with a silver-lining that the currency caves in.  
+  <p class="firstparagraph">Proof-of-Work Blockchain Algorithms that underly <i>some</i> cryptocurrencies--Bitcoin for example--have certainly hard on Earth's climate dilemma. Therefore, it's with a silver-lining that the currency is bottoming ...  
   </p>
   <p class="quote">
   Bitcoin is in crisis. 
@@ -39,7 +105,7 @@ But the virtual currency’s behavior since the start of the year doesn’t just
   </p>`;
   
   var blogcite133 = `
-  <p class="cite">1<a href="https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis">https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis</a></p> 
+  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis">https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis</a></p> 
   `; 
  
   var blogpost132 =   `
@@ -53,7 +119,7 @@ The clinical trial documents describe a study in which CRISPR is employed to mod
   </p>`;
   
   var blogcite132 = `
-  <p class="cite">1<a href="https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/">https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/</a></p> 
+  <p class="cite">1<a target="_blank" href="https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/">https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/</a></p> 
   `;
   var blogpost131 =   `
   <p class="firstparagraph">Latency at near-zero terms makes 5G the missing and final ingredient for the imminent IoT revolution--so why not protect the hardware foundation?
@@ -64,7 +130,7 @@ The clinical trial documents describe a study in which CRISPR is employed to mod
   </p>`;
   
   var blogcite131 = `
-  <p class="cite">1<a href="https://www.engadget.com/2018/11/24/us-huawei-warning-5g/">https://www.engadget.com/2018/11/24/us-huawei-warning-5g/</a></p> 
+  <p class="cite">1<a target="_blank" href="https://www.engadget.com/2018/11/24/us-huawei-warning-5g/">https://www.engadget.com/2018/11/24/us-huawei-warning-5g/</a></p> 
   `;
 /*
 
@@ -79,7 +145,7 @@ https://coinsutra.com/proof-of-stake-cryptocurrencies/
   </p>`;
   
   var blogcite130 = `
-  <p class="cite">1<a href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a></p> 
+  <p class="cite">1<a target="_blank" href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a></p> 
   `; 
  
  */
@@ -90,9 +156,9 @@ var blogpost129 =   `
 </p>`;
 
 var blogcite129 = `
-<p class="cite">1<a href="https://www.nytimes.com/2018/11/19/health/human-life-span.html">https://www.nytimes.com/2018/11/19/health/human-life-span.html</a></p> 
+<p class="cite">1<a target="_blank" href="https://www.nytimes.com/2018/11/19/health/human-life-span.html">https://www.nytimes.com/2018/11/19/health/human-life-span.html</a></p> 
 
-<p class="cite">1<a href="https://jamanetwork.com/journals/jama/article-abstract/2703113">https://www.thelancet.com/action/showPdf?pii=S0140-6736%2818%2931694-5</a>
+<p class="cite">1<a target="_blank" href="https://jamanetwork.com/journals/jama/article-abstract/2703113">https://www.thelancet.com/action/showPdf?pii=S0140-6736%2818%2931694-5</a>
 </p> 
 `;
   var blogpost128 =   `
@@ -105,7 +171,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite128 = `
-  <p class="cite">1<a href="https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/">https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/</a></p> 
+  <p class="cite">1<a target="_blank" href="https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/">https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/</a></p> 
   `;
  
 
@@ -117,7 +183,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite127 = `
-  <p class="cite">1<a href="http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html">http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html</a></p> 
+  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html">http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html</a></p> 
   `;
   var blogpost126 =   `
   <p class="firstparagraph">
@@ -128,7 +194,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite126 = `
-  <p class="cite">1<a href="http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html">http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html</a></p> 
+  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html">http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html</a></p> 
   `;
   var blogpost125 =   `
   <p class="firstparagraph">
@@ -144,7 +210,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite125 = `
-  <p class="cite">1<a href="https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/">https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/</a></p> 
+  <p class="cite">1<a target="_blank" href="https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/">https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/</a></p> 
   `;
   var blogpost124 =   `
   <p class="firstparagraph">
@@ -155,7 +221,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite124 = `
-  <p class="cite">1<a href="https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/">https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/</a></p> 
+  <p class="cite">1<a target="_blank" href="https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/">https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/</a></p> 
   `;
   var blogpost123 =   `
   <p class="firstparagraph">
@@ -166,7 +232,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite123 = `
-  <p class="cite">1<a href="https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h">https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h</a></p> 
+  <p class="cite">1<a target="_blank" href="https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h">https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h</a></p> 
   `;
 
 var blogpost122 =   `
@@ -178,8 +244,8 @@ Keeping client data safe. JPMorgan could use the ‘secret computing’ technolo
 </p>`;
 
 var blogcite122 = `
-<p class="cite">1<a href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
-<p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
+<p class="cite">1<a target="_blank" href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
+<p class="cite">2<a target="_blank" href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
 `;
 var blogpost111 =   `
 <p class="quote">
@@ -187,7 +253,7 @@ var blogpost111 =   `
 </p>`;
 
 var blogcite111 = `
-<p class="cite"><a href="https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/">https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/</a></p>
+<p class="cite"><a target="_blank" href="https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/">https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/</a></p>
 `
 
   var blogpost122 =   `
@@ -199,15 +265,15 @@ var blogcite111 = `
   </p>`;
  
   var blogcite122 = `
-  <p class="cite">1<a href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
-  <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
+  <p class="cite">1<a target="_blank" href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
+  <p class="cite">2<a target="_blank" href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
  var blogpost111 =   `
  <p class="quote">Turns out that Google\'s new Night Sight mode for Pixels, formally released just earlier today, has some non-night utility. In a bit of a twist, you can use it in the daytime as well for "denoising and resolution improvements" inherited from another Google Camera feature: Super Res Zoom.<sup>1</sup> 
  </p>`;
 
  var blogcite111 = `
- <p class="cite"><a href="https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/">https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/</a></p>
+ <p class="cite"><a target="_blank" href="https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/">https://www.androidpolice.com/2018/11/14/pixel-night-sight-also-works-daylight-reducing-noise-boosting-resolution/</a></p>
  `
   var     blogpost100 = ` 
   <p class="firstparagraph">Plastics and micro-plastic waste just awaits a tech-informed solution!
@@ -216,7 +282,7 @@ var blogcite111 = `
  `
     ;
     var      blogcite100 = ` 
-    <p class="cite"> 1 <a href="https://www.theguardian.com/environment/2018/nov/13/the-plastic-backlash-whats-behind-our-sudden-rage-and-will-it-make-a-difference
+    <p class="cite"> 1 <a target="_blank" href="https://www.theguardian.com/environment/2018/nov/13/the-plastic-backlash-whats-behind-our-sudden-rage-and-will-it-make-a-difference
     "   target="_blank">https://www.theguardian.com/environment/2018/nov/13/the-plastic-backlash-whats-behind-our-sudden-rage-and-will-it-make-a-difference
       </a> 
       </p> 
@@ -233,15 +299,15 @@ var blogcite111 = `
   </p>`;
  
   var blogcite099 = `
-  <p class="cite">1<a href="https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html">https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html</a></p>
-  <p class="cite">2<a href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
+  <p class="cite">1<a target="_blank" href="https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html">https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html</a></p>
+  <p class="cite">2<a target="_blank" href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
  var blogpost088 =   `
  <p class="quote">In April 2018, a group at MIT, USA, showed that it is possible to generate a form of superconductivity in a system of two layers of graphene under very specific conditions: To do this, the two hexagonal nets must be twisted against each other by exactly the magic angle of 1.1°. Under this condition a flat band forms in the electronic structure. The preparation of samples from two layers of graphene with such an exactly adjusted twist is complex, and not suitable for mass production. Nevertheless, the study has attracted a lot of attention among experts.<sup>1</sup>
  </p>`;
 
  var blogcite088 = `
- <p class="cite"><a href="https://www.sciencedaily.com/releases/2018/11/181109150124.htm"> https://www.sciencedaily.com/releases/2018/11/181109150124.htm</a></p>
+ <p class="cite"><a target="_blank" href="https://www.sciencedaily.com/releases/2018/11/181109150124.htm"> https://www.sciencedaily.com/releases/2018/11/181109150124.htm</a></p>
  `
   var     blogpost077 = ` 
   <p class="firstparagraph">Naming conventions make for a linguistic phenomenon in a world whose rapid change far outpaces accurate transfer of meaning into  language. And, because we don't allow our terminology to redefine itself, an increasingly inaccurate language may come to incongruently describe current-day logic, and basically reality...
@@ -253,7 +319,7 @@ var blogcite111 = `
  `
     ;
     var      blogcite077 = ` 
-    <p class="cite"> 1 <a href="https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/
+    <p class="cite"> 1 <a target="_blank" href="https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/
     "   target="_blank">https://qz.com/work/1443954/tesla-ceo-elon-musk-is-raising-an-important-question-about-job-titles/ 
       </a> 
       </a> 
@@ -266,7 +332,7 @@ var blogcite111 = `
   </p>`;
  
   var blogcite066 = `
-  <p class="cite"><a href="https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse"> https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse</a></p>
+  <p class="cite"><a target="_blank" href="https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse"> https://www.theguardian.com/technology/2018/nov/05/tim-berners-lee-launches-campaign-to-save-the-web-from-abuse</a></p>
   `;
  var blogpost055 =   `
  <p class="quote">"What would guarantee a paradigm shift would be the ability to effortlessly bring disparate devices together," said Blake Kozak, principal analyst at IHS Markit. "A large proportion of consumer complaints stem from installation challenges to devices not being reliable, e.g. scenes not working, high latency even in local control and lack of control when scenes are performing but broken."
@@ -277,7 +343,7 @@ var blogcite111 = `
  </p>`;
 
  var blogcite055 = `
- <p class="cite"><a href="https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/"> https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/</a></p>
+ <p class="cite"><a target="_blank" href="https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/"> https://www.cnet.com/news/5g-and-the-promise-of-a-smart-home-makeover/</a></p>
  `
   var     blogpost044 = ` 
   <p class="firstparagraph">Energy Consciousness around traditional <i>Proof of Work</i> blockchain technologies casts a negative light on Bitcoin Mining. Energy consumption from proof-of-work, energy-intensive blockchain mining parallels annual KiloWatt consumption as small countries like Denmark and Singapore.
@@ -290,10 +356,10 @@ var blogcite111 = `
   </p>`
     ;
     var      blogcite044 = ` 
-    <p class="cite"> 1 <a href="https://www.nature.com/articles/s41558-018-0321-8
+    <p class="cite"> 1 <a target="_blank" href="https://www.nature.com/articles/s41558-018-0321-8
     "   target="_blank">https://www.nature.com/articles/s41558-018-0321-8
       </a> 
-    <p class="cite"> 2 <a href="https://www.wired.com/story/bitcoin-will-burn-planet-down-how-fast/
+    <p class="cite"> 2 <a target="_blank" href="https://www.wired.com/story/bitcoin-will-burn-planet-down-how-fast/
     "   target="_blank">https://www.wired.com/story/bitcoin-will-burn-planet-down-how-fast/
       </a> 
      `;
@@ -305,9 +371,9 @@ var blogcite111 = `
    
       </p>`
        ;
-       var      blogcite033 = `  <p class="cite"> 1 <a href="https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys"   target="_blank">https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys</a> </p>
+       var      blogcite033 = `  <p class="cite"> 1 <a target="_blank" href="https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys"   target="_blank">https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys</a> </p>
        
-       <p class="cite">2 <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633"   target="_blank">http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633</a> </p>
+       <p class="cite">2 <a target="_blank" href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633"   target="_blank">http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633</a> </p>
         `;
  
   var     blogpost022 = ` 
@@ -317,7 +383,7 @@ var blogcite111 = `
   `
     ;
     var      blogcite022 = ` 
-    <p class="cite"> <a href=""   target="_blank">
+    <p class="cite"> <a target="_blank" href=""   target="_blank">
       </a> </p>
      `;
      var     blogpost011 = ` 
@@ -325,7 +391,7 @@ var blogcite111 = `
       </p>
       <p> </p>`
        ;
-       var      blogcite011 = `  <p class="cite"> <a href=""   target="_blank"></a> </p>
+       var      blogcite011 = `  <p class="cite"> <a target="_blank" href=""   target="_blank"></a> </p>
         
         `;
  
@@ -337,7 +403,7 @@ var blogcite111 = `
         `
           ;
           var      blogcite22 = ` 
-          <p class="cite"> 1 <a href="https://www.cloudcomputing-news.net/news/2018/oct/25/microsoft-cites-azure-and-cloud-strength-more-strong-financials-its-all-about-long-term-ethos/
+          <p class="cite"> 1 <a target="_blank" href="https://www.cloudcomputing-news.net/news/2018/oct/25/microsoft-cites-azure-and-cloud-strength-more-strong-financials-its-all-about-long-term-ethos/
           "   target="_blank">https://www.cloudcomputing-news.net/news/2018/oct/25/microsoft-cites-azure-and-cloud-strength-more-strong-financials-its-all-about-long-term-ethos/
             </a> 
            `;
@@ -352,7 +418,7 @@ var blogcite111 = `
             <br /><br />
             "Our new approach depends almost entirely on Deep Learning, a computer network inspired by the layered and hierarchical architecture of the human brain," Prof. Wolf explains. "It's one of the most advanced forms of machine learning, responsible for major advances in technology, including speech recognition, translation and image processing. We thought it would be the right approach for designing nanophotonic, metamaterial elements."<sup>1</sup></p>`
              ;
-             var      blogcite21 = `  <p class="cite"> 1 <a href="https://www.sciencedaily.com/releases/2018/10/181023130502.htm"   target="_blank">https://www.sciencedaily.com/releases/2018/10/181023130502.htm/a> </p>
+             var      blogcite21 = `  <p class="cite"> 1 <a target="_blank" href="https://www.sciencedaily.com/releases/2018/10/181023130502.htm"   target="_blank">https://www.sciencedaily.com/releases/2018/10/181023130502.htm/a> </p>
               
               `;
   var     blogpost20 = ` 
@@ -366,7 +432,7 @@ var blogcite111 = `
   `
     ;
     var      blogcite20 = ` 
-    <p class="cite"> 1 <a href="https://www.cnet.com/roadshow/news/mclaren-speedtail-official-debut/
+    <p class="cite"> 1 <a target="_blank" href="https://www.cnet.com/roadshow/news/mclaren-speedtail-official-debut/
     "   target="_blank">https://www.cnet.com/roadshow/news/mclaren-speedtail-official-debut/
       </a> 
      `;
@@ -380,9 +446,9 @@ var blogcite111 = `
       <p>Importantly, Tim Cook addresses the most sensitive of data about ourselves, i.e. the nexus of volunteered and observed data: <i>inferred data</i>:
      <p class="quote">Broadly [personal data] can be split into three categories: Volunteered data is information we willingly part with in online surveys and social media profiles. Observed data is captured through the observation of actions and interactions of individuals (GPS data and telecoms metadata, for example). Inferred data is used to complete the picture by mining those first two categories.<sup>1</sup></p>`
        ;
-       var      blogcite19 = `  <p class="cite"> 1 <a href="https://www.theguardian.com/technology/2018/oct/24/tim-cook-us-federal-privacy-law-weaponized-personal-data"   target="_blank">https://www.theguardian.com/technology/2018/oct/24/tim-cook-us-federal-privacy-law-weaponized-personal-data</a> </p>
+       var      blogcite19 = `  <p class="cite"> 1 <a target="_blank" href="https://www.theguardian.com/technology/2018/oct/24/tim-cook-us-federal-privacy-law-weaponized-personal-data"   target="_blank">https://www.theguardian.com/technology/2018/oct/24/tim-cook-us-federal-privacy-law-weaponized-personal-data</a> </p>
        
-       <p class="cite"> 2 <a href="https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135"   target="_blank">
+       <p class="cite"> 2 <a target="_blank" href="https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135"   target="_blank">
        https://medium.com/s/new-world-crime/how-much-are-you-worth-in-the-online-data-economy-5ae2dd236135</a> </p>
         `;
   var     blogpost18 = `       
@@ -397,7 +463,7 @@ Committing to a new image format on the web is a big deal. In addition to techni
 It's one of the central conundrums of the web. Browser makers and website developers want to advance the technology, but they can't remove older aspects of the foundation as readily as Google can with Android or Apple with its rival iOS software. Websites have a long shelf life.<sup>1</sup></p>`
     ;
     var      blogcite18 = ` 
-    <p class="cite"> 1 <a href="https://www.cnet.com/news/firefox-to-support-googles-webp-image-format-for-a-faster-web/
+    <p class="cite"> 1 <a target="_blank" href="https://www.cnet.com/news/firefox-to-support-googles-webp-image-format-for-a-faster-web/
     "   target="_blank">https://www.cnet.com/news/firefox-to-support-googles-webp-image-format-for-a-faster-web/
       </a> 
      `;
@@ -407,7 +473,7 @@ It's one of the central conundrums of the web. Browser makers and website develo
      <p class="quote">When approaching any type of Machine Learning (ML) problem there are many different algorithms to choose from. In machine learning, there’s something called the “No Free Lunch” theorem which basically states that no one ML algorithm is best for all problems. The performance of different ML algorithms strongly depends on the size and structure of your data.<sup>1</sup></p>`
        ;
        var      blogcite17 = ` 
-       <p class="cite"> 1 <a href="https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef
+       <p class="cite"> 1 <a target="_blank" href="https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef
        "   target="_blank">
        https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef
          </a> 
@@ -419,7 +485,7 @@ It's one of the central conundrums of the web. Browser makers and website develo
   “There is no truth in their story about Apple,” Cook told BuzzFeed News in an interview with the online publication. “They need to do that right thing and retract it.”<sup>2</sup></p>`
     ;
     var      blogcite16 = ` 
-    <p class="cite"> 1 <a href=" https://www.reuters.com/article/us-apple-bloomberg/apple-ceo-urges-bloomberg-to-retract-spy-chip-story-idUSKCN1MT2Z8
+    <p class="cite"> 1 <a target="_blank" href=" https://www.reuters.com/article/us-apple-bloomberg/apple-ceo-urges-bloomberg-to-retract-spy-chip-story-idUSKCN1MT2Z8
     "   target="_blank">
     https://www.reuters.com/article/us-apple-bloomberg/apple-ceo-urges-bloomberg-to-retract-spy-chip-story-idUSKCN1MT2Z8
     
@@ -435,14 +501,14 @@ It's one of the central conundrums of the web. Browser makers and website develo
 "People are interested in escape," says Carol Fitzgerald of the Book Report Network. "In a number of pages, the story will open, evolve and close, and a lot of what's going on in the world today is not like that. You've got this encapsulated escape that you can enjoy."<sup>2</sup></p>`
     ;
     var      blogcite15 = ` 
-    <p class="cite"> 1 <a href="https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/
+    <p class="cite"> 1 <a target="_blank" href="https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/
     "   target="_blank">
     https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/
     
     
       </a>
       </p>  
-  <p class="cite"> 2 <a href="https://www.psychologytoday.com/us/blog/the-athletes-way/201401/reading-fiction-improves-brain-connectivity-and-function
+  <p class="cite"> 2 <a target="_blank" href="https://www.psychologytoday.com/us/blog/the-athletes-way/201401/reading-fiction-improves-brain-connectivity-and-function
 "   target="_blank">
 https://www.psychologytoday.com/us/blog/the-athletes-way/201401/reading-fiction-improves-brain-connectivity-and-function
 
@@ -459,7 +525,7 @@ https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-s
     <p>Anaconda, the programming package bundle features math software with Spyder applications, yet the Jupyter notebook is already revolutionizing academic publications...`
     ;
     var      blogcite14 = ` 
-  <p class="cite"> 1 <a href="
+  <p class="cite"> 1 <a target="_blank" href="
   https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news"   target="_blank">
   https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news
   </a>
@@ -473,12 +539,12 @@ https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-s
     <p>Anaconda, the programming package bundle features math software with Spyder applications, yet the Jupyter notebook is already revolutionizing academic publications...`
     ;
     var      blogcite13 = ` 
-  <p class="cite"> 1 <a href="
+  <p class="cite"> 1 <a target="_blank" href="
   https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news"   target="_blank">
   https://www.vox.com/2014/11/24/7272929/global-poverty-health-crime-literacy-good-news
   </a>
   </p>  
-  <p class="cite"> 2 <a href="https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/"   target="_blank">https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/
+  <p class="cite"> 2 <a target="_blank" href="https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/"   target="_blank">https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/
   </a>
   </p>  
      `;
@@ -495,13 +561,13 @@ https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-s
   </p>
  `;
  var   blogcite12 = `  
-  <p class="cite">1 <a href="https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html"   target="_blank">https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html
+  <p class="cite">1 <a target="_blank" href="https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html"   target="_blank">https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html
   </a>
   </p>
-  <p class="cite">PDFs <br /> <a href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00099-6"   target="_blank">https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00099-6
+  <p class="cite">PDFs <br /> <a target="_blank" href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00099-6"   target="_blank">https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(15)00099-6
   </a> 
   </p>
-  <p class="cite">PDFs <br /> <a href="http://journals.sagepub.com/doi/abs/10.1177/0963721414568663"   target="_blank">http://journals.sagepub.com/doi/abs/10.1177/0963721414568663
+  <p class="cite">PDFs <br /> <a target="_blank" href="http://journals.sagepub.com/doi/abs/10.1177/0963721414568663"   target="_blank">http://journals.sagepub.com/doi/abs/10.1177/0963721414568663
   </a> 
   </p>
      `;
@@ -516,7 +582,7 @@ But a series of bouncing-droplet findings since 2015 has crushed this dream. The
   <sup>1</sup></p>
  `;
  var    blogcite11 = ` 
-  <p class="cite"> <a href="https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/"   target="_blank">https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/
+  <p class="cite"> <a target="_blank" href="https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/"   target="_blank">https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/
   </a>
   </p>
      `;
@@ -540,10 +606,10 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
 <p>The Bottom line is that yesterday's ink and paper is today's software and hardware--essential tools for success, the earlier the better. So, because historical suppression usually begins financially, equal access across social and economic lines.  So, the economic incentive to outfit every last citizen with free wifi and open-source technology. Already, the best in humanity--the Nobel winners--know the public incentive to harness the power of a widespread tech education. Because when the many and not the few create and advance technology, the economy blooms with real productivity.</p>
   `;
   var  blogcite10= ` 
-<p class="cite"> 1 <a href="https://www.nobelprize.org/uploads/2018/10/press-economicsciences2018.pdf"   target="_blank">https://www.nobelprize.org/uploads/2018/10/press-economicsciences2018.pdf 
+<p class="cite"> 1 <a target="_blank" href="https://www.nobelprize.org/uploads/2018/10/press-economicsciences2018.pdf"   target="_blank">https://www.nobelprize.org/uploads/2018/10/press-economicsciences2018.pdf 
 </a>
 </p>  
-<p class="cite"> 2 <a href="https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/"   target="_blank">https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/
+<p class="cite"> 2 <a target="_blank" href="https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/"   target="_blank">https://qz.com/1416867/the-2018-nobel-prize-in-economics-goes-to-william-nordhaus-and-paul-romer/
 </a>
 </p>  
    `; 
@@ -556,7 +622,7 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
  <p>Now, this article grossly underestimates the range of designs from  private blockchains to consortium blockchains, but the point about hype is well-made!</p>
     `;
     var  blogcite9= ` 
-  <p class="cite"> 1 <a href="https://hackernoon.com/10-things-blockchain-isnt-dcb7966d22e5"   target="_blank">https://hackernoon.com/10-things-blockchain-isnt-dcb7966d22e5 
+  <p class="cite"> 1 <a target="_blank" href="https://hackernoon.com/10-things-blockchain-isnt-dcb7966d22e5"   target="_blank">https://hackernoon.com/10-things-blockchain-isnt-dcb7966d22e5 
   </a>
   </p>  
      `; 
@@ -567,12 +633,12 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
   <p>Mischief in all forms pervades nearly every nations' agenda  ... Again, apparently, who remembers a week afterward?</p> 
     `;
     var   blogcite8= ` 
-  <p class="cite"> 1 <a href="https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/"   target="_blank">https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/ 
+  <p class="cite"> 1 <a target="_blank" href="https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/"   target="_blank">https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/ 
   </a>
-  </p> <p class="cite"> 2 <a href="https://www.cnbc.com/2018/10/04/us-warns-companies-about-security-risk-to-managed-service-providers.html"   target="_blank">https://www.cnbc.com/2018/10/04/us-warns-companies-about-security-risk-to-managed-service-providers.html
+  </p> <p class="cite"> 2 <a target="_blank" href="https://www.cnbc.com/2018/10/04/us-warns-companies-about-security-risk-to-managed-service-providers.html"   target="_blank">https://www.cnbc.com/2018/10/04/us-warns-companies-about-security-risk-to-managed-service-providers.html
   </a>
   </p>  <p class="cite">3
-  <a href="https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race"   target="_blank">https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race
+  <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race"   target="_blank">https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race
   </a>
   </p>
      `; 
@@ -586,15 +652,15 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
   <p>In sum, the <i>the times, they are - a - changing</i> and that means, like any test-taker knows, cheatsheets do more damage if they fall irrelevent, even slightly deprecated.  </p> 
     `;
     var   blogcite7= `
-  <p class="cite"> 1 <a href="https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/"   target="_blank">https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/ 
+  <p class="cite"> 1 <a target="_blank" href="https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/"   target="_blank">https://www.theregister.co.uk/2018/10/08/super_micro_us_uk_intelligence/ 
   </a>
   </p> 
   <p class="cite">2
-  <a href="https://www.forbes.com/sites/kalevleetaru/2018/10/04/the-chinese-spy-chip-story-is-a-reminder-of-how-insecure-our-digital-world-really-is/#1736f0f07e13"   target="_blank">https://www.forbes.com/sites/kalevleetaru/2018/10/04/the-chinese-spy-chip-story-is-a-reminder-of-how-insecure-our-digital-world-really-is/#1736f0f07e13
+  <a target="_blank" href="https://www.forbes.com/sites/kalevleetaru/2018/10/04/the-chinese-spy-chip-story-is-a-reminder-of-how-insecure-our-digital-world-really-is/#1736f0f07e13"   target="_blank">https://www.forbes.com/sites/kalevleetaru/2018/10/04/the-chinese-spy-chip-story-is-a-reminder-of-how-insecure-our-digital-world-really-is/#1736f0f07e13
   </a>
   </p> 
   <p class="cite">3
-  <a href="https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race"   target="_blank">https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race
+  <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race"   target="_blank">https://www.bloomberg.com/news/articles/2018-09-04/what-a-mooted-chinese-wireless-mega-merger-means-for-the-5g-race
   </a>
   </p>
      `; 
@@ -609,10 +675,10 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
   <sup>1</sup></p>
   <p>Whether by coincidence or innate features of 21st century technology, trust-based platforms innately reward sharing, trust-based distribution of power. Consider the difference between the democratically operated blockchain, i.e. distributed ledgers without middle-persons, versus hierarchical, siloed centers of information. As usual, the problems that technology present in one form are symmetrically resolved by a technology of another form.`;
   var  blogcite5 = `
-  <p class="cite">1 <a href="https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/"   target="_blank">
+  <p class="cite">1 <a target="_blank" href="https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/"   target="_blank">
   https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/</a>
   </p> 
-  <p class="cite">2<a href="https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/"   target="_blank">https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/
+  <p class="cite">2<a target="_blank" href="https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/"   target="_blank">https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/
   </a>
   </p>
      `;
@@ -623,10 +689,10 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
    <p>But this isn't some new thing. By adapting to the new touchstone, on a societal level, the technology bears no more threat than the novel television ad campaigns of the 1950's--Some viewers became brain-washed, but not all! So like Bebe Rexha teaches us: <i>No broken hearts in the club tonight, no tears in the club ... We only got one life so let's go hard until the day we die!"</i></p>
   `;
   var   blogcite4 = `
-  <p class="cite">https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/ <a href="https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/ "   target="_blank">
+  <p class="cite">https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/ <a target="_blank" href="https://www.wired.com/story/artificial-intelligence-yuval-noah-harari-tristan-harris/ "   target="_blank">
   </a>
   </p> 
-  <p class="cite">https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/<a href="https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/"   target="_blank">
+  <p class="cite">https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/<a target="_blank" href="https://www.wired.com/story/our-minds-have-been-hijacked-by-our-phones-tristan-harris-wants-to-rescue-them/"   target="_blank">
   </a>
   </p>
   `;
@@ -635,7 +701,7 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
   <p class="quote">There's also a new reconfigurable digital gauge cluster that BMW calls Live Cockpit, and an impressively huge and crisp optional head-up display to relay even more information ... Being faced with all of those screens and all of those choices at once probably sounds daunting, but in my brief experience with iDrive 7, it all felt quite intuitive. The system smartly allows for the driver to use their preferred interface method, be that via touchscreen, steering wheel switchgear, cloud-based speech recognition or even gesture control. (A word about the latter: It's still overwhelmingly gimmicky. Twirling your finger in the air to turn up the stereo remains a crowd-pleasing novelty, but little more). <sup>1</sup></p>
   <p></p>`;
   var    blogcite3 = `  <p class="cite">1
-  <a href="https://www.cnet.com/roadshow/reviews/2019-bmw-x5-preview/"   target="_blank">https://www.cnet.com/roadshow/reviews/2019-bmw-x5-preview/
+  <a target="_blank" href="https://www.cnet.com/roadshow/reviews/2019-bmw-x5-preview/"   target="_blank">https://www.cnet.com/roadshow/reviews/2019-bmw-x5-preview/
   </a>
   </p>
   `;
@@ -648,10 +714,10 @@ Instead of using Mathematica, Romer discovered that he could use a Jupyter noteb
   First, providers need a final set of technology standards. The global body setting them, the 3rd Generation Partnership Project, released the first 5G specifications in June; the next set of standards is due in 2020. (The 3GPP, a collaboration between seven telecommunications organizations, also set standards for 3G and 4G LTE mobile systems.) 5G mobile tests also need special handsets, transmission hardware and software and a system design that doesn’t interfere with 4G and 3G networks. And governments need to set aside mobile spectrum space for 5G.</p>
     `;
     var   blogcite2 = `
-  <p class="cite">  <a href="https://www.bloomberg.com/news/articles/2017-02-16/tomorrow-s-cellular-networks-will-generate-3-5-trillion-in-economic-output"   target="_blank">https://www.bloomberg.com/news/articles/2017-02-16/tomorrow-s-cellular-networks-will-generate-3-5-trillion-in-economic-output
+  <p class="cite">  <a target="_blank" href="https://www.bloomberg.com/news/articles/2017-02-16/tomorrow-s-cellular-networks-will-generate-3-5-trillion-in-economic-output"   target="_blank">https://www.bloomberg.com/news/articles/2017-02-16/tomorrow-s-cellular-networks-will-generate-3-5-trillion-in-economic-output
   </a>
   </p>
-    <p class="cite">  <a href="https://www.bloomberg.com/news/articles/2018-09-17/when-will-ultrafast-internet-come-to-your-phone-quicktake"   target="_blank">https://www.bloomberg.com/news/articles/2018-09-17/when-will-ultrafast-internet-come-to-your-phone-quicktake
+    <p class="cite">  <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-09-17/when-will-ultrafast-internet-come-to-your-phone-quicktake"   target="_blank">https://www.bloomberg.com/news/articles/2018-09-17/when-will-ultrafast-internet-come-to-your-phone-quicktake
   </a>
   </p>
     `;
@@ -665,13 +731,53 @@ That lag time can last around 20 milliseconds with current networks. It doesn't 
 That responsiveness is critical for things like playing an intense video game in virtual reality or for a surgeon in New York to control a pair of robotic arms performing a procedure in San Francisco.</p><p>
 Comcast yesterday and T-Mobile Tomorrow or not, the implications of a truly mobile internet couldn't be underestimated. What used to be a sensor is tomorrow's controller, and today's controllers become sensors, because source and target become irrelevant concepts when latency folds uni-directional wait-time into bi-directional concurrent communication. </p><p>Perhaps the central player in this revolution is the fast-developing internet-of-things infrastructure in full development--with a moving target ...</p>    `;
 var   blogcite1 = `
-  <p class="cite">  <a href="https://www.cnet.com/how-to/the-5g-revolution-is-coming-heres-everything-you-need-to-know/"   target="_blank">https://www.cnet.com/how-to/the-5g-revolution-is-coming-heres-everything-you-need-to-know/
+  <p class="cite">  <a target="_blank" href="https://www.cnet.com/how-to/the-5g-revolution-is-coming-heres-everything-you-need-to-know/"   target="_blank">https://www.cnet.com/how-to/the-5g-revolution-is-coming-heres-everything-you-need-to-know/
   </a>
   </p>
     `;
  
 
-      var url = [    
+      var url = [ 
+        {
+          id: '138',
+            did: '12-01-18',
+            date: 'December 1-2, 2018 <br />Weekend',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'Textbook Technology',
+            post: blogpost138,
+            blogcite: blogcite138
+          },       
+        {
+          id: '137',
+            did: '11-30-18',
+            date: 'November 30, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Quantum Data',
+            title: 'Paradigm Breaker',
+            post: blogpost137,
+            blogcite: blogcite137
+          },    
+        {
+        id: '136',
+          did: '11-30-18',
+          date: 'November 30, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'A.I.Now.',
+          title: 'A Co-Bot Revolution ',
+          post: blogpost136,
+          blogcite: blogcite136
+        },    
+        {
+          id: '135',
+            did: '11-29-18',
+            date: 'November 29, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Diversity and Equality in the Machine Learning Landscape',
+            post: blogpost135,
+            blogcite: blogcite135
+          },  
         {
           id: '134',
             did: '11-28-18',
@@ -1141,7 +1247,7 @@ var   blogcite1 = `
     var cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 
     <hr />  
-    <a href="#top"><button>Top</button></a>  
+    <a target="_blank" href="#top"><button>Top</button></a>  
     <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
     <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5> 
     <p id="author" class="  author">${url[i].author}</p>   
@@ -1159,7 +1265,7 @@ var   blogcite1 = `
     var catMod = `
   <div id="mod_${url[i].did}" class="blogDivMod"> 
   <hr />  
-  <a href="#top-mod"><button>Top</button></a>   
+  <a target="_blank" href="#top-mod"><button>Top</button></a>   
   <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
   <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5>  
   <p id="author" class="  author">${url[i].author}</p>   
@@ -1172,7 +1278,7 @@ var   blogcite1 = `
  </div>`;
     document.getElementById("paragraph-oct-mod").innerHTML += catMod;
   }
- //console.log(angular.toJson(url));
+ console.log(angular.toJson(url));
   console.log(url);
 };
 bloggerOct();
