@@ -128,6 +128,9 @@ document.getElementById("dailyNav").innerHTML = `
 <li style="z-index:98.5">
     <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
 </li>
+<li>   
+<a href="https://www.telerik.com/kendo-ui"  >  <i class="fa fa-cog"></i></a>    
+</li>
 <li style="z-index:98.5">
     <a href="http://alignedleft.com/tutorials/d3/binding-data" target="_blank">binding-data</a>
 </li>
@@ -315,13 +318,11 @@ document.getElementById("dailyNav").innerHTML = `
           <li>
      
             <a title="books" href="/Books"   data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()"> 
-              <i class="fa fa-cog"></i> 
+              <i  >_</i> 
             </a>
           
           </li>
-        <li>
-          
-          <a href="/modal">      <i class="fa fa-cog"></i>  </a> </li>
+       
         <li>
      
           <a title="github" href="https://github.com/thomasm1" target="_blank">
@@ -332,13 +333,7 @@ document.getElementById("dailyNav").innerHTML = `
         
         </li>
         
-        <li> 
-        
-          <a href="https://www.telerik.com/kendo-ui"  >  <i class="fa fa-cog"></i></a>  
-         
-        </a>
-      
-      </li>
+       
         <li>
         
           <a title="twitter" href="https://twitter.com/ThomasMaestas" target="_blank">
