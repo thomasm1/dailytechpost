@@ -118,6 +118,12 @@ overflow-y:hidden;
      margin-left: 30pt;
  }
 
+/* Enlarge the first letter of a paragraph 
+.fourthp:first-letter {
+    font-size: 200%;
+    float: left;
+    line-height: 1;
+  }*/
  .firstparagraph::first-letter {
      font-size: 200%;
      font-weight: bold;

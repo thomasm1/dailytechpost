@@ -27,14 +27,14 @@
   <link rel="manifest" href="/manifest.json">
   <meta content="Thomas M. Maestas" name="author" />
   <title>OUR DAILY TECH</title> 
-  <link href="css/kendo.common.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/kendo.silver.min.css" rel="stylesheet" type="text/css" /> 
-  <link href="css/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+  <link href="dist/css/kendo.common.min.css" rel="stylesheet" type="text/css" />
+  <link href="dist/css/kendo.silver.min.css" rel="stylesheet" type="text/css" /> 
+  <link href="dist/css/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+  <link href="dist/css/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
   <link href="dist/app.css" rel="stylesheet" />
 
   <script src="dist/js/d3/d3v4.min.js"></script>
-<script src="scripts/jquery.2.1.min.js"></script>
+<script src="dist/scripts/jquery.2.1.min.js"></script>
  <!--<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   ></script>--> 
@@ -109,7 +109,61 @@
                     <div ng-view class="view"></div>  
                 </div>
                 
-                
+                <div id="d-button">
+                 
+<style>
+.button-wrap { 
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.contain {
+position: relative;
+width:360px;
+height:640px;
+background: rgba(0,0,0,.1);
+transform: rotate(-30deg) skew(25deg) scale(.8);
+transition:0.5s;
+}
+.contain img {
+position: absolute;
+width:100%;
+transition:0.5s;
+}
+.contain:hover img:nth-child(4)
+{
+transform: translate(160px,-160px);
+opacity:1;
+}
+.contain:hover img:nth-child(3)
+{ 
+transform: translate(120px,-120px);
+opacity:.8;
+} 
+.contain:hover img:nth-child(2)
+{
+transform: translate(80px,-80px);
+opacity:.6;
+}
+.contain:hover img:nth-child(1)
+{ 
+transform: translate(40px,-40px);
+opacity:.4;
+}
+</style>
+ <div class="button-wrap">
+<div class="contain">
+<img src="icon.png">
+<img src="icon.png">
+<img src="icon.png">
+<img src="icon.png">
+</div> 
+</div>
+                </div><!--end dbutton-->
               </div>
             </div>
 
@@ -257,8 +311,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-cookies.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-resource.js"></script>
 
-  <script src="scripts/kendo.all.min.js"></script>
-  <script src="scripts/angular-kendo.js"></script>
+  <script src="dist/scripts/kendo.all.min.js"></script>
+  <script src="dist/scripts/angular-kendo.js"></script>
   <script src="dist/js/lib/tether.min.js"></script>
   <script src="dist/js/lib/popper.min.js"></script>
   <script src="dist/js/lib/bootstrap.min.js"></script>
