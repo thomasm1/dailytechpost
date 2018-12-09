@@ -9,13 +9,13 @@
           .when('/chartBlog',
               {templateUrl: 'app/welcome/chartBlog.html'})
            .when('/dataSource', 
-              {templateUrl: 'app/dataSource/dataSource.html'})
+              {templateUrl: 'app/layout/dataSource/dataSource.html'})
            .when('/dataVizualization', 
-              {templateUrl: 'app/dataVizualization/dataViz.html'})
+              {templateUrl: 'app/layout/dataVizualization/dataViz.html'})
            .when('/modal', 
-              {templateUrl: 'app/modal/modalWindow.html'})
+              {templateUrl: 'app/layout/modal/modalWindow.html'})
            .when('/order', 
-              {templateUrl: 'app/order/order.html'}) 
+              {templateUrl: 'app/layout/order/order.html'}) 
            .when('/gridBlog', 
               { templateUrl: 'app/welcome/gridBlog.html' })
            .otherwise({ redirectTo: '/' }); // go to the welcome page

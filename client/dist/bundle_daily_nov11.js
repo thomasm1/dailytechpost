@@ -80,7 +80,7 @@ __webpack_require__(6);
 __webpack_require__(7);
 __webpack_require__(8);
 __webpack_require__(9);
-__webpack_require__(10);
+__webpack_require__(10); 
  __webpack_require__(11);      
    
  
@@ -239,6 +239,9 @@ document.getElementById("dailyNav").innerHTML = `
 </li>
 <li style="z-index:98.5">
     <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
+</li>
+<li>   
+<a href="https://www.telerik.com/kendo-ui"  >  <i class="fa fa-cog"></i></a>    
 </li>
 <li style="z-index:98.5">
     <a href="http://alignedleft.com/tutorials/d3/binding-data" target="_blank">binding-data</a>
@@ -427,13 +430,11 @@ document.getElementById("dailyNav").innerHTML = `
           <li>
      
             <a title="books" href="/Books"   data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()"> 
-              <i class="fa fa-cog"></i> 
+              <i  >_</i> 
             </a>
           
           </li>
-        <li>
-          
-          <a href="/modal">      <i class="fa fa-cog"></i>  </a> </li>
+       
         <li>
      
           <a title="github" href="https://github.com/thomasm1" target="_blank">
@@ -444,13 +445,7 @@ document.getElementById("dailyNav").innerHTML = `
         
         </li>
         
-        <li> 
-        
-          <a href="https://www.telerik.com/kendo-ui"  >  <i class="fa fa-cog"></i></a>  
-         
-        </a>
-      
-      </li>
+       
         <li>
         
           <a title="twitter" href="https://twitter.com/ThomasMaestas" target="_blank">
@@ -593,7 +588,7 @@ var bloggerOct = function () {
   <p class="cite">2<a target="_blank" href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a><br /><br />https://bitcoin.org/bitcoin.pdf</p> 
   `; 
   var blogpost133 =   `
-  <p class="firstparagraph">Proof-of-Work Blockchain Algorithms that underly <i>some</i> cryptocurrencies--Bitcoin for example--have certainly shortened Earth's Climate Time-Line. Therefore, it's with a silver-lining that the currency caves in.  
+  <p class="firstparagraph">Proof-of-Work Blockchain Algorithms that underly <i>some</i> cryptocurrencies--Bitcoin for example--have certainly hard on Earth's climate dilemma. Therefore, it's with a silver-lining that the currency is bottoming ...  
   </p>
   <p class="quote">
   Bitcoin is in crisis. 
