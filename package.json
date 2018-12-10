@@ -14,8 +14,8 @@
   "scripts": {
     "build": "webpack",
     "gulp": "gulp",
-    "server": "node ./server.js",
-    "start": "webpack-dev-server --output-public-path=/"
+    "start": "node ./server.js",
+    "server": "webpack-dev-server --output-public-path=/"
   },
   "author": "thomas maestas",
   "license": "ISC",

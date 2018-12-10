@@ -629,3 +629,12 @@ div.row#row-posts {
 div#planets .form {
     z-index:2000;
 }
+/* *************** FIREBASE TRACKER */
+.hover-delete {
+    color:red;
+    transform: scale(1.3, 1.3);
+  }
+  
+  .pointable {
+    cursor: pointer;
+  }
