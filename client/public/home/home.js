@@ -1,6 +1,6 @@
 angular.module('app').component('home', {
   
-  templateUrl: '/home/home.html',
+  templateUrl: 'app/home/home.html',
   bindings: {
     expensesInOrder: '=',
     categories: '='

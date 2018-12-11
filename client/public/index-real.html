@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"  ng-app="app"  xml:lang="en">
 
-<head>
-    <base href="/">  <!--
+<head> <!--
+    <base href="/"> 
    
     <script   src="https://cdn.ywxi.net/js/1.js" async></script>
    
@@ -320,7 +320,7 @@
         try {
           let app = firebase.app();
           let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Daily Tech Data Firebase SDK loaded with ${features.join(', ')}`;
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
         } catch (e) {
           console.error(e);
           document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
@@ -376,7 +376,7 @@
 <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 <script   src="./fbRef.js"></script>
 <script   src="./security/auth.js"></script>
-<script   src="./home/home.js"></script> 
+<script   src="./home/Home.js"></script> 
 <script   src="./words/editExpense.js"></script>
 <script   src="./words/expenseListDisplay.js"></script>
 <script   src="./words/expenseList.js"></script>

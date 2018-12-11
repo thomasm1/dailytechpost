@@ -1,5 +1,5 @@
 angular.module('app').component('categoryList', {
-  templateUrl: '/categories/categoryList.html',
+  templateUrl: 'app/categories/categoryList.html',
   bindings: {
     categories: "="
   },
