@@ -3,9 +3,9 @@ const path = require('path');
 
 module.exports = {
   entry:  
-      './client/app/src/index.js',
+      './client/public/src/index.js',
   output: {
-      path: path.resolve(__dirname, 'client/app/dist'),
+      path: path.resolve(__dirname, 'client/public/dist'),
     filename: 'bundle_daily_d3c10.js'
   } 
 };
