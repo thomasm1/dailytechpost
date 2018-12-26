@@ -8,9 +8,9 @@ const browserSync = require('browser-sync').create();
 // Compile Sass & Inject Into Browser
 gulp.task('sass', function() {
  
-      return gulp.src(['client/src/app.scss'])
+      return gulp.src(['client/public/src/app.scss'])
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest("client/dist/"))
+        .pipe(gulp.dest("client/public/dist/"))
       //.pipe(browserSync.stream())
         ;
 });
@@ -22,34 +22,34 @@ gulp.task('sass', function() {
   */
 // Optimize img
 gulp.task('imageMin', function(){
-	gulp.src('client/src/img/*')
+	gulp.src('client/public/src/img/*')
 		.pipe(imageMin())
-		.pipe(gulp.dest('client/dist/img'));
+		.pipe(gulp.dest('client/public/dist/img'));
 }); 
  
 // Watch Sass & Serve
 gulp.task('serve', ['sass'], function() { 
     browserSync.init({
-        server: "./client/"  
+        server: "./client/public/"  
     });
 
    // gulp.watch('client/dist/js/*.js', ['wjs']);
-    gulp.watch('src/js/*.js', ['js']);
-    gulp.watch(['client/src/img/*.jpg', 'client/src/img/*.PNG', 'client/src/img/*.png'], ['imageMin']);
-    gulp.watch(['client/src/app.scss','client/src/scss/*.css', 'client/src/scss/*.scss'], ['sass']).on('change', browserSync.reload);;
+    gulp.watch('client/public/src/js/*.js', ['js']);
+    gulp.watch(['client/public/src/img/*.jpg', 'client/public/src/img/*.PNG', 'client/src/img/*.png'], ['imageMin']);
+    gulp.watch(['client/public/src/app.scss','client/public/src/scss/*.css', 'client/public/src/scss/*.scss'], ['sass']).on('change', browserSync.reload);;
     //gulp.watch('client/index.html','client/views/*.html')
 });
 
 // Move Fonts to client/src/fonts
 gulp.task('fonts', function() {
   return gulp.src('node_modules/font-awesome/fonts/*' )
-    .pipe(gulp.dest('client/dist/fonts'));
+    .pipe(gulp.dest('client/public/dist/fonts'));
 });
 
 // Move Font Awesome CSS to src/css
 gulp.task('fa', function() {
   return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
-    .pipe(gulp.dest('client/dist/css'));
+    .pipe(gulp.dest('client/public/dist/css'));
 });
 
 gulp.task('default', [ 'imageMin', 'sass', 'fa', 'fonts']);

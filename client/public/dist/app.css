@@ -9347,7 +9347,7 @@ div.panel-body {
 
 .panel-title {
   background-color: lightsteelblue;
-  background-image: url("wellsfar/bluechipTileT8.png"); }
+  background-image: url("img/bluechipTileT8.png"); }
 
 .view {
   border: solid transparent 1px; }
@@ -9478,7 +9478,16 @@ h3#blogs {
   max-width: 50%; }
 
 div#planets .form {
-  z-index: 2000; }
+  z-index: 2000;
+  margin-top: 40px; }
+
+/* *************** FIREBASE TRACKER */
+.hover-delete {
+  color: red;
+  transform: scale(1.3, 1.3); }
+
+.pointable {
+  cursor: pointer; }
 
 .node rect,
 .node circle,
@@ -9717,8 +9726,8 @@ input .bu {
 
 .form {
   position: absolute;
-  opacity: .6;
-  top: 180px;
+  opacity: .7;
+  top: 210px;
   left: 0rem;
   padding: 5px;
   margin: 10px;
@@ -9740,7 +9749,7 @@ path {
   stroke-width: 2px; }
 
 .sun path {
-  fill: rgba(0, 9, 129, 0.925);
+  fill: rgba(87, 33, 173, 0.925);
   opacity: .5; }
 
 .planet path {
@@ -9748,7 +9757,7 @@ path {
   opacity: .6; }
 
 .annulus path {
-  fill: #191f47a9;
+  fill: #a4aad1ce;
   opacity: .6; }
 
 div#planet {

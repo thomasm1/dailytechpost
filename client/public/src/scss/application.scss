@@ -477,7 +477,7 @@ div.panel-body {
     }
 .panel-title {
   background-color:lightsteelblue;
-  background-image:url("wellsfar/bluechipTileT8.png");
+  background-image:url("img/bluechipTileT8.png");
 }
 
 
@@ -628,6 +628,7 @@ div.row#row-posts {
 }
 div#planets .form {
     z-index:2000;
+    margin-top:40px;
 }
 /* *************** FIREBASE TRACKER */
 .hover-delete {

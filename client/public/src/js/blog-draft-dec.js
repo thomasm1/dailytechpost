@@ -2,14 +2,42 @@
 
 var bloggerDec = function () {  
 
+  var blogpost150 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+  Amid the wreckage of the burst bitcoin bubble  it is fair to assess the outlook for blockchains, the technology underlying the cryptocurrency. There’s a difference. Blockchains, it is said, stand to revolutionize enterprise technology by addressing the problems with authentication and identity at the heart of the internet itself, eliminating middle layers in transactions and making it faster and easier to establish provenance.
+  
+  The adoption of blockchains in the enterprise has been slow. The question now is the extent to which the overblown investment thesis behind bitcoin and related financial mania can be separated from the utility of blockchain as a tool in enterprise technology.
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite150 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;  
+  var blogpost149 =   ` 
+
+  <p class="quote">Formally, an asset bubble is just a rapid rise and abrupt crash in prices. Defenders of the efficient-market theory argue that these price movements are based on changes in investor’s beliefs about an asset’s true value. But it’s hard to identify a reason why any rational investor would have so abruptly revised her assessment of the long-term earnings power of companies in 1929, or the long-term viability of dot-com startups in 2000, or the long-term value of housing in 2007.
+<br /><br />
+  Similarly, there was no obvious reason why it made sense for the world to believe that Bitcoin was the currency of the future late December 2017, but to think this was less than one fifth as likely today. Bitcoin wasn’t eclipsed by a competitor — the main alternative cryptocurrencies had even bigger price declines. Nor have regulators cracked down on Bitcoin — in fact, the regulatory structure has generally been quite accommodating to the technology. Nor have critical technological flaws emerged — yes, the Bitcoin network has become congested, but this problem was anticipated well before the crash. 
+  
+<br /><br />
+  Instead, it seems overwhelmingly likely that Bitcoin’s spectacular rise and fall was due not to rational optimism followed by sensible pessimism, but to some kind of aggregate market irrationality — a combination of herd behavior, cynical speculation and the entry into the market of a large number of new, poorly informed investors.
+<sup>1</sup>
+  </p>
+  `; 
+  
+  var blogcite149 = `
+  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped">https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped</a></p>  
+  `;  
   var blogpost148 =   ` 
   <p class="firstparagraph">Crypto-Currency theorists provide endless explanations over the disproportionately-sized fall of Bitcoin from December 2017 yet offer an incomplete picture. The more fascinating questions surround Bitcoin's 2017 growth rather than the interruption that either cascaded to new factors or simply magnified existing factors--such as security doubts and the dearth micro-economic public use.
   </p>
   <p class="quote"> His explanation for the divergence include last year’s meteoric rally, a “meltdown” in the macroeconomic climate and treasury sales during initial coin offerings. 
   “Fair value is significantly higher than the current price of Bitcoin,” he wrote. “In fact, working backwards, to solve for the current price of Bitcoin, this implies crypto wallets should fall to 17 million from 50 million currently.”
 <sup>1</sup>
-  </p>
-  <p>One thing is for certain ... now is certainly the time to snatch up those Bitcoins for pennies on the, erhum, dollar ...`; 
+  </p> `; 
   
   var blogcite148 = `
   <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies">https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies</a></p>  
@@ -35,7 +63,7 @@ var bloggerDec = function () {
  
   var blogpost144 =   `
  
-  <p class="firstparagraph">Materials science, artificial technology and IoT technology has a new assignment: Save the Glaciers!  
+  <p class="firstparagraph">Materials science, artificial intelligence   and IoT technology has a new assignment: Save the Glaciers!  
   </p>
   <p class="quote">By the end of the mission in 2009, Anandakrishnan and his colleagues had collected data from about 150 boreholes. The new information didn’t precisely explain what was hastening Thwaites’ acceleration, but it was a start. Meanwhile, the satellite maps kept getting redder and redder. In 2014, Eric Rignot, a glaciologist at NASA, concluded that Thwaites was entering a state of “unstoppable” collapse. Even worse, scientists were starting to think that its demise could trigger a larger catastrophe in West Antarctica, the way a rotting support beam might lead to the toppling not only of a wall but of an entire house. Already, Thwaites’ losses were responsible for about 4 percent of global sea-level rise every year. When the entire glacier went, the seas would likely rise by a few feet; when the glaciers around it did, too, the seas might rise by more than a dozen feet. 
 <sup>1</sup>
@@ -130,6 +158,26 @@ var bloggerDec = function () {
 
       var url = [
        
+        {
+          id: '150',
+          did: '12-15-18',
+          date: 'December 15-16, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Introspective',
+          post: blogpost150,
+          blogcite: blogcite150
+        }, 
+        {
+          id: '149',
+          did: '12-14-18',
+          date: 'December 14, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency in Retrospective',
+          post: blogpost149,
+          blogcite: blogcite149
+        }, 
         {
           id: '148',
           did: '12-13-18',
@@ -239,7 +287,7 @@ var bloggerDec = function () {
     </div>
     <div id="blogcite">${url[i].blogcite}
     </div>`;
-    document.getElementById("paragraph-nov").innerHTML += cat;
+    document.getElementById("paragraph-dec").innerHTML += cat;
   }
 
   for (i = 0; i < url.length; i++) {
