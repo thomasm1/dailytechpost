@@ -9447,7 +9447,7 @@ p.mb4card {
   color: #3838ad; }
 
 h3, h2, h1, a {
-  color: lightsteelblue; }
+  color: #eff6ff; }
 
 div.col-md-4 > p, h3, h4 {
   min-height: 25px; }
@@ -9524,11 +9524,15 @@ div#planets .form {
 .multi_drop_menu {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 1.1rem; }
+  font-size: 1.3rem; }
+
+.multi_drop_menu .fa {
+  font-size: larger; }
 
 .multi_drop_menu a {
   display: block;
-  color: blue;
+  color: aliceblue;
+  font-size: 1.1rem;
   background-color: #00b0ec;
   border-width: 4px;
   border-color: transparent; }
