@@ -1,12 +1,164 @@
 // 'use strict';
 
-var bloggerDec = function () {  
+var bloggerDec = function () { 
+   
+  var blogpost161 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite161 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost160 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite160= `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost159 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite159 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost158 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite158 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost157 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite157= `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost156 =   ` 
+  <p class="firstparagraph"><i>Public Access to Quantum Computing ... makes a quaint Christmas-Hannukah-Festivus Present for all  </i>
+  </p>
+  <p class="quote"> The IBM Q Experience has already executed more than seven million quantum programs, and they aren’t just random gobbledygook like mine. Legit researchers, many unaffiliated with IBM, have published more than 120 academic papers using it.
 
+  The app is part of a larger effort to boost literacy in quantum computing. Other companies have also been releasing open-source software packages to reach out to the masses—or more probably, nerds with niche interests. They hope that a diverse pool of users can guide them toward more creative uses for the machines. 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite156 = `
+  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  
+  `;
+  var blogpost155 =   ` 
+  <p class="firstparagraph">To say that the world's micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow's <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>
+  <p>The effect is clear: multiplying usages and forms of value exchange are certain--this, without accounting for the myriad new options that tech offers. So, if one considers the linear progression from bartering to the coins of Egypt and Athens, history certainly amplifies itself with Venmo, PayPal options are here to stay...  
+  </p>
+  <p class="quote">Facebook Inc. is working on making a cryptocurrency that will let users transfer money on its WhatsApp messaging app, focusing first on the remittances market in India, according to people familiar with the matter.
+  <br /><br />
+
+  The company is developing a stablecoin -- a type of digital currency pegged to the U.S. dollar -- to minimize volatility, said the people, who asked not to be identified discussing internal plans. Facebook is far from releasing the coin, because it’s still working on the strategy, including a plan for custody assets, or regular currencies that would be held to protect the value of the stablecoin, the people said.
+  <br /><br />
+   
+  Facebook, which has 2.5 billion global users, more than $40 billion in annual revenue and greater experience navigating regulatory issues, may have a better chance of making a stablecoin that sticks. It would be the first large technology company to launch such a project. 
+<sup>1</sup>
+  </p> `; 
+  
+  var blogcite155 = `
+  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  
+  `;  
+ 
+  var blogpost154 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite154 = `
+  <p class="cite">1<a target="_blank" href=" "> </a></p>  
+  `;
+ 
+  var blogpost153 =   ` 
+  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  
+  </p>
+  <p class="quote">
+  When you buy something on Amazon, the odds are, you aren’t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company’s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. 
+
+  Amazon is far from the only tech company that, having annexed a vast sphere of human activity, finds itself in the position of having to govern it. But Amazon is the only platform that has a $175 billion prize pool tempting people to game it, and the company must constantly implement new rules and penalties, which in turn, become tools for new abuses, which require yet more rules to police. The evolution of its moderation system has been hyper-charged. While Mark Zuckerberg mused recently that Facebook might need an analog to the Supreme Court to adjudicate disputes and hear appeals, Amazon already has something like a judicial system — one that is secretive, volatile, and often terrifying. 
+<sup>1</sup>
+  </p>
+  <p>So, when commercial and social transactions drift away from  traditional political-judicial-legal jurisdictions, where--rather what--is binding authority? 
+  </p> `; 
+  
+  var blogcite153 = `
+  <p class="cite">1<a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  
+  `;  
+  var blogpost152 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+  But engineers haven't written off the internal combustion engine just yet. The team at Aston Martin has released details on the V12 engine that will breathe life into its upcoming, $3 million Valkyrie hypercar, and the gleaming maze of metal is a beautiful beast.
+  <br /><br />
+
+  <img src="dist/img/astonmartinwired.jpg" width="350" class="zoom" /><br /><br />
+  The 6.5-liter V12 will produce 1,000 horsepower (because excess) and revs to 11,100 rpm. Putting this overall insanity aside, what's remarkable about such figures is that Aston's engineers hit them without resorting to turbochargers. The automaker says it recognizes that turbos offer a ton of benefits, but wanted “an internal combustion engine that sits at the absolute pinnacle for performance, excitement, and emotion,” which it could only get through natural aspiration. 
+<sup>1</sup>
+  </p>  `; 
+  
+  var blogcite152 = `
+  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/">https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/</a></p>  
+  `;   
+  
+  var blogpost151=   ` 
+  <p class="firstparagraph">What better reason for international cooperation than a rendez-vous at 200 miles up? After all, it's a niche sweetspot for satellite placement offering communication with less-bad latency problems...This kind of spatial coordination 
+  </p>
+  <p class="quote">
+  Ships, planes and remote businesses rely for internet connections on signals sent from geostationary orbit, but this method is too pricey for widespread adoption. Beaming the internet via satellites orbiting closer to the planet has been tried before. The idea was popular at the height of the tech boom of the late 1990s. Three companies—Teledesic, Iridium and Globalstar—poured tens of billions of dollars into the low-Earth orbit (LEO) satellite internet. It culminated in the collapse of Teledesic. Although the technology of the time worked, it was very costly and so the services on offer had to be hugely expensive, too. Iridium survived, but as a niche provider of satellite telephony, not a purveyor of cheap and fast internet access.
+  <br /><br />
+
+  OneWeb is among several firms that are trying LEO satellites again. SpaceX, a rocket company founded by Elon Musk, a tech entrepreneur, is guarded about its proposed system, Starlink, but on November 15th American regulators approved an application for 7,518 satellites at an altitude of 340km [200miles] (bringing the total for which the firm has approval to nearly 12,000). Telesat, a Canadian firm, has plans for a 512-satellite constellation. 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite151 = `
+  <p class="cite">1<a target="_blank" href="https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet">https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet</a></p>  
+  `;  
+ 
   var blogpost150 =   ` 
   <p class="firstparagraph">
   </p>
   <p class="quote">
   Amid the wreckage of the burst bitcoin bubble  it is fair to assess the outlook for blockchains, the technology underlying the cryptocurrency. There’s a difference. Blockchains, it is said, stand to revolutionize enterprise technology by addressing the problems with authentication and identity at the heart of the internet itself, eliminating middle layers in transactions and making it faster and easier to establish provenance.
+  <br /><br />
   
   The adoption of blockchains in the enterprise has been slow. The question now is the extent to which the overblown investment thesis behind bitcoin and related financial mania can be separated from the utility of blockchain as a tool in enterprise technology.
 <sup>1</sup>
@@ -15,10 +167,12 @@ var bloggerDec = function () {
   
   var blogcite150 = `
   <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;  
+  `;
+  
   var blogpost149 =   ` 
 
-  <p class="quote">Formally, an asset bubble is just a rapid rise and abrupt crash in prices. Defenders of the efficient-market theory argue that these price movements are based on changes in investor’s beliefs about an asset’s true value. But it’s hard to identify a reason why any rational investor would have so abruptly revised her assessment of the long-term earnings power of companies in 1929, or the long-term viability of dot-com startups in 2000, or the long-term value of housing in 2007.
+  <p class="quote">
+  Formally, an asset bubble is just a rapid rise and abrupt crash in prices. Defenders of the efficient-market theory argue that these price movements are based on changes in investor’s beliefs about an asset’s true value. But it’s hard to identify a reason why any rational investor would have so abruptly revised her assessment of the long-term earnings power of companies in 1929, or the long-term viability of dot-com startups in 2000, or the long-term value of housing in 2007.
 <br /><br />
   Similarly, there was no obvious reason why it made sense for the world to believe that Bitcoin was the currency of the future late December 2017, but to think this was less than one fifth as likely today. Bitcoin wasn’t eclipsed by a competitor — the main alternative cryptocurrencies had even bigger price declines. Nor have regulators cracked down on Bitcoin — in fact, the regulatory structure has generally been quite accommodating to the technology. Nor have critical technological flaws emerged — yes, the Bitcoin network has become congested, but this problem was anticipated well before the crash. 
   
@@ -86,7 +240,9 @@ var bloggerDec = function () {
   var blogcite143 = `
   <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
   `; 
- /*https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/
+
+ /* 
+ 
   var blogpost142 =   `
  
   <p class="firstparagraph">  
@@ -96,13 +252,9 @@ var bloggerDec = function () {
   </p>`;
   
   var blogcite142 = `
-  <p class="cite">1<a target="_blank" href="
-  var blogcite144 = `
-  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2018/12/07/world/asia/huawei-arrest-china.html">https://www.nytimes.com/2018/12/07/world/asia/huawei-arrest-china.html</a></p>  
-  `;  ">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
-  `; 
- 
-  var blogpost141 =   `
+ <p class="cite">1<a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
+  `;  
+ var blogpost141 =   `
  
   <p class="firstparagraph">   
   </p>
@@ -141,12 +293,10 @@ var bloggerDec = function () {
   <p class="cite">1<a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  
   `; 
  
-  var blogpost138 =   `
- 
+  var blogpost138 =   ` 
   <p class="firstparagraph">At the end of the day, why not include tactile messaging? I enjoyed my Samsung Note V, but the material touch is the hardest to replicate.
   </p>
-  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping.
-<sup>1</sup>
+  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping. <sup>1</sup>
   </p>
   <p>Senseless criticism aside, Google's Materialize software is the true winner for replicating paper, at least visually ...`;
   
@@ -157,7 +307,119 @@ var bloggerDec = function () {
  
 
       var url = [
-       
+        /*
+        {
+          id: '161',
+          did: '12-28-18',
+          date: 'December 28, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost161,
+          blogcite: blogcite161 
+        },
+        {
+          id: '160',
+          did: '12-27-18',
+          date: 'December 27, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost160,
+          blogcite: blogcite160 
+        },
+        {
+          id: '159',
+          did: '12-26-18',
+          date: 'December 26, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost159,
+          blogcite: blogcite159 
+        },  
+        {
+          id: '158',
+          did: '12-25-18',
+          date: 'December 25, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost158,
+          blogcite: blogcite158 
+        },  
+        {
+          id: '157',
+          did: '12-24-18',
+          date: 'December 24, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Introspective',
+          post: blogpost157,
+          blogcite: blogcite157
+        },
+        */  
+        {
+          id: '156',
+          did: '12-22-18',
+          date: 'December 22-23, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Quantum Data',
+          title: 'Quantum Computing Presents',
+          post: blogpost156,
+          blogcite: blogcite156
+        },
+         
+        {
+          id: '155',
+          did: '12-21-18',
+          date: 'December 21, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost155,
+          blogcite: blogcite155 
+        },  
+        {
+          id: '154',
+          did: '12-20-18',
+          date: 'December 20, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Introspective',
+          post: blogpost154,
+          blogcite: blogcite154
+        },  
+        {
+          id: '153',
+          did: '12-19-18',
+          date: 'December 19, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'A New <i>Stare Decisis</i>',
+          post: blogpost153,
+          blogcite: blogcite153
+        }, 
+        {
+          id: '152',
+          did: '12-18-18',
+          date: 'December 18, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Aston Martin at 1,000 Horsepower',
+          post: blogpost152,
+          blogcite: blogcite152
+        }, 
+        {
+          id: '151',
+          did: '12-17-18',
+          date: 'December 17, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Of Space and Satellites',
+          post: blogpost151,
+          blogcite: blogcite151
+        }, 
         {
           id: '150',
           did: '12-15-18',
@@ -308,6 +570,6 @@ var bloggerDec = function () {
     document.getElementById("paragraph-dec-mod").innerHTML += catMod;
   }
  console.log(angular.toJson(url));
-  console.log(url);
+  //console.log(url);
 };
 bloggerDec();

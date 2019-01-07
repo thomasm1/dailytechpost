@@ -498,83 +498,9 @@ document.getElementById("dailyNav").innerHTML = `
 
 // 'use strict';
 
-var bloggerDec = function () { 
-   
-  var blogpost161 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
- 
-<sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite161 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;
-  var blogpost160 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
- 
-<sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite160= `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;
-  var blogpost159 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
- 
-<sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite159 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;
-  var blogpost158 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
- 
-<sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite158 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;
-  var blogpost157 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
- 
-<sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite157= `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;
-  var blogpost156 =   ` 
-  <p class="firstparagraph"><i>Public Access to Quantum Computing ... makes a quaint Christmas-Hannukah-Festivus Present for all  </i>
-  </p>
-  <p class="quote"> The IBM Q Experience has already executed more than seven million quantum programs, and they aren’t just random gobbledygook like mine. Legit researchers, many unaffiliated with IBM, have published more than 120 academic papers using it.
-
-  The app is part of a larger effort to boost literacy in quantum computing. Other companies have also been releasing open-source software packages to reach out to the masses—or more probably, nerds with niche interests. They hope that a diverse pool of users can guide them toward more creative uses for the machines. 
-<sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite156 = `
-  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  
-  `;
+var bloggerDec = function () {  
   var blogpost155 =   ` 
-  <p class="firstparagraph">To say that the world's micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow's <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>
+  <p class="firstparagraph">To say that the world's micro-transaction needs has changed in the past 100 years is ... exaggeration. Maslow's <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>
   <p>The effect is clear: multiplying usages and forms of value exchange are certain--this, without accounting for the myriad new options that tech offers. So, if one considers the linear progression from bartering to the coins of Egypt and Athens, history certainly amplifies itself with Venmo, PayPal options are here to stay...  
   </p>
   <p class="quote">Facebook Inc. is working on making a cryptocurrency that will let users transfer money on its WhatsApp messaging app, focusing first on the remittances market in India, according to people familiar with the matter.
@@ -590,7 +516,7 @@ var bloggerDec = function () {
   var blogcite155 = `
   <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  
   `;  
- 
+  /*
   var blogpost154 =   ` 
   <p class="firstparagraph">
   </p>
@@ -601,9 +527,9 @@ var bloggerDec = function () {
   <p> `; 
   
   var blogcite154 = `
-  <p class="cite">1<a target="_blank" href=" "> </a></p>  
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
   `;
- 
+  */  
   var blogpost153 =   ` 
   <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  
   </p>
@@ -738,9 +664,7 @@ var bloggerDec = function () {
   var blogcite143 = `
   <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
   `; 
-
- /* 
- 
+ /*https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/
   var blogpost142 =   `
  
   <p class="firstparagraph">  
@@ -750,9 +674,13 @@ var bloggerDec = function () {
   </p>`;
   
   var blogcite142 = `
- <p class="cite">1<a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
-  `;  
- var blogpost141 =   `
+  <p class="cite">1<a target="_blank" href="
+  var blogcite144 = `
+  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2018/12/07/world/asia/huawei-arrest-china.html">https://www.nytimes.com/2018/12/07/world/asia/huawei-arrest-china.html</a></p>  
+  `;  ">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
+  `; 
+ 
+  var blogpost141 =   `
  
   <p class="firstparagraph">   
   </p>
@@ -791,10 +719,12 @@ var bloggerDec = function () {
   <p class="cite">1<a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  
   `; 
  
-  var blogpost138 =   ` 
+  var blogpost138 =   `
+ 
   <p class="firstparagraph">At the end of the day, why not include tactile messaging? I enjoyed my Samsung Note V, but the material touch is the hardest to replicate.
   </p>
-  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping. <sup>1</sup>
+  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping.
+<sup>1</sup>
   </p>
   <p>Senseless criticism aside, Google's Materialize software is the true winner for replicating paper, at least visually ...`;
   
@@ -805,69 +735,7 @@ var bloggerDec = function () {
  
 
       var url = [
-        /*
-        {
-          id: '161',
-          did: '12-28-18',
-          date: 'December 28, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
-          post: blogpost161,
-          blogcite: blogcite161 
-        },
-        {
-          id: '160',
-          did: '12-27-18',
-          date: 'December 27, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
-          post: blogpost160,
-          blogcite: blogcite160 
-        },
-        {
-          id: '159',
-          did: '12-26-18',
-          date: 'December 26, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
-          post: blogpost159,
-          blogcite: blogcite159 
-        },  
-        {
-          id: '158',
-          did: '12-25-18',
-          date: 'December 25, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
-          post: blogpost158,
-          blogcite: blogcite158 
-        },  
-        {
-          id: '157',
-          did: '12-24-18',
-          date: 'December 24, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Currency Introspective',
-          post: blogpost157,
-          blogcite: blogcite157
-        },
-        */  
-        {
-          id: '156',
-          did: '12-22-18',
-          date: 'December 22-23, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Quantum Data',
-          title: 'Quantum Computing Presents',
-          post: blogpost156,
-          blogcite: blogcite156
-        },
-         
+       
         {
           id: '155',
           did: '12-21-18',
@@ -877,7 +745,7 @@ var bloggerDec = function () {
           title: 'A Virtual Balkanization of International Currency',
           post: blogpost155,
           blogcite: blogcite155 
-        },  
+        }, /*
         {
           id: '154',
           did: '12-20-18',
@@ -887,7 +755,8 @@ var bloggerDec = function () {
           title: 'A Currency Introspective',
           post: blogpost154,
           blogcite: blogcite154
-        },  
+        }, 
+        */
         {
           id: '153',
           did: '12-19-18',
@@ -1067,7 +936,7 @@ var bloggerDec = function () {
  </div>`;
     document.getElementById("paragraph-dec-mod").innerHTML += catMod;
   }
- console.log(angular.toJson(url));
+ //console.log(angular.toJson(url));
   //console.log(url);
 };
 bloggerDec();

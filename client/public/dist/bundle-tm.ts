@@ -71,7 +71,6 @@
 __webpack_require__(1);
 //require('./js/force');  
 
-//require('./js/blog-draft-nov');
 __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(4);
@@ -80,8 +79,10 @@ __webpack_require__(6);
 __webpack_require__(7);
 __webpack_require__(8);
 __webpack_require__(9);
-__webpack_require__(10); 
- __webpack_require__(11);      
+__webpack_require__(10);
+__webpack_require__(11);
+__webpack_require__(12); 
+__webpack_require__(13);      
    
  
  
@@ -497,23 +498,236 @@ document.getElementById("dailyNav").innerHTML = `
 
 // 'use strict';
 
-var bloggerOct = function () {  
-     
+var bloggerDec = function () { 
+   
+  var blogpost161 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite161 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost160 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite160= `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost159 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite159 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost158 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite158 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost157 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite157= `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  var blogpost156 =   ` 
+  <p class="firstparagraph"><i>Public Access to Quantum Computing ... makes a quaint Christmas-Hannukah-Festivus Present for all  </i>
+  </p>
+  <p class="quote"> The IBM Q Experience has already executed more than seven million quantum programs, and they aren’t just random gobbledygook like mine. Legit researchers, many unaffiliated with IBM, have published more than 120 academic papers using it.
+
+  The app is part of a larger effort to boost literacy in quantum computing. Other companies have also been releasing open-source software packages to reach out to the masses—or more probably, nerds with niche interests. They hope that a diverse pool of users can guide them toward more creative uses for the machines. 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite156 = `
+  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  
+  `;
+  var blogpost155 =   ` 
+  <p class="firstparagraph">To say that the world's micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow's <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>
+  <p>The effect is clear: multiplying usages and forms of value exchange are certain--this, without accounting for the myriad new options that tech offers. So, if one considers the linear progression from bartering to the coins of Egypt and Athens, history certainly amplifies itself with Venmo, PayPal options are here to stay...  
+  </p>
+  <p class="quote">Facebook Inc. is working on making a cryptocurrency that will let users transfer money on its WhatsApp messaging app, focusing first on the remittances market in India, according to people familiar with the matter.
+  <br /><br />
+
+  The company is developing a stablecoin -- a type of digital currency pegged to the U.S. dollar -- to minimize volatility, said the people, who asked not to be identified discussing internal plans. Facebook is far from releasing the coin, because it’s still working on the strategy, including a plan for custody assets, or regular currencies that would be held to protect the value of the stablecoin, the people said.
+  <br /><br />
+   
+  Facebook, which has 2.5 billion global users, more than $40 billion in annual revenue and greater experience navigating regulatory issues, may have a better chance of making a stablecoin that sticks. It would be the first large technology company to launch such a project. 
+<sup>1</sup>
+  </p> `; 
+  
+  var blogcite155 = `
+  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  
+  `;  
+ 
+  var blogpost154 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+ 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite154 = `
+  <p class="cite">1<a target="_blank" href=" "> </a></p>  
+  `;
+ 
+  var blogpost153 =   ` 
+  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  
+  </p>
+  <p class="quote">
+  When you buy something on Amazon, the odds are, you aren’t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company’s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. 
+
+  Amazon is far from the only tech company that, having annexed a vast sphere of human activity, finds itself in the position of having to govern it. But Amazon is the only platform that has a $175 billion prize pool tempting people to game it, and the company must constantly implement new rules and penalties, which in turn, become tools for new abuses, which require yet more rules to police. The evolution of its moderation system has been hyper-charged. While Mark Zuckerberg mused recently that Facebook might need an analog to the Supreme Court to adjudicate disputes and hear appeals, Amazon already has something like a judicial system — one that is secretive, volatile, and often terrifying. 
+<sup>1</sup>
+  </p>
+  <p>So, when commercial and social transactions drift away from  traditional political-judicial-legal jurisdictions, where--rather what--is binding authority? 
+  </p> `; 
+  
+  var blogcite153 = `
+  <p class="cite">1<a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  
+  `;  
+  var blogpost152 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+  But engineers haven't written off the internal combustion engine just yet. The team at Aston Martin has released details on the V12 engine that will breathe life into its upcoming, $3 million Valkyrie hypercar, and the gleaming maze of metal is a beautiful beast.
+  <br /><br />
+
+  <img src="dist/img/astonmartinwired.jpg" width="350" class="zoom" /><br /><br />
+  The 6.5-liter V12 will produce 1,000 horsepower (because excess) and revs to 11,100 rpm. Putting this overall insanity aside, what's remarkable about such figures is that Aston's engineers hit them without resorting to turbochargers. The automaker says it recognizes that turbos offer a ton of benefits, but wanted “an internal combustion engine that sits at the absolute pinnacle for performance, excitement, and emotion,” which it could only get through natural aspiration. 
+<sup>1</sup>
+  </p>  `; 
+  
+  var blogcite152 = `
+  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/">https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/</a></p>  
+  `;   
+  
+  var blogpost151=   ` 
+  <p class="firstparagraph">What better reason for international cooperation than a rendez-vous at 200 miles up? After all, it's a niche sweetspot for satellite placement offering communication with less-bad latency problems...This kind of spatial coordination 
+  </p>
+  <p class="quote">
+  Ships, planes and remote businesses rely for internet connections on signals sent from geostationary orbit, but this method is too pricey for widespread adoption. Beaming the internet via satellites orbiting closer to the planet has been tried before. The idea was popular at the height of the tech boom of the late 1990s. Three companies—Teledesic, Iridium and Globalstar—poured tens of billions of dollars into the low-Earth orbit (LEO) satellite internet. It culminated in the collapse of Teledesic. Although the technology of the time worked, it was very costly and so the services on offer had to be hugely expensive, too. Iridium survived, but as a niche provider of satellite telephony, not a purveyor of cheap and fast internet access.
+  <br /><br />
+
+  OneWeb is among several firms that are trying LEO satellites again. SpaceX, a rocket company founded by Elon Musk, a tech entrepreneur, is guarded about its proposed system, Starlink, but on November 15th American regulators approved an application for 7,518 satellites at an altitude of 340km [200miles] (bringing the total for which the firm has approval to nearly 12,000). Telesat, a Canadian firm, has plans for a 512-satellite constellation. 
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite151 = `
+  <p class="cite">1<a target="_blank" href="https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet">https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet</a></p>  
+  `;  
+ 
+  var blogpost150 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
+  Amid the wreckage of the burst bitcoin bubble  it is fair to assess the outlook for blockchains, the technology underlying the cryptocurrency. There’s a difference. Blockchains, it is said, stand to revolutionize enterprise technology by addressing the problems with authentication and identity at the heart of the internet itself, eliminating middle layers in transactions and making it faster and easier to establish provenance.
+  <br /><br />
+  
+  The adoption of blockchains in the enterprise has been slow. The question now is the extent to which the overblown investment thesis behind bitcoin and related financial mania can be separated from the utility of blockchain as a tool in enterprise technology.
+<sup>1</sup>
+  </p>
+  <p> `; 
+  
+  var blogcite150 = `
+  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  `;
+  
+  var blogpost149 =   ` 
+
+  <p class="quote">
+  Formally, an asset bubble is just a rapid rise and abrupt crash in prices. Defenders of the efficient-market theory argue that these price movements are based on changes in investor’s beliefs about an asset’s true value. But it’s hard to identify a reason why any rational investor would have so abruptly revised her assessment of the long-term earnings power of companies in 1929, or the long-term viability of dot-com startups in 2000, or the long-term value of housing in 2007.
+<br /><br />
+  Similarly, there was no obvious reason why it made sense for the world to believe that Bitcoin was the currency of the future late December 2017, but to think this was less than one fifth as likely today. Bitcoin wasn’t eclipsed by a competitor — the main alternative cryptocurrencies had even bigger price declines. Nor have regulators cracked down on Bitcoin — in fact, the regulatory structure has generally been quite accommodating to the technology. Nor have critical technological flaws emerged — yes, the Bitcoin network has become congested, but this problem was anticipated well before the crash. 
+  
+<br /><br />
+  Instead, it seems overwhelmingly likely that Bitcoin’s spectacular rise and fall was due not to rational optimism followed by sensible pessimism, but to some kind of aggregate market irrationality — a combination of herd behavior, cynical speculation and the entry into the market of a large number of new, poorly informed investors.
+<sup>1</sup>
+  </p>
+  `; 
+  
+  var blogcite149 = `
+  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped">https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped</a></p>  
+  `;  
+  var blogpost148 =   ` 
+  <p class="firstparagraph">Crypto-Currency theorists provide endless explanations over the disproportionately-sized fall of Bitcoin from December 2017 yet offer an incomplete picture. The more fascinating questions surround Bitcoin's 2017 growth rather than the interruption that either cascaded to new factors or simply magnified existing factors--such as security doubts and the dearth micro-economic public use.
+  </p>
+  <p class="quote"> His explanation for the divergence include last year’s meteoric rally, a “meltdown” in the macroeconomic climate and treasury sales during initial coin offerings. 
+  “Fair value is significantly higher than the current price of Bitcoin,” he wrote. “In fact, working backwards, to solve for the current price of Bitcoin, this implies crypto wallets should fall to 17 million from 50 million currently.”
+<sup>1</sup>
+  </p> `; 
+  
+  var blogcite148 = `
+  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies">https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies</a></p>  
+  `;  
+  var blogpost145 =   ` 
+  <p class="firstparagraph">Leaving the age of personal pc computing power, the growing trends are to borrow someone else's computing power in the cloud. Platform-as-a-Service, Infrastructure-as-a-Service, and other shared computing and storage services are merely aligning with the growing convention to spurn buying--say a car--in favor of renting for when and what needs specifically arise--like Uber, Turo and other peer-to-peer trends.  It only makes sense that Cloud services would incorporate more hardware customization and flexibility.   
+  </p>
+  <p class="quote">Amazon, the world’s largest online retailer and largest cloud-computing company, is pushing into a new line of work: computer chips.
+
+  Late last month, the company, based in Seattle, revealed that it had spent the last few years building a new chip for use inside the millions of servers in its data centers around the world.
+  
+  Amazon does not plan to sell this chip directly to customers, but the decision by one of the world’s biggest buyers of computer processors to go the do-it-yourself route is likely to have a major impact on Intel, the iconic Silicon Valley chip maker.
+<sup>1</sup>
+</p><p>Time-traveling to the dawn of the PC era, it must have felt the world ending with the monopolistic overtones of IBM and Microsoft. Yet, time--and technology--passes all things. Now, it is the age of Google Cloud and Amazon Web Services--including the chip!
+  </p>`; 
+
+  var blogcite145 = `
+  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html">  https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html</a></p>  
+  `;  
+  
+
+
+ 
   var blogpost144 =   `
  
-  <p class="firstparagraph">  
+  <p class="firstparagraph">Materials science, artificial intelligence   and IoT technology has a new assignment: Save the Glaciers!  
   </p>
   <p class="quote">By the end of the mission in 2009, Anandakrishnan and his colleagues had collected data from about 150 boreholes. The new information didn’t precisely explain what was hastening Thwaites’ acceleration, but it was a start. Meanwhile, the satellite maps kept getting redder and redder. In 2014, Eric Rignot, a glaciologist at NASA, concluded that Thwaites was entering a state of “unstoppable” collapse. Even worse, scientists were starting to think that its demise could trigger a larger catastrophe in West Antarctica, the way a rotting support beam might lead to the toppling not only of a wall but of an entire house. Already, Thwaites’ losses were responsible for about 4 percent of global sea-level rise every year. When the entire glacier went, the seas would likely rise by a few feet; when the glaciers around it did, too, the seas might rise by more than a dozen feet. 
 <sup>1</sup>
   </p>`;
   
   var blogcite144 = `
-  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
+  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/">https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/</a></p>  
   `; 
   var blogpost143 =   `
  
   <p class="firstparagraph">
-  Workplace satisfaction sits squarely on finding purpose, usually to the aim of helping others. 20th century jobs plainly reflected this value in plain sight, however new jobs do the same and more, but less evidently. Code writing is worthy for its contributions to humanity--as much as bridge-building industry to social work.  Yet, software engineering is seen through the filter of coding, math,   logic and automation, instead of the careful reflaction and humanity of coding authorship. Sadly, there is no PR to tout the new paradigm that explains meaning in work! </p> 
+  Workplace satisfaction sits squarely on finding purpose, usually to the aim of helping others. 20th century jobs plainly reflected this value in plain sight, however new jobs do the same and more, but less evidently. Code writing is worthy for its contributions to humanity--as much as bridge-building, nursing,  social work and any  industry.  Yet, software engineering is seen through the filter of coding, math,   logic and automation, instead of the true portraiture of the careful reflection, humanity and patience of coding authorship. Sadly, there is no PR to tout the new paradigm and lofty meaning tied into programming work! </p> 
 
   <p class="quote">Lack of career growth or trajectory was the biggest reason, with 28.1% of respondents saying it caused them to quit. Many of the women also believe that men have an advantage in the field; just 53% said women have the same opportunities to enter senior leadership roles as their male counterparts.<br />
 
@@ -524,7 +738,9 @@ var bloggerOct = function () {
   var blogcite143 = `
   <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
   `; 
- /*
+
+ /* 
+ 
   var blogpost142 =   `
  
   <p class="firstparagraph">  
@@ -534,10 +750,9 @@ var bloggerOct = function () {
   </p>`;
   
   var blogcite142 = `
-  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
-  `; 
- 
-  var blogpost141 =   `
+ <p class="cite">1<a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
+  `;  
+ var blogpost141 =   `
  
   <p class="firstparagraph">   
   </p>
@@ -576,18 +791,296 @@ var bloggerOct = function () {
   <p class="cite">1<a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  
   `; 
  
-  var blogpost138 =   `
- 
+  var blogpost138 =   ` 
   <p class="firstparagraph">At the end of the day, why not include tactile messaging? I enjoyed my Samsung Note V, but the material touch is the hardest to replicate.
   </p>
-  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping.
-<sup>1</sup>
+  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message—that is, content—but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping. <sup>1</sup>
   </p>
   <p>Senseless criticism aside, Google's Materialize software is the true winner for replicating paper, at least visually ...`;
   
   var blogcite138 = `
   <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  
   `; 
+
+ 
+
+      var url = [
+        /*
+        {
+          id: '161',
+          did: '12-28-18',
+          date: 'December 28, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost161,
+          blogcite: blogcite161 
+        },
+        {
+          id: '160',
+          did: '12-27-18',
+          date: 'December 27, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost160,
+          blogcite: blogcite160 
+        },
+        {
+          id: '159',
+          did: '12-26-18',
+          date: 'December 26, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost159,
+          blogcite: blogcite159 
+        },  
+        {
+          id: '158',
+          did: '12-25-18',
+          date: 'December 25, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost158,
+          blogcite: blogcite158 
+        },  
+        {
+          id: '157',
+          did: '12-24-18',
+          date: 'December 24, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Introspective',
+          post: blogpost157,
+          blogcite: blogcite157
+        },
+        */  
+        {
+          id: '156',
+          did: '12-22-18',
+          date: 'December 22-23, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Quantum Data',
+          title: 'Quantum Computing Presents',
+          post: blogpost156,
+          blogcite: blogcite156
+        },
+         
+        {
+          id: '155',
+          did: '12-21-18',
+          date: 'December 21, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Virtual Balkanization of International Currency',
+          post: blogpost155,
+          blogcite: blogcite155 
+        },  
+        {
+          id: '154',
+          did: '12-20-18',
+          date: 'December 20, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Introspective',
+          post: blogpost154,
+          blogcite: blogcite154
+        },  
+        {
+          id: '153',
+          did: '12-19-18',
+          date: 'December 19, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'A New <i>Stare Decisis</i>',
+          post: blogpost153,
+          blogcite: blogcite153
+        }, 
+        {
+          id: '152',
+          did: '12-18-18',
+          date: 'December 18, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Aston Martin at 1,000 Horsepower',
+          post: blogpost152,
+          blogcite: blogcite152
+        }, 
+        {
+          id: '151',
+          did: '12-17-18',
+          date: 'December 17, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Of Space and Satellites',
+          post: blogpost151,
+          blogcite: blogcite151
+        }, 
+        {
+          id: '150',
+          did: '12-15-18',
+          date: 'December 15-16, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Introspective',
+          post: blogpost150,
+          blogcite: blogcite150
+        }, 
+        {
+          id: '149',
+          did: '12-14-18',
+          date: 'December 14, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency in Retrospective',
+          post: blogpost149,
+          blogcite: blogcite149
+        }, 
+        {
+          id: '148',
+          did: '12-13-18',
+          date: 'December 13, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: 'A Currency Starting Afresh',
+          post: blogpost148,
+          blogcite: blogcite148
+        }, 
+        {
+          id: '145',
+          did: '12-10-18',
+          date: 'December 10, 2018',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Quantum Chips, GPU &amp; Parallel Chips  and Cloud Chips, Ahoy!',
+          post: blogpost145,
+          blogcite: blogcite145
+        }, 
+         {
+          id: '144',
+          did: '12-08-18',
+          date: 'December 8-9, 2018 <br />Weekend',
+          author: 'by Thomas Maestas',
+          cat3: 'A.I.Now.',
+          title: 'The Tech Industry\'s True Value, Part II:<br />Saving Earth',
+          post: blogpost144,
+          blogcite: blogcite144
+        }, 
+        {
+            id: '143',
+            did: '12-07-18',
+            date: 'December 7, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'The Tech Industry\'s True Value, Part I:<br />Saving Humanity',
+            post: blogpost143,
+            blogcite: blogcite143
+          },  
+          /*
+          {
+            id: '142',
+            did: '12-06-18',
+            date: 'December 6, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'The Tech Market\'s True Value, Part Zero:<br />Saving Energy',
+            post: blogpost142,
+            blogcite: blogcite142
+          }, 
+           {
+            id: '141',
+            did: '12-05-18',
+            date: 'December 5, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'The Tech Market\'s True Value',
+            post: blogpost141,
+            blogcite: blogcite141
+          },  
+           {
+        id: '140',
+          did: '12-04-18',
+          date: 'December 4, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow',
+          title: 'The Tech Market\'s True Value',
+          post: blogpost140,
+          blogcite: blogcite140
+           }, */
+        {
+        id: '139',
+          did: '12-03-18',
+          date: 'December 3, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow',
+          title: 'The China Question',
+          post: blogpost139,
+          blogcite: blogcite139
+        },  
+        {
+          id: '138',
+            did: '12-01-18',
+            date: 'December 1-2, 2018 <br />Weekend',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'Textbook Technology',
+            post: blogpost138,
+            blogcite: blogcite138
+          } 
+  
+  ];
+
+  for (i = 0; i < url.length; i++) {
+    var cat = ` 
+    <div id="${url[i].did}" class="blogDiv"> 
+    <hr />  
+    <a target="_blank" href="#top"><button>Top</button></a>  
+    <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
+    <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5> 
+    <p id="author" class="  author">${url[i].author}</p>   
+    <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+    <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
+    <br />
+    <div id="post">${url[i].post}
+    </div>
+    <div id="blogcite">${url[i].blogcite}
+    </div>`;
+    document.getElementById("paragraph-dec").innerHTML += cat;
+  }
+
+  for (i = 0; i < url.length; i++) {
+    var catMod = `
+  <div id="mod_${url[i].did}" class="blogDivMod"> 
+  <hr />  
+  <a target="_blank" href="#top-mod"><button>Top</button></a>   
+  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
+  <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5>  
+  <p id="author" class="  author">${url[i].author}</p>   
+  <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+  <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
+  <br />
+  <div id="post">${url[i].post}</div>
+  </div>
+ <div id="blogcite">${url[i].blogcite}
+ </div>`;
+    document.getElementById("paragraph-dec-mod").innerHTML += catMod;
+  }
+ console.log(angular.toJson(url));
+  //console.log(url);
+};
+bloggerDec();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// 'use strict';
+
+var bloggerNov = function () {  
+
+ 
 
   var blogpost137 =   `
  
@@ -954,6 +1447,335 @@ var blogcite111 = `
        var      blogcite011 = `  <p class="cite"> <a target="_blank" href=""   target="_blank"></a> </p>
         
         `;
+  
+
+      var url = [
+       
+      
+        {
+          id: '137',
+            did: '11-30-18',
+            date: 'November 30, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Quantum Data',
+            title: 'Paradigm Breaker',
+            post: blogpost137,
+            blogcite: blogcite137
+          },    
+        {
+        id: '136',
+          did: '11-30-18',
+          date: 'November 30, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'A.I.Now.',
+          title: 'A Co-Bot Revolution ',
+          post: blogpost136,
+          blogcite: blogcite136
+        },    
+        {
+          id: '135',
+            did: '11-29-18',
+            date: 'November 29, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Diversity and Equality in the Machine Learning Landscape',
+            post: blogpost135,
+            blogcite: blogcite135
+          },  
+        {
+          id: '134',
+            did: '11-28-18',
+            date: 'November 28, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'The Great Bitcoin Bust of \'18, Part II:<br />The Costs of Deprecated Technology',
+            post: blogpost134,
+            blogcite: blogcite134
+          },    
+        {
+        id: '133',
+          did: '11-27-18',
+          date: 'November 27, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow',
+          title: 'The Great Bitcoin Bust of \'18, Part I:<br />The Earth-Killer Currency\'s Last Days',
+          post: blogpost133,
+          blogcite: blogcite133
+        },    
+        {
+          id: '132',
+            did: '11-26-18',
+            date: 'November 26, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'Oops, They Did it Again',
+            post: blogpost132,
+            blogcite: blogcite132
+          },  
+        {
+          id: '131',
+            did: '11-24-18',
+            date: 'November 24-25, 2018<br />Weekend ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: '5G Security Foundations for 21st Century Appliances',
+            post: blogpost131,
+            blogcite: blogcite131
+        },  /*
+        {
+          id: '130',
+            did: '11-23-18',
+            date: 'November 23, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow',
+            title: 'Oops, They Did it Again',
+            post: blogpost130,
+            blogcite: blogcite130
+          },   */
+        {
+          id: '129',
+            did: '11-22-18',
+            date: 'November 22, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Healthy Livin\' Cells',
+            post: blogpost129,
+            blogcite: blogcite129
+          },  
+        {
+          id: '128',
+            did: '11-21-18',
+            date: 'November 21, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'Protecting Data',
+            post: blogpost128,
+            blogcite: blogcite128
+          },  
+    
+        {
+          id: '127',
+            did: '11-20-18',
+            date: 'November 20, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Tech\'s Mortal Dependence on Global Trade Calls for World Peace!',
+            post: blogpost127,
+            blogcite: blogcite127
+          },  
+        {
+          id: '126',
+            did: '11-19-18',
+            date: 'November 19, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow!',
+            title: 'Facebook\'s Struggle with Regulation',
+            post: blogpost126,
+            blogcite: blogcite126
+          },  
+        {
+          id: '125',
+            did: '11-17-18',
+            date: 'November 17-18, 2018<br />Weekend ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'Tech Money\'s Deep Footprint',
+            post: blogpost125,
+            blogcite: blogcite125
+          },  
+        {
+          id: '124',
+            did: '11-16-18',
+            date: 'November 16, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'A More Retrospective A.I.',
+            post: blogpost124,
+            blogcite: blogcite124
+          },  
+        {
+          id: '123',
+            did: '11-15-18',
+            date: 'November 15, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'A.I.Now.',
+            title: 'Fast, Anonymized Money!',
+            post: blogpost123,
+            blogcite: blogcite123
+          },  
+          {
+        id: '122',
+          did: '11-14-18',
+          date: 'November 14, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Green Options',
+          post: blogpost122,
+          blogcite: blogcite122
+        },  
+          {
+          id: '111',
+            did: '11-13-18',
+            date: 'November 13, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'Picture Power',
+            post: blogpost111,
+            blogcite: blogcite111
+          },  
+          {
+       id: '100',
+        did: '11-12-18',
+        date: 'November 12, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Sociology Tomorrow',
+        title: 'Plastic Hangover',
+        post: blogpost100,
+        blogcite: blogcite100
+          },     
+        {
+        id: '099',
+          did: '11-10-18',
+          date: 'November 10-11, 2018<br />Weekend ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Thank You, AWS--for your Software Megatron',
+          post: blogpost099,
+          blogcite: blogcite099
+        },  
+          {
+          id: '088',
+            did: '11-09-18',
+            date: 'November 9, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Sociology Tomorrow!',
+            title: 'Graphene Dreams',
+            post: blogpost088,
+            blogcite: blogcite088
+          },  
+          {
+       id: '077',
+        did: '11-08-18',
+        date: 'November 8, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Sociology Tomorrow',
+        title: 'What\'s in a Name',
+        post: blogpost077,
+        blogcite: blogcite077
+          },        
+        {
+        id: '066',
+          did: '11-07-18',
+          date: 'November 7, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'The Uncharted Cloud Territory: A Magna Carta',
+          post: blogpost066,
+          blogcite: blogcite066
+        },  
+          {
+          id: '055',
+            did: '11-06-18',
+            date: 'November 6, 2018 ',
+            author: 'by Thomas Maestas',
+            cat3: 'Web Dev Affairs',
+            title: 'The 5G IoT SuperHighway',
+            post: blogpost055,
+            blogcite: blogcite055
+          },  
+          {
+       id: '044',
+        did: '11-05-18',
+        date: 'November 5, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: 'Tesla at Work',
+        post: blogpost044,
+        blogcite: blogcite044
+          },     
+            {
+        id: '033',
+        did: '11-03-18',
+        date: 'November 3-4, 2018<br />Weekend',
+        author: 'by Thomas Maestas',
+        cat3: 'Musing Blockchain',
+        title: 'Now that\'s a Safe Keep!',
+        post: blogpost033,
+        blogcite: blogcite033
+      },  
+        {
+        id: '022',
+        did: '11-02-18',
+        date: 'November 2, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: ' ',
+        title: ' ',
+        post: blogpost022,
+        blogcite: blogcite022
+      },         {
+        id: '01',
+        did: '11-01-18',
+        date: 'November 1, 2018 ',
+        author: 'by Thomas Maestas',
+        cat3: ' ',
+        title: ' ',
+        post: blogpost011,
+        blogcite: blogcite011
+      } 
+
+  
+  ];
+
+  for (i = 0; i < url.length; i++) {
+    var cat = ` 
+    <div id="${url[i].did}" class="blogDiv"> 
+    <hr />  
+    <a target="_blank" href="#top"><button>Top</button></a>  
+    <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
+    <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5> 
+    <p id="author" class="  author">${url[i].author}</p>   
+    <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+    <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
+    <br />
+    <div id="post">${url[i].post}
+    </div>
+    <div id="blogcite">${url[i].blogcite}
+    </div>`;
+    document.getElementById("paragraph-nov").innerHTML += cat;
+  }
+
+  for (i = 0; i < url.length; i++) {
+    var catMod = `
+  <div id="mod_${url[i].did}" class="blogDivMod"> 
+  <hr />  
+  <a target="_blank" href="#top-mod"><button>Top</button></a>   
+  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
+  <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5>  
+  <p id="author" class="  author">${url[i].author}</p>   
+  <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+  <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
+  <br />
+  <div id="post">${url[i].post}</div>
+  </div>
+ <div id="blogcite">${url[i].blogcite}
+ </div>`;
+    document.getElementById("paragraph-nov-mod").innerHTML += catMod;
+  }
+ //console.log(angular.toJson(url));
+ // console.log(url);
+
+}; // end bloggerNov()
+bloggerNov();
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// 'use strict';
+
+var bloggerOct = function () {  
+
+ 
  
         var     blogpost22 = ` 
         <p class="firstparagraph">Cloud data is at once fast, seamless and powered by limitless computer processing power and partitions!
@@ -1298,359 +2120,7 @@ var   blogcite1 = `
  
 
       var url = [
-        /*
-        Amazon, the world’s largest online retailer and largest cloud-computing company, is pushing into a new line of work: computer chips.
-
-Late last month, the company, based in Seattle, revealed that it had spent the last few years building a new chip for use inside the millions of servers in its data centers around the world.
-
-Amazon does not plan to sell this chip directly to customers, but the decision by one of the world’s biggest buyers of computer processors to go the do-it-yourself route is likely to have a major impact on Intel, the iconic Silicon Valley chip maker.
-https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html
-
-https://www.nytimes.com/2018/12/07/world/asia/huawei-arrest-china.html
-
-
-*/
-         {
-          id: '144',
-          did: '12-08-18',
-          date: 'December 8-9, 2018 <br />Weekend',
-          author: 'by Thomas Maestas',
-          cat3: 'Sociology Tomorrow',
-          title: 'The Tech Market\'s True Value, Part I:<br />Saving Humanity',
-          post: blogpost144,
-          blogcite: blogcite144
-        }, 
-        {
-            id: '143',
-            did: '12-07-18',
-            date: 'December 7, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'The Tech Market\'s True Value, Part I:<br />Saving Humanity',
-            post: blogpost143,
-            blogcite: blogcite143
-          }, 
-          /*
-          {
-            id: '142',
-            did: '12-06-18',
-            date: 'December 6, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'The Tech Market\'s True Value, Part II:<br />Saving Humanity',
-            post: blogpost142,
-            blogcite: blogcite142
-          }, 
-           {
-            id: '141',
-            did: '12-05-18',
-            date: 'December 5, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'The Tech Market\'s True Value',
-            post: blogpost141,
-            blogcite: blogcite141
-          },  
-           {
-        id: '140',
-          did: '12-04-18',
-          date: 'December 4, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Sociology Tomorrow',
-          title: 'The Tech Market\'s True Value',
-          post: blogpost140,
-          blogcite: blogcite140
-           }, */
-        {
-        id: '139',
-          did: '12-03-18',
-          date: 'December 3, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Sociology Tomorrow',
-          title: 'The China Question',
-          post: blogpost139,
-          blogcite: blogcite139
-        },  
-        {
-          id: '138',
-            did: '12-01-18',
-            date: 'December 1-2, 2018 <br />Weekend',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'Textbook Technology',
-            post: blogpost138,
-            blogcite: blogcite138
-          },       
-        {
-          id: '137',
-            did: '11-30-18',
-            date: 'November 30, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Quantum Data',
-            title: 'Paradigm Breaker',
-            post: blogpost137,
-            blogcite: blogcite137
-          },    
-        {
-        id: '136',
-          did: '11-30-18',
-          date: 'November 30, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'A.I.Now.',
-          title: 'A Co-Bot Revolution ',
-          post: blogpost136,
-          blogcite: blogcite136
-        },    
-        {
-          id: '135',
-            did: '11-29-18',
-            date: 'November 29, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'A.I.Now.',
-            title: 'Diversity and Equality in the Machine Learning Landscape',
-            post: blogpost135,
-            blogcite: blogcite135
-          },  
-        {
-          id: '134',
-            did: '11-28-18',
-            date: 'November 28, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'The Great Bitcoin Bust of \'18, Part II:<br />The Costs of Deprecated Technology',
-            post: blogpost134,
-            blogcite: blogcite134
-          },    
-        {
-        id: '133',
-          did: '11-27-18',
-          date: 'November 27, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Sociology Tomorrow',
-          title: 'The Great Bitcoin Bust of \'18, Part I:<br />The Earth-Killer Currency\'s Last Days',
-          post: blogpost133,
-          blogcite: blogcite133
-        },    
-        {
-          id: '132',
-            did: '11-26-18',
-            date: 'November 26, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'Oops, They Did it Again',
-            post: blogpost132,
-            blogcite: blogcite132
-          },  
-        {
-          id: '131',
-            did: '11-24-18',
-            date: 'November 24-25, 2018<br />Weekend ',
-            author: 'by Thomas Maestas',
-            cat3: 'Web Dev Affairs',
-            title: '5G Security Foundations for 21st Century Appliances',
-            post: blogpost131,
-            blogcite: blogcite131
-        },  /*
-        {
-          id: '130',
-            did: '11-23-18',
-            date: 'November 23, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'Oops, They Did it Again',
-            post: blogpost130,
-            blogcite: blogcite130
-          },   */
-        {
-          id: '129',
-            did: '11-22-18',
-            date: 'November 22, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'A.I.Now.',
-            title: 'Healthy Livin\' Cells',
-            post: blogpost129,
-            blogcite: blogcite129
-          },  
-        {
-          id: '128',
-            did: '11-21-18',
-            date: 'November 21, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Web Dev Affairs',
-            title: 'Protecting Data',
-            post: blogpost128,
-            blogcite: blogcite128
-          },  
-    
-        {
-          id: '127',
-            did: '11-20-18',
-            date: 'November 20, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'A.I.Now.',
-            title: 'Tech\'s Mortal Dependence on Global Trade Calls for World Peace!',
-            post: blogpost127,
-            blogcite: blogcite127
-          },  
-        {
-          id: '126',
-            did: '11-19-18',
-            date: 'November 19, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow!',
-            title: 'Facebook\'s Struggle with Regulation',
-            post: blogpost126,
-            blogcite: blogcite126
-          },  
-        {
-          id: '125',
-            did: '11-17-18',
-            date: 'November 17-18, 2018<br />Weekend ',
-            author: 'by Thomas Maestas',
-            cat3: 'Web Dev Affairs',
-            title: 'Tech Money\'s Deep Footprint',
-            post: blogpost125,
-            blogcite: blogcite125
-          },  
-        {
-          id: '124',
-            did: '11-16-18',
-            date: 'November 16, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'A.I.Now.',
-            title: 'A More Retrospective A.I.',
-            post: blogpost124,
-            blogcite: blogcite124
-          },  
-        {
-          id: '123',
-            did: '11-15-18',
-            date: 'November 15, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'A.I.Now.',
-            title: 'Fast, Anonymized Money!',
-            post: blogpost123,
-            blogcite: blogcite123
-          },  
-          {
-        id: '122',
-          did: '11-14-18',
-          date: 'November 14, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Sociology Tomorrow!',
-          title: 'Green Options',
-          post: blogpost122,
-          blogcite: blogcite122
-        },  
-          {
-          id: '111',
-            did: '11-13-18',
-            date: 'November 13, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Web Dev Affairs',
-            title: 'Picture Power',
-            post: blogpost111,
-            blogcite: blogcite111
-          },  
-          {
-       id: '100',
-        did: '11-12-18',
-        date: 'November 12, 2018 ',
-        author: 'by Thomas Maestas',
-        cat3: 'Sociology Tomorrow',
-        title: 'Plastic Hangover',
-        post: blogpost100,
-        blogcite: blogcite100
-          },     
-        {
-        id: '099',
-          did: '11-10-18',
-          date: 'November 10-11, 2018<br />Weekend ',
-          author: 'by Thomas Maestas',
-          cat3: 'Web Dev Affairs',
-          title: 'Thank You, AWS--for your Software Megatron',
-          post: blogpost099,
-          blogcite: blogcite099
-        },  
-          {
-          id: '088',
-            did: '11-09-18',
-            date: 'November 9, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow!',
-            title: 'Graphene Dreams',
-            post: blogpost088,
-            blogcite: blogcite088
-          },  
-          {
-       id: '077',
-        did: '11-08-18',
-        date: 'November 8, 2018 ',
-        author: 'by Thomas Maestas',
-        cat3: 'Sociology Tomorrow',
-        title: 'What\'s in a Name',
-        post: blogpost077,
-        blogcite: blogcite077
-          },        
-        {
-        id: '066',
-          did: '11-07-18',
-          date: 'November 7, 2018 ',
-          author: 'by Thomas Maestas',
-          cat3: 'Web Dev Affairs',
-          title: 'The Uncharted Cloud Territory: A Magna Carta',
-          post: blogpost066,
-          blogcite: blogcite066
-        },  
-          {
-          id: '055',
-            did: '11-06-18',
-            date: 'November 6, 2018 ',
-            author: 'by Thomas Maestas',
-            cat3: 'Web Dev Affairs',
-            title: 'The 5G IoT SuperHighway',
-            post: blogpost055,
-            blogcite: blogcite055
-          },  
-          {
-       id: '044',
-        did: '11-05-18',
-        date: 'November 5, 2018 ',
-        author: 'by Thomas Maestas',
-        cat3: 'Web Dev Affairs',
-        title: 'Tesla at Work',
-        post: blogpost044,
-        blogcite: blogcite044
-          },     
-            {
-        id: '033',
-        did: '11-03-18',
-        date: 'November 3-4, 2018<br />Weekend',
-        author: 'by Thomas Maestas',
-        cat3: 'Musing Blockchain',
-        title: 'Now that\'s a Safe Keep!',
-        post: blogpost033,
-        blogcite: blogcite033
-      },  
-        {
-        id: '022',
-        did: '11-02-18',
-        date: 'November 2, 2018 ',
-        author: 'by Thomas Maestas',
-        cat3: ' ',
-        title: ' ',
-        post: blogpost022,
-        blogcite: blogcite022
-      },         {
-        id: '01',
-        did: '11-01-18',
-        date: 'November 1, 2018 ',
-        author: 'by Thomas Maestas',
-        cat3: ' ',
-        title: ' ',
-        post: blogpost011,
-        blogcite: blogcite011
-      },  
+        
       {
         id: '22',
         did: '10-25-18',
@@ -1911,13 +2381,13 @@ https://www.nytimes.com/2018/12/07/world/asia/huawei-arrest-china.html
  </div>`;
     document.getElementById("paragraph-oct-mod").innerHTML += catMod;
   }
- console.log(angular.toJson(url));
-  console.log(url);
+ //console.log(angular.toJson(url));
+ // console.log(url);
 };
 bloggerOct();
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports) {
 
 
@@ -2516,7 +2986,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
 bloggerSep();
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports) {
 
 
@@ -3099,7 +3569,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
 bloggerAug();
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports) {
 
 console.log('blogger-july');  
@@ -3820,7 +4290,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 bloggerJuly();
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports) {
 
 
@@ -4467,7 +4937,7 @@ bloggerJune();
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports) {
 
  
@@ -4907,7 +5377,7 @@ bloggerMay();
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports) {
 
  
@@ -5548,7 +6018,7 @@ console.log('blogger-apr');
 bloggerApr();
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports) {
 
 
@@ -6620,7 +7090,7 @@ console.log('blogger-mar');
 bloggerMar();
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 
@@ -7830,7 +8300,7 @@ console.log('blogger-feb');
 bloggerFeb();
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports) {
 
  
