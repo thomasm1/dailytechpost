@@ -3,7 +3,7 @@
 var bloggerMar = function () {
 
 
-  blogpost21 = `<p class="firstparagraph">Washington D.C.  
+  var blogpost21 = `<p class="firstparagraph">Washington D.C.  
   Not Normally does WonderWoman Show her Face, but the student protest takes the day on gun control. Emma Gonzalez--one of the Parkland School Shooting survivors, addressed, and marched with, hundreds of thousands of middle- and high-schoolers, took to the streets of D.C. to protest lax gun-control, e.g. AK-47's readily available at a moment's notice ... for home protection? I wouldn't want to be a neighbor for fear of collateral damage! So technology keeps one-upping the ol' six-shooter to something easily labeled as <i> a Weapon of Mass Destruction</i> ... so is it still a gun?
   </p>
   <p >Last week and this week, the out-of-control handgun problem is in the news. This leads one to believe there is the root problem with the <i>definition</i> of a gun. As always. Definitions start wars and world wars--after all of last century, did anyone decide who controls the Coal of Sudetenland?  You can bet everyone there speaks two languages, still. The <i>definitional </i> answer makes the answer: But this is a problem in the tech age because definitions change, <i>scale of effect changes</i>, and this makes the definition impossible to pin down. The definition is as relative as the technological change makes it.  
@@ -11,14 +11,14 @@ var bloggerMar = function () {
   </p>
   <p class="cite"><a href="http://www.latimes.com/local/california/la-me-saturday-walkouts-liveupdates-emma-gonzalez-leads-remarkable-moment-of-1521916931-htmlstory.html">http://www.latimes.com/local/california/la-me-saturday-walkouts-liveupdates-emma-gonzalez-leads-remarkable-moment-of-1521916931-htmlstory.html</a> </p>`
 
-  blogpost20 = `<p class="firstparagraph">Last week and this week, the out-of-control handgun problem is in the news. This leads one to believe there is a problem with the <i>definition</i> of a gun. As always. Definitions start wars and world wars--after all of last century, did anyone decide who controls the Coal of Sudetenland?? You can bet everyone there speaks two languages, still. The <i>definitional </i> answer makes the answer: This is why Blockchain technology--straddled between myriad start-ups, countless institutions and a hundred brilliant minds is The answer to our scalability problems.   
+  var blogpost20 = `<p class="firstparagraph">Last week and this week, the out-of-control handgun problem is in the news. This leads one to believe there is a problem with the <i>definition</i> of a gun. As always. Definitions start wars and world wars--after all of last century, did anyone decide who controls the Coal of Sudetenland?? You can bet everyone there speaks two languages, still. The <i>definitional </i> answer makes the answer: This is why Blockchain technology--straddled between myriad start-ups, countless institutions and a hundred brilliant minds is The answer to our scalability problems.   
 
   </p><p>The problem is that data structures grow at differential rates, some exponential, some linear, some slower, some as a function of time or other variable.  Yet, our data analysis needs are clear: We need a new technology to handle quickly, securely and efficiently the <i>Networked, Relational Data Problem</i>, which scales exponentially with traditional data structures, like old-fashioned Excel-like Row-&amp;-Column data structures. Yet, as one would logarithmize the equation to best adapt new data, so must the computer data structure adjust accordingly. </p>
   <p>Too rigid, the world turned to relational, non-Structured Query Language (SQL) data, partially for the need to dislate <i>data objects</i> from their tables. The world needed that cell as a free-radical in order to mimic the data structure of societally-networked society.  Alas, a science already at hard work with Cambridge Analytica--again what's that field of study called again, Sociology, right? </p>
   <p>
   
   </p>`
-  blogpost19 = `<p class="firstparagraph">I mistakenly laid waste to A.I.'s reputation in my last post. It <i>did</i> let us, our whole society, let us down, and maybe the forensics will give us <i>a few excuses</i> down on the road. However, "homicide by A.I. (aka Uber)" will need to be updated in records. But, artificial intelligence is not at fault. There are a few software engineers that did the best they could--with the time their superiors gave them.  Uber leadership, let's hope, will be deterred from future carelessnes to come.   </p>
+  var blogpost19 = `<p class="firstparagraph">I mistakenly laid waste to A.I.'s reputation in my last post. It <i>did</i> let us, our whole society, let us down, and maybe the forensics will give us <i>a few excuses</i> down on the road. However, "homicide by A.I. (aka Uber)" will need to be updated in records. But, artificial intelligence is not at fault. There are a few software engineers that did the best they could--with the time their superiors gave them.  Uber leadership, let's hope, will be deterred from future carelessnes to come.   </p>
 
   <p>That diatribe said, I do appreciate an Uber's proximity when I'm stranded at 2:00 am in a bad part of town. Why? Because I don't need to plan ahead -- Uber is there! And, sadly, I don't need to read or study -- Google is there! But wait, don't judge me, I'm not lazy! That being said, I have my own soul-searching to do: TECHNOLOGY AIDS AND ABETS ME AND MY ACTIONS, but it does not run my show> Only I take responsibility for my own actions: I allow technology into my life as a tool, and yet I   hold the power cord. I take responsibility for the tech that follows me--and believe me, I need that tech. And so do you. Not only so, but the world, and the ecological fate of our <i style="color:green">green earth</i>> also depends on tech, A.I. specifically. </p>
   <p>
@@ -34,7 +34,7 @@ var bloggerMar = function () {
   <a href="https://www.theguardian.com/technology/2017/apr/07/uber-waymo-lawsuit-lidar" target="_blank">https://www.theguardian.com/technology/2017/apr/07/uber-waymo-lawsuit-lidar</a>
   </p>`
 
-  blogpost18 = `
+  var blogpost18 = `
   <p class="firstparagraph">A.I. generally, and specifically Uber's Self-Driving Tech, both have failed society this week. Although we could all debate the merits of "Lidar", i.e. laser-based vision, the primary concern, in my view, is Uber's obvious carelessness in rushing their self-driving tech.  Although six thousand (6,000 too many) pedestrians are killed in the U.S. annually, I'd only hope AI wouldn't add to the problem.<sup>2</sup> The Arizona victim was walking her bicycle when struck, and I as bike-commuter can't help but take the affair personally. </p>
   <p>This first human death is at least a <strong>big Wake-Up moment</strong> for the industry in its haste to roll out A.I. tech.  After all, Uber's questionable leadership morals<sup>2</sup> and being kicked out of San Francisco for running more than six red-lights raises eyebrows to begin with.<sup>3</sup> My problem with Uber is that the car's algorithm, with perfect Lidar vision, did not flinch or slow down for two seconds as it killed the victim. Humans flinch and humans swerve, because protecting fellow humans is in our DNA, not in A.I.'s. So, while we now know Uber's software hasn't caught up with its A.I.-Lidar hardware--let's hope we see defensive driving and some <i>TLC</i> programmed into those A.I. Algorithms!
   </p>
@@ -50,7 +50,7 @@ var bloggerMar = function () {
   </p>
   `
 
-  blogpost17 = `<p class="firstparagraph">
+  var blogpost17 = `<p class="firstparagraph">
   Universities, private or public institutions, serve as a beacon for
   <strong>the Fearless Protection and Ethical Regulation</strong> of information and data. This is because data and data research
   is innate to the university's Mission Statement, whereas business and governmental institutions are relatively new
@@ -108,7 +108,7 @@ var bloggerMar = function () {
   </p>
   `
 
-  blogpost16 = `
+  var blogpost16 = `
   <p class="firstparagraph">Today, US inserted itself into a large, deep debate about crypto-legitimacy by imposing new sanctions on Venezuela.
   In case you hadn't heard, here's a quick recap:</p>
   <p class="quote">The administration’s announcement came a few hours after Mr. Trump signed an executive order barring the use of any
@@ -137,7 +137,7 @@ var bloggerMar = function () {
   <a href="https://www.nytimes.com/2018/03/19/world/americas/trump-venezuela-sanctions-petro.html" target="_blank">https://www.nytimes.com/2018/03/19/world/americas/trump-venezuela-sanctions-petro.html</a>
   </p>
   `
-  blogpost15 = `
+  var blogpost15 = `
   <p class="firstparagraph">Iota and Ripple cryptocurrencies use different technology than traditional blockchain in order to achieve their distributed
   ledgers. Traditionally, outside "miners" validate the block's
   <i> transaction records</i> as it replicates to the next "block." For example, a transaction is validated 2 or three
@@ -202,7 +202,7 @@ var bloggerMar = function () {
   " target="_blank"> https://medium.com/@neha/cryptographic-vulnerabilities-in-iota-9a6a9ddc4367</a>
   </p>
   `
-  blogpost14 = `
+  var blogpost14 = `
   <p class="firstparagraph">Sustainability for the environment means an accelerated transition to renewables. While other nations have undertaken
   big steps toward wind and solar - even China's pollution declined in 2014 for the first time
   <sup>1</sup>. EU is now 30% renewable--from 12% in 2000 to expected 50% renewable energy by 2030
@@ -245,7 +245,7 @@ var bloggerMar = function () {
   target="_blank">https://www.bloomberg.com/news/articles/2018-02-14/next-generation-crypto-ledgers-take-the-block-out-of-blockchain</a>
   </p>
   `
-  blogpost13 = `<p class="firstparagraph">
+  var blogpost13 = `<p class="firstparagraph">
   <strong>Creators in the Digital Age</strong>, especially Musicians, have faced just a panoply of business model challenges,
   notably since the 2000s'
   <i>Napster Era</i>. And yet, this is the age-old-case of new technologies reshaping long-standing fields, especially
@@ -310,7 +310,7 @@ var bloggerMar = function () {
   </a>
   </p>
   `
-  blogpost12 = `
+  var blogpost12 = `
   <p class="firstparagraph">Today's demonstrations and walk-outs, led by America's Youth and followed by many of the education staff, has aimed
   directly at Gun-Control legislation. Yet, the message more powerfully articulated than ever by adolescent-turns-adult
   students, takes aim at something further afield. </p>
@@ -355,7 +355,7 @@ var bloggerMar = function () {
   target="_blank">http://www.ncsl.org/research/elections-and-campaigns/campaign-finance-and-the-supreme-court.aspx</a>
   </p> 
   `
-  blogpost11 = `
+  var blogpost11 = `
   <p class="firstparagraph">March 13th, 2018 marks the day that certain types of blockchain technologies, notably Bitcoin and Ethereum, face
   an existential crisis: Today, a new distributed ledger technology has been announced, which departs from the traditional
   "Proof-of-Work" (energy-intensive calculations) Blockchain technologies. This is critically important to zero carbon-footprint.
@@ -410,7 +410,7 @@ var bloggerMar = function () {
   <a href="https://blog.ethereum.org/2016/02/09/cut-and-try-building-a-dream/" target="_blank">https://blog.ethereum.org/2016/02/09/cut-and-try-building-a-dream/</a>
   </p>
   `
-  blogpost10 = `
+  var blogpost10 = `
   <p class="firstparagraph">
   Throughout the centralized-tech period of the
   <i>mobile-powered </i> Web 2.0, most Sharing transactions take place on a centralized platform that simply facilitates
@@ -433,7 +433,7 @@ var bloggerMar = function () {
   <br />
   </p>
   `
-  blogpost9 = `
+  var blogpost9 = `
   <p class="firstparagraph">Sharing can be a philosophy and even an ideology, but it is also
   <strong> a concept sewn into the Technology of the Era</strong>. Sharing economy refers to both democratized peer-to-peer
   marketplaces,
@@ -496,7 +496,7 @@ var bloggerMar = function () {
   `
 
 
-  blogpost8 = `
+  var blogpost8 = `
   <p class="firstparagraph">Alexa has made headlines about reports of unexplained laughter responses
   <sup id="0309-1">1</sup>. Information like this needs a
   <i>
@@ -528,7 +528,7 @@ var bloggerMar = function () {
   </p>
   `
 
-  blogpost7 = `
+  var blogpost7 = `
 
   <p class="quote">This is the first time in human history that we have the ability to see enough about ourselves that we can hope to
   actually build social systems that work qualitatively better than the systems we&#39;ve always had.</p>
@@ -595,13 +595,13 @@ var bloggerMar = function () {
   </p>
   `
 
-  blogpost6 = `
+  var blogpost6 = `
   <p class="firstparagraph">Washington&#39;s assertion of States&#39; Rights yesterday may augur the first of many lawsuits over control over
   bandwidth.</p>
   `
 
 
-  blogpost5 = `<p class="firstparagraph">Net Neutrality Rules, potentially one of the more important set of Individual Rights for us as citizens in the tech
+  var blogpost5 = `<p class="firstparagraph">Net Neutrality Rules, potentially one of the more important set of Individual Rights for us as citizens in the tech
   age, will soon undergo the rule changes voted by the Federal Communications Commission (FCC) this past December.
   In a nutshell, the Internet Service Providers (ISP&#39;s), e.g. Comcast, Cox, Verizon are granted the power--as
   a Title I &quot;information service&quot;--to slow down traffic, make fast- &amp; slow-lanes. Of course this is
@@ -630,7 +630,7 @@ var bloggerMar = function () {
   </p>
   `
 
-  blogpost4 = `<p class="firstparagraph">Germs present a timely topic for today, given the especially virulent
+  var blogpost4 = `<p class="firstparagraph">Germs present a timely topic for today, given the especially virulent
   <strong>Flu Virus strain</strong>. Many, like me, have wondered why our 1940&#39;s-era
   <sup>1</sup> technology in Flu Vaccine fabrication wouldn&#39;t invite more innovative solutions. Without feigning any
   medical expertise, I have to still ask about the progress made with the ever-mutating--i.e., drifting--Flu virus&#39;
@@ -714,7 +714,7 @@ var bloggerMar = function () {
   </p>
   `
 
-  blogpost3 = `
+  var blogpost3 = `
   <p class="firstparagraph">Back in 1997, a Pulitzer-Prize winning theory--based on Dr. Jared Diamond&#39;s
   <i>Guns, Germs, and Steel: The Fate of Human Societies</i> --provided the recipe book for the success of societies.
   Not without controversy, the theory posits that geographic and environmental preconditions, once met, provide tech
@@ -737,7 +737,7 @@ var bloggerMar = function () {
   <a href="http://www.jareddiamond.org/Jared_Diamond/Guns,_Germs,_and_Steel.html" target="_blank">Guns, Germs, and Steel. &quot;Steel: The Fates of Human Societies.&quot; Diamond J (1997).</a>
   </p>
   `
-  blogpost2 = `
+  var blogpost2 = `
 <p class="firstparagraph">Security, security, another day another platform risk, or risks from your device, or risks from transactions, Today&#39;s
 headline buried beneath a techy jargon provides a glimpse of the rising threat of web-application-based hackery:
 Cryptojacking.
@@ -774,7 +774,7 @@ https://www.coindesk.com/opera-browser-introduces-cryptocurrency-miner-protectio
 " target="_blank"> https://www.coindesk.com/opera-browser-introduces-cryptocurrency-miner-protection-for-smartphones/ </a>
 </p>
 `
-  blogpost1 = `
+  var blogpost1 = `
 <p class="firstparagraph">I couldn&#39;t help but revisit the
 <strong>Environmental Sustainability</strong> problem I addressed in my February 28th post. This problem, experienced by
 the top two crypto-currencies Bitcoin and Ethereum, is that the
@@ -1041,8 +1041,7 @@ https://digiconomist.net/bitcoin-energy-consumption
     document.getElementById("paragraph-mar").innerHTML += cat;
   }
 
-
-
+  var i;
   for (i=0;i<url.length;i++){ 
     var catMod = `
     <div id="${url[i].did}_mod" class="blogDivMod"> 

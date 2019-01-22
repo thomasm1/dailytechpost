@@ -4,9 +4,9 @@ console.log('blogger-july');
 
  
 
- blogpost24 = `<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka's of Technological Candy at a free tour's view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>
+ var blogpost24 = `<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka's of Technological Candy at a free tour's view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>
  <p class="quote">While Google is still looking up at Amazon Web Services and Microsoft Azure when it comes to infrastructure cloud computing, it appears to be finding the balance between keeping engineers happy with cloud-native computing tools and courting enterprise company suits with service-level agreements and steak dinners.<sup>1</sup></p>`;
- blogcite24 =   `
+ var blogcite24 =   `
  
  <p class="cite">1. <a href="https://cloud.google.com"   target="_blank">https://cloud.google.com
  </a>
@@ -14,17 +14,17 @@ console.log('blogger-july');
  </a>
  </p>`;
 
- blogpost23 = `<p class="firstparagraph">Planet Green dodged a bullet recently, as activists' climate change research officially gains legitimacy from the Supreme Court, albeit a few of their qualms ... But who could deny that if there is one thing that will save the earth, it's knowledge, knowledge far outweighs any other salvo. This is because the more data, the more accurate the models to indicate specific environmental needs and threats--<i>not to mention all the clues the data could reveal toward helping earth regain balance. </i></p><p>A.I. training would starve if the Supreme Court would have allowed administration clamp-downs on knowledge. After all, the overwhelming popular and professional opinions favor earth-friendly policies. 
+ var blogpost23 = `<p class="firstparagraph">Planet Green dodged a bullet recently, as activists' climate change research officially gains legitimacy from the Supreme Court, albeit a few of their qualms ... But who could deny that if there is one thing that will save the earth, it's knowledge, knowledge far outweighs any other salvo. This is because the more data, the more accurate the models to indicate specific environmental needs and threats--<i>not to mention all the clues the data could reveal toward helping earth regain balance. </i></p><p>A.I. training would starve if the Supreme Court would have allowed administration clamp-downs on knowledge. After all, the overwhelming popular and professional opinions favor earth-friendly policies. 
 <p class="quote">The Supreme Court on Monday denied the Trump administration’s plea to halt proceedings in a landmark lawsuit by young people seeking stronger federal action on climate change.<sup>1</sup>
 </p>`;
-blogcite23 = `<p class="footnotes">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
+var blogcite23 = `<p class="footnotes">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
 </a>
 </p>
 <p class="cite">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
 </a>
 </p>
  `;
-blogpost22 = `
+var blogpost22 = `
 <p class="quote"><i>“It feels like a magical mirror that reflects your moves with images of all kinds of human activity – from sports and dance to martial arts, acting and beyond.”</i></br></br>
 --Google creative technologist Irene Alvarado 
 </p>
@@ -32,29 +32,29 @@ blogpost22 = `
  The power of Big Data really proves itself, but Google's algorithm-sharing provides a real democracy of A.I. technology for everyone to use.  On the other side of the coin, accuracy in video and voice mimicry now means A.I.-driven authenticity detectors will soon prove pretty darn useful!
 </p>
 `
-blogcite22 = `<p class="cite"> 
+var blogcite22 = `<p class="cite"> 
 <p class="footnotes">1. <a href="https://www.standard.co.uk/tech/google-move-mirror-dancing-gif-a3892471.html"   target="_blank">https://www.standard.co.uk/tech/google-move-mirror-dancing-gif-a3892471.html
 </a>
 </p> 
 </p>`
-blogpost21 =   `<p class="firstparagraph">Wired.com ...</p>
+var blogpost21 =   `<p class="firstparagraph">Wired.com ...</p>
 <p class="quote"> 
 "But big retailers can sell millions of products, so it's not feasible to have workers browse each item and manually adjust prices. Instead, the companies employ software to scan rival websites and collect prices, a process called “scraping.” From there, the companies can adjust their own prices."<br /><br />
 "Retailers want to see what their rivals are doing, but they want to prevent rivals from snooping on them; retailers also want to protect intellectual property like product photos and descriptions, which can be scraped and reused without permission by others. So many deploy defenses to subvert scraping ..." <sup>1</sup></p>`;
-blogcite21 = ` 
+var blogcite21 = ` 
 <p class="footnotes">1. <a href="https://www.wired.com/story/scraper-bots-and-the-secret-internet-arms-race/"   target="_blank">https://www.wired.com/story/scraper-bots-and-the-secret-internet-arms-race/
 </a>
 </p>   `;
 
-  blogpost20 =  `<p class="firstparagraph">Space.com ...</p>
+  var blogpost20 =  `<p class="firstparagraph">Space.com ...</p>
   <p class="quote">"NASA's Robonaut program and Roscosmos' FEDOR program seem to share the goal of creating robots that make it safer for humans to accomplish things in space that otherwise would be too dangerous for humans to attempt.<i> Still, the FEDOR androids' gun-wielding design might raise a few eyebrows."</i><sup>1</sup></p>
   <img src="dist/img/droid.jpg" class="zoom" width="288px" />
   `;
-blogcite20 = ` 
+var blogcite20 = ` 
 <p class="footnotes">1. <a href="https://www.space.com/41253-russian-robots-fly-to-space.html"   target="_blank">https://www.space.com/41253-russian-robots-fly-to-space.html
 </p>   `;
   
-  blogpost19=
+  var blogpost19=
   `<p class="quote">
   <i> One person familiar with the matter described the office scene as “chaotic” and said at one point more than 300 people tuned in to an emergency conference call.  “Currently out of capacity for scaling,” one of the updates said about the status of Amazon’s servers, roughly an hour after Prime Day’s launch. “Looking at scavenging hardware.” <sup>1</sup></i> </p>
   <p class="firstparagraph">Prime Day's saga of cascading failures stemming from an internal software reveals the <i> relentless challenge of Scalability</i>. In their words, the root cause was a "breakdown in auto-scaling, a critical component when dealing with unexpected traffic spikes"<sup>1</sup>. So the exponential spikes may be hard to expect because their nature is both spontaneous, but the inflection is calculable! ...only dramatically represented as the folding a sheet of paper 42 times to reach the moon ...
@@ -68,7 +68,7 @@ blogcite20 = `
   </p>
   `; 
 
-  blogcite19 = ` 
+  var blogcite19 = ` 
   <p class="footnotes">Image Credit: <a href="http://wwvv.codersrevolution.com/blog/will-a-piece-of-paper-folded-42-times-reach-the-moon"   target="_blank">http://wwvv.codersrevolution.com/blog/will-a-piece-of-paper-folded-42-times-reach-the-moon
   </a>
   </p>   
@@ -76,7 +76,7 @@ blogcite20 = `
 </a>
 </p>   
  `;
-  blogpost18=
+  var blogpost18=
   `
   <p class="firstparagraph">Business models of all shapes and sizes, and the diversity of tech that comes with them, are the natural consequence of<i> unlimited <strong>creative</strong> potential in Tech. So, a small business with few resources now has unlimited resources in the cloud with game-changing access to A.I.</i> Luckily, investments in smaller tech sources cover all sectors:</p>
  
@@ -84,7 +84,7 @@ blogcite20 = `
   </p>
   <p>So, for as much as tech giants grow out of proportion, so do smaller businesses; because not only is the economic horizon  not a zero-sum tech pie, but growing. Secondly, the pace of evolving needs and tech capabilities favor smaller, more maneuvrable entrepreneur-producers.`;
   
-  blogcite18 = ` 
+  var blogcite18 = ` 
 <p class="footnotes">1. <a href="http://www.executivegov.com/2018/07/doe-to-award-rd-grant-for-innovative-tech-to-80-small-businesses/
   "   target="_blank">http://www.executivegov.com/2018/07/doe-to-award-rd-grant-for-innovative-tech-to-80-small-businesses/
   
@@ -92,7 +92,7 @@ blogcite20 = `
 </p>   
  `;
 
-  blogpost17 =
+  var blogpost17 =
   `
   <p class="firstparagraph"> Cloud computing has never offered more convenience--especially in e-commerce. Walmart ramps up online presence, Amazon's Whole Foods ramps up offline presence. More importantly, everything and all businesses in between these two vortices has the opportunity to ride the same wave of platform and supply chain integration. </p>
   <p class="quote"> 
@@ -104,7 +104,7 @@ blogcite20 = `
   As part of the partnership, Walmart and Microsoft engineers will collaborate to migrate a significant portion of walmart.com and samsclub.com to Azure, Walmart added. <sup>1</sup>
   </p>`;
   
-  blogcite17 = ` 
+  var blogcite17 = ` 
 <p class="footnotes">1. <a href="https://www.usnews.com/news/technology/articles/2018-07-17/walmart-microsoft-in-partnership-to-use-cloud-tech
   "   target="_blank">https://www.usnews.com/news/technology/articles/2018-07-17/walmart-microsoft-in-partnership-to-use-cloud-tech
   
@@ -112,7 +112,7 @@ blogcite20 = `
 </p>   
  `;
 
-  blogpost16 = `
+  var blogpost16 = `
   <p class="firstparagraph">Alibaba--a Chinese search giant akin to Google--dwarfs the market value of Amazon. So much so, that Alibaba's earnings last year don't compete with Amazon's year, <i>but  past several years</i>.<sup>1</sup> Their success isn't a haphazard event, but years of strategy that focused on integrating services, whether online or offline origins, a true supply chain no longer discriminating marketplaces, logistics, cloud computing and payments. With unlimited global reach, big gets bigger and bigger. </p>
  
   <p class="quote">  "Alibaba Cloud has always been dedicated to empower enterprises of different sizes to tap into opportunities in the digital age. With digital transformation poised to add close to $154 billion to India's GDP, this is a great opportunity for us to do business in India," Alex Li, General Manager of Alibaba Cloud Asia Pacific, said in a statement.<sup>2</sup> 
@@ -120,7 +120,7 @@ blogcite20 = `
    <p>
    Ultimately, what goes up does not necessarily come back down with cloud computing. And the further integrated systems become, the less feasible to divide, no matter which part of the globe.<sup>3</sup></p>`;
   
-  blogcite16 = `
+  var blogcite16 = `
   <p class="footnotes">1. <a href="
   https://www.lemonde.fr/idees/article/2018/07/10/comment-alibaba-va-tuer-amazon_5329170_3232.html"   target="_blank">https://www.lemonde.fr/idees/article/2018/07/10/comment-alibaba-va-tuer-amazon_5329170_3232.html
   </a>
@@ -133,7 +133,7 @@ blogcite20 = `
   </p>    
  `;
 
-  blogpost15 = `
+  var blogpost15 = `
   <p class="firstparagraph">Ethereum Architect Vitalik Buterin's unwavering commitment to the Crypto-contract currency finally pays off. In my February blogposts, I recounted the technical challenges that Ethereum still faced: As a "Proof of Work" currency that requires Ether (in <i>Wei</i>) currency for each transaction hindered more widespread adoption. After the big boost from last month's Switzerland's Crypto Valley Conference, Ethereum walked away handily with scores of investors and renewed momentum. The 23-year old hero of the platform almost appears precocious for the recent feature in Fortune Magazine's Top 40 Under 40.</p>
   <p class="quote">
   [Buterin's] visionary project has rocketed to a market cap of nearly $30 billion—as high as the private valuations Airbnb and Snapchat achieved—from $1 billion a year ago, when Fortune first placed him on its 40 under 40 list.<sup>2</sup>
@@ -142,7 +142,7 @@ blogcite20 = `
   </p>
   `;
 
-  blogcite15 = `<p class="footnotes">1. <a href="
+  var blogcite15 = `<p class="footnotes">1. <a href="
 https://www.cnbc.com/2018/07/18/ethereum-is-a-leading-driver-in-blockchain-says-circle-ceo.html
 "   target="_blank">
 https://www.cnbc.com/2018/07/18/ethereum-is-a-leading-driver-in-blockchain-says-circle-ceo.html
@@ -154,12 +154,12 @@ http://fortune.com/40-under-40/vitalik-buterin-10/"   target="_blank">http://for
 </p>   
  `;
  
-  blogpost14 = `
+  var blogpost14 = `
  <p class="firstparagraph">Prime's Allure begins with the greatest deals, the most convenient deliveries, and a new Accessibility of Whole Foods Breads, Pastries, and HoneyCrisp Apples to every citizen!</p>
  <p>On a darker note, many articles and studies focus on the vendors' side of the Amazon effect, i.e. the push to remote shopping;<sup>1</sup> But the consumer side of the Amazon effect is more insidious: the sheer off-scale underpricing of goods, mock holidays, and shopping-memberships push new spending habits. <i>The more convenient shopping with 'one-click buy' becomes, the 'less convenient' becomes the explorative, exciting-/debate-filled shopping experiences that reward the Creative Entrepreneurs'</i> cultural interaction with consumers  
 
 `;
-  blogcite14 = `
+  var blogcite14 = `
 <p class="footnotes">1. <a href="
 https://www.statista.com/chart/10295/shopping-on-amazon/
 "   target="_blank">
@@ -167,7 +167,7 @@ https://www.statista.com/chart/10295/shopping-on-amazon/
 </a>
 </p>   
 `;
-  blogpost13 = `
+  var blogpost13 = `
   <p class="firstparagraph"> Now that 49% of American e-commerce passes through Amazon's gates, it's official: <i>50% market share signifies a hostile take-over of Amerian Culture.</i> From the remaining half of the Online Shopping pie goes to  the next top nine, 22%: 
  </p>
  <p class="quote">
@@ -185,7 +185,7 @@ https://www.statista.com/chart/10295/shopping-on-amazon/
   <p>These are more palatable organizations, without Amazon's cardboard-like culture.  There you still have the lofty, beautify Apple products, and who doesn't love the umbrella-cane only available on QVC limited quantities do apply!</p>
   <p>
   Of course, the remaining free birds, the 32% comprise the millions of home-office,brick-and-mortars, and online market entrepreneurs. (These do not include the independent vendor sales using Amazon's Marketplace). </p><p>So why does this 32-percentile slice of e-commerce represent the last stand of American Culture? The Creative Spirit may survive, even thrive; but it changes, and <i> creative verve takes on a reshaped form and a new pace, fitting to bureaucratic constraints and pricing schema. </p>   `;
-  blogcite13 = `
+  var blogcite13 = `
   <p class="footnotes">1. <a href="
   http://www.businessinsider.com/amazon-is-closing-in-on-owning-half-of-the-e-commerce-market-2018-7?utm_source=feedburner&amp%3Butm_medium=referral&utm_medium=feed&utm_campaign=Feed%3A+businessinsider%2Ftravel+%28Business+Insider%29&r=US&IR=T&IR=T
   "   target="_blank">
@@ -194,7 +194,7 @@ https://www.statista.com/chart/10295/shopping-on-amazon/
   </p>     
 
   `;
-  blogpost12 = `
+  var blogpost12 = `
   
   <p class="firstparagraph">Fintech's revered "Crypto Valley Conference on Blockchain Technology" in Zug, Switzerland, featured blockchain expertise from all corners, including Keynote Speakers, Stefan Thomas CTO of Ripple [cryptocurrency] and Professor Emin G&uuml;n Sirer of Cornell University, along with Economists and Swiss Government officials. World-class economists, investors, and Regulation authorities aside, the host-countries whole-hearted commitment to cryptocurrency is evident: </p>
   <p class="quote">“They want Switzerland to be the place to make it happen — but they don’t want to be seen
@@ -208,7 +208,7 @@ https://www.statista.com/chart/10295/shopping-on-amazon/
   <img src="dist/img/swissBlockchain.png" width="350" class="zoom" />
   <p><small>Image Credit: Source Lykke, Coindesk</small></p>
 `;
-  blogcite12 = `<p class="footnotes">3. <a href="
+  var blogcite12 = `<p class="footnotes">3. <a href="
   https://www.cryptovalleyconference.com
   "   target="_blank">
   
@@ -223,25 +223,25 @@ https://www.statista.com/chart/10295/shopping-on-amazon/
   </a>
   </p>
 `;
-  blogpost11 = `
+  var blogpost11 = `
   <p class="firstparagraph"><i>Zen of Python: "Beautiful is better than ugly.<i> Explicit is better than implicit.</i>  Simple is better than complex.  Complex is better than complicated. Flat is better than nested.  Sparse is better than dense"<br /></i> -- Pythoneer Tim Peters<p> In my April 19th post, I recount Python's near-mystical author and leader of language's development up to this month's retirement:  About Guido van Rossum, </p>
   <p class="quote">After almost 30 years of overseeing the development of the world's<i> most popular language, Python, its founder and Benevolent Dictator For Life" (BDFL), Guido van Rossum,</i> has decided he would like to remove myself entirely from the decision process.<sup>2</sup> </p><p>
 Python is NASA's drug-of-choice because of the language's superior handling of precision mathematics, and yet the syntax and module libraries makes the language easy for anyone to pick up. Few could argue against Guido van Rossum's reductionist philosophy that inspires the clear, expansive structure. So, farewell to the great Guido van Rossum's official leadership and Thank You! 
 </p>
 `;
-  blogcite11 = ` <p class="footnotes"><a>1. Tim Peters <p class="footnotes">2. <a href="https://www.zdnet.com/article/python-language-founder-steps-down/  "   target="_blank">
+  var blogcite11 = ` <p class="footnotes"><a>1. Tim Peters <p class="footnotes">2. <a href="https://www.zdnet.com/article/python-language-founder-steps-down/  "   target="_blank">
   https://www.zdnet.com/article/python-language-founder-steps-down/ </a>
   </p>
 
 `;
-  blogpost10 = `<p class="quote">
+  var blogpost10 = `<p class="quote">
 ...The colossal shift in the chip world came with the advent of artificial intelligence (AI) and machine learning (ML). With these emerging technologies, a flood of new processors has arrived—and they are coming from unlikely sources. <br /><br />
 Microsoft is preparing an AI chip for its HoloLens VR/AR headset, and there’s potential for use in other devices. 
 <i> Google has a special AI chip for neural networks called the Tensor Processing Unit, or TPU, which is available for AI apps on the Google Cloud Platform. </i>Apple is working on an AI processor called the Neural Engine that will power Siri and FaceID.  <sup>1</sup></p>
 <p class="firstparagraph">All ... All the A.I. Tools a busy bee could ask for!
 </p>
  `;
-  blogcite10 = `
+  var blogcite10 = `
 <p class="footnotes">1. <a href="
 https://arstechnica.com/gadgets/2018/07/the-ai-revolution-has-spawned-a-new-chips-arms-race/
 "   target="_blank">
@@ -250,9 +250,9 @@ https://arstechnica.com/gadgets/2018/07/the-ai-revolution-has-spawned-a-new-chip
 </p>     
 `;
 
-  blogpost9 = ` 
+  var blogpost9 = ` 
 <p class="firstparagraph">Moore's Law--a function of transistor count--has guided CPU bench-mark expectations along a fairly linear path year-by-year. However, computing requirements have multiplied while the mathematical relevence of the law wanes. <br /><br />
-<img src="dist/img/moores_law.png" width="400px" class="zoom" title="Moore's Law Graphic" /><br />Image Credit: ourworldindata.org <br /><br /> <i>Enter the Decision Tree, the Random Forest, Na&iuml;ve Bayes, and K-Nearest Neighbors</i>: The machine learning tools and theoretical building blocks to get more bang for the buck from all that computing power. How? <i> Teaching software to teach itself, which is the pathway out of computing-power deficits and the move from theoretical to practical</i> ...</p> 
+<img src="dist/img/moores_law.jpg" width="400px" class="zoom" title="Moore's Law Graphic" /><br />Image Credit: ourworldindata.org <br /><br /> <i>Enter the Decision Tree, the Random Forest, Na&iuml;ve Bayes, and K-Nearest Neighbors</i>: The machine learning tools and theoretical building blocks to get more bang for the buck from all that computing power. How? <i> Teaching software to teach itself, which is the pathway out of computing-power deficits and the move from theoretical to practical</i> ...</p> 
 <p class="quote">
 Every technology follows a similar path of diszcovery, engineering, and transformation. In the case of electricity, Faraday uncovered new principles, but no one really knew how to make them useful. They first had to be understood well enough that people such as Edison, Westinghouse, and Tesla could figure out how to make things that people would be willing to buy.
  
@@ -260,14 +260,14 @@ Every technology follows a similar path of diszcovery, engineering, and transfor
 <sup>2</sup></p>
 <p>As the saying goes, <i>One crowded hour of glorious life is worth an age without a name.</i><sup>3</sup> And now the tide is high for Tech to venture out into the world and make a name for herself!
 `;
-  blogcite9 = `<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
+  var blogcite9 = `<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
 </p>
 <p class="footnotes">2. <a href="https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era"   target="_blank">https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era</a>
 </p>
 
 <p class="footnotes">3. Thomas Osbert Mordaunt`
 
-  blogpost8 = `<p class="firstparagraph">Advances in computer science and data research follow the path of the tools that pave a developer's path: The tools make the worker, and therefore the work. For example, any of the Industrial Revolutions leaped forward with every new tool. <i>Now, Artificial Intelligence research and design  lurches forward by the tooling, but in a new fashion: Open source tools owned and operated by the community, the work by and for any community.</i>
+  var blogpost8 = `<p class="firstparagraph">Advances in computer science and data research follow the path of the tools that pave a developer's path: The tools make the worker, and therefore the work. For example, any of the Industrial Revolutions leaped forward with every new tool. <i>Now, Artificial Intelligence research and design  lurches forward by the tooling, but in a new fashion: Open source tools owned and operated by the community, the work by and for any community.</i>
 </p>
 <p> Neural network tools like TensorFlow.js, a "JavaScript library for training and deploying Machine Learning models in the browser and on Node.js" <sup>1</sup>  along with other programming-library frameworks, abstract away a layer of the visible mechanics. On the one hand, it is the democratization of cutting-edge technology, formerly siloed apart and under government, corporate or university controls. </p>
 <p>
@@ -275,11 +275,11 @@ The genie is definitely out of the bottle, yet he or she is now at the keyboards
 <p>Therefore,  bootstrapping open-source projects brings the community to the forefront of technological innovation! Though the common mobile app has grown familiar for changing landscapes, those apps chiefly leverage the social network (links) of friends and professionals; while the common-use spread of machine-learning research provides leverage to the actual work (nodes) of progress</p>
 <p>Therefore, the tools provide one dimension of A.I.'s path, while the democratized distribution of tools across social networks provides a second dimensional path. This alters the A.I. evolution in the long-term, by means of short-term and frequent tooling revolutions.   </p>
 `;
-  blogcite8 = `
+  var blogcite8 = `
 <p class="footnotes">1. <a href=" https://js.tensorflow.org/"   target="_blank"> https://js.tensorflow.org/</a>
 </p>   
 `;
-  blogpost7 = `
+  var blogpost7 = `
 <p class="firstparagraph">Panic and anxiety cover the Snapchat countries across far-flung locales from Latvia to Denver to Spain--</i>and in one case blighting the entire island of the United Kingdom...</i></p>
 <p class="quote">Some users went to Twitter and shared their frustration.
 "I've been sending people abuse on snapchat for not replying to me only to discover its down. Oops?" one user tweeted.<br /><br />
@@ -296,7 +296,7 @@ Snapchat recently confirmed that it is testing six-second long ads in Shows on i
 
 This development has been coming for some time as Snapchat looks to placate advertisers who have grown frustrated by users who, on average, only stay on an ad for two seconds before skipping.</p> 
 <p>Every kind of Server malfunction pales in comparison to the Affordable Healthcare Act web-app's abysmal first few months.<i> Get Well Soon, Snapchat--you're breaking our heart!</i></p>`;
-  blogcite7 = `
+  var blogcite7 = `
 <p class="footnotes">1. <a href=" https://www.independent.co.uk/life-style/gadgets-and-tech/snapchat-down-not-working-android-broken-message-snap-inc-help-a8443236.html"   target="_blank"> https://www.independent.co.uk/life-style/gadgets-and-tech/snapchat-down-not-working-android-broken-message-snap-inc-help-a8443236.html</a>
 </p>    
 
@@ -304,7 +304,7 @@ This development has been coming for some time as Snapchat looks to placate adve
 </p>    
 <p class="footnotes">3. <a href="https://outage.report/snapchat" target="_blank">https://outage.report/snapchat</a></p>
  `;
-  blogpost6 = `
+  var blogpost6 = `
  <p class="quote"><sup>0</sup><strong><small>
  The term “extropy,” coined in 1967, is generally used to describe life’s capacity to reverse the spread of entropy across space and time. </small></strong><sup>1</sup>
  </p>
@@ -320,7 +320,7 @@ This development has been coming for some time as Snapchat looks to placate adve
  <sup>1</sup></p>
  <p>At the end of the day, we can ask "are we there yet?" over again, but a more pointed query asks not about time, but about place: "It may be highly unpredictable where a traveller will be one hour after the start of her journey, yet predictable that after five hours she will be at her destination.”
  `;
-  blogcite6 = `
+  var blogcite6 = `
  
 <p class="footnotes">1. <a href=" https://www.newyorker.com/magazine/2015/11/23/doomsday-invention-artificial-intelligence-nick-bostrom"   target="_blank"> https://www.newyorker.com/magazine/2015/11/23/doomsday-invention-artificial-intelligence-nick-bostrom</a>
 </p>    
@@ -328,7 +328,7 @@ This development has been coming for some time as Snapchat looks to placate adve
 </p>  
 
  `;
-  blogpost5 = `
+  var blogpost5 = `
  <p class="firstparagraph">It turns out that data is unevenly distributed between sectors, leading to monopoles of dominance: After all, who controls the data, controls the commanding heights. And yet, the very substance of Big Data derives from and belongs precisely to  individuals, aggregated, that checked "Agree" to a given app's Privacy Policy, from a given Internet Service Provider, using a given Browser ....</p>
  <p>Now that physical products lose relative value for many reasons (not to mention easy downloads for 3-D printing), and alternately<i> informational data products gain value in the digital economy: hence the problem of allocating the value of personal data back to the person </i>... To this, the Canadian A.I. Mafia chimes in:</p>
   <p class="quote">A persistent challenge for Element is the dearth of good data. The simplest way to train A.I. models is to feed them lots of well-labeled examples—thousands of cat images, or translated texts. Big Tech has access to so much consumer-oriented data that it’s all but impossible for anyone else to compete at building large-scale consumer products. But businesses, governments, and other institutions own huge amounts of private information. Even if a corporation uses Google for email, or Amazon for cloud computing, it doesn’t typically let those vendors access its internal databases about equipment malfunctions, or sales trends, or processing times. <br />
@@ -338,14 +338,14 @@ This development has been coming for some time as Snapchat looks to placate adve
 `;
 
 
-  blogcite5 = `
+  var blogcite5 = `
 
 <p class="footnotes">1. <a href="http://fortune.com/longform/element-ai-startup-tech/"   target="_blank">http://fortune.com/longform/element-ai-startup-tech/</a>
 </p>    
 
 `;
 
-  blogpost4 = ` 
+  var blogpost4 = ` 
   <p class="quote">In the Modern Field of Artiificial Intelligence, all roads seem to lead to three researchers with ties to Canadian universities. The first, Geoffrey Hinton, a 70-year-old Brit who teaches at the University of Toronto, pioneered the subfield called deep learning that has become synonymous with A.I. The second, a 57-year-old Frenchman named Yann LeCun, worked in Hinton’s lab in the 1980s and now teaches at New York University. The third, 54-year-old Yoshua Bengio, was born in Paris, raised in Montreal, and now teaches at the University of Montreal. The three men are close friends and collaborators, so much so that people in the A.I. community call them the Canadian Mafia.<sup>1.</sup></p>
 
   <p class="firstparagraph">A curious path of punctuated advancement due to insufficient memory and cpu power, characterized late 20th century A.I. development: Deep Learning development   lulls interrupted by rapid growth with each successive technological period.
@@ -371,7 +371,7 @@ Then came the GPU with Alex Khreshinski's famous image-recognition competition-w
   `;
 
 
-  blogcite4 = `
+  var blogcite4 = `
 
 
   <p class="footnotes">1. <a href="http://fortune.com/longform/element-ai-startup-tech/"   target="_blank">http://fortune.com/longform/element-ai-startup-tech/</a>
@@ -382,7 +382,7 @@ Then came the GPU with Alex Khreshinski's famous image-recognition competition-w
 
   `;
 
-  blogpost3 = ` 
+  var blogpost3 = ` 
   <p class="firstparagraph">Already A.I. has shown its true colors as an ideal tool for solving disproportionately large, complex data problems: Similar to Watson's medical recommendations based on millions of pages read, the off-the scale amount of pages from every tech company is the item of interest. This is the flurry-to-snowstorm of Privacy Policies simultaneously released in response to the E.U.'s May 25th General Data Protection Regulations.  In reference to my June 30th post on A.I. workplace solutions, months of busy-reading-work all distilled to a fraction of the time to analyze those policies. Guess what? The rule-breaking is well under way!</p>
   <p class="quote">Researchers from the European Union Institute in Florence worked with an EU consumer organization to create the software. They then used the program to examine the privacy policies of 14 major technology businesses, including by Alphabet Inc., Amazon.com Inc., and Facebook Inc.<br /><br />
  
@@ -391,13 +391,13 @@ Then came the GPU with Alex Khreshinski's famous image-recognition competition-w
   <p>Aha! <i>The practices of Tech companies' use of A.I. to analyze customers' private data is well-known, but <strong>what do we actually know</strong> beyond just that? Behind the veil of commercial secret, much less is known than is led on ... until now. Now, A.I. becomes increasingly useful as a tattle-tale! </i> So by the same token that tech creates problems, Tech is the first to provide a solution. But A.I. rule-checking sounds good but raises another question: Who owns, or can access by alternate means, the personal data we have strewn across the internet? And what quality of data does each party have, or shares?  </p>
   `;
 
-  blogcite3 = `
+  var blogcite3 = `
   
 <p class="footnotes">1. <a href="https://www.bloomberg.com/news/articles/2018-07-04/new-ai-tips-off-regulators-to-possible-eu-data-privacy-faults"   target="_blank">https://www.bloomberg.com/news/articles/2018-07-04/new-ai-tips-off-regulators-to-possible-eu-data-privacy-faults</a>
 </p>    
   `;
 
-  blogpost2 =
+  var blogpost2 =
     `
 <p class="quote"><i>Power is “various forms of domination and subordination and the asymmetrical balance of forces which operate whenever and wherever social relations exist.”  </i><sup>1</sup><br /><br />--Michel Foucault</p>
 <p class="firstparagraph">Ties and balances of power, at their fundamental core are constantly changing variations of symmetry between two agents, whether unilateral or bilateral: Two nodes interlinked. Magnified by overlapping networks and layers of relations, it's easy to see why long-standing institutions are interlocked, for better or worse ... Clearly the trend of turbulence and power grabs reaches far and wide:
@@ -410,7 +410,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 <p>And so, two humans devise a new means to exchange without disruption--an indestructable scaffolding firmly set in the foreground from today's creaking and swaying institutions. Sounds good, but where's the music? There seems to be a subtle interlude between the honeymoon stage of investing and inventing new currencies, and little in the way of micro-transactions and <i> the actual <strong>using</strong> it</i>. It takes a little trust to make trust, so the effort is on to make a bridge from the <i>early adopters</i> stage to <i>mainstream adoption</i>...<sup>3</sup>  
 </p>
 `;
-  blogcite2 =
+  var blogcite2 =
     `
 <p class="footnotes">2. <a href="https://books.google.com/books?id=6rfP0H5TSmYC&printsec=frontcover"   target="_blank">Foucault, Michel. Discipline and punish: The birth of the prison. Vintage, 2012.</a>
 </p>   
@@ -421,13 +421,13 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
 
 `;
 
-  blogpost1 = 
+  var blogpost1 = 
     `
   <p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
 </p>
 `;
 
-  blogcite1 = `<p class="footnotes">1. <a href="https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632"   target="_blank">https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632</a>
+  var blogcite1 = `<p class="footnotes">1. <a href="https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632"   target="_blank">https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632</a>
 </p> 
 `;
   var url =  [   
@@ -693,6 +693,7 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
     document.getElementById("paragraph-july").innerHTML += cat;
   }
 
+  var i;
   for (i = 0; i < url.length; i++) {
     var catMod = `
   <div id="mod_${url[i].did}" class="blogDivMod"> 

@@ -1,43 +1,142 @@
-// 'use strict';
+// 'use strict';  
 
-var bloggerDec = function () { 
-   
-  var blogpost161 =   ` 
-  <p class="firstparagraph">
+var bloggerDec = function () {   
+  
+  var blogpost167 = `<p class="quote">Ouch. 
   </p>
-  <p class="quote">
- 
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite167 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+  var blogpost166 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite166 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+  var blogpost165 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite165 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+  var blogpost164 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite164 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+    var blogpost163 =   ` <p class="quote"> Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. 
+    And the “offline” world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news 
+    <sup>1</sup> ...<br /><br />--NYT Op-Ed
+    </p>
+  <p class="firstparagraph">Technology is too often the scapegoat for problems with ... <i>(our) habits. Whether its <i>screen</i> time, selfie-addiction or mental dependance, it's never us as a society. I argue interactive tech saved a world of passive Movie & TV watching, passive reading ... leaving only the <i>professionals</i> to film, record music, publish and actively pursue leisure. Now, everybody with a telephone <i>can do</i> anything.</p>
+  <p>Technology has expanded average knowledge breadth <i>and</i> depth far more than it has undercut our potential. 25 years ago, specialized knowedge required a library. Besides the perseverence to get there. </p><p>If 18th century Berlin invented compulsory secondary schooling, thereby raising literacy from 10% to 70$ in one generation; Similarly, if 19th century Paris invented compulsory secondary schooling and revolutionalized learning as a national force, and John Hopkins the first <i>modern</i> university template for mass Higher-Ed; Then, by de Facto means, Silicon Valley has provided meta-knowledge that comprises a far more important knowledge: Tying unlimited knowledge to our most <i>social</i> device: el telefono. Thus, between the Wikipadia tile and the Twitter tile, one generation catapults over all previous generations--at least in terms of YouTube know-how and social awareness. Armies of bureaucrats and educators could not have achieved one-tenth! Thank you, California, for auguring such great potential for our age. </p><p>One NYT op-ed writer encapsulates the less optimistic view of online life--a life viewed as 'captive to technology'.
+  </p>
+  <p class="quote">  Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. 
+  And the “offline” world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news ...
 <sup>1</sup>
   </p>
-  <p> `; 
+  `; 
+  
+  var blogcite163 = ` 
+  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html">
+  https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html</a></p>  
+  
+  `; 
+    var blogpost162 =   ` 
+  <p class="firstparagraph">Software, Hardware, and by logical conclusion ...<i> Kitchenware!</i>
+  </p>
+  <p class="quote">The kitchen of the future is here, and it’s one that no one asked for. CES 2019, this year’s iteration of the annual Consumer Electronics Show, just opened in Las Vegas, and as per usual, the gadgets unveiled so far reveal a unique perspective on the everyday lifestyle problems that consumers apparently want solved. The problems? Too much privacy in kitchens! And not enough things that can be solved by app!  <br />
+  <br />
+  As Rose Elveth wrote for Eater in 2015, “Engineers... operate on the premise that people don’t know what they need until it’s built for them... the result is an array of potential futures that are strangely both unaware of the culture from which they spring, and at the same time constrained by it. The kitchen of the future is a one-size-fits all, ahistorical, acultural room, one that serves no one well.” 
+<sup>1</sup>
+  </p>
+  `; 
+  
+  var blogcite162 = `
+  <p class="cite">1<a target="_blank" href="https://www.eater.com/2019/1/8/18173843/ces-2019-kitchen-tech-ge-samsung-whirlpool">
+  https://www.eater.com/2019/1/8/18173843/ces-2019-kitchen-tech-ge-samsung-whirlpool</a></p>  
+  
+  `;
+
+  
+  var blogpost1600 =   ` 
+  <p class="firstparagraph">CES 2019 offered the range of IoT gadgety that even Philosophy has been virtualized into LED-embedded wood! 
+  </p>
+  <p class="quote">What does it mean that one of my favorite demos at CES 2019 — the world’s foremost technology show — was a block of wood? Maybe that I’ve been spending too much time in my garage with a table saw. Maybe that we’re collectively suffering from a bad case of screen fatigue. Maybe both. But if the crowd surrounding Mui is any indication, I’m not the only one smitten with the Kyoto-based company’s head-smackingly simple approach to technology.
+<sup>1</sup>
+  </p>
+  `; 
+  
+  var blogcite1600 = `
+  <p class="cite">1<a target="_blank" href="https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/       ">https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/</a></p>  
+  
+  `;
+  
+  var blogpost161 =   ` 
+  <p class="firstparagraph">Relentless criticisms hurled at the Tech Greats like Facebook can't really explain a lot of the connivery in the 21st century world. So, the label of a Silicon-Valley culture that espouses teamwork can't be blamed: It's the nature of Software Engineers to develop gargantuanly complex programmed products, that dissent and critical thinking have much less place than most jobs. This article is laughable, but may bear a hint of truth ... 
+  </p>
+  <p class="quote">The episode speaks to an atmosphere at Facebook in which employees feel pressure to place the company above all else in their lives, fall in line with their manager’s orders and force cordiality with their colleagues so they can advance. Several former employees likened the culture to a “cult.”
+<br /><br />
+This culture has contributed to the company’s well-publicized wave of scandals over the last two years, such as governments spreading misinformation to try to influence elections and the misuse of private user data, according to many people who worked there during this period. They say Facebook might have have caught some of these problems sooner if employees were encouraged to deliver honest feedback.  
+<sup>1</sup>
+  </p>
+  `; 
   
   var blogcite161 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  <p class="cite">1<a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>  
+  
   `;
-  var blogpost160 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
+  var blogpost160 =   `<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. 
+The precise nature and origin of the blasts of radio waves is unknown. 
+Among the 13 fast radio bursts, known as FRBs, was a very unusual repeating signal, coming from the same source about 1.5 billion light years away. 
+Such an event has only been reported once before, by a different telescope. 
+"Knowing that there is another suggests that there could be more out there," said Ingrid Stairs, an astrophysicist from the University of British Columbia (UBC).
  
-<sup>1</sup>
+<sup>1</sup></p>
+  <p class="firstparagraph">Morse code across the Galaxies - what a concept! 
   </p>
-  <p> `; 
+  <img src="dist/img/gettyimages-831502910.jpg" width="350" class="zoom" /><hr width="200"/>
+
+  <span style="float:right;">GETTY IMAGES</span>
+ `; 
   
   var blogcite160= `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  <p class="cite">1<a target="_blank" href="https://www.bbc.com/news/science-environment-46811618">https://www.bbc.com/news/science-environment-46811618</a></p>  
   `;
   var blogpost159 =   ` 
-  <p class="firstparagraph">
+  <p class="firstparagraph">Interviewer Bots would certainly probe the depths of any job candidate's answers, digital record, etc. In fact, using predictive analytics, it is likely that bots would undoubtedly shed light about an unseen facet of reality: <i>Everyday and every-year patterns of behavior</i>, however unnoticed by oneself or anyone else. Big Data notices ...
   </p>
-  <p class="quote">
- 
+  <p class="quote">However, at places like EY, which plans to hire approximately 15,700 workers in the U.S. in the coming year, some 1,300 bots focused on recruiting efforts are likely going to be part of the candidates’ interview experience.
+</p><p>So, are interview bots humane? How much can we as a society <i>off-load</i> our own perceptions, vibes and even that familiar or professional hunch in decision-making?<br /><br />
+
+Eyal Grayevsky, CEO and cofounder of Mya Systems says that in 2019 the divide between intelligent, conversational recruiting bots and basic chatbots that follow simple decision trees will become a chasm. “Job search candidates will gravitate toward conversational bots,” he explains, “because of their ability to respond more knowledgeably and naturally, to anticipate candidate needs, and to learn and adapt to candidate preferences over time.”
 <sup>1</sup>
   </p>
-  <p> `; 
+  <p>Unfathomably complex A.I. algorithms to decode the job candidate's algorith ...that's a new one,  but can you trust in a computer's over-analytic mind when all you need is a bit of human touch?
+  `; 
   
   var blogcite159 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019">https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019</a></p>  
   `;
+  /*
   var blogpost158 =   ` 
   <p class="firstparagraph">
   </p>
@@ -50,18 +149,21 @@ var bloggerDec = function () {
   var blogcite158 = `
   <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
   `;
+  */   
   var blogpost157 =   ` 
-  <p class="firstparagraph">
+  <p class="firstparagraph">When it comes to linear tasks, human productivity surpasses all bounds, yet the exponential tasks, must be reformulated through logging. This transformed-reality used to be confined to the buttons of a calculator, but these days ...we have enough data to exponentially analyze and understand our shared reality:  The numbers underneath our perceptions. Now, about Officer McClane's adventures ...</p><p> 
   </p>
   <p class="quote">
- 
+ The final result: Is Die Hard a Christmas movie?
+After taking this long journey with me, I’m sure you can appreciate the complexity involved in answering a seemingly simple question. We’ve had to consider what is a movie, who is asking the question (plus who is answering it) and how the perception of movies change over time. The neatest summary I can provide is to say that there are many Christmas elements in the movie. Although the studio did not intend it to be a Christmas movie, some of the film’s key creators did. Either way, it’s certainly fair to say that Die Hard is regarded as a Christmas movie in popular culture. Like it or not, the association between Die Hard and Christmas is fast increasing and in years to come its Christmassyness will be beyond question. Future generations will read in wonder that Die Hard was ever thought not to be a Christmas movie and articles such as the one you’re reading now will be seen as nothing but a massive waste of everyone’s time. Imagine that!
 <sup>1</sup>
   </p>
-  <p> `; 
+  <p> ... as seen through the holographic prism of Data Analytics. </p> `; 
   
   var blogcite157= `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  <p class="cite">1<a target="_blank" href="https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/">https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/</a></p>  
   `;
+
   var blogpost156 =   ` 
   <p class="firstparagraph"><i>Public Access to Quantum Computing ... makes a quaint Christmas-Hannukah-Festivus Present for all  </i>
   </p>
@@ -254,18 +356,24 @@ var bloggerDec = function () {
   var blogcite142 = `
  <p class="cite">1<a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
   `;  
+  */
  var blogpost141 =   `
  
-  <p class="firstparagraph">   
+  <p class="firstparagraph">
+  Computers don't know lines of text to understand the words. Just the conditions and behavior of a certain combination of letters - and the computer does not <i>know</i>0, 1, and 2.  ..It knows the difference between 0 and 1 with respect to 2 ... <br /><br />
+   The subject of trust is not the Tech Sector's best light -- as it can be fairly said to flaunt irresponsibility--<i>to move fast and break things</i>. This has been benign so far except for a few credit card and Scarlett Johannsen's leaked selfies ... nothing Earth-shattering.  A.I. on the other hand, can't be leashed in an Open Source era, so here we are - 'the best offense is a good defense' theory. </p><p>
+   Moral, social, and most of all technical forms of deterrance and plethora. As Elon Musk once said, "We don't want autonomous weapons. The moment that one is walking down the street, <i> it's too late</i>.   
   </p>
-  <p class="quote"> 
+  <p class="quote"> The prime mover behind the film is Stuart Russell, a professor of computer science at the University of California, Berkeley. Here, Russell checks in with the Bulletin to explain how the film was made, how little stands between us and the drone apocalypse, and what the prospects are for banning autonomous weapons before they get truly out of hand.
 <sup>1</sup>
-  </p>`;
+  </p>
+  <p>This, not to mention the principle that whoever winds up harnessing A.I. will control the globe--whether socially, nationally, and finance. The solution to resolve this? With all of society involved in the sway of tech decision-making, then a society of people rules the globe, not the technology of one group ...the way it should be ...</p>
+  <p>Programmers need to take care of not only the problem-at-hand but the larger outcome. For example, the stock 'Flash-Crash of 2010' produced a sudden drop--initiated unintentionally by a computer program... Let's start complementing faster engines with better brakes! `;
   
   var blogcite141 = `
-  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/12/internal-emails-show-facebooks-focus-on-self-preservation.html">http://nymag.com/intelligencer/2018/12/internal-emails-show-facebooks-focus-on-self-preservation.html</a></p>  
+  <p class="cite">1<a target="_blank" href="https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/">https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/</a></p>  
   `; 
- 
+ /*
   var blogpost140 =   `
  
   <p class="firstparagraph">  The banality of non-tech jobs is not the reason, rather the humanity of the screen's person-to-machine screen-work can hardly simulate person-to-person industries
@@ -306,25 +414,94 @@ var bloggerDec = function () {
 
  
 
-      var url = [
-        /*
+      var url = [  
+        {
+     id: '167',
+     did: '01-15-19',
+     date: 'January 15, 2019',
+     author: 'by Thomas Maestas',
+     cat3: 'Web Dev Affairs',
+     title: ' ',
+     post: blogpost167,
+     blogcite: blogcite167 
+   }, 
+        {
+     id: '166',
+     did: '01-14-19',
+     date: 'January 14, 2019',
+     author: 'by Thomas Maestas',
+     cat3: 'Web Dev Affairs',
+     title: ' ',
+     post: blogpost166,
+     blogcite: blogcite166 
+   }, 
+        {
+     id: '165',
+     did: '01-13-19',
+     date: 'January 13, 2019',
+     author: 'by Thomas Maestas',
+     cat3: 'Web Dev Affairs',
+     title: ' ',
+     post: blogpost165,
+     blogcite: blogcite165 
+   }, 
+        {
+     id: '164',
+     did: '01-12-19',
+     date: 'January 12, 2019',
+     author: 'by Thomas Maestas',
+     cat3: 'Web Dev Affairs',
+     title: ' ',
+     post: blogpost164,
+     blogcite: blogcite164 
+   }, 
+             {
+          id: '163',
+          did: '01-11-19',
+          date: 'January 11, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'It\'s not Fair Scapegoating Tech for *Our* Bad Habits',
+          post: blogpost163,
+          blogcite: blogcite163 
+        } ,
+          {
+          id: '162',
+          did: '01-10-19',
+          date: 'January 10, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Over the Edge with Gadgetry: CES 2019',
+          post: blogpost162,
+          blogcite: blogcite162 
+        },
+        {
+          id: '1600',
+          did: '01-09-19',
+          date: 'January 9, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'That\'s One Smart Block of Wood!...or a Raspberri Pi',
+          post: blogpost1600,
+          blogcite: blogcite1600 
+        },
         {
           id: '161',
-          did: '12-28-18',
-          date: 'December 28, 2018 ',
+          did: '01-08-19',
+          date: 'January 8, 2019',
           author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
+          cat3: 'Sociology Tomorrow!',
+          title: 'What\'s Wrong with a little Esprit de Corps?',
           post: blogpost161,
           blogcite: blogcite161 
         },
         {
           id: '160',
-          did: '12-27-18',
-          date: 'December 27, 2018 ',
+          did: '01-02-19',
+          date: 'January 2, 2019',
           author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
+          cat3: 'Web Dev Affairs',
+          title: 'InterGalactic Code',
           post: blogpost160,
           blogcite: blogcite160 
         },
@@ -334,10 +511,10 @@ var bloggerDec = function () {
           date: 'December 26, 2018 ',
           author: 'by Thomas Maestas',
           cat3: 'Musing Blockchain',
-          title: 'A Virtual Balkanization of International Currency',
+          title: 'Rise of the Interviewer Bots',
           post: blogpost159,
           blogcite: blogcite159 
-        },  
+        },  /*
         {
           id: '158',
           did: '12-25-18',
@@ -347,18 +524,17 @@ var bloggerDec = function () {
           title: 'A Virtual Balkanization of International Currency',
           post: blogpost158,
           blogcite: blogcite158 
-        },  
+        },  */
         {
           id: '157',
           did: '12-24-18',
           date: 'December 24, 2018 ',
           author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
-          title: 'A Currency Introspective',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Big Data\'s New Reinterpretation of Reality',
           post: blogpost157,
           blogcite: blogcite157
         },
-        */  
         {
           id: '156',
           did: '12-22-18',
@@ -491,16 +667,18 @@ var bloggerDec = function () {
             post: blogpost142,
             blogcite: blogcite142
           }, 
+          */ 
            {
             id: '141',
             did: '12-05-18',
             date: 'December 5, 2018 ',
             author: 'by Thomas Maestas',
-            cat3: 'Sociology Tomorrow',
-            title: 'The Tech Market\'s True Value',
+            cat3: 'A.I.Now.',
+            title: 'The Reason for More Social Awareness on A.I. Policy',
             post: blogpost141,
             blogcite: blogcite141
-          },  
+          },
+          /*  
            {
         id: '140',
           did: '12-04-18',
@@ -533,7 +711,7 @@ var bloggerDec = function () {
           } 
   
   ];
-
+var i;
   for (i = 0; i < url.length; i++) {
     var cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 

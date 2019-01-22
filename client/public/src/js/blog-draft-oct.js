@@ -591,6 +591,7 @@ var   blogcite1 = `
     document.getElementById("paragraph-oct").innerHTML += cat;
   }
 
+  var i;
   for (i = 0; i < url.length; i++) {
     var catMod = `
   <div id="mod_${url[i].did}" class="blogDivMod"> 

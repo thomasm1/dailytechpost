@@ -2,8 +2,8 @@
 
 var bloggerFeb = function () {
 
-
-  blogpost17 = `
+/*
+  var blogpost17 = `
   <p class="firstparagraph">First, let me describe that blockchain technologies, i.e. Government contracts, Business contracts, Bitcoin and other
 
 cryptocurrencies, all rely on network graph theory, both on the low-level programming technology (peer-to-peer global
@@ -167,7 +167,8 @@ and other societal needs--in this case, the blind would indeed lead the blind.</
 
 </p>
   `
-  blogpost16 = `
+  */
+  var blogpost16 = `
   <p class="firstparagraph">There was once a time for App Developers that our habits followed our inner-philosophers--as an Esteemed Order of
 Coders--we held ourselves in the highest regard to separate form from function, and style from structural design.
 Hence, in the early 2000&#39;s, a tri-partite, sensible world guided every web coder to abide by The scaffolding
@@ -203,7 +204,7 @@ to a higher complexity, and a new commitment to, the &quot;Separation of Concern
 a break, thankful for Progress, a progress by which we must
 <i>Stand on the Shoulders of Giants</i>, and Code-Create!</p>
   `
-  blogpost15 = `
+  var blogpost15 = `
   <p class="firstparagraph">Facebook Scandals
 <sup>1</sup> of recent months have demoralized the leadership for a role of misinformation in the Tech Age, however I
 charge Mark Zuckerberg&#39;s innocence
@@ -249,7 +250,7 @@ target="_blank"> Wired Magazine, </a>
 <a href="http://www.asanet.org/footnotes/jan16/index.html" target="_blank"> www.asanet.org/footnotes/jan16/</a>
 </p>
   `
-  blogpost14 = `
+  var blogpost14 = `
   <p class="firstparagraph">Other than college pre-med students, few know the MCAT exam--the gatekeeper of U.S. &amp; Canadian Medical Schools--underwent
 a major modification in 2015.
 <sup>2</sup> Much deeper than Biological and Technological updates, major sections were added and/or expanded including
@@ -289,7 +290,7 @@ health-promoting information channels -- all this, among the countless perks of 
 <a href="https://www.ama-assn.org/education/teaching-new-content-health-systems-science" target="_blank">ibid.</a>
 </p>
   `
-  blogpost13 = `<p class="firstparagraph" style="color:green;">Given that a community network&#39;s aggregated health is inextricably, and symmetrically, tied up with
+  var blogpost13 = `<p class="firstparagraph" style="color:green;">Given that a community network&#39;s aggregated health is inextricably, and symmetrically, tied up with
   <i>our own</i> individual health, app-developers may design activity- and communication-based apps more responsibly,
   and in touch with modern healthcare recommendations. After all, if the Saintly Mark Zuckerberg&#39;s communication-
   and activity-based app inadvertantly led to novel, and deeply consequential, effects, then ...</p>
@@ -333,7 +334,7 @@ altogether new, technological thrill-ride.</p>
 <a href="https://www.researchgate.net/publication/228173911_The_Sociology_of_Suicide" target="_blank">1897, Suicide, &Eacute;mile Durkheim.</a>
 </p>
   `
-  blogpost12 = `
+  var blogpost12 = `
   <small class="jargon">Tech blockchain jargon alert ahead, with all effort made for clarity! I treat a broad overview of the existing trajectory
 of blockchain-related micro-economic advancements. I make a technical &amp; contextualizing
 <abbr title="this link just goes down 5 paragraphs to Feb. 17th">
@@ -400,7 +401,7 @@ target="_blank">https://www.cnet.com/news/bitcoin-cryptocurrency-big-in-investin
 <a href="https://eric.ed.gov/?id=ED065999" target="_blank">Rogers, E. M., &amp; Shoemaker, F. F. (1971). Communication of Innovations; A Cross-Cultural Approach.</a>
 </p>
   `
-  blogpost11 = `
+  var blogpost11 = `
   <p class="firstparagraph">Given that our app-use is inextricably tied up with our own behavior, activity/communication-based app developers
 have in the past year accepted (mostly in word) a renewed responsibility. More like resposibility for a multi-faceted
 power of influence granted to an industry, suddenly, disproportionately great, and
@@ -436,7 +437,7 @@ and other app-design intentions, while ignoring potential secondary effects on s
 <a href="https://digitaladdictsblog.com/facebook-co-founder-says-company-built-to-exploit-you/" target="_blank">https://digitaladdictsblog.com/facebook-co-founder-says-company-built-to-exploit-you/</a>
 </p>
   `
-  blogpost10 = `
+  var blogpost10 = `
   
 <p class="firstparagraph">7 Ethereum-based technological features offer us a new world -- a decentralized new world, not dependent on the centralized
 servers of Instagram, Comcast, T-Mobile, Amazon, etc. With that statement ends general consensus among blockchain
@@ -498,7 +499,7 @@ The underlying principle of the blockchain&#39;s micro-economic utiliity through
 &amp; Demand leading to Economics Game Theory, etc. This is where we must take our leave of the Hard Sciences of
 Mathematics, and enter the realm of Sociology, Psychology, Anthropology and Economics.</p>
   `
-  blogpost9 = `
+  var blogpost9 = `
   <p class="firstparagraph">The guiding light through the centuries of scientific paradigms, in the Kuhnian sense
 <sup >1</sup>, have derived from deductive ideas from above - whether priestly or royal decree. Then, the primacy of the
 <i>Scientific Method</i> from the Renaissance forward--punctuated first by Copernican Heliocentrism, then other Paradigm
@@ -603,7 +604,7 @@ target="_blank">https://www.economist.com/news/business/21722869-anti-establishm
   `
 
 
-  blogpost8 = `
+  var blogpost8 = `
   <p class="firstparagraph">I feel that data is one of the more underestimated new commodities of the age. Most visualize data as rows and columns,
 and at most only non-conditional dynamic data. Data are not so mute! Data, in most object-oriented languages at
 least, represents
@@ -682,7 +683,7 @@ power of Aeolus, and forecasting the winds of Fortune.</p>
 </p>
   `
 
-  blogpost7 = `
+  var blogpost7 = `
   <p class="firstparagraph">Today, I&#39;m going to write about data structures, and challenges that face Vitalik Buterin and other blockchain
 architects. &#39; Now, why in the
 <i>world</i> would I or anyone else care about ooh, merge sorts, bubble sorts, classificatory trees, and the advent
@@ -738,7 +739,7 @@ across the globe. </a>
 and Franz AllegroGraph.</p>
   `
 
-  blogpost6 = `
+  var blogpost6 = `
   <p class="firstparagraph">While I&#39;ve had blockchain-related topics on the mind lately, it seems I can&#39;t escape it as I broach new fields--blockchain
   is everywhere! Well, I had begun my blog with intentions about the accelerated speed of language and syntax formation,
   and the curious phenomenon I&#39;d call, for lack of a better word or or my own reading, &quot;declarative-syntax-merging&quot;.
@@ -770,7 +771,7 @@ and Franz AllegroGraph.</p>
   `
 
 
-  blogpost5 = `<p class="firstparagraph">1.4 million
+  var blogpost5 = `<p class="firstparagraph">1.4 million
   <i>new</i> jobs by 2020; End over end, year after year, the computer programming industry continues to add another
   20% more jobs each year, for the next five years. This is the only field that demand outstrips the supply--and increasingly
   short supply. So much so, the US Department of Labor forecasts U.S. citizens will be able to fill 39% of those positions;
@@ -825,7 +826,7 @@ and Franz AllegroGraph.</p>
   </p>
   `
 
-  blogpost4 = `<p class="firstparagraph">While coding up a better shell for this website, I thought it&#39;s remarkable how our lives get easier and easier
+  var blogpost4 = `<p class="firstparagraph">While coding up a better shell for this website, I thought it&#39;s remarkable how our lives get easier and easier
   with each passing year of tech. Using JavaScript--the primordial web-coding language--I marvel at the convenience
   of delegating mundande coding stuff to taskrunners, like
   <i>Gulp</i>--a programmable package manager that &quot;bundles&quot; up the libraries to be used in the app. It is
@@ -848,7 +849,7 @@ and Franz AllegroGraph.</p>
   to life and stays alive, through the joys of automation!</p>
   `
 
-  blogpost3 = `
+  var blogpost3 = `
   <p class="firstparagraph">I must confess that on the very day that Our Daily Tech Blog gets an under-the-head make-over for security&#39;s
   sake, I wrote the new formatting file right over today&#39;s post. Amazing, and the two occurred nearly simultaneously
   as I worked on them, their paths crossed and poof, gone! Same platform, and I paid the price! Whether I change my
@@ -919,7 +920,7 @@ and Franz AllegroGraph.</p>
   <a href="https://ripple.com/xrp/" target="_blank">https://ripple.com/xrp/</a>
   </p>
   `
-  blogpost2 = `<p class="firstparagraph">In my reflections about environment sustainability issues, I confess I&#39;m sort of a hypocrite ... The whole matter
+  var blogpost2 = `<p class="firstparagraph">In my reflections about environment sustainability issues, I confess I&#39;m sort of a hypocrite ... The whole matter
 that caused my own introspection begins with my usual daily vexation: Tangles of wires!
 <br /> &nbsp; ... I&#39;ve been having electricity issues, here as of late ...</p>
 
@@ -935,7 +936,7 @@ carbon footprint changes more with the electrical products that I use, than my v
 Jeep Cherokee can&#39;t even boast 20 miles per hour ... oops, conscience pangs, ouch ... Well, hypocritical, slightly,
 but found not guilty since I&#39;m a bike-commuter for life!</p>
 `
-  blogpost1 = `
+  var blogpost1 = `
 <p class="firstparagraph">Environmental Sustainability, again, and a higher-level view of the dilemmea...I couldn&#39;t resist:
 <br /> Bitcoin&#39;s Initial Coin Offering was 2011 or so, then Ethereum, with Ether for currency was 2015; These two,
 ever so prescient designs, also have their Achilles Heal. These two are
@@ -987,7 +988,9 @@ target="_blank">https://www.trustnodes.com/2017/11/28/ethereums-proof-stake-casp
 </p>
 `
   var url =  
-     [{
+     [
+       /*
+       {
     id: '17',
     did: '18-02-10',
     date: 'Feb 10, 2018',
@@ -996,7 +999,9 @@ target="_blank">https://www.trustnodes.com/2017/11/28/ethereums-proof-stake-casp
     title: 'Why are Sociologists now the Key Players in Data Analysis within the Domain of Blockchain Technologies?',
     post: blogpost17,
     done: true,
-  }, {
+  }, 
+  */
+ {
     id: '16',
     did: '18-02-11',
     date: 'Feb 22, 2018',
@@ -1180,6 +1185,7 @@ target="_blank">https://www.trustnodes.com/2017/11/28/ethereums-proof-stake-casp
     document.getElementById("paragraph-feb").innerHTML += cat;
   }
   
+var i;
   for (i=0;i<url.length;i++){ 
     var catMod = `
     <div id="${url[i].did}_mod" class="blogDivMod"> 

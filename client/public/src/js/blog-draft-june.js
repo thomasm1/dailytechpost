@@ -1,7 +1,7 @@
 
 var bloggerJune = function () {
  
-blogpost14 = 
+var blogpost14 = 
 `
 <p class="quote"><i>
 All people going to the International Space Station must do so through Kazakhstan today. Since the space shuttle retired in 2011, there's no other ship capable of carrying people up there besides Soyuz, the Russian workhorse of many decades. NASA purchases seats for its astronauts; each mission is worth tens of millions of dollars. But the situation is going to change soon. 
@@ -14,12 +14,12 @@ The Europeans have expressed some interest in the Deep Space Gateway, but as for
 </p>
 <p>Besides the moon, I wouldn't be opposed to a year-and-a-half long trip to Mars--so long as I had plenty of reading material, and a round-trip ticket!
 `
-blogcite14 = 
+var blogcite14 = 
 `
 <p class="footnotes">1. <a href="https://www.space.com/41038-roscosmos-russian-space-strategy-commercial-crew.html"   target="_blank">https://www.space.com/41038-roscosmos-russian-space-strategy-commercial-crew.html</a>
 </p>   
 `
-blogpost13 = 
+var blogpost13 = 
 `
 <p class="firstparagraph">If there was ever a thing called "Continuing Education," that thing has become a learning, thinking mandate in the modern professional world. Learning to work side-by-side with our A.I. "automation workmates" has become a somewhat paradoxical burden whereby the more we learn, the more we get to shovel our work onto our <i>Ever-Cheerful automators</i>, and this is the least onerous burden I have ever had to bear...</i> It's called the <i>Abolition of boring tasks!</i> </p>
 <p>Many writers have touched on the freedom that digital automation affords us: The repetitive, mundane (i.e. mindless) tasks that once occupied days and weeks of our time can now be evaporated away in hours when we just ask for help from our digital automotons--but we first have to ask! </p>
@@ -35,7 +35,7 @@ Some colleges in the United States are already preparing for this age of perpetu
 <p>20%? Really? So, it sounds like our productivity is <i>inversely proportional to work <strong>we</strong> do</i>, but rather the work--boring, mundane work--that we can effectively hand off to our automon partners--whatever the sector.  
 
 `
-blogcite13 = 
+var blogcite13 = 
 `
 
 <p class="footnotes">1. <a href="https://www.nytimes.com/2018/06/26/opinion/political-parties-climate.html"   target="_blank">https://www.nytimes.com/2018/06/26/opinion/political-parties-climate.html</a>
@@ -45,7 +45,7 @@ blogcite13 =
 
 `
  
-blogpost12 = 
+var blogpost12 = 
 `
 <p class="firstparagraph">Obnoxious misuse of A.I.Tech is a rare thing because developers are among the smartest and most humane among all professions, if I my humbly claim.  But <i>Tech consumers are not necessarily bound by such thoughtful solidarity.</i> The following exemplifies the darker side of A.I. tech...                                          </p>
 <p class="quote">Cogito is one of several companies developing analytics tools that give agents feedback about how conversations with customers are going. Its software measures in real time the tone of an agent’s voice, their speech rate, and how much each person is talking, according to Dr. Place. “We measure the conversational dance,” he says.
@@ -61,7 +61,7 @@ Now imagine starting a new job with a feisty robot, as one proud supervisor proc
 </i> The horror, the horror.</p>
 </p>
 `;
-blogcite12 = `
+var blogcite12 = `
 
 
 <p class="footnotes">1. <a href="https://www.wsj.com/articles/call-center-agents-get-a-human-touch-1528984801?mod=foesummaries"   target="_blank">https://www.wsj.com/articles/call-center-agents-get-a-human-touch-1528984801?mod=foesummaries</a>
@@ -69,7 +69,7 @@ blogcite12 = `
 <p class="footnotes">2. <a href="https://www.jstor.org/stable/2678029?seq=1#page_scan_tab_contents"   target="_blank">https://www.jstor.org/stable/2678029?seq=1#page_scan_tab_contents</a>
 </p> 
 `;
-blogpost11 = 
+var blogpost11 = 
 `
 <p class="firstparagraph">As if Apple needed any more money--now Samsung will be writing a half-billion dollar check to right the wrongs of patent infringement and "slavish" copying.<sup>1</sup> Well, history certainly repeats itself as it was IBM that played the relentless copy-cat of Apple's technological leadership way-back-when. 
 </p>
@@ -83,20 +83,20 @@ blogpost11 =
 </p>
 `;
 
-blogcite11 = `
+var blogcite11 = `
 <p class="footnotes">1. <a href="https://www.reuters.com/article/us-apple-samsung-elec/apple-samsung-settle-u-s-patent-dispute-idUSKBN1JN2S4"   target="_blank">https://www.reuters.com/article/us-apple-samsung-elec/apple-samsung-settle-u-s-patent-dispute-idUSKBN1JN2S4</a>
 </p> 
 
 `;
-blogpost10 = `
+var blogpost10 = `
 <p class="firstparagraph">5G Technology, ever so close to life-changing implementation, conjures up fantastic musing over how our everyday products will interact in real-time with our personalized data-cloud. Certainly IoT (Internet of Things) products will be carrying a whole lot of machine-to-machine to machine communication. From the IoT edge (encircling a router, for instance) to communicate sensors to mid-range "listeners".</p>
 <p>So, although Sprint-T-Mobile Oneness spells monopoly, the scale of work that needs to be done to convert everything to 5G <i>means we Need a great tech innovator like T-Mobile's John Legere to push with fervor the right ways to deliver 5G connectivity to every American, anywhere.</i> My<a href="#18-04-27"> April 27 post</a> talks more on their affair, but the reality is that Sprint doesn't contribute value to American innovation; that claimed, <i>Sprint's bandwidth rights and spare parts really <strong>will truly</strong>  add value</i> to American Tech!</p>
 `;
-blogcite10 = `<p class="footnotes">1. <a href="https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A"   target="_blank">https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A/a>
+var blogcite10 = `<p class="footnotes">1. <a href="https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A"   target="_blank">https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A/a>
 </p> 
 `;
 
-blogpost9 =`
+var blogpost9 =`
 <p  class="firstparagraph">
 Why the GPU rather than CPU for speed? 90% of deep learning algorithms use distributed, parallel problem-calculations. So, who needs a steering wheel racing on the Bonneville Salt Flats? Certain kinds of algorithms do, though, such as recursive, tree-traversing kinds. But I'm just a tourist.
 </p> 
@@ -108,14 +108,14 @@ Why the GPU rather than CPU for speed? 90% of deep learning algorithms use distr
 <p>Evolution of these new AI's, and AI's designing AIs, require voracious amounts of training data to implement and improve learning designs.  So where would AI research stand if not for the ultra-fast and efficient modern-day Graphical Processing Unit? Better asked, what inspired Krizhevski's novel, paradigm-shattering design?  Clearly <i>the Need for Speed!</i> </p>
  
   `;
-blogcite9 = 
+var blogcite9 = 
 `
 <p class="footnotes">1. <a href="https://www.quora.com/How-did-Alex-Krizhevsky-come-up-with-the-idea-of-AlexNet-How-does-the-designer-think"   target="_blank">https://www.quora.com/How-did-Alex-Krizhevsky-come-up-with-the-idea-of-AlexNet-How-does-the-designer-think</a>
 </p>
 
  
 `;
-  blogpost8 = 
+  var blogpost8 = 
   `  <p class="quote"><i>
 Deep learning allows computational models that are composed of multiple processing layers to learn representations of data with multiple levels of abstraction. These methods have dramatically improved the state-of-the-art in speech recognition, visual object recognition, object detection and many other domains such as drug discovery and genomics. Deep learning discovers intricate structure in large data sets by using the backpropagation algorithm to indicate how a machine should change its internal parameters that are used to compute the representation in each layer from the representation in the previous layer. Deep convolutional nets have brought about breakthroughs in processing images, video, speech and audio, whereas recurrent nets have shone light on sequential data such as text and speech.</i><sup>1.</sup>
 </p> 
@@ -125,7 +125,7 @@ Deep learning allows computational models that are composed of multiple processi
 <p>Today, neural netwoks boast <i>hundreds of layers and billions of paremeters: The last five years has been busy!</i> And the varied species of designs since the original Convolutional Neural Network (CNN) include Recurrent Neural Networks (RNN), Generative Adverserial Networks (GAN) and Reinforcement Learning.
 </p> 
 `;
-blogcite8 = 
+var blogcite8 = 
 `<p class="footnotes">1. <a href="https://www.nature.com/articles/nature14539"   target="_blank">https://www.nature.com/articles/nature14539</a>
 </p> 
 
@@ -134,7 +134,7 @@ PDF:  <a href="https://www.nvidia.cn/content/tesla/pdf/machine-learning/imagenet
 </p> 
 `
 
-blogpost7 = 
+var blogpost7 = 
   `  <p class="quote"><i>I sat one evening in my laboratory; the sun had set, and the moon was just rising from the sea; I had not sufficient light for my employment, and I remained idle, in a pause of consideration of whether I should leave my labour for the night, or hasten its conclusion by an unremitting attention to it. As I sat, a train of reflection occurred to me, which led me to consider the effects of what I was now doing. <br />
   <br />
   --Victor Frankenstein<sup>1</sup>
@@ -161,7 +161,7 @@ The CUDA Toolkit from NVIDIA provides everything you need to develop GPU-acceler
   <p>And so, with blistering speed and the joining of disciplines of science, the spear's tip of innovation accelerates ... without a spare nanosecond for reflection!
   `;
 
-  blogcite7 =  `<p class="footnotes">1. Frankenstein, or Modern Prometheus, Mary Shelley, 1818. <br /><a href="https://www.gutenberg.org/files/84/84-h/84-h.htm"   target="_blank"> PDF https://www.gutenberg.org/files/84/84-h/84-h.htm</a>
+  var blogcite7 =  `<p class="footnotes">1. Frankenstein, or Modern Prometheus, Mary Shelley, 1818. <br /><a href="https://www.gutenberg.org/files/84/84-h/84-h.htm"   target="_blank"> PDF https://www.gutenberg.org/files/84/84-h/84-h.htm</a>
   </p>  
   
   <p class="footnotes">2.  <a href="https://www.gutenberg.org/files/84/84-h/84-h.htm"   target="_blank">2009 IEEE International Symposium on Parallel & Distributed Processing</a>
@@ -173,10 +173,10 @@ The CUDA Toolkit from NVIDIA provides everything you need to develop GPU-acceler
   
   `;
  
-blogpost6 = 
+var blogpost6 = 
   `
   <p class="firstparagraph">
-  <p class="firstparagraph">Small, online businesses face the music today to pay state sales taxes, thanks to the Supreme Court's <i>Wayfair V. South Dakota</i>.<sup>2</sup> My <a href="#18-04-14">April 14th blog</a>, <i>Clash of the Brick &amp; Mortars against Online Stores</i> goes more in depth... </p>
+  <p class="firstparagraph">Small, online businesses face the music today to pay state sales taxes, thanks to the Supreme Court's <i>Wayfair V. South Dakota</i>.<sup>2</sup> My <a href="#18-04-14">April 14th var blog</a>, <i>Clash of the Brick &amp; Mortars against Online Stores</i> goes more in depth... </p>
   <p>What this means is that imminently, 50 variations of newly permitted State internet sales taxes for small businesses.<sup>2</sup> This will inevitably hurt variety, and likely lead to a lot of inter-state confusion: </p>
   <p class="quote">The new law may seem straightforward, but there are fairly complicated specifics when it comes to different jurisdictions and categorization of goods.
 <br /><br />
@@ -187,7 +187,7 @@ blogpost6 =
   
  
 
-  blogcite6 =  ` 
+  var blogcite6 =  ` 
   <p class="footnotes">1.  <a href="https://www.forbes.com/sites/advisor/2018/06/21/state-sales-tax-which-states-are-most-affected-by-the-supreme-court-online-retail-ruling/#791a05383e66"   target="_blank">https://www.forbes.com/sites/advisor/2018/06/21/state-sales-tax-which-states-are-most-affected-by-the-supreme-court-online-retail-ruling/#791a05383e66</a>
   </p> 
   
@@ -195,7 +195,7 @@ blogpost6 =
   </p> 
   
   `;
-  blogpost5 = ` 
+  var blogpost5 = ` 
   <p class="firstparagraph">What difference does it make for Net Neutrality to morph into 50 different variations now that the neutrality protections leave the federal arena to fall into  state legislation?<sup>1</sup> Who can tell. Unfortunately, a potential micro-balkanization of bandwith rules within an interdependent network doesn't spell faster service for anyone. </p>
   
   <p>
@@ -208,14 +208,14 @@ blogpost6 =
   `;
  
 
-  blogcite5 =  ` 
+  var blogcite5 =  ` 
   <p class="footnotes">1.  <a href="http://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html"   target="_blank">http://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html</a>
   </p>
   <p class="footnotes">2.  <a href="https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/"   target="_blank">https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/</a>
   </p>
     `;
 
-  blogpost4 =  `<p class="quote"><i>
+  var blogpost4 =  `<p class="quote"><i>
   They left The Denver Post amid newsroom layoffs and interference in the editorial process by the newspaper’s hedge-fund owners. And now those reporters and editors are creating their own news outlet, The Colorado Sun.  They will be partnering with the Civil Media Company, an ambitious New York start-up that aims to use blockchain technology and crypto economics to start 1,000 publications nationwide by the end of the year. </i>
   <br /><br />- New York Times, June 17, 2018</p><br />
   <p class="firstparagraph">Power from the 4th Estate tends to flow in the form of printers' ink, however Blockchain Tech empowers journalists with  new resources for their trade: free money and data, and more importantly, an empowered readership in Cooperative form: 
@@ -231,12 +231,12 @@ People who purchase the CVL token, a form of cryptocurrency, will have a say con
   </p>
   `;
 
-  blogcite4 =  `
+  var blogcite4 =  `
   <p class="footnotes">1.  <a href="https://www.nytimes.com/2018/06/17/business/media/denver-post-blockchain-colorado-sun.html"   target="_blank">https://www.nytimes.com/2018/06/17/business/media/denver-post-blockchain-colorado-sun.html</a>
   </p>
   
   `;
-blogpost3 =  `<p class="firstparagraph">Deep Learning--a 70's thing--clearly predates   personal computing, the web, and even the 70's Show. But the true advances have been a long time in development, and credit belongs to Statistics and Data Science, and specifically quantitative analysis' ever cleverer classification trees that deliver the goods with greater accuracy, coupled with less intensive computing costs. And this origin is interesting in itself: </p>
+var blogpost3 =  `<p class="firstparagraph">Deep Learning--a 70's thing--clearly predates   personal computing, the web, and even the 70's Show. But the true advances have been a long time in development, and credit belongs to Statistics and Data Science, and specifically quantitative analysis' ever cleverer classification trees that deliver the goods with greater accuracy, coupled with less intensive computing costs. And this origin is interesting in itself: </p>
  <p class="quote">
 Fifty years have passed since the publication of the first regression tree algorithm. New techniques have added capabilities that far surpass those of the early methods. Modern classification trees can partition the data with linear splits on subsets of variables and fit nearest neighbor, kernel density, and other models in the partitions ... <br />
 <br />Classification And Regression Trees (CART) (Breiman et al., 1984) was instrumental in regenerating interest in the subject. It follows the same greedy search approach as  Automatic Interaction Detection (AID) and THeta Automatic Interaction Detection (THAID), but adds several novel improvements. Instead of using stopping rules, it grows a large tree and then prunes the tree to a size that has the lowest cross-validation estimate of error. The pruning procedure itself is ingenious, being based on the idea of weakest-link cutting, with the links indexed by the values of a cost-complexity parameter. This solves the under-fitting and over-fitting problems of  AID and THeta Automatic Interaction Detection (THAID), although with increased computation cost.<sup>1</sup>
@@ -251,7 +251,7 @@ Fifty years have passed since the publication of the first regression tree algor
 Whatever the new OS is called, it comes with a developing potential to exponentially advance <i>Tree Science</i>:  ML Kit behaves like an API layer connecting the ML software to the app developers' models, making dev easy to run and deploy with an "experimental model compression flow that aims to reduce model size (up to orders of magnitudes) while maintaining similar accuracy."<sup>3</sup> Talk about maturing exponentially quickly! Now, this origin story can't compete with Wolverine's nor Han Solo's, but this gem carries a mythical and futuristic potential to satisfy screen-goers from all devices, frame-sizes, and platforms!</p>
 `;
 
-blogcite3 = `
+var blogcite3 = `
 
 <p class="footnotes">1. Loh, W. Y. (2014). Fifty years of classification and regression trees. International Statistical Review, 82(3), 329-348.
 <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/insr.12016"   target="_blank">https://onlinelibrary.wiley.com/doi/full/10.1111/insr.12016</a>
@@ -269,7 +269,7 @@ Université Marseille 3
 Saint-Jérôme</p>
 `;
 
-blogpost2 = 
+var blogpost2 = 
 `
 <p class="firstparagraph">
 The upcoming Android 'P' OS--still in beta and only available on Pixel phones, Essential, and a few others--promises a new era in mobile app development<sup>1</sup>  Most features, like expanding Maps' indoor functionality, inclusive Emojis, and a revamped navigation bar are all nice, but one element of the build empowers app developers' access to machine-learning code: 
@@ -291,7 +291,7 @@ The idea behind both of these concepts is to break out the different pieces of t
 Developers will need to build some frameworks into their apps to make Actions and Slices available to the system. When they do, the AI in Android P will try to understand what those apps can actually do and suggest those actions to you. “When you modularize the app, it’s not just an API call,” Samat says. “You have these components that can be understood by the system, predicted by the system, and then rendered by the system.”<sup>3</sup>
 </p>
 <p>So what does this mean? Better, higher-quality time spent with your work or play, rather than hopping from one icon to the next for each and every task...`;
-  blogcite2 = `
+  var blogcite2 = `
 
   <p class="footnotes">1.
 
@@ -308,8 +308,10 @@ Developers will need to build some frameworks into their apps to make Actions an
   <a href="https://www.theverge.com/2018/5/8/17327302/android-p-update-new-features-changes-video-google-io-2018"   target="_blank"> https://www.theverge.com/2018/5/8/17327302/android-p-update-new-features-changes-video-google-io-2018</a>
  
   </p>
+
   `
-blogpost1 =  `<p class="firstparagraph">Blockchain technologies, i.e. Government contracts, Business contracts, Bitcoin and other
+  /*
+var blogpost1 =  `<p class="firstparagraph">Blockchain technologies, i.e. Government contracts, Business contracts, Bitcoin and other
 
 cryptocurrencies, all rely on network graph theory, both on the low-level programming technology (peer-to-peer global
 
@@ -440,7 +442,7 @@ of missing data</p>
 
 path of maturity with social and world needs.<span class="new"> Until   Social Science Network Theorists stop from basing their numerical analysis on the mutable sand of theory, rather than theory based on the   foundation of numerical science, <i>any attempt at conclusion...you guessed it...cannot be conclusive.</i>So, the social sciences must consult the hard sciences, otherwise they risk squandering countless years of talented theorists' work; <i>the discipline's executive functions are cut off from it's increasingly inaccessible (and increasingly powerful) knowledge base.</i> --Such a talented, powerful Thoroughbred of a Science, that still wanders without a head for technical direction.</span></p>
 `;
-blogcite1 = `
+var blogcite1 = `
 <p class="footnotes">1. 
 <a href="http://www.journals.uchicago.edu/doi/abs/10.1086/226550"   target="_blank"> http://www.journals.uchicago.edu/doi/abs/10.1086/226550</a>
  
@@ -457,7 +459,7 @@ blogcite1 = `
 </a>
 </p>
 ` ;
-
+*/
   var url =  
   [ 
   {
@@ -585,7 +587,8 @@ date:'July 29, 2018',
     title:'Machine Learning, Democratized<br />Part I: Google\'s ML Kit',
     post:blogpost2,
    blogcite:blogcite2
-   }, 
+   }  
+   /*
     { 
     id:'1',
     did:'06-15-18',
@@ -595,7 +598,8 @@ date:'July 29, 2018',
     title:' The Spectre of a Headless Horseman:<br /> Why  Sociologists <i> are<span class="new">n\'t </span></i> Key Players in Data Analysis within the Domain of Blockchain Technologies?<br /><span class="new">A Re-Do of my <s >Feb 10,2018</s> post</span>',
     post:blogpost1,
    blogcite:blogcite1
-   }
+   }*/
+   
    ] ;
 
    for (i=0;i<url.length;i++){ 
@@ -616,6 +620,7 @@ date:'July 29, 2018',
 document.getElementById("paragraph-june").innerHTML += cat; 
 } 
  
+var i;
 for (i=0;i<url.length;i++){ 
   var catMod = `
   <div id="mod_${url[i].did}" class="blogDivMod"> 

@@ -647,7 +647,7 @@ var blogcite111 = `
 
   
   ];
-
+var i;
   for (i = 0; i < url.length; i++) {
     var cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 

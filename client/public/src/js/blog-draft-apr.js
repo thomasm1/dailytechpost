@@ -1,7 +1,7 @@
  
 var bloggerApr = function () { 
 
-  blogpost23 = `<p class="firstparagraph">Fitbit and Wearables' Contribution to Health in Society is clear<sup>1</sup>, yet much of the credit is due to increased social, activity-based networks.  And, new features and benefits depend on relaxed data privacy. Given my <a href="#18-04-11">April 11th post</a> on the upcoming data privacy changes <i>in response to both Cambridge Analytica scandal <strong>and</strong> E.U.'s long-planned Data Privacy regulations.</i></p>
+  var blogpost23 = `<p class="firstparagraph">Fitbit and Wearables' Contribution to Health in Society is clear<sup>1</sup>, yet much of the credit is due to increased social, activity-based networks.  And, new features and benefits depend on relaxed data privacy. Given my <a href="#18-04-11">April 11th post</a> on the upcoming data privacy changes <i>in response to both Cambridge Analytica scandal <strong>and</strong> E.U.'s long-planned Data Privacy regulations.</i></p>
   
   <p>So, now is the worst time to clamp down on app permissions, <i>especially as Smart Watches begin to finally make in-roads</i> socially and hardware-wise.  Fitbit's acquirement of Pebble Watch exemplifies the  recent technological hard-ware leap-frogging.  All in all, we can't truly have a socially-connected society without flexible app permissions, so let's hope for fair and flexible data regulations ...  
   </p>
@@ -11,7 +11,7 @@ var bloggerApr = function () {
   
   <p class="cite"><a href="https://www.apple.com/apple-watch-series-3/" target="_blank">https://www.apple.com/apple-watch-series-3/</a></p> `;
 
-  blogpost22 = `   <p class="firstparagraph" >All over, the new <i>Terms &amp; Conditions in Fine(r) Print</i> are alerting social media users to new compliance to ... new laws? I wrote in my <a href="#18-04-16">April 16th post</a> about the upcoming E.U. General Data Privacy Regulations, to which most of social media is unabashedly following. The climate doesn't hurt, but how will our social-media experiences be watered down?  </p>
+  var blogpost22 = `   <p class="firstparagraph" >All over, the new <i>Terms &amp; Conditions in Fine(r) Print</i> are alerting social media users to new compliance to ... new laws? I wrote in my <a href="#18-04-16">April 16th post</a> about the upcoming E.U. General Data Privacy Regulations, to which most of social media is unabashedly following. The climate doesn't hurt, but how will our social-media experiences be watered down?  </p>
   <p>Let's see what Twitter is telling us:<?p><p class="quote">
   
   As part of our ongoing commitment to transparency, and in preparation for new data protection laws that take effect next month, we’re updating our Terms of Service and Privacy Policy to empower you to make the best decisions about the information that you share with us. <br />
@@ -33,11 +33,12 @@ var bloggerApr = function () {
   </a> </p> `;
 
 
-  blogpost21 = `<p class="firstparagraph">T-Mobile's potential acquirement of Sprint--for all of its monopoly overtones--may be a very good thing: We, as a society, are at the doorstep of 5G technology, which will fundamentally change every aspect of life. T-Mobile has always been the little engine that could, but has become a powerhouse since last summer with their 8 billion dollar purchase of low bandwidth, which is specifically <i>best for the ubiquity needed for the 5g Revolution</i><sup>2</sup>.  Although Sprint was always in last, 4th place among major carriers, their network infrastructure <i> and Bandwidth Rights</i> can help T-Mobile catch up with AT&amp;T and Verizon's 5G roll-outs.</p>  
+  var blogpost21 = `<p class="firstparagraph">T-Mobile's potential acquirement of Sprint--for all of its monopoly overtones--may be a very good thing: We, as a society, are at the doorstep of 5G technology, which will fundamentally change every aspect of life. T-Mobile has always been the little engine that could, but has become a powerhouse since last summer with their 8 billion dollar purchase of low bandwidth, which is specifically <i>best for the ubiquity needed for the 5g Revolution</i><sup>2</sup>.  Although Sprint was always in last, 4th place among major carriers, their network infrastructure <i> and Bandwidth Rights</i> can help T-Mobile catch up with AT&amp;T and Verizon's 5G roll-outs.</p>  
+  <img src="dist/img/bandwidth.jpg" class="zoom"/>
   <p class="cite">1. <a href="http://www.businessinsider.com/5g-speed-network-lte-2018-1/" target="_blank">http://www.businessinsider.com/5g-speed-network-lte-2018-1</a></p>
   <p class="cite">2. <a href="https://www.theverge.com/2017/4/13/15291496/tmobile-fcc-incentive-auction-results-8-billion-airwaves-lte" target="_blank">https://www.theverge.com/2017/4/13/15291496/tmobile-fcc-incentive-auction-results-8-billion-airwaves-lte</a></p>`;
 
-  blogpost20 = `<p class="firstparagraph">Sometimes the safest place to be is no place. So, the beauty of the distributed ledgers is that data is no longer in one place, and is rather in no place at all. Where is it? Spread across each node of the blockchain, and any one change in the data updates each node. Equally, the transaction is secured by a cryptographic hash, which is a unique private key.</p>
+  var blogpost20 = `<p class="firstparagraph">Sometimes the safest place to be is no place. So, the beauty of the distributed ledgers is that data is no longer in one place, and is rather in no place at all. Where is it? Spread across each node of the blockchain, and any one change in the data updates each node. Equally, the transaction is secured by a cryptographic hash, which is a unique private key.</p>
   <p>So, what better way to conceptualize it than read it, here's one of mine on the Ethereum network:</p>
   <p class="quote">
   status 	0x1 Transaction mined and execution succeed      <span class="green">  <--status   crypto-contract</span><br /><br />
@@ -63,7 +64,7 @@ var bloggerApr = function () {
   
   <p class="cite">3. <a href="https://www.bloomberg.com/amp/news/articles/2018-04-26/ibm-s-blockchain-tech-to-track-jewels-from-mine-to-retail-stores" target="_blank">https://www.bloomberg.com/amp/news/articles/2018-04-26/ibm-s-blockchain-tech-to-track-jewels-from-mine-to-retail-stores</a></p>`;
 
-  blogpost19 = `<p class="firstparagraph">E. Coli in the Lettuce supply <sup>1</sup> would make any rabbit apprehensive, but finding the source quickly? Downright disheartening.   However, the ever-evolving potential of blockchain technology presents its solution. The blockchain would provide the complete ledger of a vegetable's journey, across all phases and jurisdictions of the journey. Further, all information can be instantly available from any place (actually no location at all), rather than coordinating information from multiple data sources:
+  var blogpost19 = `<p class="firstparagraph">E. Coli in the Lettuce supply <sup>1</sup> would make any rabbit apprehensive, but finding the source quickly? Downright disheartening.   However, the ever-evolving potential of blockchain technology presents its solution. The blockchain would provide the complete ledger of a vegetable's journey, across all phases and jurisdictions of the journey. Further, all information can be instantly available from any place (actually no location at all), rather than coordinating information from multiple data sources:
   </p>
   <p class="quote">The FDA has identified one farm as the source of the whole-head romaine lettuce that sickened several people at a correctional facility in Alaska. However, the agency has not determined where in the supply chain the contamination occurred. The agency is examining all possibilities, including that contamination may have occurred at any point along the growing, harvesting, packaging, and distribution chain before reaching the Alaska correctional facility where it was served.<sup>2</sup>
   </p> 
@@ -80,7 +81,7 @@ var bloggerApr = function () {
 
 
 
-  blogpost18 = `<p class="firstparagraph">Westworld's second season premiered this week to cult-like fanfare.<sup>1</sup> Much of the HBO's storyline follows usual near-future AI potential, but brings up moral issues about what separates humankind from the rest of the animal kingdom. The premise of the show, and the current state of A.I., is instinctual learning and behavior of A.I.--i.e. imitating animal-behavior, but not human. </p>
+  var blogpost18 = `<p class="firstparagraph">Westworld's second season premiered this week to cult-like fanfare.<sup>1</sup> Much of the HBO's storyline follows usual near-future AI potential, but brings up moral issues about what separates humankind from the rest of the animal kingdom. The premise of the show, and the current state of A.I., is instinctual learning and behavior of A.I.--i.e. imitating animal-behavior, but not human. </p>
   <p>I had the good luck of spending the Fall of 2016 in the Silicon Valley of A.I. technology, which is Montr&eacute;al, Qu&eacute;bec (For example, UdeM was awarded $100 million in research money from Facebook). Though I was there for a Sociology PhD, I still got to get involved like any technology groupie would...  The rock-star out there is Universit&eacute de Montr&eacute;al's Dr. Yoshua Bengio,<sup>3</sup> who explains the consciousness elements of A.I, and how those compare with our own representations:
   </p>
   <p class="quote">
@@ -100,14 +101,14 @@ var bloggerApr = function () {
   <p class="cite">3. <a href="https://www.forbes.com/sites/peterhigh/2017/11/06/why-montreal-has-emerged-as-an-artificial-intelligence-powerhouse/#7435a66123bd" target="_blank" >https://www.forbes.com/sites/peterhigh/2017/11/06/why-montreal-has-emerged-as-an-artificial-intelligence-powerhouse/#7435a66123bd</a>
   </p>`;
 
-  blogpost17 = `<p class="firstparagraph">The<i> burgeoning Tech Job Market</i> has been one of my favorite blog topics. Two months ago, my <a href="#18-02-23">Feb. 23rd blogpost</a> and again on <a href="#18-03-08">March 8th</a> I mentioned 1.4 million new tech jobs, 20% growth year-over-year. And so, yours truly has decided to enter into this market after a post-graduate period of contracting and free-lance work. Let's face it, there's no substitute for the stability and the fixed schedule, plus the coffee-machine conversations are never short of endearing! </p>
+  var blogpost17 = `<p class="firstparagraph">The<i> burgeoning Tech Job Market</i> has been one of my favorite blog topics. Two months ago, my <a href="#18-02-23">Feb. 23rd blogpost</a> and again on <a href="#18-03-08">March 8th</a> I mentioned 1.4 million new tech jobs, 20% growth year-over-year. And so, yours truly has decided to enter into this market after a post-graduate period of contracting and free-lance work. Let's face it, there's no substitute for the stability and the fixed schedule, plus the coffee-machine conversations are never short of endearing! </p>
 
 
   <p>So far on day 2 (Friday, the 21st was my ceremonial first day of "putting myself out there"). I've thought to start slow, while I gauge the territory, but Indeed and Linkdin are always safe bets to begin with. All in all, my general take is that this new job front, with hundreds of thousands of jobs month-over-month is for everyone. Most positions offer 9-12 weeeks training -- who ever said changing careers had to be shouldered on our own? HR is there! </p>
   <p>As I am a night-blogger, therefore my new position--where and whichever it will be, won't interfere with my blogging--after all, I have truly enjoyed watching my readership grow, month-by-month ... so, thank you, dear tech readers. As such, perhaps along the way I can lend a view from the job-front, and any new trends I observe.</p>
   <p>Examples aren't hard to find. I've noticed that since the last time I've checked out the job market, the pre-assessment tests are a bit more cognitive than previous years, which is good for strong test-takers--especially those that love to calculate the "arrival times of two separate trains leaving the same station at two different rates of speed ....". 50 questions in 15 minutes makes for a nice adrenaline rush--on par with a short run!  </p>`;
 
-  blogpost16 = `<p class="firstparagraph">Palladium, micrograms of Gold and Silver, and of course, the yttrium, the lanthanum, without forgetting good old terbium, then a dusting of neodymium, a dash of gadolinium and and finally a sprinkle of praseodymium. The ingredients for a typical iphone are not a luxury, but a <i>sine qua non</i> necessity, while the irreplaceable, increasingly difficult-to-mine metal supply <i>reminds us we do have a Mother to heed to</i>.<sup>1</sup>  
+  var blogpost16 = `<p class="firstparagraph">Palladium, micrograms of Gold and Silver, and of course, the yttrium, the lanthanum, without forgetting good old terbium, then a dusting of neodymium, a dash of gadolinium and and finally a sprinkle of praseodymium. The ingredients for a typical iphone are not a luxury, but a <i>sine qua non</i> necessity, while the irreplaceable, increasingly difficult-to-mine metal supply <i>reminds us we do have a Mother to heed to</i>.<sup>1</sup>  
   </p>
   <p>Tech's relationship with the Earth is very symbiotic, in that Earth's problems are increasingly dependent on Tech's promise for scalable, innovative solutions beyond Humankind's reach. So, much like the clean-energy infrastructure will depend on fossil fuels to be built, tech hardware will depend on more difficult mining. But to what end? With growing national and corporate competitiveness on a more crowded, more connected globe, the race is on to achieve sustainability with both.   </p><p>
   But the story isn't about Tech here on Earth Day - the story is the Earth's, and why the Earth's Superman, Technology, will come down from the sky to save the day ...
@@ -116,13 +117,13 @@ var bloggerApr = function () {
   <p class="cite">2. <a href="http://www.bbc.com/future/story/20161017-your-old-phone-is-full-of-precious-metals" target="blank">http://www.bbc.com/future/story/20161017-your-old-phone-is-full-of-precious-metals</a>
   </p>`;
 
-  blogpost15 = `<p class="firstparagraph">Speed versus scalability. Security versus user-experience. Stability versus complexity. Ethereum, along with other blockchain developers, inhabit a virtual reality, a reality in which application uses and perils are not fully conceivable. Traditional app-developers, long habituated to the centralized server and popular usage--not to mention any regulation--to know the lines in the sand, which constrain a developer. The decentralized app (DAPP) developers have no such luxury, except to abide by a certain golden rule; a single rule that sustains crypto-tech's very existence: The Rule of Trust, without which blockchain tech has nothing to offer. 
+  var blogpost15 = `<p class="firstparagraph">Speed versus scalability. Security versus user-experience. Stability versus complexity. Ethereum, along with other blockchain developers, inhabit a virtual reality, a reality in which application uses and perils are not fully conceivable. Traditional app-developers, long habituated to the centralized server and popular usage--not to mention any regulation--to know the lines in the sand, which constrain a developer. The decentralized app (DAPP) developers have no such luxury, except to abide by a certain golden rule; a single rule that sustains crypto-tech's very existence: The Rule of Trust, without which blockchain tech has nothing to offer. 
   </p>
   
   <p>The very premise of designing distributed ledger platforms hinges on placing a platform's cryptographic, algorthmic design at the center, the link between every user. This trust, <i>built on mathematical proofs,</i> ensures peer-to-peer transactions in which  <i>neither party needs to trust the counter-party, nor any third-party.</i>We trust in the cryptography that our transaction will be fulfilled: In Math We Trust. </p> <br />
   `;
 
-  blogpost14 = ` 
+  var blogpost14 = ` 
   <p class="quote">“I think great artists and great engineers are similar, in that they both have a desire to express themselves. In fact some of the best people working on the original Mac were poets and musicians on the side.” <sup>1</sup><br /> – Steve Jobs</p><br />
   <p class="firstparagraph">Words, Sentences, Paragraphs. Variables, Functions, Modules.  With so many languages used for different purposes by different organizations, syntax is more than 4-space indents, variable name-spaces, and other formalities. Today, the variety of coding languages and scripts can appear more complicated than is/+*- the case: After all, all computer <i>languages boil down to the same primary tasks: for &amp; while loops, if-then statements, variable declarations, scope considerations, etc ...</i>     
   </p>
@@ -180,7 +181,7 @@ var bloggerApr = function () {
   <p class="cite">2. <a href="https://www.python.org/dev/peps/pep-0020/" target="blank">https://www.python.org/dev/peps/pep-0020/</a>
   </p>`;
 
-  blogpost13 = `
+  var blogpost13 = `
   <p class="firstparagraph">Bitcoin's rise to prominence, the mystery of Satoshi Nakamoto's identity--i.e., author of <a href="dist/docs/bitcoinWhitePaper.pdf" target="_blank"> the original Bitcoin White Paper</a>, and the platform's reliability (outside of value fluctuations) all add to the mystique of the crypto-currency.  Yet,     new advances and types, i.e. "groupings" of blockchain technology are not necessarily "replacing" their predecessors, but rather filling different blockchain needs; Needs that include speed of transactions, truly public distributed ledgers, safety from forking and DDOS attacks.  Since 2008,   groups of competing platforms follow a timeline, but should not be thought of as a cyclical evolution but rather growing tree branches that form "groups".  Bitcoin, Litecoin are first generation, while Ethereum and Ripple are 2nd generation with crypto-contract capability, and finally Iota and Swirlds' Hedera Hashgraph represent   3rd generation <i>directed-acyclic-graphs (DAG), whose transaction speed actually  increases</i> with number of nodes.
   </p>
   <p>Each of these groupings shouldn't be seen as making the previous design obselete: They   serve different purposes. Bitcoin can never serve micro-transactions and the micro-economy because it can only handle 6 transactions per second (TPS), while Ethereum can handle 12 or so. However, micro-transaction industries require TPS in the hundreds of thousands! Only the 3rd gen  crypto-currency architecture   achieves TPS <i>ad infinitum</i> because it's scalability increases with size. The catch? DAG's are necessarily private entities, rather than the original two generations that are by nature public, yet can be privatized. 3rd generation DAGs are the opposite: They are by default private, and cannot truly be distributed without management. Further, <i>Swirlds Hashgraph has patented their source code, which contradicts many principles of blockchain technology</i>, beginning with core tenets  of the original crypto-currency white paper, published in October 2008. For history
@@ -196,7 +197,7 @@ var bloggerApr = function () {
   </a> </p>
   <p class="cite">3. <a href="https://s3.amazonaws.com/hedera-hashgraph/hh-whitepaper-v1.0-180313.pdf" target="_blank">https://s3.amazonaws.com/hedera-hashgraph/hh-whitepaper-v1.0-180313.pdf</a> </p>`;
 
-  blogpost12 = ` 
+  var blogpost12 = ` 
   <p class="firstparagraph">Dictionaries and libraries place the programmer into a once-in-a-lifetime opportunity to ride the lightning of the open-source community. Volunteers and corporate sponsors take the credit for the enormous effort making a  near limitless selection of functions, dictionaries and modules for languages such as  JavaScript and Python programming.<sup>1</sup> Today, a programmer can   put together JavaScript Components and Modules with less thought about syntactical logic, and more consideration for the problem at hand. 
   </p>  
   <p class="quote">Each significant piece of functionality in a program should be implemented in just one place in the source code. Where similar functions are carried out by distinct pieces of code, it is generally beneficial to combine them into one by abstracting out the varying parts.</br ></br >
@@ -214,7 +215,7 @@ var bloggerApr = function () {
   <p class="cite">2.<a href="http://www.cs.utexas.edu/~EWD/" target="_blank">http://www.cs.utexas.edu/~EWD/
   </a> </p> `;
 
-  blogpost11 = ` 
+  var blogpost11 = ` 
   <p class="firstparagraph">E.U.'s Parliament has   invited Zuckerberg to speak with member-states in Brussels to discuss both the upcoming <i>General Data Protection Regulation (GDPR)</i> new rules, along with the 2.7 Europeans, whose data also was sold to Cambridge Analytica.<sup>1</sup> Not exactly an invitation to the Ball...
   </p>
   <p class="quote">The Brussels-based commission said [European Commission Vice-President] Ansip would also meet with Google Chief Executive Officer Sundar Pichai, Twitter General Counsel Sean Edgett and Netflix General Counsel David Hyman in individual meetings to talk about data protection, online privacy, illegal content, disinformation campaigns, digital copyright and artificial intelligence.<sup>2</sup></p> 
@@ -227,7 +228,7 @@ var bloggerApr = function () {
   </a> </p> `;
 
 
-  blogpost10 = `<p class="firstparagraph">This week, the Supreme Court   revisits its 1992 decision not requiring state sales taxes for online purchases.<sup>1</sup> Although big-box stores like Amazon, Walmart, etc. <i>do</i> pay state taxes among the 45 states requiring it, small- and medium-sized retailers do not need to collect sales taxes in any state where they do not have physical presence, also known as "nexus." But, beginning this Tuesday, the free ride may come to an  end; this includes small retailers that comprise half of Amazon's 3rd-party online sales.
+  var blogpost10 = `<p class="firstparagraph">This week, the Supreme Court   revisits its 1992 decision not requiring state sales taxes for online purchases.<sup>1</sup> Although big-box stores like Amazon, Walmart, etc. <i>do</i> pay state taxes among the 45 states requiring it, small- and medium-sized retailers do not need to collect sales taxes in any state where they do not have physical presence, also known as "nexus." But, beginning this Tuesday, the free ride may come to an  end; this includes small retailers that comprise half of Amazon's 3rd-party online sales.
   </p>
   <p class="quote">  
   
@@ -241,7 +242,7 @@ var bloggerApr = function () {
   <p class="cite">3.<a href="https://www.washingtonpost.com/news/business/wp/2018/04/13/this-billionaire-toy-executive-has-a-last-ditch-mission-to-save-toys-r-us-before-its-too-late/?noredirect=on&utm_term=.b3201ad77891" target="_blank">https://www.washingtonpost.com/news/business/wp/2018/04/13/this-billionaire-toy-executive-has-a-last-ditch-mission-to-save-toys-r-us-before-its-too-late/?noredirect=on&utm_term=.b3201ad77891
   </a> </p> `;
 
-  blogpost9 = `
+  var blogpost9 = `
   <p class="firstparagraph">For all the clamor about Bitcoin's carbon footprint, who doesn't love the sound of money?  And, for all the pitfalls of Iota and the ever-evolving Ethereum (and ever-present threat of forking), Bitcoin stands true among the crypto-currency platforms. Keeping it Simple,   the very limited, non-crypto-contract may just be Bitcoin's virtue. In a rocky world, <i>a plain, no-frills crypto-currency with stability</i> is incomparable to crypto-contract powers, that are not fully stable, like Ethereum and Iota.  </p>
   <p>So, it's living the dream, but must it be so cost-intensive? Maybe, Maybe not, but where does the future lie for all that hardware? Where does the browser fit into this? First, what's going on under the hood: Note this article is older, but accurate in explanation--except for references to Bitcoin's value! </p>  
   
@@ -265,7 +266,7 @@ var bloggerApr = function () {
   <p class="cite">1.<a href="https://qz.com/154877/by-reading-this-page-you-are-mining-bitcoins/" target="_blank">https://qz.com/154877/by-reading-this-page-you-are-mining-bitcoins/
   </a> (The article link is harmless, but wouldn't recommend running it if low on batteries--it doubled the fan speed)</p>  `;
 
-  blogpost8 = `  <p class="firstparagraph">  Data privacy regulation's challenge begins with five million apps between Apple and Android stores. Countless vulnerabilities, not to mention different standards and languages across the app world. <i>Like all Tech problems,</i>scalability requires Tech problem-solving--</i>in this case implying artificial intelligence.  About A.I., Zuckerberg remarks:</p>  
+  var blogpost8 = `  <p class="firstparagraph">  Data privacy regulation's challenge begins with five million apps between Apple and Android stores. Countless vulnerabilities, not to mention different standards and languages across the app world. <i>Like all Tech problems,</i>scalability requires Tech problem-solving--</i>in this case implying artificial intelligence.  About A.I., Zuckerberg remarks:</p>  
   <p class="quote"> There are some really nuanced questions, though, about how to regulate [data] which I think are extremely interesting intellectually. So the biggest one that I’ve been thinking about is this question of: To what extent should companies have a responsibility to use AI tools to kind of self-regulate content?<sup>1</sup>
   </p>
   <p>However such musing goes, the European Union's May 14th implementation takes a <i>direct stand against the concept of algorithm use with data</i>, which begs the A.I. question again. </p>
@@ -279,7 +280,7 @@ var bloggerApr = function () {
   <p class="cite">3. <a href="https://www.nytimes.com/2018/04/08/technology/a-tough-task-for-facebook-european-type-privacy-for-all.html?ribbon-ad-idx=2&rref=technology&module=Ribbon&version=context&region=Header&action=click&contentCollection=Technology&pgtype=article" target="_blank">https://www.nytimes.com/2018/04/08/technology/a-tough-task-for-facebook-european-type-privacy-for-all.html 
   </a> </p>  `;
 
-  blogpost7 = `<p class="firstparagraph">Day two of Congressional hearings over Facebook's Data Privacy and Protections  were better articulated than the first day. Important dialogue surrounded primarily   two data privacy topics: First, financial transparency surrounding ads and political ads based on the <i>Honest Ads Act</i>, for which Zuckerberg pledged support<sup>1</sup>. 
+  var blogpost7 = `<p class="firstparagraph">Day two of Congressional hearings over Facebook's Data Privacy and Protections  were better articulated than the first day. Important dialogue surrounded primarily   two data privacy topics: First, financial transparency surrounding ads and political ads based on the <i>Honest Ads Act</i>, for which Zuckerberg pledged support<sup>1</sup>. 
   </p>
   <p>Second, and   more far-reaching, discussion of the <i>Browser Act</i> also was raised by several House members. While responding to the Act's sponsor, Marsha Blackburn of Tennessee, Zuckerberg expressed interest in working together. This bill is not well known, but aims to set prudent, consistent guidelines of privacy in the hands of the consumer. </p>
   <p class="quote"> [Blackburn's] new bill targets the full spectrum of the internet, including web giants like Amazon and Google. In Blackburn’s words, it moves the government “to a posture where we have one regulator, one set of rules [and] everybody knows who’s in charge,” she told Recode.<sup>3</sup></p>
@@ -305,7 +306,7 @@ var bloggerApr = function () {
   <p class="cite">4. <a href="https://www.reuters.com/article/us-facebook-privacy-zuckerberg/zuckerberg-resists-effort-by-u-s-senators-to-commit-him-to-regulation-idUSKBN1HH1CU" target="_blank">https://www.reuters.com/article/us-facebook-privacy-zuckerberg/zuckerberg-resists-effort-by-u-s-senators-to-commit-him-to-regulation-idUSKBN1HH1CU
   </a></p>  `;
 
-  blogpost6 = ` 
+  var blogpost6 = ` 
   <p class="firstparagraph">Mark Zuckerberg daftly played word-tennis with   Senators in the first day of Congressional Hearings on Facebook Data Privacy issues. Although, in this case, <i>there were two, at times three, tennis balls at play!</i> What I mean is that "Data" and "Personal Data" vaccilated in meaning:  At times, Senators' questions referred to, 1.) personally identifiable data with intimate personal details, full name, location data (sensitive-data); 2.) Other times questions referred to <i>derivative data, i.e. data wrangled, refined, merged with different datasets</i> (composite-data); and,  3.) sometimes the questions meant the harmless, identity-encrypted "ad-data"(anonymized-data); but, usually, Zuckerberg responded to a question about one of these three meanings of "personal data", by responding with a non-abstract fourth: 4.) "Senator, the data, the 'likes' and pictures you share with Facebook, they are your property," Zuckerberg would answer. Well, thank goodness! </p>
   <p> My blogpost talks about the shades of meaning: We all know the light-hearted awkwardness when a conversation splits into two separate threads because each party unknowingly follows differing meanings from the same word, or idea.  Austin Powers would have more fun with it, but the Sociologists typically call it  a <i>Semantic Predicament</i>.<sup>1</sup></p> 
   <p>In fairness, Mark Zuckerberg volunteered as he himself was not subpoenaed, and therefore this preliminary, public discourse was critical for creating shared meaning and language about a complex topic. By volunteering to engage conversation with Senators, Zuckerberg interrupts the <i>game of telephone</i>; and, Senators engage with their constituents, and lo, America saves two years' of misunderstandings for clear data-protection action now. Bravo, Mark! Zuckerberg is perhaps one of the braver CEOs in American history--Now, he has earned his place right next to Andrew Carnegie--and very similar lives, too. And now, with defined boundaries, <i>Tech has a better roadmap</i> for ethical policy and sensible regulation. So let the data debates begin--but this time,with only one   ball at play! </p>
@@ -319,7 +320,7 @@ var bloggerApr = function () {
   <p class="cite">2. <a href="https://www.wired.com/story/mark-zuckerberg-talks-to-wired-about-facebooks-privacy-problem" target="_blank">https://www.wired.com/story/mark-zuckerberg-talks-to-wired-about-facebooks-privacy-problem
   </a>	</p> `;
 
-  blogpost5 = `<p class="firstparagraph">Psychometrics, along with today's biometrics and econometrics, form the 3 primary domains of statistical research. These three fields approach research differently. Psychometricians are less causally oriented, as their tool, "factor analysis"--<i>analyse factorielle</i>--reduces complex data to dimple, categorical forms in order to reconcile <i>quantitative data</i> with intuitive categories.<sup>1.</sup> And this research is great for expanding knowledge about society. But to what end? Who's to say, after all society is both the subject <i>and</i> object of this research. Social scientists are used to these mental gymnastics, yet are bound by a certain ethos of research: <strong>Anonymization, i.e. encrypting or removing personally identifiable information from datasets</strong>. This is the Social Scientists' <i>Oath</i>--a line of decency. </p>
+  var blogpost5 = `<p class="firstparagraph">Psychometrics, along with today's biometrics and econometrics, form the 3 primary domains of statistical research. These three fields approach research differently. Psychometricians are less causally oriented, as their tool, "factor analysis"--<i>analyse factorielle</i>--reduces complex data to dimple, categorical forms in order to reconcile <i>quantitative data</i> with intuitive categories.<sup>1.</sup> And this research is great for expanding knowledge about society. But to what end? Who's to say, after all society is both the subject <i>and</i> object of this research. Social scientists are used to these mental gymnastics, yet are bound by a certain ethos of research: <strong>Anonymization, i.e. encrypting or removing personally identifiable information from datasets</strong>. This is the Social Scientists' <i>Oath</i>--a line of decency. </p>
 <p>Tomorrow, Tuesday at noon, the world will tune in to hear Mark Zuckerberg's testimony before the U.S. Congress, all to hear about Facebook &amp; company's line of decency. However indecent any revelations may be, I'm not that entirely threatened by the revelations. Maybe I won't admit I'm   prone to Social Media influence, because I chart my course. Here's more from the esteemed Abbott: </p> 
 
 <p class="quote">“We have ended up believing that social reality is determined in the main by certain general forces, and that these generalities are then specified by combinations of forces, and further limited by various aspects of “individuality,” which in this sense is best understood as idiosyncratic higher order interaction.”<sup>1</sup> </p>
@@ -334,7 +335,7 @@ var bloggerApr = function () {
 <p class="cite">3. <a href="https://www.wired.com/story/did-cambridge-analytica-access-your-facebook-data/" target="_blank">https://www.wired.com/story/did-cambridge-analytica-access-your-facebook-data/
 </a></p>`;
 
-  blogpost4 = ` 
+  var blogpost4 = ` 
   <p class="firstparagraph">Revolutions come and revolutions go, but the <i>2nd app revolution</i> is already underway, albeit quietly.<sup>1</sup> Most media sources refer to a "Native App - Progressive Web App Debate" with emphasis on what the native app can already do--<i>so if it's not broke, don't fix it</i>. However, implications change as the conversation turns to the Hyper Text Transfer Protocol (HTTP) Chrome V-8 JavaScript Engine<sup>2</sup>--you know, the web-app on <i>steroids</i>! </p>
   <p>So what kind of steroids you ask? Let us say that the power of the modern browser lies in the open-source JavaScript engine, first C++ variation <i>originally </i>introduced in 2008 by Google's Chromium project. Open-source<i>-who?</i> (close your eyes next paragraph for the jargon-wary!) </p>
   <p class="quote">A JavaScript engine is a program or an interpreter which executes JavaScript code. A JavaScript engine can be implemented as a standard interpreter, or just-in-time compiler that compiles JavaScript to bytecode in some form.<sup>2</sup></p>
@@ -346,7 +347,7 @@ var bloggerApr = function () {
   
   <p class="cite">2. <a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank">https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e</a></p>`;
 
-  blogpost3 = `  <p class="firstparagraph">Today's Web Browsers, &agrave; la Firefox, Chrome, Opera, etc., are <i>unabashedly on steroids</i>. And, well they deserve to be--they were here first! More importantly, the browser's native language--JavaScript--has been granted full power of the entire web's backend, i.e. servers, data, todos. This means that the browser achieves instant loading, <i>fully progressive, device-responsive,</i> full <i>HTTPS</i>-encryption security, and coherent cross-browser compatibility. So that your favorite   apps look and interact the same between the array of browser choices. The Washington Post has been lauded for helping pioneer the technology. Most notably, their progressive web app loads in .9 of a second, while their native mobile app requires 2.9 seconds.<sup>3</sup> Not exactly a photo finish!</p>
+  var blogpost3 = `  <p class="firstparagraph">Today's Web Browsers, &agrave; la Firefox, Chrome, Opera, etc., are <i>unabashedly on steroids</i>. And, well they deserve to be--they were here first! More importantly, the browser's native language--JavaScript--has been granted full power of the entire web's backend, i.e. servers, data, todos. This means that the browser achieves instant loading, <i>fully progressive, device-responsive,</i> full <i>HTTPS</i>-encryption security, and coherent cross-browser compatibility. So that your favorite   apps look and interact the same between the array of browser choices. The Washington Post has been lauded for helping pioneer the technology. Most notably, their progressive web app loads in .9 of a second, while their native mobile app requires 2.9 seconds.<sup>3</sup> Not exactly a photo finish!</p>
 
   <p class="cite">1. <a href="https://www.techrepublic.com/article/how-progressive-web-apps-promise-to-upend-native-mobile-apps/" target="_blank">https://www.techrepublic.com/article/how-progressive-web-apps-promise-to-upend-native-mobile-apps/</a></p>
 
@@ -357,7 +358,7 @@ var bloggerApr = function () {
   
   <p class="cite">4. <a href="https://www.gartner.com/smarterwithgartner/top-trends-in-the-gartner-hype-cycle-for-emerging-technologies-2017/" target="_blank">https://www.gartner.com/smarterwithgartner/top-trends-in-the-gartner-hype-cycle-for-emerging-technologies-2017/</a></p>`;
 
-  blogpost2 = `  <p  ><small>Note on app definitions in this post: Anything downloaded, whether iOS or Android is <i>native mobile app</i>, while progressive web apps are strictly behind the HTTPS protocol, i.e. browser-based.</small></p>
+  var blogpost2 = `  <p  ><small>Note on app definitions in this post: Anything downloaded, whether iOS or Android is <i>native mobile app</i>, while progressive web apps are strictly behind the HTTPS protocol, i.e. browser-based.</small></p>
   <p class="firstparagraph">Mobile Devices are ever delightful, yet a pesky 2 to 3-second delay often accompanies our everyday tasks using device-native apps. For the impatient, this delay is not tolerable, and even the patient have their urgent moments (or have better things to do).    So, whether we're Verizon, T-Mobile, or pre-pay phones like Sprint's Boost, our experiences are the same: 3-second delays abound--much to our impatience!  </p>
   <p >Instant Loading </p>
   <p >In contrast, many of our daily web-based tasks are instant, i.e. a second or less. I feel instant loading should be <i>a right</i>, not an occasional convenience. what does this potential mean? This means an app's service workers can load nearly immediately and reliably. This means  non-choppy  animations, smooth scrolling, no matter the network connection you're using, no matter the device!  </p>
@@ -379,7 +380,7 @@ var bloggerApr = function () {
   
   <p class="cite">3. <a href="https://www.wired.com/2016/04/wait-web-isnt-really-dead-google-made-sure/" target="_blank">https://www.wired.com/2016/04/wait-web-isnt-really-dead-google-made-sure/</a></p>`;
 
-  blogpost1 = `<p class="firstparagraph">Next May 9th, the greatest known threat to traditional blockchain technology will be formally introduced, <i>along with its source code</i>, into our technological world. Hedera Hashgraph represents a blockchain alternative that caters to time-sensitive transactions, and order fairness. Currently, one transaction with Bitcoin takes about 12 minutes to validate. Ethereum is only a couple minutes, but in a world of micro-transactions and micro-second transactions, speed counts.</p><p>Next, Hedera's technology uses a consensus algorithm, which depends on  node neighbors' "voting" elections. This means that the design is impervious to "forking"--when a part of the blockchain splits and no long syncs with the main blockchain.  More importantly, Hedera's consensus design is   built on Asynchronous Byzantine Fault Tolerance (aBFT), so is then impervious to threats of <i>Distributed Denial of Service (DDS) attacks. </i></p>
+  var blogpost1 = `<p class="firstparagraph">Next May 9th, the greatest known threat to traditional blockchain technology will be formally introduced, <i>along with its source code</i>, into our technological world. Hedera Hashgraph represents a blockchain alternative that caters to time-sensitive transactions, and order fairness. Currently, one transaction with Bitcoin takes about 12 minutes to validate. Ethereum is only a couple minutes, but in a world of micro-transactions and micro-second transactions, speed counts.</p><p>Next, Hedera's technology uses a consensus algorithm, which depends on  node neighbors' "voting" elections. This means that the design is impervious to "forking"--when a part of the blockchain splits and no long syncs with the main blockchain.  More importantly, Hedera's consensus design is   built on Asynchronous Byzantine Fault Tolerance (aBFT), so is then impervious to threats of <i>Distributed Denial of Service (DDS) attacks. </i></p>
 <p>So, lightning speed for validating crypto-transactions. Guaranteed security from hard- or soft-forking of the blockchain, and DDS-like attacks. Fairness in transaction order. Come May 9th, we'll see just how Hedera's codebase and cryptocurrency will accomplish these benchmarks, and if so, Heraclitean river stops in time! If not, yet another cryptographic mirage!</p>
 <p class="cite">1. <a href="https://www.hederahashgraph.com" target="_blank">	https://www.hederahashgraph.com</a> </p>
 <p class="cite">1. <a href="https://medium.com/hashgraph/eat-pray-hashgraph-56b9613ed46f" target="_blank">https://medium.com/hashgraph/eat-pray-hashgraph-56b9613ed46f</a> </p>`;
@@ -598,6 +599,7 @@ var bloggerApr = function () {
     }
   ];
 
+  var i;
   for (i=0;i < url.length; i++){ 
     var cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 

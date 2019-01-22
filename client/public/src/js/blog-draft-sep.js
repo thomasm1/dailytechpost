@@ -1,3 +1,4 @@
+'use strict';
 
 var bloggerSep = function () {
  
@@ -46,24 +47,24 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   </a>
   </p>  
      `;  
-  blogpost20 = ` <p class="quote"> <br /><br />
+     var        blogpost20 = ` <p class="quote"> <br /><br />
   </p>
   `;
-  blogcite20   =  `
+  var        blogcite20   =  `
    
   `;
  
-  blogpost19= `<p class="firstparagraph">For every article and blog on the sci-fi imaginations of tech writers, real A.I. presents itself every so often as what it is essentially: a tool.<i> A multi-purpose toolset, tracing its algorithmic root to &Eacute;mile Durkheim\'s 1870s era classification science</i> of human epidiology using national population data from Paris. </p><p>
+  var      blogpost19= `<p class="firstparagraph">For every article and blog on the sci-fi imaginations of tech writers, real A.I. presents itself every so often as what it is essentially: a tool.<i> A multi-purpose toolset, tracing its algorithmic root to &Eacute;mile Durkheim\'s 1870s era classification science</i> of human epidiology using national population data from Paris. </p><p>
   Earlier  Statisticians and Scientists, i.e. modern Developers and Engineers also took their generation's Information Technology, applying it toward human-driven purposes. </p>
   <p>I'm an optimist at heart, so this blog post stands out: </p><p class="quote">I’d like to point out that the recipe isn’t all that different from code that a programmer might have written by eyeballing the problem and manually making up some rules. Quit anthropomorphizing machine learning already. A model is conceptually the same kind of thing as regular code. You know, the kind of recipe that’s handcrafted by some human armed with an opinion and a caffeine source.<br /><br />And don’t go around saying that retraining — jargon for rerunning the algorithm to adjust the boundary as new examples are gathered — makes it creature-like or inherently different from your programmer’s standard work product. Humans can sit there tweaking the code in response to new info too. <sup>1</sup>
   </p>
   <p> Now, A.I. that is attached to robototics? That is an entirely different story, and more akin to another technology, gun weapon proliferation and advancement. Apples and Oranges: Two completely different timelines and analogies that only imaginatively relate according to Hollywood-esque journalists that can assume malevalent intent from a tool, whether a utensil, a car, or an algorithm. 
     </p>
   `;
-  blogcite19   =  `
+  var blogcite19   =  `
   <p class="cite">1. <a href="https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc">https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc</a></p>
   `;
-  blogpost18 = `<p>The 2000's Silicon Valley-led boom and bust resulted from overspeculation. The crypto-phenomenon moreso resembles the derivatives packages from the 2007-8 recession bust because value was placed on real estate's miscalculated worth based on the assumption the homeowners didn't borrow over their income. Likewise crypto-ICO's values wasn't based on a currency comprised of real cash, but <i> rather, ICO's and crypto-platforms were investments of crypto-currency!</i>So, if the one does well, the other continues to do well, multiplied. But exponential gain also means logarithmic loss ...
+  var blogpost18 = `<p>The 2000's Silicon Valley-led boom and bust resulted from overspeculation. The crypto-phenomenon moreso resembles the derivatives packages from the 2007-8 recession bust because value was placed on real estate's miscalculated worth based on the assumption the homeowners didn't borrow over their income. Likewise crypto-ICO's values wasn't based on a currency comprised of real cash, but <i> rather, ICO's and crypto-platforms were investments of crypto-currency!</i>So, if the one does well, the other continues to do well, multiplied. But exponential gain also means logarithmic loss ...
    <p class="quote"> There has been a collapse in the number of ICOs that have tried to raise financing.
 
   This has been driven by a number of factors including uncertainty around regulation, falling crypto market prices and of course, disillusionment in the previous ICOs that raised funding.    Given that the Ethereum blockchain was the premier platform for ICOs to raise their funding, it is feeling the brunt of this slowdown.<br /><br />
@@ -72,11 +73,11 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   <p>Notwithstanding, <i> We can also are miscalculating about crypto-platforms'   center of value  ... it's   about the upcoming actual and inevitable practicality for everyday uses.</i> So, three cheers to a long, slow ramp--to another  great  and lasting crypto-currency resurgence!</p>.0
 
   `;
-  blogcite18   =  `
+  var blogcite18   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://usethebitcoin.com/the-fall-of-the-ico-impacting-eth-price/</a></p>
   `;
 
-  blogpost17 = ` 
+  var blogpost17 = ` 
 <p class="firstparagraph">Regulation of crypto-currencies remains the bane of wider acceptance--while it <i>also shores up trust among fintech instiutions, toward a more certain future. </p>
   <p class="quote"> The move upwards, which occurred over several hours, came as news broke that U.S. regulators had again postponed their decision on the VanEck/SolidX Bitcoin exchange-traded fund (ETF), but had not rejected it outright.
 <br /><br />
@@ -84,20 +85,20 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   </p><p>
   Imagine if a bank had staked pension portfolio's the value of Ether last fall. <i>That</i> would have been a Winter of Discontent value precipitously plummeted by April.</p>
   `;
-  blogcite17   =  `
+  var blogcite17   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains">https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains</a></p>
   `;
-  blogpost16 = ` <p class="firstparagraph">Altering Market States and technology-advancement forces introspection among crypto-currency hubs.</p>
+  var blogpost16 = ` <p class="firstparagraph">Altering Market States and technology-advancement forces introspection among crypto-currency hubs.</p>
   <p class="quote"> According to a local report, as a result of a security breach on September 14, hackers managed to steal 4.5 billion yen from users' hot wallets, as well as 2.2 billion yen from the assets of the company, with total losses amounting to 6.7 billion yen or around $59.7 million.
 <br />
   Tech Bureau Inc, which operated Zaif, stated in press release that the exchange detected a server error on September 17, after which Zaif suspended deposits and withdrawals. On September 18, the exchange realized that the error was a hack, and reported the incident to the Japanese financial regulator, the Financial Services Agency (FSA). Hackers stole 5,966 bitcoins (BTC) in addition to some Bitcoin Cash (BCH) and MonaCoin (MONA).<sup>1</sup> 
   </p><p>Fintech regulations have been long in coming, but a thorough SEC-pushed security overhaul could at least dispell fears about what amounts to bank robberies.</p>
   </p>
   `;
-  blogcite16   =  `
+  var blogcite16   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported">https://cointelegraph.com/news/japanese-cryptocurrency-exchange-hacked-59-million-in-losses-reported</a></p>
   `;
-  blogpost15 = `<p class="firstparagraph">Crypto-currency dealers, developers and owners should welcome more regulation, scrupulous examination from financial authorities...the value of trust far outweighs the value of speed to market.</p>
+  var blogpost15 = `<p class="firstparagraph">Crypto-currency dealers, developers and owners should welcome more regulation, scrupulous examination from financial authorities...the value of trust far outweighs the value of speed to market.</p>
   <p class="quote"> The recent report examines the practices of ten crypto trading platforms based in the U.S. and abroad, as well data collected by the Attorney General’s office about the state of digital currency markets as a whole.<br /><br />
 
   The study found that the absence of accepted methods for auditing virtual assets results in the lack of a consistent and transparent approach to independently auditing digital currency traded on exchanges. This puts customers’ funds held on their exchange accounts at risk of attacks from hackers or theft. The report subsequently questions the issue of public protection and the sufficiency of the commercial insurance to cover possible losses.<br /><br />
@@ -107,10 +108,10 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   “Automated trading activities could also allow a single trader or group of traders to command multiple accounts simultaneously to obscure coordinated trading, in order to manipulate prices.”<sup>1</sup>
   </p><p>So, whether before or after breeches of trust, that are inevitable on digital platforms, wouldn't you prefer SEC scrutiny along with its guarantees?
   `;
-  blogcite15   =  `
+  var blogcite15   =  `
   <p class="cite">1. <a href="https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation"> https://cointelegraph.com/news/new-york-attorney-general-report-says-crypto-exchanges-are-at-risk-of-manipulation</a></p>
   `;
-  blogpost14 = `<p class="firstparagraph">Security of a network can be measured by the degree of carefulness from any node on a network. Likewise, bridging, central hubs can work to bottle-neck the spread of network dangers...  </p>
+  var blogpost14 = `<p class="firstparagraph">Security of a network can be measured by the degree of carefulness from any node on a network. Likewise, bridging, central hubs can work to bottle-neck the spread of network dangers...  </p>
   <p class="quote"> As an international data hub and digital entry point to Europe, the Netherlands plays an important role when it comes to tackling these threats and optimally guaranteeing the cybersecurity of our critical infrastructure.
 
   Saskia Bruines, Deputy Mayor for Education, Knowledge Economy and International Affairs in the Municipality of The Hague:<br /><br />
@@ -119,10 +120,10 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   </p>
   <p>Whether or not the security hole is breeched is immaterial--what counts is loss mitigation and insurance!</p>
   `;
-  blogcite14 =  `
+  var blogcite14 =  `
   <p class="cite">1. <a href="https://www.benzinga.com/pressreleases/18/09/r12366605/cyber-security-week-together-we-secure-the-future-2-5-october-2018-the">https://www.benzinga.com/pressreleases/18/09/r12366605/cyber-security-week-together-we-secure-the-future-2-5-october-2018-the</a></p>
   `;
-  blogpost13 = `
+  var blogpost13 = `
  
   <p class="firstparagraph">Paris, as a City foremost, has led global discussion and awareness on climate-change related action. Paris' smog-dispelling culture presents itself as <i>The City at the center of action</i> with respect to global, macro-level problems. Why the city? It only makes sense that collective action and mobilization requires the correct ratio of community leaders and actors to engage enough social momentum to overcome apathy. </p>
   <p class="quote">This year, the ban on motorized traffic will apply to the whole of Paris, except for the Bois (woods) and the périphérique (inner ring road). 
@@ -137,24 +138,24 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   These people included but were not limited to: environmentalists, mayors from around the world, human rights activists, technologists, academics, business leaders, labor leaders, and former secretaries of state. The kinds of folks with noble pursuits. This was climate change activism without borders. If the Paris Agreement, drafted in 2015, was about governments coming together to fight, last week’s event showed that the most ambitious climate action isn’t happening on the national scale—it’s cities and states that are leading the way.<sup>2</sup></p>
   <p>Granted, the city is the center of climate-change peril and so it is only natural they are the first to act, and are the defacto center of action ... and hope.</p>
 `;
-  blogcite13 = `
+  var blogcite13 = `
 
   <p class="cite">1<a href="https://en.convention.parisinfo.com/travel-trade/car-free-day-paris">
   https://en.convention.parisinfo.com/travel-trade/car-free-day-paris</a></p>
     <p class="cite">2<a href="https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/">
     https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/</a></p>
   `;
-  blogpost12 = `<p class="firstparagraph">Los Angeles' technological centality has always been overshadowed by Silicon Valley and Seattle; however, Santa Monica's trendy tech hub has begun to make a name for itself with respect to one <strong>hugely important sector: climate-change related technology</strong>.     <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
+  var blogpost12 = `<p class="firstparagraph">Los Angeles' technological centality has always been overshadowed by Silicon Valley and Seattle; however, Santa Monica's trendy tech hub has begun to make a name for itself with respect to one <strong>hugely important sector: climate-change related technology</strong>.     <p class="quote"> This week, Los Angeles mayor Eric Garcetti joined other leaders, along with activists and business leaders, at the Global Climate Action Summit in San Francisco. The mission? Stop climate change before it destroys the planet, and our species along with it.
   <br /><br />
     But the city is in the midst of a metamorphosis. With fewer, yet stronger storms on the horizon, it’s begun an ambitious plan to cut its reliance on imported water in half by 2025. And it’s emerging as a leader in the frantic international quest to curb emissions—in 2016 alone, it slashed emissions by 11 percent, the equivalent of taking more than 700,000 cars off the road.
     <br /><br />
     We generated 30,000 new green jobs since I've been mayor, so in five years. To put that in perspective, there's 50,000 coal jobs left in America. So this town that’s just 1 percent, roughly, of the US population has created the equivalent of 60 percent of the remaining coal jobs left in America. Appalachia should be doing that, areas that have been hard hit by a recession and not recovered. These are generally good middle class jobs too, not just minimum wage.<sup>1</sup>
     </p>
     <p>The expanse of L.A.'s reach, now touching San Diego, makes climate-friendly commuting a top issue: The two are agglomerating into one city after all, neatly and merely divided by Camp Pendleton. Now, about that ever-elusive high-speed rail system connecting the two ... `;
-  blogcite12 = `
+  var blogcite12 = `
   <p class="cite">1. <a href="https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/">https://www.wired.com/story/how-los-angeles-is-helping-lead-the-fight-against-climate-change/</a></p>
    `;
-  blogpost11 = ` <p class="firstparagraph">World Economic Forum, most notable for its annual convocation of world leaders, works around the clock, with no shortage of resources for socio-economic research:
+  var blogpost11 = ` <p class="firstparagraph">World Economic Forum, most notable for its annual convocation of world leaders, works around the clock, with no shortage of resources for socio-economic research:
   </p> <p class="quote"> As technological breakthroughs rapidly shift the frontier between the work tasks performed by humans and those performed by machines and algorithms, global labour markets are likely to undergo major transformations. These transformations, if managed wisely, could lead to a new age of good work, good jobs and improved quality of life for all, but if managed poorly, pose the risk of widening skills gaps, greater inequality and broader polarization. In many ways, the time to shape the future of work is now. The Future of Jobs report provides tools which can support responses to the critical questions confronting businesses, governments and workers in the horizon up to 2022.<sup>1</sup>
   </p>
   <p>One clear take-away from the report features the urgent short-term need to responsibily fill vast holes in the labor market:</p>
@@ -169,12 +170,12 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   </p>
   <p><strong>... to which I say, <i>H.R. Managers of the World: Unite!</i></strong></p>
   `;
-  blogcite11 = ` 
+  var blogcite11 = ` 
   <p class="cite">1. <a href="http://reports.weforum.org/future-of-jobs-2018/">http://reports.weforum.org/future-of-jobs-2018/</a></p>
   
   <p class="cite">PDF Download<br /><a href="http://www3.weforum.org/docs/WEF_Future_of_Jobs_2018.pdf">http://www3.weforum.org/docs/WEF_Future_of_Jobs_2018.pdf</a></p>
   `;
-  blogpost10 = `<p class="firstparagraph">
+  var blogpost10 = `<p class="firstparagraph">
   Invisible upgrades are the true talking points of new mobile device  releases as they hint big things under the hood... Last year's iPhone X may have been alot of hardware show (with the X/8/8plus providing the first A.I.-dedicated chip), but 2018 augurs big things ahead and bigger muscle:
   <p class="quote">
   On Wednesday Apple announced that the neural engine is now significantly more powerful. Last year’s debut model could crank through 600 billion operations per second. The new version can work almost 10 times faster, reaching 5 trillion operations per second. Some of that speedup may come from using smaller transistors inside the A12, with features as small as 7 nanometers.<sup>1</sup>
@@ -185,10 +186,10 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   <p>Thanks to Apple's commitment to A.I., the iPhone Xs,   Xs Max, and   Xr offer all the joys of smart video/camera, processing, augmented reality, --<i>and with battery <strong>savings?</strong>   Ooh L&aacute; L&aacute;!</i>
 
   `;
-  blogcite10=  `
+  var blogcite10=  `
   <p class="cite">1. <a href="https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts"> https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts</a></p>
   `;
-  blogpost9 = `<p class="firstparagraph">International hubs of technical specializations--from haptic touchscreens to battery tech--implicates global cooperation--beyond merely rare metals and resources. 
+  var blogpost9 = `<p class="firstparagraph">International hubs of technical specializations--from haptic touchscreens to battery tech--implicates global cooperation--beyond merely rare metals and resources. 
   </p>
   <p class="quote"> Last week, dozens of manufacturing companies testified before US Trade Representatives about how Trump's next round of duties against China could affect them. Some showed concerns of layoffs for American people and harm to US economic interests.<sup>1</sup>
   </p>
@@ -198,11 +199,11 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
   The issue is not so much cost of putting an iPhone together, or even the cost per part on paper. The issue is skill, scale, expertise, and infrastructure — all of which require money, time and long-term investment. Unlike other manufacturing jobs that have migrated from the United States, Apple wouldn’t be bringing them “back” so much as starting from scratch. The cost would come in attempting to build a system that’s never been in the US, but has been built over decades abroad.<sup>2</sup>
   </p><p>So, at the end of the day, we can only hope that foreign tech resources along with associated human/social capital would just be left alone from economic tiffs ... Periodic table of rare metals and precious elements aside, the true gems are the diverse people!    
   `;
-  blogcite9=  `
+  var blogcite9=  `
   <p class="cite">1._<a href="https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247">https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247</a></p>
   <p class="cite">2._<a href="https://www.vox.com/technology/2018/9/13/17851052/apple-iphone-price-china-trump-us-trade"> https://www.vox.com/technology/2018/9/13/17851052/apple-iphone-price-china-trump-us-trade</a></p>
   `;
-  blogpost8 = `
+  var blogpost8 = `
   <p class="firstparagraph">Vitalik Buterin, architect of Ethereum crypto-contract/currency, presented at the recent TechCrunch Disrupt! conference with no shortage of opinions on the direction of blockchain and crypto-currency/contract investments... This, after the Ethereum (WEI) declines nearly ten-fold along with Bitcoin's 70% drop<sup>1</sup>, along with other major crypto-currencies. </p>
   <p>The story is less dramatic and mysterious than it is simply the natural course of market novelties' <i>transition from Early Adapters to General Acceptance</i>: The underlying value transitions from increasing public awareness to mainstream acceptance, which requires new, ensuing <i>expectations that differ from the previous period</i>. The substance of perceived value dictates actual value. Buterin opines to Bloomberg News...
     <p class="quote"> 
@@ -213,7 +214,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     <p>For example, Ethereum contract writers must learn a new language, Solidity; and Ethereum currency holders must grapple with browser-to-ledger interfaces like MetaMask, which are far from intuitive for even the most enthusiastic of early adopters!  </p>
     <p> This concept is laid bare in sociological terms, citing Rogers and Shumacher's 1971 article from my Feb. 15 post: the general sociological Early Adopter theory--based on Everett M. Rogers' Diffusion of Innovations theory, describing the timeline of the Innovation Adoption Lifecycle as fairly ordinary, or better stated, fairly historical--again repeating itself.<sup>3</sup> </p>
     `;
-  blogcite8 = ` 
+  var blogcite8 = ` 
     
     <p class="cite">1. <a href="https://markets.businessinsider.com/currencies/btc-usd"   target="_blank">https://markets.businessinsider.com/currencies/btc-usd
     </a>
@@ -225,7 +226,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     </p> 
      `;  
 
-     blogpost7 = `<p class="firstparagraph">Crypto-Millionaires one day, Crypto-Middle-class the next.  Crypto-currencies in all forms have sustained a 9-month decline, which most could not have anticipated.  Take for instance, December 2017's $1500 Ether value to recent values of $185<sup>1</sup>, and Bitcoin's November 2017 valuation of just under $20,000 on the CoinDesk Bitcoin Price Index (BPI) down to this week's $6,400.  </p>
+     var blogpost7 = `<p class="firstparagraph">Crypto-Millionaires one day, Crypto-Middle-class the next.  Crypto-currencies in all forms have sustained a 9-month decline, which most could not have anticipated.  Take for instance, December 2017's $1500 Ether value to recent values of $185<sup>1</sup>, and Bitcoin's November 2017 valuation of just under $20,000 on the CoinDesk Bitcoin Price Index (BPI) down to this week's $6,400.  </p>
      
      <img src="dist/img/cryptocurrency.jpg" class="zoom" />
      <p>The theories are multi-fold:</p>
@@ -241,7 +242,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
        <p>However one distributes the blame, psychological and economic explanations only fail where sociological explanations offer coherent explanations ... Look no further than my September 10th post ...
        </p>
        `;
-     blogcite7 = `
+     var blogcite7 = `
     
      <p class="cite">1. <a href="https://markets.businessinsider.com/currencies/btc-usd"   target="_blank">https://markets.businessinsider.com/currencies/btc-usd
      </a>
@@ -253,7 +254,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
      </p> https://qz.com/1349207/wall-streets-interest-in-bitcoin-like-ices-bakkt-isnt-boosting-crypto-prices/
         `;
 
-     blogpost6 = `
+     var blogpost6 = `
      <p class="firstparagraph">Quantum solutions to computing needs become clearer, and specific uses for research come to light. First and foremost, quantum mechanics offer a realm of solutions that has ever eluded modern science: problem-solving algorithms that face orders of complexity of 40 to 50 orders of magnitude, i.e. Complexity<sup>50</sup> is just a tad too complex for the fast, but straight-line dumb A.I.-based solutions, which are inherent to classificatory machine-learning schema. Blockchain and Directed Acyclic Graphs are less helpful, but find their utility in the unescapably fast ability to <i>share data where data is needed</i><br /><br /></p>
      Manipulations of the quantum realm are not at all intuitive to concepts we learn from the classical world. Less intuitive are the constraints of the data analysis. For example, the quantum metaphor of flipping two coins simultaneously means knowing the "state" of one coin if you know the other coin's state. The one lands on heads, and because it shares an entangled state with the other, <i>you are guaranteed to know the outcome of the second coin</i>. </p>
      <img src="dist/img/quantumScience.jpg"  class="zoom" />
@@ -266,26 +267,26 @@ That strategy is getting close to hitting a dead end.  The next step will be get
      
      <p>Not to be underestimated, quantum calculations operate best when modeling the laws of nature--because nature obeys quantum mechanical rules, beginning with chemistry. After all, quantum analysis simulated the largest molecule last year--and that's no small matter!  </p>
        `;
-     blogcite6 = ` 
+     var blogcite6 = ` 
        <p class="cite">  TechCrunch Disrupt! Day 3 
        </p>
         `;
-  blogpost5 = `
+  var blogpost5 = `
   <p class="firstparagraph">Machine learning's hey-day not only blossoms, but overtakes many areas of computing solutions if anything else but for the sheer ease of unloading mundane computing tasks. But the most widespread problem is that of non-A.I., non-machine-learning that masquerade as A.I., but are only complex looping algorithms. Much ado about nothing has been the death-knell for more than a few of the Startup Battlefield's contenders. <i>Disrupt's merciless premises abruptly dash dreams, but I guess that's what a public and publicized forum for Peer Review is all about!</i><br /> <br />... to be continued. </p> 
     `;
-  blogcite5 = ` 
+  var blogcite5 = ` 
     <p class="cite">   TechCrunch Disrupt! Day 3 
     </p>
      `;
-  blogpost4 = `<p class="firstparagraph"><br /> <br />  </p>
+  var blogpost4 = `<p class="firstparagraph"><br /> <br />  </p>
   <p class="quote"> <sup>1</sup></p>
   <p> </p> `;
-  blogcite4 = `
+  var blogcite4 = `
   <p class="cite">  <a href=""   target="_blank">
   </a>
   </p>
      `;
-  blogpost3 = `<p class="firstparagraph">Browser URLs are the constant of the web's evolutions over the years. After all, they are the solid, predictable workhorse for transporting web surfers' requests and web servers' responses. But could there be improvements even with this, beyond the HTTPS' security upgrade? Wired reports: </p>
+  var blogpost3 = `<p class="firstparagraph">Browser URLs are the constant of the web's evolutions over the years. After all, they are the solid, predictable workhorse for transporting web surfers' requests and web servers' responses. But could there be improvements even with this, beyond the HTTPS' security upgrade? Wired reports: </p>
   <p class="quote">Chrome looks ahead to its next 10 years, the team is mulling its most controversial initiative yet: fundamentally rethinking URLs across the web.
 <br /><br />
   Uniform Resource Locators are the familiar web addresses you use every day. They are listed in the web's DNS address book and direct browsers to the right Internet Protocol addresses that identify and differentiate web servers. <br /><br />
@@ -293,27 +294,27 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   <br /><br />
   The focus right now, they say, is on identifying all the ways people use URLs to try to find an alternative that will enhance security and identity integrity on the web while also adding convenience for everyday tasks like sharing links on mobile devices.<sup>1</sup></p>
   <p>Bring it on, Google, and save us from the increasing flood of &;@# ampersands &% and excessive #_&% URL parameters that grow longer and longer ... and longer ... but how?</p> `;
-  blogcite3 = `
+  var blogcite3 = `
   <p class="cite">1 <a href="https://www.wired.com/story/google-wants-to-kill-the-url/"   target="_blank">https://www.wired.com/story/google-wants-to-kill-the-url/
   </a>
   </p>
   `;
-  blogpost2 = `<p class="firstparagraph"> </p>
+  var blogpost2 = `<p class="firstparagraph"> </p>
   <p class="quote"> <sup>1</sup></p>
   <p> </p>`;
-  blogcite2 = `
+  var blogcite2 = `
   <p class="cite"> <a href=""   target="_blank">
   </a>
   </p>
   `;
 
 
-  blogpost1 = `<p class="quote"><i>At first the computer drew a blank; seconds later, it decided it was dealing with another car, expecting it to drive away and require no special action. Only at the last second was a clear identification found – a woman with a bike, shopping bags hanging confusingly from handlebars, doubtless assuming the Volvo would route around her as any ordinary vehicle would. Barred from taking evasive action on its own, the computer abruptly handed control back to its human master, but the master wasn’t paying attention. Elaine Herzberg, aged 49, was struck and killed, leaving more reflective members of the tech community with two uncomfortable questions: was this algorithmic tragedy inevitable? And how used to such incidents would we, should we, be prepared to get?</i><sup>1 </sup></p>
+  var blogpost1 = `<p class="quote"><i>At first the computer drew a blank; seconds later, it decided it was dealing with another car, expecting it to drive away and require no special action. Only at the last second was a clear identification found – a woman with a bike, shopping bags hanging confusingly from handlebars, doubtless assuming the Volvo would route around her as any ordinary vehicle would. Barred from taking evasive action on its own, the computer abruptly handed control back to its human master, but the master wasn’t paying attention. Elaine Herzberg, aged 49, was struck and killed, leaving more reflective members of the tech community with two uncomfortable questions: was this algorithmic tragedy inevitable? And how used to such incidents would we, should we, be prepared to get?</i><sup>1 </sup></p>
   <p class="firstparagraph">Mistakes in code are a given. But not inevitable, with less haste, more testing, and more corrective reduncencies. This however is not the trend:</p>
   <p class="quote">“In some ways we’ve lost agency. When programs pass into code and code passes into algorithms and then algorithms start to create new algorithms, it gets farther and farther from human agency. Software is released into a code universe which no one can fully understand.”<sup> </sup></p>
   <p></p>
     `;
-  blogcite1 = `
+  var blogcite1 = `
   <p class="cite">  <a href="https://www.theguardian.com/technology/2018/aug/29/coding-algorithms-frankenalgos-program-danger"   target="_blank">https://www.theguardian.com/technology/2018/aug/29/coding-algorithms-frankenalgos-program-danger
   </a>
   </p>
@@ -570,6 +571,7 @@ That strategy is getting close to hitting a dead end.  The next step will be get
     document.getElementById("paragraph-sep").innerHTML += cat;
   }
 
+  var i;
   for (i = 0; i < url.length; i++) {
     var catMod = `
   <div id="mod_${url[i].did}" class="blogDivMod"> 
