@@ -81,6 +81,8 @@
               {templateUrl: '/layout/dataVizualization/dataViz.html'})
            .when('/modal', 
               {templateUrl: '/layout/modal/modalWindow.html'})
+           .when('/dataGrid', 
+                 {templateUrl: '/layout/dataGrid/dataGrid.html'})
            .when('/order', 
               {templateUrl: '/layout/order/order.html'}) 
            .when('/gridBlog', 
