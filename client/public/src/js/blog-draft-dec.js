@@ -1,7 +1,7 @@
 // 'use strict';  
 
 var bloggerDec = function () {   
-  
+  /*
   var blogpost167 = `<p class="quote">Ouch. 
   </p>
   <p class="quote"> 
@@ -41,7 +41,8 @@ var bloggerDec = function () {
   <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
   https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
   
-  `; 
+  `;
+  */ 
     var blogpost163 =   ` <p class="quote"> Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. 
     And the “offline” world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news 
     <sup>1</sup> ...<br /><br />--NYT Op-Ed
@@ -415,6 +416,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
  
 
       var url = [  
+        /*
         {
      id: '167',
      did: '01-15-19',
@@ -455,7 +457,8 @@ After taking this long journey with me, I’m sure you can appreciate the comple
      post: blogpost164,
      blogcite: blogcite164 
    }, 
-             {
+          */
+            {
           id: '163',
           did: '01-11-19',
           date: 'January 11, 2019',

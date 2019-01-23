@@ -9093,19 +9093,48 @@ function outsideClick(e) {
 // 'use strict';  
 
 var bloggerDec = function bloggerDec() {
-
-  var blogpost167 = '<p class="quote">Ouch. \n  </p>\n  <p class="quote"> \n  </p>  ';
-
-  var blogcite167 = '\n  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">\n  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  \n  \n  ';
-  var blogpost166 = '<p class="quote">Ouch. \n  </p>\n  <p class="quote"> \n  </p>  ';
-
-  var blogcite166 = '\n  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">\n  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  \n  \n  ';
-  var blogpost165 = '<p class="quote">Ouch. \n  </p>\n  <p class="quote"> \n  </p>  ';
-
-  var blogcite165 = '\n  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">\n  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  \n  \n  ';
-  var blogpost164 = '<p class="quote">Ouch. \n  </p>\n  <p class="quote"> \n  </p>  ';
-
-  var blogcite164 = '\n  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">\n  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  \n  \n  ';
+  /*
+  var blogpost167 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite167 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+  var blogpost166 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite166 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+  var blogpost165 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite165 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `; 
+  var blogpost164 = `<p class="quote">Ouch. 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+  
+  var blogcite164 = `
+  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  
+  `;
+  */
   var blogpost163 = ' <p class="quote"> Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. \n    And the \u201Coffline\u201D world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news \n    <sup>1</sup> ...<br /><br />--NYT Op-Ed\n    </p>\n  <p class="firstparagraph">Technology is too often the scapegoat for problems with ... <i>(our) habits. Whether its <i>screen</i> time, selfie-addiction or mental dependance, it\'s never us as a society. I argue interactive tech saved a world of passive Movie & TV watching, passive reading ... leaving only the <i>professionals</i> to film, record music, publish and actively pursue leisure. Now, everybody with a telephone <i>can do</i> anything.</p>\n  <p>Technology has expanded average knowledge breadth <i>and</i> depth far more than it has undercut our potential. 25 years ago, specialized knowedge required a library. Besides the perseverence to get there. </p><p>If 18th century Berlin invented compulsory secondary schooling, thereby raising literacy from 10% to 70$ in one generation; Similarly, if 19th century Paris invented compulsory secondary schooling and revolutionalized learning as a national force, and John Hopkins the first <i>modern</i> university template for mass Higher-Ed; Then, by de Facto means, Silicon Valley has provided meta-knowledge that comprises a far more important knowledge: Tying unlimited knowledge to our most <i>social</i> device: el telefono. Thus, between the Wikipadia tile and the Twitter tile, one generation catapults over all previous generations--at least in terms of YouTube know-how and social awareness. Armies of bureaucrats and educators could not have achieved one-tenth! Thank you, California, for auguring such great potential for our age. </p><p>One NYT op-ed writer encapsulates the less optimistic view of online life--a life viewed as \'captive to technology\'.\n  </p>\n  <p class="quote">  Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. \n  And the \u201Coffline\u201D world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news ...\n<sup>1</sup>\n  </p>\n  ';
 
   var blogcite163 = ' \n  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html">\n  https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html</a></p>  \n  \n  ';
@@ -9225,43 +9254,50 @@ var bloggerDec = function bloggerDec() {
 
   var blogcite138 = '\n  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  \n  ';
 
-  var url = [{
-    id: '167',
-    did: '01-15-19',
-    date: 'January 15, 2019',
-    author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: ' ',
-    post: blogpost167,
-    blogcite: blogcite167
-  }, {
-    id: '166',
-    did: '01-14-19',
-    date: 'January 14, 2019',
-    author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: ' ',
-    post: blogpost166,
-    blogcite: blogcite166
-  }, {
-    id: '165',
-    did: '01-13-19',
-    date: 'January 13, 2019',
-    author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: ' ',
-    post: blogpost165,
-    blogcite: blogcite165
-  }, {
-    id: '164',
-    did: '01-12-19',
-    date: 'January 12, 2019',
-    author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: ' ',
-    post: blogpost164,
-    blogcite: blogcite164
-  }, {
+  var url = [
+  /*
+  {
+  id: '167',
+  did: '01-15-19',
+  date: 'January 15, 2019',
+  author: 'by Thomas Maestas',
+  cat3: 'Web Dev Affairs',
+  title: ' ',
+  post: blogpost167,
+  blogcite: blogcite167 
+  }, 
+  {
+  id: '166',
+  did: '01-14-19',
+  date: 'January 14, 2019',
+  author: 'by Thomas Maestas',
+  cat3: 'Web Dev Affairs',
+  title: ' ',
+  post: blogpost166,
+  blogcite: blogcite166 
+  }, 
+  {
+  id: '165',
+  did: '01-13-19',
+  date: 'January 13, 2019',
+  author: 'by Thomas Maestas',
+  cat3: 'Web Dev Affairs',
+  title: ' ',
+  post: blogpost165,
+  blogcite: blogcite165 
+  }, 
+  {
+  id: '164',
+  did: '01-12-19',
+  date: 'January 12, 2019',
+  author: 'by Thomas Maestas',
+  cat3: 'Web Dev Affairs',
+  title: ' ',
+  post: blogpost164,
+  blogcite: blogcite164 
+  }, 
+    */
+  {
     id: '163',
     did: '01-11-19',
     date: 'January 11, 2019',
