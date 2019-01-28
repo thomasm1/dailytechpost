@@ -2,37 +2,85 @@
 
 var bloggerDec = function () {   
   /*
-  var blogpost167 = `<p class="quote">Ouch. 
+  ttps://techcrunch.com/2018/10/27/facial-recognition-startup-kairos-founder-continues-to-fight-attempted-takeover/
+  */
+ /*
+  var blogpost172 = `<p class="quote">  
+  </p>
+  <p class="quote"> We now have so many interconnected food-related crises — climate change, pollution, and food waste, not to mention malnutrition and obesity — that it will be impossible to feed the 10 billion people expected by 2050 unless we make dramatic changes to our diets and farming practices, the researchers argue.<br /><br />
+
+  What’s needed, according to the peer-reviewed report, titled “Food in the Anthropocene: The EAT-Lancet Commission on healthy diets from sustainable food systems,” is a new philosophy for how to eat on planet Earth. Though there are huge variations around the world in what and how much we consume, we are all in this existential crisis together.
+  </p>  `; 
+    var blogcite172 = `
+  <p class="cite">1<a target="_blank" href="https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission">
+  https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission</a></p>  
+  
+  `; 
+  var blogpost171 = `<p class="quote"> 
+  </p>
+  <p class="quote"> The thing that’s counterintuitive about the stainless steel is, it’s obviously cheap, it’s obviously fast—but it’s not obviously the lightest. But it is actually the lightest. If you look at the properties of a high-quality stainless steel, the thing that isn’t obvious is that at cryogenic temperatures, the strength is boosted by 50 percent. 
+  </p>  `; 
+    var blogcite171 = `
+  <p class="cite">1<a target="_blank" href="https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/">
+  https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/</a></p>  
+  
+  `; 
+  var blogpost170 = `<p class="quote"> 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+    var blogcite170 = `
+  <p class="cite">1<a target="_blank" href=" ">
+   </a></p>  
+  
+  `; 
+  
+  var blogpost169 = `<p class="quote"> 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+    var blogcite169 = `
+  <p class="cite">1<a target="_blank" href=" ">
+ </a></p>  
+  
+  `; 
+  
+  var blogpost168 = `<p class="quote"> 
+  </p>
+  <p class="quote"> 
+  </p>  `; 
+    var blogcite168 = `
+  <p class="cite">1<a target="_blank" href=" ">
+ </a></p>  
+  
+  `; 
+
+
+
+
+
+  
+  var blogpost167 = `<p class="quote">
   </p>
   <p class="quote"> 
   </p>  `; 
   
   var blogcite167 = `
-  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
-  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  <p class="cite">1<a target="_blank" href=" ">
+ </a></p>  
   
   `; 
-  var blogpost166 = `<p class="quote">Ouch. 
+  var blogpost166 = `<p class="quote">
   </p>
   <p class="quote"> 
   </p>  `; 
   
   var blogcite166 = `
-  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
-  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
+  <p class="cite">1<a target="_blank" href="">
+</a></p>  
   
-  `; 
-  var blogpost165 = `<p class="quote">Ouch. 
-  </p>
-  <p class="quote"> 
-  </p>  `; 
-  
-  var blogcite165 = `
-  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
-  https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
-  
-  `; 
-  var blogpost164 = `<p class="quote">Ouch. 
+  `;  
+  var blogpost164 = `<p class="quote">  
   </p>
   <p class="quote"> 
   </p>  `; 
@@ -42,7 +90,7 @@ var bloggerDec = function () {
   https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
   
   `;
-  */ 
+ */
     var blogpost163 =   ` <p class="quote"> Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. 
     And the “offline” world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news 
     <sup>1</sup> ...<br /><br />--NYT Op-Ed
@@ -79,7 +127,7 @@ var bloggerDec = function () {
 
   
   var blogpost1600 =   ` 
-  <p class="firstparagraph">CES 2019 offered the range of IoT gadgety that even Philosophy has been virtualized into LED-embedded wood! 
+  <p class="firstparagraph">CES 2019 offered the range of IoT wizardry that even Philosophy has been virtualized into LED-embedded wood! 
   </p>
   <p class="quote">What does it mean that one of my favorite demos at CES 2019 — the world’s foremost technology show — was a block of wood? Maybe that I’ve been spending too much time in my garage with a table saw. Maybe that we’re collectively suffering from a bad case of screen fatigue. Maybe both. But if the crowd surrounding Mui is any indication, I’m not the only one smitten with the Kyoto-based company’s head-smackingly simple approach to technology.
 <sup>1</sup>
@@ -102,10 +150,16 @@ This culture has contributed to the company’s well-publicized wave of scandals
   `; 
   
   var blogcite161 = `
-  <p class="cite">1<a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>  
-  
+  <p class="cite">1<a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>   `;
+  var blogpost16001 = `
+ 
   `;
-  var blogpost160 =   `<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. 
+
+  var blogcite16001 = `
+
+  `;
+
+    var blogpost160 =   `<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. 
 The precise nature and origin of the blasts of radio waves is unknown. 
 Among the 13 fast radio bursts, known as FRBs, was a very unusual repeating signal, coming from the same source about 1.5 billion light years away. 
 Such an event has only been reported once before, by a different telescope. 
@@ -373,22 +427,19 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   
   var blogcite141 = `
   <p class="cite">1<a target="_blank" href="https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/">https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/</a></p>  
-  `; 
- /*
+  `;  
   var blogpost140 =   `
  
-  <p class="firstparagraph">  The banality of non-tech jobs is not the reason, rather the humanity of the screen's person-to-machine screen-work can hardly simulate person-to-person industries
+  <p class="firstparagraph">   The <i>exponential growth<i> of data, as petabytes of streaming, disposable IoT sensor data knows no bounds. AWS has really stepped up to the great job of tackling this challenge:
   </p>
-  <p class="quote">Lack of career growth or trajectory was the biggest reason, with 28.1% of respondents saying it caused them to quit. Many of the women also believe that men have an advantage in the field; just 53% said women have the same opportunities to enter senior leadership roles as their male counterparts.<br />
-
-  “Lack of career growth is a problem that women face across industries,” says Kim Williams, Indeed’s senior director of design platform, technology, and operations. 
+  <p class="quote">Satellite operators need to get data down from the satellite, process it and then make it available for developers to use in applications. In that regard, it’s not that much different from any IoT device. It just so happens that these are flying around in space.<br />
+ 
 <sup>1</sup>
   </p>`;
   
   var blogcite140 = `
-  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
-  `; 
- */
+  <p class="cite">1<a target="_blank" href="https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/">https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/</a></p>  
+  `;  
   var blogpost139 =   `
  
   <p class="firstparagraph">Competition versus cooperation with China presents an unanswerable question while nationalism brushes aside a common humanity--as far as technological advancement is concerned. Perhaps the best hope for a common thread of peace lies in the age-old, border-breaking legacy of 1990s' pre-tech wave multinationalist corporations--an impossible dream in the age of retributive tariff and trade threats ...
@@ -415,8 +466,55 @@ After taking this long journey with me, I’m sure you can appreciate the comple
 
  
 
-      var url = [  
+      var url = [   
         /*
+         {
+        id: '172',
+        did: '01-23-19',
+        date: 'January 23, 2019',
+        author: 'by Thomas Maestas',
+        cat3: 'Sociology Tomorrow!',
+        title: 'Food for Thought',
+        post: blogpost172,
+        blogcite: blogcite172 
+      },      {
+        id: '171',
+        did: '01-22-19',
+        date: 'January 22, 2019',
+        author: 'by Thomas Maestas',
+        cat3: 'Material Thinking',
+        title: ' ',
+        post: blogpost171,
+        blogcite: blogcite171 
+      },  {
+        id: '170',
+        did: '01-18-19',
+        date: 'January 18, 2019',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: ' ',
+        post: blogpost170,
+        blogcite: blogcite170 
+      },  
+        {
+          id: '169',
+          did: '01-17-19',
+          date: 'January 17, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: ' ',
+          post: blogpost169,
+          blogcite: blogcite169 
+        },  {
+          id: '168',
+          did: '01-16-19',
+          date: 'January 16, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'That Funny Visitor\'s Non-Elliptical Orbit',
+          post: blogpost168,
+          blogcite: blogcite168 
+        },  
         {
      id: '167',
      did: '01-15-19',
@@ -438,26 +536,16 @@ After taking this long journey with me, I’m sure you can appreciate the comple
      blogcite: blogcite166 
    }, 
         {
-     id: '165',
-     did: '01-13-19',
-     date: 'January 13, 2019',
-     author: 'by Thomas Maestas',
-     cat3: 'Web Dev Affairs',
-     title: ' ',
-     post: blogpost165,
-     blogcite: blogcite165 
-   }, 
-        {
      id: '164',
      did: '01-12-19',
-     date: 'January 12, 2019',
+     date: 'January 12-13, 2019<br />Weekend',
      author: 'by Thomas Maestas',
      cat3: 'Web Dev Affairs',
      title: ' ',
      post: blogpost164,
      blogcite: blogcite164 
    }, 
-          */
+   */ 
             {
           id: '163',
           did: '01-11-19',
@@ -498,6 +586,16 @@ After taking this long journey with me, I’m sure you can appreciate the comple
           post: blogpost161,
           blogcite: blogcite161 
         },
+        {
+          id: '16001',
+          did: '01-07-19',
+          date: 'January 7, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: ' ',
+          post: blogpost16001,
+          blogcite: blogcite16001 
+        }, 
         {
           id: '160',
           did: '01-02-19',
@@ -680,18 +778,17 @@ After taking this long journey with me, I’m sure you can appreciate the comple
             title: 'The Reason for More Social Awareness on A.I. Policy',
             post: blogpost141,
             blogcite: blogcite141
-          },
-          /*  
+          }, 
            {
         id: '140',
           did: '12-04-18',
           date: 'December 4, 2018 ',
           author: 'by Thomas Maestas',
           cat3: 'Sociology Tomorrow',
-          title: 'The Tech Market\'s True Value',
+          title: 'Spin Me Up a Satellite for the Year',
           post: blogpost140,
           blogcite: blogcite140
-           }, */
+           }, 
         {
         id: '139',
           did: '12-03-18',
