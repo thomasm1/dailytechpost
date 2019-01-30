@@ -683,7 +683,7 @@ var i;
  </div>`;
     document.getElementById("paragraph-nov-mod").innerHTML += catMod;
   }
- //console.log(angular.toJson(url));
+ // console.log(angular.toJson(url));
  // console.log(url);
 
 }; // end bloggerNov()

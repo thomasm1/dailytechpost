@@ -1,101 +1,107 @@
 // 'use strict';  
-
+// https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj/
+//june 
+// http://nautil.us/issue/64/the-unseen/the-fourth-copernican-revolution
+// https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
 var bloggerDec = function () {   
-  /*
-  ttps://techcrunch.com/2018/10/27/facial-recognition-startup-kairos-founder-continues-to-fight-attempted-takeover/
-  */
- /*
+  
   var blogpost172 = `<p class="quote">  
   </p>
   <p class="quote"> We now have so many interconnected food-related crises — climate change, pollution, and food waste, not to mention malnutrition and obesity — that it will be impossible to feed the 10 billion people expected by 2050 unless we make dramatic changes to our diets and farming practices, the researchers argue.<br /><br />
 
-  What’s needed, according to the peer-reviewed report, titled “Food in the Anthropocene: The EAT-Lancet Commission on healthy diets from sustainable food systems,” is a new philosophy for how to eat on planet Earth. Though there are huge variations around the world in what and how much we consume, we are all in this existential crisis together.
+  What’s needed, according to the peer-reviewed report, titled “Food in the Anthropocene: The EAT-Lancet Commission on healthy diets from sustainable food systems,” is a new philosophy for how to eat on planet Earth. Though there are huge variations around the world in what and how much we consume, we are all in this existential crisis together.<sup>1</sup>
   </p>  `; 
     var blogcite172 = `
-  <p class="cite">1<a target="_blank" href="https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission">
+  <p class="cite">1. <a target="_blank" href="https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission">
   https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission</a></p>  
   
   `; 
   var blogpost171 = `<p class="quote"> 
   </p>
-  <p class="quote"> The thing that’s counterintuitive about the stainless steel is, it’s obviously cheap, it’s obviously fast—but it’s not obviously the lightest. But it is actually the lightest. If you look at the properties of a high-quality stainless steel, the thing that isn’t obvious is that at cryogenic temperatures, the strength is boosted by 50 percent. 
+  <p class="quote"> The thing that’s counterintuitive about the stainless steel is, it’s obviously cheap, it’s obviously fast—but it’s not obviously the lightest. But it is actually the lightest. If you look at the properties of a high-quality stainless steel, the thing that isn’t obvious is that at cryogenic temperatures, the strength is boosted by 50 percent.<sup>1</sup> 
   </p>  `; 
     var blogcite171 = `
-  <p class="cite">1<a target="_blank" href="https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/">
+  <p class="cite">1. <a target="_blank" href="https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/">
   https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/</a></p>  
   
   `; 
-  var blogpost170 = `<p class="quote"> 
+  var blogpost1705 = `<p class="quote"> 
   </p>
-  <p class="quote"> 
+  <p class="quote">Simply put, the Directive on Copyright places more responsibility on websites such as YouTube, Facebook and Twitter to make sure that copyrighted materially isn’t being illegaly shared on their platforms. Until now, the onus has mostly been on the copyright holders – usually the companies that produce audio, video or written content – to enforce copyright protection but under the new law this responsibility will shift onto the major platforms themselves.
+<br /><br />
+  At the heart of the Directive on Copyright are two divisive articles – Article 11 and Article 13 – that have been dubbed the “link tax” and “meme ban” articles respectively. Critics of the Directive on Copyright argue that these articles mean that platforms will have to pay a fee to share a link to a news article and have to start filtering and removing memes.<sup>1</sup>  
+  </p>  `; 
+    var blogcite1705 = `
+  <p class="cite">1. <a target="_blank" href="https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban">  https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban</a></p>  
+  
+  `; 
+var blogpost170 = `<p class="quote"> 
+  </p>
+  <p class="quote"> The gene therapy would instead give their bodies a working gene for them to make their own factor VIII. But transferring a gene into a person is no easy feat. Genes are long strings of DNA that don't readily get inside cells. So therapies typically rely on viruses, which squirt DNA into cells' nuclei as a way of life. In this case, a virus, modified so that it doesn't cause disease, and with the healthy human factor VIII gene added to its DNA, is injected into the body. It then enters the body's cells to deposit its cargo, leaving it as a separate piece of DNA in the nucleus next to the host cell's genome.<sup>1</sup>  
   </p>  `; 
     var blogcite170 = `
-  <p class="cite">1<a target="_blank" href=" ">
+  <p class="cite">1. <a target="_blank" href="http://digg.com/2019/gene-therapies-immunity">http://digg.com/2019/gene-therapies-immunity
    </a></p>  
   
   `; 
-  
   var blogpost169 = `<p class="quote"> 
   </p>
-  <p class="quote"> 
+  <p class="quote"> In his blog, Hunt says a large file of 12,000 separate files and 87GB of data had been uploaded to MEGA, a popular cloud service. The data was then posted to a popular hacking forum and appears to be an amalgamation of over 2,000 databases. The troubling thing is the databases contain “dehashed” passwords, which means the methods used to scramble those passwords into unreadable strings has been cracked, fully exposing the passwords.
+<br />
+  So what does this mean for the average person? According to Hunt, it means compromised email and password combos are more vulnerable for a practice called credential stuffing. Basically, credential stuffing is when breached username or email/password combos are used to hack into other user accounts. This could impact anyone who has used the same username and password combo across multiple sites.<sup>1</sup>
   </p>  `; 
     var blogcite169 = `
-  <p class="cite">1<a target="_blank" href=" ">
+  <p class="cite">1. <a target="_blank" href="https://gizmodo.com/mother-of-all-breaches-exposes-773-million-emails-21-m-1831833456">https://gizmodo.com/mother-of-all-breaches-exposes-773-million-emails-21-m-1831833456
  </a></p>  
   
   `; 
   
   var blogpost168 = `<p class="quote"> 
   </p>
-  <p class="quote"> 
+  <p class="quote"> On October 19, 2017, astronomers at the University of Hawaii spotted a strange object travelling through our solar system, which they later described as “a red and extremely elongated asteroid.” It was the first interstellar object to be detected within our solar system; the scientists named it ‘Oumuamua, the Hawaiian word for a scout or messenger. The following October, Avi Loeb, the chair of Harvard’s astronomy department, co-wrote a paper (with a Harvard postdoctoral fellow, Shmuel Bialy) that examined ‘Oumuamua’s “peculiar acceleration” and suggested that the object “may be a fully operational probe sent intentionally to Earth’s vicinity by an alien civilization.” Loeb has long been interested in the search for extraterrestrial life, and he recently made further headlines by suggesting that we might communicate with the civilization that sent the probe. “If these beings are peaceful, we could learn a lot from them,” he told Der Spiegel.<sup>1</sup>
   </p>  `; 
     var blogcite168 = `
-  <p class="cite">1<a target="_blank" href=" ">
+  <p class="cite">1. <a target="_blank" href="https://www.newyorker.com/news/the-new-yorker-interview/have-aliens-found-us-a-harvard-astronomer-on-the-mysterious-interstellar-object-oumuamua"> https://www.newyorker.com/news/the-new-yorker-interview/have-aliens-found-us-a-harvard-astronomer-on-the-mysterious-interstellar-object-oumuamua
+ </a></p>    
+ <p class="cite">2<a target="_blank" href="https://blogs.scientificamerican.com/observations/6-strange-facts-about-the-interstellar-visitor-oumuamua/"> https://blogs.scientificamerican.com/observations/6-strange-facts-about-the-interstellar-visitor-oumuamua/
  </a></p>  
-  
-  `; 
-
-
-
-
-
-  
+ 
+  `;  
   var blogpost167 = `<p class="quote">
   </p>
-  <p class="quote"> 
+  <p class="quote"> Examine how and when you set standards. Perfectionistic leaders often don’t communicate their “high standards” until others miss their expectations. When you observe a gap between what you get and what you wanted, pause before reacting. Ask yourself if the person who fell short understood what you expected. Then, ask yourself if what you wanted was realistic given the circumstances and abilities of your team. Being honest about what you base your expectations on, and clearly conveying them to others in a timely manner, ensures your standards aren’t just high, but realistic and fair.<sup>1</sup>
   </p>  `; 
   
   var blogcite167 = `
-  <p class="cite">1<a target="_blank" href=" ">
+  <p class="cite">1. <a target="_blank" href="https://hbr.org/2019/01/are-your-high-expectations-hurting-your-team">https://hbr.org/2019/01/are-your-high-expectations-hurting-your-team
  </a></p>  
   
   `; 
   var blogpost166 = `<p class="quote">
   </p>
-  <p class="quote"> 
+  <p class="quote">Americans love convenient recycling, but convenient recycling increasingly does not love us. Waste experts call the system of dumping all the recyclables into one bin “single-stream recycling.” It’s popular. But the cost-benefit math of it has changed. The benefit — more participation and thus more material put forward for recycling — may have been overtaken by the cost — unrecyclable recyclables. On average, about 25 percent of the stuff we try to recycle is too contaminated to go anywhere but the landfill, according to the National Waste and Recycling Association, a trade group. Just a decade ago, the contamination rate was closer to 7 percent, according to the association.<sup>1</sup>  
   </p>  `; 
   
   var blogcite166 = `
-  <p class="cite">1<a target="_blank" href="">
+  <p class="cite">1. <a target="_blank" href="https://fivethirtyeight.com/features/the-era-of-easy-recycling-may-be-coming-to-an-end/">https://fivethirtyeight.com/features/the-era-of-easy-recycling-may-be-coming-to-an-end/
 </a></p>  
   
   `;  
   var blogpost164 = `<p class="quote">  
   </p>
-  <p class="quote"> 
-  </p>  `; 
+  <p class="quote"> “To continue delivering for our customers and to succeed in developing interplanetary spacecraft and a global space-based internet, SpaceX must become a leaner company,” the Hawthorne-based company said in a statement. “Either of these developments, even when attempted separately, have bankrupted other organizations. This means we must part ways with some talented and hardworking members of our team.”
+  </p><sup>1</sup>    `; 
   
   var blogcite164 = `
-  <p class="cite">1<a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
+  <p class="cite">1. <a target="_blank" href="https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html">
   https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html</a></p>  
   
-  `;
- */
+  `; 
     var blogpost163 =   ` <p class="quote"> Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. 
     And the “offline” world is now ruled by what happens online. Escape is impossible. Quips on Twitter are indirectly programming cable news 
     <sup>1</sup> ...<br /><br />--NYT Op-Ed
     </p>
-  <p class="firstparagraph">Technology is too often the scapegoat for problems with ... <i>(our) habits. Whether its <i>screen</i> time, selfie-addiction or mental dependance, it's never us as a society. I argue interactive tech saved a world of passive Movie & TV watching, passive reading ... leaving only the <i>professionals</i> to film, record music, publish and actively pursue leisure. Now, everybody with a telephone <i>can do</i> anything.</p>
+  <p class="firstparagraph">Technology is too often the scapegoat for problems with ... <i>(our)</i> habits. Whether its <i>screen</i> time, selfie-addiction or mental dependance, it's never us as a society. I argue interactive tech saved a world of passive Movie & TV watching, passive reading ... leaving only the <i>professionals</i> to film, record music, publish and actively pursue leisure. Now, everybody with a telephone <i>can do</i> anything.</p>
   <p>Technology has expanded average knowledge breadth <i>and</i> depth far more than it has undercut our potential. 25 years ago, specialized knowedge required a library. Besides the perseverence to get there. </p><p>If 18th century Berlin invented compulsory secondary schooling, thereby raising literacy from 10% to 70$ in one generation; Similarly, if 19th century Paris invented compulsory secondary schooling and revolutionalized learning as a national force, and John Hopkins the first <i>modern</i> university template for mass Higher-Ed; Then, by de Facto means, Silicon Valley has provided meta-knowledge that comprises a far more important knowledge: Tying unlimited knowledge to our most <i>social</i> device: el telefono. Thus, between the Wikipadia tile and the Twitter tile, one generation catapults over all previous generations--at least in terms of YouTube know-how and social awareness. Armies of bureaucrats and educators could not have achieved one-tenth! Thank you, California, for auguring such great potential for our age. </p><p>One NYT op-ed writer encapsulates the less optimistic view of online life--a life viewed as 'captive to technology'.
   </p>
   <p class="quote">  Smartphones are as central to the economy as cars and credit cards, and a lot of people have little meaningful opportunity to quit. 
@@ -105,7 +111,7 @@ var bloggerDec = function () {
   `; 
   
   var blogcite163 = ` 
-  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html">
+  <p class="cite">1. <a target="_blank" href="https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html">
   https://www.nytimes.com/2019/01/09/opinion/meditation-internet.html</a></p>  
   
   `; 
@@ -120,7 +126,7 @@ var bloggerDec = function () {
   `; 
   
   var blogcite162 = `
-  <p class="cite">1<a target="_blank" href="https://www.eater.com/2019/1/8/18173843/ces-2019-kitchen-tech-ge-samsung-whirlpool">
+  <p class="cite">1. <a target="_blank" href="https://www.eater.com/2019/1/8/18173843/ces-2019-kitchen-tech-ge-samsung-whirlpool">
   https://www.eater.com/2019/1/8/18173843/ces-2019-kitchen-tech-ge-samsung-whirlpool</a></p>  
   
   `;
@@ -135,7 +141,7 @@ var bloggerDec = function () {
   `; 
   
   var blogcite1600 = `
-  <p class="cite">1<a target="_blank" href="https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/       ">https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/       ">https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/</a></p>  
   
   `;
   
@@ -150,7 +156,7 @@ This culture has contributed to the company’s well-publicized wave of scandals
   `; 
   
   var blogcite161 = `
-  <p class="cite">1<a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>   `;
+  <p class="cite">1. <a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>   `;
   var blogpost16001 = `
  
   `;
@@ -174,7 +180,7 @@ Such an event has only been reported once before, by a different telescope.
  `; 
   
   var blogcite160= `
-  <p class="cite">1<a target="_blank" href="https://www.bbc.com/news/science-environment-46811618">https://www.bbc.com/news/science-environment-46811618</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.bbc.com/news/science-environment-46811618">https://www.bbc.com/news/science-environment-46811618</a></p>  
   `;
   var blogpost159 =   ` 
   <p class="firstparagraph">Interviewer Bots would certainly probe the depths of any job candidate's answers, digital record, etc. In fact, using predictive analytics, it is likely that bots would undoubtedly shed light about an unseen facet of reality: <i>Everyday and every-year patterns of behavior</i>, however unnoticed by oneself or anyone else. Big Data notices ...
@@ -189,7 +195,7 @@ Eyal Grayevsky, CEO and cofounder of Mya Systems says that in 2019 the divide be
   `; 
   
   var blogcite159 = `
-  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019">https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019</a></p>  
+  <p class="cite">1 <a target="_blank" href="https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019">https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019</a></p>  
   `;
   /*
   var blogpost158 =   ` 
@@ -202,7 +208,7 @@ Eyal Grayevsky, CEO and cofounder of Mya Systems says that in 2019 the divide be
   <p> `; 
   
   var blogcite158 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
   `;
   */   
   var blogpost157 =   ` 
@@ -216,7 +222,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p> ... as seen through the holographic prism of Data Analytics. </p> `; 
   
   var blogcite157= `
-  <p class="cite">1<a target="_blank" href="https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/">https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/">https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/</a></p>  
   `;
 
   var blogpost156 =   ` 
@@ -230,7 +236,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p> `; 
   
   var blogcite156 = `
-  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  
   `;
   var blogpost155 =   ` 
   <p class="firstparagraph">To say that the world's micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow's <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>
@@ -247,7 +253,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p> `; 
   
   var blogcite155 = `
-  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  
   `;  
  
   var blogpost154 =   ` 
@@ -260,7 +266,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p> `; 
   
   var blogcite154 = `
-  <p class="cite">1<a target="_blank" href=" "> </a></p>  
+  <p class="cite">1. <a target="_blank" href=" "> </a></p>  
   `;
  
   var blogpost153 =   ` 
@@ -276,7 +282,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p> `; 
   
   var blogcite153 = `
-  <p class="cite">1<a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  
   `;  
   var blogpost152 =   ` 
   <p class="firstparagraph">
@@ -291,7 +297,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>  `; 
   
   var blogcite152 = `
-  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/">https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/">https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/</a></p>  
   `;   
   
   var blogpost151=   ` 
@@ -307,7 +313,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p> `; 
   
   var blogcite151 = `
-  <p class="cite">1<a target="_blank" href="https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet">https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet">https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet</a></p>  
   `;  
  
   var blogpost150 =   ` 
@@ -323,7 +329,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p> `; 
   
   var blogcite150 = `
-  <p class="cite">1<a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
   `;
   
   var blogpost149 =   ` 
@@ -340,7 +346,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   `; 
   
   var blogcite149 = `
-  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped">https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped">https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped</a></p>  
   `;  
   var blogpost148 =   ` 
   <p class="firstparagraph">Crypto-Currency theorists provide endless explanations over the disproportionately-sized fall of Bitcoin from December 2017 yet offer an incomplete picture. The more fascinating questions surround Bitcoin's 2017 growth rather than the interruption that either cascaded to new factors or simply magnified existing factors--such as security doubts and the dearth micro-economic public use.
@@ -351,7 +357,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p> `; 
   
   var blogcite148 = `
-  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies">https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies">https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies</a></p>  
   `;  
   var blogpost145 =   ` 
   <p class="firstparagraph">Leaving the age of personal pc computing power, the growing trends are to borrow someone else's computing power in the cloud. Platform-as-a-Service, Infrastructure-as-a-Service, and other shared computing and storage services are merely aligning with the growing convention to spurn buying--say a car--in favor of renting for when and what needs specifically arise--like Uber, Turo and other peer-to-peer trends.  It only makes sense that Cloud services would incorporate more hardware customization and flexibility.   
@@ -366,7 +372,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>`; 
 
   var blogcite145 = `
-  <p class="cite">1<a target="_blank" href="https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html">  https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html">  https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html</a></p>  
   `;  
   
 
@@ -381,7 +387,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>`;
   
   var blogcite144 = `
-  <p class="cite">1<a target="_blank" href="https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/">https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/">https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/</a></p>  
   `; 
   var blogpost143 =   `
  
@@ -395,7 +401,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>`;
   
   var blogcite143 = `
-  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  
   `; 
 
  /* 
@@ -409,7 +415,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>`;
   
   var blogcite142 = `
- <p class="cite">1<a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
+ <p class="cite">1. <a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
   `;  
   */
  var blogpost141 =   `
@@ -426,7 +432,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p>Programmers need to take care of not only the problem-at-hand but the larger outcome. For example, the stock 'Flash-Crash of 2010' produced a sudden drop--initiated unintentionally by a computer program... Let's start complementing faster engines with better brakes! `;
   
   var blogcite141 = `
-  <p class="cite">1<a target="_blank" href="https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/">https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/">https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/</a></p>  
   `;  
   var blogpost140 =   `
  
@@ -438,7 +444,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>`;
   
   var blogcite140 = `
-  <p class="cite">1<a target="_blank" href="https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/">https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/">https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/</a></p>  
   `;  
   var blogpost139 =   `
  
@@ -450,7 +456,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   </p>`;
   
   var blogcite139 = `
-  <p class="cite">1<a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  
   `; 
  
   var blogpost138 =   ` 
@@ -461,13 +467,12 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   <p>Senseless criticism aside, Google's Materialize software is the true winner for replicating paper, at least visually ...`;
   
   var blogcite138 = `
-  <p class="cite">1<a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  
   `; 
 
  
 
-      var url = [   
-        /*
+      var url = [    
          {
         id: '172',
         did: '01-23-19',
@@ -482,17 +487,27 @@ After taking this long journey with me, I’m sure you can appreciate the comple
         did: '01-22-19',
         date: 'January 22, 2019',
         author: 'by Thomas Maestas',
-        cat3: 'Material Thinking',
-        title: ' ',
+        cat3: 'Sociology Tomorrow!',
+        title: 'Material Thinking',
         post: blogpost171,
         blogcite: blogcite171 
-      },  {
+      }, 
+      {
+        id: '1705',
+        did: '01-21-19',
+        date: 'January 21, 2019',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: 'Genes for a Change',
+        post: blogpost1705,
+        blogcite: blogcite1705 
+      },   {
         id: '170',
         did: '01-18-19',
         date: 'January 18, 2019',
         author: 'by Thomas Maestas',
-        cat3: 'Web Dev Affairs',
-        title: ' ',
+        cat3: 'Sociology Tomorrow!',
+        title: 'Genes for a Change',
         post: blogpost170,
         blogcite: blogcite170 
       },  
@@ -502,7 +517,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
           date: 'January 17, 2019',
           author: 'by Thomas Maestas',
           cat3: 'Web Dev Affairs',
-          title: ' ',
+          title: 'The Virtues of a Monomagous Password',
           post: blogpost169,
           blogcite: blogcite169 
         },  {
@@ -521,7 +536,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
      date: 'January 15, 2019',
      author: 'by Thomas Maestas',
      cat3: 'Web Dev Affairs',
-     title: ' ',
+     title: 'Practicing at Imperfection',
      post: blogpost167,
      blogcite: blogcite167 
    }, 
@@ -530,8 +545,8 @@ After taking this long journey with me, I’m sure you can appreciate the comple
      did: '01-14-19',
      date: 'January 14, 2019',
      author: 'by Thomas Maestas',
-     cat3: 'Web Dev Affairs',
-     title: ' ',
+     cat3: 'Sociology Tomorrow!',
+     title: 'Minimalism to the Rescue!',
      post: blogpost166,
      blogcite: blogcite166 
    }, 
@@ -541,11 +556,10 @@ After taking this long journey with me, I’m sure you can appreciate the comple
      date: 'January 12-13, 2019<br />Weekend',
      author: 'by Thomas Maestas',
      cat3: 'Web Dev Affairs',
-     title: ' ',
+     title: 'E.U.\'s Overreaching GDPR Rules',
      post: blogpost164,
      blogcite: blogcite164 
-   }, 
-   */ 
+   },   
             {
           id: '163',
           did: '01-11-19',
@@ -818,9 +832,9 @@ var i;
     <hr />  
     <a target="_blank" href="#top"><button>Top</button></a>  
     <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
-    <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5> 
-    <p id="author" class="  author">${url[i].author}</p>   
-    <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+    <h5 id="cat3" class="subdailytech">${url[i].cat3}</h5> 
+    <p id="author" class="author">${url[i].author}</p>   
+    <h6  id="date" class="chapternumber">${url[i].date}</h6>    
     <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
     <br />
     <div id="post">${url[i].post}
@@ -836,9 +850,9 @@ var i;
   <hr />  
   <a target="_blank" href="#top-mod"><button>Top</button></a>   
   <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  
-  <h5 id="cat3" class="  subdailytech">${url[i].cat3}</h5>  
-  <p id="author" class="  author">${url[i].author}</p>   
-  <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
+  <h5 id="cat3" class="subdailytech">${url[i].cat3}</h5>  
+  <p id="author" class="author">${url[i].author}</p>   
+  <h6  id="date" class="chapternumber">${url[i].date}</h6>    
   <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
   <br />
   <div id="post">${url[i].post}</div>
@@ -847,7 +861,7 @@ var i;
  </div>`;
     document.getElementById("paragraph-dec-mod").innerHTML += catMod;
   }
- console.log(angular.toJson(url));
+ //console.log(angular.toJson(url));
   //console.log(url);
 };
 bloggerDec();
