@@ -1,7 +1,6 @@
  
 
-  setTimeout(function() {
-var o = 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo';
+
 var url = "https://api.nasa.gov/planetary/apod?api_key=" + o;
 
 $.ajax({
@@ -28,5 +27,4 @@ $.ajax({
   $("#apod_title").text(result.title);
 }
 });
-  }, 5000); 
   

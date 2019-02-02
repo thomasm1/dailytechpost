@@ -9062,6 +9062,7 @@ __webpack_require__(337);
 __webpack_require__(338);
 __webpack_require__(339);
 __webpack_require__(340);
+__webpack_require__(341);
 
 var modal = document.getElementById('msimpleModal');
 var modalBtn = document.getElementById('mmodalBtn');
@@ -9090,18 +9091,27 @@ function outsideClick(e) {
 "use strict";
 
 
+// https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/'use strict'; https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html
 // 'use strict';  
 // https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj/
 //june 
 // http://nautil.us/issue/64/the-unseen/the-fourth-copernican-revolution
 // https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
-var bloggerDec = function bloggerDec() {
+var bloggerJan = function bloggerJan() {
 
-  var blogpost172 = '<p class="quote">  \n  </p>\n  <p class="quote"> We now have so many interconnected food-related crises \u2014 climate change, pollution, and food waste, not to mention malnutrition and obesity \u2014 that it will be impossible to feed the 10 billion people expected by 2050 unless we make dramatic changes to our diets and farming practices, the researchers argue.<br /><br />\n\n  What\u2019s needed, according to the peer-reviewed report, titled \u201CFood in the Anthropocene: The EAT-Lancet Commission on healthy diets from sustainable food systems,\u201D is a new philosophy for how to eat on planet Earth. Though there are huge variations around the world in what and how much we consume, we are all in this existential crisis together.<sup>1</sup>\n  </p>  ';
+  var blogpost175 = '<p class="firstparagraph">TechCrunch Disrupt! 2018 hailed an A.I. startup named Kairos that addressed this same dilemma: How do you accurately report results when faced with disproportionate sampling due to  variance differences between stratification layers? Can you balance one group with one-hundred fold more data-points? And, equally polarized is the inferential freedoms needed to report statistically significant results with small-sample algorithms.</p><p>So, software considerations can be equally important to plain-old hardware limitations. As they say, Why make it a federal case?  \n  </p>\n  <p class="quote">Amazon\'s Rekognition software incorrectly identified women as men 19 percent of the time, according to the study. In addition, it incorrectly identified darker-skinned women as men 31 percent of the time, it says. Software from Microsoft, by comparison, identified darker-skinned women as men 1.5 percent of the time.\n<br /><br />\nMatt Wood, general manager of artificial intelligence at Amazon Web Services, said that the study\'s test results are based on facial analysis, not facial recognition. Analysis, he said, can find faces in videos or images and assign generic attributes, such as the wearing of glasses. Recognition, he said, matches an individual\'s face to images in videos and photographs. The Rekognition technology includes both of these functionalities. <sup>1</sup>\n  </p>  ';
+  var blogcite175 = '\n  <p class="cite">1. <a target="_blank" href="https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/">\n  https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/</a></p>  \n  \n  ';
+  var blogpost174 = '<p class="firstparagraph">History does its own stunts. Internet History all the more, and the cast and crew could not have been better picked: Here is an  \nArchival Bests: <i>July 2016</i>\n  </p>\n  <p class="quote">The internet is so vast and formless that it\u2019s hard to imagine it being invented. It\u2019s easy to picture Thomas Edison inventing the lightbulb, because a lightbulb is easy to visualize. You can hold it in your hand and examine it from every angle.\n<br /><br />\nThe internet is the opposite. It\u2019s everywhere, but we only see it in glimpses. The internet is like the holy ghost: it makes itself knowable to us by taking possession of the pixels on our screens to manifest sites and apps and email, but its essence is always elsewhere.\n<br /><br />\nThis feature of the internet makes it seem extremely complex. Surely something so ubiquitous yet invisible must require deep technical sophistication to understand. But it doesn\u2019t. The internet is fundamentally simple. And that simplicity is the key to its success.<sup>1</sup>\n  </p>  ';
+  var blogcite174 = '\n  <p class="cite">1. <a target="_blank" href="https://www.theguardian.com/technology/2016/jul/15/how-the-internet-was-invented-1976-arpa-kahn-cerf">\n  https://www.theguardian.com/technology/2016/jul/15/how-the-internet-was-invented-1976-arpa-kahn-cerf</a></p>  \n  \n  ';
+
+  var blogpost173 = '<p class="firstparagraph"> My new Samsung 40" Best Buy Special has shined yet  has also had trying moments. An every-once-in-a-while frozen desktop screen -- <i>perma-frozen until a couple hard resets. In my opinion, nothing\'s out of the ordinary--they\'re just finicky, just like the 90\'s computers, it\'s called big plans with small hardware platforms--mole hills become mountains. Service in-fighting for precious memory resources! The hard thinking and the hardest problems, starting with ...I\'m frozen, how do I turn on and off?. \n  </p>\n  <p class="quote">I tried the obvious things. I turned off the TV and turned it back on. Same problem. Unplugged, replugged. Happened again. Reset the cable box just to try it. Again. Made the sign of the cross. Checked for software updates for the television. Threw my phone. Screamed into the abyss. But. It. Just. Kept. Happening.\n\n  Finally, I turned to the consumer micro-solidarity available in the support forums. Based on the outraged responses of other Samsung TV owners, the issue began sometime in September. No one knows how to fix it. And because of a deal that Samsung struck with app makers, you can\u2019t delete the app from your own TV.<sup>1</sup>\n  </p>  ';
+  var blogcite173 = '\n  <p class="cite">1. <a target="_blank" href="https://www.theatlantic.com/technology/archive/2019/01/smart-tvs-are-dumb/581059/">\n  https://www.theatlantic.com/technology/archive/2019/01/smart-tvs-are-dumb/581059/</a></p>  \n  \n  ';
+
+  var blogpost172 = '<p class="firstparagraph">Yet another reason to moderate on that Eco-Expensive red meat ...  \n  </p>\n  <p class="quote"> We now have so many interconnected food-related crises \u2014 climate change, pollution, and food waste, not to mention malnutrition and obesity \u2014 that it will be impossible to feed the 10 billion people expected by 2050 unless we make dramatic changes to our diets and farming practices, the researchers argue.<br /><br />\n\n  What\u2019s needed, according to the peer-reviewed report, titled \u201CFood in the Anthropocene: The EAT-Lancet Commission on healthy diets from sustainable food systems,\u201D is a new philosophy for how to eat on planet Earth. Though there are huge variations around the world in what and how much we consume, we are all in this existential crisis together.<sup>1</sup>\n  </p>  ';
   var blogcite172 = '\n  <p class="cite">1. <a target="_blank" href="https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission">\n  https://www.vox.com/2019/1/23/18185446/climate-change-planet-based-diet-lancet-eat-commission</a></p>  \n  \n  ';
-  var blogpost171 = '<p class="quote"> \n  </p>\n  <p class="quote"> The thing that\u2019s counterintuitive about the stainless steel is, it\u2019s obviously cheap, it\u2019s obviously fast\u2014but it\u2019s not obviously the lightest. But it is actually the lightest. If you look at the properties of a high-quality stainless steel, the thing that isn\u2019t obvious is that at cryogenic temperatures, the strength is boosted by 50 percent.<sup>1</sup> \n  </p>  ';
+  var blogpost171 = '<p class="quote">Popular Mechanics reports:\n  </p>\n  <p class="quote"> The thing that\u2019s counterintuitive about the stainless steel is, it\u2019s obviously cheap, it\u2019s obviously fast\u2014but it\u2019s not obviously the lightest. But it is actually the lightest. If you look at the properties of a high-quality stainless steel, the thing that isn\u2019t obvious is that at cryogenic temperatures, the strength is boosted by 50 percent.<sup>1</sup> \n  </p>  ';
   var blogcite171 = '\n  <p class="cite">1. <a target="_blank" href="https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/">\n  https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/</a></p>  \n  \n  ';
-  var blogpost1705 = '<p class="quote"> \n  </p>\n  <p class="quote">Simply put, the Directive on Copyright places more responsibility on websites such as YouTube, Facebook and Twitter to make sure that copyrighted materially isn\u2019t being illegaly shared on their platforms. Until now, the onus has mostly been on the copyright holders \u2013 usually the companies that produce audio, video or written content \u2013 to enforce copyright protection but under the new law this responsibility will shift onto the major platforms themselves.\n<br /><br />\n  At the heart of the Directive on Copyright are two divisive articles \u2013 Article 11 and Article 13 \u2013 that have been dubbed the \u201Clink tax\u201D and \u201Cmeme ban\u201D articles respectively. Critics of the Directive on Copyright argue that these articles mean that platforms will have to pay a fee to share a link to a news article and have to start filtering and removing memes.<sup>1</sup>  \n  </p>  ';
+  var blogpost1705 = '<p class="firstparagraph">Copy Cat Accusations from the few mean a slower, more expensive, ad-driven internet experience! \n  </p>\n  <p class="quote">Simply put, the Directive on Copyright places more responsibility on websites such as YouTube, Facebook and Twitter to make sure that copyrighted materially isn\u2019t being illegaly shared on their platforms. Until now, the onus has mostly been on the copyright holders \u2013 usually the companies that produce audio, video or written content \u2013 to enforce copyright protection but under the new law this responsibility will shift onto the major platforms themselves.\n<br /><br />\n  At the heart of the Directive on Copyright are two divisive articles \u2013 Article 11 and Article 13 \u2013 that have been dubbed the \u201Clink tax\u201D and \u201Cmeme ban\u201D articles respectively. Critics of the Directive on Copyright argue that these articles mean that platforms will have to pay a fee to share a link to a news article and have to start filtering and removing memes.<sup>1</sup>  \n  </p>  \n  <p>The effort involved in roping in internet creativity is ...<i> like herding cats?</i>  </p>';
   var blogcite1705 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban">  https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban</a></p>  \n  \n  ';
   var blogpost170 = '<p class="quote"> \n  </p>\n  <p class="quote"> The gene therapy would instead give their bodies a working gene for them to make their own factor VIII. But transferring a gene into a person is no easy feat. Genes are long strings of DNA that don\'t readily get inside cells. So therapies typically rely on viruses, which squirt DNA into cells\' nuclei as a way of life. In this case, a virus, modified so that it doesn\'t cause disease, and with the healthy human factor VIII gene added to its DNA, is injected into the body. It then enters the body\'s cells to deposit its cargo, leaving it as a separate piece of DNA in the nucleus next to the host cell\'s genome.<sup>1</sup>  \n  </p>  ';
   var blogcite170 = '\n  <p class="cite">1. <a target="_blank" href="http://digg.com/2019/gene-therapies-immunity">http://digg.com/2019/gene-therapies-immunity\n   </a></p>  \n  \n  ';
@@ -9140,98 +9150,35 @@ var bloggerDec = function bloggerDec() {
   var blogpost160 = '<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. \nThe precise nature and origin of the blasts of radio waves is unknown. \nAmong the 13 fast radio bursts, known as FRBs, was a very unusual repeating signal, coming from the same source about 1.5 billion light years away. \nSuch an event has only been reported once before, by a different telescope. \n"Knowing that there is another suggests that there could be more out there," said Ingrid Stairs, an astrophysicist from the University of British Columbia (UBC).\n \n<sup>1</sup></p>\n  <p class="firstparagraph">Morse code across the Galaxies - what a concept! \n  </p>\n  <img src="dist/img/gettyimages-831502910.jpg" width="350" class="zoom" /><hr width="200"/>\n\n  <span style="float:right;">GETTY IMAGES</span>\n ';
 
   var blogcite160 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bbc.com/news/science-environment-46811618">https://www.bbc.com/news/science-environment-46811618</a></p>  \n  ';
-  var blogpost159 = ' \n  <p class="firstparagraph">Interviewer Bots would certainly probe the depths of any job candidate\'s answers, digital record, etc. In fact, using predictive analytics, it is likely that bots would undoubtedly shed light about an unseen facet of reality: <i>Everyday and every-year patterns of behavior</i>, however unnoticed by oneself or anyone else. Big Data notices ...\n  </p>\n  <p class="quote">However, at places like EY, which plans to hire approximately 15,700 workers in the U.S. in the coming year, some 1,300 bots focused on recruiting efforts are likely going to be part of the candidates\u2019 interview experience.\n</p><p>So, are interview bots humane? How much can we as a society <i>off-load</i> our own perceptions, vibes and even that familiar or professional hunch in decision-making?<br /><br />\n\nEyal Grayevsky, CEO and cofounder of Mya Systems says that in 2019 the divide between intelligent, conversational recruiting bots and basic chatbots that follow simple decision trees will become a chasm. \u201CJob search candidates will gravitate toward conversational bots,\u201D he explains, \u201Cbecause of their ability to respond more knowledgeably and naturally, to anticipate candidate needs, and to learn and adapt to candidate preferences over time.\u201D\n<sup>1</sup>\n  </p>\n  <p>Unfathomably complex A.I. algorithms to decode the job candidate\'s algorith ...that\'s a new one,  but can you trust in a computer\'s over-analytic mind when all you need is a bit of human touch?\n  ';
-
-  var blogcite159 = '\n  <p class="cite">1 <a target="_blank" href="https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019">https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019</a></p>  \n  ';
-  /*
-  var blogpost158 =   ` 
-  <p class="firstparagraph">
-  </p>
-  <p class="quote">
-  <sup>1</sup>
-  </p>
-  <p> `; 
-  
-  var blogcite158 = `
-  <p class="cite">1. <a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  
-  `;
-  */
-  var blogpost157 = ' \n  <p class="firstparagraph">When it comes to linear tasks, human productivity surpasses all bounds, yet the exponential tasks, must be reformulated through logging. This transformed-reality used to be confined to the buttons of a calculator, but these days ...we have enough data to exponentially analyze and understand our shared reality:  The numbers underneath our perceptions. Now, about Officer McClane\'s adventures ...</p><p> \n  </p>\n  <p class="quote">\n The final result: Is Die Hard a Christmas movie?\nAfter taking this long journey with me, I\u2019m sure you can appreciate the complexity involved in answering a seemingly simple question. We\u2019ve had to consider what is a movie, who is asking the question (plus who is answering it) and how the perception of movies change over time. The neatest summary I can provide is to say that there are many Christmas elements in the movie. Although the studio did not intend it to be a Christmas movie, some of the film\u2019s key creators did. Either way, it\u2019s certainly fair to say that Die Hard is regarded as a Christmas movie in popular culture. Like it or not, the association between Die Hard and Christmas is fast increasing and in years to come its Christmassyness will be beyond question. Future generations will read in wonder that Die Hard was ever thought not to be a Christmas movie and articles such as the one you\u2019re reading now will be seen as nothing but a massive waste of everyone\u2019s time. Imagine that!\n<sup>1</sup>\n  </p>\n  <p> ... as seen through the holographic prism of Data Analytics. </p> ';
-
-  var blogcite157 = '\n  <p class="cite">1. <a target="_blank" href="https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/">https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/</a></p>  \n  ';
-
-  var blogpost156 = ' \n  <p class="firstparagraph"><i>Public Access to Quantum Computing ... makes a quaint Christmas-Hannukah-Festivus Present for all  </i>\n  </p>\n  <p class="quote"> The IBM Q Experience has already executed more than seven million quantum programs, and they aren\u2019t just random gobbledygook like mine. Legit researchers, many unaffiliated with IBM, have published more than 120 academic papers using it.\n\n  The app is part of a larger effort to boost literacy in quantum computing. Other companies have also been releasing open-source software packages to reach out to the masses\u2014or more probably, nerds with niche interests. They hope that a diverse pool of users can guide them toward more creative uses for the machines. \n<sup>1</sup>\n  </p>\n  <p> ';
-
-  var blogcite156 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  \n  ';
-  var blogpost155 = ' \n  <p class="firstparagraph">To say that the world\'s micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow\'s <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>\n  <p>The effect is clear: multiplying usages and forms of value exchange are certain--this, without accounting for the myriad new options that tech offers. So, if one considers the linear progression from bartering to the coins of Egypt and Athens, history certainly amplifies itself with Venmo, PayPal options are here to stay...  \n  </p>\n  <p class="quote">Facebook Inc. is working on making a cryptocurrency that will let users transfer money on its WhatsApp messaging app, focusing first on the remittances market in India, according to people familiar with the matter.\n  <br /><br />\n\n  The company is developing a stablecoin -- a type of digital currency pegged to the U.S. dollar -- to minimize volatility, said the people, who asked not to be identified discussing internal plans. Facebook is far from releasing the coin, because it\u2019s still working on the strategy, including a plan for custody assets, or regular currencies that would be held to protect the value of the stablecoin, the people said.\n  <br /><br />\n   \n  Facebook, which has 2.5 billion global users, more than $40 billion in annual revenue and greater experience navigating regulatory issues, may have a better chance of making a stablecoin that sticks. It would be the first large technology company to launch such a project. \n<sup>1</sup>\n  </p> ';
-
-  var blogcite155 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  \n  ';
-
-  var blogpost154 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n \n<sup>1</sup>\n  </p>\n  <p> ';
-
-  var blogcite154 = '\n  <p class="cite">1. <a target="_blank" href=" "> </a></p>  \n  ';
-
-  var blogpost153 = ' \n  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  \n  </p>\n  <p class="quote">\n  When you buy something on Amazon, the odds are, you aren\u2019t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company\u2019s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. \n\n  Amazon is far from the only tech company that, having annexed a vast sphere of human activity, finds itself in the position of having to govern it. But Amazon is the only platform that has a $175 billion prize pool tempting people to game it, and the company must constantly implement new rules and penalties, which in turn, become tools for new abuses, which require yet more rules to police. The evolution of its moderation system has been hyper-charged. While Mark Zuckerberg mused recently that Facebook might need an analog to the Supreme Court to adjudicate disputes and hear appeals, Amazon already has something like a judicial system \u2014 one that is secretive, volatile, and often terrifying. \n<sup>1</sup>\n  </p>\n  <p>So, when commercial and social transactions drift away from  traditional political-judicial-legal jurisdictions, where--rather what--is binding authority? \n  </p> ';
-
-  var blogcite153 = '\n  <p class="cite">1. <a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  \n  ';
-  var blogpost152 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n  But engineers haven\'t written off the internal combustion engine just yet. The team at Aston Martin has released details on the V12 engine that will breathe life into its upcoming, $3 million Valkyrie hypercar, and the gleaming maze of metal is a beautiful beast.\n  <br /><br />\n\n  <img src="dist/img/astonmartinwired.jpg" width="350" class="zoom" /><br /><br />\n  The 6.5-liter V12 will produce 1,000 horsepower (because excess) and revs to 11,100 rpm. Putting this overall insanity aside, what\'s remarkable about such figures is that Aston\'s engineers hit them without resorting to turbochargers. The automaker says it recognizes that turbos offer a ton of benefits, but wanted \u201Can internal combustion engine that sits at the absolute pinnacle for performance, excitement, and emotion,\u201D which it could only get through natural aspiration. \n<sup>1</sup>\n  </p>  ';
-
-  var blogcite152 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/">https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/</a></p>  \n  ';
-
-  var blogpost151 = ' \n  <p class="firstparagraph">What better reason for international cooperation than a rendez-vous at 200 miles up? After all, it\'s a niche sweetspot for satellite placement offering communication with less-bad latency problems...This kind of spatial coordination \n  </p>\n  <p class="quote">\n  Ships, planes and remote businesses rely for internet connections on signals sent from geostationary orbit, but this method is too pricey for widespread adoption. Beaming the internet via satellites orbiting closer to the planet has been tried before. The idea was popular at the height of the tech boom of the late 1990s. Three companies\u2014Teledesic, Iridium and Globalstar\u2014poured tens of billions of dollars into the low-Earth orbit (LEO) satellite internet. It culminated in the collapse of Teledesic. Although the technology of the time worked, it was very costly and so the services on offer had to be hugely expensive, too. Iridium survived, but as a niche provider of satellite telephony, not a purveyor of cheap and fast internet access.\n  <br /><br />\n\n  OneWeb is among several firms that are trying LEO satellites again. SpaceX, a rocket company founded by Elon Musk, a tech entrepreneur, is guarded about its proposed system, Starlink, but on November 15th American regulators approved an application for 7,518 satellites at an altitude of 340km [200miles] (bringing the total for which the firm has approval to nearly 12,000). Telesat, a Canadian firm, has plans for a 512-satellite constellation. \n<sup>1</sup>\n  </p>\n  <p> ';
-
-  var blogcite151 = '\n  <p class="cite">1. <a target="_blank" href="https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet">https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet</a></p>  \n  ';
-
-  var blogpost150 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n  Amid the wreckage of the burst bitcoin bubble  it is fair to assess the outlook for blockchains, the technology underlying the cryptocurrency. There\u2019s a difference. Blockchains, it is said, stand to revolutionize enterprise technology by addressing the problems with authentication and identity at the heart of the internet itself, eliminating middle layers in transactions and making it faster and easier to establish provenance.\n  <br /><br />\n  \n  The adoption of blockchains in the enterprise has been slow. The question now is the extent to which the overblown investment thesis behind bitcoin and related financial mania can be separated from the utility of blockchain as a tool in enterprise technology.\n<sup>1</sup>\n  </p>\n  <p> ';
-
-  var blogcite150 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  \n  ';
-
-  var blogpost149 = ' \n\n  <p class="quote">\n  Formally, an asset bubble is just a rapid rise and abrupt crash in prices. Defenders of the efficient-market theory argue that these price movements are based on changes in investor\u2019s beliefs about an asset\u2019s true value. But it\u2019s hard to identify a reason why any rational investor would have so abruptly revised her assessment of the long-term earnings power of companies in 1929, or the long-term viability of dot-com startups in 2000, or the long-term value of housing in 2007.\n<br /><br />\n  Similarly, there was no obvious reason why it made sense for the world to believe that Bitcoin was the currency of the future late December 2017, but to think this was less than one fifth as likely today. Bitcoin wasn\u2019t eclipsed by a competitor \u2014 the main alternative cryptocurrencies had even bigger price declines. Nor have regulators cracked down on Bitcoin \u2014 in fact, the regulatory structure has generally been quite accommodating to the technology. Nor have critical technological flaws emerged \u2014 yes, the Bitcoin network has become congested, but this problem was anticipated well before the crash. \n  \n<br /><br />\n  Instead, it seems overwhelmingly likely that Bitcoin\u2019s spectacular rise and fall was due not to rational optimism followed by sensible pessimism, but to some kind of aggregate market irrationality \u2014 a combination of herd behavior, cynical speculation and the entry into the market of a large number of new, poorly informed investors.\n<sup>1</sup>\n  </p>\n  ';
-
-  var blogcite149 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped">https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped</a></p>  \n  ';
-  var blogpost148 = ' \n  <p class="firstparagraph">Crypto-Currency theorists provide endless explanations over the disproportionately-sized fall of Bitcoin from December 2017 yet offer an incomplete picture. The more fascinating questions surround Bitcoin\'s 2017 growth rather than the interruption that either cascaded to new factors or simply magnified existing factors--such as security doubts and the dearth micro-economic public use.\n  </p>\n  <p class="quote"> His explanation for the divergence include last year\u2019s meteoric rally, a \u201Cmeltdown\u201D in the macroeconomic climate and treasury sales during initial coin offerings. \n  \u201CFair value is significantly higher than the current price of Bitcoin,\u201D he wrote. \u201CIn fact, working backwards, to solve for the current price of Bitcoin, this implies crypto wallets should fall to 17 million from 50 million currently.\u201D\n<sup>1</sup>\n  </p> ';
-
-  var blogcite148 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies">https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies</a></p>  \n  ';
-  var blogpost145 = ' \n  <p class="firstparagraph">Leaving the age of personal pc computing power, the growing trends are to borrow someone else\'s computing power in the cloud. Platform-as-a-Service, Infrastructure-as-a-Service, and other shared computing and storage services are merely aligning with the growing convention to spurn buying--say a car--in favor of renting for when and what needs specifically arise--like Uber, Turo and other peer-to-peer trends.  It only makes sense that Cloud services would incorporate more hardware customization and flexibility.   \n  </p>\n  <p class="quote">Amazon, the world\u2019s largest online retailer and largest cloud-computing company, is pushing into a new line of work: computer chips.\n\n  Late last month, the company, based in Seattle, revealed that it had spent the last few years building a new chip for use inside the millions of servers in its data centers around the world.\n  \n  Amazon does not plan to sell this chip directly to customers, but the decision by one of the world\u2019s biggest buyers of computer processors to go the do-it-yourself route is likely to have a major impact on Intel, the iconic Silicon Valley chip maker.\n<sup>1</sup>\n</p><p>Time-traveling to the dawn of the PC era, it must have felt the world ending with the monopolistic overtones of IBM and Microsoft. Yet, time--and technology--passes all things. Now, it is the age of Google Cloud and Amazon Web Services--including the chip!\n  </p>';
-
-  var blogcite145 = '\n  <p class="cite">1. <a target="_blank" href="https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html">  https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html</a></p>  \n  ';
-
-  var blogpost144 = '\n \n  <p class="firstparagraph">Materials science, artificial intelligence   and IoT technology has a new assignment: Save the Glaciers!  \n  </p>\n  <p class="quote">By the end of the mission in 2009, Anandakrishnan and his colleagues had collected data from about 150 boreholes. The new information didn\u2019t precisely explain what was hastening Thwaites\u2019 acceleration, but it was a start. Meanwhile, the satellite maps kept getting redder and redder. In 2014, Eric Rignot, a glaciologist at NASA, concluded that Thwaites was entering a state of \u201Cunstoppable\u201D collapse. Even worse, scientists were starting to think that its demise could trigger a larger catastrophe in West Antarctica, the way a rotting support beam might lead to the toppling not only of a wall but of an entire house. Already, Thwaites\u2019 losses were responsible for about 4 percent of global sea-level rise every year. When the entire glacier went, the seas would likely rise by a few feet; when the glaciers around it did, too, the seas might rise by more than a dozen feet. \n<sup>1</sup>\n  </p>';
-
-  var blogcite144 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/">https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/</a></p>  \n  ';
-  var blogpost143 = '\n \n  <p class="firstparagraph">\n  Workplace satisfaction sits squarely on finding purpose, usually to the aim of helping others. 20th century jobs plainly reflected this value in plain sight, however new jobs do the same and more, but less evidently. Code writing is worthy for its contributions to humanity--as much as bridge-building, nursing,  social work and any  industry.  Yet, software engineering is seen through the filter of coding, math,   logic and automation, instead of the true portraiture of the careful reflection, humanity and patience of coding authorship. Sadly, there is no PR to tout the new paradigm and lofty meaning tied into programming work! </p> \n\n  <p class="quote">Lack of career growth or trajectory was the biggest reason, with 28.1% of respondents saying it caused them to quit. Many of the women also believe that men have an advantage in the field; just 53% said women have the same opportunities to enter senior leadership roles as their male counterparts.<br />\n\n  \u201CLack of career growth is a problem that women face across industries,\u201D says Kim Williams, Indeed\u2019s senior director of design platform, technology, and operations. \n<sup>1</sup>\n  </p>';
-
-  var blogcite143 = '\n  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  \n  ';
-
-  /* 
-  
-   var blogpost142 =   `
-  
-   <p class="firstparagraph">  
-   </p>
-   <p class="quote"> 
-  <sup>1</sup>
-   </p>`;
-   
-   var blogcite142 = `
-  <p class="cite">1. <a target="_blank" href="https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left">https://hbr.org/2018/12/the-story-of-sustainability-in-2018-we-have-about-12-years-left</a></p>  
-   `;  
-   */
-  var blogpost141 = '\n \n  <p class="firstparagraph">\n  Computers don\'t know lines of text to understand the words. Just the conditions and behavior of a certain combination of letters - and the computer does not <i>know</i>0, 1, and 2.  ..It knows the difference between 0 and 1 with respect to 2 ... <br /><br />\n   The subject of trust is not the Tech Sector\'s best light -- as it can be fairly said to flaunt irresponsibility--<i>to move fast and break things</i>. This has been benign so far except for a few credit card and Scarlett Johannsen\'s leaked selfies ... nothing Earth-shattering.  A.I. on the other hand, can\'t be leashed in an Open Source era, so here we are - \'the best offense is a good defense\' theory. </p><p>\n   Moral, social, and most of all technical forms of deterrance and plethora. As Elon Musk once said, "We don\'t want autonomous weapons. The moment that one is walking down the street, <i> it\'s too late</i>.   \n  </p>\n  <p class="quote"> The prime mover behind the film is Stuart Russell, a professor of computer science at the University of California, Berkeley. Here, Russell checks in with the Bulletin to explain how the film was made, how little stands between us and the drone apocalypse, and what the prospects are for banning autonomous weapons before they get truly out of hand.\n<sup>1</sup>\n  </p>\n  <p>This, not to mention the principle that whoever winds up harnessing A.I. will control the globe--whether socially, nationally, and finance. The solution to resolve this? With all of society involved in the sway of tech decision-making, then a society of people rules the globe, not the technology of one group ...the way it should be ...</p>\n  <p>Programmers need to take care of not only the problem-at-hand but the larger outcome. For example, the stock \'Flash-Crash of 2010\' produced a sudden drop--initiated unintentionally by a computer program... Let\'s start complementing faster engines with better brakes! ';
-
-  var blogcite141 = '\n  <p class="cite">1. <a target="_blank" href="https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/">https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/</a></p>  \n  ';
-  var blogpost140 = '\n \n  <p class="firstparagraph">   The <i>exponential growth<i> of data, as petabytes of streaming, disposable IoT sensor data knows no bounds. AWS has really stepped up to the great job of tackling this challenge:\n  </p>\n  <p class="quote">Satellite operators need to get data down from the satellite, process it and then make it available for developers to use in applications. In that regard, it\u2019s not that much different from any IoT device. It just so happens that these are flying around in space.<br />\n \n<sup>1</sup>\n  </p>';
-
-  var blogcite140 = '\n  <p class="cite">1. <a target="_blank" href="https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/">https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/</a></p>  \n  ';
-  var blogpost139 = '\n \n  <p class="firstparagraph">Competition versus cooperation with China presents an unanswerable question while nationalism brushes aside a common humanity--as far as technological advancement is concerned. Perhaps the best hope for a common thread of peace lies in the age-old, border-breaking legacy of 1990s\' pre-tech wave multinationalist corporations--an impossible dream in the age of retributive tariff and trade threats ...\n  </p>\n  <p class="quote">Yet the trade conflict that matters most between America and China is a 21st-century fight over technology. It covers everything from artificial intelligence (ai) to network equipment. The fundamental battleground is in semiconductors. The chip industry is where America\u2019s industrial leadership and China\u2019s superpower ambitions clash most directly. And whatever Messrs Trump and Xi say at the g20, this conflict will outlast them both.\n  \n<sup>1</sup>\n  </p>';
-
-  var blogcite139 = '\n  <p class="cite">1. <a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  \n  ';
-
-  var blogpost138 = ' \n  <p class="firstparagraph">At the end of the day, why not include tactile messaging? I enjoyed my Samsung Note V, but the material touch is the hardest to replicate.\n  </p>\n  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message\u2014that is, content\u2014but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping. <sup>1</sup>\n  </p>\n  <p>Senseless criticism aside, Google\'s Materialize software is the true winner for replicating paper, at least visually ...';
-
-  var blogcite138 = '\n  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  \n  ';
 
   var url = [{
+    id: '175',
+    did: '01-26-19',
+    date: 'January 26-27, 2019',
+    author: 'by Thomas Maestas',
+    cat3: 'Web Dev Affairs',
+    title: 'Who Dis?',
+    post: blogpost175,
+    blogcite: blogcite175
+  }, {
+    id: '174',
+    did: '01-25-19',
+    date: 'January 25, 2019',
+    author: 'by Thomas Maestas',
+    cat3: 'Web Dev Affairs',
+    title: 'Internet Phaenomen [Greek]: To Shine; To Appear<br /><small>How the Internet was Invented',
+    post: blogpost174,
+    blogcite: blogcite174
+  }, {
+    id: '173',
+    did: '01-24-19',
+    date: 'January 24, 2019',
+    author: 'by Thomas Maestas',
+    cat3: 'Web Dev Affairs',
+    title: 'What\'s it Take to Dethaw Frozen TV\'s?',
+    post: blogpost173,
+    blogcite: blogcite173
+  }, {
     id: '172',
     did: '01-23-19',
     date: 'January 23, 2019',
@@ -9255,7 +9202,7 @@ var bloggerDec = function bloggerDec() {
     date: 'January 21, 2019',
     author: 'by Thomas Maestas',
     cat3: 'Web Dev Affairs',
-    title: 'Genes for a Change',
+    title: 'World of OpenSource, part II:<br />The CopyRight Strikes Back',
     post: blogpost1705,
     blogcite: blogcite1705
   }, {
@@ -9366,7 +9313,110 @@ var bloggerDec = function bloggerDec() {
     title: 'InterGalactic Code',
     post: blogpost160,
     blogcite: blogcite160
-  }, {
+  }];
+  var i;
+  for (i = 0; i < url.length; i++) {
+    var cat = ' \n    <div id="' + url[i].did + '" class="blogDiv"> \n    <hr />  \n    <a target="_blank" href="#top"><button>Top</button></a>  \n    <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n    <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5> \n    <p id="author" class="author">' + url[i].author + '</p>   \n    <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n    <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n    <br />\n    <div id="post">' + url[i].post + '\n    </div>\n    <div id="blogcite">' + url[i].blogcite + '\n    </div>';
+    document.getElementById("paragraph-jan").innerHTML += cat;
+  }
+
+  for (i = 0; i < url.length; i++) {
+    var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="author">' + url[i].author + '</p>   \n  <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
+    document.getElementById("paragraph-jan-mod").innerHTML += catMod;
+  }
+  //console.log(angular.toJson(url));
+  //console.log(url);
+};
+bloggerJan();
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// 'use strict';  
+// https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj/
+//june 
+// http://nautil.us/issue/64/the-unseen/the-fourth-copernican-revolution
+// https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
+var bloggerDec = function bloggerDec() {
+
+  var blogpost159 = ' \n  <p class="firstparagraph">Interviewer Bots would certainly probe the depths of any job candidate\'s answers, digital record, etc. In fact, using predictive analytics, it is likely that bots would undoubtedly shed light about an unseen facet of reality: <i>Everyday and every-year patterns of behavior</i>, however unnoticed by oneself or anyone else. Big Data notices ...\n  </p>\n  <p class="quote">However, at places like EY, which plans to hire approximately 15,700 workers in the U.S. in the coming year, some 1,300 bots focused on recruiting efforts are likely going to be part of the candidates\u2019 interview experience.\n</p><p>So, are interview bots humane? How much can we as a society <i>off-load</i> our own perceptions, vibes and even that familiar or professional hunch in decision-making?<br /><br />\n\nEyal Grayevsky, CEO and cofounder of Mya Systems says that in 2019 the divide between intelligent, conversational recruiting bots and basic chatbots that follow simple decision trees will become a chasm. \u201CJob search candidates will gravitate toward conversational bots,\u201D he explains, \u201Cbecause of their ability to respond more knowledgeably and naturally, to anticipate candidate needs, and to learn and adapt to candidate preferences over time.\u201D\n<sup>1</sup>\n  </p>\n  <p>Unfathomably complex A.I. algorithms to decode the job candidate\'s algorith ...that\'s a new one,  but can you trust in a computer\'s over-analytic mind when all you need is a bit of human touch?\n  ';
+
+  var blogcite159 = '\n  <p class="cite">1 <a target="_blank" href="https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019">https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019</a></p>  \n  ';
+
+  var blogpost158 = ' \n  <p class="firstparagraph">What are the odds?\n  </p>\n  <p class="quote"> \n  Notwithstanding the example of Prime Minister Justin Trudeau and his brother, Alexandre \u2014 each born Dec. 25, two years apart \u2014 Christmas Day is actually the least common modern birthday across the United States and likely Canada as well.  <sup>1</sup>\n  </p>\n ';
+
+  var blogcite158 = '\n  <p class="cite">1. <a target="_blank" href="https://ottawacitizen.com/news/local-news/christmas-baby-drought-why-dec-25-is-the-least-common-birth-date">https://ottawacitizen.com/news/local-news/christmas-baby-drought-why-dec-25-is-the-least-common-birth-date</a></p>  \n  ';
+
+  var blogpost157 = ' \n  <p class="firstparagraph">When it comes to linear tasks, human productivity surpasses all bounds, yet the exponential tasks, must be reformulated through logging. This transformed-reality used to be confined to the buttons of a calculator, but these days ...we have enough data to exponentially analyze and understand our shared reality:  The numbers underneath our perceptions. Now, about Officer McClane\'s adventures ...</p><p> \n  </p>\n  <p class="quote">\n The final result: Is Die Hard a Christmas movie?\nAfter taking this long journey with me, I\u2019m sure you can appreciate the complexity involved in answering a seemingly simple question. We\u2019ve had to consider what is a movie, who is asking the question (plus who is answering it) and how the perception of movies change over time. The neatest summary I can provide is to say that there are many Christmas elements in the movie. Although the studio did not intend it to be a Christmas movie, some of the film\u2019s key creators did. Either way, it\u2019s certainly fair to say that Die Hard is regarded as a Christmas movie in popular culture. Like it or not, the association between Die Hard and Christmas is fast increasing and in years to come its Christmassyness will be beyond question. Future generations will read in wonder that Die Hard was ever thought not to be a Christmas movie and articles such as the one you\u2019re reading now will be seen as nothing but a massive waste of everyone\u2019s time. Imagine that!\n<sup>1</sup>\n  </p>\n  <p> ... as seen through the holographic prism of Data Analytics. </p> ';
+
+  var blogcite157 = '\n  <p class="cite">1. <a target="_blank" href="https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/">https://stephenfollows.com/using-data-to-determine-if-die-hard-is-a-christmas-movie/</a></p>  \n  ';
+
+  var blogpost156 = ' \n  <p class="firstparagraph"><i>Public Access to Quantum Computing ... makes a quaint Christmas-Hannukah-Festivus Present for all  </i>\n  </p>\n  <p class="quote"> The IBM Q Experience has already executed more than seven million quantum programs, and they aren\u2019t just random gobbledygook like mine. Legit researchers, many unaffiliated with IBM, have published more than 120 academic papers using it.\n\n  The app is part of a larger effort to boost literacy in quantum computing. Other companies have also been releasing open-source software packages to reach out to the masses\u2014or more probably, nerds with niche interests. They hope that a diverse pool of users can guide them toward more creative uses for the machines. \n<sup>1</sup>\n  </p>\n  <p> ';
+
+  var blogcite156 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/">https://www.wired.com/story/quantum-computing-needs-you-to-help-solve-its-core-mystery/</a></p>  \n  ';
+  var blogpost155 = ' \n  <p class="firstparagraph">To say that the world\'s micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow\'s <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>\n  <p>The effect is clear: multiplying usages and forms of value exchange are certain--this, without accounting for the myriad new options that tech offers. So, if one considers the linear progression from bartering to the coins of Egypt and Athens, history certainly amplifies itself with Venmo, PayPal options are here to stay...  \n  </p>\n  <p class="quote">Facebook Inc. is working on making a cryptocurrency that will let users transfer money on its WhatsApp messaging app, focusing first on the remittances market in India, according to people familiar with the matter.\n  <br /><br />\n\n  The company is developing a stablecoin -- a type of digital currency pegged to the U.S. dollar -- to minimize volatility, said the people, who asked not to be identified discussing internal plans. Facebook is far from releasing the coin, because it\u2019s still working on the strategy, including a plan for custody assets, or regular currencies that would be held to protect the value of the stablecoin, the people said.\n  <br /><br />\n   \n  Facebook, which has 2.5 billion global users, more than $40 billion in annual revenue and greater experience navigating regulatory issues, may have a better chance of making a stablecoin that sticks. It would be the first large technology company to launch such a project. \n<sup>1</sup>\n  </p> ';
+
+  var blogcite155 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  \n  ';
+
+  var blogpost154 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n \n<sup>1</sup>\n  </p>\n  <p> ';
+
+  var blogcite154 = '\n  <p class="cite">1. <a target="_blank" href=" "> </a></p>  \n  ';
+
+  var blogpost153 = ' \n  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  \n  </p>\n  <p class="quote">\n  When you buy something on Amazon, the odds are, you aren\u2019t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company\u2019s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. \n\n  Amazon is far from the only tech company that, having annexed a vast sphere of human activity, finds itself in the position of having to govern it. But Amazon is the only platform that has a $175 billion prize pool tempting people to game it, and the company must constantly implement new rules and penalties, which in turn, become tools for new abuses, which require yet more rules to police. The evolution of its moderation system has been hyper-charged. While Mark Zuckerberg mused recently that Facebook might need an analog to the Supreme Court to adjudicate disputes and hear appeals, Amazon already has something like a judicial system \u2014 one that is secretive, volatile, and often terrifying. \n<sup>1</sup>\n  </p>\n  <p>So, when commercial and social transactions drift away from  traditional political-judicial-legal jurisdictions, where--rather what--is binding authority? \n  </p> ';
+
+  var blogcite153 = '\n  <p class="cite">1. <a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  \n  ';
+  var blogpost152 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n  But engineers haven\'t written off the internal combustion engine just yet. The team at Aston Martin has released details on the V12 engine that will breathe life into its upcoming, $3 million Valkyrie hypercar, and the gleaming maze of metal is a beautiful beast.\n  <br /><br />\n\n  <img src="dist/img/astonmartinwired.jpg" width="350" class="zoom" /><br /><br />\n  The 6.5-liter V12 will produce 1,000 horsepower (because excess) and revs to 11,100 rpm. Putting this overall insanity aside, what\'s remarkable about such figures is that Aston\'s engineers hit them without resorting to turbochargers. The automaker says it recognizes that turbos offer a ton of benefits, but wanted \u201Can internal combustion engine that sits at the absolute pinnacle for performance, excitement, and emotion,\u201D which it could only get through natural aspiration. \n<sup>1</sup>\n  </p>  ';
+
+  var blogcite152 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/">https://www.wired.com/story/aston-martin-valkyrie-engine-v12-f1-cosworth/</a></p>  \n  ';
+
+  var blogpost151 = ' \n  <p class="firstparagraph">What better reason for international cooperation than a rendez-vous at 200 miles up? After all, it\'s a niche sweetspot for satellite placement offering communication with less-bad latency problems...This kind of spatial coordination \n  </p>\n  <p class="quote">\n  Ships, planes and remote businesses rely for internet connections on signals sent from geostationary orbit, but this method is too pricey for widespread adoption. Beaming the internet via satellites orbiting closer to the planet has been tried before. The idea was popular at the height of the tech boom of the late 1990s. Three companies\u2014Teledesic, Iridium and Globalstar\u2014poured tens of billions of dollars into the low-Earth orbit (LEO) satellite internet. It culminated in the collapse of Teledesic. Although the technology of the time worked, it was very costly and so the services on offer had to be hugely expensive, too. Iridium survived, but as a niche provider of satellite telephony, not a purveyor of cheap and fast internet access.\n  <br /><br />\n\n  OneWeb is among several firms that are trying LEO satellites again. SpaceX, a rocket company founded by Elon Musk, a tech entrepreneur, is guarded about its proposed system, Starlink, but on November 15th American regulators approved an application for 7,518 satellites at an altitude of 340km [200miles] (bringing the total for which the firm has approval to nearly 12,000). Telesat, a Canadian firm, has plans for a 512-satellite constellation. \n<sup>1</sup>\n  </p>\n  <p> ';
+
+  var blogcite151 = '\n  <p class="cite">1. <a target="_blank" href="https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet">https://www.economist.com/briefing/2018/12/08/satellites-may-connect-the-entire-world-to-the-internet</a></p>  \n  ';
+
+  var blogpost150 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n  Amid the wreckage of the burst bitcoin bubble  it is fair to assess the outlook for blockchains, the technology underlying the cryptocurrency. There\u2019s a difference. Blockchains, it is said, stand to revolutionize enterprise technology by addressing the problems with authentication and identity at the heart of the internet itself, eliminating middle layers in transactions and making it faster and easier to establish provenance.\n  <br /><br />\n  \n  The adoption of blockchains in the enterprise has been slow. The question now is the extent to which the overblown investment thesis behind bitcoin and related financial mania can be separated from the utility of blockchain as a tool in enterprise technology.\n<sup>1</sup>\n  </p>\n  <p> ';
+
+  var blogcite150 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h">https://www.wsj.com/articles/bitcoin-wasnt-a-bubble-until-it-was-11544783400?mod=djemCIO_h</a></p>  \n  ';
+
+  var blogpost149 = ' \n\n  <p class="quote">\n  Formally, an asset bubble is just a rapid rise and abrupt crash in prices. Defenders of the efficient-market theory argue that these price movements are based on changes in investor\u2019s beliefs about an asset\u2019s true value. But it\u2019s hard to identify a reason why any rational investor would have so abruptly revised her assessment of the long-term earnings power of companies in 1929, or the long-term viability of dot-com startups in 2000, or the long-term value of housing in 2007.\n<br /><br />\n  Similarly, there was no obvious reason why it made sense for the world to believe that Bitcoin was the currency of the future late December 2017, but to think this was less than one fifth as likely today. Bitcoin wasn\u2019t eclipsed by a competitor \u2014 the main alternative cryptocurrencies had even bigger price declines. Nor have regulators cracked down on Bitcoin \u2014 in fact, the regulatory structure has generally been quite accommodating to the technology. Nor have critical technological flaws emerged \u2014 yes, the Bitcoin network has become congested, but this problem was anticipated well before the crash. \n  \n<br /><br />\n  Instead, it seems overwhelmingly likely that Bitcoin\u2019s spectacular rise and fall was due not to rational optimism followed by sensible pessimism, but to some kind of aggregate market irrationality \u2014 a combination of herd behavior, cynical speculation and the entry into the market of a large number of new, poorly informed investors.\n<sup>1</sup>\n  </p>\n  ';
+
+  var blogcite149 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped">https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped</a></p>  \n  ';
+  var blogpost148 = ' \n  <p class="firstparagraph">Crypto-Currency theorists provide endless explanations over the disproportionately-sized fall of Bitcoin from December 2017 yet offer an incomplete picture. The more fascinating questions surround Bitcoin\'s 2017 growth rather than the interruption that either cascaded to new factors or simply magnified existing factors--such as security doubts and the dearth micro-economic public use.\n  </p>\n  <p class="quote"> His explanation for the divergence include last year\u2019s meteoric rally, a \u201Cmeltdown\u201D in the macroeconomic climate and treasury sales during initial coin offerings. \n  \u201CFair value is significantly higher than the current price of Bitcoin,\u201D he wrote. \u201CIn fact, working backwards, to solve for the current price of Bitcoin, this implies crypto wallets should fall to 17 million from 50 million currently.\u201D\n<sup>1</sup>\n  </p> ';
+
+  var blogcite148 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies">https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies</a></p>  \n  ';
+  var blogpost145 = ' \n  <p class="firstparagraph">Leaving the age of personal pc computing power, the growing trends are to borrow someone else\'s computing power in the cloud. Platform-as-a-Service, Infrastructure-as-a-Service, and other shared computing and storage services are merely aligning with the growing convention to spurn buying--say a car--in favor of renting for when and what needs specifically arise--like Uber, Turo and other peer-to-peer trends.  It only makes sense that Cloud services would incorporate more hardware customization and flexibility.   \n  </p>\n  <p class="quote">Amazon, the world\u2019s largest online retailer and largest cloud-computing company, is pushing into a new line of work: computer chips.\n\n  Late last month, the company, based in Seattle, revealed that it had spent the last few years building a new chip for use inside the millions of servers in its data centers around the world.\n  \n  Amazon does not plan to sell this chip directly to customers, but the decision by one of the world\u2019s biggest buyers of computer processors to go the do-it-yourself route is likely to have a major impact on Intel, the iconic Silicon Valley chip maker.\n<sup>1</sup>\n</p><p>Time-traveling to the dawn of the PC era, it must have felt the world ending with the monopolistic overtones of IBM and Microsoft. Yet, time--and technology--passes all things. Now, it is the age of Google Cloud and Amazon Web Services--including the chip!\n  </p>';
+
+  var blogcite145 = '\n  <p class="cite">1. <a target="_blank" href="https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html">  https://www.nytimes.com/2018/12/10/technology/amazon-server-chip-intel.html</a></p>  \n  ';
+
+  var blogpost144 = '\n \n  <p class="firstparagraph">Materials science, artificial intelligence   and IoT technology has a new assignment: Save the Glaciers!  \n  </p>\n  <p class="quote">By the end of the mission in 2009, Anandakrishnan and his colleagues had collected data from about 150 boreholes. The new information didn\u2019t precisely explain what was hastening Thwaites\u2019 acceleration, but it was a start. Meanwhile, the satellite maps kept getting redder and redder. In 2014, Eric Rignot, a glaciologist at NASA, concluded that Thwaites was entering a state of \u201Cunstoppable\u201D collapse. Even worse, scientists were starting to think that its demise could trigger a larger catastrophe in West Antarctica, the way a rotting support beam might lead to the toppling not only of a wall but of an entire house. Already, Thwaites\u2019 losses were responsible for about 4 percent of global sea-level rise every year. When the entire glacier went, the seas would likely rise by a few feet; when the glaciers around it did, too, the seas might rise by more than a dozen feet. \n<sup>1</sup>\n  </p>';
+
+  var blogcite144 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/">https://www.wired.com/story/antarctica-thwaites-glacier-breaking-point/</a></p>  \n  ';
+  var blogpost143 = '\n \n  <p class="firstparagraph">\n  Workplace satisfaction sits squarely on finding purpose, usually to the aim of helping others. 20th century jobs plainly reflected this value in plain sight, however new jobs do the same and more, but less evidently. Code writing is worthy for its contributions to humanity--as much as bridge-building, nursing,  social work and any  industry.  Yet, software engineering is seen through the filter of coding, math,   logic and automation, instead of the true portraiture of the careful reflection, humanity and patience of coding authorship. Sadly, there is no PR to tout the new paradigm and lofty meaning tied into programming work! </p> \n\n  <p class="quote">Lack of career growth or trajectory was the biggest reason, with 28.1% of respondents saying it caused them to quit. Many of the women also believe that men have an advantage in the field; just 53% said women have the same opportunities to enter senior leadership roles as their male counterparts.<br />\n\n  \u201CLack of career growth is a problem that women face across industries,\u201D says Kim Williams, Indeed\u2019s senior director of design platform, technology, and operations. \n<sup>1</sup>\n  </p>';
+
+  var blogcite143 = '\n  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech">https://www.fastcompany.com/90274067/this-is-why-women-leave-jobs-in-tech</a></p>  \n  ';
+
+  var blogpost142 = '\n \n  <p class="firstparagraph">  \n  </p>\n  <p class="quote"> The bright blue light of flat, rectangular touch screens, fans, and displays may be appealing from an aesthetic perspective (more on that below), but from a health standpoint, it is fraught with problems. Blue light inhibits the production of melatonin, the hormone that regulates our sleep cycles. Blue light before bedtime can wreak havoc on our ability to fall asleep. \n  <br /><br />Harvard researchers and their colleagues conducted an experiment comparing the effects of 6.5 hours of exposure to blue light, versus exposure to green light of comparable brightness. They found that blue light suppressed melatonin for about twice as long as the green light and shifted circadian rhythms by twice as much (3 hours compared with 1.5 hours). And worse, it\u2019s been linked in recent studies to an increased risk of obesity and some cancers.\n<sup>1</sup>\n  </p>';
+
+  var blogcite142 = '\n <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90177573/how-blue-became-techs-favorite-color-and-why-it-shouldnt-be">https://www.fastcompany.com/90177573/how-blue-became-techs-favorite-color-and-why-it-shouldnt-be</a></p>  \n  ';
+
+  var blogpost141 = '\n \n  <p class="firstparagraph">\n  Computers don\'t know lines of text to understand the words. Just the conditions and behavior of a certain combination of letters - and the computer does not <i>know</i>0, 1, and 2.  ..It knows the difference between 0 and 1 with respect to 2 ... <br /><br />\n   The subject of trust is not the Tech Sector\'s best light -- as it can be fairly said to flaunt irresponsibility--<i>to move fast and break things</i>. This has been benign so far except for a few credit card and Scarlett Johannsen\'s leaked selfies ... nothing Earth-shattering.  A.I. on the other hand, can\'t be leashed in an Open Source era, so here we are - \'the best offense is a good defense\' theory. </p><p>\n   Moral, social, and most of all technical forms of deterrance and plethora. As Elon Musk once said, "We don\'t want autonomous weapons. The moment that one is walking down the street, <i> it\'s too late</i>.   \n  </p>\n  <p class="quote"> The prime mover behind the film is Stuart Russell, a professor of computer science at the University of California, Berkeley. Here, Russell checks in with the Bulletin to explain how the film was made, how little stands between us and the drone apocalypse, and what the prospects are for banning autonomous weapons before they get truly out of hand.\n<sup>1</sup>\n  </p>\n  <p>This, not to mention the principle that whoever winds up harnessing A.I. will control the globe--whether socially, nationally, and finance. The solution to resolve this? With all of society involved in the sway of tech decision-making, then a society of people rules the globe, not the technology of one group ...the way it should be ...</p>\n  <p>Programmers need to take care of not only the problem-at-hand but the larger outcome. For example, the stock \'Flash-Crash of 2010\' produced a sudden drop--initiated unintentionally by a computer program... Let\'s start complementing faster engines with better brakes! ';
+
+  var blogcite141 = '\n  <p class="cite">1. <a target="_blank" href="https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/">https://thebulletin.org/2017/12/as-much-death-as-you-want-uc-berkeleys-stuart-russell-on-slaughterbots/</a></p>  \n  ';
+  var blogpost140 = '\n \n  <p class="firstparagraph">   The <i>exponential growth<i> of data, as petabytes of streaming, disposable IoT sensor data knows no bounds. AWS has really stepped up to the great job of tackling this challenge:\n  </p>\n  <p class="quote">Satellite operators need to get data down from the satellite, process it and then make it available for developers to use in applications. In that regard, it\u2019s not that much different from any IoT device. It just so happens that these are flying around in space.<br />\n \n<sup>1</sup>\n  </p>';
+
+  var blogcite140 = '\n  <p class="cite">1. <a target="_blank" href="https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/">https://techcrunch.com/2018/11/27/aws-launches-a-base-station-for-satellites-as-a-service/</a></p>  \n  ';
+  var blogpost139 = '\n \n  <p class="firstparagraph">Competition versus cooperation with China presents an unanswerable question while nationalism brushes aside a common humanity--as far as technological advancement is concerned. Perhaps the best hope for a common thread of peace lies in the age-old, border-breaking legacy of 1990s\' pre-tech wave multinationalist corporations--an impossible dream in the age of retributive tariff and trade threats ...\n  </p>\n  <p class="quote">Yet the trade conflict that matters most between America and China is a 21st-century fight over technology. It covers everything from artificial intelligence (ai) to network equipment. The fundamental battleground is in semiconductors. The chip industry is where America\u2019s industrial leadership and China\u2019s superpower ambitions clash most directly. And whatever Messrs Trump and Xi say at the g20, this conflict will outlast them both.\n  \n<sup>1</sup>\n  </p>';
+
+  var blogcite139 = '\n  <p class="cite">1. <a target="_blank" href="https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy">https://www.economist.com/leaders/2018/12/01/chip-wars-china-america-and-silicon-supremacy</a></p>  \n  ';
+
+  var blogpost138 = ' \n  <p class="firstparagraph">At the end of the day, why not include tactile messaging? I enjoyed my Samsung Note V, but the material touch is the hardest to replicate.\n  </p>\n  <p class="quote"> Invented four decades ago by 3M in what has become a famous example of mistakes leading to success, sticky notes have become a classic because of some unique properties. They can convey a message\u2014that is, content\u2014but their placement provides context. They can be put in the line of sight of someone to grab attention or be affixed to a document or other object to provide instruction or commentary. Their ability to be attached again and again has made them popular for arranging ideas on surfaces such as whiteboards for analog mind-mapping. <sup>1</sup>\n  </p>\n  <p>Senseless criticism aside, Google\'s Materialize software is the true winner for replicating paper, at least visually ...';
+
+  var blogcite138 = '\n  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  \n  ';
+
+  var url = [{
     id: '159',
     did: '12-26-18',
     date: 'December 26, 2018 ',
@@ -9375,18 +9425,16 @@ var bloggerDec = function bloggerDec() {
     title: 'Rise of the Interviewer Bots',
     post: blogpost159,
     blogcite: blogcite159
-  }, /*
-     {
-     id: '158',
-     did: '12-25-18',
-     date: 'December 25, 2018 ',
-     author: 'by Thomas Maestas',
-     cat3: 'Musing Blockchain',
-     title: 'A Virtual Balkanization of International Currency',
-     post: blogpost158,
-     blogcite: blogcite158 
-     },  */
-  {
+  }, {
+    id: '158',
+    did: '12-25-18',
+    date: 'December 25, 2018 ',
+    author: 'by Thomas Maestas',
+    cat3: 'Sociology Tomorrow!',
+    title: 'Christmas Stats',
+    post: blogpost158,
+    blogcite: blogcite158
+  }, {
     id: '157',
     did: '12-24-18',
     date: 'December 24, 2018 ',
@@ -9503,20 +9551,16 @@ var bloggerDec = function bloggerDec() {
     title: 'The Tech Industry\'s True Value, Part I:<br />Saving Humanity',
     post: blogpost143,
     blogcite: blogcite143
-  },
-  /*
-  {
+  }, {
     id: '142',
     did: '12-06-18',
     date: 'December 6, 2018 ',
     author: 'by Thomas Maestas',
-    cat3: 'Sociology Tomorrow',
-    title: 'The Tech Market\'s True Value, Part Zero:<br />Saving Energy',
+    cat3: 'Web Dev Affairs',
+    title: 'Screen Time Blues',
     post: blogpost142,
     blogcite: blogcite142
-  }, 
-  */
-  {
+  }, {
     id: '141',
     did: '12-05-18',
     date: 'December 5, 2018 ',
@@ -9569,7 +9613,7 @@ var bloggerDec = function bloggerDec() {
 bloggerDec();
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9944,7 +9988,7 @@ var bloggerNov = function bloggerNov() {
 bloggerNov();
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10220,7 +10264,7 @@ var bloggerOct = function bloggerOct() {
 bloggerOct();
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10508,7 +10552,7 @@ var bloggerSep = function bloggerSep() {
 bloggerSep();
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10788,7 +10832,7 @@ var bloggerAug = function bloggerAug() {
 bloggerAug();
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11101,7 +11145,7 @@ var bloggerJuly = function bloggerJuly() {
 bloggerJuly();
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11392,7 +11436,7 @@ var bloggerJune = function bloggerJune() {
 bloggerJune();
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11578,7 +11622,7 @@ var bloggerMay = function bloggerMay() {
 bloggerMay();
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11834,7 +11878,7 @@ var bloggerApr = function bloggerApr() {
 bloggerApr();
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12063,7 +12107,7 @@ var bloggerMar = function bloggerMar() {
 bloggerMar();
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12439,37 +12483,39 @@ var bloggerFeb = function bloggerFeb() {
 bloggerFeb();
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var o = 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo';
-var url = "https://api.nasa.gov/planetary/apod?api_key=" + o;
+setTimeout(function () {
+  var o = 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo';
+  var url = "https://api.nasa.gov/planetary/apod?api_key=" + o;
 
-$.ajax({
-  url: url,
-  success: function success(result) {
-    if ("copyright" in result) {
-      $("#copyright").text("Image Credits: " + result.copyright);
-    } else {
-      $("#copyright").text("Image Credits: " + "Public Domain");
-    }
+  $.ajax({
+    url: url,
+    success: function success(result) {
+      if ("copyright" in result) {
+        $("#copyright").text("Image Credits: " + result.copyright);
+      } else {
+        $("#copyright").text("Image Credits: " + "Public Domain");
+      }
 
-    if (result.media_type == "video") {
-      $("#apod_img_id").css("display", "block");
-      $("#apod_vid_id").attr("src", result.url);
-    } else {
-      $("#apod_vid_id").css("display", "block");
-      $("#apod_img_id").attr("src", result.url);
+      if (result.media_type == "video") {
+        $("#apod_img_id").css("display", "block");
+        $("#apod_vid_id").attr("src", result.url);
+      } else {
+        $("#apod_vid_id").css("display", "block");
+        $("#apod_img_id").attr("src", result.url);
+      }
+      $("#reqObject").text(url);
+      $("#returnObject").text(JSON.stringify(result, null, 4));
+      $("#apod_explaination").text(result.explanation);
+      $("#apod_title").text(result.title);
     }
-    $("#reqObject").text(url);
-    $("#returnObject").text(JSON.stringify(result, null, 4));
-    $("#apod_explaination").text(result.explanation);
-    $("#apod_title").text(result.title);
-  }
-});
+  });
+}, 5000);
 
 /***/ })
 /******/ ]);

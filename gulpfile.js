@@ -9,10 +9,10 @@ const browserSync = require('browser-sync').create();
 gulp.task('sass', function() {
  
       return gulp.src(['client/public/src/app.scss'])
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass()
+        .on('error', sass.logError))
         .pipe(gulp.dest("client/public/dist/"))
-      //.pipe(browserSync.stream())
-        ;
+      .pipe(browserSync.stream());
 });
  /*
  gulp.task('copyHtml', function(){
@@ -52,8 +52,8 @@ gulp.task('fa', function() {
     .pipe(gulp.dest('client/public/dist/css'));
 });
 
-gulp.task('default', [ 'imageMin', 'sass', 'fa', 'fonts']);
-// 'js', 'sass',  'copyHtml'
+gulp.task('default', [ 'imageMin', 'sass']);
+// 'js', 'sass',  'copyHtml' , 'fa', 'fonts'
 
  
   
