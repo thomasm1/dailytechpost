@@ -5,7 +5,28 @@
 // https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
 var bloggerDec = function () {    
 
+  
+  
+  var blogpost160 =   ` 
+  <p class="firstparagraph">Taskrunners, bots, and any other automaton will find a way, if there's a faster way!
+  </p>
+  <p class="quote">One could easily take this as a step in the “the machines are getting smarter” narrative, but the truth is it’s almost the opposite. The machine, not smart enough to do the actual difficult job of converting these sophisticated image types to each other, found a way to cheat that humans are bad at detecting. This could be avoided with more stringent evaluation of the agent’s results, and no doubt the researchers went on to do that.
+  <br /><br />
+  As always, computers do exactly what they are asked, so you have to be very specific in what you ask them. In this case the computer’s solution was an interesting one that shed light on a possible weakness of this type of neural network — that the computer, if not explicitly prevented from doing so, will essentially find a way to transmit details to itself in the interest of solving a given problem quickly and easily.
+  This is really just a lesson in the oldest adage in computing: PEBKAC. “Problem exists between keyboard and computer.” Or as HAL put it: “It can only be attributable to human error.”
+  <br /><br />
+  The intention of the researchers was, as you might guess, to accelerate and improve the process of turning satellite imagery into Google’s famously accurate maps. To that end the team was working with what’s called a CycleGAN — a neural network that learns to transform images of type X and Y into one another, as efficiently yet accurately as possible, through a great deal of experimentation.
+  <br /><br />
+  In some early results, the agent was doing well — suspiciously well. What tipped the team off was that, when the agent reconstructed aerial photographs from its street maps, there were lots of details that didn’t seem to be on the latter at all. For instance, skylights on a roof that were eliminated in the process of creating the street map would magically reappear when they asked the agent to do the reverse process
  
+<sup>1</sup>
+  </p>
+  <p>Unfathomably focused A.I. means that an "Off" switch ought to be multi-dimensionally redundant -- planned out for unforeseen environments, option range and resources available as a codebase grows!</p>   
+  `; 
+  
+  var blogcite160 = `
+  <p class="cite">1 <a target="_blank" href="https://techcrunch.com/2018/12/31/this-clever-ai-hid-data-from-its-creators-to-cheat-at-its-appointed-task">https://techcrunch.com/2018/12/31/this-clever-ai-hid-data-from-its-creators-to-cheat-at-its-appointed-task</a></p>  
+  `;
   var blogpost159 =   ` 
   <p class="firstparagraph">Interviewer Bots would certainly probe the depths of any job candidate's answers, digital record, etc. In fact, using predictive analytics, it is likely that bots would undoubtedly shed light about an unseen facet of reality: <i>Everyday and every-year patterns of behavior</i>, however unnoticed by oneself or anyone else. Big Data notices ...
   </p>
@@ -78,7 +99,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   var blogcite155 = `
   <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  
   `;  
- 
+ /*
   var blogpost154 =   ` 
   <p class="firstparagraph">
   </p>
@@ -91,7 +112,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   var blogcite154 = `
   <p class="cite">1. <a target="_blank" href=" "> </a></p>  
   `;
- 
+ */
   var blogpost153 =   ` 
   <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  
   </p>
@@ -298,11 +319,21 @@ After taking this long journey with me, I’m sure you can appreciate the comple
       var url = [    
  
         {
+          id: '160',
+          did: '12-31-18',
+          date: 'December 31, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'A.I.Now.',
+          title: 'Sneaky Bots',
+          post: blogpost160,
+          blogcite: blogcite160 
+        }, 
+        {
           id: '159',
           did: '12-26-18',
           date: 'December 26, 2018 ',
           author: 'by Thomas Maestas',
-          cat3: 'Musing Blockchain',
+          cat3: 'A.I.Now.',
           title: 'Rise of the Interviewer Bots',
           post: blogpost159,
           blogcite: blogcite159 
@@ -347,17 +378,18 @@ After taking this long journey with me, I’m sure you can appreciate the comple
           title: 'A Virtual Balkanization of International Currency',
           post: blogpost155,
           blogcite: blogcite155 
-        },  
+        },  /*
         {
           id: '154',
           did: '12-20-18',
           date: 'December 20, 2018 ',
           author: 'by Thomas Maestas',
           cat3: 'Musing Blockchain',
-          title: 'A Currency Introspective',
+          title: ' ',
           post: blogpost154,
           blogcite: blogcite154
         },  
+        */
         {
           id: '153',
           did: '12-19-18',

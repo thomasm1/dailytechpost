@@ -1,21 +1,41 @@
 // https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/'use strict'; https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html
 // 'use strict';  
-// https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj/
+ 
 //june 
 // http://nautil.us/issue/64/the-unseen/the-fourth-copernican-revolution
 // https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
 var bloggerJan = function () {    
+  
 
-  var blogpost175 = `<p class="firstparagraph">TechCrunch Disrupt! 2018 hailed an A.I. startup named Kairos that addressed this same dilemma: How do you accurately report results when faced with disproportionate sampling due to  variance differences between stratification layers? Can you balance one group with one-hundred fold more data-points? And, equally polarized is the inferential freedoms needed to report statistically significant results with small-sample algorithms.</p><p>So, software considerations can be equally important to plain-old hardware limitations. As they say, Why make it a federal case?  
+  
+
+  var blogpost176 = `<p class="firstparagraph"><i>Tappy</i> may not look like a kind of high-stakes value-item, compared with a Hollywood story like "Chappie" with Hugh Jackman. A story featuring  Factions fighting over control of one artistic, talented droid-bot. Yet, with equally high drama, it sounds like the stakes got raised to international proportions, for... for a phenomenal T-Mobile phone-tester bot... 
+  </p>
+  <p class="quote">A grand jury in Seattle has charged Huawei with conspiracy to steal trade secrets, attempted theft of trade secrets, seven counts of wire fraud and one count of obstruction of justice for the company’s alleged attempts to move potential witnesses back to China. The indictments grew out of a civil suit dating all the way back to 2014 in which T-Mobile sued Huawei for stealing trade secrets related to a robotic phone-testing device known as “Tappy.” <sup>1</sup></p>
+ <p>It looks like high justice will be served for "Tappy" the <i>phenomenal</i> phone-tester bot... Talk about dramatic escalation!<p>
+  </p>  `; 
+    var blogcite176 = `
+  <p class="cite">1. <a target="_blank" href="https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj">
+  https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj</a></p>  
+ 
+  `; 
+  var blogpost175 = `<p class="firstparagraph">TechCrunch Disrupt! 2018 hailed an A.I. startup named Kairos<sup> 0</sup> that addressed this same dilemma: How do you accurately report results when faced with disproportionate sampling due to  variance differences between stratification layers? Can you balance one group with one-hundred fold more data-points? And, equally polarized is the inferential freedoms needed to report statistically significant results with small-sample algorithms.</p> 
   </p>
   <p class="quote">Amazon's Rekognition software incorrectly identified women as men 19 percent of the time, according to the study. In addition, it incorrectly identified darker-skinned women as men 31 percent of the time, it says. Software from Microsoft, by comparison, identified darker-skinned women as men 1.5 percent of the time.
 <br /><br />
 Matt Wood, general manager of artificial intelligence at Amazon Web Services, said that the study's test results are based on facial analysis, not facial recognition. Analysis, he said, can find faces in videos or images and assign generic attributes, such as the wearing of glasses. Recognition, he said, matches an individual's face to images in videos and photographs. The Rekognition technology includes both of these functionalities. <sup>1</sup>
-  </p>  `; 
+  </p> 
+  <p>
+  <p>So, software considerations can be equally important to plain-old hardware limitations. So in all fairness, must technology's capabilities keep pace with politically-correct results? As they say, Why make it a federal case? 
+  </p>
+  `; 
     var blogcite175 = `
   <p class="cite">1. <a target="_blank" href="https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/">
   https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/</a></p>  
-  
+
+  <p class="cite">0. <a target="_blank" href="https://www.kairos.com">
+  https://www.kairos.com</a></p>  
+ 
   `; 
   var blogpost174 = `<p class="firstparagraph">History does its own stunts. Internet History all the more, and the cast and crew could not have been better picked: Here is an  
 Archival Bests: <i>July 2016</i>
@@ -77,6 +97,20 @@ This feature of the internet makes it seem extremely complex. Surely something s
   <p class="cite">1. <a target="_blank" href="https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban">  https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban</a></p>  
   
   `; 
+
+  
+
+  var blogpost17005 = `<p class="firstparagraph">
+  At the end of the day, every secret lair depends on the software and hardware stewards of the world: Thank goodness for this special class of craftsmen -- <i>defacto</i> alotted the role of connecting every part of the world ...</p>
+  <p class="quote"> 
+  A frightened Rodriguez first met Guzman in 2008, at a meeting in the mountains where the Sinaloa Cartel leader had been hiding from authorities after his laundry-cart escape from a Mexican prison years earlier. Rodriguez described being taken to a clandestine airstrip to be flown to the meeting, and says he was met on the ground by "armed military." Rodriguez's work initially involved creating an office-like phone extension system for Sinaloa Cartel associates that would allow their conversations to be encrypted, or unable to be intercepted by authorities. Guzman, who did not enjoy working on computers, was pleased with the ability to have protected phone conversations.  <sup>1</sup>  
+  </p>  `; 
+    var blogcite17005 = `
+  <p class="cite">1. <a target="_blank" href="https://www.cnn.com/2019/01/09/americas/el-chapo-it-technician-rodriguez/index.html">https://www.cnn.com/2019/01/09/americas/el-chapo-it-technician-rodriguez/index.html
+   </a></p>  
+  
+  `; 
+
 var blogpost170 = `<p class="quote"> 
   </p>
   <p class="quote"> The gene therapy would instead give their bodies a working gene for them to make their own factor VIII. But transferring a gene into a person is no easy feat. Genes are long strings of DNA that don't readily get inside cells. So therapies typically rely on viruses, which squirt DNA into cells' nuclei as a way of life. In this case, a virus, modified so that it doesn't cause disease, and with the healthy human factor VIII gene added to its DNA, is injected into the body. It then enters the body's cells to deposit its cargo, leaving it as a separate piece of DNA in the nucleus next to the host cell's genome.<sup>1</sup>  
@@ -200,11 +234,18 @@ This culture has contributed to the company’s well-publicized wave of scandals
   var blogcite161 = `
   <p class="cite">1. <a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>   `;
   var blogpost16001 = `
- 
+  
+  <img src="dist/img/thule0.jpg" class="zoom" />
+  <p class="firstparagraph">Ultima Thule ...</p>
+  <p class="quote">
+  On New Years' Eve, following a 13-year trip to deep space, NASA's New Horizons spacecraft made a close pass of Ultima Thule, a small, icy world drifting 4 billion miles from the sun in the unexplored "third zone" of our solar system. The probe zipped by at upwards of 31,000 miles per hour, about the same speed it was going when it passed Pluto in 2015. But Pluto is 100 times the size of Ultima, which measures just 20 miles long. So New Horizons had days to capture photographs and spectrographic readings of the former planet, but for this smaller cosmic quarry, it only had a matter of minutes. New Horizons' visit was brief, but momentous: The mission's success makes Ultima Thule by far the most distant object ever to be imaged up close.<sup>1</sup></p>
+
+ <img src="dist/img/thule.jpg" class="zoom" />
   `;
 
   var blogcite16001 = `
-
+  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/new-horizons-first-photos-ultima-thule">https://www.wired.com/story/new-horizons-first-photos-ultima-thule</a></p>   
+  
   `;
 
     var blogpost160 =   `<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. 
@@ -230,12 +271,22 @@ Such an event has only been reported once before, by a different telescope.
       var url = [    
          
         {
+          id: '176',
+          did: '01-28-19',
+          date: 'January 28, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'A.I.Now.',
+          title: 'Saving Tappy, the Extraordinary Phone-Tester Bot',
+          post: blogpost176,
+          blogcite: blogcite176 
+        },   
+        {
           id: '175',
           did: '01-26-19',
           date: 'January 26-27, 2019',
           author: 'by Thomas Maestas',
-          cat3: 'Web Dev Affairs',
-          title: 'Who Dis?',
+          cat3: 'A.I.Now.',
+          title: 'Who Dis',
           post: blogpost175,
           blogcite: blogcite175 
         },   
@@ -286,7 +337,18 @@ Such an event has only been reported once before, by a different telescope.
         title: 'World of OpenSource, part II:<br />The CopyRight Strikes Back',
         post: blogpost1705,
         blogcite: blogcite1705 
-      },   {
+      }, 
+      {
+        id: '17005',
+        did: '01-19-19',
+        date: 'January 19, 2019',
+        author: 'by Thomas Maestas',
+        cat3: 'Web Dev Affairs',
+        title: 'The Cable Guy',
+        post: blogpost17005,
+        blogcite: blogcite17005 
+      },  
+      {
         id: '170',
         did: '01-18-19',
         date: 'January 18, 2019',
@@ -390,8 +452,8 @@ Such an event has only been reported once before, by a different telescope.
           did: '01-07-19',
           date: 'January 7, 2019',
           author: 'by Thomas Maestas',
-          cat3: 'Web Dev Affairs',
-          title: ' ',
+          cat3: 'Sociology Tomorrow!',
+          title: 'It Takes Two to Dance',
           post: blogpost16001,
           blogcite: blogcite16001 
         }, 
@@ -443,7 +505,7 @@ var i;
  </div>`;
     document.getElementById("paragraph-jan-mod").innerHTML += catMod;
   }
- //console.log(angular.toJson(url));
+ // console.log(angular.toJson(url));
   //console.log(url);
 };
 bloggerJan();

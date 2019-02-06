@@ -9093,14 +9093,16 @@ function outsideClick(e) {
 
 // https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/'use strict'; https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html
 // 'use strict';  
-// https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj/
+
 //june 
 // http://nautil.us/issue/64/the-unseen/the-fourth-copernican-revolution
 // https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
 var bloggerJan = function bloggerJan() {
 
-  var blogpost175 = '<p class="firstparagraph">TechCrunch Disrupt! 2018 hailed an A.I. startup named Kairos that addressed this same dilemma: How do you accurately report results when faced with disproportionate sampling due to  variance differences between stratification layers? Can you balance one group with one-hundred fold more data-points? And, equally polarized is the inferential freedoms needed to report statistically significant results with small-sample algorithms.</p><p>So, software considerations can be equally important to plain-old hardware limitations. As they say, Why make it a federal case?  \n  </p>\n  <p class="quote">Amazon\'s Rekognition software incorrectly identified women as men 19 percent of the time, according to the study. In addition, it incorrectly identified darker-skinned women as men 31 percent of the time, it says. Software from Microsoft, by comparison, identified darker-skinned women as men 1.5 percent of the time.\n<br /><br />\nMatt Wood, general manager of artificial intelligence at Amazon Web Services, said that the study\'s test results are based on facial analysis, not facial recognition. Analysis, he said, can find faces in videos or images and assign generic attributes, such as the wearing of glasses. Recognition, he said, matches an individual\'s face to images in videos and photographs. The Rekognition technology includes both of these functionalities. <sup>1</sup>\n  </p>  ';
-  var blogcite175 = '\n  <p class="cite">1. <a target="_blank" href="https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/">\n  https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/</a></p>  \n  \n  ';
+  var blogpost176 = '<p class="firstparagraph"><i>Tappy</i> may not look like a kind of high-stakes value-item, compared with a Hollywood story like "Chappie" with Hugh Jackman. A story featuring  Factions fighting over control of one artistic, talented droid-bot. Yet, with equally high drama, it sounds like the stakes got raised to international proportions, for... for a phenomenal T-Mobile phone-tester bot... \n  </p>\n  <p class="quote">A grand jury in Seattle has charged Huawei with conspiracy to steal trade secrets, attempted theft of trade secrets, seven counts of wire fraud and one count of obstruction of justice for the company\u2019s alleged attempts to move potential witnesses back to China. The indictments grew out of a civil suit dating all the way back to 2014 in which T-Mobile sued Huawei for stealing trade secrets related to a robotic phone-testing device known as \u201CTappy.\u201D <sup>1</sup></p>\n <p>It looks like high justice will be served for "Tappy" the <i>phenomenal</i> phone-tester bot... Talk about dramatic escalation!<p>\n  </p>  ';
+  var blogcite176 = '\n  <p class="cite">1. <a target="_blank" href="https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj">\n  https://techcrunch.com/2019/01/28/huawei-us-meng-wanzhou-doj</a></p>  \n \n  ';
+  var blogpost175 = '<p class="firstparagraph">TechCrunch Disrupt! 2018 hailed an A.I. startup named Kairos<sup> 0</sup> that addressed this same dilemma: How do you accurately report results when faced with disproportionate sampling due to  variance differences between stratification layers? Can you balance one group with one-hundred fold more data-points? And, equally polarized is the inferential freedoms needed to report statistically significant results with small-sample algorithms.</p> \n  </p>\n  <p class="quote">Amazon\'s Rekognition software incorrectly identified women as men 19 percent of the time, according to the study. In addition, it incorrectly identified darker-skinned women as men 31 percent of the time, it says. Software from Microsoft, by comparison, identified darker-skinned women as men 1.5 percent of the time.\n<br /><br />\nMatt Wood, general manager of artificial intelligence at Amazon Web Services, said that the study\'s test results are based on facial analysis, not facial recognition. Analysis, he said, can find faces in videos or images and assign generic attributes, such as the wearing of glasses. Recognition, he said, matches an individual\'s face to images in videos and photographs. The Rekognition technology includes both of these functionalities. <sup>1</sup>\n  </p> \n  <p>\n  <p>So, software considerations can be equally important to plain-old hardware limitations. So in all fairness, must technology\'s capabilities keep pace with politically-correct results? As they say, Why make it a federal case? \n  </p>\n  ';
+  var blogcite175 = '\n  <p class="cite">1. <a target="_blank" href="https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/">\n  https://www.cnet.com/news/amazons-facial-tech-shows-gender-racial-bias-mit-study-says/</a></p>  \n\n  <p class="cite">0. <a target="_blank" href="https://www.kairos.com">\n  https://www.kairos.com</a></p>  \n \n  ';
   var blogpost174 = '<p class="firstparagraph">History does its own stunts. Internet History all the more, and the cast and crew could not have been better picked: Here is an  \nArchival Bests: <i>July 2016</i>\n  </p>\n  <p class="quote">The internet is so vast and formless that it\u2019s hard to imagine it being invented. It\u2019s easy to picture Thomas Edison inventing the lightbulb, because a lightbulb is easy to visualize. You can hold it in your hand and examine it from every angle.\n<br /><br />\nThe internet is the opposite. It\u2019s everywhere, but we only see it in glimpses. The internet is like the holy ghost: it makes itself knowable to us by taking possession of the pixels on our screens to manifest sites and apps and email, but its essence is always elsewhere.\n<br /><br />\nThis feature of the internet makes it seem extremely complex. Surely something so ubiquitous yet invisible must require deep technical sophistication to understand. But it doesn\u2019t. The internet is fundamentally simple. And that simplicity is the key to its success.<sup>1</sup>\n  </p>  ';
   var blogcite174 = '\n  <p class="cite">1. <a target="_blank" href="https://www.theguardian.com/technology/2016/jul/15/how-the-internet-was-invented-1976-arpa-kahn-cerf">\n  https://www.theguardian.com/technology/2016/jul/15/how-the-internet-was-invented-1976-arpa-kahn-cerf</a></p>  \n  \n  ';
 
@@ -9113,6 +9115,10 @@ var bloggerJan = function bloggerJan() {
   var blogcite171 = '\n  <p class="cite">1. <a target="_blank" href="https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/">\n  https://www.popularmechanics.com/space/rockets/a25953663/elon-musk-spacex-bfr-stainless-steel/</a></p>  \n  \n  ';
   var blogpost1705 = '<p class="firstparagraph">Copy Cat Accusations from the few mean a slower, more expensive, ad-driven internet experience! \n  </p>\n  <p class="quote">Simply put, the Directive on Copyright places more responsibility on websites such as YouTube, Facebook and Twitter to make sure that copyrighted materially isn\u2019t being illegaly shared on their platforms. Until now, the onus has mostly been on the copyright holders \u2013 usually the companies that produce audio, video or written content \u2013 to enforce copyright protection but under the new law this responsibility will shift onto the major platforms themselves.\n<br /><br />\n  At the heart of the Directive on Copyright are two divisive articles \u2013 Article 11 and Article 13 \u2013 that have been dubbed the \u201Clink tax\u201D and \u201Cmeme ban\u201D articles respectively. Critics of the Directive on Copyright argue that these articles mean that platforms will have to pay a fee to share a link to a news article and have to start filtering and removing memes.<sup>1</sup>  \n  </p>  \n  <p>The effort involved in roping in internet creativity is ...<i> like herding cats?</i>  </p>';
   var blogcite1705 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban">  https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban</a></p>  \n  \n  ';
+
+  var blogpost17005 = '<p class="firstparagraph">\n  At the end of the day, every secret lair depends on the software and hardware stewards of the world: Thank goodness for this special class of craftsmen -- <i>defacto</i> alotted the role of connecting every part of the world ...</p>\n  <p class="quote"> \n  A frightened Rodriguez first met Guzman in 2008, at a meeting in the mountains where the Sinaloa Cartel leader had been hiding from authorities after his laundry-cart escape from a Mexican prison years earlier. Rodriguez described being taken to a clandestine airstrip to be flown to the meeting, and says he was met on the ground by "armed military." Rodriguez\'s work initially involved creating an office-like phone extension system for Sinaloa Cartel associates that would allow their conversations to be encrypted, or unable to be intercepted by authorities. Guzman, who did not enjoy working on computers, was pleased with the ability to have protected phone conversations.  <sup>1</sup>  \n  </p>  ';
+  var blogcite17005 = '\n  <p class="cite">1. <a target="_blank" href="https://www.cnn.com/2019/01/09/americas/el-chapo-it-technician-rodriguez/index.html">https://www.cnn.com/2019/01/09/americas/el-chapo-it-technician-rodriguez/index.html\n   </a></p>  \n  \n  ';
+
   var blogpost170 = '<p class="quote"> \n  </p>\n  <p class="quote"> The gene therapy would instead give their bodies a working gene for them to make their own factor VIII. But transferring a gene into a person is no easy feat. Genes are long strings of DNA that don\'t readily get inside cells. So therapies typically rely on viruses, which squirt DNA into cells\' nuclei as a way of life. In this case, a virus, modified so that it doesn\'t cause disease, and with the healthy human factor VIII gene added to its DNA, is injected into the body. It then enters the body\'s cells to deposit its cargo, leaving it as a separate piece of DNA in the nucleus next to the host cell\'s genome.<sup>1</sup>  \n  </p>  ';
   var blogcite170 = '\n  <p class="cite">1. <a target="_blank" href="http://digg.com/2019/gene-therapies-immunity">http://digg.com/2019/gene-therapies-immunity\n   </a></p>  \n  \n  ';
   var blogpost169 = '<p class="quote"> \n  </p>\n  <p class="quote"> In his blog, Hunt says a large file of 12,000 separate files and 87GB of data had been uploaded to MEGA, a popular cloud service. The data was then posted to a popular hacking forum and appears to be an amalgamation of over 2,000 databases. The troubling thing is the databases contain \u201Cdehashed\u201D passwords, which means the methods used to scramble those passwords into unreadable strings has been cracked, fully exposing the passwords.\n<br />\n  So what does this mean for the average person? According to Hunt, it means compromised email and password combos are more vulnerable for a practice called credential stuffing. Basically, credential stuffing is when breached username or email/password combos are used to hack into other user accounts. This could impact anyone who has used the same username and password combo across multiple sites.<sup>1</sup>\n  </p>  ';
@@ -9143,21 +9149,30 @@ var bloggerJan = function bloggerJan() {
   var blogpost161 = ' \n  <p class="firstparagraph">Relentless criticisms hurled at the Tech Greats like Facebook can\'t really explain a lot of the connivery in the 21st century world. So, the label of a Silicon-Valley culture that espouses teamwork can\'t be blamed: It\'s the nature of Software Engineers to develop gargantuanly complex programmed products, that dissent and critical thinking have much less place than most jobs. This article is laughable, but may bear a hint of truth ... \n  </p>\n  <p class="quote">The episode speaks to an atmosphere at Facebook in which employees feel pressure to place the company above all else in their lives, fall in line with their manager\u2019s orders and force cordiality with their colleagues so they can advance. Several former employees likened the culture to a \u201Ccult.\u201D\n<br /><br />\nThis culture has contributed to the company\u2019s well-publicized wave of scandals over the last two years, such as governments spreading misinformation to try to influence elections and the misuse of private user data, according to many people who worked there during this period. They say Facebook might have have caught some of these problems sooner if employees were encouraged to deliver honest feedback.  \n<sup>1</sup>\n  </p>\n  ';
 
   var blogcite161 = '\n  <p class="cite">1. <a target="_blank" href="https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html">https://www.cnbc.com/2019/01/08/facebook-culture-cult-performance-review-process-blamed.html</a></p>   ';
-  var blogpost16001 = '\n \n  ';
+  var blogpost16001 = '\n  \n  <img src="dist/img/thule0.jpg" class="zoom" />\n  <p class="firstparagraph">Ultima Thule ...</p>\n  <p class="quote">\n  On New Years\' Eve, following a 13-year trip to deep space, NASA\'s New Horizons spacecraft made a close pass of Ultima Thule, a small, icy world drifting 4 billion miles from the sun in the unexplored "third zone" of our solar system. The probe zipped by at upwards of 31,000 miles per hour, about the same speed it was going when it passed Pluto in 2015. But Pluto is 100 times the size of Ultima, which measures just 20 miles long. So New Horizons had days to capture photographs and spectrographic readings of the former planet, but for this smaller cosmic quarry, it only had a matter of minutes. New Horizons\' visit was brief, but momentous: The mission\'s success makes Ultima Thule by far the most distant object ever to be imaged up close.<sup>1</sup></p>\n\n <img src="dist/img/thule.jpg" class="zoom" />\n  ';
 
-  var blogcite16001 = '\n\n  ';
+  var blogcite16001 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/new-horizons-first-photos-ultima-thule">https://www.wired.com/story/new-horizons-first-photos-ultima-thule</a></p>   \n  \n  ';
 
   var blogpost160 = '<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. \nThe precise nature and origin of the blasts of radio waves is unknown. \nAmong the 13 fast radio bursts, known as FRBs, was a very unusual repeating signal, coming from the same source about 1.5 billion light years away. \nSuch an event has only been reported once before, by a different telescope. \n"Knowing that there is another suggests that there could be more out there," said Ingrid Stairs, an astrophysicist from the University of British Columbia (UBC).\n \n<sup>1</sup></p>\n  <p class="firstparagraph">Morse code across the Galaxies - what a concept! \n  </p>\n  <img src="dist/img/gettyimages-831502910.jpg" width="350" class="zoom" /><hr width="200"/>\n\n  <span style="float:right;">GETTY IMAGES</span>\n ';
 
   var blogcite160 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bbc.com/news/science-environment-46811618">https://www.bbc.com/news/science-environment-46811618</a></p>  \n  ';
 
   var url = [{
+    id: '176',
+    did: '01-28-19',
+    date: 'January 28, 2019',
+    author: 'by Thomas Maestas',
+    cat3: 'A.I.Now.',
+    title: 'Saving Tappy, the Extraordinary Phone-Tester Bot',
+    post: blogpost176,
+    blogcite: blogcite176
+  }, {
     id: '175',
     did: '01-26-19',
     date: 'January 26-27, 2019',
     author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: 'Who Dis?',
+    cat3: 'A.I.Now.',
+    title: 'Who Dis',
     post: blogpost175,
     blogcite: blogcite175
   }, {
@@ -9205,6 +9220,15 @@ var bloggerJan = function bloggerJan() {
     title: 'World of OpenSource, part II:<br />The CopyRight Strikes Back',
     post: blogpost1705,
     blogcite: blogcite1705
+  }, {
+    id: '17005',
+    did: '01-19-19',
+    date: 'January 19, 2019',
+    author: 'by Thomas Maestas',
+    cat3: 'Web Dev Affairs',
+    title: 'The Cable Guy',
+    post: blogpost17005,
+    blogcite: blogcite17005
   }, {
     id: '170',
     did: '01-18-19',
@@ -9300,8 +9324,8 @@ var bloggerJan = function bloggerJan() {
     did: '01-07-19',
     date: 'January 7, 2019',
     author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: ' ',
+    cat3: 'Sociology Tomorrow!',
+    title: 'It Takes Two to Dance',
     post: blogpost16001,
     blogcite: blogcite16001
   }, {
@@ -9324,7 +9348,7 @@ var bloggerJan = function bloggerJan() {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="author">' + url[i].author + '</p>   \n  <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-jan-mod").innerHTML += catMod;
   }
-  //console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
   //console.log(url);
 };
 bloggerJan();
@@ -9343,6 +9367,9 @@ bloggerJan();
 // https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
 var bloggerDec = function bloggerDec() {
 
+  var blogpost160 = ' \n  <p class="firstparagraph">Taskrunners, bots, and any other automaton will find a way, if there\'s a faster way!\n  </p>\n  <p class="quote">One could easily take this as a step in the \u201Cthe machines are getting smarter\u201D narrative, but the truth is it\u2019s almost the opposite. The machine, not smart enough to do the actual difficult job of converting these sophisticated image types to each other, found a way to cheat that humans are bad at detecting. This could be avoided with more stringent evaluation of the agent\u2019s results, and no doubt the researchers went on to do that.\n  <br /><br />\n  As always, computers do exactly what they are asked, so you have to be very specific in what you ask them. In this case the computer\u2019s solution was an interesting one that shed light on a possible weakness of this type of neural network \u2014 that the computer, if not explicitly prevented from doing so, will essentially find a way to transmit details to itself in the interest of solving a given problem quickly and easily.\n  This is really just a lesson in the oldest adage in computing: PEBKAC. \u201CProblem exists between keyboard and computer.\u201D Or as HAL put it: \u201CIt can only be attributable to human error.\u201D\n  <br /><br />\n  The intention of the researchers was, as you might guess, to accelerate and improve the process of turning satellite imagery into Google\u2019s famously accurate maps. To that end the team was working with what\u2019s called a CycleGAN \u2014 a neural network that learns to transform images of type X and Y into one another, as efficiently yet accurately as possible, through a great deal of experimentation.\n  <br /><br />\n  In some early results, the agent was doing well \u2014 suspiciously well. What tipped the team off was that, when the agent reconstructed aerial photographs from its street maps, there were lots of details that didn\u2019t seem to be on the latter at all. For instance, skylights on a roof that were eliminated in the process of creating the street map would magically reappear when they asked the agent to do the reverse process\n \n<sup>1</sup>\n  </p>\n  <p>Unfathomably focused A.I. means that an "Off" switch ought to be multi-dimensionally redundant -- planned out for unforeseen environments, option range and resources available as a codebase grows!</p>   \n  ';
+
+  var blogcite160 = '\n  <p class="cite">1 <a target="_blank" href="https://techcrunch.com/2018/12/31/this-clever-ai-hid-data-from-its-creators-to-cheat-at-its-appointed-task">https://techcrunch.com/2018/12/31/this-clever-ai-hid-data-from-its-creators-to-cheat-at-its-appointed-task</a></p>  \n  ';
   var blogpost159 = ' \n  <p class="firstparagraph">Interviewer Bots would certainly probe the depths of any job candidate\'s answers, digital record, etc. In fact, using predictive analytics, it is likely that bots would undoubtedly shed light about an unseen facet of reality: <i>Everyday and every-year patterns of behavior</i>, however unnoticed by oneself or anyone else. Big Data notices ...\n  </p>\n  <p class="quote">However, at places like EY, which plans to hire approximately 15,700 workers in the U.S. in the coming year, some 1,300 bots focused on recruiting efforts are likely going to be part of the candidates\u2019 interview experience.\n</p><p>So, are interview bots humane? How much can we as a society <i>off-load</i> our own perceptions, vibes and even that familiar or professional hunch in decision-making?<br /><br />\n\nEyal Grayevsky, CEO and cofounder of Mya Systems says that in 2019 the divide between intelligent, conversational recruiting bots and basic chatbots that follow simple decision trees will become a chasm. \u201CJob search candidates will gravitate toward conversational bots,\u201D he explains, \u201Cbecause of their ability to respond more knowledgeably and naturally, to anticipate candidate needs, and to learn and adapt to candidate preferences over time.\u201D\n<sup>1</sup>\n  </p>\n  <p>Unfathomably complex A.I. algorithms to decode the job candidate\'s algorith ...that\'s a new one,  but can you trust in a computer\'s over-analytic mind when all you need is a bit of human touch?\n  ';
 
   var blogcite159 = '\n  <p class="cite">1 <a target="_blank" href="https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019">https://www.fastcompany.com/90280594/this-is-how-youll-look-for-a-job-in-2019</a></p>  \n  ';
@@ -9361,11 +9388,20 @@ var bloggerDec = function bloggerDec() {
   var blogpost155 = ' \n  <p class="firstparagraph">To say that the world\'s micro-transaction needs have changed in the past 100 years is ... exaggeration. Maslow\'s <i>Hierarchy of Needs</i> specifies more or less the reality of buying habits. From the bottom of the triangle, they are physiological needs, safety-security, love and belonging, and finally self-actualization. What is clear is that horizontal scaling of our needs often use fragmented sources of "currency"--whether it is financial capital being spent, or social capital (value accrued from trust networks), human capital(value accrued from specialties and specialized networks), intellectual capital, and so on. </p>\n  <p>The effect is clear: multiplying usages and forms of value exchange are certain--this, without accounting for the myriad new options that tech offers. So, if one considers the linear progression from bartering to the coins of Egypt and Athens, history certainly amplifies itself with Venmo, PayPal options are here to stay...  \n  </p>\n  <p class="quote">Facebook Inc. is working on making a cryptocurrency that will let users transfer money on its WhatsApp messaging app, focusing first on the remittances market in India, according to people familiar with the matter.\n  <br /><br />\n\n  The company is developing a stablecoin -- a type of digital currency pegged to the U.S. dollar -- to minimize volatility, said the people, who asked not to be identified discussing internal plans. Facebook is far from releasing the coin, because it\u2019s still working on the strategy, including a plan for custody assets, or regular currencies that would be held to protect the value of the stablecoin, the people said.\n  <br /><br />\n   \n  Facebook, which has 2.5 billion global users, more than $40 billion in annual revenue and greater experience navigating regulatory issues, may have a better chance of making a stablecoin that sticks. It would be the first large technology company to launch such a project. \n<sup>1</sup>\n  </p> ';
 
   var blogcite155 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  \n  ';
-
-  var blogpost154 = ' \n  <p class="firstparagraph">\n  </p>\n  <p class="quote">\n \n<sup>1</sup>\n  </p>\n  <p> ';
-
-  var blogcite154 = '\n  <p class="cite">1. <a target="_blank" href=" "> </a></p>  \n  ';
-
+  /*
+   var blogpost154 =   ` 
+   <p class="firstparagraph">
+   </p>
+   <p class="quote">
+  
+  <sup>1</sup>
+   </p>
+   <p> `; 
+   
+   var blogcite154 = `
+   <p class="cite">1. <a target="_blank" href=" "> </a></p>  
+   `;
+  */
   var blogpost153 = ' \n  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  \n  </p>\n  <p class="quote">\n  When you buy something on Amazon, the odds are, you aren\u2019t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company\u2019s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. \n\n  Amazon is far from the only tech company that, having annexed a vast sphere of human activity, finds itself in the position of having to govern it. But Amazon is the only platform that has a $175 billion prize pool tempting people to game it, and the company must constantly implement new rules and penalties, which in turn, become tools for new abuses, which require yet more rules to police. The evolution of its moderation system has been hyper-charged. While Mark Zuckerberg mused recently that Facebook might need an analog to the Supreme Court to adjudicate disputes and hear appeals, Amazon already has something like a judicial system \u2014 one that is secretive, volatile, and often terrifying. \n<sup>1</sup>\n  </p>\n  <p>So, when commercial and social transactions drift away from  traditional political-judicial-legal jurisdictions, where--rather what--is binding authority? \n  </p> ';
 
   var blogcite153 = '\n  <p class="cite">1. <a target="_blank" href="https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement">https://www.theverge.com/2018/12/19/18140799/amazon-marketplace-scams-seller-court-appeal-reinstatement</a></p>  \n  ';
@@ -9417,11 +9453,20 @@ var bloggerDec = function bloggerDec() {
   var blogcite138 = '\n  <p class="cite">1. <a target="_blank" href="https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides">https://www.fastcompany.com/90268250/even-in-our-digital-world-the-humble-sticky-note-abides</a></p>  \n  ';
 
   var url = [{
+    id: '160',
+    did: '12-31-18',
+    date: 'December 31, 2018 ',
+    author: 'by Thomas Maestas',
+    cat3: 'A.I.Now.',
+    title: 'Sneaky Bots',
+    post: blogpost160,
+    blogcite: blogcite160
+  }, {
     id: '159',
     did: '12-26-18',
     date: 'December 26, 2018 ',
     author: 'by Thomas Maestas',
-    cat3: 'Musing Blockchain',
+    cat3: 'A.I.Now.',
     title: 'Rise of the Interviewer Bots',
     post: blogpost159,
     blogcite: blogcite159
@@ -9461,16 +9506,19 @@ var bloggerDec = function bloggerDec() {
     title: 'A Virtual Balkanization of International Currency',
     post: blogpost155,
     blogcite: blogcite155
-  }, {
-    id: '154',
-    did: '12-20-18',
-    date: 'December 20, 2018 ',
-    author: 'by Thomas Maestas',
-    cat3: 'Musing Blockchain',
-    title: 'A Currency Introspective',
-    post: blogpost154,
-    blogcite: blogcite154
-  }, {
+  }, /*
+     {
+     id: '154',
+     did: '12-20-18',
+     date: 'December 20, 2018 ',
+     author: 'by Thomas Maestas',
+     cat3: 'Musing Blockchain',
+     title: ' ',
+     post: blogpost154,
+     blogcite: blogcite154
+     },  
+     */
+  {
     id: '153',
     did: '12-19-18',
     date: 'December 19, 2018 ',
