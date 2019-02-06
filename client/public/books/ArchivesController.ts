@@ -327,7 +327,15 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 					<button id="afebtop">
 					  <a href="#afebend">PAGE END</a>
 					</button>        <hr />
+					
+
+
+
 					<h4>POSTS FEBRUARY 2018</h4>   <hr />
+
+
+					
+<!--
 					<div id="feb-18-02-10">
 	
 	
@@ -543,7 +551,7 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 					</div>
 	
 	
-	
+	-->
 	
 	
 	

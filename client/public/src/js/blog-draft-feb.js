@@ -988,8 +988,7 @@ target="_blank">https://www.trustnodes.com/2017/11/28/ethereums-proof-stake-casp
 </p>
 `
   var url =  
-     [
-       /*
+     [ /*
        {
     id: '17',
     did: '18-02-10',
@@ -1004,7 +1003,7 @@ target="_blank">https://www.trustnodes.com/2017/11/28/ethereums-proof-stake-casp
  {
     id: '16',
     did: '18-02-11',
-    date: 'Feb 22, 2018',
+    date: 'Feb 11, 2018',
     author: 'by Thomas Maestas, MA',
     cat3: 'Web Dev Affairs',
     title: 'How Can We Best Modularize our App Designs in Order to Achieve the Much Vaunted &quot;Separation of Concerns&quot;?',
