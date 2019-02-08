@@ -4,8 +4,126 @@
 //june 
 // http://nautil.us/issue/64/the-unseen/the-fourth-copernican-revolution
 // https://www.theatlantic.com/science/archive/2018/09/your-dna-is-not-your-culture/571150/
-var bloggerJan = function () {    
+
+var bloggerJan = function () { 
+
+
+
+  var blogpost1790 = `<p class="firstparagraph">Bitcoin's carbon footprint -- matching yearly Kilowatt usage as Portugul -- shows an example of the need to improve the technology. The Electrical drain from "Proof-of-Work" blockchain designs, like Ethereum and Bitcoin, makes the demand of scarcity through   computationally difficult 'blocks'. That is the 'weight' worth in gold, at least cryptographically: a computer had to sweat </i>alot</i> so that I could own a piece of bitcoin. The problem is this makes for a lot of hot computing around the globe--a problem that grows with more ecological climate change.</p>
+
+  <p class="quote">Developers plan to ditch proof-of-work, the algorithm that the network currently uses to determine which transactions are valid and protect it from tampering, in favor of proof of stake, where the network is secured by the owners of tokens.
+<br /><br />
+  If and when that algorithm is rolled out, proof-of-stake could be a means for achieving distributed consensus that uses fewer resources.<sup>1</sup>
+  </p>
+  <p>So this is the conundrum with a long-term blockchain plans for ecological responsibility. Right now, Environmental hopes, like mine, are invested in Ethereum's planned migration to a "Proof-of-Stake" design... 
+  </p>
+  <p class="quote">   At the cutting edge of blockchain research is a potential $15 million dollar venture by the Ethereum Foundation centered around a technology called Verifiable Delay Functions (VDFs).
+
+  Acting as a source of computer-generated randomness that is unpredictable and unbias-able, VDFs are envisioned for use in a highly-anticipated “proof-of-stake”(PoS) system called Serenity which the ethereum network will migrate to in the next few years.
   
+  What’s more, the ability to generate secure randomized numbers – if implemented in Serenity – would be a feature that can be leveraged by all decentralized applications (dapps) on the platform once integrated into the ethereum codebase.
+<br />
+    <br />  
+    Speaking to current viability studies on VDF technology, Ethereum Foundation researcher Justin Drake told CoinDesk:
+    
+    “We’re basically doing all this groundwork to make an informed go, no-go decision on the bigger project. The bigger project is 15 million dollars on that order of magnitude. So we want to make sure that if we do go ahead it’s going to be successful.”<sup>2</sup>
+  </p> 
+  <br />
+  <img src="dist/img/bitcoin.jpg" class="zoom"   /><br />
+  <p class="cite">Photo: <a href="https://digiconomist.net/bitcoin-energy-consumption">https://digiconomist.net/bitcoin-energy-consumption</a></p> `; 
+    var blogcite1790 = `
+  <p class="cite">1. (background)<a target="_blank" href="https://www.coindesk.com/ethereum-foundation-weighs-15-million-bid-to-build-randomness-tech">
+  https://www.coindesk.com/ethereum-foundation-weighs-15-million-bid-to-build-randomness-tech</a></p>  
+
+  <p class="cite">2. <a target="_blank" href="https://www.coindesk.com/information/ethereum-mining-works">
+  https://www.coindesk.com/information/ethereum-mining-works</a></p>  
+  `;  
+ 
+ 
+  var blogpost1789 = `<p class="firstparagraph">Oracle the Great. Oracle the Fast. Oracle the Secure Database stands high among all Tech Giants. After all, aren't 99 out of a hundred SAP setups on Oracle DBs? ...with maybe an IBM DB2 on a blue moon. The Cloud Greats like Amazon, for instance, run their own servers using Oracle hardware--even their Aurora DB is a rendition of Oracle's legacy MySQL ...  
+  </p><p>Such power <i>requires</i> trust in order to thrive. Yet it looks like Oracle's hyper-competitive <i>and possibly suspect</i> collecting habit of personal and marketing data makes for a real, even existential, conflict of interest vis-&agrave;-vis customers, and customers of customers:  </p>
+  <p class="quote">Facing tough questions about its practices over the past year, Oracle’s advertising software division, known as Data Cloud, has implemented previously unreported dismissals. While Data Cloud has always been a small part of Oracle’s overall sales, Hurd, co-founder Larry Ellison, and other executives repeatedly cited it over the years as a bright spot in their otherwise humdrum business. That appears to be over. Investment bank Stifel Nicolaus & Co. estimates that Data Cloud delivered only about $500 million of Oracle’s $40 billion in sales last year. “What happened over the past couple years is, the nebulous concerns people may have had about what companies were doing with personal data all of a sudden became very real,” says Blair Hanley Frank, an analyst at ISG, a technology research and advisory firm. “The risk to Oracle in all of this is what seemed like a somewhat ignorable value-add business a few years ago could all of a sudden become a big scary bugbear.”
+  </p>  `; 
+    var blogcite1789 = `
+  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2019-02-06/oracle-didn-t-see-the-data-reckoning-coming">
+  https://www.bloomberg.com/news/articles/2019-02-06/oracle-didn-t-see-the-data-reckoning-coming</a></p>  
+ 
+  `; 
+  var blogpost1788 = `<p class="firstparagraph">Oracle's lofty role of providing the globe's finest and fastest databases, also means a commitment--to some degree--of respect for privacy data. This power does require trust in order to survive: And, it looks like Oracle's hyper-competitive <i>and possibly suspect</i> (or negligent at best) habit equates <i>and in turn helps monetize</i> the ties and boundaries between personal data and marketing data ...  </p>
+  <p class="quote">   
+    If Company X wants to, it can ask Oracle to find people looking at images of its SUV, add the information to its consumer profiles, and then upload the data to Facebook, where the carmaker can target those people with ads for the same model.
+  
+    <br />
+    That last part has gotten tougher in the past year. In March, after the Cambridge Analytica scandal revealed just how casually Facebook Inc. had shared user data with other companies for years, the social network’s clampdown on its own systems became a serious problem for Oracle ...<sup>1</sup>
+  </p> 
+  <br />
+  <img src="dist/img/oracle.jpg" class="zoom" width="340px" /> `; 
+    var blogcite1788 = `
+  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2019-02-06/oracle-didn-t-see-the-data-reckoning-coming">
+  https://www.bloomberg.com/news/articles/2019-02-06/oracle-didn-t-see-the-data-reckoning-coming</a></p>  
+ 
+  `;  
+   var blogpost1786 = `<p class="firstparagraph">Hecdraclitus' iconic maxim, "that no man has stepped into the same river twice, for it's not the same river <i> and he's not the same man.</i>" This phrasing underscores that Earth is a living, evolving organic Ecosystem, just like man/woman-kind makes for an evolving being, too. How much moreso, given our symbiosis with Earth. So, the future is double blind--making Life all the more interesting!</p>
+  <p class="quote">
+
+  Magnetic north has never sat still. In the last hundred years or so, the direction in which our compasses steadfastly point has lumbered ever northward, driven by Earth's churning liquid outer core some 1,800 miles beneath the surface. Yet in recent years, scientists noticed something unusual: Magnetic north's routine plod has shifted into high gear, sending it galloping across the Northern Hemisphere—and no one can entirely explain why.
+  <br /><br />  
+  The changes have been so large that scientists began working on an emergency update for the World Magnetic Model, the mathematical system that lays the foundations for navigation, from cell phones and ships to commercial airlines. But then the U.S. government shut down, placing the model's official release on hold, as Nature News first reported earlier this year.<sup>1</sup>
+  </p>  `; 
+    var blogcite1786 = `
+  <p class="cite">1. <a target="_blank" href="https://www.nationalgeographic.com/science/2019/02/magnetic-north-update-navigation-maps">
+  https://www.nationalgeographic.com/science/2019/02/magnetic-north-update-navigation-maps</a></p>  
+ 
+  `; 
+  var blogpost1785 = `<p class="firstparagraph">Memorization is a cultural topic and, contrary to many opinions, technology can't be directly blamed for waning interest. I helped judge a Speech and Debate Tournement last month, and there are no shortage of texting high-schoolers that <i>also happen to memorize long passsages of historical and political works</i>. Yet, this author makes some points about how far society has drifted ...</p>
+  <p class="quote">Before every smidgen of knowledge was a mere Google search away, it was customary for students to memorize great works, from poems to famous political speeches to religious passages. In antiquity, "there were elaborate mnemotechnic ways of memorizing speeches," explained Katharina Volk, the director of undergraduate Classics studies at Columbia University, citing the method of Ioci and Ars Memorativa.  
+  <br /><br /> 
+   It was also customary to memorize far more prosaic works: In the U.S. and U.K. in the 19th century, "memorization was the default learning technique across the whole curriculum," said Catherine Robson, the author of Heart Beats: Everyday Life and the Memorized Poem. "To learn your lesson was to learn the passage in the textbook about the geography of Iowa. When it was your turn to be examined by the teacher, in the U.S. system you would go up to the recitation bench and you would recite that paragraph."
+ 
+  <sup>1</sup>
+  </p>
+  <p>So, is the declining practice of memorization a function of culture or technology, or rather merely a cultural aberration that might revive, and catch on like the next big fad?</p>`; 
+    
+  var blogcite1785 = `
+  <p class="cite">1. <a target="_blank" href="https://theweek.com/articles/820197/lost-art-memorization">
+  https://theweek.com/articles/820197/lost-art-memorization</a></p>  
+ 
+  `; 
+  var blogpost1784 = `<p class="firstparagraph"> </p>
+  <p class="quote">Gates' prediction: "Automated price comparison services will be developed, allowing people to see prices across multiple websites, making it effortless to find the cheapest product for all industries."
+  <br /><br /> 
+  Gates' prediction: "'Personal companions' will be developed. They will connect and sync all your devices in a smart way, whether they are at home or in the office, and allow them to exchange data. The device will check your email or notifications, and present the information that you need. When you go to the store, you can tell it what recipes you want to prepare, and it will generate a list of ingredients that you need to pick up. It will inform all the devices that you use of your purchases and schedule, allowing them to automatically adjust to what you're doing."
+ 
+  <sup>1</sup>
+  </p>
+  <p>The author of future technologies does offer a certain vantage point over the horizon ...</p>`; 
+    
+  var blogcite1784 = `
+  <p class="cite">1. <a target="_blank" href="https://www.entrepreneur.com/slideshow/327229">https://www.entrepreneur.com/slideshow/327229</a></p>  
+ 
+  `; 
+  
+  var blogpost178 = `<p class="firstparagraph">Photography's trajectory spanning three centuries makes for a common thread of experience: <i>The Art of the Image Capture</i> lives above the mere tools for the job--whether a flash-bulb, or dark-room, or yes, an experience with the likes of 'Tappy' the Extraordinary Phone Bot!</p>  
+  <p class="quote">
+  It takes a lot of time and processing power to train an algorithm like this, but after the data centers have done their thing, it can be run on low-powered mobile devices without much trouble. The heavy-lifting work has already been done, so once your photos are uploaded to the cloud, Google can use its model to analyze and label the whole library. About a year after Google Photos was launched, Apple announced a photo search feature that was similarly trained on a neural network, but as part of the company’s commitment to privacy the actual categorization is performed on each device’s processor separately without sending the data. This usually takes a day or two and happens in the background following setup.<sup> 1</sup>
+  '</p>  `; 
+    var blogcite178 = `
+  <p class="cite">1. <a target="_blank" href="https://www.theverge.com/2019/1/31/18203363/ai-artificial-intelligence-photography-google-photos-apple-huawei">
+  https://www.theverge.com/2019/1/31/18203363/ai-artificial-intelligence-photography-google-photos-apple-huawei</a></p>  
+ 
+  `; 
+
+
+  
+  var blogpost177 = `<p class="firstparagraph">URL dramas are never short of controversy--this, making the theme of my <a href="#09-04-18">Sept. 4th post </a>exploring the unfathomable task. There is but one likely outcome: a bifurcated internet: Imagine futre hang-ups resembling inconsistencies and incompatible experiences, <i>like, say ... the seemingly Immortal and Persistently Awkward Internet Explorer 11</i>.</p>  
+  <p class="quote">   
+  In September, members of Google's Chrome security team put forth a radical proposal: Kill off URLs as we know them. The researchers aren't actually advocating a change to the web's underlying infrastructure. They do, though, want to rework how browsers convey what website you're looking at, so that you don't have to contend with increasingly long and unintelligible URLs—and the fraud that has sprung up around them. In a talk at the Bay Area Enigma security conference on Tuesday, Chrome usable security lead Emily Stark is wading into the controversy, detailing Google's first steps toward more robust website identity.<sup>1</sup>
+  </p><p>And yet, as my September post wondered: Since there <i>are</i> needs, as much as there was a need for asphalt roads, directly following the <i>vulkanizing</i> new opportunities for rubber tires. The inevitable Univorm Resource Locator revolution does loom, but <i>is Now</i> the timing right for the times?<sup> 1</sup></p>`; 
+    var blogcite177 = `
+  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/google-chrome-kill-url-first-steps">
+  https://www.wired.com/story/google-chrome-kill-url-first-steps</a></p>  
+ 
+  `; 
 
   
 
@@ -53,7 +171,7 @@ This feature of the internet makes it seem extremely complex. Surely something s
   `; 
 
   
-  var blogpost173    = `<p class="firstparagraph"> My new Samsung 40" Best Buy Special has shined yet  has also had trying moments. An every-once-in-a-while frozen desktop screen -- <i>perma-frozen until a couple hard resets. In my opinion, nothing's out of the ordinary--they're just finicky, just like the 90's computers, it's called big plans with small hardware platforms--mole hills become mountains. Service in-fighting for precious memory resources! The hard thinking and the hardest problems, starting with ...I'm frozen, how do I turn on and off?. 
+  var blogpost173    = `<p class="firstparagraph"> My new Samsung 40" Best Buy Special has shined yet  has also had trying moments. An every-once-in-a-while frozen desktop screen -- <i>perma-frozen until a couple hard resets.</i> In my opinion, nothing's out of the ordinary--they're just finicky, just like the 90's computers, it's called big plans with small hardware platforms--mole hills become mountains. Service in-fighting for precious memory resources! The hard thinking and the hardest problems, starting with ...I'm frozen, how do I turn on and off?. 
   </p>
   <p class="quote">I tried the obvious things. I turned off the TV and turned it back on. Same problem. Unplugged, replugged. Happened again. Reset the cable box just to try it. Again. Made the sign of the cross. Checked for software updates for the television. Threw my phone. Screamed into the abyss. But. It. Just. Kept. Happening.
 
@@ -269,7 +387,87 @@ Such an event has only been reported once before, by a different telescope.
  
 
       var url = [    
-         
+          
+        {
+          id: '1790',
+          did: '02-08-19',
+          date: 'February 8, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Sustainable Blockchain Tech, Part I:<br />The Cost of Proof-of-Work Models',
+          post: blogpost1790,
+          blogcite: blogcite1790 
+        },   
+        {
+          id: '1789',
+          did: '02-07-19',
+          date: 'February 7, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Oracle the Great, Part II<br />Is Oracle also Good?',
+          post: blogpost1789,
+          blogcite: blogcite1789 
+        },   
+        {
+          id: '1788',
+          did: '02-06-19',
+          date: 'February 6, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Oracle the Great, Part I<br />Is Oracle also Trustworthy?',
+          post: blogpost1788,
+          blogcite: blogcite1788 
+        }, 
+        {
+          id: '1786',
+          did: '02-04-19',
+          date: 'February 4, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Sociology Tomorrow!',
+          title: 'Due North: Time to Calibrate the Compass?',
+          post: blogpost1786,
+          blogcite: blogcite1786 
+        },
+        {
+          id: '1785',
+          did: '02-02-19',
+          date: 'February 2-3, 2019<br />Weekend',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Four Score and Seven Years Ago ...',
+          post: blogpost1785,
+          blogcite: blogcite1785 
+        },
+        {
+          id: '1784',
+          did: '02-01-19',
+          date: 'February 1, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Four Score and Seven Years From Now ...',
+          post: blogpost1784,
+          blogcite: blogcite1784 
+        },
+        {
+          id: '178',
+          did: '01-31-19',
+          date: 'January 31, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'A.I.Now.',
+          title: 'Seeing Who Says, \'Say Cheese!\'',
+          post: blogpost178,
+          blogcite: blogcite178 
+        },     
+        {
+          id: '177',
+          did: '01-29-19',
+          date: 'January 29, 2019',
+          author: 'by Thomas Maestas',
+          cat3: 'Web Dev Affairs',
+          title: 'Construction on the Internet Super-Highway',
+          post: blogpost177,
+          blogcite: blogcite177 
+        },   
         {
           id: '176',
           did: '01-28-19',
