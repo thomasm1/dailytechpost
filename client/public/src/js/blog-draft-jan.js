@@ -9,7 +9,7 @@ var bloggerJan = function () {
 
 
 
-  var blogpost1790 = `<p class="firstparagraph">Bitcoin's carbon footprint -- matching yearly Kilowatt usage as Portugul -- shows an example of the need to improve the technology. The Electrical drain from "Proof-of-Work" blockchain designs, like Ethereum and Bitcoin, makes the demand of scarcity through   computationally difficult 'blocks'. That is the 'weight' worth in gold, at least cryptographically: a computer had to sweat </i>alot</i> so that I could own a piece of bitcoin. The problem is this makes for a lot of hot computing around the globe--a problem that grows with more ecological climate change.</p>
+  var blogpost1790 = `<p class="firstparagraph">Bitcoin's carbon footprint -- matching yearly Kilowatt usage as Portugul -- shows an example of the need to improve the technology. The Electrical drain from "Proof-of-Work" blockchain designs, like Ethereum and Bitcoin, makes the demand of scarcity through   computationally difficult 'blocks'. That is the 'weight' worth in gold, at least cryptographically: <strong>A computer had to sweat alot so that <i>I</i> could own a piece of bitcoin.</strong> The problem is this makes for a lot of hot computing around the globe--a problem that grows with more ecological climate change.</p>
 
   <p class="quote">Developers plan to ditch proof-of-work, the algorithm that the network currently uses to determine which transactions are valid and protect it from tampering, in favor of proof of stake, where the network is secured by the owners of tokens.
 <br /><br />
@@ -393,7 +393,7 @@ Such an event has only been reported once before, by a different telescope.
           did: '02-08-19',
           date: 'February 8, 2019',
           author: 'by Thomas Maestas',
-          cat3: 'Web Dev Affairs',
+          cat3: 'Musing Blockchain',
           title: 'Sustainable Blockchain Tech, Part I:<br />The Cost of Proof-of-Work Models',
           post: blogpost1790,
           blogcite: blogcite1790 
