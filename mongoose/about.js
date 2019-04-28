@@ -14,8 +14,7 @@ const aboutSchema = mongoose.Schema({
 const About = module.exports = mongoose.model('About', aboutSchema);
 
 // Get Abouts
-/* module.exports.getAbouts = (callback, limit) => {
+ module.exports.getAbouts = (callback, limit) => {
 	About.find(callback).limit(limit);
-};
- */
+}; 
  

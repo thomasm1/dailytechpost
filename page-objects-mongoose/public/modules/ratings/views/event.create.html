@@ -1,0 +1,19 @@
+<form ng-submit="submit()" name="createEvent">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text"
+      class="form-control"
+      ng-model="item.name"
+      ng-minlength="5"
+      ng-maxlength="150"
+      required>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea class="form-control" ng-model="item.description" rows="5"></textarea>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary pull-right" ng-class="{disabled: createEvent.$invalid}"  type="submit" >Create</button>
+  </div>
+</form>
