@@ -7,10 +7,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose'); 
 // const db = mongojs('bloggerapp', ['citations']);
 
-About = require('./models/about');
-Archives = require('./models/archive');
-Cat3 =require('./models/cat3'); 
-Post = require('./models/post'); 
+About = require('./mongoose/about');
+Archives = require('./mongoose/archive');
+Cat3 =require('./mongoose/cat3'); 
+Post = require('./mongoose/post'); 
 
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({extended: false}));
@@ -83,8 +83,7 @@ app.delete('/api/posts/:_id', (req, res) => {
 		}
 		res.json(post);
 	});
-});
- /*
+}); 
 app.get('/api/about', (req, res) => {
 	About.getAbouts((err, about) => {
 		if(err){
@@ -110,8 +109,8 @@ app.get('/api/cat3s', (req, res) => {
 		}
 		res.json(cat3s);
 	});
-});
- */
+}); 
+
 const port = process.env.PORT || 3010;
 app.listen(port, () => console.log(`Listening on port 3010`)); 
 console.log(`Running on port ${port}`);
