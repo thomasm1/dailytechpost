@@ -8,7 +8,7 @@ var bloggerMay19 = function() {
 
     https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
 
-    https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
+    https://media.consensys.net/18-predictions-for-2019-7a376ea7bd4b
 
 
 
@@ -20,11 +20,31 @@ var bloggerMay19 = function() {
     https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
 
     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
-     
-    */
+   
+var blogpost4 = ` 
+<p class="firstparagraph"> 
+</p>
 
-    var blogpost3 = `
-    <p class="firstparagraph">AWS Rekognition, a premier service among dozens of others, is like all AI software along with a Platform-as-a-Service: On the one hand, AI algorithsms necessarily reflects the biases of its origin lab. On the other hand, AWS' democratizing access to every student, professional, and researcher the unlimited use of sophisticated and expensive AI resources;thus hedging any potential bias to diverse individual's and team's participation.  At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
+<p </p>
+ 
+
+<p class="quote"> 
+<sup></sup>
+</p>
+`
+var blogcite4 = `
+<p>1.
+<a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>
+</p>
+
+<p>2. 
+<a href="https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/" target="_blank">Oct. 31, 2019: https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/</a>
+</p>
+`
+  
+    */
+var blogpost3 = `
+    <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus hedging any potential bias to diverse individual's and team's participation.  At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
 	
 	<p class="quote"> 
 	But Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition’s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people’s lives.<br /><br />
@@ -45,42 +65,28 @@ Some police agencies have in recent years run facial-recognition searches agains
     `;
 
     var blogpost2 = `
-  <p class="firstparagraph">Security, security, another day another platform risk, or risks from your device, or risks from transactions, Today&#39;s
-  headline buried beneath a techy jargon provides a glimpse of the rising threat of web-application-based hackery:
-  Cryptojacking.
-  <i>Coindesk</i> reports, &quot; Opera browser introduces cryptocurrency miner protection for smartphones ... &quot;</p>
+  <p class="firstparagraph">Data Analytics' <i>Law of Large Numbers</i>, i.e. over n = 10,000, promises a predictable likelihood of conditions and events, given a sufficiently high sample of training data. Despite the quantum-directed molecular behavior of biological organisms, the classical exponentiation of machine-learning statistical algorithms still does work miracles:  
+  </p>
+   
+   
   
-  <p class="quote">Cryptocurrency miners can overload smartphones&#39; CPUs, forcing 100 percent usage and potentially causing a phone
-  to overheat. And the damage can sometimes be permanent. According to a ZDNet article, one trojan generated so much
-  heat in a phone, its battery became swollen, permanently damaging the phone. While excessive ads were one reason
-  for the heat generation, the main cause was that the phone&#39;s CPU was hijacked to mine for Monero.
+  <p class="quote"> 
+  Studies indicate that using algorithms to analyze digital slides delivers diagnoses as accurate as an expert pathologist—and in some instances, the algorithms are more accurate. A 2018 study by Massachusetts General Hospital and MIT found that an automated system they developed diagnosed dense breast tissue (an indicator of breast cancer) in mammograms at the same level as an expert radiologist. Another algorithm developed by Google was found to “help detect metastatic breast cancers with significant accuracy and improve pathologist performance,” according to studies in the Archives of Pathology and Laboratory Medicine and the American Journal of Surgical Pathology.
+  </p>
+  So, how can we best take advantage of these advances? Clear the brush! The meta-organization of healthcare technology and financing simply can't keep pace with the pure tech:
+  <p class="quote">
+  After taking a look, the pathologist might ship it to a specialist at another lab for a second opinion. Each time the slide is moved, it is packed up and shipped to a different address. All the while, you’re waiting days or even weeks to hear whether or not you have cancer.
+<br /><br />
+  For decades, there have been limited ways to share medical slides, with information management lagging behind even as medical science advanced. But in the past few years, a new industry of digital pathology has emerged that could finally offer a more efficient and large-scale way of distributing and analyzing these kinds of samples.
   <sup>1</sup>
   </p>
-  
-  <p>The larger issue here is that the lines between trusted mobile-app authorities, i.e., certified by Play Store or
-  Apple&#39;s is increasingly irrelevent. This is because an increasing number of app-users are ditching device-downloaded
-  apps, preferring for browser applications--hence, a much more appetizing market for the newest generation of blackhat
-  hackers, online thieves, peeping-toms, and other ill-wishers. There are a few driving factors for this issue--one
-  of which is the onset of Decentralized Applications (DAPPs), which use the
-  <i>browser</i> to interface between the Every-Day blockchain client/merchant/programmer and the actual byte-code of
-  the blockchain (via WEB).</p>
-  
-  <p>More importantly, the larger issue is that we live in an age in which the exclusive, native browser language since
-  1995, i.e. JavaScript. Security issues with browser-based apps were very low, because JavaScript never left the
-  browser, ever. Until 2009, Data, Servers were the domain of PHP, JAVA, Python, etc. or some other language for the
-  highly sensitive, dirty work of dipping into all that data sitting ontop of centralized servers around the world.
-  PHP wasn&#39;t easy, so power and responsibility usually followed with all the extra effort and expertise.</p>
-  
-  <p>2015 augured in the Node.js server-accessing (can create, read, update, and delete date) new-born capabilities of
-  JavaScript</p>
-  
+  <p>So, the good news from <i>the doctors'</i> occasional nemesis, U.S. Food and Drug Administration, decided that after 8 years of trials and hearings, truly scalable and sufficiently large sample data can now be digitized - hence personalizing the law of large numbers from the whole to the individual patient. At long last, the patience has paid off!
 	`
 
 
 
     var blogcite2 = ` 
-     
-       
+      
       
   
   <p>1.
@@ -98,33 +104,55 @@ Some police agencies have in recent years run facial-recognition searches agains
   
   
   <p class="quote"> 
-  <sup>1</sup>
+  <sup></sup>
   </p>
   
   <p>
  
   </p>
+  `
+  var blogcite1 = `
   
-	`
-
-
-
-    var blogcite1 = ` 
+  <p class="cite">1.
+  <a href="https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e" target="_blank">https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e</a>
+  
+  </p>
+  
+  `
+  var blogpost0 = `
+  <p class="firstparagraph"> 
+  <sup></sup>
+  </p>
+  
+  <p> </p>
+  
+  <p>
+ 
+  </p>
+    `
+    var blogcite0 = ` 
   <p>1.
   <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>
   </p>
-`
-        /*
+` 
   var blogpost0 = `
-  `
-var blogcite0 = `
-https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
-`
-*/
-    var url = [{
-            id: '3',
+  ` 
+    var url = [
+        /*
+        {
+            id: '4',
             did: '19-05-04',
-            date: 'May 4 - 5, 2018 <br /> Weekend',
+            date: 'May 4 - 5, 2019 <br /> Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'A.I.Now.',
+            title: 'The Return of our Bitcoin Father?',
+            post: blogpost4,
+            cite: blogcite4
+        },
+        */{
+            id: '3',
+            did: '19-05-03',
+            date: 'May 3, 2019  ',
             author: 'by Thomas Maestas, MA',
             cat3: 'A.I.Now.',
             title: 'Rekognize Me?',
@@ -133,23 +161,33 @@ https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthca
         },
         {
             id: '2',
-            did: '19-05-03',
-            date: 'May 3, 2018',
+            did: '19-05-02',
+            date: 'May 2, 2019',
             author: 'by Thomas Maestas, MA',
             cat3: 'A.I.Now.',
-            title: 'On the Second Opinion of 10,000 Doctors',
+            title: 'Modern Healthcare, Part II:<br />On the Second Opinion of 10,000 Doctors',
             post: blogpost2,
             cite: blogcite2
         },
         {
             id: '1',
             did: '19-03-01',
-            date: 'March 1, 2018',
+            date: 'May 1, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Sociology Tomorrow!',
+            title: 'Modern Healthcare, Part I:<br />Post-A.I. Healthcare',   
+            post: blogpost1,
+            cite: blogcite1
+        },
+        {
+            id: '0',
+            did: '19-04-30',
+            date: 'April 30, 2019',
             author: 'by Thomas Maestas, MA',
             cat3: 'Musing Blockchain',
             title: 'Blockchain Scalability Issues and The Double-Edged Sword',
-            post: blogpost1,
-            cite: blogcite1
+            post: blogpost0,
+            cite: blogcite0
         }
     ];
 
