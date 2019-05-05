@@ -9063,6 +9063,7 @@ __webpack_require__(338);
 __webpack_require__(339);
 __webpack_require__(340);
 __webpack_require__(341);
+__webpack_require__(342);
 
 var modal = document.getElementById('msimpleModal');
 var modalBtn = document.getElementById('mmodalBtn');
@@ -9091,6 +9092,96 @@ function outsideClick(e) {
 "use strict";
 
 
+var bloggerMay19 = function bloggerMay19() {
+    /*
+    https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
+    
+    https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
+    
+    https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
+    
+    https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
+    
+    https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
+    
+    https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
+    
+    https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
+    
+    
+    
+    
+    https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
+    
+    https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
+     
+    */
+
+    var blogpost3 = '\n    <p class="firstparagraph">AWS Rekognition, a premier service among dozens of others, is like all AI software along with a Platform-as-a-Service necessarily reflects the biases of its origin lab. Alternately, AWS\' democratizing access to every student, professional, and researcher the unlimited use of sophisticated and expensive AI resources;thus hedging any potential bias to diverse individual\'s and team\'s participation.  At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
+
+    var blogcite3 = ' \n \n\t<p>1.\n\t<a href="https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a" target="_blank">https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a</a>\n\t</p>\n    \n    ';
+
+    var blogpost2 = '\n  <p class="firstparagraph">Security, security, another day another platform risk, or risks from your device, or risks from transactions, Today&#39;s\n  headline buried beneath a techy jargon provides a glimpse of the rising threat of web-application-based hackery:\n  Cryptojacking.\n  <i>Coindesk</i> reports, &quot; Opera browser introduces cryptocurrency miner protection for smartphones ... &quot;</p>\n  \n  <p class="quote">Cryptocurrency miners can overload smartphones&#39; CPUs, forcing 100 percent usage and potentially causing a phone\n  to overheat. And the damage can sometimes be permanent. According to a ZDNet article, one trojan generated so much\n  heat in a phone, its battery became swollen, permanently damaging the phone. While excessive ads were one reason\n  for the heat generation, the main cause was that the phone&#39;s CPU was hijacked to mine for Monero.\n  <sup>1</sup>\n  </p>\n  \n  <p>The larger issue here is that the lines between trusted mobile-app authorities, i.e., certified by Play Store or\n  Apple&#39;s is increasingly irrelevent. This is because an increasing number of app-users are ditching device-downloaded\n  apps, preferring for browser applications--hence, a much more appetizing market for the newest generation of blackhat\n  hackers, online thieves, peeping-toms, and other ill-wishers. There are a few driving factors for this issue--one\n  of which is the onset of Decentralized Applications (DAPPs), which use the\n  <i>browser</i> to interface between the Every-Day blockchain client/merchant/programmer and the actual byte-code of\n  the blockchain (via WEB).</p>\n  \n  <p>More importantly, the larger issue is that we live in an age in which the exclusive, native browser language since\n  1995, i.e. JavaScript. Security issues with browser-based apps were very low, because JavaScript never left the\n  browser, ever. Until 2009, Data, Servers were the domain of PHP, JAVA, Python, etc. or some other language for the\n  highly sensitive, dirty work of dipping into all that data sitting ontop of centralized servers around the world.\n  PHP wasn&#39;t easy, so power and responsibility usually followed with all the extra effort and expertise.</p>\n  \n  <p>2015 augured in the Node.js server-accessing (can create, read, update, and delete date) new-born capabilities of\n  JavaScript</p>\n  \n\t';
+
+    var blogcite2 = ' \n     \n       \n      \n  \n  <p>1.\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  ';
+    var blogpost1 = '\n  <p class="firstparagraph"> \n  <sup>2</sup>\n  </p>\n  \n  <p> </p>\n  \n  \n  <p class="quote"> \n  <sup>1</sup>\n  </p>\n  \n  <p>\n \n  </p>\n  \n\t';
+
+    var blogcite1 = ' \n  <p>1.\n  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>\n  </p>\n   \n  ';
+    var url = [{
+        id: '3',
+        did: '19-03-03',
+        date: 'March 3-4, 2018 <br /> Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Sociology Tomorrow!',
+        title: 'A Return to the Question of Guns, Germs, and Steel',
+        post: blogpost3,
+        cite: blogcite3
+    }, {
+        id: '2',
+        did: '19-03-02',
+        date: 'March 2, 2018',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Web Dev Affairs',
+        title: 'Widening Circles of Mobile-App Security Risks',
+        post: blogpost2,
+        cite: blogcite2
+    }, {
+        id: '1',
+        did: '19-03-01',
+        date: 'March 1, 2018',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Musing Blockchain',
+        title: 'Blockchain Sustainability Issues and The Double-Edged Sword',
+        post: blogpost1,
+        cite: blogcite1
+    }];
+
+    for (i = 0; i < url.length; i++) {
+        var cat = ' \n\t  <div id="' + url[i].did + '" class="blogDiv"> \n\t  <hr />  \n\t  <a href="#top"><button>Top</button></a>  \n\t  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n\t  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5> \n\t  <p id="author" class="  author">' + url[i].author + '</p>   \n\t  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n\t  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n\t  <br />\n\t  <div id="post">' + url[i].post + '\t  </div>\n      <div id="post">' + url[i].cite + '</div>\n\t  </div>';
+
+        document.getElementById("paragraph-may19").innerHTML += cat;
+    }
+
+    var i;
+    for (i = 0; i < url.length; i++) {
+        var catMod = '\n\t  <div id="' + url[i].did + '_mod" class="blogDivMod"> \n\t  <hr />  \n\t  <a href="#top-mod"><button>Top</button></a>   \n\t  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n\t  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n\t  <p id="author" class="  author">' + url[i].author + '</p>   \n\t  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n\t  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n\t  <br />\n      <div id="post">' + url[i].post + '</div>\n      <div id="post">' + url[i].cite + '</div>\n      \n\n\t  </div>';
+
+        document.getElementById("paragraph-may19-mod").innerHTML += catMod;
+    }
+
+    console.log('blogger-may19');
+    // console.log(angular.toJson(url));
+};
+
+bloggerMay19();
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 // https://www.digitaltrends.com/home/mui-wood-smart-display-ces-2019/'use strict'; https://www.latimes.com/business/la-fi-spacex-layoffs-20190111-story.html
 // 'use strict';  
 
@@ -9100,7 +9191,7 @@ function outsideClick(e) {
 
 var bloggerJan = function bloggerJan() {
 
-  var blogpost1790 = '<p class="firstparagraph">Bitcoin\'s carbon footprint -- matching yearly Kilowatt usage as Portugul -- shows an example of the need to improve the technology. The Electrical drain from "Proof-of-Work" blockchain designs, like Ethereum and Bitcoin, makes the demand of scarcity through   computationally difficult \'blocks\'. That is the \'weight\' worth in gold, at least cryptographically: <strong>A computer had to sweat alot so that <i>I</i> could own a piece of bitcoin.</strong> The problem is this makes for a lot of hot computing around the globe--a problem that grows with more ecological climate change.</p>\n\n  <p class="quote">Developers plan to ditch proof-of-work, the algorithm that the network currently uses to determine which transactions are valid and protect it from tampering, in favor of proof of stake, where the network is secured by the owners of tokens.\n<br /><br />\n  If and when that algorithm is rolled out, proof-of-stake could be a means for achieving distributed consensus that uses fewer resources.<sup>1</sup>\n  </p>\n  <p>So this is the conundrum with a long-term blockchain plans for ecological responsibility. Right now, Environmental hopes, like mine, are invested in Ethereum\'s planned migration to a "Proof-of-Stake" design... \n  </p>\n  <p class="quote">   At the cutting edge of blockchain research is a potential $15 million dollar venture by the Ethereum Foundation centered around a technology called Verifiable Delay Functions (VDFs).\n\n  Acting as a source of computer-generated randomness that is unpredictable and unbias-able, VDFs are envisioned for use in a highly-anticipated \u201Cproof-of-stake\u201D(PoS) system called Serenity which the ethereum network will migrate to in the next few years.\n  \n  What\u2019s more, the ability to generate secure randomized numbers \u2013 if implemented in Serenity \u2013 would be a feature that can be leveraged by all decentralized applications (dapps) on the platform once integrated into the ethereum codebase.\n<br />\n    <br />  \n    Speaking to current viability studies on VDF technology, Ethereum Foundation researcher Justin Drake told CoinDesk:\n    \n    \u201CWe\u2019re basically doing all this groundwork to make an informed go, no-go decision on the bigger project. The bigger project is 15 million dollars on that order of magnitude. So we want to make sure that if we do go ahead it\u2019s going to be successful.\u201D<sup>2</sup>\n  </p> \n  <br />\n  <img src="dist/img/bitcoin.jpg" class="zoom"   /><br />\n  <p class="cite">Photo: <a href="https://digiconomist.net/bitcoin-energy-consumption">https://digiconomist.net/bitcoin-energy-consumption</a></p> ';
+  var blogpost1790 = '<p class="firstparagraph">Bitcoin\'s carbon footprint -- matching yearly Kilowatt usage as Portugul -- shows an example of the need to improve the technology. The Electrical drain from "Proof-of-Work" blockchain designs, like Ethereum and Bitcoin, makes the demand of scarcity through computationally difficult \'blocks\'. That is the \'weight\' worth in gold, at least cryptographically: <strong>A computer had to sweat alot so that <i>I</i> could own a piece of bitcoin.</strong> The problem is this makes for a lot of hot computing around the globe--a problem that grows with more ecological climate change.</p>\n\n  <p class="quote">Developers plan to ditch proof-of-work, the algorithm that the network currently uses to determine which transactions are valid and protect it from tampering, in favor of proof of stake, where the network is secured by the owners of tokens.\n<br /><br />\n  If and when that algorithm is rolled out, proof-of-stake could be a means for achieving distributed consensus that uses fewer resources.<sup>1</sup>\n  </p>\n  <p>So this is the conundrum with a long-term blockchain plans for ecological responsibility. Right now, Environmental hopes, like mine, are invested in Ethereum\'s planned migration to a "Proof-of-Stake" design... \n  </p>\n  <p class="quote">   At the cutting edge of blockchain research is a potential $15 million dollar venture by the Ethereum Foundation centered around a technology called Verifiable Delay Functions (VDFs).\n\n  Acting as a source of computer-generated randomness that is unpredictable and unbias-able, VDFs are envisioned for use in a highly-anticipated \u201Cproof-of-stake\u201D(PoS) system called Serenity which the ethereum network will migrate to in the next few years.\n  \n  What\u2019s more, the ability to generate secure randomized numbers \u2013 if implemented in Serenity \u2013 would be a feature that can be leveraged by all decentralized applications (dapps) on the platform once integrated into the ethereum codebase.\n<br />\n    <br />  \n    Speaking to current viability studies on VDF technology, Ethereum Foundation researcher Justin Drake told CoinDesk:\n    \n    \u201CWe\u2019re basically doing all this groundwork to make an informed go, no-go decision on the bigger project. The bigger project is 15 million dollars on that order of magnitude. So we want to make sure that if we do go ahead it\u2019s going to be successful.\u201D<sup>2</sup>\n  </p> \n  <br />\n  <img src="dist/img/bitcoin.jpg" class="zoom"   /><br />\n  <p class="cite">Photo: <a href="https://digiconomist.net/bitcoin-energy-consumption">https://digiconomist.net/bitcoin-energy-consumption</a></p> ';
   var blogcite1790 = '\n  <p class="cite">1. (background)<a target="_blank" href="https://www.coindesk.com/ethereum-foundation-weighs-15-million-bid-to-build-randomness-tech">\n  https://www.coindesk.com/ethereum-foundation-weighs-15-million-bid-to-build-randomness-tech</a></p>  \n\n  <p class="cite">2. <a target="_blank" href="https://www.coindesk.com/information/ethereum-mining-works">\n  https://www.coindesk.com/information/ethereum-mining-works</a></p>  \n  ';
 
   var blogpost1789 = '<p class="firstparagraph">Oracle the Great. Oracle the Fast. Oracle the Secure Database stands high among all Tech Giants. After all, aren\'t 99 out of a hundred SAP setups on Oracle DBs? ...with maybe an IBM DB2 on a blue moon. The Cloud Greats like Amazon, for instance, run their own servers using Oracle hardware--even their Aurora DB is a rendition of Oracle\'s legacy MySQL ...  \n  </p><p>Such power <i>requires</i> trust in order to thrive. Yet it looks like Oracle\'s hyper-competitive <i>and possibly suspect</i> collecting habit of personal and marketing data makes for a real, even existential, conflict of interest vis-&agrave;-vis customers, and customers of customers:  </p>\n  <p class="quote">Facing tough questions about its practices over the past year, Oracle\u2019s advertising software division, known as Data Cloud, has implemented previously unreported dismissals. While Data Cloud has always been a small part of Oracle\u2019s overall sales, Hurd, co-founder Larry Ellison, and other executives repeatedly cited it over the years as a bright spot in their otherwise humdrum business. That appears to be over. Investment bank Stifel Nicolaus & Co. estimates that Data Cloud delivered only about $500 million of Oracle\u2019s $40 billion in sales last year. \u201CWhat happened over the past couple years is, the nebulous concerns people may have had about what companies were doing with personal data all of a sudden became very real,\u201D says Blair Hanley Frank, an analyst at ISG, a technology research and advisory firm. \u201CThe risk to Oracle in all of this is what seemed like a somewhat ignorable value-add business a few years ago could all of a sudden become a big scary bugbear.\u201D\n  </p>  ';
@@ -9449,7 +9540,7 @@ var bloggerJan = function bloggerJan() {
 bloggerJan();
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9756,7 +9847,7 @@ var bloggerDec = function bloggerDec() {
 bloggerDec();
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10131,7 +10222,7 @@ var bloggerNov = function bloggerNov() {
 bloggerNov();
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10407,7 +10498,7 @@ var bloggerOct = function bloggerOct() {
 bloggerOct();
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10695,7 +10786,7 @@ var bloggerSep = function bloggerSep() {
 bloggerSep();
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10975,7 +11066,7 @@ var bloggerAug = function bloggerAug() {
 bloggerAug();
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11288,7 +11379,7 @@ var bloggerJuly = function bloggerJuly() {
 bloggerJuly();
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11342,7 +11433,7 @@ var bloggerJune = function bloggerJune() {
   changes, and link changes; and, the latter three may arbitrarily change interdependantly or not.</p>
   
   <p>Therefore, blockchain technologies must first accomodate  complex node variables, including one- or two-way contracts (relationships) that
-  depend on<i> arbitrarily hierarchical mappings and conditional data structures.</i> Secondly, blockchain tech must face analytical
+   depend on<i> arbitrarily hierarchical mappings and conditional data structures.</i> Secondly, blockchain tech must face analytical
   challenges that arise from informal practices<sup>1</sup><span class="new">--you can survey opinions, but how do you measure whim?</span>
   The organizational nodes (employees) choose to deviate from their employment roles&#39; protocol <span class="new">because it it is sunny outside, or maybe because the traffic was long today, or because a butterfly's wing-swish cooled a rash decision down to reason.  That small detail often trumps statistical patterns of efficiency, convenience, company culture, and multiple other levels of analysis of human factors.</p>
   
@@ -11579,7 +11670,7 @@ var bloggerJune = function bloggerJune() {
 bloggerJune();
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11765,7 +11856,7 @@ var bloggerMay = function bloggerMay() {
 bloggerMay();
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12021,7 +12112,7 @@ var bloggerApr = function bloggerApr() {
 bloggerApr();
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12250,7 +12341,7 @@ var bloggerMar = function bloggerMar() {
 bloggerMar();
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12625,7 +12716,7 @@ var bloggerFeb = function bloggerFeb() {
 bloggerFeb();
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

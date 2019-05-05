@@ -1,4 +1,4 @@
-var bloggerMarch19 = function() {
+var bloggerMay19 = function() {
 /*
 https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
 
@@ -162,7 +162,7 @@ Some police agencies have in recent years run facial-recognition searches agains
       <div id="post">${url[i].cite}</div>
 	  </div>`
 
-        document.getElementById("paragraph-march19").innerHTML += cat;
+        document.getElementById("paragraph-may19").innerHTML += cat;
     }
 
     var i;
@@ -183,11 +183,11 @@ Some police agencies have in recent years run facial-recognition searches agains
 
 	  </div>`;
 
-        document.getElementById("paragraph-march19-mod").innerHTML += catMod;
+        document.getElementById("paragraph-may19-mod").innerHTML += catMod;
     }
 
-    console.log('blogger-march19');
+    console.log('blogger-may19');
     // console.log(angular.toJson(url));
 };
 
-bloggerMarch19();
+bloggerMay19();
