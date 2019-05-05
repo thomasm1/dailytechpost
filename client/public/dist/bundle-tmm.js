@@ -9095,29 +9095,17 @@ function outsideClick(e) {
 var bloggerMay19 = function bloggerMay19() {
     /*
     https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
-    
-    https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
-    
-    https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
-    
-    https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
-    
-    https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
-    
-    https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
-    
-    https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
-    
-    
-    
-    
-    https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
-    
-    https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
+     https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
+     https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
+     https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
+     https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
+       https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
+        https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
+     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
      
     */
 
-    var blogpost3 = '\n    <p class="firstparagraph">AWS Rekognition, a premier service among dozens of others, is like all AI software along with a Platform-as-a-Service necessarily reflects the biases of its origin lab. Alternately, AWS\' democratizing access to every student, professional, and researcher the unlimited use of sophisticated and expensive AI resources;thus hedging any potential bias to diverse individual\'s and team\'s participation.  At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
+    var blogpost3 = '\n    <p class="firstparagraph">AWS Rekognition, a premier service among dozens of others, is like all AI software along with a Platform-as-a-Service: On the one hand, AI algorithsms necessarily reflects the biases of its origin lab. On the other hand, AWS\' democratizing access to every student, professional, and researcher the unlimited use of sophisticated and expensive AI resources;thus hedging any potential bias to diverse individual\'s and team\'s participation.  At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
 
     var blogcite3 = ' \n \n\t<p>1.\n\t<a href="https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a" target="_blank">https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a</a>\n\t</p>\n    \n    ';
 
@@ -9126,23 +9114,30 @@ var bloggerMay19 = function bloggerMay19() {
     var blogcite2 = ' \n     \n       \n      \n  \n  <p>1.\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  ';
     var blogpost1 = '\n  <p class="firstparagraph"> \n  <sup>2</sup>\n  </p>\n  \n  <p> </p>\n  \n  \n  <p class="quote"> \n  <sup>1</sup>\n  </p>\n  \n  <p>\n \n  </p>\n  \n\t';
 
-    var blogcite1 = ' \n  <p>1.\n  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>\n  </p>\n   \n  ';
+    var blogcite1 = ' \n  <p>1.\n  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>\n  </p>\n';
+    /*
+    var blogpost0 = `
+    `
+    var blogcite0 = `
+    https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
+    `
+    */
     var url = [{
         id: '3',
-        did: '19-03-03',
-        date: 'March 3-4, 2018 <br /> Weekend',
+        did: '19-05-04',
+        date: 'May 4 - 5, 2018 <br /> Weekend',
         author: 'by Thomas Maestas, MA',
-        cat3: 'Sociology Tomorrow!',
-        title: 'A Return to the Question of Guns, Germs, and Steel',
+        cat3: 'A.I.Now.',
+        title: 'Rekognize Me?',
         post: blogpost3,
         cite: blogcite3
     }, {
         id: '2',
-        did: '19-03-02',
-        date: 'March 2, 2018',
+        did: '19-05-03',
+        date: 'May 3, 2018',
         author: 'by Thomas Maestas, MA',
-        cat3: 'Web Dev Affairs',
-        title: 'Widening Circles of Mobile-App Security Risks',
+        cat3: 'A.I.Now.',
+        title: 'On the Second Opinion of 10,000 Doctors',
         post: blogpost2,
         cite: blogcite2
     }, {
@@ -9151,7 +9146,7 @@ var bloggerMay19 = function bloggerMay19() {
         date: 'March 1, 2018',
         author: 'by Thomas Maestas, MA',
         cat3: 'Musing Blockchain',
-        title: 'Blockchain Sustainability Issues and The Double-Edged Sword',
+        title: 'Blockchain Scalability Issues and The Double-Edged Sword',
         post: blogpost1,
         cite: blogcite1
     }];
@@ -11433,7 +11428,7 @@ var bloggerJune = function bloggerJune() {
   changes, and link changes; and, the latter three may arbitrarily change interdependantly or not.</p>
   
   <p>Therefore, blockchain technologies must first accomodate  complex node variables, including one- or two-way contracts (relationships) that
-   depend on<i> arbitrarily hierarchical mappings and conditional data structures.</i> Secondly, blockchain tech must face analytical
+  depend on<i> arbitrarily hierarchical mappings and conditional data structures.</i> Secondly, blockchain tech must face analytical
   challenges that arise from informal practices<sup>1</sup><span class="new">--you can survey opinions, but how do you measure whim?</span>
   The organizational nodes (employees) choose to deviate from their employment roles&#39; protocol <span class="new">because it it is sunny outside, or maybe because the traffic was long today, or because a butterfly's wing-swish cooled a rash decision down to reason.  That small detail often trumps statistical patterns of efficiency, convenience, company culture, and multiple other levels of analysis of human factors.</p>
   
