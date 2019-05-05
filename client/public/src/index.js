@@ -2,6 +2,7 @@
  
 //require('./js/force');  
 
+require('./js/blog-draft-may19');
 require('./js/blog-draft-jan');
 require('./js/blog-draft-dec');
 require('./js/blog-draft-nov');
