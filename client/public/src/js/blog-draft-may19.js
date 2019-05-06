@@ -49,7 +49,11 @@ var blogcite4 = `
 </p>
 ` 
 var blogpost3 = `
-    <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus hedging any potential bias to diverse individuals' and teams' participation.  At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
+    <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals' and teams' participation.  
+    <br /><br />
+    <img   class="zoom" src="dist/img/rekognition.jpg">
+    <br /><br />
+    At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
 	
 	<p class="quote"> 
 	But Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition’s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people’s lives.<br /><br />
@@ -69,7 +73,53 @@ Some police agencies have in recent years run facial-recognition searches agains
     
     `;
 
-    var blogpost2 = `
+    var blogpost2 = `  
+    <p class="firstparagraph">Ethereum Ether and Bitcoin have plenty in common, including their Proof-of-Work architecture--requiring Mining computationally difficult math problems to create scarcity and other functions. The downside is the nation-comparable amount of electricity spent each year, which in many cases are unregulated, coal-filled energy sources across the globe. This commonality will end next month when the Ethereum cryptocurrency will transition to Proof-of-Stake architecture, the long-ago and highly anticipated Ethereum 2.0.
+    </p>
+     
+    
+    <p class="quote"> 
+    Ethereum has been inching toward a major upgrade, dubbed ethereum 2.0, which would radically change the how the $17 billion network creates blocks and verifies transactions. As explained by founder of ethereum Vitalik Buterin in a recent interview at ethereum conference ETHCapetown, ethereum 2.0 has “two major flagship components.”
+    <br /><br />
+    “One is Casper, which is our proof-of-stake algorithm which replaces mining…with something that we consider to be much more efficient,” Buterin said at the time. “The second part is sharding which is this massive scalability improvement which happens because you don’t need every computer in the network to process every transaction in the network any more.
+    <br /><br />
+    Buterin added that with sharding, he anticipates a “1,000 factor increase in scalability” to the network. However, sharding will only come in the later two phases of ethereum 2.0 roll-out. The first phase – dubbed Phase Zero – strictly launches ethereum’s new proof-of-stake blockchain.
+    <sup>1.</sup>
+    </p>
+    
+    <p>The second improvement accentuates Ethereum's contract-capable currency (unlike Bitcoin's lack of contractual functionality), which means to revolutionize not only how data is persisted but also distributed, and managed at the individualized crypto-level! Using a language called <i>Solidity</i>, derived from Java and JavaScript origins, this crypto-currency stands first in line for upsetting the existing systems of finance, manufacture, and enterprise data. An exemple use-case ...
+   
+    </p>
+    
+    <p class="quote"> 
+    In the United States, healthcare comes from a patchwork of private companies, which means the handling of patient data is even more fragmented. John Halamka, chief information officer at Beth Israel Deaconess Medical Center in Boston, Massachusetts, told MIT Technology Review last year that there are 26 different electronic medical records systems in his home city alone.
+    <br /><br />
+    In 2016, Halamka teamed up with a group of scientists at MIT to try to find a solution to the problem using blockchain. They published their white paper on the subject in August 2016, laying out their proposal for a system that would help all those disparate databases exchange data — a project they called MedRec.
+    <br /><br />
+    Andy Lippman, a senior research scientist at MIT, co-authored the paper with Halamka. The system they outlined was to use Ethereum software — which, unlike bitcoin, can integrate and execute smart contracts — to build a private blockchain, linking healthcare providers together and allowing them to share their data.
+    <sup>2.</sup>
+    </p>
+    <p>So, as usual, Ethereum wins the day for both daily applicability and now a more scalable <strong><i>and</i> conscientious</strong> crypto-currency Tech!
+	`
+
+
+
+    var blogcite2 = ` 
+      
+  <p class="cite">1. 
+  <a href="https://www.coindesk.com/code-for-ethereums-proof-of-stake-blockchain-to-be-finalized-next-month" target="_blank"> https://www.coindesk.com/code-for-ethereums-proof-of-stake-blockchain-to-be-finalized-next-month</a>
+  
+  </p>
+  
+      
+  <p class="cite">2. [Post article 2/20/18]
+  <a href="https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e" target="_blank">https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e</a>
+  
+  </p>
+  
+  `
+    var blogpost1 = ` 
+  
   <p class="firstparagraph">Data Analytics' <i>Law of Large Numbers</i>, i.e. over n = 10,000, promises a predictable likelihood of conditions and events, given a sufficiently high sample of training data. Despite the quantum-directed molecular behavior of biological organisms, the classical exponentiation of machine-learning statistical algorithms still does work miracles:  
   </p>
    
@@ -86,46 +136,14 @@ Some police agencies have in recent years run facial-recognition searches agains
   <sup>1</sup>
   </p>
   <p>So, the good news from <i>the doctors'</i> occasional nemesis, U.S. Food and Drug Administration, decided that after 8 years of trials and hearings, truly scalable and sufficiently large sample data can now be digitized - hence personalizing the law of large numbers from the whole to the individual patient. At long last, the patience has paid off!
-	`
-
-
-
-    var blogcite2 = ` 
-      
-      
+  `
+  var blogcite1 = `
+  
   
   <p>1. [Post article 2/22/19]
   <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">
   https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8
   </a>
-  </p>
-  
-  <p class="cite">2. [Post article 2/20/18]
-  <a href="https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e" target="_blank">https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e</a>
-  
-  </p>
-  `
-    var blogpost1 = `
-  <p class="firstparagraph"> 
-  <sup>1</sup>
-  </p>
-  
-  <p> </p>
-  
-  
-  <p class="quote"> 
-  <sup></sup>
-  </p>
-  
-  <p>
- 
-  </p>
-  `
-  var blogcite1 = `
-  
-  <p class="cite">2. [Post article 2/20/18]
-  <a href="https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e" target="_blank">https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e</a>
-  
   </p>
   
   `
@@ -148,13 +166,17 @@ Some police agencies have in recent years run facial-recognition searches agains
 `  
 */
     var url = [ 
+        /*
+        https://www.coindesk.com/code-for-ethereums-proof-of-stake-blockchain-to-be-finalized-next-month
+
+        */
        {
             id: '4',
             did: '19-05-04',
             date: 'May 4 - 5, 2019 <br /> Weekend',
             author: 'by Thomas Maestas, MA',
-            cat3: 'A.I.Now.',
-            title: '<i>What is Love? Baby, Baby Don\'t Hurt Me No More! </i><sup>0</sup><br /><br />Paparazzi Sighting of our Bitcoin Father: Adoring Adulation or Privacy Invasion?<br />',
+            cat3: 'Musing Blockchain',
+            title: '<i>What is Love? Baby, Baby Don\'t Hurt Me No More! </i><sup>0</sup><br /><br />Paparazzi Sighting of our Bitcoin Father: <br />Adoring Adulation or Privacy Invasion?',
             post: blogpost4,
             cite: blogcite4
         }, 
@@ -173,18 +195,19 @@ Some police agencies have in recent years run facial-recognition searches agains
             did: '19-05-02',
             date: 'May 2, 2019',
             author: 'by Thomas Maestas, MA',
-            cat3: 'A.I.Now.',
-            title: 'Modern Healthcare, Part II:<br />On the Second Opinion of 10,000 Doctors',
+            cat3: 'Musing Blockchain',
+            title: 'Modern Healthcare, Part II:<br />The Scalable and Clean Data Platform',   
             post: blogpost2,
             cite: blogcite2
-        },
+        } 
+        ,
         {
             id: '1',
             did: '19-03-01',
             date: 'May 1, 2019',
             author: 'by Thomas Maestas, MA',
-            cat3: 'Sociology Tomorrow!',
-            title: 'Modern Healthcare, Part I:<br />Post-A.I. Healthcare',   
+            cat3: 'A.I.Now.',
+            title: 'Modern Healthcare, Part I:<br />On the Second Opinion of 10,000 Doctors',
             post: blogpost1,
             cite: blogcite1
         } ,

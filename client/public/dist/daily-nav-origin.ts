@@ -315,13 +315,7 @@ document.getElementById("dailyNav").innerHTML = `
       </ul>
       <ul id="media" class="nav navbar-nav navbar-right">
         
-          <li>
-     
-            <a title="books" href="/Books"   data-target="#navbarResponsive" data-toggle="collapse" type="button" on-click="fadeUp()"> 
-              <i  >_</i> 
-            </a>
           
-          </li>
     <li>
      
           <a title="Medium" href="https://medium.com/@thomasm1" target="_blank">
@@ -341,16 +335,6 @@ document.getElementById("dailyNav").innerHTML = `
         
         </li>
         
-       
-        <li>
-        
-          <a title="twitter" href="https://twitter.com/ThomasMaestas" target="_blank">
-        
-            <i class="fa fa-twitter"></i>
-        
-          </a>
-        
-        </li>
         
         <li>
         
