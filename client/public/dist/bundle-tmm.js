@@ -9095,18 +9095,23 @@ function outsideClick(e) {
 var bloggerMay19 = function bloggerMay19() {
     /*
     https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
-     https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
-     https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
-     https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
-     https://media.consensys.net/18-predictions-for-2019-7a376ea7bd4b
-       https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
+      https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
+      https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
+      https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
+      https://media.consensys.net/18-predictions-for-2019-7a376ea7bd4b
+    
+    https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
     https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a
-      https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
-     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
+        https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
+      https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
     */
+
+    var blogpost5 = ' \n  <p class="firstparagraph">Bitcoin R & D has been busy lately:\n  </p>\n    \n  <p class="quote">\n  The two proposals, announced on the bitcoin developer email list, describe Taproot, a code change designed to increase bitcoin\u2019s privacy. Taproot is expected to be bundled together with an upgrade called Schnorr in a soft fork that developers have been looking into for some time, paving the way for privacy and scalability improvements to bitcoin.\n<br /><br />\nDevelopers have long been thinking about how to arrange this particular upgrade. There have been a number of proposed changes to bitcoin over the years and, as they are all related, it makes sense to implement them together. That includes Merkelized Abstract Syntax Trees (MAST), adding, improved bitcoin smart contracts, Schnorr signatures, which adds another way to sign bitcoin transactions, and Taproot, which adds even better privacy.<sup>1</sup>\n</p>\n';
+    var blogcite5 = ' \n<p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>\n</p>\n \n';
+
     var blogpost4 = ' \n<p class="firstparagraph">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world\'s respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  \n</p>\n\n<p </p>\n \n\n<p class="quote"> Ten years ago today, someone using the name Satoshi Nakamoto sent an academic paper to a cryptography mailing list proposing a form of digital cash called "bitcoin." The pseudonymous Nakamoto, whose true identity remains unknown, described an idea for "mining" a limited amount of this virtual currency through a peer-to-peer scheme that wouldn\'t depend on a bank, government, or any other central authority. Once people started using bitcoin, it would be impossible for a government to pull the plug, as happened with previous attempts to create digital money, such as E-Gold.\n<sup>1</sup>\n</p>\n<p>However, seeking a life of anonymity can only stir up further the paparazzis\' research fervor. So, the latest attempt on the inventor\'s privacy, there is the latest claim:</p>\n<p class="quote">The Gotsatoshi.com domain was registered in May 2017, but has lain dormant until last month, when an archived snapshot of the site shows it to have been proclaiming Satoshi\u2019s unveiling as 10 days away then. It\u2019s possible that the great reveal will remain forever 10 days away, to frustrate watchers hoping for a thrilling denouement, or the countdown may reach zero only to reveal a new shitcoin, puzzle game, or to hail the efforts of the marketing agency that dreamed up the stunt.<sup>2</sup>\n</p>\n<p><i></i>\nChanneling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let\'s see if Satoshi\'s cleverness yet once again thwarts the prying eyes!\n';
     var blogcite4 = '\n<p>0. Night at the Roxbury</p>\n<p>1.<a href="https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/" target="_blank">Oct. 31, 2019: https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/</a>\n</p>\n\n<p>2. \n\n\n<a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>\n</p>\n';
-    var blogpost3 = '\n    <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS\' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals\' and teams\' participation.  \n    <br /><br />\n    <img   class="zoom" src="dist/img/rekognition.jpg">\n    <br /><br />\n    At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now-g5 23 more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
+    var blogpost3 = '\n    <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS\' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals\' and teams\' participation.  \n    <br /><br />\n    <img   class="zoom" src="https://s3.amazonaws.com/our-daily-tech/data/img/rekognition.jpg">\n    <br /><br />\n    At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now-g5 23 more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
 
     var blogcite3 = ' \n \n\t<p>1.\n\t<a href="https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a" target="_blank">https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a</a>\n\t</p>\n    \n    ';
 
@@ -9124,7 +9129,8 @@ var bloggerMay19 = function bloggerMay19() {
     <p> </p>
     
     <p>
-      </p>
+    
+    </p>
       `
       var blogcite0 = ` 
     <p>1.
@@ -9132,11 +9138,16 @@ var bloggerMay19 = function bloggerMay19() {
     </p>
     `  
     */
-    var url = [
-    /*
-    https://www.coindesk.com/code-for-ethereums-proof-of-stake-blockchain-to-be-finalized-next-month
-     */
-    {
+    var url = [{
+        id: '5',
+        did: '19-05-05',
+        date: 'May 6, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Musing Blockchain',
+        title: 'Bitcoin Exerts a More Functional Self',
+        post: blogpost5,
+        cite: blogcite5
+    }, {
         id: '4',
         did: '19-05-04',
         date: 'May 4 - 5, 2019 <br /> Weekend',
@@ -11451,7 +11462,7 @@ var bloggerJune = function bloggerJune() {
   changes, and link changes; and, the latter three may arbitrarily change interdependantly or not.</p>
   
   <p>Therefore, blockchain technologies must first accomodate  complex node variables, including one- or two-way contracts (relationships) that
-  depend on<i> arbitrarily hierarchical mappings and conditional data structures.</i> Secondly, blockchain tech must face analytical
+   depend on<i> arbitrarily hierarchical mappings and conditional data structures.</i> Secondly, blockchain tech must face analytical
   challenges that arise from informal practices<sup>1</sup><span class="new">--you can survey opinions, but how do you measure whim?</span>
   The organizational nodes (employees) choose to deviate from their employment roles&#39; protocol <span class="new">because it it is sunny outside, or maybe because the traffic was long today, or because a butterfly's wing-swish cooled a rash decision down to reason.  That small detail often trumps statistical patterns of efficiency, convenience, company culture, and multiple other levels of analysis of human factors.</p>
   

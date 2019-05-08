@@ -21,6 +21,23 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
 
     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
    */ 
+
+  var blogpost5 = ` 
+  <p class="firstparagraph">Bitcoin R & D has been busy lately:
+  </p>
+    
+  <p class="quote">
+  The two proposals, announced on the bitcoin developer email list, describe Taproot, a code change designed to increase bitcoin’s privacy. Taproot is expected to be bundled together with an upgrade called Schnorr in a soft fork that developers have been looking into for some time, paving the way for privacy and scalability improvements to bitcoin.
+<br /><br />
+Developers have long been thinking about how to arrange this particular upgrade. There have been a number of proposed changes to bitcoin over the years and, as they are all related, it makes sense to implement them together. That includes Merkelized Abstract Syntax Trees (MAST), adding, improved bitcoin smart contracts, Schnorr signatures, which adds another way to sign bitcoin transactions, and Taproot, which adds even better privacy.<sup>1</sup>
+</p>
+`
+var blogcite5 = ` 
+<p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>
+</p>
+ 
+` 
+
 var blogpost4 = ` 
 <p class="firstparagraph">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world's respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  
 </p>
@@ -51,7 +68,7 @@ var blogcite4 = `
 var blogpost3 = `
     <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals' and teams' participation.  
     <br /><br />
-    <img   class="zoom" src="dist/img/rekognition.jpg">
+    <img   class="zoom" src="https://s3.amazonaws.com/our-daily-tech/data/img/rekognition.jpg">
     <br /><br />
     At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
 	
@@ -166,10 +183,17 @@ Some police agencies have in recent years run facial-recognition searches agains
 `  
 */
     var url = [ 
-        /*
-        https://www.coindesk.com/code-for-ethereums-proof-of-stake-blockchain-to-be-finalized-next-month
-
-        */
+      
+       {
+        id: '5',
+        did: '19-05-05',
+        date: 'May 6, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Musing Blockchain',
+        title: 'Bitcoin Exerts a More Functional Self',
+        post: blogpost5,
+        cite: blogcite5
+    }, 
        {
             id: '4',
             did: '19-05-04',
