@@ -167,24 +167,25 @@ https://www.statista.com/chart/10295/shopping-on-amazon/
 </a>
 </p>   
 `;
-  var blogpost13 = `
-  <p class="firstparagraph"> Now that 49% of American e-commerce passes through Amazon's gates, it's official: <i>50% market share signifies a hostile take-over of Amerian Culture.</i> From the remaining half of the Online Shopping pie goes to  the next top nine, 22%: 
- </p>
- <p class="quote">
-  eBay (EBAY): 6.6%<br /><br />
-  Apple (AAPL): 3.9%<br /><br />
-  Walmart (WMT): 3.7%<br /><br />
-  Home Depot (HD): 1.5%<br /><br />
-  Best Buy (BBY) 1.3%<br /><br />
-  QVC Group (QVCA): 1.2%<br /><br />
-  Macy's (M): 1.2%<br /><br />
-  Costco (COST): 1.2%<br /><br />
-  Wayfair (W): 1.1%<br /><br />
-  <small style="align:right;">Business Insider, July 2018 </small></p>
-  </p>
-  <p>These are more palatable organizations, without Amazon's cardboard-like culture.  There you still have the lofty, beautify Apple products, and who doesn't love the umbrella-cane only available on QVC limited quantities do apply!</p>
-  <p>
-  Of course, the remaining free birds, the 32% comprise the millions of home-office,brick-and-mortars, and online market entrepreneurs. (These do not include the independent vendor sales using Amazon's Marketplace). </p><p>So why does this 32-percentile slice of e-commerce represent the last stand of American Culture? The Creative Spirit may survive, even thrive; but it changes, and <i> creative verve takes on a reshaped form and a new pace, fitting to bureaucratic constraints and pricing schema. </p>   `;
+var blogpost13 = `
+<p class="firstparagraph"> Now that 49% of American e-commerce passes through Amazon's gates, it's official: <i>50% market share signifies a balance of power shifting underneath the commercial strata of Amerian Culture.</i> From the remaining 50% of the Online Shopping pie goes to  the next top nine, 22%: 
+</p>
+<p class="quote">
+eBay (EBAY): 6.6%<br /><br />
+Apple (AAPL): 3.9%<br /><br />
+Walmart (WMT): 3.7%<br /><br />
+Home Depot (HD): 1.5%<br /><br />
+Best Buy (BBY) 1.3%<br /><br />
+QVC Group (QVCA): 1.2%<br /><br />
+Macy's (M): 1.2%<br /><br />
+Costco (COST): 1.2%<br /><br />
+Wayfair (W): 1.1%<br /><br />
+<small style="align:right;">Business Insider, July 2018 </small></p>
+</p>
+<p>There are many more organizations, as you still have the lofty, beautify Apple products, and who doesn't love the umbrella-cane only available on QVC limited quantities do apply!</p>
+<p>
+Of course, the remaining free birds, the 28%, comprise the millions of home-office,brick-and-mortars, and online market entrepreneurs. (These do not include the independent vendor sales using Amazon's Marketplace). </p><p>So why does this 28-percentile slice of e-commerce represent the integral core of American Culture? The Creative Spirit always survives and adapts, even thrives when anything other--other than pure Zeitgeist--will fail; but it changes, and <i> creative verve takes on a reshaped form and a new pace, fitting to bureaucratic constraints and pricing schema. </p>   `;
+
   var blogcite13 = `
   <p class="footnotes">1. <a href="
   http://www.businessinsider.com/amazon-is-closing-in-on-owning-half-of-the-e-commerce-market-2018-7?utm_source=feedburner&amp%3Butm_medium=referral&utm_medium=feed&utm_campaign=Feed%3A+businessinsider%2Ftravel+%28Business+Insider%29&r=US&IR=T&IR=T

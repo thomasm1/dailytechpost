@@ -114,7 +114,7 @@ After taking this long journey with me, I’m sure you can appreciate the comple
   `;
  */
   var blogpost153 =   ` 
-  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency...  
+  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency. Different facets of personal data, whether shopping, movie-watching, chatting, selfie-posting, all new nuances and new social-legal dilemmas fall to the best discretions of Facebook, Google, Amazon and other Tech Greats...  
   </p>
   <p class="quote">
   When you buy something on Amazon, the odds are, you aren’t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company’s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. 

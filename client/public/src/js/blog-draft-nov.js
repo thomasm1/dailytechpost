@@ -14,7 +14,7 @@ var bloggerNov = function () {
   </p>`;
   
   var blogcite137 = `
-  <p class="cite">1<a target="_blank" href="https://spectrum.ieee.org/computing/hardware/the-case-against-quantum-computing">https://spectrum.ieee.org/computing/hardware/the-case-against-quantum-computing</a></p>  
+  <p class="cite">1. <a target="_blank" href="https://spectrum.ieee.org/computing/hardware/the-case-against-quantum-computing">https://spectrum.ieee.org/computing/hardware/the-case-against-quantum-computing</a></p>  
   `; 
   var blogpost136 =   `
  
@@ -26,7 +26,7 @@ var bloggerNov = function () {
   <p>The cultural management of leader-less automation makes for a less useful tool for humans: The more autonomous the tool  does not necessarily translate to optimal relations:   For example, in-group thinking where ideas are recycled and magnified due to technological effect rather than conscious will. So, the healthier more useful technology can often be the most interactive and highly configurable tools, whether phone devices or application software. So, in sum, the Co-Bot is a go-bot -- a better bot.`;
   
   var blogcite136 = `
-  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/11/alex-rosenblats-uberland-review.html">http://nymag.com/intelligencer/2018/11/alex-rosenblats-uberland-review.html</a></p>  
+  <p class="cite">1. <a target="_blank" href="http://nymag.com/intelligencer/2018/11/alex-rosenblats-uberland-review.html">http://nymag.com/intelligencer/2018/11/alex-rosenblats-uberland-review.html</a></p>  
   `; 
   var blogpost135 =   ` 
   <p class="firstparagraph">A.I.'s segmented, expansive landscape ranges from free-wheeling start-ups to DIY hobbyists to University researchers. This diversity of A.I. designs, coupled with free access to open-source tools provides for an entirely unpredictable path.  
@@ -41,7 +41,7 @@ var bloggerNov = function () {
   </p>`;
   
   var blogcite135 = `
-  <p class="cite">1<a target="_blank" href="https://www.axios.com/artificial-intelligence-disagreements-machine-learning-d26ef884-b415-43c6-aff2-d17a05483389.html">https://www.axios.com/artificial-intelligence-disagreements-machine-learning-d26ef884-b415-43c6-aff2-d17a05483389.html</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.axios.com/artificial-intelligence-disagreements-machine-learning-d26ef884-b415-43c6-aff2-d17a05483389.html">https://www.axios.com/artificial-intelligence-disagreements-machine-learning-d26ef884-b415-43c6-aff2-d17a05483389.html</a></p> 
  
   `; 
   var blogpost134 =   ` 
@@ -62,7 +62,7 @@ var bloggerNov = function () {
   </p>`;
   
   var blogcite134 = `
-  <p class="cite">1<a target="_blank" href="https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe">https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe">https://medium.com/coinmonks/blockchain-consensus-algorithm-the-proof-of-stake-slice-a4bda6658bbe</a></p> 
   <p class="cite">2<a target="_blank" href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a><br /><br />https://bitcoin.org/bitcoin.pdf</p> 
   `; 
   var blogpost133 =   `
@@ -80,7 +80,7 @@ But the virtual currency’s behavior since the start of the year doesn’t just
   </p>`;
   
   var blogcite133 = `
-  <p class="cite">1<a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis">https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis">https://www.bloomberg.com/opinion/articles/2018-11-27/bitcoin-crash-is-a-real-currency-crisis</a></p> 
   `; 
  
   var blogpost132 =   `
@@ -94,7 +94,7 @@ The clinical trial documents describe a study in which CRISPR is employed to mod
   </p>`;
   
   var blogcite132 = `
-  <p class="cite">1<a target="_blank" href="https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/">https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/">https://www.technologyreview.com/s/612458/exclusive-chinese-scientists-are-creating-crispr-babies/</a></p> 
   `;
   var blogpost131 =   `
   <p class="firstparagraph">Latency at near-zero terms makes 5G the missing and final ingredient for the imminent IoT revolution--so why not protect the hardware foundation?
@@ -105,7 +105,7 @@ The clinical trial documents describe a study in which CRISPR is employed to mod
   </p>`;
   
   var blogcite131 = `
-  <p class="cite">1<a target="_blank" href="https://www.engadget.com/2018/11/24/us-huawei-warning-5g/">https://www.engadget.com/2018/11/24/us-huawei-warning-5g/</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.engadget.com/2018/11/24/us-huawei-warning-5g/">https://www.engadget.com/2018/11/24/us-huawei-warning-5g/</a></p> 
   `;
 /*
 
@@ -120,7 +120,7 @@ https://coinsutra.com/proof-of-stake-cryptocurrencies/
   </p>`;
   
   var blogcite130 = `
-  <p class="cite">1<a target="_blank" href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://coinsutra.com/proof-of-stake-cryptocurrencies/">https://coinsutra.com/proof-of-stake-cryptocurrencies/</a></p> 
   `; 
  
  */
@@ -131,9 +131,9 @@ var blogpost129 =   `
 </p>`;
 
 var blogcite129 = `
-<p class="cite">1<a target="_blank" href="https://www.nytimes.com/2018/11/19/health/human-life-span.html">https://www.nytimes.com/2018/11/19/health/human-life-span.html</a></p> 
+<p class="cite">1. <a target="_blank" href="https://www.nytimes.com/2018/11/19/health/human-life-span.html">https://www.nytimes.com/2018/11/19/health/human-life-span.html</a></p> 
 
-<p class="cite">1<a target="_blank" href="https://jamanetwork.com/journals/jama/article-abstract/2703113">https://www.thelancet.com/action/showPdf?pii=S0140-6736%2818%2931694-5</a>
+<p class="cite">1. <a target="_blank" href="https://jamanetwork.com/journals/jama/article-abstract/2703113">https://www.thelancet.com/action/showPdf?pii=S0140-6736%2818%2931694-5</a>
 </p> 
 `;
   var blogpost128 =   `
@@ -146,7 +146,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite128 = `
-  <p class="cite">1<a target="_blank" href="https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/">https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/">https://www.engadget.com/2018/11/08/gdpr-data-brokers-complaints/</a></p> 
   `;
  
 
@@ -158,7 +158,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite127 = `
-  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html">http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html</a></p> 
+  <p class="cite">1. <a target="_blank" href="http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html">http://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html</a></p> 
   `;
   var blogpost126 =   `
   <p class="firstparagraph">
@@ -169,23 +169,23 @@ var blogcite129 = `
   </p>`;
   
   var blogcite126 = `
-  <p class="cite">1<a target="_blank" href="http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html">http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html</a></p> 
+  <p class="cite">1. <a target="_blank" href="http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html">http://nymag.com/intelligencer/2018/11/mark-zuckerberg-declared-facebook-at-war.html</a></p> 
   `;
   var blogpost125 =   `
   <p class="firstparagraph">
   </p>
-  <p class="quote"> At home in Northern California, San Francisco voters overwhelmingly passed a tax designed to extract money from tech companies to help ease homelessness in the city. Across the Bay, Oakland voters passed a progressive property-transfer tax, which was another way of taxing the enormous wealth that’s poured into the Bay Area.
+  <p class="quote"><i> At home in Northern California, San Francisco voters overwhelmingly passed a tax designed to extract money from tech companies to help ease homelessness in the city. Across the Bay, Oakland voters passed a progressive property-transfer tax, which was another way of taxing the enormous wealth that’s poured into the Bay Area.
   <br /><br /> 
   Locally and nationally, the tech industry has gone from bright young star to death star. Not only have Silicon Valley companies turned out to be roughly as dirty in their corporate maneuvering as any old oil company or military contractor, but because of the Valley’s founder worship, they’ve been almost uniquely controlled by a tiny number of people.
   <br /><br /> 
   Read: Were we destined to live in Facebook’s world?
   
-  And as in most things, Facebook distills, or at least embodies, these industry-wide practices. After a brutal two years that started with the 2016 election, Mark Zuckerberg responded by placing loyalists in charge of all Facebook Inc. properties. The company’s lobbyists pushed a line that its opponents were linked to George Soros, while reporting other enemies to the Anti-Defamation League.
-
+  And as in most things, Facebook distills, or at least embodies, these industry-wide practices. After a brutal two years that started with the 2016 election, Mark Zuckerberg responded by placing loyalists in charge of all Facebook Inc. properties. The company’s lobbyists pushed a line that its opponents were linked to George Soros, while reporting other enemies to the Anti-Defamation League.<sup>1</sup>
+</i>
   </p>`;
   
   var blogcite125 = `
-  <p class="cite">1<a target="_blank" href="https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/">https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/">https://www.theatlantic.com/technology/archive/2018/11/facebook-google-amazon-and-collapse-tech-mythology/575989/</a></p> 
   `;
   var blogpost124 =   `
   <p class="firstparagraph">
@@ -196,7 +196,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite124 = `
-  <p class="cite">1<a target="_blank" href="https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/">https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/">https://www.technologyreview.com/s/612427/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/</a></p> 
   `;
   var blogpost123 =   `
   <p class="firstparagraph">
@@ -207,7 +207,7 @@ var blogcite129 = `
   </p>`;
   
   var blogcite123 = `
-  <p class="cite">1<a target="_blank" href="https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h">https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h</a></p> 
+  <p class="cite">1. <a target="_blank" href="https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h">https://blogs.wsj.com/cio/2018/11/13/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data/?mod=djemCIO_h</a></p> 
   `;
 
 var blogpost122 =   `
@@ -219,7 +219,7 @@ Keeping client data safe. JPMorgan could use the ‘secret computing’ technolo
 </p>`;
 
 var blogcite122 = `
-<p class="cite">1<a target="_blank" href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
+<p class="cite">1. <a target="_blank" href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
 <p class="cite">2<a target="_blank" href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
 `;
 var blogpost111 =   `
@@ -240,7 +240,7 @@ var blogcite111 = `
   </p>`;
  
   var blogcite122 = `
-  <p class="cite">1<a target="_blank" href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
+  <p class="cite">1. <a target="_blank" href="https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/">https://techcrunch.com/2018/11/14/uber-q3-2018-continues-to-lose-money-as-it-works-to-scale-scooters-bikes-and-other-newer-businesses/</a></p>
   <p class="cite">2<a target="_blank" href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
  var blogpost111 =   `
@@ -274,7 +274,7 @@ var blogcite111 = `
   </p>`;
  
   var blogcite099 = `
-  <p class="cite">1<a target="_blank" href="https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html">https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html</a></p>
+  <p class="cite">1. <a target="_blank" href="https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html">https://www.cnbc.com/2018/11/07/aws-and-cisco-partner-on-container-technology-for-hybrid-cloud.html</a></p>
   <p class="cite">2<a target="_blank" href="https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/"> https://www.zdnet.com/article/amazons-consumer-business-moves-from-oracle-to-aws-but-larry-ellisons-wont-stop-talking/</a></p>
   `;
  var blogpost088 =   `

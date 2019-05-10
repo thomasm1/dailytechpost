@@ -140,7 +140,7 @@ wasm-pack is a tool for assembling and packaging Rust crates that target WebAsse
 `;
   var blogcite13 = `
 
-  <p class="cite">1<a href="https://en.convention.parisinfo.com/travel-trade/car-free-day-paris">
+  <p class="cite">1. <a href="https://en.convention.parisinfo.com/travel-trade/car-free-day-paris">
   https://en.convention.parisinfo.com/travel-trade/car-free-day-paris</a></p>
     <p class="cite">2<a href="https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/">
     https://www.wired.com/story/at-the-edge-of-the-world-facing-the-end-of-the-world/</a></p>

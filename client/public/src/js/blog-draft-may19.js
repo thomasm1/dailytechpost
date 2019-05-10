@@ -1,4 +1,4 @@
-var bloggerMay19 = function() {
+var bloggerMay19 = function () {
     /*
     https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
 
@@ -20,25 +20,60 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
     https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
 
     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
-   */ 
-
-  var blogpost5 = ` 
-  <p class="firstparagraph">Bitcoin R & D has been busy lately:
+   */
+    var blogpost7 = ` 
+  <p class="firstparagraph">  BTC smart contract ability now gets a boost, as it looks like R & D has been busy lately:
   </p>
-    
   <p class="quote">
   The two proposals, announced on the bitcoin developer email list, describe Taproot, a code change designed to increase bitcoin’s privacy. Taproot is expected to be bundled together with an upgrade called Schnorr in a soft fork that developers have been looking into for some time, paving the way for privacy and scalability improvements to bitcoin.
 <br /><br />
 Developers have long been thinking about how to arrange this particular upgrade. There have been a number of proposed changes to bitcoin over the years and, as they are all related, it makes sense to implement them together. That includes Merkelized Abstract Syntax Trees (MAST), adding, improved bitcoin smart contracts, Schnorr signatures, which adds another way to sign bitcoin transactions, and Taproot, which adds even better privacy.<sup>1</sup>
 </p>
+
 `
-var blogcite5 = ` 
+    var blogcite7 = ` 
 <p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>
+</p> 
+
+`
+    var blogpost6 = ` 
+  <p class="firstparagraph">Bitcoin's bare simplicity--designed more than ten years ago, published October 31, 2008--has traditionally served as a strength of reliability in an uncharted industry field. Yet, in a complex and demanding Tech world, others took the spotlight--as the Bitcoin distributed ledger has been contrasted with Ethereum's complex scripting language, Solidity, which provides multi-variate <i>Smart Contracts</i> that are well-suited for Distributed Apps, <i>DAPPs</i> and generally for financial-clerical-legal documents. However, the once belittled simple, but reliable, distributed blockchain ledger leverages third-party smart contracting:
+  </p>
+ 
+<p class="quote">
+Ethereum has become the most popular blockchain for creating smart contracts. One of the major design goals of the Ethereum platform was to support smart contracts. From the start, this set Ethereum apart from Bitcoin, which was created first and foremost as a digital currency platform.
+<br /><br />
+As the Bitcoin protocol has evolved, it has gained support for smart contracts. Smart contract functionality is not as programmable and extensible on Bitcoin as it is on Ethereum. However, using features added to Bitcoin through improvement proposals, certain smart contract functionality can be achieved through Bitcoin scripting.
+<br /><br />
+For Particl, the most important smart contract feature in Bitcoin is the OP_CHECKLOCKTIMEVERIFY opcode, which was introduced by Peter Todd as Bitcoin Improvement Proposal (BIP) 65. The opcode makes it possible to write scripts that prevent funds in a multi-signature wallet from being spent until a certain signature pattern is implemented or a certain amount of time passes.<sup>1</sup></p>
+`
+    var blogcite6 = `  
+<p>1.<a href="https://bitcoinmagazine.com/articles/yes-bitcoin-can-do-smart-contracts-and-particl-demonstrates-how/">https://bitcoinmagazine.com/articles/yes-bitcoin-can-do-smart-contracts-and-particl-demonstrates-how/</a> 
+</p>
+
+<p>White Paper<a href="https://github.com/particl/whitepaper/blob/master/decentralized-private-marketplace-draft-0.1.pdf">https://github.com/particl/whitepaper/blob/master/decentralized-private-marketplace-draft-0.1.pdf</a>
+</p>
+`
+    var blogpost5 = ` 
+  <p class="firstparagraph"> 
+  </p>
+    
+  <p class="quote">
+  The self-proclaimed Satoshi, Craig Wright, is being sued by the Kleiman family on behalf of the now deceased Dave Kleiman and his estate. The lawsuit accuses Wright of fraud and theft of “over $11 billion worth of bitcoins and intellectual property from the estate of Dave Kleiman and W&K shortly after Dave’s 2013 death.” Last week the court ordered Wright to disclose bitcoin addresses that belonged to him before December 2013. The Florida Magistrate overseeing the lawsuit, Judge Bruce Reinhart, signed the order and gave Wright a few days to produce the list.
+  <br /><br />
+  Since then a list of addresses that were once filed in an obscure fashion was unsealed and Wright claims to have mined the first 70 bitcoin blocks starting from the Genesis block. After the redacted list was unsealed, the researchers at Wizsec decided to study the addresses and wrote a blog post about the recently disclosed file. Wizsec claims that Wright simply copied and pasted the addresses from the first 70 blocks and asserted the addresses belonged to him without any cryptographic proof.
+<br /><br />
+Wizsec says the motion begs the belief that the self-proclaimed inventor acts as if he is “ignorant about the fundamentals of his invention.” “Perhaps Wright thinks that being a bitcoin miner means pointing at bitcoins and yelling ‘Mine,’” the researchers jokingly remarked. In the document, Wright’s filing continues to assert that he did not keep track of which Bitcoin blocks he mined and that he does not know any of the other Bitcoin public addresses. The motion further states that the self-styled Satoshi does not have a complete list of the public addresses that he owned as of any date.<sup>1</sup>
+</p>
+`
+    var blogcite5 = ` 
+<p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork" target="_blank">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>
 </p>
  
-` 
+`
 
-var blogpost4 = ` 
+
+    var blogpost4 = ` 
 <p class="firstparagraph">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world's respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  
 </p>
 
@@ -54,7 +89,7 @@ var blogpost4 = `
 <p><i></i>
 Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let's see if Satoshi's cleverness yet once again thwarts the prying eyes!
 `
-var blogcite4 = `
+    var blogcite4 = `
 <p>0. Night at the Roxbury</p>
 <p>1.<a href="https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/" target="_blank">Oct. 31, 2019: https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/</a>
 </p>
@@ -64,8 +99,8 @@ var blogcite4 = `
 
 <a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>
 </p>
-` 
-var blogpost3 = `
+`
+    var blogpost3 = `
     <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals' and teams' participation.  
     <br /><br />
     <img   class="zoom" src="https://s3.amazonaws.com/our-daily-tech/data/img/rekognition.jpg">
@@ -154,7 +189,7 @@ Some police agencies have in recent years run facial-recognition searches agains
   </p>
   <p>So, the good news from <i>the doctors'</i> occasional nemesis, U.S. Food and Drug Administration, decided that after 8 years of trials and hearings, truly scalable and sufficiently large sample data can now be digitized - hence personalizing the law of large numbers from the whole to the individual patient. At long last, the patience has paid off!
   `
-  var blogcite1 = `
+    var blogcite1 = `
   
   
   <p>1. [Post article 2/22/19]
@@ -164,7 +199,7 @@ Some police agencies have in recent years run facial-recognition searches agains
   </p>
   
   `
-  /*
+    /*
   var blogpost0 = `
   <p class="firstparagraph"> 
   <sup></sup>
@@ -182,28 +217,46 @@ Some police agencies have in recent years run facial-recognition searches agains
   </p>
 `  
 */
-    var url = [ 
-      
-       {
-        id: '5',
-        did: '19-05-05',
-        date: 'May 6, 2019',
-        author: 'by Thomas Maestas, MA',
-        cat3: 'Musing Blockchain',
-        title: 'Bitcoin Exerts a More Functional Self',
-        post: blogpost5,
-        cite: blogcite5
-    }, 
-       {
+    var url = [{
+            id: '7',
+            did: '19-05-08',
+            date: 'May 8, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Musing Blockchain',
+            title: 'Toward a Smarter Bitcoin, Part II:<br />Designing a More Scalable and Private Crypto-Currency',
+            post: blogpost7,
+            cite: blogcite7
+        },
+        {
+            id: '6',
+            did: '19-05-07',
+            date: 'May 7, 2019 <br /> Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Musing Blockchain',
+            title: 'Toward a Smarter Bitcoin, Part I:<br />Contracting a More Functional Crypto-Currency',
+            post: blogpost6,
+            cite: blogcite6
+        },
+        {
+            id: '5',
+            did: '19-05-05',
+            date: 'May 6, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Musing Blockchain',
+            title: '<i>What is Love? Baby, Baby Don\'t Hurt Me No More! </i><sup>0</sup> Part II:<br /><br />Bitcoin\'s Palaentology Deepens the Founder\'s Obscurity',
+            post: blogpost5,
+            cite: blogcite5
+        },
+        {
             id: '4',
             did: '19-05-04',
             date: 'May 4 - 5, 2019 <br /> Weekend',
             author: 'by Thomas Maestas, MA',
             cat3: 'Musing Blockchain',
-            title: '<i>What is Love? Baby, Baby Don\'t Hurt Me No More! </i><sup>0</sup><br /><br />Paparazzi Sighting of our Bitcoin Father: <br />Adoring Adulation or Privacy Invasion?',
+            title: '<i>What is Love? Baby, Baby Don\'t Hurt Me No More! </i><sup>0</sup> Part I:<br /><br />Paparazzi Sighting of our Bitcoin Father: <br />Adoring Adulation or Privacy Invasion?',
             post: blogpost4,
             cite: blogcite4
-        }, 
+        },
         {
             id: '3',
             did: '19-05-03',
@@ -220,11 +273,10 @@ Some police agencies have in recent years run facial-recognition searches agains
             date: 'May 2, 2019',
             author: 'by Thomas Maestas, MA',
             cat3: 'Musing Blockchain',
-            title: 'Modern Healthcare, Part II:<br />The Scalable and Clean Data Platform',   
+            title: 'Modern Healthcare, Part II:<br />The Scalable and Clean Data Platform',
             post: blogpost2,
             cite: blogcite2
-        } 
-        ,
+        },
         {
             id: '1',
             did: '19-03-01',
@@ -234,7 +286,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             title: 'Modern Healthcare, Part I:<br />On the Second Opinion of 10,000 Doctors',
             post: blogpost1,
             cite: blogcite1
-        } ,
+        },
         /*
         {
             id: '0',

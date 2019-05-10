@@ -440,7 +440,7 @@ and other app-design intentions, while ignoring potential secondary effects on s
   var blogpost10 = `
   
 <p class="firstparagraph">7 Ethereum-based technological features offer us a new world -- a decentralized new world, not dependent on the centralized
-servers of Instagram, Comcast, T-Mobile, Amazon, etc. With that statement ends general consensus among blockchain
+servers and bandwidth of Instagram, Comcast, T-Mobile, Amazon, Google, etc. With that statement ends general consensus among blockchain
 experts, pundits, and authors. However, if the current logistical obstacles provide controversy and competing algorithms
 over sustainability, security, and scalability, then they reveal much more about the general pathway of social uses
 (and potential effects) than they hide. In my February 15th
