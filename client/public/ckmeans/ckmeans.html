@@ -158,10 +158,10 @@ tip.offset(function(d) { // [top, left]
   return [-10, 0];
 })
 
-d3.select('#ckmeans')
+d3.select('body')
     .style('overflow', 'hidden');
 
-const parentWidth = d3.select('#ckmeans').node().getBoundingClientRect().width;
+const parentWidth = d3.select('body').node().getBoundingClientRect().width;
 const margin = {top: 0, right: 0, bottom: 0, left: 0};
 const width = 960 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
@@ -181,7 +181,7 @@ const color = d3.scaleQuantile()
   ]);
 
 
-const svg = d3.select('#ckmeans')
+const svg = d3.select('body')
   .append('svg')
   .attr('width', width)
   .attr('height', height)
