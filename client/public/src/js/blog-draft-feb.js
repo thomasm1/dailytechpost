@@ -1202,8 +1202,8 @@ var i;
 document.getElementById("paragraph-feb-mod").innerHTML += catMod;
 } 
 
-//console.log('blogger-feb');
- // console.log(angular.toJson(url));
+console.log('blogger-feb');
+  console.log(angular.toJson(url));
 
 };
 

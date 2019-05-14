@@ -340,8 +340,8 @@ Some police agencies have in recent years run facial-recognition searches agains
         document.getElementById("paragraph-may19-mod").innerHTML += catMod;
     }
 
-    console.log('blogger-may19');
-    // console.log(angular.toJson(url));
+    console.log('blogger-may-19');
+     console.log(angular.toJson(url));
 };
 
 bloggerMay19();

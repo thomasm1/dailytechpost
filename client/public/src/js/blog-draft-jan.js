@@ -701,7 +701,8 @@ var i;
  </div>`;
     document.getElementById("paragraph-jan-mod").innerHTML += catMod;
   }
- // console.log(angular.toJson(url));
-  //console.log(url);
+  
+console.log('blogger-jan');
+  console.log(angular.toJson(url)); 
 };
 bloggerJan();

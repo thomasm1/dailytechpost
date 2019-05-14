@@ -568,7 +568,8 @@ var i;
  </div>`;
     document.getElementById("paragraph-dec-mod").innerHTML += catMod;
   }
- //console.log(angular.toJson(url));
-  //console.log(url);
+  
+console.log('blogger-dec'); 
+ console.log(angular.toJson(url)); 
 };
 bloggerDec();

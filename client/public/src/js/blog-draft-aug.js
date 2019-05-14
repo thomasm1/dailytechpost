@@ -574,6 +574,6 @@ Developers may not benefit much from the new processors, Enderle said, because "
     document.getElementById("paragraph-aug-mod").innerHTML += catMod;
   }
   console.log('blogger-aug'); 
-  // console.log(angular.toJson(url));
+   console.log(angular.toJson(url));
 };
 bloggerAug();

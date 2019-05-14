@@ -9216,8 +9216,8 @@ var bloggerMay19 = function bloggerMay19() {
         document.getElementById("paragraph-may19-mod").innerHTML += catMod;
     }
 
-    console.log('blogger-may19');
-    // console.log(angular.toJson(url));
+    console.log('blogger-may-19');
+    console.log(angular.toJson(url));
 };
 
 bloggerMay19();
@@ -9581,8 +9581,9 @@ var bloggerJan = function bloggerJan() {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="author">' + url[i].author + '</p>   \n  <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-jan-mod").innerHTML += catMod;
   }
-  // console.log(angular.toJson(url));
-  //console.log(url);
+
+  console.log('blogger-jan');
+  console.log(angular.toJson(url));
 };
 bloggerJan();
 
@@ -9888,8 +9889,9 @@ var bloggerDec = function bloggerDec() {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="author">' + url[i].author + '</p>   \n  <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-dec-mod").innerHTML += catMod;
   }
-  //console.log(angular.toJson(url));
-  //console.log(url);
+
+  console.log('blogger-dec');
+  console.log(angular.toJson(url));
 };
 bloggerDec();
 
@@ -10263,8 +10265,8 @@ var bloggerNov = function bloggerNov() {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="  author">' + url[i].author + '</p>   \n  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-nov-mod").innerHTML += catMod;
   }
-  // console.log(angular.toJson(url));
-  // console.log(url);
+  console.log('blogger-nov');
+  console.log(angular.toJson(url));
 }; // end bloggerNov()
 bloggerNov();
 
@@ -10539,8 +10541,8 @@ var bloggerOct = function bloggerOct() {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="  author">' + url[i].author + '</p>   \n  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-oct-mod").innerHTML += catMod;
   }
-  //console.log(angular.toJson(url));
-  // console.log(url);
+  console.log('blogger-oct');
+  console.log(angular.toJson(url));
 };
 bloggerOct();
 
@@ -10827,8 +10829,8 @@ var bloggerSep = function bloggerSep() {
     document.getElementById("paragraph-sep-mod").innerHTML += catMod;
   }
 
-  // console.log('blogger-sep'); 
-  // console.log(angular.toJson(url));
+  console.log('blogger-sep');
+  console.log(angular.toJson(url));
 };
 bloggerSep();
 
@@ -11108,7 +11110,7 @@ var bloggerAug = function bloggerAug() {
     document.getElementById("paragraph-aug-mod").innerHTML += catMod;
   }
   console.log('blogger-aug');
-  // console.log(angular.toJson(url));
+  console.log(angular.toJson(url));
 };
 bloggerAug();
 
@@ -11421,8 +11423,8 @@ var bloggerJuly = function bloggerJuly() {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="  author">' + url[i].author + '</p>   \n  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle cha-pternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-july-mod").innerHTML += catMod;
   }
-
-  // console.log(angular.toJson(url));
+  console.log('blogger-july');
+  console.log(angular.toJson(url));
 };
 bloggerJuly();
 
@@ -11712,8 +11714,8 @@ var bloggerJune = function bloggerJune() {
     document.getElementById("paragraph-june-mod").innerHTML += catMod;
   };
 
-  //console.log('blogger-june');
-  // console.log(angular.toJson(url));
+  console.log('blogger-june');
+  console.log(angular.toJson(url));
 };
 bloggerJune();
 
@@ -11898,7 +11900,7 @@ var bloggerMay = function bloggerMay() {
   }
 
   console.log('blogger-may');
-  // console.log(angular.toJson(url));
+  console.log(angular.toJson(url));
 };
 
 bloggerMay();
@@ -12155,7 +12157,7 @@ var bloggerApr = function bloggerApr() {
     document.getElementById("paragraph-apr-mod").innerHTML += catMod;
   }
   console.log('blogger-apr');
-  // console.log(angular.toJson(url));
+  console.log(angular.toJson(url));
 };
 bloggerApr();
 
@@ -12383,7 +12385,7 @@ var bloggerMar = function bloggerMar() {
   }
 
   console.log('blogger-mar');
-  // console.log(angular.toJson(url));
+  console.log(angular.toJson(url));
 };
 
 bloggerMar();
@@ -12757,8 +12759,8 @@ var bloggerFeb = function bloggerFeb() {
     document.getElementById("paragraph-feb-mod").innerHTML += catMod;
   }
 
-  //console.log('blogger-feb');
-  // console.log(angular.toJson(url));
+  console.log('blogger-feb');
+  console.log(angular.toJson(url));
 };
 
 bloggerFeb();

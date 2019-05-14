@@ -609,7 +609,7 @@ var   blogcite1 = `
  </div>`;
     document.getElementById("paragraph-oct-mod").innerHTML += catMod;
   }
- //console.log(angular.toJson(url));
- // console.log(url);
+  console.log('blogger-oct');
+ console.log(angular.toJson(url)); 
 };
 bloggerOct();
