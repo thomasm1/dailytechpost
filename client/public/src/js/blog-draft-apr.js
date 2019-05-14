@@ -633,6 +633,6 @@ var bloggerApr = function () {
      document.getElementById("paragraph-apr-mod").innerHTML += catMod;  
 } 
 console.log('blogger-apr');
-  console.log(angular.toJson(url));
+ // console.log(angular.toJson(url));
 };
 bloggerApr();

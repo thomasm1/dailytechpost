@@ -1060,7 +1060,7 @@ document.getElementById("paragraph-mar-mod").innerHTML += catMod;
 }
  
 console.log('blogger-mar');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 
 bloggerMar();

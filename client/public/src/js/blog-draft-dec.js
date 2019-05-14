@@ -570,6 +570,6 @@ var i;
   }
   
 console.log('blogger-dec'); 
- console.log(angular.toJson(url)); 
+  // console.log(angular.toJson(url)); 
 };
 bloggerDec();

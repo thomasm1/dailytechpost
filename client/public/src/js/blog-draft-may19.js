@@ -20,7 +20,64 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
     https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
 
     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
-   */
+
+feb
+https://phys.org/news/2019-02-scientists-magnet.html
+   */ 
+
+  
+  var blogpost11 = ` 
+  <p class="firstparagraph">Satoshi Nakamoto's identity now has an interesting new plot twist. Contrasting with the <a href="#2019-05-04">May 4th and 5th post articles</a>, this theory appears to hold water ... 
+  </p>
+ 
+<p class="quote">
+One of the most enduring mysteries of modern times has produced another enthralling twist. Satoshi Nakamoto, Bitcoin’s pseudonymous and enigmatic creator, has not been seen online in more than eight years. Evidence has now surfaced that points to a new Satoshi candidate, whose known life has a number of parallels with that of Bitcoin’s inventor. His name is Paul Le Roux and, if proven to be Satoshi, there is a good reason why his 1 million BTC hasn’t moved – the Rhodesian has been in jail since 2012.<sup>1</sup></p>
+`;
+    var blogcite11 = `  
+<p>1.<a href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> 
+</p> 
+`;
+var blogpost10 = ` 
+<p class="firstparagraph"> 
+</p>
+
+<p class="quote"> 
+<br /><br /> <sup>1</sup></p>
+`;
+  var blogcite10 = `  
+<p><a href=""></a> 
+</p>
+ 
+`;
+  var blogpost9= ` 
+  <p class="firstparagraph">Linus Torvalds' great contribution now extends to Microsoft 10, rather than the past couple year's emulated mounting. 
+  </p>
+ 
+<p class="quote">Windows 10 will soon include a built-in Linux kernel updated through Windows Update. Windows itself will still be based on the Windows kernel, of course. The Linux kernel will power the Windows Subsystem for Linux 2 (WSL 2) and let you run even more Linux applications on Windows 10.
+<br /><br />
+WSL version 1 was powerful, but it relied on emulation to run Linux software. That prevented more complex Linux applications—like Docker—from running on Windows. WSL 2 will be more powerful and will run Linux software using an actual Linux kernel.<sup>1</sup></p>
+<p>
+This, along with 2019 Google Chromebooks' command-line Linux development environments -- Hooray, the Universe has finally converged!
+</p>
+`;
+    var blogcite9 = `  
+<p>1. <a href="https://www.howtogeek.com/414036/2019-is-the-year-of-linux-on-the-desktop/">https://www.howtogeek.com/414036/2019-is-the-year-of-linux-on-the-desktop/</a> 
+</p>
+ 
+`;
+  var blogpost8 = ` 
+  <p class="firstparagraph"> 
+  </p>
+ 
+<p class="quote"> <sup></sup></p>
+`;
+    var blogcite8 = `  
+<p><a href=""></a> 
+</p>
+ 
+`;
+
+
     var blogpost7 = ` 
   <p class="firstparagraph">  BTC smart contract ability now gets a boost, as it looks like R & D has been busy lately:
   </p>
@@ -30,12 +87,12 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
 Developers have long been thinking about how to arrange this particular upgrade. There have been a number of proposed changes to bitcoin over the years and, as they are all related, it makes sense to implement them together. That includes Merkelized Abstract Syntax Trees (MAST), adding, improved bitcoin smart contracts, Schnorr signatures, which adds another way to sign bitcoin transactions, and Taproot, which adds even better privacy.<sup>1</sup>
 </p>
 
-`
+`;
     var blogcite7 = ` 
 <p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>
 </p> 
 
-`
+`;
     var blogpost6 = ` 
   <p class="firstparagraph">Bitcoin's bare simplicity--designed more than ten years ago, published October 31, 2008--has traditionally served as a strength of reliability in an uncharted industry field. Yet, in a complex and demanding Tech world, others took the spotlight--as the Bitcoin distributed ledger has been contrasted with Ethereum's complex scripting language, Solidity, which provides multi-variate <i>Smart Contracts</i> that are well-suited for Distributed Apps, <i>DAPPs</i> and generally for financial-clerical-legal documents. However, the once belittled simple, but reliable, distributed blockchain ledger leverages third-party smart contracting:
   </p>
@@ -46,14 +103,14 @@ Ethereum has become the most popular blockchain for creating smart contracts. On
 As the Bitcoin protocol has evolved, it has gained support for smart contracts. Smart contract functionality is not as programmable and extensible on Bitcoin as it is on Ethereum. However, using features added to Bitcoin through improvement proposals, certain smart contract functionality can be achieved through Bitcoin scripting.
 <br /><br />
 For Particl, the most important smart contract feature in Bitcoin is the OP_CHECKLOCKTIMEVERIFY opcode, which was introduced by Peter Todd as Bitcoin Improvement Proposal (BIP) 65. The opcode makes it possible to write scripts that prevent funds in a multi-signature wallet from being spent until a certain signature pattern is implemented or a certain amount of time passes.<sup>1</sup></p>
-`
+`;
     var blogcite6 = `  
 <p>1.<a href="https://bitcoinmagazine.com/articles/yes-bitcoin-can-do-smart-contracts-and-particl-demonstrates-how/">https://bitcoinmagazine.com/articles/yes-bitcoin-can-do-smart-contracts-and-particl-demonstrates-how/</a> 
 </p>
 
 <p>White Paper<a href="https://github.com/particl/whitepaper/blob/master/decentralized-private-marketplace-draft-0.1.pdf">https://github.com/particl/whitepaper/blob/master/decentralized-private-marketplace-draft-0.1.pdf</a>
 </p>
-`
+`;
     var blogpost5 = ` 
   <p class="firstparagraph"> 
   </p>
@@ -65,16 +122,16 @@ For Particl, the most important smart contract feature in Bitcoin is the OP_CHEC
 <br /><br />
 Wizsec says the motion begs the belief that the self-proclaimed inventor acts as if he is “ignorant about the fundamentals of his invention.” “Perhaps Wright thinks that being a bitcoin miner means pointing at bitcoins and yelling ‘Mine,’” the researchers jokingly remarked. In the document, Wright’s filing continues to assert that he did not keep track of which Bitcoin blocks he mined and that he does not know any of the other Bitcoin public addresses. The motion further states that the self-styled Satoshi does not have a complete list of the public addresses that he owned as of any date.<sup>1</sup>
 </p>
-`
+`;
     var blogcite5 = ` 
 <p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork" target="_blank">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>
 </p>
  
-`
+`;
 
 
     var blogpost4 = ` 
-<p class="firstparagraph">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world's respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  
+<p class="firstparagraph" id="2019-05-13">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world's respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  
 </p>
 
 <p </p>
@@ -88,7 +145,7 @@ Wizsec says the motion begs the belief that the self-proclaimed inventor acts as
 </p>
 <p><i></i>
 Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let's see if Satoshi's cleverness yet once again thwarts the prying eyes!
-`
+`;
     var blogcite4 = `
 <p>0. Night at the Roxbury</p>
 <p>1.<a href="https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/" target="_blank">Oct. 31, 2019: https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/</a>
@@ -99,7 +156,7 @@ Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, bu
 
 <a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>
 </p>
-`
+`;
     var blogpost3 = `
     <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals' and teams' participation.  
     <br /><br />
@@ -113,7 +170,7 @@ Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, bu
 Some police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> 
     </p>
     <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now-g5 23 more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>
-	`
+	`;
 
 
 
@@ -152,7 +209,7 @@ Some police agencies have in recent years run facial-recognition searches agains
     <sup>2.</sup>
     </p>
     <p>So, as usual, Ethereum wins the day for both daily applicability and now a more scalable <strong><i>and</i> conscientious</strong> crypto-currency Tech!
-	`
+	`;
 
 
 
@@ -169,7 +226,7 @@ Some police agencies have in recent years run facial-recognition searches agains
   
   </p>
   
-  `
+  `;
     var blogpost1 = ` 
   
   <p class="firstparagraph">Data Analytics' <i>Law of Large Numbers</i>, i.e. over n = 10,000, promises a predictable likelihood of conditions and events, given a sufficiently high sample of training data. Despite the quantum-directed molecular behavior of biological organisms, the classical exponentiation of machine-learning statistical algorithms still does work miracles:  
@@ -188,7 +245,7 @@ Some police agencies have in recent years run facial-recognition searches agains
   <sup>1</sup>
   </p>
   <p>So, the good news from <i>the doctors'</i> occasional nemesis, U.S. Food and Drug Administration, decided that after 8 years of trials and hearings, truly scalable and sufficiently large sample data can now be digitized - hence personalizing the law of large numbers from the whole to the individual patient. At long last, the patience has paid off!
-  `
+  `;
     var blogcite1 = `
   
   
@@ -198,7 +255,7 @@ Some police agencies have in recent years run facial-recognition searches agains
   </a>
   </p>
   
-  `
+  `;
     /*
   var blogpost0 = `
   <p class="firstparagraph"> 
@@ -217,7 +274,47 @@ Some police agencies have in recent years run facial-recognition searches agains
   </p>
 `  
 */
-    var url = [{
+    var url = [
+        {
+            id: '11',
+            did: '19-05-13',
+            date: 'May 13, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Musing Blockchain',
+            title: 'Satoshi \'Le Roux\' Nakamoto?',
+            post: blogpost11,
+            cite: blogcite11
+        },{
+            id: '10',
+            did: '19-05-11',
+            date: 'May 11-12, 2019 <br /> Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: '',
+            title: '',
+            post: blogpost10,
+            cite: blogcite10
+        },
+        {
+            id: '9',
+            did: '19-05-10',
+            date: 'May 10, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Web Dev Affairs',
+            title: 'The Long and Ubiquitous Reign of Linux OS',
+            post: blogpost9,
+            cite: blogcite9
+        },
+        {
+            id: '8',
+            did: '19-05-09',
+            date: 'May 9, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: ' ',
+            title: ' ',
+            post: blogpost8,
+            cite: blogcite8
+        },
+        {
             id: '7',
             did: '19-05-08',
             date: 'May 8, 2019',

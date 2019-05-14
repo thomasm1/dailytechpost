@@ -9104,7 +9104,19 @@ var bloggerMay19 = function bloggerMay19() {
     https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a
         https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
       https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
+    feb
+    https://phys.org/news/2019-02-scientists-magnet.html
     */
+
+    var blogpost11 = ' \n  <p class="firstparagraph">Satoshi Nakamoto\'s identity now has an interesting new plot twist. Contrasting with the <a href="#2019-05-04">May 4th and 5th post articles</a>, this theory appears to hold water ... \n  </p>\n \n<p class="quote">\nOne of the most enduring mysteries of modern times has produced another enthralling twist. Satoshi Nakamoto, Bitcoin\u2019s pseudonymous and enigmatic creator, has not been seen online in more than eight years. Evidence has now surfaced that points to a new Satoshi candidate, whose known life has a number of parallels with that of Bitcoin\u2019s inventor. His name is Paul Le Roux and, if proven to be Satoshi, there is a good reason why his 1 million BTC hasn\u2019t moved \u2013 the Rhodesian has been in jail since 2012.<sup>1</sup></p>\n';
+    var blogcite11 = '  \n<p>1.<a href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> \n</p> \n';
+    var blogpost10 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> \n<br /><br /> <sup>1</sup></p>\n';
+    var blogcite10 = '  \n<p><a href=""></a> \n</p>\n \n';
+    var blogpost9 = ' \n  <p class="firstparagraph">Linus Torvalds\' great contribution now extends to Microsoft 10, rather than the past couple year\'s emulated mounting. \n  </p>\n \n<p class="quote">Windows 10 will soon include a built-in Linux kernel updated through Windows Update. Windows itself will still be based on the Windows kernel, of course. The Linux kernel will power the Windows Subsystem for Linux 2 (WSL 2) and let you run even more Linux applications on Windows 10.\n<br /><br />\nWSL version 1 was powerful, but it relied on emulation to run Linux software. That prevented more complex Linux applications\u2014like Docker\u2014from running on Windows. WSL 2 will be more powerful and will run Linux software using an actual Linux kernel.<sup>1</sup></p>\n<p>\nThis, along with 2019 Google Chromebooks\' command-line Linux development environments -- Hooray, the Universe has finally converged!\n</p>\n';
+    var blogcite9 = '  \n<p>1. <a href="https://www.howtogeek.com/414036/2019-is-the-year-of-linux-on-the-desktop/">https://www.howtogeek.com/414036/2019-is-the-year-of-linux-on-the-desktop/</a> \n</p>\n \n';
+    var blogpost8 = ' \n  <p class="firstparagraph"> \n  </p>\n \n<p class="quote"> <sup></sup></p>\n';
+    var blogcite8 = '  \n<p><a href=""></a> \n</p>\n \n';
+
     var blogpost7 = ' \n  <p class="firstparagraph">  BTC smart contract ability now gets a boost, as it looks like R & D has been busy lately:\n  </p>\n  <p class="quote">\n  The two proposals, announced on the bitcoin developer email list, describe Taproot, a code change designed to increase bitcoin\u2019s privacy. Taproot is expected to be bundled together with an upgrade called Schnorr in a soft fork that developers have been looking into for some time, paving the way for privacy and scalability improvements to bitcoin.\n<br /><br />\nDevelopers have long been thinking about how to arrange this particular upgrade. There have been a number of proposed changes to bitcoin over the years and, as they are all related, it makes sense to implement them together. That includes Merkelized Abstract Syntax Trees (MAST), adding, improved bitcoin smart contracts, Schnorr signatures, which adds another way to sign bitcoin transactions, and Taproot, which adds even better privacy.<sup>1</sup>\n</p>\n\n';
     var blogcite7 = ' \n<p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>\n</p> \n\n';
     var blogpost6 = ' \n  <p class="firstparagraph">Bitcoin\'s bare simplicity--designed more than ten years ago, published October 31, 2008--has traditionally served as a strength of reliability in an uncharted industry field. Yet, in a complex and demanding Tech world, others took the spotlight--as the Bitcoin distributed ledger has been contrasted with Ethereum\'s complex scripting language, Solidity, which provides multi-variate <i>Smart Contracts</i> that are well-suited for Distributed Apps, <i>DAPPs</i> and generally for financial-clerical-legal documents. However, the once belittled simple, but reliable, distributed blockchain ledger leverages third-party smart contracting:\n  </p>\n \n<p class="quote">\nEthereum has become the most popular blockchain for creating smart contracts. One of the major design goals of the Ethereum platform was to support smart contracts. From the start, this set Ethereum apart from Bitcoin, which was created first and foremost as a digital currency platform.\n<br /><br />\nAs the Bitcoin protocol has evolved, it has gained support for smart contracts. Smart contract functionality is not as programmable and extensible on Bitcoin as it is on Ethereum. However, using features added to Bitcoin through improvement proposals, certain smart contract functionality can be achieved through Bitcoin scripting.\n<br /><br />\nFor Particl, the most important smart contract feature in Bitcoin is the OP_CHECKLOCKTIMEVERIFY opcode, which was introduced by Peter Todd as Bitcoin Improvement Proposal (BIP) 65. The opcode makes it possible to write scripts that prevent funds in a multi-signature wallet from being spent until a certain signature pattern is implemented or a certain amount of time passes.<sup>1</sup></p>\n';
@@ -9112,7 +9124,7 @@ var bloggerMay19 = function bloggerMay19() {
     var blogpost5 = ' \n  <p class="firstparagraph"> \n  </p>\n    \n  <p class="quote">\n  The self-proclaimed Satoshi, Craig Wright, is being sued by the Kleiman family on behalf of the now deceased Dave Kleiman and his estate. The lawsuit accuses Wright of fraud and theft of \u201Cover $11 billion worth of bitcoins and intellectual property from the estate of Dave Kleiman and W&K shortly after Dave\u2019s 2013 death.\u201D Last week the court ordered Wright to disclose bitcoin addresses that belonged to him before December 2013. The Florida Magistrate overseeing the lawsuit, Judge Bruce Reinhart, signed the order and gave Wright a few days to produce the list.\n  <br /><br />\n  Since then a list of addresses that were once filed in an obscure fashion was unsealed and Wright claims to have mined the first 70 bitcoin blocks starting from the Genesis block. After the redacted list was unsealed, the researchers at Wizsec decided to study the addresses and wrote a blog post about the recently disclosed file. Wizsec claims that Wright simply copied and pasted the addresses from the first 70 blocks and asserted the addresses belonged to him without any cryptographic proof.\n<br /><br />\nWizsec says the motion begs the belief that the self-proclaimed inventor acts as if he is \u201Cignorant about the fundamentals of his invention.\u201D \u201CPerhaps Wright thinks that being a bitcoin miner means pointing at bitcoins and yelling \u2018Mine,\u2019\u201D the researchers jokingly remarked. In the document, Wright\u2019s filing continues to assert that he did not keep track of which Bitcoin blocks he mined and that he does not know any of the other Bitcoin public addresses. The motion further states that the self-styled Satoshi does not have a complete list of the public addresses that he owned as of any date.<sup>1</sup>\n</p>\n';
     var blogcite5 = ' \n<p>1.<a href="https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork" target="_blank">https://www.coindesk.com/new-bips-hint-at-upcoming-taproot-bitcoin-soft-fork</a>\n</p>\n \n';
 
-    var blogpost4 = ' \n<p class="firstparagraph">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world\'s respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  \n</p>\n\n<p </p>\n \n\n<p class="quote"> Ten years ago today, someone using the name Satoshi Nakamoto sent an academic paper to a cryptography mailing list proposing a form of digital cash called "bitcoin." The pseudonymous Nakamoto, whose true identity remains unknown, described an idea for "mining" a limited amount of this virtual currency through a peer-to-peer scheme that wouldn\'t depend on a bank, government, or any other central authority. Once people started using bitcoin, it would be impossible for a government to pull the plug, as happened with previous attempts to create digital money, such as E-Gold.\n<sup>1</sup>\n</p>\n<p>However, seeking a life of anonymity can only stir up further the paparazzis\' research fervor. So, the latest attempt on the inventor\'s privacy, there is the latest claim:</p>\n<p class="quote">The Gotsatoshi.com domain was registered in May 2017, but has lain dormant until last month, when an archived snapshot of the site shows it to have been proclaiming Satoshi\u2019s unveiling as 10 days away then. It\u2019s possible that the great reveal will remain forever 10 days away, to frustrate watchers hoping for a thrilling denouement, or the countdown may reach zero only to reveal a new shitcoin, puzzle game, or to hail the efforts of the marketing agency that dreamed up the stunt.<sup>2</sup>\n</p>\n<p><i></i>\nChanneling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let\'s see if Satoshi\'s cleverness yet once again thwarts the prying eyes!\n';
+    var blogpost4 = ' \n<p class="firstparagraph" id="2019-05-13">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world\'s respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  \n</p>\n\n<p </p>\n \n\n<p class="quote"> Ten years ago today, someone using the name Satoshi Nakamoto sent an academic paper to a cryptography mailing list proposing a form of digital cash called "bitcoin." The pseudonymous Nakamoto, whose true identity remains unknown, described an idea for "mining" a limited amount of this virtual currency through a peer-to-peer scheme that wouldn\'t depend on a bank, government, or any other central authority. Once people started using bitcoin, it would be impossible for a government to pull the plug, as happened with previous attempts to create digital money, such as E-Gold.\n<sup>1</sup>\n</p>\n<p>However, seeking a life of anonymity can only stir up further the paparazzis\' research fervor. So, the latest attempt on the inventor\'s privacy, there is the latest claim:</p>\n<p class="quote">The Gotsatoshi.com domain was registered in May 2017, but has lain dormant until last month, when an archived snapshot of the site shows it to have been proclaiming Satoshi\u2019s unveiling as 10 days away then. It\u2019s possible that the great reveal will remain forever 10 days away, to frustrate watchers hoping for a thrilling denouement, or the countdown may reach zero only to reveal a new shitcoin, puzzle game, or to hail the efforts of the marketing agency that dreamed up the stunt.<sup>2</sup>\n</p>\n<p><i></i>\nChanneling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let\'s see if Satoshi\'s cleverness yet once again thwarts the prying eyes!\n';
     var blogcite4 = '\n<p>0. Night at the Roxbury</p>\n<p>1.<a href="https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/" target="_blank">Oct. 31, 2019: https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/</a>\n</p>\n\n<p>2. \n\n\n<a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>\n</p>\n';
     var blogpost3 = '\n    <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS\' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals\' and teams\' participation.  \n    <br /><br />\n    <img   class="zoom" src="https://s3.amazonaws.com/our-daily-tech/data/img/rekognition.jpg">\n    <br /><br />\n    At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now-g5 23 more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
 
@@ -9139,6 +9151,42 @@ var bloggerMay19 = function bloggerMay19() {
     `  
     */
     var url = [{
+        id: '11',
+        did: '19-05-13',
+        date: 'May 13, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Musing Blockchain',
+        title: 'Satoshi \'Le Roux\' Nakamoto?',
+        post: blogpost11,
+        cite: blogcite11
+    }, {
+        id: '10',
+        did: '19-05-11',
+        date: 'May 11-12, 2019 <br /> Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: '',
+        title: '',
+        post: blogpost10,
+        cite: blogcite10
+    }, {
+        id: '9',
+        did: '19-05-10',
+        date: 'May 10, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Web Dev Affairs',
+        title: 'The Long and Ubiquitous Reign of Linux OS',
+        post: blogpost9,
+        cite: blogcite9
+    }, {
+        id: '8',
+        did: '19-05-09',
+        date: 'May 9, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: ' ',
+        title: ' ',
+        post: blogpost8,
+        cite: blogcite8
+    }, {
         id: '7',
         did: '19-05-08',
         date: 'May 8, 2019',
@@ -9583,7 +9631,7 @@ var bloggerJan = function bloggerJan() {
   }
 
   console.log('blogger-jan');
-  console.log(angular.toJson(url));
+  //  console.log(angular.toJson(url)); 
 };
 bloggerJan();
 
@@ -9891,7 +9939,7 @@ var bloggerDec = function bloggerDec() {
   }
 
   console.log('blogger-dec');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url)); 
 };
 bloggerDec();
 
@@ -11110,7 +11158,7 @@ var bloggerAug = function bloggerAug() {
     document.getElementById("paragraph-aug-mod").innerHTML += catMod;
   }
   console.log('blogger-aug');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 bloggerAug();
 
@@ -11424,7 +11472,7 @@ var bloggerJuly = function bloggerJuly() {
     document.getElementById("paragraph-july-mod").innerHTML += catMod;
   }
   console.log('blogger-july');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 bloggerJuly();
 
@@ -11715,7 +11763,7 @@ var bloggerJune = function bloggerJune() {
   };
 
   console.log('blogger-june');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 bloggerJune();
 
@@ -12157,7 +12205,7 @@ var bloggerApr = function bloggerApr() {
     document.getElementById("paragraph-apr-mod").innerHTML += catMod;
   }
   console.log('blogger-apr');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 bloggerApr();
 
@@ -12385,7 +12433,7 @@ var bloggerMar = function bloggerMar() {
   }
 
   console.log('blogger-mar');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 
 bloggerMar();
@@ -12760,7 +12808,7 @@ var bloggerFeb = function bloggerFeb() {
   }
 
   console.log('blogger-feb');
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 
 bloggerFeb();

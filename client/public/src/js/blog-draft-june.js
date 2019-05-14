@@ -640,7 +640,7 @@ document.getElementById("paragraph-june-mod").innerHTML += catMod;
 }; 
  
 console.log('blogger-june');
-console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 bloggerJune();  
 

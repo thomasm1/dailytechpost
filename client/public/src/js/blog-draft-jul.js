@@ -713,6 +713,6 @@ The forced retirements of up to 27 of 72 Supreme Court justices, including the t
     document.getElementById("paragraph-july-mod").innerHTML += catMod;
   }
   console.log('blogger-july');
-  console.log(angular.toJson(url));
+    // console.log(angular.toJson(url));
 };
 bloggerJuly();

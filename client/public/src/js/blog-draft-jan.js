@@ -703,6 +703,6 @@ var i;
   }
   
 console.log('blogger-jan');
-  console.log(angular.toJson(url)); 
+   //  console.log(angular.toJson(url)); 
 };
 bloggerJan();
