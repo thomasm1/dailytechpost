@@ -20,16 +20,14 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
     https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
 
     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
-
-feb
+ 
 https://phys.org/news/2019-02-scientists-magnet.html
    */ 
 
-  
-  var blogpost11 = ` 
-  <p class="firstparagraph">Satoshi Nakamoto's identity now has an interesting new plot twist. Contrasting with the <a href="#2019-05-04">May 4th and 5th post articles</a>, this theory appears to hold water ... 
-  </p>
  
+  var blogpost11 = ` 
+  <p class="firstparagraph">The <i>global quest</i> for Satoshi Nakamoto's identity now reveals an interesting new plot twist. Contrasting with my  May 4th and 5th post articles, this theory appears to hold water ... 
+  </p> 
 <p class="quote">
 One of the most enduring mysteries of modern times has produced another enthralling twist. Satoshi Nakamoto, Bitcoin’s pseudonymous and enigmatic creator, has not been seen online in more than eight years. Evidence has now surfaced that points to a new Satoshi candidate, whose known life has a number of parallels with that of Bitcoin’s inventor. His name is Paul Le Roux and, if proven to be Satoshi, there is a good reason why his 1 million BTC hasn’t moved – the Rhodesian has been in jail since 2012.<sup>1</sup></p>
 `;
@@ -38,17 +36,22 @@ One of the most enduring mysteries of modern times has produced another enthrall
 </p> 
 `;
 var blogpost10 = ` 
-<p class="firstparagraph"> 
+<p class="quote"><i>Bitcoin is like gold in many ways. Like gold, Bitcoin cannot simply be created arbitrarily. Gold must be mined out of the ground, and Bitcoin must be mined via digital means. Linked with this process is the stipulation set forth by the founders of Bitcoin that, like gold, it have a limited and finite supply. In fact, there are only 21 million Bitcoins that can be mined in total. Once miners have unlocked this many Bitcoins, the planet's supply will essentially be tapped out, unless Bitcoin's protocol is changed to allow for a larger supply. All confirmed Bitcoin transactions are recorded in the blockchain. The blockchain is described as a shared public ledger on which the entire Bitcoin network relies.</i> <sup>1</sup></p>
+<p class="firstparagraph">Sometime near 2020, the rules of crypto-logic begin to bend ... 
 </p>
+<p class="quote"> It may seem that the group of individuals most directly affected by the limit of the Bitcoin supply will be the Bitcoin miners themselves. On one hand, there are detractors of the Bitcoin limitation who that say that miners will be forced away from the block rewards they receive for their work once the Bitcoin supply has reached 21 million in circulation. In this case, these miners may need to rely on transaction fees in order to maintain operations. Bitcoin.com points to an argument that miners will then find the process unaffordable, leading to a reduction in the number of miners, a centralization process of the Bitcoin network, and numerous negative effects on the Bitcoin system. <sup>2</sup></p>
 
-<p class="quote"> 
-<br /><br /> <sup>1</sup></p>
+
 `;
   var blogcite10 = `  
-<p><a href=""></a> 
+
+  <p>1.
+  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>https://www.cnbc.com/2019/04/28/bitcoin-bull-tom-lee-says-new-crypto-highs-likely-by-2020.html
+  </p>
+<p>1.
+<a href="https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined/" target="_blank">https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined/</a> 
 </p>
- 
-`;
+`  
   var blogpost9= ` 
   <p class="firstparagraph">Linus Torvalds' great contribution now extends to Microsoft 10, rather than the past couple year's emulated mounting. 
   </p>
@@ -131,10 +134,8 @@ Wizsec says the motion begs the belief that the self-proclaimed inventor acts as
 
 
     var blogpost4 = ` 
-<p class="firstparagraph" id="2019-05-13">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world's respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  
+<p class="firstparagraph">Satoshi Nakamoto, the omni-present legend that introduced the final frontier for Trustless-based cryptocurrencies is worthy of the world's respect. But the Prying Eyes of the tech paparazzi are on the attack. <br /><br />Some character development:  
 </p>
-
-<p </p>
  
 
 <p class="quote"> Ten years ago today, someone using the name Satoshi Nakamoto sent an academic paper to a cryptography mailing list proposing a form of digital cash called "bitcoin." The pseudonymous Nakamoto, whose true identity remains unknown, described an idea for "mining" a limited amount of this virtual currency through a peer-to-peer scheme that wouldn't depend on a bank, government, or any other central authority. Once people started using bitcoin, it would be impossible for a government to pull the plug, as happened with previous attempts to create digital money, such as E-Gold.
@@ -143,24 +144,21 @@ Wizsec says the motion begs the belief that the self-proclaimed inventor acts as
 <p>However, seeking a life of anonymity can only stir up further the paparazzis' research fervor. So, the latest attempt on the inventor's privacy, there is the latest claim:</p>
 <p class="quote">The Gotsatoshi.com domain was registered in May 2017, but has lain dormant until last month, when an archived snapshot of the site shows it to have been proclaiming Satoshi’s unveiling as 10 days away then. It’s possible that the great reveal will remain forever 10 days away, to frustrate watchers hoping for a thrilling denouement, or the countdown may reach zero only to reveal a new shitcoin, puzzle game, or to hail the efforts of the marketing agency that dreamed up the stunt.<sup>2</sup>
 </p>
-<p><i></i>
-Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let's see if Satoshi's cleverness yet once again thwarts the prying eyes!
+<p> 
+Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, but unwarranted paparazzi expos&eacute;s cross the line of decency, so let's see if Satoshi's cleverness yet once again thwarts the prying eyes!</p>
 `;
     var blogcite4 = `
 <p>0. Night at the Roxbury</p>
 <p>1.<a href="https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/" target="_blank">Oct. 31, 2019: https://www.wired.com/story/after-10-years-bitcoin-changed-everything-nothing/</a>
 </p>
 
-<p>2. 
-
-
-<a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>
+<p>2.   <a href="https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/" target="_blank">https://news.bitcoin.com/new-website-promises-to-unveil-satoshi-nakamoto-in-10-days/</a>
 </p>
 `;
     var blogpost3 = `
     <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals' and teams' participation.  
     <br /><br />
-    <img   class="zoom" src="https://s3.amazonaws.com/our-daily-tech/data/img/rekognition.jpg">
+    <img   class="zoom" src="//s3.amazonaws.com/tmm-nov/data/img/rekognition.jpg">  
     <br /><br />
     At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
 	
@@ -170,10 +168,7 @@ Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, bu
 Some police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> 
     </p>
     <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now-g5 23 more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>
-	`;
-
-
-
+	`; 
     var blogcite3 = ` 
  
 	<p>1.
@@ -184,9 +179,7 @@ Some police agencies have in recent years run facial-recognition searches agains
 
     var blogpost2 = `  
     <p class="firstparagraph">Ethereum Ether and Bitcoin have plenty in common, including their Proof-of-Work architecture--requiring Mining computationally difficult math problems to create scarcity and other functions. The downside is the nation-comparable amount of electricity spent each year, which in many cases are unregulated, coal-filled energy sources across the globe. This commonality will end next month when the Ethereum cryptocurrency will transition to Proof-of-Stake architecture, the long-ago and highly anticipated Ethereum 2.0.
-    </p>
-     
-    
+    </p> 
     <p class="quote"> 
     Ethereum has been inching toward a major upgrade, dubbed ethereum 2.0, which would radically change the how the $17 billion network creates blocks and verifies transactions. As explained by founder of ethereum Vitalik Buterin in a recent interview at ethereum conference ETHCapetown, ethereum 2.0 has “two major flagship components.”
     <br /><br />
@@ -222,17 +215,13 @@ Some police agencies have in recent years run facial-recognition searches agains
   
       
   <p class="cite">2. [Post article 2/20/18]
-  <a href="https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e" target="_blank">https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e</a>
-  
-  </p>
+  <a href="https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e" target="_blank">https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e</a> </p>
   
   `;
     var blogpost1 = ` 
   
   <p class="firstparagraph">Data Analytics' <i>Law of Large Numbers</i>, i.e. over n = 10,000, promises a predictable likelihood of conditions and events, given a sufficiently high sample of training data. Despite the quantum-directed molecular behavior of biological organisms, the classical exponentiation of machine-learning statistical algorithms still does work miracles:  
-  </p>
-   
-   
+  </p> 
   
   <p class="quote"> 
   Studies indicate that using algorithms to analyze digital slides delivers diagnoses as accurate as an expert pathologist—and in some instances, the algorithms are more accurate. A 2018 study by Massachusetts General Hospital and MIT found that an automated system they developed diagnosed dense breast tissue (an indicator of breast cancer) in mammograms at the same level as an expert radiologist. Another algorithm developed by Google was found to “help detect metastatic breast cancers with significant accuracy and improve pathologist performance,” according to studies in the Archives of Pathology and Laboratory Medicine and the American Journal of Surgical Pathology.
@@ -255,26 +244,9 @@ Some police agencies have in recent years run facial-recognition searches agains
   </a>
   </p>
   
-  `;
-    /*
-  var blogpost0 = `
-  <p class="firstparagraph"> 
-  <sup></sup>
-  </p>
-  
-  <p> </p>
-  
-  <p>
- 
-  </p>
-    `
-    var blogcite0 = ` 
-  <p>1.
-  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>
-  </p>
-`  
-*/
-    var url = [
+  `; 
+
+    var url = [  
         {
             id: '11',
             did: '19-05-13',
@@ -289,8 +261,8 @@ Some police agencies have in recent years run facial-recognition searches agains
             did: '19-05-11',
             date: 'May 11-12, 2019 <br /> Weekend',
             author: 'by Thomas Maestas, MA',
-            cat3: '',
-            title: '',
+            cat3: 'Musing Blockchain',
+            title: 'Finite Bitcoin',
             post: blogpost10,
             cite: blogcite10
         },
@@ -383,19 +355,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             title: 'Modern Healthcare, Part I:<br />On the Second Opinion of 10,000 Doctors',
             post: blogpost1,
             cite: blogcite1
-        },
-        /*
-        {
-            id: '0',
-            did: '19-04-30',
-            date: 'April 30, 2019',
-            author: 'by Thomas Maestas, MA',
-            cat3: 'Musing Blockchain',
-            title: 'Blockchain Scalability Issues and The Double-Edged Sword',
-            post: blogpost0,
-            cite: blogcite0
-        } 
-        */
+        }
     ];
 
     for (i = 0; i < url.length; i++) {

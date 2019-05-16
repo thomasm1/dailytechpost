@@ -427,7 +427,7 @@ document.getElementById("paragraph-may-mod").innerHTML += catMod;
 
 
 console.log('blogger-may'); 
- console.log(angular.toJson(url));
+// console.log(angular.toJson(url));
 }; 
 
 

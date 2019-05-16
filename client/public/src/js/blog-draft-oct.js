@@ -610,6 +610,6 @@ var   blogcite1 = `
     document.getElementById("paragraph-oct-mod").innerHTML += catMod;
   }
   console.log('blogger-oct');
- console.log(angular.toJson(url)); 
+ //console.log(angular.toJson(url)); 
 };
 bloggerOct();

@@ -684,6 +684,6 @@ var i;
     document.getElementById("paragraph-nov-mod").innerHTML += catMod;
   }
   console.log('blogger-nov');
-  console.log(angular.toJson(url)); 
+  //console.log(angular.toJson(url)); 
 }; // end bloggerNov()
 bloggerNov();
