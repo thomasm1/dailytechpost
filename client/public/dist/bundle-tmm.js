@@ -9107,8 +9107,23 @@ var bloggerMay19 = function bloggerMay19() {
     https://phys.org/news/2019-02-scientists-magnet.html
     */
 
+    var blogpost16 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
+    var blogcite16 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
+
+    var blogpost15 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
+    var blogcite15 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
+
+    var blogpost14 = ' \n  <p class="firstparagraph"> \n  </p>\n \n<p class="quote"> <sup></sup></p>\n';
+    var blogcite14 = '  \n<p><a target="_blank" href="https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords">https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords</a> \n</p>\n \n';
+
+    var blogpost13 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
+    var blogcite13 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
+
+    var blogpost12 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
+    var blogcite12 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
+
     var blogpost11 = ' \n  <p class="firstparagraph">The <i>global quest</i> for Satoshi Nakamoto\'s identity now reveals an interesting new plot twist. Contrasting with my  May 4th and 5th post articles, this theory appears to hold water ... \n  </p> \n<p class="quote">\nOne of the most enduring mysteries of modern times has produced another enthralling twist. Satoshi Nakamoto, Bitcoin\u2019s pseudonymous and enigmatic creator, has not been seen online in more than eight years. Evidence has now surfaced that points to a new Satoshi candidate, whose known life has a number of parallels with that of Bitcoin\u2019s inventor. His name is Paul Le Roux and, if proven to be Satoshi, there is a good reason why his 1 million BTC hasn\u2019t moved \u2013 the Rhodesian has been in jail since 2012.<sup>1</sup></p>\n';
-    var blogcite11 = '  \n<p>1.<a href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> \n</p> \n';
+    var blogcite11 = '  \n<p>1.<a target="_blank"  href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> \n</p> \n';
     var blogpost10 = ' \n<p class="quote"><i>Bitcoin is like gold in many ways. Like gold, Bitcoin cannot simply be created arbitrarily. Gold must be mined out of the ground, and Bitcoin must be mined via digital means. Linked with this process is the stipulation set forth by the founders of Bitcoin that, like gold, it have a limited and finite supply. In fact, there are only 21 million Bitcoins that can be mined in total. Once miners have unlocked this many Bitcoins, the planet\'s supply will essentially be tapped out, unless Bitcoin\'s protocol is changed to allow for a larger supply. All confirmed Bitcoin transactions are recorded in the blockchain. The blockchain is described as a shared public ledger on which the entire Bitcoin network relies.</i> <sup>1</sup></p>\n<p class="firstparagraph">Sometime near 2020, the rules of crypto-logic begin to bend ... \n</p>\n<p class="quote"> It may seem that the group of individuals most directly affected by the limit of the Bitcoin supply will be the Bitcoin miners themselves. On one hand, there are detractors of the Bitcoin limitation who that say that miners will be forced away from the block rewards they receive for their work once the Bitcoin supply has reached 21 million in circulation. In this case, these miners may need to rely on transaction fees in order to maintain operations. Bitcoin.com points to an argument that miners will then find the process unaffordable, leading to a reduction in the number of miners, a centralization process of the Bitcoin network, and numerous negative effects on the Bitcoin system. <sup>2</sup></p>\n\n\n';
     var blogcite10 = '  \n\n  <p>1.\n  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>https://www.cnbc.com/2019/04/28/bitcoin-bull-tom-lee-says-new-crypto-highs-likely-by-2020.html\n  </p>\n<p>1.\n<a href="https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined/" target="_blank">https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined/</a> \n</p>\n';
     var blogpost9 = ' \n  <p class="firstparagraph">Linus Torvalds\' great contribution now extends to Microsoft 10, rather than the past couple year\'s emulated mounting. \n  </p>\n \n<p class="quote">Windows 10 will soon include a built-in Linux kernel updated through Windows Update. Windows itself will still be based on the Windows kernel, of course. The Linux kernel will power the Windows Subsystem for Linux 2 (WSL 2) and let you run even more Linux applications on Windows 10.\n<br /><br />\nWSL version 1 was powerful, but it relied on emulation to run Linux software. That prevented more complex Linux applications\u2014like Docker\u2014from running on Windows. WSL 2 will be more powerful and will run Linux software using an actual Linux kernel.<sup>1</sup></p>\n<p>\nThis, along with 2019 Google Chromebooks\' command-line Linux development environments -- Hooray, the Universe has finally converged!\n</p>\n';
@@ -9135,6 +9150,51 @@ var bloggerMay19 = function bloggerMay19() {
     var blogcite1 = '\n  \n  \n  <p>1. [Post article 2/22/19]\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  \n  ';
 
     var url = [{
+        id: '13',
+        did: '19-05-18',
+        date: 'May 18-19, 2019 <br />Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: '',
+        title: '',
+        post: blogpost11,
+        cite: blogcite11
+    }, {
+        id: '13',
+        did: '19-05-17',
+        date: 'May 17, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: '',
+        title: '',
+        post: blogpost13,
+        cite: blogcite13
+    }, {
+        id: '14',
+        did: '19-05-16',
+        date: 'May 16, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'M',
+        title: '',
+        post: blogpost14,
+        cite: blogcite14
+    }, {
+        id: '13',
+        did: '19-05-15',
+        date: 'May 15, 2019 <br /> Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: '',
+        title: '',
+        post: blogpost13,
+        cite: blogcite13
+    }, {
+        id: '12',
+        did: '19-05-14',
+        date: 'May 14, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: '',
+        title: '',
+        post: blogpost12,
+        cite: blogcite12
+    }, {
         id: '11',
         did: '19-05-13',
         date: 'May 13, 2019',

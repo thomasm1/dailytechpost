@@ -23,8 +23,74 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
  
 https://phys.org/news/2019-02-scientists-magnet.html
    */ 
+  /*
+var blogpost16 = ` 
+<p class="firstparagraph"> 
+</p>
+
+<p class="quote">In a surprise bit of weekend news that could have major implications on the smartphone market, Reuters reports that “Google has suspended business with Huawei that requires the transfer of hardware, software, and technical services except those publicly available via open source licensing.”
+<br /><br />
+Translation: Huawei can no longer implement a full-fledged version of Android, losing access to Google services and more. Instead, it’ll only be allowed to use the open source components of Android. That means no Google Play Store, no Gmail, no YouTube – at least not without major workarounds. This presumably affects future devices; it’s not clear what effect it will have on current ones.<sup></sup></p>
+`;
+  var blogcite16 = `  
+<p><a  target="_blank" href="https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/">https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/</a> 
+</p>
+
+`;
+var blogpost15 = ` 
+<p class="firstparagraph"> 
+</p>
+
+<p class="quote">But, interestingly, the word “blockchain” doesn’t actually appear in the original bitcoin white paper, released back in 2008. Rather, the white paper uses the words “block” and “chain” separately many times.
+
+It describes the word “block” as the vehicle for a bundle bitcoin transactions. Then, these blocks of are linked together, forming a “chain” of “blocks.” <br /><br /><sup>1</sup></p>
+`;
+  var blogcite15 = `  
 
  
+<p>1. <a target="_blank" href="https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords">https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords</a> 
+</p>
+`;
+ 
+ 
+  var blogpost14 = ` 
+  <p class="firstparagraph"> 
+  </p>
+ 
+<p class="quote"> <sup></sup></p>
+`;
+    var blogcite14 = ` 
+    <p><a  target="_blank" href=""></a> 
+    </p>
+`;
+
+
+var blogpost13 = ` 
+<p class="firstparagraph"> 
+</p>
+
+<p class="quote"> <sup></sup></p>
+`;
+  var blogcite13 = `  
+<p><a  target="_blank" href=""></a> 
+</p>
+
+`;
+
+
+var blogpost12 = ` 
+<p class="firstparagraph"> 
+</p>
+
+<p class="quote"> <sup></sup></p>
+`;
+  var blogcite12 = `  
+<p><a  target="_blank" href=""></a> 
+</p>
+
+`;
+
+*/
   var blogpost11 = ` 
   <p class="firstparagraph">The <i>global quest</i> for Satoshi Nakamoto's identity now reveals an interesting new plot twist. Contrasting with my  May 4th and 5th post articles, this theory appears to hold water ... 
   </p> 
@@ -32,7 +98,7 @@ https://phys.org/news/2019-02-scientists-magnet.html
 One of the most enduring mysteries of modern times has produced another enthralling twist. Satoshi Nakamoto, Bitcoin’s pseudonymous and enigmatic creator, has not been seen online in more than eight years. Evidence has now surfaced that points to a new Satoshi candidate, whose known life has a number of parallels with that of Bitcoin’s inventor. His name is Paul Le Roux and, if proven to be Satoshi, there is a good reason why his 1 million BTC hasn’t moved – the Rhodesian has been in jail since 2012.<sup>1</sup></p>
 `;
     var blogcite11 = `  
-<p>1.<a href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> 
+<p>1.<a target="_blank"  href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> 
 </p> 
 `;
 var blogpost10 = ` 
@@ -246,7 +312,76 @@ Some police agencies have in recent years run facial-recognition searches agains
   
   `; 
 
-    var url = [  
+    var url = [ 
+        /*
+        {
+            id: '16',
+            did: '19-05-18',
+            date: 'May 18-19, 2019 <br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Musing Blockchain',
+            title: 'The Proof-of-Work Chain',
+            post: blogpost11,
+            cite: blogcite11
+        },{
+            id: '15',
+            did: '19-05-17',
+            date: 'May 17, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: '',
+            title: '',
+            post: blogpost13,
+            cite: blogcite13
+        },
+        {
+            id: '14',
+            did: '19-05-18',
+            date: 'May 18-19, 2019 <br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: '',
+            title: '',
+            post: blogpost11,
+            cite: blogcite11
+        },{
+            id: '13',
+            did: '19-05-17',
+            date: 'May 17, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: '',
+            title: '',
+            post: blogpost13,
+            cite: blogcite13
+        },
+        {
+            id: '14',
+            did: '19-05-16',
+            date: 'May 16, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'M',
+            title: '',
+            post: blogpost14,
+            cite: blogcite14
+        },{
+            id: '13',
+            did: '19-05-15',
+            date: 'May 15, 2019 <br /> Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: '',
+            title: '',
+            post: blogpost13,
+            cite: blogcite13
+        },
+        {
+            id: '12',
+            did: '19-05-14',
+            date: 'May 14, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: '',
+            title: '',
+            post: blogpost12,
+            cite: blogcite12
+        },
+        */ 
         {
             id: '11',
             did: '19-05-13',
