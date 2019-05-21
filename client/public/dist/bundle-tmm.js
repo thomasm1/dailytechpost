@@ -9106,22 +9106,62 @@ var bloggerMay19 = function bloggerMay19() {
       https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
     https://phys.org/news/2019-02-scientists-magnet.html
     */
-
-    var blogpost16 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
-    var blogcite16 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
-
-    var blogpost15 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
-    var blogcite15 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
-
-    var blogpost14 = ' \n  <p class="firstparagraph"> \n  </p>\n \n<p class="quote"> <sup></sup></p>\n';
-    var blogcite14 = '  \n<p><a target="_blank" href="https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords">https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords</a> \n</p>\n \n';
-
-    var blogpost13 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
-    var blogcite13 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
-
-    var blogpost12 = ' \n<p class="firstparagraph"> \n</p>\n\n<p class="quote"> <sup></sup></p>\n';
-    var blogcite12 = '  \n<p><a  target="_blank" href=""></a> \n</p>\n\n';
-
+    /*
+    var blogpost16 = ` 
+    <p class="firstparagraph"> 
+    </p>
+    <p class="quote">In a surprise bit of weekend news that could have major implications on the smartphone market, Reuters reports that “Google has suspended business with Huawei that requires the transfer of hardware, software, and technical services except those publicly available via open source licensing.”
+    <br /><br />
+    Translation: Huawei can no longer implement a full-fledged version of Android, losing access to Google services and more. Instead, it’ll only be allowed to use the open source components of Android. That means no Google Play Store, no Gmail, no YouTube – at least not without major workarounds. This presumably affects future devices; it’s not clear what effect it will have on current ones.<sup></sup></p>
+    `;
+    var blogcite16 = `  
+    <p><a  target="_blank" href="https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/">https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/</a> 
+    </p>
+    `;
+    var blogpost15 = ` 
+    <p class="firstparagraph"> 
+    </p>
+    <p class="quote">But, interestingly, the word “blockchain” doesn’t actually appear in the original bitcoin white paper, released back in 2008. Rather, the white paper uses the words “block” and “chain” separately many times.
+    It describes the word “block” as the vehicle for a bundle bitcoin transactions. Then, these blocks of are linked together, forming a “chain” of “blocks.” <br /><br /><sup>1</sup></p>
+    `;
+    var blogcite15 = `  
+     
+    <p>1. <a target="_blank" href="https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords">https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords</a> 
+    </p>
+    `;
+    
+    
+    var blogpost14 = ` 
+    <p class="firstparagraph"> 
+    </p>
+    
+    <p class="quote"> <sup></sup></p>
+    `;
+      var blogcite14 = ` 
+      <p><a  target="_blank" href=""></a> 
+      </p>
+    `;
+    
+    var blogpost13 = ` 
+    <p class="firstparagraph"> 
+    </p>
+    <p class="quote"> <sup></sup></p>
+    `;
+    var blogcite13 = `  
+    <p><a  target="_blank" href=""></a> 
+    </p>
+    `;
+    
+    var blogpost12 = ` 
+    <p class="firstparagraph"> 
+    </p>
+    <p class="quote"> <sup></sup></p>
+    `;
+    var blogcite12 = `  
+    <p><a  target="_blank" href=""></a> 
+    </p>
+    `;
+    */
     var blogpost11 = ' \n  <p class="firstparagraph">The <i>global quest</i> for Satoshi Nakamoto\'s identity now reveals an interesting new plot twist. Contrasting with my  May 4th and 5th post articles, this theory appears to hold water ... \n  </p> \n<p class="quote">\nOne of the most enduring mysteries of modern times has produced another enthralling twist. Satoshi Nakamoto, Bitcoin\u2019s pseudonymous and enigmatic creator, has not been seen online in more than eight years. Evidence has now surfaced that points to a new Satoshi candidate, whose known life has a number of parallels with that of Bitcoin\u2019s inventor. His name is Paul Le Roux and, if proven to be Satoshi, there is a good reason why his 1 million BTC hasn\u2019t moved \u2013 the Rhodesian has been in jail since 2012.<sup>1</sup></p>\n';
     var blogcite11 = '  \n<p>1.<a target="_blank"  href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> \n</p> \n';
     var blogpost10 = ' \n<p class="quote"><i>Bitcoin is like gold in many ways. Like gold, Bitcoin cannot simply be created arbitrarily. Gold must be mined out of the ground, and Bitcoin must be mined via digital means. Linked with this process is the stipulation set forth by the founders of Bitcoin that, like gold, it have a limited and finite supply. In fact, there are only 21 million Bitcoins that can be mined in total. Once miners have unlocked this many Bitcoins, the planet\'s supply will essentially be tapped out, unless Bitcoin\'s protocol is changed to allow for a larger supply. All confirmed Bitcoin transactions are recorded in the blockchain. The blockchain is described as a shared public ledger on which the entire Bitcoin network relies.</i> <sup>1</sup></p>\n<p class="firstparagraph">Sometime near 2020, the rules of crypto-logic begin to bend ... \n</p>\n<p class="quote"> It may seem that the group of individuals most directly affected by the limit of the Bitcoin supply will be the Bitcoin miners themselves. On one hand, there are detractors of the Bitcoin limitation who that say that miners will be forced away from the block rewards they receive for their work once the Bitcoin supply has reached 21 million in circulation. In this case, these miners may need to rely on transaction fees in order to maintain operations. Bitcoin.com points to an argument that miners will then find the process unaffordable, leading to a reduction in the number of miners, a centralization process of the Bitcoin network, and numerous negative effects on the Bitcoin system. <sup>2</sup></p>\n\n\n';
@@ -9149,8 +9189,29 @@ var bloggerMay19 = function bloggerMay19() {
     var blogpost1 = ' \n  \n  <p class="firstparagraph">Data Analytics\' <i>Law of Large Numbers</i>, i.e. over n = 10,000, promises a predictable likelihood of conditions and events, given a sufficiently high sample of training data. Despite the quantum-directed molecular behavior of biological organisms, the classical exponentiation of machine-learning statistical algorithms still does work miracles:  \n  </p> \n  \n  <p class="quote"> \n  Studies indicate that using algorithms to analyze digital slides delivers diagnoses as accurate as an expert pathologist\u2014and in some instances, the algorithms are more accurate. A 2018 study by Massachusetts General Hospital and MIT found that an automated system they developed diagnosed dense breast tissue (an indicator of breast cancer) in mammograms at the same level as an expert radiologist. Another algorithm developed by Google was found to \u201Chelp detect metastatic breast cancers with significant accuracy and improve pathologist performance,\u201D according to studies in the Archives of Pathology and Laboratory Medicine and the American Journal of Surgical Pathology.\n  </p>\n  So, how can we best take advantage of these advances? Clear the brush! The meta-organization of healthcare technology and financing simply can\'t keep pace with the pure tech:\n  <p class="quote">\n  After taking a look, the pathologist might ship it to a specialist at another lab for a second opinion. Each time the slide is moved, it is packed up and shipped to a different address. All the while, you\u2019re waiting days or even weeks to hear whether or not you have cancer.\n<br /><br />\n  For decades, there have been limited ways to share medical slides, with information management lagging behind even as medical science advanced. But in the past few years, a new industry of digital pathology has emerged that could finally offer a more efficient and large-scale way of distributing and analyzing these kinds of samples.\n  <sup>1</sup>\n  </p>\n  <p>So, the good news from <i>the doctors\'</i> occasional nemesis, U.S. Food and Drug Administration, decided that after 8 years of trials and hearings, truly scalable and sufficiently large sample data can now be digitized - hence personalizing the law of large numbers from the whole to the individual patient. At long last, the patience has paid off!\n  ';
     var blogcite1 = '\n  \n  \n  <p>1. [Post article 2/22/19]\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  \n  ';
 
-    var url = [{
-        id: '13',
+    var url = [
+    /*
+    {
+        id: '16',
+        did: '19-05-18',
+        date: 'May 18-19, 2019 <br />Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Musing Blockchain',
+        title: 'The Proof-of-Work Chain',
+        post: blogpost11,
+        cite: blogcite11
+    },{
+        id: '15',
+        did: '19-05-17',
+        date: 'May 17, 2019',
+        author: 'by Thomas Maestas, MA',
+        cat3: '',
+        title: '',
+        post: blogpost13,
+        cite: blogcite13
+    },
+    {
+        id: '14',
         did: '19-05-18',
         date: 'May 18-19, 2019 <br />Weekend',
         author: 'by Thomas Maestas, MA',
@@ -9158,7 +9219,7 @@ var bloggerMay19 = function bloggerMay19() {
         title: '',
         post: blogpost11,
         cite: blogcite11
-    }, {
+    },{
         id: '13',
         did: '19-05-17',
         date: 'May 17, 2019',
@@ -9167,7 +9228,8 @@ var bloggerMay19 = function bloggerMay19() {
         title: '',
         post: blogpost13,
         cite: blogcite13
-    }, {
+    },
+    {
         id: '14',
         did: '19-05-16',
         date: 'May 16, 2019',
@@ -9176,7 +9238,7 @@ var bloggerMay19 = function bloggerMay19() {
         title: '',
         post: blogpost14,
         cite: blogcite14
-    }, {
+    },{
         id: '13',
         did: '19-05-15',
         date: 'May 15, 2019 <br /> Weekend',
@@ -9185,7 +9247,8 @@ var bloggerMay19 = function bloggerMay19() {
         title: '',
         post: blogpost13,
         cite: blogcite13
-    }, {
+    },
+    {
         id: '12',
         did: '19-05-14',
         date: 'May 14, 2019',
@@ -9194,7 +9257,9 @@ var bloggerMay19 = function bloggerMay19() {
         title: '',
         post: blogpost12,
         cite: blogcite12
-    }, {
+    },
+    */
+    {
         id: '11',
         did: '19-05-13',
         date: 'May 13, 2019',
