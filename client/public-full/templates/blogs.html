@@ -1,0 +1,57 @@
+<h3>Blogs</h3>
+<div class="read"  >
+    <style>
+        .read {
+            border:2px inset blue;
+            border-radius:5px;
+            text-align:left;
+            padding:10px;
+            background-color:rgba(255, 255, 255, 0.274); 
+        } 
+        .list {
+            
+            text-align:left;
+            list-style-type:none;
+        }
+        .filter {
+            padding:5px;
+            background-color:rgba(208, 204, 245, 0.486);
+        }
+        .categories {
+    max-height:80px;
+    overflow-y:scroll;
+    display:none;
+        }
+        .toggleBtn {
+            display:none;
+        }
+    </style> 
+        
+    <h2 class="subdailytech filter">Filters &nbsp;&nbsp; | &nbsp;&nbsp; Collections &nbsp;&nbsp; | &nbsp;&nbsp; Statistics</h2>
+     
+    Blogs: {{ blogs.summaryData.blogCount }}<br />
+        Category   {{ blogs.summaryData.readerCount }}<br />
+        Total Pages {{ blogs.summaryData.grandTotalMinutes }} 
+    
+    <h2 class="subdailytech filter ">All Blogs</h2>
+    <div>
+        <ul>
+            <li  class="list"  class="list" ng-repeat="blog in blogs.allBlogs">{{ blog.title }} - {{ blog.author }}
+                <a href="/EditBlog/{{ blog.blog_id }}"> | Edit</a>
+                <a ng-click="blogs.deleteBlog(blog.blog_id)" href=""> | Delete</a>
+            </li>
+        </ul>
+    </div> 
+    <a href="/AddBlog">Add New Blog</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+    <a href="/EditBlog/{{ blogs.currentUser.lastBlogEdited.blog_id }}">Open Last Edited</a> 
+    <h4 class="subdailytech  filter ">All Categories</h4>
+    <div class="categories">
+        <ul>
+            <li class="list "  ng-repeat="reader in blogs.allReaders">{{ reader.name }} - {{ blogs.getBadge(reader.totalMinutesRead) }}</li>
+        </ul>
+    </div> 
+    <div>
+        {{ blogs.favoriteBlog }}
+    </div>
+    
+    </div>

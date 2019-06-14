@@ -43,8 +43,8 @@
   <base href="/">  
   <link href="dist/app.css" rel="stylesheet" />
 
-  <script src="dist/js/d3/d3v4.min.js"></script>
-<script src="dist/scripts/jquery.2.1.min.js"></script>
+  <script src="dist/js/vendor/d3v4.min.js"></script>
+<script src="dist/js/vendor/jquery.2.1.min.js"></script>
  <!--<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   ></script>--> 
@@ -112,7 +112,7 @@
                   <div    class="map0"></div>    
               <div    class="map0"></div>   
             </div> 
-            <script src="dist/planets.js"></script>
+            <script src="dist/js/planets.js"></script>
                 <div class="card-header" ng-class="" > 
 
                     <div ng-view class="view"></div>  
@@ -340,9 +340,9 @@ frameborder="0"></iframe>
   </script>
   
 <script type="text/javascript">
-d3.json("world_countries.json", draw);
+d3.json("data/world_countries.json", draw);
 </script>
- <script src="dist/force.js"></script>
+ <script src="dist/js/force.js"></script>
   <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
   <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
 
@@ -377,9 +377,9 @@ d3.json("world_countries.json", draw);
       });
     </script>
     -->  
-  <script src="dist/js/lib/tether.min.js"></script>
-  <script src="dist/js/lib/popper.min.js"></script>
-  <script src="dist/js/lib/bootstrap.min.js"></script>
+  <script src="dist/js/vendor/tether.min.js"></script>
+  <script src="dist/js/vendor/popper.min.js"></script>
+  <script src="dist/js/vendor/bootstrap.min.js"></script>
   
  
     
@@ -390,16 +390,16 @@ d3.json("world_countries.json", draw);
 <script src="app.js"></script>
   
 
-<script src="dist/daily-nav.js"></script> 
-<script src="books/IndexController.js"></script>
-<script src="blogs/BlogsController.js"></script>
-<script src="books/BooksController.js"></script>
-<script src="books/CatsController.js"></script>
- <script src="books/ArchivesController.js"></script> 
-<script src="books/AddBookController.js"></script>
-<script src="books/EditBookController.js"></script>
-<script src="blogs/AddBlogController.js"></script>
-<script src="blogs/EditBlogController.js"></script>
+<script src="dist/js/daily-nav.js"></script> 
+<script src="controllers/books/IndexController.js"></script>
+<script src="controllers/blogs/BlogsController.js"></script>
+<script src="controllers/books/BooksController.js"></script>
+<script src="controllers/books/CatsController.js"></script>
+ <script src="controllers/books/ArchivesController.js"></script> 
+<script src="controllers/books/AddBookController.js"></script>
+<script src="controllers/books/EditBookController.js"></script>
+<script src="controllers/blogs/AddBlogController.js"></script>
+<script src="controllers/blogs/EditBlogController.js"></script>
 <script src="services/dataService.js"></script>
 <script src="services/loggerService.js"></script>
 <script src="services/constantService.js"></script>

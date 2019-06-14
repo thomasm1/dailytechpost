@@ -22,18 +22,102 @@ https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hop
     https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
  
 https://phys.org/news/2019-02-scientists-magnet.html
-   */ 
-  /*
+
+   */  
+var blogpost30 = `
+
+<p class="firstparagraph">Substituting one material for another when in a pinch invites a panoply of complications when the quality of substitute materials vary by geographical and political borders ... <br />
+  <img src="dist/img/metal.jpg"  width="400"  class="zoom" />
+</p>
+
+<p class="quote">Electronics manufacturers could be among the first to feel the full brunt of the trade war. The industry is perhaps uniquely global: Chips made in Oregon or Texas are shipped to a plant in Mexico to be attached to circuit boards made in China alongside capacitors made in Vietnam. It is not unheard-of for a product or its components to cross the Pacific three or even four times before showing up on retail shelves. 
+But nearly a year later, the trade war shows no sign of cooling off. So ControlTek, the electronics manufacturer that Mr. LaFrazia runs near Portland, is taking steps to protect itself, a strategic shift that has been repeated in boardrooms and executive suites around the world in recent weeks.
+<br /><br /> 
+“We’re very much at the end of the whip getting thrown around,” Mr. LaFrazia said.
+It was also unclear which products were subject to tariffs. Mr. LaFrazia, a 54-year-old Air Force veteran, recalled spending hours poring over an online list of tariff codes to figure out which applied to his parts. When he called the manufacturers, they often didn’t know where they fell in the government’s taxonomy of tradable goods. Even the government’s experts can get confused — ControlTek recently had a shipment of parts delayed for 12 days because customs officials thought they contained aluminum that was subject to tariffs. (They didn’t.)<sup>1</sup></p>
+ 
+
+`;
+
+var blogcite30 = `
+<p>1. <a  target="_blank" href="https://www.nytimes.com/2019/05/30/business/economy/trump-tariff-manufacturer.html">https://www.nytimes.com/2019/05/30/business/economy/trump-tariff-manufacturer.html</a> 
+</p>
+
+<p><a  target="_blank" href="https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247">https://markets.businessinsider.com/news/stocks/apple-stock-price-slides-trade-war-tensions-overshadow-product-launches-2018-9-1027522247</a> 
+</p> 
+
+`;
+
+   var blogpost29 = `
+  <p class="firstparagraph">My <a href="#09-11-19">September 11th post</a> last year touched on global tech's dependence on rare earth materials  ... and again, the trade war begins to take its toll:
+  </p>
+  
+  <p class="quote">Against a backdrop of mounting concern over the long-running trade dispute between the US and China, which stands to choke global growth, Beijing signalled that exports of rare-earth elements to the US could be curtailed.
+  <br /><br />Chinese media reports, including the People’s Daily, the flagship newspaper of the Communist party, raised the prospect of the crackdown, which would stand to hit American companies involved in electronics, car production and defence.
+
+  Analysts said China handles roughly 80% of US imports of rare earths and that high-tech manufacturers could see their profits crippled by the measures.<sup></sup></p> `;
+  
+  var blogcite29 = `  
+<p><a  target="_blank" href="https://www.theguardian.com/business/2019/may/29/global-markets-fall-as-china-prepares-to-hit-back-at-us-in-trade-war">https://www.theguardian.com/business/2019/may/29/global-markets-fall-as-china-prepares-to-hit-back-at-us-in-trade-war</a> 
+</p>
+
+`;
+  var blogpost18 = ` 
+  
+  <p class="firstparagraph"> 
+  </p>
+  
+  <p class="quote">In a surprise bit of weekend news that could have major implications on the smartphone market, Reuters reports that “Google has suspended business with Huawei that requires the transfer of hardware, software, and technical services except those publicly available via open source licensing.”
+  <br /><br />
+  Translation: Huawei can no longer implement a full-fledged version of Android, losing access to Google services and more. Instead, it’ll only be allowed to use the open source components of Android. That means no Google Play Store, no Gmail, no YouTube – at least not without major workarounds. This presumably affects future devices; it’s not clear what effect it will have on current ones.<sup></sup></p>
+
+  
+`;
+  var blogcite18 = `  
+  
+  <p><a  target="_blank" href="https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/">https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/</a> 
+  </p>
+  
+
+`;
+  var blogpost17 = ` 
+  
+<p class="firstparagraph"> 
+</p>
+
+<p class="quote">Quantum computers won’t replace today’s traditional computers, but they will become mainstream within five years, a top executive in charge of emerging technologies at International Business Machines Corp. predicted.
+
+Speaking at The Wall Street Journal’s Future of Everything Festival Wednesday, Arvind Krishna, senior vice president of cloud and cognitive software, predicted that with quantum computing, batteries could last “a thousand times longer” and airplanes could become lighter.
+
+“All of these use cases, I think, will get solved in a few years,” Mr. Krishna said. “Pharmaceuticals and drug discovery is a much harder problem.”
+
+Quantum computers have the potential to sort through a vast number of possible solutions—more than the number of atoms in the universe—with the calculations being completed as fast as a fraction of a second.
+<br /><br />
+Responding to criticism from researchers that the U.S. may be falling behind China and the European Union to invest in quantum computing, Mr. Krishna said the U.S. is currently slightly ahead but does need to invest more. China is constructing a $10 billion research center for quantum applications. The European Union announced in 2016 that it is creating a €1 billion effort on four areas of quantum technology including computing and communication.
+
+Mr. Krishna, who also oversees the integration of IBM’s $33 billion acquisition of Red Hat Inc. said he expects the deal—IBM’s largest acquisition to date—to close around June. The company has received approval from the U.S. Department of Justice for the deal, and is now awaiting approval from the European Union.
+<br /><br />
+Asked about restructuring after the acquisition is completed, Mr. Krishna said that it wouldn’t result in any job cuts at Red Hat.
+“This is a value deal, not about cost synergy. They [Red Hat] run on multiple public clouds. It’s got to be preserved,” he said.
+In the public cloud space, IBM trails rivals Amazon Inc. and Microsoft Corp. IBM ranked fifth in the world for public cloud-infrastructure service in 2017, according to data from Gartner Inc., behind Amazon, Microsoft, Alibaba Group Holding Inc. and Google Inc.
+<br /><br />
+But Mr. Krishna said the acquisition creates a big opportunity for IBM to expand in the so-called hybrid cloud space where customers run some software in their own data centers but also use cloud services.  “I’m not trying to catch up to Amazon and Microsoft,” he said. “They are going down the path of public cloud and we are going to be hybrid. There is so much investment that’s already happening and there is so much data that can’t sit on the public cloud. I believe there is space for all of us,” he said. <sup>1</sup></p>
+  `;
+    var blogcite17 = `  
+  
+<p><a  target="_blank" href="https://www.wsj.com/articles/ibm-software-exec-predicts-quantum-computers-will-become-mainstream-in-five-years-11558548160">https://www.wsj.com/articles/ibm-software-exec-predicts-quantum-computers-will-become-mainstream-in-five-years-11558548160</a> 
+</p>
+  `;
+
 var blogpost16 = ` 
 <p class="firstparagraph"> 
 </p>
 
-<p class="quote">In a surprise bit of weekend news that could have major implications on the smartphone market, Reuters reports that “Google has suspended business with Huawei that requires the transfer of hardware, software, and technical services except those publicly available via open source licensing.”
-<br /><br />
-Translation: Huawei can no longer implement a full-fledged version of Android, losing access to Google services and more. Instead, it’ll only be allowed to use the open source components of Android. That means no Google Play Store, no Gmail, no YouTube – at least not without major workarounds. This presumably affects future devices; it’s not clear what effect it will have on current ones.<sup></sup></p>
+<p class="quote"> 
+<br /><br /> <sup></sup></p>
 `;
   var blogcite16 = `  
-<p><a  target="_blank" href="https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/">https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/</a> 
+<p><a  target="_blank" href=""></a> 
 </p>
 
 `;
@@ -88,9 +172,7 @@ var blogpost12 = `
 <p><a  target="_blank" href=""></a> 
 </p>
 
-`;
-
-*/
+`; 
   var blogpost11 = ` 
   <p class="firstparagraph">The <i>global quest</i> for Satoshi Nakamoto's identity now reveals an interesting new plot twist. Contrasting with my  May 4th and 5th post articles, this theory appears to hold water ... 
   </p> 
@@ -224,7 +306,7 @@ Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, bu
     var blogpost3 = `
     <p class="firstparagraph">Rekognition, a premier AWS service, shines among a few dozen other AI software resources, not to mention Platforms-as-a-Service, yet not without controversy: On the one hand, AI algorithms necessarily reflect the biases of its origin lab. On the other hand, Providers like AWS' democratizing access to every researcher, professional, and student the unlimited use of sophisticated and expensive AI resources; thus canceling out any potential bias through the diversity of individuals' and teams' participation.  
     <br /><br />
-    <img   class="zoom" src="//s3.amazonaws.com/tmm-nov/data/img/rekognition.jpg">  
+    <img   class="zoom" src="https://s3.amazonaws.com/tmm-nov/img/rekognition.jpg">  
     <br /><br />
     At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
 	
@@ -312,17 +394,55 @@ Some police agencies have in recent years run facial-recognition searches agains
   
   `; 
 
-    var url = [ 
-        /*
+    var url = [  
+        {
+          id: '30',
+          did: '19-05-30',
+          date: 'May 30, 2019 <br />Weekend',
+          author: 'by Thomas Maestas, MA',
+          cat3: 'Web Dev Affairs',
+          title: 'All\'s Fair in War and Peace, but Not in Trade! Part II: <br />Material Substitutes',
+          post: blogpost30,
+          cite: blogcite30
+      },
+      {
+          id: '29',
+          did: '19-05-29',
+          date: 'May 29, 2019 <br />Weekend',
+          author: 'by Thomas Maestas, MA',
+          cat3: 'Web Dev Affairs',
+          title: 'All\'s Fair in War and Peace, but Not in Trade! Part I: <br />When the Dogs of War take a Bite out of Tech',
+          post: blogpost29,
+          cite: blogcite29
+      },
+        {
+            id: '18',
+            did: '19-05-21',
+            date: 'May 21, 2019 ',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Web Dev Affairs',
+            title: 'The Politics of Tech',
+            post: blogpost18,
+            cite: blogcite18
+        },{
+            id: '17',
+            did: '19-05-20',
+            date: 'May 20, 2019',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Quantum Data',
+            title: 'Procrastinating a Quantum Leap are We?',
+            post: blogpost17,
+            cite: blogcite17
+        },
         {
             id: '16',
             did: '19-05-18',
             date: 'May 18-19, 2019 <br />Weekend',
             author: 'by Thomas Maestas, MA',
-            cat3: 'Musing Blockchain',
-            title: 'The Proof-of-Work Chain',
-            post: blogpost11,
-            cite: blogcite11
+            cat3: '',
+            title: '',
+            post: blogpost16,
+            cite: blogcite16
         },{
             id: '15',
             did: '19-05-17',
@@ -330,27 +450,8 @@ Some police agencies have in recent years run facial-recognition searches agains
             author: 'by Thomas Maestas, MA',
             cat3: '',
             title: '',
-            post: blogpost13,
-            cite: blogcite13
-        },
-        {
-            id: '14',
-            did: '19-05-18',
-            date: 'May 18-19, 2019 <br />Weekend',
-            author: 'by Thomas Maestas, MA',
-            cat3: '',
-            title: '',
-            post: blogpost11,
-            cite: blogcite11
-        },{
-            id: '13',
-            did: '19-05-17',
-            date: 'May 17, 2019',
-            author: 'by Thomas Maestas, MA',
-            cat3: '',
-            title: '',
-            post: blogpost13,
-            cite: blogcite13
+            post: blogpost15,
+            cite: blogcite15
         },
         {
             id: '14',
@@ -364,7 +465,7 @@ Some police agencies have in recent years run facial-recognition searches agains
         },{
             id: '13',
             did: '19-05-15',
-            date: 'May 15, 2019 <br /> Weekend',
+            date: 'May 15, 2019 ',
             author: 'by Thomas Maestas, MA',
             cat3: '',
             title: '',
@@ -381,7 +482,6 @@ Some police agencies have in recent years run facial-recognition searches agains
             post: blogpost12,
             cite: blogcite12
         },
-        */ 
         {
             id: '11',
             did: '19-05-13',
