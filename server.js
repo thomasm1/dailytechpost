@@ -12,9 +12,9 @@ var blogs = require('./server/routes/blogs');
 
 var app = express();
 
-// VIEW
-app.set('views', path.join(__dirname, '/server/views'));
-app.set('view engine', 'jade');
+// // VIEW
+// app.set('views', path.join(__dirname, '/server/views'));
+// app.set('view engine', 'jade');
 
 app.use(favicon(path.join(__dirname, 'client/public/favicon.ico')));
 app.use(logger('dev'));

@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
       path: path.resolve(__dirname, 'client/public/dist'),
-    filename: 'bundle-tmm.js'
+    filename: 'bundle-daily.js'
   },
   module: {
     loaders: [{

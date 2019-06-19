@@ -1,27 +1,6 @@
 var bloggerMay19 = function () {
     /*
-    https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
 
-    https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
-
-    https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
-
-    https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
-
-    https://media.consensys.net/18-predictions-for-2019-7a376ea7bd4b
-
-
-
-    https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
-
-https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a
-
-
-    https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
-
-    https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
- 
-https://phys.org/news/2019-02-scientists-magnet.html
 
    */  
 var blogpost30 = `

@@ -1,8 +1,0 @@
-[debug] [2018-12-10T04:55:16.972Z] ----------------------------------------------------------------------
-[debug] [2018-12-10T04:55:16.975Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tm\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
-[debug] [2018-12-10T04:55:16.975Z] CLI Version:   6.1.2
-[debug] [2018-12-10T04:55:16.975Z] Platform:      win32
-[debug] [2018-12-10T04:55:16.975Z] Node Version:  v8.9.1
-[debug] [2018-12-10T04:55:16.976Z] Time:          Sun Dec 09 2018 21:55:16 GMT-0700 (Mountain Standard Time)
-[debug] [2018-12-10T04:55:16.976Z] ----------------------------------------------------------------------
-[debug] 
