@@ -1,6 +1,74 @@
 var bloggerMay19 = function () {
     /*
 
+june 14
+https://www.cnet.com/news/calls-to-break-up-amazon-google-facebook-and-apple-get-louder/
+DOJ-->
+Last week, The Wall Street Journal reported that the FTC and Justice Department reached a new agreement, with the FTC gaining authority to review Amazon and Facebook, while the Justice Department is able to look into Apple and Google. This deal is seen as an early step in these agencies digging into potential anticompetitive practices by all four companies.
+consumer view-->
+That could result in a flourishing of new services and features for consumers, giving them a lot more choices for e-commerce, social media and search. That change could also sow confusion, as sites that used to be part of the same company no longer work as seamlessly together.
+
+
+    June 11, 2019
+    Most cross-border payments are done through the Society for Worldwide Interbank Financial Telecommunication, or Swift, a Belgian organization started in 1973 that counts 11,000 financial institutions as members. But its legacy system has inefficiencies. Because few banks are connected directly to each other, a payment that originates in Kansas City and is bound for Nairobi might have to stop at banks in New York and London before reaching its final destination, with each bank extracting a fee. 
+
+https://www.forbes.com/sites/jeffkauflin/2019/06/11/visa-targets-swift-with-new-blockchain-product-for-global-money-transfers/
+Visa seems to do everything on a massive scale. Last year, it moved $11.2 trillion over its payment rails across more than 200 countries for purchases ranging from cups of coffee to cars. Now it’s eyeing an even bigger market: cross-border, business-to-business (B2B) transactions, where banks transfer money on behalf of corporate customers. Visa says it’s entering a $125 trillion market and using distributed ledger technology—software where transactions must be confirmed by multiple computers on a network to be considered final—to make these payments faster, cheaper and more transparent.
+
+Phalen’s team created Visa B2B Connect using distributed ledger technology because it provides more transparency and traceability than a typical state-of-the-art database, he says. They used Hyperledger Fabric, the blockchain software developed in part by IBM and hosted by Linux, to build it, and it has taken two years to launch. Unlike cryptocurrency-based blockchains including Bitcoin and Ethereum, Visa’s product isn’t decentralized, since the payments giant has complete control over it. Visa made Forbes’ first-ever Blockhain 50 list earlier this year.
+
+
+june 6
+Unlike the original vision spelled out in the Nakamoto paper, these initiatives don’t use a proof-of-work system for verification, but are permissioned blockchains in which each participant is identified and known—and therefore accountable—to the others in the blockchain network. Essentially this verifies members before transactions take place, much as Global Entry and TSA Pre do at airline security checkpoints.
+https://www.barrons.com/articles/blockchain-moves-beyond-the-walled-garden-stage-51559820635
+ IBM hath been busy ...
+ "To understand what the future of blockchain could look like, it’s helpful to look at IBM ’s recent initiatives to build communities around peer-to-peer networks in financial services, identity and supply chain.
+
+ The company is also working with SecureKey to develop a digital identity system in Canada. The system is designed to allow consumers to develop digital identities that they can control. 
+
+ Perhaps the greatest opportunity for blockchain technology is in helping to streamline supply chains. In fact, a 2013 study by the World Economic Forum found that reducing back-office friction in international trade could increase GDP by nearly 5%. IBM has two major efforts in this area. It partnered with Maersk to create TradeLens, which aims to digitize global shipping and created Food Trust that focuses on agricultural products."
+
+ June 4 - Near-Zero Latency Apps and Bots
+ And then there's the question of what type of 5G signals are available. Verizon, like AT&T, has focused on what's known as millimeter wave spectrum, which is fast but has a limited range and can have trouble with walls and even foliage. Carriers in Europe and Asia, along with Sprint and T-Mobile in the US, have been using sub-6GHz airwaves for slower but more reliable coverage.
+ https://www.cnet.com/news/verizon-5g-lab-tunes-up-robots-and-medical-tech-heading-your-way/
+The bigger goal, Palmer said, is to enable whole new experiences -- in education, for instance, transporting someone who's studying glaciers to an actual glacier via virtual reality or a holographic experience that's not possible today.
+
+ When the next generation matures eventually, a whole array of technologies will be able to blossom in ways that today's 4G networks don't allow -- cars communicating with each other and with sensors on a highway or city streets at speed, for instance. The internet of things becomes a lot more than just you checking in with your Nest thermostat or an August smart doorbell. Soldiers and first responders get better, faster situational awareness.
+
+ June 3 - The $6000 computadora
+ https://www.cnet.com/news/the-new-mac-pro-makes-its-debut-at-wwdc-2019-starts-at-5999-available-fall-2019-apple/
+
+ June 2 - Steer Clear of TapeWorms: Practice Good Hygiene
+ https://blogs.technet.microsoft.com/msrc/2019/05/30/a-reminder-to-update-your-systems-to-prevent-a-worm/
+ EternalBlue Timeline
+
+Almost two months passed between the release of fixes for the EternalBlue vulnerability and when ransomware attacks began. Despite having nearly 60 days to patch their systems, many customers had not.
+
+A significant number of these customers were infected by the ransomware.
+
+  /// Quantum::: mainstream
+  AUTHOR::: Yun-Hee Kim at yun-hee.kim@wsj.com
+  Dow Jones & Company, Inc. All Rights Reserved.
+  Quantum computers won’t replace today’s traditional computers, but they will become mainstream within five years, a top executive in charge of emerging technologies at International Business Machines Corp. predicted.
+  Speaking at The Wall Street Journal’s Future of Everything Festival Wednesday, Arvind Krishna, senior vice president of cloud and cognitive software, predicted that with quantum computing, batteries could last “a thousand times longer” and airplanes could become lighter.
+  “All of these use cases, I think, will get solved in a few years,” Mr. Krishna said. “Pharmaceuticals and drug discovery is a much harder problem.”
+  Quantum computers have the potential to sort through a vast number of possible solutions—more than the number of atoms in the universe—with the calculations being completed as fast as a fraction of a second.
+  Responding to criticism from researchers that the U.S. may be falling behind China and the European Union to invest in quantum computing, Mr. Krishna said the U.S. is currently slightly ahead but does need to invest more. China is constructing a $10 billion research center for quantum applications. The European Union announced in 2016 that it is creating a €1 billion effort on four areas of quantum technology including computing and communication.
+  Mr. Krishna, who also oversees the integration of IBM’s $33 billion acquisition of Red Hat Inc. said he expects the deal—IBM’s largest acquisition to date—to close around June. The company has received approval from the U.S. Department of Justice for the deal, and is now awaiting approval from the European Union.
+  Asked about restructuring after the acquisition is completed, Mr. Krishna said that it wouldn’t result in any job cuts at Red Hat.
+  “This is a value deal, not about cost synergy. They [Red Hat] run on multiple public clouds. It’s got to be preserved,” he said.
+  In the public cloud space, IBM trails rivals Amazon Inc. and Microsoft Corp. IBM ranked fifth in the world for public cloud-infrastructure service in 2017, according to data from Gartner Inc., behind Amazon, Microsoft, Alibaba Group Holding Inc. and Google Inc.
+  But Mr. Krishna said the acquisition creates a big opportunity for IBM to expand in the so-called hybrid cloud space where customers run some software in their own data centers but also use cloud services.
+
+  “I’m not trying to catch up to Amazon and Microsoft,” he said. “They are going down the path of public cloud and we are going to be hybrid. There is so much investment that’s already happening and there is so much data that can’t sit on the public cloud. I believe there is space for all of us,” he said.
+  ///
+
+The use of the trapped ion technology puts Honeywell in rare company, since the most visible companies pursuing quantum computing, including IBM, Google, Intel, and Rigetti, are basing their hardware on semiconductor technology.
+June 1 - 
+https://www.nextplatform.com/2019/05/28/honeywell-one-step-closer-to-universal-quantum-computer/
+In November, the company revealed it had started testing its first-generation qubit devices, followed in January by the claim that it had “demonstrated record-breaking high fidelity quantum operations” on its trapped-ion qubits. In March, it announced it had demonstrated “parallel operating zones” on the device, which it believes will provide faster execution and more flexible qubit connectivity.
+
+Honeywell’s attraction to trapped ion technology mirrors that of IonQ, namely that these atomic level structures are totally uniform, naturally resistant to error-producing noise, and can be connected to one another in different configurations at runtime. While this technology doesn’t have the decades-long history and proven scalability of semiconductors, at this point, it offers the most interesting alternative for solid-state quantum computing.
 
    */  
 var blogpost30 = `
