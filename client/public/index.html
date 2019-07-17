@@ -20,7 +20,13 @@
    name="description" />
   <meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests" name="keywords"
   />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> 
   <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
   <meta content="Thomas M. Maestas" name="author" />
   <title>OUR DAILY TECH</title>  
   <base href="/">  
@@ -313,4 +319,13 @@ frameborder="0"></iframe>
 <script src="services/currentUser.js"></script> 
 </body>
 
+<script>
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/service-worker.js')
+		.then((registration) => {
+			console.log('SW registered');
+			})
+		.catch((err) => {
+      console.log('SW error', err); }); } 
+      </script>
 </html>
