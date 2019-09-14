@@ -1,27 +1,27 @@
 var bloggerMarch19 = function() {
-/*
-https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
+    /*
+    https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
 
-https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
+    https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
 
-https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
+    https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
 
-https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
+    https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
 
-https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
+    https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
 
-https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
+    https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
 
-https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
-
-
+    https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
 
 
-https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
 
-https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
- 
-*/
+
+    https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
+
+    https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
+     
+    */
 
     var blogpost3 = `
     <p class="firstparagraph">AWS Rekognition, a premier service among dozens of others, is like all AI software along with a Platform-as-a-Service necessarily reflects the biases of its origin lab. Alternately, AWS' democratizing access to every student, professional, and researcher the unlimited use of sophisticated and expensive AI resources;thus hedging any potential bias to diverse individual's and team's participation.  At the heart of these healthy public debates, it's the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI's algorithm bears the imprint of the creator's intentions: </p>
@@ -33,10 +33,10 @@ Some police agencies have in recent years run facial-recognition searches agains
     </p>
     <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>
 	`
-    
 
-   
- var   blogcite3 = ` 
+
+
+    var blogcite3 = ` 
  
 	<p>1.
 	<a href="https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a" target="_blank">https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a</a>
@@ -75,10 +75,10 @@ Some police agencies have in recent years run facial-recognition searches agains
   JavaScript</p>
   
 	`
-    
 
-   
-    var   blogcite2 = ` 
+
+
+    var blogcite2 = ` 
      
        
       
@@ -106,10 +106,10 @@ Some police agencies have in recent years run facial-recognition searches agains
   </p>
   
 	`
-    
 
-   
-    var   blogcite1 = ` 
+
+
+    var blogcite1 = ` 
   <p>1.
   <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>
   </p>
@@ -187,7 +187,7 @@ Some police agencies have in recent years run facial-recognition searches agains
     }
 
     console.log('blogger-march19');
-    // console.log(angular.toJson(url));
+    console.log(angular.toJson(url));
 };
 
 bloggerMarch19();

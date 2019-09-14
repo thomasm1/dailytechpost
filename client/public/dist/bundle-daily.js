@@ -10249,18 +10249,16 @@ var bloggerDec = function bloggerDec() {
 
   var blogcite155 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers">https://www.bloomberg.com/news/articles/2018-12-21/facebook-is-said-to-develop-stablecoin-for-whatsapp-transfers</a></p>  \n  ';
   /*
-   var blogpost154 =   ` 
-   <p class="firstparagraph">
-   </p>
-   <p class="quote">
-  
+  var blogpost154 =   ` 
+  <p class="firstparagraph">
+  </p>
+  <p class="quote">
   <sup>1</sup>
-   </p>
-   <p> `; 
-   
-   var blogcite154 = `
-   <p class="cite">1. <a target="_blank" href=" "> </a></p>  
-   `;
+  </p>
+  <p> `; 
+    var blogcite154 = `
+  <p class="cite">1. <a target="_blank" href=" "> </a></p>  
+  `;
   */
   var blogpost153 = ' \n  <p class="firstparagraph">Law and Justice in the tech world reveals <i>a new world without judicial precedent</i> making for new curiosities in Case Law with increasing frequency. Different facets of personal data, whether shopping, movie-watching, chatting, selfie-posting, all new nuances and new social-legal dilemmas fall to the best discretions of Facebook, Google, Amazon and other Tech Greats...  \n  </p>\n  <p class="quote">\n  When you buy something on Amazon, the odds are, you aren\u2019t buying it from Amazon at all. Plansky is one of 6 million sellers on Amazon Marketplace, the company\u2019s third-party platform. They are largely hidden from customers, but behind any item for sale, there could be dozens of sellers, all competing for your click. This year, Marketplace sales were almost double those of Amazon retail itself, according to Marketplace Pulse, making the seller platform alone the largest e-commerce business in the US. \n\n  Amazon is far from the only tech company that, having annexed a vast sphere of human activity, finds itself in the position of having to govern it. But Amazon is the only platform that has a $175 billion prize pool tempting people to game it, and the company must constantly implement new rules and penalties, which in turn, become tools for new abuses, which require yet more rules to police. The evolution of its moderation system has been hyper-charged. While Mark Zuckerberg mused recently that Facebook might need an analog to the Supreme Court to adjudicate disputes and hear appeals, Amazon already has something like a judicial system \u2014 one that is secretive, volatile, and often terrifying. \n<sup>1</sup>\n  </p>\n  <p>So, when commercial and social transactions drift away from  traditional political-judicial-legal jurisdictions, where--rather what--is binding authority? \n  </p> ';
 
@@ -10366,18 +10364,19 @@ var bloggerDec = function bloggerDec() {
     title: 'A Virtual Balkanization of International Currency',
     post: blogpost155,
     blogcite: blogcite155
-  }, /*
-     {
-     id: '154',
-     did: '12-20-18',
-     date: 'December 20, 2018 ',
-     author: 'by Thomas Maestas',
-     cat3: 'Musing Blockchain',
-     title: ' ',
-     post: blogpost154,
-     blogcite: blogcite154
-     },  
-     */
+  },
+  /*
+        {
+          id: '154',
+          did: '12-20-18',
+          date: 'December 20, 2018 ',
+          author: 'by Thomas Maestas',
+          cat3: 'Musing Blockchain',
+          title: ' ',
+          post: blogpost154,
+          blogcite: blogcite154
+        },  
+        */
   {
     id: '153',
     did: '12-19-18',
@@ -10517,7 +10516,7 @@ var bloggerDec = function bloggerDec() {
   }
 
   console.log('blogger-dec');
-  // console.log(angular.toJson(url)); 
+  console.log(angular.toJson(url));
 };
 bloggerDec();
 

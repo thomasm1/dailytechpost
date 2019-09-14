@@ -1,6 +1,12 @@
-var bloggerMay19 = function () {
+var bloggerMay19 = function() {
     /*
-
+august  16 - 
+https://bitcoinist.com/bakkt-wins-regulatory-approval-to-launch-bitcoin-futures/
+ ----
+  
+ The tables have turned ..
+ -
+ and now the launchlad
 june 14
 https://www.cnet.com/news/calls-to-break-up-amazon-google-facebook-and-apple-get-louder/
 DOJ-->
@@ -70,8 +76,8 @@ In November, the company revealed it had started testing its first-generation qu
 
 Honeywell’s attraction to trapped ion technology mirrors that of IonQ, namely that these atomic level structures are totally uniform, naturally resistant to error-producing noise, and can be connected to one another in different configurations at runtime. While this technology doesn’t have the decades-long history and proven scalability of semiconductors, at this point, it offers the most interesting alternative for solid-state quantum computing.
 
-   */  
-var blogpost30 = `
+   */
+    var blogpost30 = `
 
 <p class="firstparagraph">Substituting one material for another when in a pinch invites a panoply of complications when the quality of substitute materials vary by geographical and political borders ... <br />
   <img src="dist/img/metal.jpg"  width="400"  class="zoom" />
@@ -86,7 +92,7 @@ It was also unclear which products were subject to tariffs. Mr. LaFrazia, a 54-y
 
 `;
 
-var blogcite30 = `
+    var blogcite30 = `
 <p>1. <a  target="_blank" href="https://www.nytimes.com/2019/05/30/business/economy/trump-tariff-manufacturer.html">https://www.nytimes.com/2019/05/30/business/economy/trump-tariff-manufacturer.html</a> 
 </p>
 
@@ -95,7 +101,7 @@ var blogcite30 = `
 
 `;
 
-   var blogpost29 = `
+    var blogpost29 = `
   <p class="firstparagraph">My <a href="#09-11-19">September 11th post</a> last year touched on global tech's dependence on rare earth materials  ... and again, the trade war begins to take its toll:
   </p>
   
@@ -103,13 +109,13 @@ var blogcite30 = `
   <br /><br />Chinese media reports, including the People’s Daily, the flagship newspaper of the Communist party, raised the prospect of the crackdown, which would stand to hit American companies involved in electronics, car production and defence.
 
   Analysts said China handles roughly 80% of US imports of rare earths and that high-tech manufacturers could see their profits crippled by the measures.<sup></sup></p> `;
-  
-  var blogcite29 = `  
+
+    var blogcite29 = `  
 <p><a  target="_blank" href="https://www.theguardian.com/business/2019/may/29/global-markets-fall-as-china-prepares-to-hit-back-at-us-in-trade-war">https://www.theguardian.com/business/2019/may/29/global-markets-fall-as-china-prepares-to-hit-back-at-us-in-trade-war</a> 
 </p>
 
 `;
-  var blogpost18 = ` 
+    var blogpost18 = ` 
   
   <p class="firstparagraph"> 
   </p>
@@ -120,14 +126,14 @@ var blogcite30 = `
 
   
 `;
-  var blogcite18 = `  
+    var blogcite18 = `  
   
   <p><a  target="_blank" href="https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/">https://thenextweb.com/insider/2019/05/20/report-google-breaks-up-with-huawei-cutting-access-to-android-services-and-apps/</a> 
   </p>
   
 
 `;
-  var blogpost17 = ` 
+    var blogpost17 = ` 
   
 <p class="firstparagraph"> 
 </p>
@@ -156,19 +162,19 @@ But Mr. Krishna said the acquisition creates a big opportunity for IBM to expand
 </p>
   `;
 
-var blogpost16 = ` 
+    var blogpost16 = ` 
 <p class="firstparagraph"> 
 </p>
 
 <p class="quote"> 
 <br /><br /> <sup></sup></p>
 `;
-  var blogcite16 = `  
+    var blogcite16 = `  
 <p><a  target="_blank" href=""></a> 
 </p>
 
 `;
-var blogpost15 = ` 
+    var blogpost15 = ` 
 <p class="firstparagraph"> 
 </p>
 
@@ -176,15 +182,15 @@ var blogpost15 = `
 
 It describes the word “block” as the vehicle for a bundle bitcoin transactions. Then, these blocks of are linked together, forming a “chain” of “blocks.” <br /><br /><sup>1</sup></p>
 `;
-  var blogcite15 = `  
+    var blogcite15 = `  
 
  
 <p>1. <a target="_blank" href="https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords">https://www.coindesk.com/bitcoin-and-blockchain-the-tangled-history-of-two-tech-buzzwords</a> 
 </p>
 `;
- 
- 
-  var blogpost14 = ` 
+
+
+    var blogpost14 = ` 
   <p class="firstparagraph"> 
   </p>
  
@@ -196,31 +202,31 @@ It describes the word “block” as the vehicle for a bundle bitcoin transactio
 `;
 
 
-var blogpost13 = ` 
+    var blogpost13 = ` 
 <p class="firstparagraph"> 
 </p>
 
 <p class="quote"> <sup></sup></p>
 `;
-  var blogcite13 = `  
+    var blogcite13 = `  
 <p><a  target="_blank" href=""></a> 
 </p>
 
 `;
 
 
-var blogpost12 = ` 
+    var blogpost12 = ` 
 <p class="firstparagraph"> 
 </p>
 
 <p class="quote"> <sup></sup></p>
 `;
-  var blogcite12 = `  
+    var blogcite12 = `  
 <p><a  target="_blank" href=""></a> 
 </p>
 
-`; 
-  var blogpost11 = ` 
+`;
+    var blogpost11 = ` 
   <p class="firstparagraph">The <i>global quest</i> for Satoshi Nakamoto's identity now reveals an interesting new plot twist. Contrasting with my  May 4th and 5th post articles, this theory appears to hold water ... 
   </p> 
 <p class="quote">
@@ -230,7 +236,7 @@ One of the most enduring mysteries of modern times has produced another enthrall
 <p>1.<a target="_blank"  href="https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/">https://news.bitcoin.com/satoshi-nakamoto-could-be-criminal-mastermind-paul-le-roux/</a> 
 </p> 
 `;
-var blogpost10 = ` 
+    var blogpost10 = ` 
 <p class="quote"><i>Bitcoin is like gold in many ways. Like gold, Bitcoin cannot simply be created arbitrarily. Gold must be mined out of the ground, and Bitcoin must be mined via digital means. Linked with this process is the stipulation set forth by the founders of Bitcoin that, like gold, it have a limited and finite supply. In fact, there are only 21 million Bitcoins that can be mined in total. Once miners have unlocked this many Bitcoins, the planet's supply will essentially be tapped out, unless Bitcoin's protocol is changed to allow for a larger supply. All confirmed Bitcoin transactions are recorded in the blockchain. The blockchain is described as a shared public ledger on which the entire Bitcoin network relies.</i> <sup>1</sup></p>
 <p class="firstparagraph">Sometime near 2020, the rules of crypto-logic begin to bend ... 
 </p>
@@ -238,7 +244,7 @@ var blogpost10 = `
 
 
 `;
-  var blogcite10 = `  
+    var blogcite10 = `  
 
   <p>1.
   <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>https://www.cnbc.com/2019/04/28/bitcoin-bull-tom-lee-says-new-crypto-highs-likely-by-2020.html
@@ -246,8 +252,8 @@ var blogpost10 = `
 <p>1.
 <a href="https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined/" target="_blank">https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined/</a> 
 </p>
-`  
-  var blogpost9= ` 
+`
+    var blogpost9 = ` 
   <p class="firstparagraph">Linus Torvalds' great contribution now extends to Microsoft 10, rather than the past couple year's emulated mounting. 
   </p>
  
@@ -263,7 +269,7 @@ This, along with 2019 Google Chromebooks' command-line Linux development environ
 </p>
  
 `;
-  var blogpost8 = ` 
+    var blogpost8 = ` 
   <p class="firstparagraph"> 
   </p>
  
@@ -363,7 +369,7 @@ Channeling our adoration of Satoshi Nakamoto toward respect is a bygone hope, bu
 Some police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> 
     </p>
     <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now-g5 23 more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>
-	`; 
+	`;
     var blogcite3 = ` 
  
 	<p>1.
@@ -439,29 +445,28 @@ Some police agencies have in recent years run facial-recognition searches agains
   </a>
   </p>
   
-  `; 
+  `;
 
-    var url = [  
+    var url = [{
+            id: '30',
+            did: '19-05-30',
+            date: 'May 30, 2019 <br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Web Dev Affairs',
+            title: 'All\'s Fair in War and Peace, but Not in Trade! Part II: <br />Material Substitutes',
+            post: blogpost30,
+            cite: blogcite30
+        },
         {
-          id: '30',
-          did: '19-05-30',
-          date: 'May 30, 2019 <br />Weekend',
-          author: 'by Thomas Maestas, MA',
-          cat3: 'Web Dev Affairs',
-          title: 'All\'s Fair in War and Peace, but Not in Trade! Part II: <br />Material Substitutes',
-          post: blogpost30,
-          cite: blogcite30
-      },
-      {
-          id: '29',
-          did: '19-05-29',
-          date: 'May 29, 2019 <br />Weekend',
-          author: 'by Thomas Maestas, MA',
-          cat3: 'Web Dev Affairs',
-          title: 'All\'s Fair in War and Peace, but Not in Trade! Part I: <br />When the Dogs of War take a Bite out of Tech',
-          post: blogpost29,
-          cite: blogcite29
-      },
+            id: '29',
+            did: '19-05-29',
+            date: 'May 29, 2019 <br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Web Dev Affairs',
+            title: 'All\'s Fair in War and Peace, but Not in Trade! Part I: <br />When the Dogs of War take a Bite out of Tech',
+            post: blogpost29,
+            cite: blogcite29
+        },
         {
             id: '18',
             did: '19-05-21',
@@ -471,7 +476,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             title: 'The Politics of Tech',
             post: blogpost18,
             cite: blogcite18
-        },{
+        }, {
             id: '17',
             did: '19-05-20',
             date: 'May 20, 2019',
@@ -490,7 +495,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             title: '',
             post: blogpost16,
             cite: blogcite16
-        },{
+        }, {
             id: '15',
             did: '19-05-17',
             date: 'May 17, 2019',
@@ -509,7 +514,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             title: '',
             post: blogpost14,
             cite: blogcite14
-        },{
+        }, {
             id: '13',
             did: '19-05-15',
             date: 'May 15, 2019 ',
@@ -538,7 +543,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             title: 'Satoshi \'Le Roux\' Nakamoto?',
             post: blogpost11,
             cite: blogcite11
-        },{
+        }, {
             id: '10',
             did: '19-05-11',
             date: 'May 11-12, 2019 <br /> Weekend',
@@ -680,7 +685,7 @@ Some police agencies have in recent years run facial-recognition searches agains
     }
 
     console.log('blogger-may-19');
-     console.log(angular.toJson(url));
+    console.log(angular.toJson(url));
 };
 
 bloggerMay19();
