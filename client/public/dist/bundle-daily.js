@@ -9544,6 +9544,12 @@ function outsideClick(e) {
 
 var bloggerMay19 = function bloggerMay19() {
     /*
+    august  16 - 
+    https://bitcoinist.com/bakkt-wins-regulatory-approval-to-launch-bitcoin-futures/
+    ----
+     The tables have turned ..
+    -
+    and now the launchlad
     june 14
     https://www.cnet.com/news/calls-to-break-up-amazon-google-facebook-and-apple-get-louder/
     DOJ-->

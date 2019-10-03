@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="app"  xml:lang="en">
+<html lang="en" ng-app="app" xml:lang="en">
 
 <head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-114267362-1');
-</script>
-  <meta charset="utf-8" />
-  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="Technology Blog: Musing Blockchain | Web Dev Affairs | Sociology Tomorrow! Latest Developments in Technology Culture, 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114267362-1');
+    </script>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Technology Blog: Musing Blockchain | Web Dev Affairs | Sociology Tomorrow! Latest Developments in Technology Culture, 
   Technology News, Tech Tools, Tech Talk Too! I explore daily tech topics on one of my three tech
-   blog topics: Blockchain, Web Dev, and Sociology in Tech"
-   name="description" />
-  <meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests" name="keywords"
-  />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="theme-color" content="#ffffff">
-  <meta content="Thomas M. Maestas" name="author" />
-  <title>OUR DAILY TECH</title>  
-  <base href="/">  
-  <link href="dist/app.css" rel="stylesheet" />
+   blog topics: Blockchain, Web Dev, and Sociology in Tech" name="description" />
+    <meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests" name="keywords" />
+    <link rel="manifest" href="/manifest.json">
+    <meta content="Thomas M. Maestas" name="author" />
+    <title>OUR DAILY TECH</title>
+    <base href="/">
+    <link href="dist/app.css" rel="stylesheet" />
 
-  <script src="dist/js/vendor/d3v4.min.js"></script>
-<script src="dist/js/vendor/jquery.2.1.min.js"></script>
+    <script src="dist/js/vendor/d3v4.min.js"></script>
+    <script src="dist/js/vendor/jquery.2.1.min.js"></script>
 
- 
+
 </head>
 
 
@@ -43,40 +38,40 @@
 <body class="with-top-navbar">
 
 
-<div id="dailyNav"></div>
+    <div id="dailyNav"></div>
 
-  <div class="container" id="foreground"   >
-    <!-- /.container -->
+    <div class="container" id="foreground">
+        <!-- /.container -->
 
-    <div class="row">
-      <div class="col-md-12" id="view">
+        <div class="row">
+            <div class="col-md-12" id="view">
 
 
 
-        <div class="container pt-4">
-          <div class="row">
-            <div class="col-lg-3"  >
-              <div class="card card-profile">
+                <div class="container pt-4">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card card-profile">
 
-                <div id="planets">
-                  <form class="form">
-                    <br />
-                    <input type="radio" name="reference" id="ref-annulus">
-                    <label for="ref-annulus">Orbit✨📦 </label>
-                    <br>
-                    <input type="radio" name="reference" id="ref-planet" checked>
-                    <label for="ref-planet">Planets</label>
-                    <br>
-                    <input type="radio" name="reference" id="ref-sun">
-                    <label for="ref-sun">Sun</label><span>🔥</span>
-             
-                  </form>
-                  
+                                <div id="planets">
+                                    <form class="form">
+                                        <br />
+                                        <input type="radio" name="reference" id="ref-annulus">
+                                        <label for="ref-annulus">Orbit📦 </label>
+                                        <br>
+                                        <input type="radio" name="reference" id="ref-planet" checked>
+                                        <label for="ref-planet">Planets✨</label>
+                                        <br>
+                                        <input type="radio" name="reference" id="ref-sun">
+                                        <label for="ref-sun">Sun</label><span>🔥</span>
 
-                </div>
-                 
-                
-                <button id="mmodalBtn" class="mbutton title   hover" id="b-header">
+                                    </form>
+
+
+                                </div>
+
+
+                                <button id="mmodalBtn" class="mbutton title   hover" id="b-header">
                   <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
                         <a class="cover  ">SOCIOLOGY TOMORROW!</a>
                    </h6>
@@ -93,239 +88,236 @@
                     <a class="cover">MUSING BLOCKCHAIN</a>
                   </h6> 
                 </button>
-              
-              <div id="map0" >
-                  <div    class="map0"></div>    
-              <div    class="map0"></div>   
-            </div> 
-            <script src="dist/js/planets.js"></script>
-                <div class="card-header" ng-class="" > 
 
-                    <div ng-view class="view"></div>  
-                </div>
-                
-       
-              </div>
-            </div>
+                                <div id="map0">
+                                    <div class="map0"></div>
+                                    <div class="map0"></div>
+                                </div>
+                                <script src="dist/js/planets.js"></script>
+                                <div class="card-header" ng-class="">
 
-            <div class="col-lg-6">
-              <div id="msimpleModal" class="mmodal">
-                <div class="mmodal-content">
-                  <span class="mcloseBtn"> &nbsp;&times; &nbsp; </span>
-                  <div class="mmodal-header">
+                                    <div ng-view class="view"></div>
+                                </div>
 
-                  </div>
-                    <div class="mod-behave ">
-                    <div id="top-mod"></div>
-                    
-                    <div id="paragraph-may19-mod"></div>
-                    <div id="paragraph-jan-mod"></div>
-                    <div id="paragraph-dec-mod"></div>
-                    <div id="paragraph-nov-mod"></div>
-                    <div id="paragraph-oct-mod"></div>
-                    <div id="paragraph-sep-mod"></div>
-                    <div id="paragraph-aug-mod"></div>
-                    <div id="paragraph-july-mod"></div>
-                    <div id="paragraph-june-mod"></div>
-                    <div id="paragraph-may-mod"></div>
-                    <div id="paragraph-apr-mod"></div>
-                    <div id="paragraph-mar-mod"></div>
-                    <div id="paragraph-feb-mod"></div>
 
-                  </div>
-                  <div class="mmodal-footer">
-                    <p>&copy; 2018 All Rights Reserved. &nbsp;|
-                      <a href="http://www.thomasmaestas.net" style="color:darkblue;text-decoration:none;">thomasmaestas.net &nbsp;|</a>
-                      <a href="mailto:thomas@ourdailytech.com" style="color:darkblue;text-decoration:none;">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div id="msimpleModal" class="mmodal">
+                                <div class="mmodal-content">
+                                    <span class="mcloseBtn"> &nbsp;&times; &nbsp; </span>
+                                    <div class="mmodal-header">
+
+                                    </div>
+                                    <div class="mod-behave ">
+                                        <div id="top-mod"></div>
+
+                                        <div id="paragraph-may19-mod"></div>
+                                        <div id="paragraph-jan-mod"></div>
+                                        <div id="paragraph-dec-mod"></div>
+                                        <div id="paragraph-nov-mod"></div>
+                                        <div id="paragraph-oct-mod"></div>
+                                        <div id="paragraph-sep-mod"></div>
+                                        <div id="paragraph-aug-mod"></div>
+                                        <div id="paragraph-july-mod"></div>
+                                        <div id="paragraph-june-mod"></div>
+                                        <div id="paragraph-may-mod"></div>
+                                        <div id="paragraph-apr-mod"></div>
+                                        <div id="paragraph-mar-mod"></div>
+                                        <div id="paragraph-feb-mod"></div>
+
+                                    </div>
+                                    <div class="mmodal-footer">
+                                        <p>&copy; 2018 All Rights Reserved. &nbsp;|
+                                            <a href="http://www.thomasmaestas.net" style="color:darkblue;text-decoration:none;">thomasmaestas.net &nbsp;|</a>
+                                            <a href="mailto:thomas@ourdailytech.com" style="color:darkblue;text-decoration:none;">
                         thomas@ourdailytech.com &nbsp;|</a>
-                      <a href="http://www.thomasmaestas.net/profile.html#contactme" title="Contact Information: thomasmaestas.net">
+                                            <a href="http://www.thomasmaestas.net/profile.html#contactme" title="Contact Information: thomasmaestas.net">
                         Contact Information</a>
-                    </p>
-                  </div>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <ul class="list-group media-list media-list-stream mb-4" id="center-col">
+
+                                <li>
+                                    <div id="tech">
+
+                                        <div class="mod-behave ">
+                                            <div id="top"></div>
+
+                                            <div id="paragraph-may19"></div>
+                                            <div id="paragraph-jan"></div>
+                                            <div id="paragraph-dec"></div>
+                                            <div id="paragraph-nov"></div>
+                                            <div id="paragraph-oct"></div>
+                                            <div id="paragraph-sep"></div>
+                                            <div id="paragraph-aug"></div>
+                                            <div id="paragraph-july"></div>
+                                            <div id="paragraph-june"></div>
+                                            <div id="paragraph-may"></div>
+                                            <div id="paragraph-apr"></div>
+                                            <div id="paragraph-mar"></div>
+                                            <div id="paragraph-feb"></div>
+
+                                        </div>
+                                        <!-- blog-text.js  BEGINS HERE -->
+
+
+                                        <div id="febarchive">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card mb-4 ">
+                                <div class="card-block">
+
+                                    <div id="marsreader" class="marsreader">
+
+                                        <pre id="reqObject"></pre>
+                                        <img id="apod_img_id" class="zoom" />
+
+                                        <iframe id="apod_vid_id" type="text/html" width="426" height="262" frameborder="0"></iframe>
+
+                                        <p id="copyright"></p>
+                                        <h6 class="dailytech">Twython NASA API </h6>
+                                        <h5 id="apod_title"></h5>
+                                        <p id="apod_explaination"></p>
+                                        <pre id="returnObject"></pre>
+
+                                    </div>
+
+                                    <div class="media-body thesis">
+
+                                        <div id="message">
+
+                                        </div>
+
+                                    </div>
+                                    <div id="force">
+                                        <canvas class="canvas" height="700px"></canvas>
+
+                                    </div>
+
+                                    <div id="d-button">
+                                        <div class="button-wrap">
+                                            <div class="contain">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                            </div>
+                                            <div class="contain">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                            </div>
+                                        </div>
+
+                                        🔥🔥🔥🔥🔥🔥🔥
+                                        <button class="btn btn-primary">
+                                            <a href="https://ourdailytech.net/_For_Cat_Eyes_Only_/" target="_blank"><h6>Fiction Publications:</h6> 
+                                            <em>For Cat Eyes Only</em> <br />
+                                        <em>The Casperian Ancestries</em></a>
+                                        </button> 🔥🔥🔥🔥🔥🔥🔥🔥🔥
+                                    </div>
+                                    <!--end dbutton-->
+
+
+
+                                </div>
+
+                                <link href="dist/calc.css" rel="stylesheet" />
+                                <div id="calc"></div>
+                                <script src="dist/calc.js"></script>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- end card card-link-list -->
 
                 </div>
-              </div> 
-
-              
-              <ul class="list-group media-list media-list-stream mb-4" id="center-col"> 
-             
-                <li>
-                  <div id="tech">
-
-                    <div class="mod-behave ">
-                      <div id="top"></div>
-                      
-                      <div id="paragraph-may19"></div>
-                      <div id="paragraph-jan"></div>
-                      <div id="paragraph-dec"></div>
-                      <div id="paragraph-nov"></div>
-                      <div id="paragraph-oct"></div>
-                      <div id="paragraph-sep"></div>
-                      <div id="paragraph-aug"></div>
-                      <div id="paragraph-july"></div>
-                      <div id="paragraph-june"></div>
-                      <div id="paragraph-may"></div>
-                      <div id="paragraph-apr"></div>
-                      <div id="paragraph-mar"></div>
-                      <div id="paragraph-feb"></div>
-
-                    </div>
-                    <!-- blog-text.js  BEGINS HERE -->
-
-
-                    <div id="febarchive">
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
 
             </div>
-
-            <div class="col-lg-3" >
-              <div class="card mb-4 ">
-                <div class="card-block"> 
-
-                  <div id="marsreader" class="marsreader" >
-
-                    <pre     id="reqObject"></pre>
-                    <img id="apod_img_id"   class="zoom" /> 
-                    
-  <iframe id="apod_vid_id" type="text/html" width="426" height="262" 
-frameborder="0"></iframe>
-
-                    <p id="copyright"></p>
-                    <h6 class="dailytech">Twython NASA API </h6>
-                    <h5 id="apod_title"></h5>
-                    <p id="apod_explaination"></p>
-                        <pre id="returnObject"></pre>
-         
-                    </div>
-                  
-                    <div class="media-body thesis">
-
-    <div id="message">
-    
-    </div>
-
-                    </div> 
-                    <div id="force"> 
-                        <canvas class="canvas" height="700px"></canvas>
-   
-                      </div>
-       
- <div   id="d-button">  
-          <div class="button-wrap">
-            <div class="contain">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            </div> 
-            <div class="contain">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            <img src="icon.png">
-            </div> 
-          </div>
-        </div><!--end dbutton-->
-
-                   
-
-                  </div>
-                  <div class="twython">
-                      <h4 class="subdailytech white">
-                     Twython NASA </h4> 
-                 </div>
-                </div>
-              </div>
-
-
-
-            </div>
-            <!-- end card card-link-list -->
-
-          </div>
-
         </div>
-      </div>
     </div>
 
-  </div>
-  <!-- /.container -->
+    </div>
+    <!-- /.container -->
 
 
-  <div class="card-block" id="footer">
+    <div class="card-block" id="footer">
 
-    <a class="nav-link" href="/Books"   ><small>_</small></a>
-    <a class="nav-link" href="/posts">_</a>
-    <p>Copyright &copy; 2018, 2019 All Rights Reserved. &nbsp; | &nbsp;
-      <a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
+        <a class="nav-link" href="/Books"><small>_</small></a>
+        <a class="nav-link" href="/posts">_</a>
+        <p>Copyright &copy; 2018, 2019 All Rights Reserved. &nbsp; | &nbsp;
+            <a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
         thomasmaestas.net</a>&nbsp; | &nbsp;
-      <img src="dist/img/paypal.PNG" alt="PayPal Emblem" height="
+            <img src="dist/img/paypal.PNG" alt="PayPal Emblem" height="
 	   15" />
-      <a href="https://www.paypal.com/paypalme/ThomasMaestas" style="color:white;text-decoration:none;">
+            <a href="https://www.paypal.com/paypalme/ThomasMaestas" style="color:white;text-decoration:none;">
         &nbsp; Blog contribution appreciated!</a>
-    </p>
-  </div>
+        </p>
+    </div>
 
-  </div>
-  </div>
-  </div> 
- 
- <script src="dist/js/force.js"></script>
-  <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
-  <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+    </div>
+    </div>
+    </div>
+
+    <script src="dist/js/force.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js"></script>
- 
-  🔥🔥🔥🔥
-  <script src="dist/js/vendor/tether.min.js"></script>
-  <script src="dist/js/vendor/popper.min.js"></script>
-  <script src="dist/js/vendor/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js"></script>
 
-    
-<script src="dist/bundle-daily.js"></script> 
-<script src="app.js"></script>
-  
+    <script src="dist/js/vendor/tether.min.js"></script>
+    <script src="dist/js/vendor/popper.min.js"></script>
+    <script src="dist/js/vendor/bootstrap.min.js"></script>
 
-<script src="dist/js/daily-nav.js"></script> 
-<script src="controllers/books/IndexController.js"></script>
-<script src="controllers/blogs/BlogsController.js"></script>
-<script src="controllers/books/BooksController.js"></script>
-<script src="controllers/books/CatsController.js"></script>
- <script src="controllers/books/ArchivesController.js"></script> 
-<script src="controllers/books/AddBookController.js"></script>
-<script src="controllers/books/EditBookController.js"></script>
-<script src="controllers/blogs/AddBlogController.js"></script>
-<script src="controllers/blogs/EditBlogController.js"></script>
-<script src="services/dataService.js"></script>
-<script src="services/loggerService.js"></script>
-<script src="services/constantService.js"></script>
-<script src="services/badgeService.js"></script>
-<script src="services/bookLoggerInterceptor.js"></script>
-<script src="services/BooksResource.js"></script>
-<script src="services/currentUser.js"></script> 
+
+    <script src="dist/bundle-daily.js"></script>
+    <script src="app.js"></script>
+
+
+    <script src="dist/js/daily-nav.js"></script>
+    <script src="controllers/books/IndexController.js"></script>
+    <script src="controllers/blogs/BlogsController.js"></script>
+    <script src="controllers/books/BooksController.js"></script>
+    <script src="controllers/books/CatsController.js"></script>
+    <script src="controllers/books/ArchivesController.js"></script>
+    <script src="controllers/books/AddBookController.js"></script>
+    <script src="controllers/books/EditBookController.js"></script>
+    <script src="controllers/blogs/AddBlogController.js"></script>
+    <script src="controllers/blogs/EditBlogController.js"></script>
+    <script src="services/dataService.js"></script>
+    <script src="services/loggerService.js"></script>
+    <script src="services/constantService.js"></script>
+    <script src="services/badgeService.js"></script>
+    <script src="services/bookLoggerInterceptor.js"></script>
+    <script src="services/BooksResource.js"></script>
+    <script src="services/currentUser.js"></script>
 </body>
 
-<script>
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('/service-worker.js')
-		.then((registration) => {
-			console.log('SW registered');
-			})
-		.catch((err) => {
-      console.log('SW error', err); }); } 
-      </script>
 </html>
