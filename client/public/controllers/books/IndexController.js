@@ -36,8 +36,7 @@
             console.log('Success: ' + greeting);
         }, function(reason) {
             console.log('Failed: ' + reason);
-        });
-        zzz
+        }); 
 
     }
 

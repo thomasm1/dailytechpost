@@ -9514,6 +9514,7 @@ __webpack_require__(344);
 __webpack_require__(345);
 __webpack_require__(346);
 __webpack_require__(347);
+__webpack_require__(348);
 
 var modal = document.getElementById('msimpleModal');
 var modalBtn = document.getElementById('mmodalBtn');
@@ -9826,7 +9827,7 @@ var bloggerMay19 = function bloggerMay19() {
         cite: blogcite2
     }, {
         id: '1',
-        did: '19-03-01',
+        did: '19-05-01',
         date: 'May 1, 2019',
         author: 'by Thomas Maestas, MA',
         cat3: 'A.I.Now.',
@@ -9856,6 +9857,86 @@ bloggerMay19();
 
 /***/ }),
 /* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bloggerMarch19 = function bloggerMarch19() {
+    /*
+    https://medium.com/s/teamhuman/the-right-kind-of-ai-with-kenric-mcdowell-7481b239a0cb
+      https://medium.com/hummingbird-ventures/a-brief-history-of-blockchain-an-investors-perspective-387c440ad11c
+      https://medium.com/@thinkoutsidetheblox/why-bitcoin-and-crypto-have-no-future-4f95980bb774
+      https://medium.com/mit-technology-review/explainer-what-is-quantum-communication-527bb0f5d987
+      https://media.consensys.net/18-predictions-for-2018-7a376ea7bd4b
+      https://medium.com/s/welcome-to-blockchain/what-could-blockchain-do-for-healthcare-59c17245448e
+      https://medium.com/mit-technology-review/russia-wants-to-cut-itself-off-from-the-global-internet-heres-what-that-really-means-c6f8851987ca
+    
+      https://onezero.medium.com/computer-generated-faces-are-getting-real-b32e8902586d
+      https://medium.com/s/story/the-best-strategies-to-boost-your-willpower-5eb1b2d9af2b
+     
+    */
+
+    var blogpost3 = '\n    <p class="firstparagraph">AWS Rekognition, a premier service among dozens of others, is like all AI software along with a Platform-as-a-Service necessarily reflects the biases of its origin lab. Alternately, AWS\' democratizing access to every student, professional, and researcher the unlimited use of sophisticated and expensive AI resources;thus hedging any potential bias to diverse individual\'s and team\'s participation.  At the heart of these healthy public debates, it\'s the particular use-cases that exemplify the spectrum of the debate. For instance, policing practice by bot is a sure example, if not for the <i>RoboCop</i> Hollywood allure ... As always, the AI\'s algorithm bears the imprint of the creator\'s intentions: </p>\n\t\n\t<p class="quote"> \n\tBut Washington County also became ground zero for a high-stakes battle over the unregulated growth of policing by algorithm. Defense attorneys, artificial-intelligence researchers and civil rights experts argue that the technology could lead to the wrongful arrest of innocent people who bear only a resemblance to a video image. Rekognition\u2019s accuracy is also hotly disputed, and some experts worry that a case of mistaken identity by armed deputies could have dangerous implications, threatening privacy and people\u2019s lives.<br /><br />\n\nSome police agencies have in recent years run facial-recognition searches against state or FBI databases using systems built by contractors such as Cognitec, IDEMIA and NEC. But the rollout by Amazon has marked perhaps the biggest step in making the controversial face-scanning technology mainstream. Rekognition is easy to activate, requires no major technical infrastructure, and is offered to virtually anyone at bargain-barrel prices. Washington County spent about $700 to upload its first big haul of photos, and now, for all its searches, pays about $7 a month.<sup>1</sup> \n    </p>\n    <p>Whether government services or commercial enterprise, the landscape  is converting <i>en masse</i> the manual and the mundane to machine learning.  Public advocacy, now more than ever, can help direct A.I. technology and use toward a more society-friendly endeavor ...</p>\n\t';
+
+    var blogcite3 = ' \n \n\t<p>1.\n\t<a href="https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a" target="_blank">https://www.washingtonpost.com/technology/2019/04/30/amazons-facial-recognition-technology-is-supercharging-local-police/?noredirect=on&utm_source=pocket-newtab&utm_term=.8a8a1b75b94a</a>\n\t</p>\n    \n    ';
+
+    var blogpost2 = '\n  <p class="firstparagraph">Security, security, another day another platform risk, or risks from your device, or risks from transactions, Today&#39;s\n  headline buried beneath a techy jargon provides a glimpse of the rising threat of web-application-based hackery:\n  Cryptojacking.\n  <i>Coindesk</i> reports, &quot; Opera browser introduces cryptocurrency miner protection for smartphones ... &quot;</p>\n  \n  <p class="quote">Cryptocurrency miners can overload smartphones&#39; CPUs, forcing 100 percent usage and potentially causing a phone\n  to overheat. And the damage can sometimes be permanent. According to a ZDNet article, one trojan generated so much\n  heat in a phone, its battery became swollen, permanently damaging the phone. While excessive ads were one reason\n  for the heat generation, the main cause was that the phone&#39;s CPU was hijacked to mine for Monero.\n  <sup>1</sup>\n  </p>\n  \n  <p>The larger issue here is that the lines between trusted mobile-app authorities, i.e., certified by Play Store or\n  Apple&#39;s is increasingly irrelevent. This is because an increasing number of app-users are ditching device-downloaded\n  apps, preferring for browser applications--hence, a much more appetizing market for the newest generation of blackhat\n  hackers, online thieves, peeping-toms, and other ill-wishers. There are a few driving factors for this issue--one\n  of which is the onset of Decentralized Applications (DAPPs), which use the\n  <i>browser</i> to interface between the Every-Day blockchain client/merchant/programmer and the actual byte-code of\n  the blockchain (via WEB).</p>\n  \n  <p>More importantly, the larger issue is that we live in an age in which the exclusive, native browser language since\n  1995, i.e. JavaScript. Security issues with browser-based apps were very low, because JavaScript never left the\n  browser, ever. Until 2009, Data, Servers were the domain of PHP, JAVA, Python, etc. or some other language for the\n  highly sensitive, dirty work of dipping into all that data sitting ontop of centralized servers around the world.\n  PHP wasn&#39;t easy, so power and responsibility usually followed with all the extra effort and expertise.</p>\n  \n  <p>2015 augured in the Node.js server-accessing (can create, read, update, and delete date) new-born capabilities of\n  JavaScript</p>\n  \n\t';
+
+    var blogcite2 = ' \n     \n       \n      \n  \n  <p>1.\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  ';
+    var blogpost1 = '\n  <p class="firstparagraph"> \n  <sup>2</sup>\n  </p>\n  \n  <p> </p>\n  \n  \n  <p class="quote"> \n  <sup>1</sup>\n  </p>\n  \n  <p>\n \n  </p>\n  \n\t';
+
+    var blogcite1 = ' \n  <p>1.\n  <a href="https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a" target="_blank">https://hackernoon.com/blockchains-dont-scale-not-today-at-least-but-there-s-hope-2cb43946551a</a>\n  </p>\n   \n  ';
+    var url = [{
+        id: '3',
+        did: '19-03-03',
+        date: 'March 3-4, 2018 <br /> Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Sociology Tomorrow!',
+        title: 'A Return to the Question of Guns, Germs, and Steel',
+        post: blogpost3,
+        cite: blogcite3
+    }, {
+        id: '2',
+        did: '19-03-02',
+        date: 'March 2, 2018',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Web Dev Affairs',
+        title: 'Widening Circles of Mobile-App Security Risks',
+        post: blogpost2,
+        cite: blogcite2
+    }, {
+        id: '1',
+        did: '19-03-01',
+        date: 'March 1, 2018',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Musing Blockchain',
+        title: 'Blockchain Sustainability Issues and The Double-Edged Sword',
+        post: blogpost1,
+        cite: blogcite1
+    }];
+
+    for (i = 0; i < url.length; i++) {
+        var cat = ' \n\t  <div id="' + url[i].did + '" class="blogDiv"> \n\t  <hr />  \n\t  <a href="#top"><button>Top</button></a>  \n\t  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n\t  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5> \n\t  <p id="author" class="  author">' + url[i].author + '</p>   \n\t  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n\t  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n\t  <br />\n\t  <div id="post">' + url[i].post + '\t  </div>\n      <div id="post">' + url[i].cite + '</div>\n\t  </div>';
+
+        document.getElementById("paragraph-march19").innerHTML += cat;
+    }
+
+    var i;
+    for (i = 0; i < url.length; i++) {
+        var catMod = '\n\t  <div id="' + url[i].did + '_mod" class="blogDivMod"> \n\t  <hr />  \n\t  <a href="#top-mod"><button>Top</button></a>   \n\t  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n\t  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n\t  <p id="author" class="  author">' + url[i].author + '</p>   \n\t  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n\t  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n\t  <br />\n      <div id="post">' + url[i].post + '</div>\n      <div id="post">' + url[i].cite + '</div>\n      \n\n\t  </div>';
+
+        document.getElementById("paragraph-march19-mod").innerHTML += catMod;
+    }
+
+    console.log('blogger-march19');
+    console.log(angular.toJson(url));
+};
+
+bloggerMarch19();
+
+/***/ }),
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9946,7 +10027,7 @@ var bloggerJan = function bloggerJan() {
 
   var blogcite16001 = '\n  <p class="cite">1. <a target="_blank" href="https://www.wired.com/story/new-horizons-first-photos-ultima-thule">https://www.wired.com/story/new-horizons-first-photos-ultima-thule</a></p>   \n  \n  ';
 
-  var blogpost160 = '<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. \nThe precise nature and origin of the blasts of radio waves is unknown. \nAmong the 13 fast radio bursts, known as FRBs, was a very unusual repeating signal, coming from the same source about 1.5 billion light years away. \nSuch an event has only been reported once before, by a different telescope. \n"Knowing that there is another suggests that there could be more out there," said Ingrid Stairs, an astrophysicist from the University of British Columbia (UBC).\n \n<sup>1</sup></p>\n  <p class="firstparagraph">Morse code across the Galaxies - what a concept! \n  </p>\n  <img src="dist/img/gettyimages-831502910.jpg" width="350" class="zoom" /><hr width="200"/>\n\n  <span style="float:right;">GETTY IMAGES</span>\n ';
+  var blogpost160 = '<p class="quote">Astronomers have revealed details of mysterious signals emanating from a distant galaxy, picked up by a telescope in Canada. \nThe precise nature and origin of the blasts of radio waves is unknown. \nAmong the 13 fast radio bursts, known as FRBs, was a very unusual repeating signal, coming from the same source about 1.5 billion light years away. \nSuch an event has only been reported once before, by a different telescope. \n"Knowing that there is another suggests that there could be more out there," said Ingrid Stairs, an astrophysicist from the University of British Columbia (UBC).\n \n<sup>1</sup></p>\n  <p class="firstparagraph">\n  Morse code across the Galaxies - what a concept! \n  </p>\n  <img src="dist/img/gettyimages-831502910.jpg" width="350" class="zoom" /><hr width="200"/>\n\n  <span style="float:right;">GETTY IMAGES</span>\n ';
 
   var blogcite160 = '\n  <p class="cite">1. <a target="_blank" href="https://www.bbc.com/news/science-environment-46811618">https://www.bbc.com/news/science-environment-46811618</a></p>  \n  ';
 
@@ -10206,21 +10287,21 @@ var bloggerJan = function bloggerJan() {
   var i;
   for (i = 0; i < url.length; i++) {
     var cat = ' \n    <div id="' + url[i].did + '" class="blogDiv"> \n    <hr />  \n    <a target="_blank" href="#top"><button>Top</button></a>  \n    <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n    <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5> \n    <p id="author" class="author">' + url[i].author + '</p>   \n    <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n    <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n    <br />\n    <div id="post">' + url[i].post + '\n    </div>\n    <div id="blogcite">' + url[i].blogcite + '\n    </div>';
-    document.getElementById("paragraph-jan").innerHTML += cat;
+    document.getElementById("paragraph-jan19").innerHTML += cat;
   }
 
   for (i = 0; i < url.length; i++) {
     var catMod = '\n  <div id="mod_' + url[i].did + '" class="blogDivMod"> \n  <hr />  \n  <a target="_blank" href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="author">' + url[i].author + '</p>   \n  <h6  id="date" class="chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
-    document.getElementById("paragraph-jan-mod").innerHTML += catMod;
+    document.getElementById("paragraph-jan19-mod").innerHTML += catMod;
   }
 
-  console.log('blogger-jan');
-  //  console.log(angular.toJson(url)); 
+  console.log('blogger-jan19');
+  console.log(angular.toJson(url));
 };
 bloggerJan();
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10527,7 +10608,7 @@ var bloggerDec = function bloggerDec() {
 bloggerDec();
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10902,7 +10983,7 @@ var bloggerNov = function bloggerNov() {
 bloggerNov();
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11178,7 +11259,7 @@ var bloggerOct = function bloggerOct() {
 bloggerOct();
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11466,7 +11547,7 @@ var bloggerSep = function bloggerSep() {
 bloggerSep();
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11746,7 +11827,7 @@ var bloggerAug = function bloggerAug() {
 bloggerAug();
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12060,7 +12141,7 @@ var bloggerJuly = function bloggerJuly() {
 bloggerJuly();
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12351,7 +12432,7 @@ var bloggerJune = function bloggerJune() {
 bloggerJune();
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12537,7 +12618,7 @@ var bloggerMay = function bloggerMay() {
 bloggerMay();
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12793,7 +12874,7 @@ var bloggerApr = function bloggerApr() {
 bloggerApr();
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13022,7 +13103,7 @@ var bloggerMar = function bloggerMar() {
 bloggerMar();
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13397,7 +13478,7 @@ var bloggerFeb = function bloggerFeb() {
 bloggerFeb();
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

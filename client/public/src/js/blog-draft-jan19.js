@@ -371,7 +371,8 @@ Such an event has only been reported once before, by a different telescope.
 "Knowing that there is another suggests that there could be more out there," said Ingrid Stairs, an astrophysicist from the University of British Columbia (UBC).
  
 <sup>1</sup></p>
-  <p class="firstparagraph">Morse code across the Galaxies - what a concept! 
+  <p class="firstparagraph">
+  Morse code across the Galaxies - what a concept! 
   </p>
   <img src="dist/img/gettyimages-831502910.jpg" width="350" class="zoom" /><hr width="200"/>
 
@@ -681,7 +682,7 @@ var i;
     </div>
     <div id="blogcite">${url[i].blogcite}
     </div>`;
-    document.getElementById("paragraph-jan").innerHTML += cat;
+    document.getElementById("paragraph-jan19").innerHTML += cat;
   }
 
   for (i = 0; i < url.length; i++) {
@@ -699,10 +700,10 @@ var i;
   </div>
  <div id="blogcite">${url[i].blogcite}
  </div>`;
-    document.getElementById("paragraph-jan-mod").innerHTML += catMod;
+    document.getElementById("paragraph-jan19-mod").innerHTML += catMod;
   }
   
-console.log('blogger-jan');
-   //  console.log(angular.toJson(url)); 
+console.log('blogger-jan19');
+     console.log(angular.toJson(url)); 
 };
 bloggerJan();
