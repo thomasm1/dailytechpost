@@ -28,7 +28,7 @@ exports.handler = async (event) => {
                 author,
                 cat3,
                 title,
-                post
+                post,
                 blogcite,
                } = daily
 

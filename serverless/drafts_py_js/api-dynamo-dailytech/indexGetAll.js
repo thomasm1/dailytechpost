@@ -1,4 +1,6 @@
 'use strict' 
+// thomasm1 acct; dailytech; 
+// 
 
 const AWS = require('aws-sdk');
 
@@ -12,7 +14,7 @@ exports.handler = async (event, context) => {
     let statusCode = 0;
 
     const params = {
-        TableName: "dailytech"
+        TableName: "posts"
     }
 
     try {

@@ -1,4 +1,6 @@
 'use strict';
+// docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html 
+
 const AWS = require('aws-sdk');
 const db = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 const uuid = require('uuid/v4');
@@ -6,41 +8,46 @@ const uuid = require('uuid/v4');
 const postsTable = process.env.POSTS_TABLE;
 
 //  response
-function response(statusCode, message) {
+function response(statusCode, body) {
   return {
     statusCode: statusCode,
-    body: JSON.stringify(message)
+    body: JSON.stringify(body)
   };
 }
 function sortByDate(a, b) {
-  if (a.createdAt > b.createdAt) {
+  if (a.did > b.did) {
     return -1;
   } else return 1;
 }
-//  post
+ 
 module.exports.createPost = (event, context, callback) => {
   const reqBody = JSON.parse(event.body);
 
-  if (
-    !reqBody.title ||
-    reqBody.title.trim() === '' ||
-    !reqBody.body ||
-    reqBody.body.trim() === ''
-  ) {
-    return callback(
-      null,
-      response(400, {
-        error: 'title and body required fields'
-      })
-    );
-  }
+  // if (
+  //   !reqBody.title ||
+  //   reqBody.title.trim() === '' ||
+  //   !reqBody.monthOrder ||
+  //   reqBody.monthOrder.trim() === ''
+  // ) {
+  //   return callback(
+  //     null,
+  //     response(400, {
+  //       error: 'title and date required fields'
+  //     })
+  //   );
+  // }
 
   const post = {
-    id: uuid(),
-    createdAt: new Date().toISOString(),
-    userId: 1,
+    id:   uuid(), //id,
+    // createdAt: new Date().toISOString(),
+    did: reqBody.did, 
+    monthOrder: reqBody.monthOrder,
     title: reqBody.title,
-    body: reqBody.body
+    date: reqBody.date,
+    author: reqBody.author,
+    cat3: reqBody.cat3, 
+    post: reqBody.post,
+    blogcite: reqBody.blogcite
   };
 
   return db
@@ -108,7 +115,7 @@ module.exports.getPost = (event, context, callback) => {
 module.exports.updatePost = (event, context, callback) => {
   const id = event.pathParameters.id;
   const reqBody = JSON.parse(event.body);
-  const { body, title } = reqBody;
+  const { monthOrder, title, date, author, cat3, post, blogcite } = reqBody;
 
   const params = {
     Key: {
@@ -116,14 +123,19 @@ module.exports.updatePost = (event, context, callback) => {
     },
     TableName: postsTable,
     ConditionExpression: 'attribute_exists(id)',
-    UpdateExpression: 'SET title = :title, body = :body',
-    ExpressionAttributeValues: {
-      ':title': title,
-      ':body': body
+    UpdateExpression: 'SET monthOrder = :monthOrder, title = :title, date = :date, author = :author, cat3 = :cat3, post = :post, blogcite = :blogcite',
+    ExpressionAttributeValues: {  
+    ':monthOrder':  monthOrder,
+    ':title':  title,
+    ':date':  date,
+    ':author':  author,
+    ':cat3':  cat3, 
+    ':post':  post,
+    ':blogcite': blogcite
     },
     ReturnValues: 'ALL_NEW'
   };
-  console.log('Updating');
+  console.log('post updated');
 
   return db
     .update(params)
@@ -147,22 +159,8 @@ module.exports.deletePost = (event, context, callback) => {
     .delete(params)
     .promise()
     .then(() =>
-      callback(null, response(200, { message: 'Post deleted successfully' }))
+      callback(null, response(200, { body: 'Post deleted successfully' }))
     )
     .catch((err) => callback(null, response(err.statusCode, err)));
 };
-
-  // return {
-  //   statusCode: 200,
-  //   body: JSON.stringify(
-  //     {
-  //       message: 'function executed successfully',
-  //       input: event,
-  //     },
-  //     null,
-  //     2
-  //   ),
-  // }; 
-       // Use if not using the http event with the LAMBDA-PROXY integration
-        // return { message: 'function executed successfully', event };
-// };
+ 
