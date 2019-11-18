@@ -1,6 +1,13 @@
 'use strict';
-// docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html 
+// dev-lambda-dailytech urls:
+// URL GET-ALL: https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/posts
+// URL GET-ONE:  https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/post/0113ce28-6087-4eeb-8bf8-acaf2acb0928 
 
+
+ // URL DELETE: https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/post/{id} /METHOD/DELETE
+// with body:
+ // URL POST:  https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/post
+ // URL UPDATE: https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/post/{id}
 const AWS = require('aws-sdk');
 const db = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 const uuid = require('uuid/v4');
@@ -164,3 +171,4 @@ module.exports.deletePost = (event, context, callback) => {
     .catch((err) => callback(null, response(err.statusCode, err)));
 };
  
+// docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html 
