@@ -24,8 +24,16 @@ def lambda_handler(event, context):
 # {
 #   "blogID": "$input.params('blogDate')"
 # }
-
-
+    # or... use integration request mapping, change JSON to XML:::
+'''
+#set($inputRoot = $input.path('$'))
+<xml>
+    <response>
+        <body>$inputRoot.body</body>
+        <statusCode>$inputRoot.statusCode</statusCode>
+    </response>
+</xml>
+'''
 ## TEST:
 # { 
 #   "blogID": "18-02-11" # did postspython

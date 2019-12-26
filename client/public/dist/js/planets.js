@@ -27,7 +27,7 @@
 						
 							.append("g")
 						
-								.attr("transform", "translate(" + width / 2 + "," + height /  3 + ")scale(.15)") 
+								.attr("transform", "translate(" + width / 2 + "," + height /  3 + ")scale(.25)") 
 								
 						
 							.append("g");
