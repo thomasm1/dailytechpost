@@ -1,5 +1,45 @@
+ 
 var bloggerMay19 = function() {
     
+
+    var blogpost33 = `
+
+<p class="firstparagraph">2019 ... The time and the timing of data privacy was a piecemeal race against the clock, against others' race against the clock, and of course the clock itself. If this sounds like a rigged game, wait until time (and timing and the temperature governing time) beckons to the best technologies availed by whom. </p>
+
+<p class="quote"> Countries around the world are investing billions into quantum computing research. Mainly, it’s because it has applications in artificial intelligence. Security and the search for unbreakable encryption in AI-enabled applications that house personal, business, and government data are prompting the investment into this new research area. 
+</p> 
+<p>This time it's more than a roll of the die and a few good hires. To the winner go the spoils, the losers work for the winners, and finally, not even time spent can't predict the winners!</p>
+<br />
+  <img src="https://miro.medium.com/max/1368/1*KfyV0MD7-knrEfCnoiPj6Q.png"  />
+
+`;
+
+    var blogcite33 = `
+     
+<p>1. <a  target="_blank" href="https://towardsdatascience.com/is-quantum-computing-a-dream-fd7385b1db56">https://towardsdatascience.com/is-quantum-computing-a-dream-fd7385b1db56</a> 
+</p>  
+`;
+
+
+    var blogpost32 = `
+
+<p class="firstparagraph">Gone are the days when the best and the brightest took home the honors and laurels. Today, an obsucre darkness rules over visibility into the advances that don't arise from obvious luck. Instead, networks of tech advances, some stolen, some spilled and some surmised from nothing form the new space race: The rocket head forms the algorithm and the expendible data form the solid rocket boosters. Period. 
+</p>
+
+<p class="quote"> We need quantum-resistant algorithms as soon as possible,” Grobman said.
+
+Cloud computing is sweeping through the industry, and it will enable the use of quantum computing. And that’s a problem, as quantum computers may be able to break encryption techniques such as RSA encryption much faster than traditional computers can. Typically, encryption techniques make it easy to encode data but hugely difficult to decode it without the use of a special key. The security is possible only because of the huge amount of time it takes for a classical computer to do the computations.
+<br /><br />  <sup>1</sup></p>  
+`;
+
+    var blogcite32 = `
+<p>1. <a  target="_blank" href="https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/">https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/</a> 
+</p>  
+`;
+
+
+
+
     var blogpost31 = `
 
 <p class="firstparagraph">Love at First Sight<br />It is better to have loved and lost than to not have loved at all...so say the lovers. But this article recounts the other side of the tale...
@@ -467,7 +507,28 @@ Some police agencies have in recent years run facial-recognition searches agains
   
   `;
 
-    var url = [{
+    var url = [
+        {
+            id: '33',
+            did: '20-03-04',
+            date: 'March 4, 2020<br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Quantum Data',
+            title: 'Moving your Dreams into Today, Part II: The Timing of Quantum Data and Privacy<br />',
+            post: blogpost33,
+            cite: blogcite33
+        },
+        {
+            id: '32',
+            did: '20-03-03',
+            date: 'March 3, 2020 <br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Sociology Today',
+            title: 'Moving your Dreams into Today, Part I: <br />',
+            post: blogpost32,
+            cite: blogcite32
+        },
+        {
             id: '31',
             did: '20-02-14',
             date: 'February 14, 2020<br />Weekend',

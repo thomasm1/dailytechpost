@@ -9555,6 +9555,14 @@ document.getElementById("dailyNav").innerHTML = "<nav class=\"navbar navbar-togg
 
 var bloggerMay19 = function bloggerMay19() {
 
+    var blogpost33 = '\n\n<p class="firstparagraph">2019 ... The time and the timing of data privacy was a piecemeal race against the clock, against others\' race against the clock, and of course the clock itself. If this sounds like a rigged game, wait until time (and timing and the temperature governing time) beckons to the best technologies availed by whom. </p>\n\n<p class="quote"> Countries around the world are investing billions into quantum computing research. Mainly, it\u2019s because it has applications in artificial intelligence. Security and the search for unbreakable encryption in AI-enabled applications that house personal, business, and government data are prompting the investment into this new research area. \n</p> \n<p>This time it\'s more than a roll of the die and a few good hires. To the winner go the spoils, the losers work for the winners, and finally, not even time spent can\'t predict the winners!</p>\n<br />\n  <img src="https://miro.medium.com/max/1368/1*KfyV0MD7-knrEfCnoiPj6Q.png"  />\n\n';
+
+    var blogcite33 = '\n     \n<p>1. <a  target="_blank" href="https://towardsdatascience.com/is-quantum-computing-a-dream-fd7385b1db56">https://towardsdatascience.com/is-quantum-computing-a-dream-fd7385b1db56</a> \n</p>  \n';
+
+    var blogpost32 = '\n\n<p class="firstparagraph">Gone are the days when the best and the brightest took home the honors and laurels. Today, an obsucre darkness rules over visibility into the advances that don\'t arise from obvious luck. Instead, networks of tech advances, some stolen, some spilled and some surmised from nothing form the new space race: The rocket head forms the algorithm and the expendible data form the solid rocket boosters. Period. \n</p>\n\n<p class="quote"> We need quantum-resistant algorithms as soon as possible,\u201D Grobman said.\n\nCloud computing is sweeping through the industry, and it will enable the use of quantum computing. And that\u2019s a problem, as quantum computers may be able to break encryption techniques such as RSA encryption much faster than traditional computers can. Typically, encryption techniques make it easy to encode data but hugely difficult to decode it without the use of a special key. The security is possible only because of the huge amount of time it takes for a classical computer to do the computations.\n<br /><br />  <sup>1</sup></p>  \n';
+
+    var blogcite32 = '\n<p>1. <a  target="_blank" href="https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/">https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/</a> \n</p>  \n';
+
     var blogpost31 = '\n\n<p class="firstparagraph">Love at First Sight<br />It is better to have loved and lost than to not have loved at all...so say the lovers. But this article recounts the other side of the tale...\n  <img src="dist/img/metal.jpg"  width="400"  class="zoom" />\n</p>\n\n<p class="quote"> \n<br /><br />  <sup>1</sup></p>\n \n\n';
 
     var blogcite31 = '\n<p>1. <a  target="_blank" href="https://www.businessinsider.my/love-amy-nyc-matchmaker-perfect-dating-profile-2020-2/">https://www.businessinsider.my/love-amy-nyc-matchmaker-perfect-dating-profile-2020-2</a> \n</p>\n\n\n';
@@ -9670,6 +9678,24 @@ var bloggerMay19 = function bloggerMay19() {
     var blogcite1 = '\n  \n  \n  <p>1. [Post article 2/22/19]\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  \n  ';
 
     var url = [{
+        id: '33',
+        did: '20-03-04',
+        date: 'March 4, 2020<br />Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Quantum Data',
+        title: 'Moving your Dreams into Today, Part II: The Timing of Quantum Data and Privacy<br />',
+        post: blogpost33,
+        cite: blogcite33
+    }, {
+        id: '32',
+        did: '20-03-03',
+        date: 'March 3, 2020 <br />Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Sociology Today',
+        title: 'Moving your Dreams into Today, Part I: <br />',
+        post: blogpost32,
+        cite: blogcite32
+    }, {
         id: '31',
         did: '20-02-14',
         date: 'February 14, 2020<br />Weekend',
