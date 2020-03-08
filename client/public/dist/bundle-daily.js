@@ -9554,7 +9554,12 @@ document.getElementById("dailyNav").innerHTML = "<nav class=\"navbar navbar-togg
 
 
 var bloggerMay19 = function bloggerMay19() {
+
+    var blogpost31 = '\n\n<p class="firstparagraph">Love at First Sight<br />It is better to have loved and lost than to not have loved at all...so say the lovers. But this article recounts the other side of the tale...\n  <img src="dist/img/metal.jpg"  width="400"  class="zoom" />\n</p>\n\n<p class="quote"> \n<br /><br />  <sup>1</sup></p>\n \n\n';
+
+    var blogcite31 = '\n<p>1. <a  target="_blank" href="https://www.businessinsider.my/love-amy-nyc-matchmaker-perfect-dating-profile-2020-2/">https://www.businessinsider.my/love-amy-nyc-matchmaker-perfect-dating-profile-2020-2</a> \n</p>\n\n\n';
     /*
+    
     august  16 - 
     https://bitcoinist.com/bakkt-wins-regulatory-approval-to-launch-bitcoin-futures/
     ----
@@ -9665,6 +9670,15 @@ var bloggerMay19 = function bloggerMay19() {
     var blogcite1 = '\n  \n  \n  <p>1. [Post article 2/22/19]\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  \n  ';
 
     var url = [{
+        id: '31',
+        did: '20-02-14',
+        date: 'February 14, 2020<br />Weekend',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Web Dev Affairs',
+        title: 'All\'s Fair in War and Peace, but Not in Trade! Part II: <br />Material Substitutes',
+        post: blogpost31,
+        cite: blogcite31
+    }, {
         id: '30',
         did: '19-05-30',
         date: 'May 30, 2019 <br />Weekend',
@@ -13557,7 +13571,7 @@ setTimeout(function () {
   //   $("#apod_title").text(result.title);
   // }
   // });
-}, 5000);
+}, 2500);
 
 /***/ })
 /******/ ]);

@@ -1,5 +1,25 @@
 var bloggerMay19 = function() {
+    
+    var blogpost31 = `
+
+<p class="firstparagraph">Love at First Sight<br />It is better to have loved and lost than to not have loved at all...so say the lovers. But this article recounts the other side of the tale...
+  <img src="dist/img/metal.jpg"  width="400"  class="zoom" />
+</p>
+
+<p class="quote"> 
+<br /><br />  <sup>1</sup></p>
+ 
+
+`;
+
+    var blogcite31 = `
+<p>1. <a  target="_blank" href="https://www.businessinsider.my/love-amy-nyc-matchmaker-perfect-dating-profile-2020-2/">https://www.businessinsider.my/love-amy-nyc-matchmaker-perfect-dating-profile-2020-2</a> 
+</p>
+
+
+`;
     /*
+    
 august  16 - 
 https://bitcoinist.com/bakkt-wins-regulatory-approval-to-launch-bitcoin-futures/
  ----
@@ -448,6 +468,16 @@ Some police agencies have in recent years run facial-recognition searches agains
   `;
 
     var url = [{
+            id: '31',
+            did: '20-02-14',
+            date: 'February 14, 2020<br />Weekend',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Web Dev Affairs',
+            title: 'All\'s Fair in War and Peace, but Not in Trade! Part II: <br />Material Substitutes',
+            post: blogpost31,
+            cite: blogcite31
+        },
+        {
             id: '30',
             did: '19-05-30',
             date: 'May 30, 2019 <br />Weekend',
