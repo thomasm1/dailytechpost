@@ -1,11 +1,8 @@
 var inputString = "";
 
-function updateString(value) {
-
-    inputString += value;
-
-    document.forms[0].input.value = inputString;
-
+function updateString(value) { 
+    inputString += value; 
+    document.forms[0].input.value = inputString; 
 }
 
 var innerform = document.querySelector("#calc");
@@ -77,7 +74,135 @@ innerform.innerHTML = `
     
     
     
-    </form>
+    </form>`;
+
+//////////////////////////////////////////////////////////
+            // CALCULATOR2 //
+/**
+ * Calculator function constructor.
+ * @constructor
+ */
+function Calculator() {
+  this.total = 0;
+}
+
+/**
+ * Adds value to current total. 
+ * @param {number} number
+ * @returns {*}
+ */
+Calculator.prototype.add = function (number) {
+  return this.total += number;
+};
+
+/**
+ * Subtracts number from current total. 
+ * @param {number} number
+ * @returns {*}
+ */
+Calculator.prototype.subtract = function (number) {
+  return this.total -= number;
+};
+
+/**
+ * Multiplies value to current total. 
+ * @param {number} number
+ * @returns {*}
+ */
+Calculator.prototype.multiply = function (number) {
+  return this.total *= number;
+};
+
+/**
+ * Divides value to current total. 
+ * @param {number} number
+ * @returns {*}
+ */
+
+Calculator.prototype.divide = function (number) {
+  if (number === 0) {
+    throw new Error('Cannot divide by zero');
+  }
+
+  return this.total /= number;
+};
+
+//////////////////////////////////////////////////////////
+            // RESULTS //
+
+/**
+ * Calculates result for a simple mathematical expression.
+ *
+ * @param {string} inputValue
+ */
+function calculate(inputValue) {
+  const expression = /\+|\-|\*|\//;
+  const numbers = inputValue.split(expression);
+
+  const numberA = parseInt(numbers[0]);
+  const numberB = parseInt(numbers[1]);
+
+  const operation = inputValue.match(expression);
+
+  if (Number.isNaN(numberA) || Number.isNaN(numberB) || operation === null) {
+    updateResult('Expression not recognized');
+    return;
+  }
+
+  const calculator = new Calculator();
+  calculator.add(numberA);
+
+  let result;
+  switch(operation[0]) {
+    case '+':
+      result = calculator.add(numberB);
+      break;
+    case '-':
+      result = calculator.subtract(numberB);
+      break;
+    case '*':
+      result = calculator.multiply(numberB);
+      break;
+    case '/':
+      result = calculator.divide(numberB);
+      break;
+    default:
+      result = 'Operation not recognized';
+  }
+
+  updateResult(result);
+}
+
+/**
+ * Updates result in DOM element.
+ * @param {string} result
+ */
+function updateResult(result) {
+  const element = document.querySelector('#result');
+
+  if (element) {
+    element.innerText = result;
+  }
+}
 
 
-    `
+var innerform2 = document.querySelector("#innerform2");
+innerform2.innerHTML = `
+const 
+<div>
+<h4>Calculator Deux</h4>
+ <input
+    class="input"
+    type="text"
+    title="calculator"
+    placeholder="Enter operation"
+    value="1+2"
+    onchange="calculate(this.value)"
+  />
+
+  <div class="result-container">
+    <div class="title">Result</div>
+    <span id="result">3</span>
+  </div>
+  </div>
+    `;
