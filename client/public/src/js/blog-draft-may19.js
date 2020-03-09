@@ -1,23 +1,58 @@
  
 var bloggerMay19 = function() {
     
+    var blogpost34 = `<p>
+    At a time when the national lines blur between multi-national corporations, and an interdependent global tech community, the 21st century space race is nonetheless well-defined -- however defined along the lines of sub-atomic inner-space. 
+    </p>
+       <img src="dist/img/q-chandelier.jpg" width="400"  class="zoom" />
+    <p class="quote">
+    But just as the Soviet Union was the first to put both a satellite and a human being into orbit, before going on to lose the space race, China may be poised to outstrip any American achievements in a specific field of quantum technology — communication.<sup>1</sup>
+    </p>
+    <p>
+    But the goals are less abstract than sending a traveler to space; they define how national secrets can be securely stored, accessed and communicated: </p>
+
+    <p class="quote">With Micius, Chinese researchers are attempting to use a different type of quantum technology to develop new forms of secure communications that would be unbreakable. Micius is being used to share cryptography keys, which are used to encode and decode secure communications.
+<br /><br />
+Ordinarily, these keys are vulnerable to interception, but Micius uses photons in a quantum-superposition state – it’s impossible to read them without changing what they say, so you can’t copy or intercept a key sent in this manner.<sup>2</sup>
+</p> 
+   `;
+    var blogcite34 =    `  
+    <p>1. <a  target="_blank" href="https://www.cnn.com/2019/10/24/tech/china-quantum-computing-intl-hnk/index.html">https://www.cnn.com/2019/10/24/tech/china-quantum-computing-intl-hnk/index.html</a> 
+</p> 
+<p>2. <a  target="_blank" href="https://www.wired.co.uk/article/quantum-computing-china-us">https://www.wired.co.uk/article/quantum-computing-china-us</a> 
+</p>  
+
+<p>3. <a  target="_blank" href="https://www.technologyreview.com/s/615180/quantum-computer-race-ibm-google/">https://www.technologyreview.com/s/615180/quantum-computer-race-ibm-google/</a> 
+</p>  `;
 
     var blogpost33 = `
 
-<p class="firstparagraph">2019 ... The time and the timing of data privacy was a piecemeal race against the clock, against others' race against the clock, and of course the clock itself. If this sounds like a rigged game, wait until time (and timing and the temperature governing time) beckons to the best technologies availed by whom. </p>
-
-<p class="quote"> Countries around the world are investing billions into quantum computing research. Mainly, it’s because it has applications in artificial intelligence. Security and the search for unbreakable encryption in AI-enabled applications that house personal, business, and government data are prompting the investment into this new research area. 
+<p class="firstparagraph">Data -- from the warehousing to the accessing and securing, all the while complying with data privacy regulations, has been a piecemeal, multi-faceted challenge: a race against the clock, against others' race against the clock, and of course the changing dynamics of the clock itself. If this sounds like an impossiblly rigged game, it is, because the goal posts bend for the best technologies availed by whom. </p>
+  <img src="dist/img/q-superposition.jpg" width="400"  class="zoom" />
+<p class="quote"> Countries around the world are investing billions into quantum computing research. Mainly, it’s because it has applications in artificial intelligence. Security and the search for unbreakable encryption in AI-enabled applications that house personal, business, and government data are prompting the investment into this new research area.<sup>1</sup>
 </p> 
-<p>This time it's more than a roll of the die and a few good hires. To the winner go the spoils, the losers work for the winners, and finally, not even time spent can't predict the winners!</p>
-<br />
-  <img src="https://miro.medium.com/max/1368/1*KfyV0MD7-knrEfCnoiPj6Q.png"  />
 
+<p>The roadblocks for machine learning are clear: computing power for modern techniques are not sustainable in terms of insufficient memory and computing power, hence the current "A.I. Winter". In my <a href="#07-05-18">July 5th 2018 post, <em>Godfathers of A.I.</em></a> I outline the periods that technical limitations reduce progress and interest in A.I. applicibility. In preliminary advances, single-layered algorithms (think of one set of variables that drive prediction) and later iterations that involve multiple-layers that exponentially increase computing needs: 
+</p>
+
+
+
+<p class="quote">Programs that performed well in the laboratory were useless in everyday situations; a simple act like picking up a ball turned out to require an overwhelming number of computations. The research fell into the first of several “A.I. winters.” As Bostrom notes in his book, “Among academics and their funders, ‘A.I.’ became an unwanted epithet.”<sup>2</sup></p>
+<p>So, then, what is at stake with the potential of quantum-based computations? Everything, because all the current machine learning roadblocks are flattened: </p>
+
+<p class="quote">Quantum Computing also has the potential to allow AI to optimize its processing to such a degree that complex calculations needed to achieve artificial general intelligence can be carried out in record time.<sup>1</sup>
+</p>
+
+<p>This time it's more than a roll of the die and a few good hires. To the winner go the spoils, the losers work for the winners, and finally, not even time spent can predict the winners!</p>
+<br />
 `;
 
     var blogcite33 = `
      
 <p>1. <a  target="_blank" href="https://towardsdatascience.com/is-quantum-computing-a-dream-fd7385b1db56">https://towardsdatascience.com/is-quantum-computing-a-dream-fd7385b1db56</a> 
 </p>  
+<p>2. <a  target="_blank" href="http://fortune.com/longform/element-ai-startup-tech/">http://fortune.com/longform/element-ai-startup-tech/</a> 
+</p> 
 `;
 
 
@@ -26,11 +61,10 @@ var bloggerMay19 = function() {
 <p class="firstparagraph">Gone are the days when the best and the brightest took home the honors and laurels. Today, an obsucre darkness rules over visibility into the advances that don't arise from obvious luck. Instead, networks of tech advances, some stolen, some spilled and some surmised from nothing form the new space race: The rocket head forms the algorithm and the expendible data form the solid rocket boosters. Period. 
 </p>
 
-<p class="quote"> We need quantum-resistant algorithms as soon as possible,” Grobman said.
+<p class="quote"> We need quantum-resistant algorithms as soon as possible,” Grobman said. 
+Cloud computing is sweeping through the industry, and it will enable the use of quantum computing. And that’s a problem, as quantum computers may be able to break encryption techniques such as RSA encryption much faster than traditional computers can. Typically, encryption techniques make it easy to encode data but hugely difficult to decode it without the use of a special key. The security is possible only because of the huge amount of time it takes for a classical computer to do the computations. <sup>1</sup></p>  
 
-Cloud computing is sweeping through the industry, and it will enable the use of quantum computing. And that’s a problem, as quantum computers may be able to break encryption techniques such as RSA encryption much faster than traditional computers can. Typically, encryption techniques make it easy to encode data but hugely difficult to decode it without the use of a special key. The security is possible only because of the huge amount of time it takes for a classical computer to do the computations.
-<br /><br />  <sup>1</sup></p>  
-`;
+  `;
 
     var blogcite32 = `
 <p>1. <a  target="_blank" href="https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/">https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/</a> 
@@ -42,12 +76,8 @@ Cloud computing is sweeping through the industry, and it will enable the use of 
 
     var blogpost31 = `
 
-<p class="firstparagraph">Love at First Sight<br />It is better to have loved and lost than to not have loved at all...so say the lovers. But this article recounts the other side of the tale...
-  <img src="dist/img/metal.jpg"  width="400"  class="zoom" />
-</p>
-
-<p class="quote"> 
-<br /><br />  <sup>1</sup></p>
+<p class="firstparagraph"> It is better to have loved and lost than to not have loved at all...so say the lovers. But this article recounts the other side of the tale...when the act of falling in love is part fabrication, part careful strategizing.
+    </p>
  
 
 `;
@@ -162,7 +192,7 @@ It was also unclear which products were subject to tariffs. Mr. LaFrazia, a 54-y
 `;
 
     var blogpost29 = `
-  <p class="firstparagraph">My <a href="#09-11-19">September 11th post</a> last year touched on global tech's dependence on rare earth materials  ... and again, the trade war begins to take its toll:
+  <p class="firstparagraph">My <a href="#09-11-18">September 11th post</a> last year touched on global tech's dependence on rare earth materials  ... and again, the trade war begins to take its toll:
   </p>
   
   <p class="quote">Against a backdrop of mounting concern over the long-running trade dispute between the US and China, which stands to choke global growth, Beijing signalled that exports of rare-earth elements to the US could be curtailed.
@@ -508,23 +538,33 @@ Some police agencies have in recent years run facial-recognition searches agains
   `;
 
     var url = [
+         {
+            id: '34',
+            did: '20-03-05',
+            date: 'March 5, 2020 ',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Quantum Data',
+            title: 'Moving your Dreams into Today, Part III: <br />The Nationalism of Quantum Data and Privacy',
+            post: blogpost34,
+            cite: blogcite34
+        },
         {
             id: '33',
             did: '20-03-04',
-            date: 'March 4, 2020<br />Weekend',
+            date: 'March 4, 2020 ',
             author: 'by Thomas Maestas, MA',
             cat3: 'Quantum Data',
-            title: 'Moving your Dreams into Today, Part II: The Timing of Quantum Data and Privacy<br />',
+            title: 'Moving your Dreams into Today, Part II:<br />The Business of Quantum Data and Privacy',
             post: blogpost33,
             cite: blogcite33
         },
         {
             id: '32',
             did: '20-03-03',
-            date: 'March 3, 2020 <br />Weekend',
+            date: 'March 3, 2020 ',
             author: 'by Thomas Maestas, MA',
             cat3: 'Sociology Today',
-            title: 'Moving your Dreams into Today, Part I: <br />',
+            title: 'Moving your Dreams into Today, Part I: <br /> The Timing of Quantum Data and Privacy',
             post: blogpost32,
             cite: blogcite32
         },
@@ -534,7 +574,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             date: 'February 14, 2020<br />Weekend',
             author: 'by Thomas Maestas, MA',
             cat3: 'Web Dev Affairs',
-            title: 'All\'s Fair in War and Peace, but Not in Trade! Part II: <br />Material Substitutes',
+            title: 'Love at First Sight',
             post: blogpost31,
             cite: blogcite31
         },
