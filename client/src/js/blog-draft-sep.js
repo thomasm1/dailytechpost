@@ -591,6 +591,6 @@ That strategy is getting close to hitting a dead end.  The next step will be get
   }
 
   console.log('blogger-sep'); 
-  console.log(angular.toJson(url));
+  // console.log(angular.toJson(url));
 };
 bloggerSep();

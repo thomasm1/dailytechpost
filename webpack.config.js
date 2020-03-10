@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
       path: path.resolve(__dirname, 'client/dist'),
-    filename: 'bundle-daily.js'
+    filename: 'bundle-daily2.js'
   },
   module: {
     loaders: [{

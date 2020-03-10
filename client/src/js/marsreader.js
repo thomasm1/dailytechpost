@@ -9,11 +9,11 @@
         let xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function () {
-          console.log("onreadystate changed")
+          // console.log("onreadystate changed")
           // if (xhttp.readyState == 4 && xhttp.statusText == 200) {  
-          console.log("200");
+          // console.log("200");
           let result = JSON.parse(this.responseText);
-          console.log(this.responseText);
+          // console.log(this.responseText);
 
           if (result.copyright != "") {
             document.getElementById("copyright").innerHTML = "Image Credits: " + result.copyright;

@@ -704,6 +704,6 @@ var i;
   }
   
 console.log('blogger-jan19');
-     console.log(angular.toJson(url)); 
+    //  console.log(angular.toJson(url)); 
 };
 bloggerJan();

@@ -1,27 +1,27 @@
 var dailyTech = angular.module('app');
 
-dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$routeParams', function ArchivesController($scope, $http, $location, $routeParams){
+dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$routeParams', function ArchivesController($scope, $http, $location, $routeParams) {
 
 	console.log(' ArchivesController loaded...');
- 
- 
-/*
-	console.log('header');
-	var headerauth = "--Ryan Dahl, Creator of JavaScript's Node.JS";
-	var headerquote = `  
-	 <strong>You Can Never Understand Everything.<br /><br />But You can Push Yourself to Understand the System.</strong>	 
-	`;
-	document.getElementById("featured").innerHTML = `
-	<p class="left" id="headerquote">
-	${headerquote}</p>  <p> -- ${headerauth} </p>
-	`;
-	*/ 
+
+
+	/*
+		console.log('header');
+		var headerauth = "--Ryan Dahl, Creator of JavaScript's Node.JS";
+		var headerquote = `  
+		 <strong>You Can Never Understand Everything.<br /><br />But You can Push Yourself to Understand the System.</strong>	 
+		`;
+		document.getElementById("featured").innerHTML = `
+		<p class="left" id="headerquote">
+		${headerquote}</p>  <p> -- ${headerauth} </p>
+		`;
+		*/
 	var secretButtonMP = document.querySelector('#secret-buttonMP'); // MY PHILOSOPHY (dailytech mission)
 	var secretParagraphMP = document.querySelector('#secret-paragraphMP');
 	//
 	var secretButton = document.querySelector('#secret-button'); // ME
 	var secretParagraph = document.querySelector('#secret-paragraph');
-	
+
 	var secretButtonMPB = document.querySelector('#secret-buttonMPB'); // FEB
 	var secretParagraphMPB = document.querySelector('#secret-paragraphMPB');
 	var secretButtonMAR = document.querySelector('#secret-buttonMAR'); // MAR
@@ -31,14 +31,14 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	var secretButtonMAY = document.querySelector('#secret-buttonMAY'); // MAY
 	var secretParagraphMAY = document.querySelector('#secret-paragraphMAY');
 	var secretButtonJUNE = document.querySelector('#secret-buttonJUNE'); // JUNE
-	var secretParagraphJUNE = document.querySelector('#secret-paragraphJUNE'); 
+	var secretParagraphJUNE = document.querySelector('#secret-paragraphJUNE');
 	var secretButtonJULY = document.querySelector('#secret-buttonJULY'); // JULY
 	var secretParagraphJULY = document.querySelector('#secret-paragraphJULY');///////////////////////////////// 
 	var secretButtonAUG = document.querySelector('#secret-buttonAUG'); // AUG
 	var secretParagraphAUG = document.querySelector('#secret-paragraphAUG');///////////////////////////////// 
 	var showSecret = false;
-	var showSecretMP = false; 
-	
+	var showSecretMP = false;
+
 	var showSecretMPB = false;
 	var showSecretMAR = false;
 	var showSecretAPR = false;
@@ -49,8 +49,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	/////////////////////////////// 
 	secretButton.addEventListener('click', toggleSecretState);
 	secretButtonMP.addEventListener('click', toggleSecretStateMP);
-	
-	
+
+
 	secretButtonMPB.addEventListener('click', toggleSecretStateMPB);
 	updateSecretParagraphMPB();
 	secretButtonMAR.addEventListener('click', toggleSecretStateMAR);
@@ -67,169 +67,169 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	updateSecretParagraphAUG();
 	/////////////////////////////// 
 	function toggleSecretState() {
-	  showSecret = !showSecret;
-	  updateSecretParagraph();
-	  updateSecretButton();
+		showSecret = !showSecret;
+		updateSecretParagraph();
+		updateSecretButton();
 	}
-	
+
 	function toggleSecretStateMP() {
-	  showSecretMP = !showSecretMP;
-	  updateSecretParagraphMP();
-	  updateSecretButtonMP();
+		showSecretMP = !showSecretMP;
+		updateSecretParagraphMP();
+		updateSecretButtonMP();
 	}
-	
-	
-	
+
+
+
 	function toggleSecretStateMPB() {
-	  showSecretMPB = !showSecretMPB;
-	  updateSecretParagraphMPB();
-	  updateSecretButtonMPB();
+		showSecretMPB = !showSecretMPB;
+		updateSecretParagraphMPB();
+		updateSecretButtonMPB();
 	}
-	
+
 	function toggleSecretStateMAR() {
-	  showSecretMAR = !showSecretMAR;
-	  updateSecretParagraphMAR();
-	  updateSecretButtonMAR();
+		showSecretMAR = !showSecretMAR;
+		updateSecretParagraphMAR();
+		updateSecretButtonMAR();
 	}
-	
+
 	function toggleSecretStateAPR() {
-	  showSecretAPR = !showSecretAPR;
-	  updateSecretParagraphAPR();
-	  updateSecretButtonAPR();
+		showSecretAPR = !showSecretAPR;
+		updateSecretParagraphAPR();
+		updateSecretButtonAPR();
 	}
 	function toggleSecretStateMAY() {
-	  showSecretMAY = !showSecretMAY;
-	  updateSecretParagraphMAY();
-	  updateSecretButtonMAY();
+		showSecretMAY = !showSecretMAY;
+		updateSecretParagraphMAY();
+		updateSecretButtonMAY();
 	}
 	function toggleSecretStateJUNE() {
-	  showSecretJUNE = !showSecretJUNE;
-	  updateSecretParagraphJUNE();
-	  updateSecretButtonJUNE();
+		showSecretJUNE = !showSecretJUNE;
+		updateSecretParagraphJUNE();
+		updateSecretButtonJUNE();
 	}
 	function toggleSecretStateJULY() {
-	  showSecretJULY = !showSecretJULY;
-	  updateSecretParagraphJULY();
-	  updateSecretButtonJULY();
+		showSecretJULY = !showSecretJULY;
+		updateSecretParagraphJULY();
+		updateSecretButtonJULY();
 	}
 	function toggleSecretStateAUG() {
-	  showSecretAUG = !showSecretAUG;
-	  updateSecretParagraphAUG();
-	  updateSecretButtonAUG();
+		showSecretAUG = !showSecretAUG;
+		updateSecretParagraphAUG();
+		updateSecretButtonAUG();
 	}
 	/////////////////////////////// 
 	function updateSecretButton() {
-	  if (showSecret) {
-		secretButton.textContent = 'About Thomas'; // GOES BACK TO DEFAULT
-	  } else {
-		secretButton.textContent = ' Thomas M. Maestas'; // TOGGLE OPEN
-	  }
+		if (showSecret) {
+			secretButton.textContent = 'About Thomas'; // GOES BACK TO DEFAULT
+		} else {
+			secretButton.textContent = ' Thomas M. Maestas'; // TOGGLE OPEN
+		}
 	}
-	
+
 	function updateSecretButtonMP() {
-	  if (showSecretMP) {
-		secretButtonMP.innerHTML = 'DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MISSION &nbsp; STATEMENT'; // GOES BACK TO DEFAULT
-		secretButtonMP.style.fontFamily = 'Monoton';
-	  } else {
-		secretButtonMP.innerHTML = 'DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MISSION  &nbsp; STATEMENT ';
-		secretButtonMP.style.fontFamily = 'Monoton';
-	  }
+		if (showSecretMP) {
+			secretButtonMP.innerHTML = 'DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MISSION &nbsp; STATEMENT'; // GOES BACK TO DEFAULT
+			secretButtonMP.style.fontFamily = 'Monoton';
+		} else {
+			secretButtonMP.innerHTML = 'DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MISSION  &nbsp; STATEMENT ';
+			secretButtonMP.style.fontFamily = 'Monoton';
+		}
 	}
-	
-	
-	
+
+
+
 	function updateSecretButtonMPB() {
-	  if (showSecretMPB) {
-		secretButtonMPB.innerHTML = '  Close Feb Archives   '; // GOES BACK TO DEFAULT
-		secretButtonMPB.style.fontFamily = 'Monoton';
-		secretButtonMPB.style.color = 'lightsteelblue';
-	  } else {
-		secretButtonMPB.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; FEBRUARY ';
-		secretButtonMPB.style.fontFamily = 'Monoton';
-		secretButtonMPB.style.color = 'lightsteelblue';
-	  }
+		if (showSecretMPB) {
+			secretButtonMPB.innerHTML = '  Close Feb Archives   '; // GOES BACK TO DEFAULT
+			secretButtonMPB.style.fontFamily = 'Monoton';
+			secretButtonMPB.style.color = 'lightsteelblue';
+		} else {
+			secretButtonMPB.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; FEBRUARY ';
+			secretButtonMPB.style.fontFamily = 'Monoton';
+			secretButtonMPB.style.color = 'lightsteelblue';
+		}
 	}
-	
+
 	function updateSecretButtonMAR() {
-	  if (showSecretMAR) {
-		secretButtonMAR.innerHTML = ' Close March Archives  '; // GOES BACK TO DEFAULT
-		secretButtonMAR.style.fontFamily = 'Monoton';
-		secretButtonMAR.style.color = 'lightsteelblue';
-	  } else {
-		secretButtonMAR.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MARCH ';
-		secretButtonMAR.style.fontFamily = 'Monoton';
-		secretButtonMAR.style.color = 'lightsteelblue';
-	  }
+		if (showSecretMAR) {
+			secretButtonMAR.innerHTML = ' Close March Archives  '; // GOES BACK TO DEFAULT
+			secretButtonMAR.style.fontFamily = 'Monoton';
+			secretButtonMAR.style.color = 'lightsteelblue';
+		} else {
+			secretButtonMAR.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MARCH ';
+			secretButtonMAR.style.fontFamily = 'Monoton';
+			secretButtonMAR.style.color = 'lightsteelblue';
+		}
 	}
-	
+
 	function updateSecretButtonAPR() {
-	  if (showSecretAPR) {
-		secretButtonAPR.innerHTML = ' Close April Archives  '; // GOES BACK TO DEFAULT
-		secretButtonAPR.style.fontFamily = 'Monoton';
-		secretButtonAPR.style.color = 'lightsteelblue';
-	  } else {
-		secretButtonAPR.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; APRIL ';
-		secretButtonAPR.style.fontFamily = 'Monoton';
-		secretButtonAPR.style.color = 'lightsteelblue';
-	  }
+		if (showSecretAPR) {
+			secretButtonAPR.innerHTML = ' Close April Archives  '; // GOES BACK TO DEFAULT
+			secretButtonAPR.style.fontFamily = 'Monoton';
+			secretButtonAPR.style.color = 'lightsteelblue';
+		} else {
+			secretButtonAPR.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; APRIL ';
+			secretButtonAPR.style.fontFamily = 'Monoton';
+			secretButtonAPR.style.color = 'lightsteelblue';
+		}
 	}
 	function updateSecretButtonMAY() {
-	  if (showSecretMAY) {
-		secretButtonMAY.innerHTML = ' Close May Archives  '; // GOES BACK TO DEFAULT
-		secretButtonMAY.style.fontFamily = 'Monoton';
-		secretButtonMAY.style.color = 'lightsteelblue';
-	  } else {
-		secretButtonMAY.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MAY';
-		secretButtonMAY.style.fontFamily = 'Monoton';
-		secretButtonMAY.style.color = 'lightsteelblue';
-	  }
+		if (showSecretMAY) {
+			secretButtonMAY.innerHTML = ' Close May Archives  '; // GOES BACK TO DEFAULT
+			secretButtonMAY.style.fontFamily = 'Monoton';
+			secretButtonMAY.style.color = 'lightsteelblue';
+		} else {
+			secretButtonMAY.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; MAY';
+			secretButtonMAY.style.fontFamily = 'Monoton';
+			secretButtonMAY.style.color = 'lightsteelblue';
+		}
 	}
- 
+
 
 	function updateSecretButtonJUNE() {
-	  if (showSecretJUNE) {
-		secretButtonJUNE.innerHTML = ' Close JUNE Archives  '; // GOES BACK TO DEFAULT
-		secretButtonJUNE.style.fontFamily = 'Monoton';
-		secretButtonJUNE.style.color = 'lightsteelblue';
-	  } else {
-		secretButtonJUNE.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; JUNE';
-		secretButtonJUNE.style.fontFamily = 'Monoton';
-		secretButtonJUNE.style.color = 'lightsteelblue';
-	  }
+		if (showSecretJUNE) {
+			secretButtonJUNE.innerHTML = ' Close JUNE Archives  '; // GOES BACK TO DEFAULT
+			secretButtonJUNE.style.fontFamily = 'Monoton';
+			secretButtonJUNE.style.color = 'lightsteelblue';
+		} else {
+			secretButtonJUNE.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; JUNE';
+			secretButtonJUNE.style.fontFamily = 'Monoton';
+			secretButtonJUNE.style.color = 'lightsteelblue';
+		}
 	}
 
 	function updateSecretButtonJULY() {
-	  if (showSecretJULY) {
-		secretButtonJULY.innerHTML = ' Close JULY Archives  '; // GOES BACK TO DEFAULT
-		secretButtonJULY.style.fontFamily = 'Monoton';
-		secretButtonJULY.style.color = 'lightsteelblue';
-	  } else {
-		secretButtonJULY.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; JULY';
-		secretButtonJULY.style.fontFamily = 'Monoton';
-		secretButtonJULY.style.color = 'lightsteelblue';
-	  }
-	}	
+		if (showSecretJULY) {
+			secretButtonJULY.innerHTML = ' Close JULY Archives  '; // GOES BACK TO DEFAULT
+			secretButtonJULY.style.fontFamily = 'Monoton';
+			secretButtonJULY.style.color = 'lightsteelblue';
+		} else {
+			secretButtonJULY.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; JULY';
+			secretButtonJULY.style.fontFamily = 'Monoton';
+			secretButtonJULY.style.color = 'lightsteelblue';
+		}
+	}
 	function updateSecretButtonAUG() {
 		if (showSecretAUG) {
-		  secretButtonAUG.innerHTML = ' Close AUG Archives  '; // GOES BACK TO DEFAULT
-		  secretButtonAUG.style.fontFamily = 'Monoton';
-		  secretButtonAUG.style.color = 'lightsteelblue';
+			secretButtonAUG.innerHTML = ' Close AUG Archives  '; // GOES BACK TO DEFAULT
+			secretButtonAUG.style.fontFamily = 'Monoton';
+			secretButtonAUG.style.color = 'lightsteelblue';
 		} else {
-		  secretButtonAUG.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; AUG';
-		  secretButtonAUG.style.fontFamily = 'Monoton';
-		  secretButtonAUG.style.color = 'lightsteelblue';
+			secretButtonAUG.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; AUG';
+			secretButtonAUG.style.fontFamily = 'Monoton';
+			secretButtonAUG.style.color = 'lightsteelblue';
 		}
-	  }
+	}
 	/////////////////////////////// 
 	function updateSecretParagraph() {
-	  if (showSecret) {
-		secretParagraph.style.display = 'block';
-		secretParagraph.style.fontFamily = 'Roboto';
-		secretParagraph.style.backgroundColor = 'steelblue';
-		secretParagraph.style.color = 'aliceblue';
-		secretParagraph.style.textAlign = 'left';
-	
-		secretParagraph.innerHTML = `<div   ><h5 style="text-align:center">Hello, I'm Thomas, Thank you for  visiting my tech blog.</h5>
+		if (showSecret) {
+			secretParagraph.style.display = 'block';
+			secretParagraph.style.fontFamily = 'Roboto';
+			secretParagraph.style.backgroundColor = 'steelblue';
+			secretParagraph.style.color = 'aliceblue';
+			secretParagraph.style.textAlign = 'left';
+
+			secretParagraph.innerHTML = `<div   ><h5 style="text-align:center">Hello, I'm Thomas, Thank you for  visiting my tech blog.</h5>
 			<p class="firstparagraph">   Technology shapes much of my life, and in many respects it frames my future plans! <br />
 			Technology is integral to my professional, academic, and enterprising endeavors, 
 			and I hope to share helpful knowledge from what I've learned along the journey. Besides, 
@@ -262,31 +262,31 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	
 	
 	`;
-	
-	  } else {
-	
-		secretParagraph.style.display = 'none';
-	
-	  }
-	
+
+		} else {
+
+			secretParagraph.style.display = 'none';
+
+		}
+
 	};
-	
+
 	////////
 	console.log("TMM PHILOSOPHY");
-	
+
 	function updateSecretParagraphMP() {
-	
-	  if (showSecretMP) {
-	
-		secretParagraphMP.style.display = 'block';
-	
-		secretParagraphMP.style.fontFamily = 'Roboto';
-		secretParagraphMP.style.background = 'RGBA(1,2,2,.2)';
-	
-		secretParagraphMP.style.textAlign = 'left';
-		secretParagraphMP.style.padding = '10px';
-		secretParagraphMP.style.color = 'white';
-		secretParagraphMP.innerHTML = `  
+
+		if (showSecretMP) {
+
+			secretParagraphMP.style.display = 'block';
+
+			secretParagraphMP.style.fontFamily = 'Roboto';
+			secretParagraphMP.style.background = 'RGBA(1,2,2,.2)';
+
+			secretParagraphMP.style.textAlign = 'left';
+			secretParagraphMP.style.padding = '10px';
+			secretParagraphMP.style.color = 'white';
+			secretParagraphMP.innerHTML = `  
 	<h4 class="center">My Beliefs &amp; Our Daily Tech Blog Mission</h4>
 	
 	<p class="dailytitle" >by Thomas Maestas, MA</p> 
@@ -301,26 +301,26 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p>A better workforce integration along gender, racial, and socio-economic lines is a more heterogeneous workforce: more agile, creative, and efficiently team-oriented workforce--in short, a smarter workforce.
 	</p> 
 	`;
-	
-	  } else {
-	
-		secretParagraphMP.style.display = 'none';
-	
-	  }
-	
+
+		} else {
+
+			secretParagraphMP.style.display = 'none';
+
+		}
+
 	};
-	
-	
-	
+
+
+
 	function updateSecretParagraphMPB() {
-	
-	  if (showSecretMPB) {
-	
-		secretParagraphMPB.style.display = 'block';
-		secretParagraphMPB.style.fontFamily = 'Roboto';
-		secretParagraphMPB.style.opacity = '1';
-		secretParagraphMPB.style.color = 'darkslategray';
-		secretParagraphMPB.innerHTML = ` 
+
+		if (showSecretMPB) {
+
+			secretParagraphMPB.style.display = 'block';
+			secretParagraphMPB.style.fontFamily = 'Roboto';
+			secretParagraphMPB.style.opacity = '1';
+			secretParagraphMPB.style.color = 'darkslategray';
+			secretParagraphMPB.innerHTML = ` 
 	 
 					<hr />
 				 
@@ -3158,21 +3158,21 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  <a title="Contact Information: thomasmaestas.net" href="http://www.thomasmaestas.net/profile.html#contactme"> Contact Information</a>
 	</p>  
 	`;
-	
-	  } else { 
-		secretParagraphMPB.style.display = 'none'; 
-	  } 
+
+		} else {
+			secretParagraphMPB.style.display = 'none';
+		}
 	}
-	 
+
 	function updateSecretParagraphMAR() {
-	
-	  if (showSecretMAR) {
-	
-		secretParagraphMAR.style.display = 'block';
-		secretParagraphMAR.style.fontFamily = 'Roboto';
-		secretParagraphMAR.style.opacity = '1';
-		secretParagraphMAR.style.color = 'darkslategray';
-		secretParagraphMAR.innerHTML = `   
+
+		if (showSecretMAR) {
+
+			secretParagraphMAR.style.display = 'block';
+			secretParagraphMAR.style.fontFamily = 'Roboto';
+			secretParagraphMAR.style.opacity = '1';
+			secretParagraphMAR.style.color = 'darkslategray';
+			secretParagraphMAR.innerHTML = `   
 		  <div id="mar-18-03-24" class="     mar 18-03 -24">
 		  <hr />
 		  <button>
@@ -4359,19 +4359,19 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 		  <a title="Contact Information: thomasmaestas.net" href="http://www.thomasmaestas.net/profile.html#contactme"> Contact Information</a>
 		</p>  
 				  `;
-	  } else {
-		secretParagraphMAR.style.display = 'none';
-	  }
+		} else {
+			secretParagraphMAR.style.display = 'none';
+		}
 	}
-	
-	
+
+
 	function updateSecretParagraphAPR() {
-	  if (showSecretAPR) {
-		secretParagraphAPR.style.display = 'block';
-		secretParagraphAPR.style.fontFamily = 'Roboto';
-		secretParagraphAPR.style.opacity = '1';
-		secretParagraphAPR.style.color = 'darkslategray';
-		secretParagraphAPR.innerHTML = `  
+		if (showSecretAPR) {
+			secretParagraphAPR.style.display = 'block';
+			secretParagraphAPR.style.fontFamily = 'Roboto';
+			secretParagraphAPR.style.opacity = '1';
+			secretParagraphAPR.style.color = 'darkslategray';
+			secretParagraphAPR.innerHTML = `  
 				  <div id="aprtop"></div>
 	 
 				  <div id="apr-18-04-30" class="                avr 18-03 -24"> 
@@ -5113,18 +5113,18 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 				  <a title="Contact Information: thomasmaestas.net" href="http://www.thomasmaestas.net/profile.html#contactme"> Contact Information</a>
 				</p>  
 	`;
-	  } else {
-		secretParagraphAPR.style.display = 'none';
-	  }
+		} else {
+			secretParagraphAPR.style.display = 'none';
+		}
 	}
-	
+
 	function updateSecretParagraphMAY() {
-	  if (showSecretMAY) {
-		secretParagraphMAY.style.display = 'block';
-		secretParagraphMAY.style.fontFamily = 'Roboto';
-		secretParagraphMAY.style.opacity = '1';
-		secretParagraphMAY.style.color = 'darkslategray';
-		secretParagraphMAY.innerHTML =  `<div id="maytop"></div>
+		if (showSecretMAY) {
+			secretParagraphMAY.style.display = 'block';
+			secretParagraphMAY.style.fontFamily = 'Roboto';
+			secretParagraphMAY.style.opacity = '1';
+			secretParagraphMAY.style.color = 'darkslategray';
+			secretParagraphMAY.innerHTML = `<div id="maytop"></div>
 	 
 				  <div id="may-18-05-15" class="                avr 18-03 -24"> 
 				  <hr />  
@@ -5493,24 +5493,24 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 				  <a title="Contact Information: thomasmaestas.net" href="http://www.thomasmaestas.net/profile.html#contactme"> Contact Information</a>
 				</p>  
 				`;
-	  } else {
-		secretParagraphMAY.style.display = 'none';
-	  }
+		} else {
+			secretParagraphMAY.style.display = 'none';
+		}
 	}
-	
+
 	console.log('blogger-june');
 	function updateSecretParagraphJUNE() {
-	  if (showSecretJUNE) {
-		secretParagraphJUNE.style.display = 'block';
-		secretParagraphJUNE.style.fontFamily = 'Roboto';
-		secretParagraphJUNE.style.opacity = '1';
-		secretParagraphJUNE.style.color = 'darkslategray';
-	   
-		
-	
-	 
-	blogpost14 = 
-	`
+		if (showSecretJUNE) {
+			secretParagraphJUNE.style.display = 'block';
+			secretParagraphJUNE.style.fontFamily = 'Roboto';
+			secretParagraphJUNE.style.opacity = '1';
+			secretParagraphJUNE.style.color = 'darkslategray';
+
+
+
+
+			blogpost14 =
+				`
 	<p class="quote"><i>
 	All people going to the International Space Station must do so through Kazakhstan today. Since the space shuttle retired in 2011, there's no other ship capable of carrying people up there besides Soyuz, the Russian workhorse of many decades. NASA purchases seats for its astronauts; each mission is worth tens of millions of dollars. But the situation is going to change soon. 
 	Two companies — Boeing and SpaceX — are developing commercial crew vehicles to carry astronauts to the ISS. They should start flying crews in the next year or two...</i><sup>1</sup>
@@ -5522,13 +5522,13 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	</p>
 	<p>Besides the moon, I wouldn't be opposed to a year-and-a-half long trip to Mars--so long as I had plenty of reading material, and a round-trip ticket!
 	`;
-	blogcite14 = 
-	`
+			blogcite14 =
+				`
 	<p class="footnotes">1. <a href="https://www.space.com/41038-roscosmos-russian-space-strategy-commercial-crew.html"   target="_blank">https://www.space.com/41038-roscosmos-russian-space-strategy-commercial-crew.html</a>
 	</p>   
 	`;
-	blogpost13 = 
-	`
+			blogpost13 =
+				`
 	<p class="firstparagraph">If there was ever a thing called "Continuing Education," that thing has become a learning, thinking mandate in the modern professional world. Learning to work side-by-side with our A.I. "automation workmates" has become a somewhat paradoxical burden whereby the more we learn, the more we get to shovel our work onto our <i>Ever-Cheerful automators</i>, and this is the least onerous burden I have ever had to bear...</i> It's called the <i>Abolition of boring tasks!</i> </p>
 	<p>Many writers have touched on the freedom that digital automation affords us: The repetitive, mundane (i.e. mindless) tasks that once occupied days and weeks of our time can now be evaporated away in hours when we just ask for help from our digital automotons--but we first have to ask! </p>
 	<p>And so, the work is no longer the work we do: <i>Our work is learning new digitally automated short-cuts, hacks, and clever work-arounds to better shovel the work off to our automotons</i>. But we can only be so clever, and so we have to learn to be more clever: hence the latest rage from colleges and universities with programs offering 'perpetual learning.' The Washington Post reports,</p>
@@ -5543,8 +5543,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p>20%? Really? So, it sounds like our productivity is <i>inversely proportional to work <strong>we</strong> do</i>, but rather the work--boring, mundane work--that we can effectively hand off to our automon partners--whatever the sector.  
 	
 	`;
-	blogcite13 = 
-	`
+			blogcite13 =
+				`
 	
 	<p class="footnotes">1. <a href="https://www.nytimes.com/2018/06/26/opinion/political-parties-climate.html"   target="_blank">https://www.nytimes.com/2018/06/26/opinion/political-parties-climate.html</a>
 	</p> 
@@ -5552,9 +5552,9 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	</p>  
 	
 	`;
-	 
-	blogpost12 = 
-	`
+
+			blogpost12 =
+				`
 	<p class="firstparagraph">Obnoxious misuse of A.I.Tech is a rare thing because developers are among the smartest and most humane among all professions, if I my humbly claim.  But <i>Tech consumers are not necessarily bound by such thoughtful solidarity.</i> The following exemplifies the darker side of A.I. tech...                                          </p>
 	<p class="quote">Cogito is one of several companies developing analytics tools that give agents feedback about how conversations with customers are going. Its software measures in real time the tone of an agent’s voice, their speech rate, and how much each person is talking, according to Dr. Place. “We measure the conversational dance,” he says.
 	
@@ -5569,7 +5569,7 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	</i> The horror, the horror.</p>
 	</p>
 	`;
-	blogcite12 = `
+			blogcite12 = `
 	
 	
 	<p class="footnotes">1. <a href="https://www.wsj.com/articles/call-center-agents-get-a-human-touch-1528984801?mod=foesummaries"   target="_blank">https://www.wsj.com/articles/call-center-agents-get-a-human-touch-1528984801?mod=foesummaries</a>
@@ -5577,8 +5577,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p class="footnotes">2. <a href="https://www.jstor.org/stable/2678029?seq=1#page_scan_tab_contents"   target="_blank">https://www.jstor.org/stable/2678029?seq=1#page_scan_tab_contents</a>
 	</p> 
 	`;
-	blogpost11 = 
-	`
+			blogpost11 =
+				`
 	<p class="firstparagraph">As if Apple needed any more money--now Samsung will be writing a half-billion dollar check to right the wrongs of patent infringement and "slavish" copying.<sup>1</sup> Well, history certainly repeats itself as it was IBM that played the relentless copy-cat of Apple's technological leadership way-back-when. 
 	</p>
 	
@@ -5590,21 +5590,21 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p>An Ode to Apple products: Apple! You are our Creative Leadership and your Apple Watch is beyond our realm--a postcard from another world. Apple, you alone bear the high standard of quality tech products--because you, Apple, do occupy the highest, and wealthiest, seat among the Tech Giants!
 	</p>
 	`;
-	
-	blogcite11 = `
+
+			blogcite11 = `
 	<p class="footnotes">1. <a href="https://www.reuters.com/article/us-apple-samsung-elec/apple-samsung-settle-u-s-patent-dispute-idUSKBN1JN2S4"   target="_blank">https://www.reuters.com/article/us-apple-samsung-elec/apple-samsung-settle-u-s-patent-dispute-idUSKBN1JN2S4</a>
 	</p> 
 	
 	`;
-	blogpost10 = `
+			blogpost10 = `
 	<p class="firstparagraph">5G Technology, ever so close to life-changing implementation, conjures up fantastic musing over how our everyday products will interact in real-time with our personalized data-cloud. Certainly IoT (Internet of Things) products will be carrying a whole lot of machine-to-machine to machine communication. From the IoT edge (encircling a router, for instance) to communicate sensors to mid-range "listeners".</p>
 	<p>So, although Sprint-T-Mobile Oneness spells monopoly, the scale of work that needs to be done to convert everything to 5G <i>means we Need a great tech innovator like T-Mobile's John Legere to push with fervor the right ways to deliver 5G connectivity to every American, anywhere.</i> My<a href="#18-04-27"> April 27 post</a> talks more on their affair, but the reality is that Sprint doesn't contribute value to American innovation; that claimed, <i>Sprint's bandwidth rights and spare parts really <strong>will truly</strong>  add value</i> to American Tech!</p>
 	`;
-	blogcite10 = `<p class="footnotes">1. <a href="https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A"   target="_blank">https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A/a>
+			blogcite10 = `<p class="footnotes">1. <a href="https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A"   target="_blank">https://www.reuters.com/article/us-sprint-corp-m-a-t-mobile-us/sprint-t-mobile-defend-proposed-tie-up-before-u-s-senate-panel-idUSKBN1JN33A/a>
 	</p> 
 	`;
-	
-	blogpost9 =`
+
+			blogpost9 = `
 	<p  class="firstparagraph">
 	Why the GPU rather than CPU for speed? 90% of deep learning algorithms use distributed, parallel problem-calculations. So, who needs a steering wheel racing on the Bonneville Salt Flats? Certain kinds of algorithms do, though, such as recursive, tree-traversing kinds. But I'm just a tourist.
 	</p> 
@@ -5616,15 +5616,15 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p>Evolution of these new AI's, and AI's designing AIs, require voracious amounts of training data to implement and improve learning designs.  So where would AI research stand if not for the ultra-fast and efficient modern-day Graphical Processing Unit? Better asked, what inspired Krizhevski's novel, paradigm-shattering design?  Clearly <i>the Need for Speed!</i> </p>
 	 
 	  `;
-	blogcite9 = 
-	`
+			blogcite9 =
+				`
 	<p class="footnotes">1. <a href="https://www.quora.com/How-did-Alex-Krizhevsky-come-up-with-the-idea-of-AlexNet-How-does-the-designer-think"   target="_blank">https://www.quora.com/How-did-Alex-Krizhevsky-come-up-with-the-idea-of-AlexNet-How-does-the-designer-think</a>
 	</p>
 	
 	 
 	`;
-	  blogpost8 = 
-	  `  <p class="quote"><i>
+			blogpost8 =
+				`  <p class="quote"><i>
 	Deep learning allows computational models that are composed of multiple processing layers to learn representations of data with multiple levels of abstraction. These methods have dramatically improved the state-of-the-art in speech recognition, visual object recognition, object detection and many other domains such as drug discovery and genomics. Deep learning discovers intricate structure in large data sets by using the backpropagation algorithm to indicate how a machine should change its internal parameters that are used to compute the representation in each layer from the representation in the previous layer. Deep convolutional nets have brought about breakthroughs in processing images, video, speech and audio, whereas recurrent nets have shone light on sequential data such as text and speech.</i><sup>1.</sup>
 	</p> 
 	  <p class="firstparagraph">Artificial Intelligence has evolved from a prototypal event known as the "Cambrian Explosion, only five years ago."<sup>1</sup> An architect named Alex Krizhevsky offered a new paradigm for <i>deep learning</i> at an image recognition event, Imagenet Competition. Mr. Krizhevsky's "Alex Net" became the pivotal <i>Convolutional Neural Network</i>, with a mere 8 layers' depth (think of the decision tree mentioned in post 6/20) &amp; millions of parameters. </p>
@@ -5633,17 +5633,17 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p>Today, neural netwoks boast <i>hundreds of layers and billions of paremeters: The last five years has been busy!</i> And the varied species of designs since the original Convolutional Neural Network (CNN) include Recurrent Neural Networks (RNN), Generative Adverserial Networks (GAN) and Reinforcement Learning.
 	</p> 
 	`;
-	blogcite8 = 
-	`<p class="footnotes">1. <a href="https://www.nature.com/articles/nature14539"   target="_blank">https://www.nature.com/articles/nature14539</a>
+			blogcite8 =
+				`<p class="footnotes">1. <a href="https://www.nature.com/articles/nature14539"   target="_blank">https://www.nature.com/articles/nature14539</a>
 	</p> 
 	
 	<p class="footnotes">2. <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks"   target="_blank">https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks</a><br />
 	PDF:  <a href="https://www.nvidia.cn/content/tesla/pdf/machine-learning/imagenet-classification-with-deep-convolutional-nn.pdf"   target="_blank">https://www.nvidia.cn/content/tesla/pdf/machine-learning/imagenet-classification-with-deep-convolutional-nn.pdf</a>  
 	</p> 
 	`
-	
-	blogpost7 = 
-	  `  <p class="quote"><i>I sat one evening in my laboratory; the sun had set, and the moon was just rising from the sea; I had not sufficient light for my employment, and I remained idle, in a pause of consideration of whether I should leave my labour for the night, or hasten its conclusion by an unremitting attention to it. As I sat, a train of reflection occurred to me, which led me to consider the effects of what I was now doing. <br />
+
+			blogpost7 =
+				`  <p class="quote"><i>I sat one evening in my laboratory; the sun had set, and the moon was just rising from the sea; I had not sufficient light for my employment, and I remained idle, in a pause of consideration of whether I should leave my labour for the night, or hasten its conclusion by an unremitting attention to it. As I sat, a train of reflection occurred to me, which led me to consider the effects of what I was now doing. <br />
 	  <br />
 	  --Victor Frankenstein<sup>1</sup>
 	  </i><br /> 
@@ -5668,8 +5668,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  </p>
 	  <p>And so, with blistering speed and the joining of disciplines of science, the spear's tip of innovation accelerates ... without a spare nanosecond for reflection!
 	  `;
-	
-	  blogcite7 =  `<p class="footnotes">1. Frankenstein, or Modern Prometheus, Mary Shelley, 1818. <br /><a href="https://www.gutenberg.org/files/84/84-h/84-h.htm"   target="_blank"> PDF https://www.gutenberg.org/files/84/84-h/84-h.htm</a>
+
+			blogcite7 = `<p class="footnotes">1. Frankenstein, or Modern Prometheus, Mary Shelley, 1818. <br /><a href="https://www.gutenberg.org/files/84/84-h/84-h.htm"   target="_blank"> PDF https://www.gutenberg.org/files/84/84-h/84-h.htm</a>
 	  </p>  
 	  
 	  <p class="footnotes">2.  <a href="https://www.gutenberg.org/files/84/84-h/84-h.htm"   target="_blank">2009 IEEE International Symposium on Parallel & Distributed Processing</a>
@@ -5680,9 +5680,9 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  </p>  
 	  
 	  `;
-	 
-	blogpost6 = 
-	  `
+
+			blogpost6 =
+				`
 	  <p class="firstparagraph">
 	  <p class="firstparagraph">Small, online businesses face the music today to pay state sales taxes, thanks to the Supreme Court's <i>Wayfair V. South Dakota</i>.<sup>2</sup> My <a href="#18-04-14">April 14th blog</a>, <i>Clash of the Brick &amp; Mortars against Online Stores</i> goes more in depth... </p>
 	  <p>What this means is that imminently, 50 variations of newly permitted State internet sales taxes for small businesses.<sup>2</sup> This will inevitably hurt variety, and likely lead to a lot of inter-state confusion: </p>
@@ -5692,10 +5692,10 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  <p>Small, online businesses: Get your calculators ready!
 	  </p> 
 	 `;
-	  
-	 
-	
-	  blogcite6 =  ` 
+
+
+
+			blogcite6 = ` 
 	  <p class="footnotes">1.  <a href="https://www.forbes.com/sites/advisor/2018/06/21/state-sales-tax-which-states-are-most-affected-by-the-supreme-court-online-retail-ruling/#791a05383e66"   target="_blank">https://www.forbes.com/sites/advisor/2018/06/21/state-sales-tax-which-states-are-most-affected-by-the-supreme-court-online-retail-ruling/#791a05383e66</a>
 	  </p> 
 	  
@@ -5703,7 +5703,7 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  </p> 
 	  
 	  `;
-	  blogpost5 = ` 
+			blogpost5 = ` 
 	  <p class="firstparagraph">What difference does it make for Net Neutrality to morph into 50 different variations now that the neutrality protections leave the federal arena to fall into  state legislation?<sup>1</sup> Who can tell. Unfortunately, a potential micro-balkanization of bandwith rules within an interdependent network doesn't spell faster service for anyone. </p>
 	  
 	  <p>
@@ -5714,16 +5714,16 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  <br />[California State Senator Scott Wiener's] original bill included all the major provisions of the FCC's old rules, which banned broadband providers from blocking, throttling, or otherwise discriminating against lawful content. But it went further than the FCC rules by banning companies from blocking or throttling content as it enters their network from other networks, under so-called interconnection agreements.<sup>2</sup> </p>   
 	  <p>The Internet, after all, is a Network, and a network is by definition a singular entity.</p>
 	  `;
-	 
-	
-	  blogcite5 =  ` 
+
+
+			blogcite5 = ` 
 	  <p class="footnotes">1.  <a href="http://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html"   target="_blank">http://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html</a>
 	  </p>
 	  <p class="footnotes">2.  <a href="https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/"   target="_blank">https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/</a>
 	  </p>
 		`;
-	
-	  blogpost4 =  `<p class="quote"><i>
+
+			blogpost4 = `<p class="quote"><i>
 	  They left The Denver Post amid newsroom layoffs and interference in the editorial process by the newspaper’s hedge-fund owners. And now those reporters and editors are creating their own news outlet, The Colorado Sun.  They will be partnering with the Civil Media Company, an ambitious New York start-up that aims to use blockchain technology and crypto economics to start 1,000 publications nationwide by the end of the year. </i>
 	  <br /><br />- New York Times, June 17, 2018</p><br />
 	  <p class="firstparagraph">Power from the 4th Estate tends to flow in the form of printers' ink, however Blockchain Tech empowers journalists with  new resources for their trade: free money and data, and more importantly, an empowered readership in Cooperative form: 
@@ -5738,13 +5738,13 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	  Thank you, Blockchain, for restoring Truth to Power!
 	  </p>
 	  `;
-	
-	  blogcite4 =  `
+
+			blogcite4 = `
 	  <p class="footnotes">1.  <a href="https://www.nytimes.com/2018/06/17/business/media/denver-post-blockchain-colorado-sun.html"   target="_blank">https://www.nytimes.com/2018/06/17/business/media/denver-post-blockchain-colorado-sun.html</a>
 	  </p>
 	  
 	  `;
-	blogpost3 =  `<p class="firstparagraph">Deep Learning--a 70's thing--clearly predates   personal computing, the web, and even the 70's Show. But the true advances have been a long time in development, and credit belongs to Statistics and Data Science, and specifically quantitative analysis' ever cleverer classification trees that deliver the goods with greater accuracy, coupled with less intensive computing costs. And this origin is interesting in itself: </p>
+			blogpost3 = `<p class="firstparagraph">Deep Learning--a 70's thing--clearly predates   personal computing, the web, and even the 70's Show. But the true advances have been a long time in development, and credit belongs to Statistics and Data Science, and specifically quantitative analysis' ever cleverer classification trees that deliver the goods with greater accuracy, coupled with less intensive computing costs. And this origin is interesting in itself: </p>
 	 <p class="quote">
 	Fifty years have passed since the publication of the first regression tree algorithm. New techniques have added capabilities that far surpass those of the early methods. Modern classification trees can partition the data with linear splits on subsets of variables and fit nearest neighbor, kernel density, and other models in the partitions ... <br />
 	<br />Classification And Regression Trees (CART) (Breiman et al., 1984) was instrumental in regenerating interest in the subject. It follows the same greedy search approach as  Automatic Interaction Detection (AID) and THeta Automatic Interaction Detection (THAID), but adds several novel improvements. Instead of using stopping rules, it grows a large tree and then prunes the tree to a size that has the lowest cross-validation estimate of error. The pruning procedure itself is ingenious, being based on the idea of weakest-link cutting, with the links indexed by the values of a cost-complexity parameter. This solves the under-fitting and over-fitting problems of  AID and THeta Automatic Interaction Detection (THAID), although with increased computation cost.<sup>1</sup>
@@ -5758,8 +5758,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	<p  >
 	Whatever the new OS is called, it comes with a developing potential to exponentially advance <i>Tree Science</i>:  ML Kit behaves like an API layer connecting the ML software to the app developers' models, making dev easy to run and deploy with an "experimental model compression flow that aims to reduce model size (up to orders of magnitudes) while maintaining similar accuracy."<sup>3</sup> Talk about maturing exponentially quickly! Now, this origin story can't compete with Wolverine's nor Han Solo's, but this gem carries a mythical and futuristic potential to satisfy screen-goers from all devices, frame-sizes, and platforms!</p>
 	`;
-	
-	blogcite3 = `
+
+			blogcite3 = `
 	
 	<p class="footnotes">1. Loh, W. Y. (2014). Fifty years of classification and regression trees. International Statistical Review, 82(3), 329-348.
 	<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/insr.12016"   target="_blank">https://onlinelibrary.wiley.com/doi/full/10.1111/insr.12016</a>
@@ -5776,9 +5776,9 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	Université Marseille 3
 	Saint-Jérôme</p>
 	`;
-	
-	blogpost2 = 
-	`
+
+			blogpost2 =
+				`
 	<p class="firstparagraph">
 	The upcoming Android 'P' OS--still in beta and only available on Pixel phones, Essential, and a few others--promises a new era in mobile app development<sup>1</sup>  Most features, like expanding Maps' indoor functionality, inclusive Emojis, and a revamped navigation bar are all nice, but one element of the build empowers app developers' access to machine-learning code: 
 	</p>
@@ -5799,7 +5799,7 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	Developers will need to build some frameworks into their apps to make Actions and Slices available to the system. When they do, the AI in Android P will try to understand what those apps can actually do and suggest those actions to you. “When you modularize the app, it’s not just an API call,” Samat says. “You have these components that can be understood by the system, predicted by the system, and then rendered by the system.”<sup>3</sup>
 	</p>
 	<p>So what does this mean? Better, higher-quality time spent with your work or play, rather than hopping from one icon to the next for each and every task...`;
-	  blogcite2 = `
+			blogcite2 = `
 	
 	  <p class="footnotes">1.
 	
@@ -5817,7 +5817,7 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	 
 	  </p>
 	  `
-	blogpost1 =  `<p class="firstparagraph">Blockchain technologies, i.e. Government contracts, Business contracts, Bitcoin and other
+			blogpost1 = `<p class="firstparagraph">Blockchain technologies, i.e. Government contracts, Business contracts, Bitcoin and other
 	
 	cryptocurrencies, all rely on network graph theory, both on the low-level programming technology (peer-to-peer global
 	
@@ -5948,8 +5948,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	
 	path of maturity with social and world needs.<span class="new"> Until   Social Science Network Theorists stop from basing their numerical analysis on the mutable sand of theory, rather than theory based on the   foundation of numerical science, <i>any attempt at conclusion...you guessed it...cannot be conclusive.</i>So, the social sciences must consult the hard sciences, otherwise they risk squandering countless years of talented theorists' work; <i>the discipline's executive functions are cut off from it's increasingly inaccessible (and increasingly powerful) knowledge base.</i> --Such a talented, powerful Thoroughbred of a Science, that still wanders without a head for technical direction.</span></p>
 	`;
-	
-	blogcite1 = `
+
+			blogcite1 = `
 	<p class="footnotes">1. 
 	<a href="http://www.journals.uchicago.edu/doi/abs/10.1086/226550"   target="_blank"> http://www.journals.uchicago.edu/doi/abs/10.1086/226550</a>
 	 
@@ -5966,149 +5966,149 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 	</a>
 	</p>
 	` ;
-	
-	  var url =  
-	  [ 
-	  {
-		id:'14', 
-	  did:'06-30-18',
-	  date:'June 30-July 1, 2018<br />Weekend ',
-		author:'by Thomas Maestas',
-		cat3:'Sociology Tomorrow!',
-		title:'The Space Powers that Be:<br />When Boeing issues a Ticket to the Moon', 
-		post:blogpost14,
-	   blogcite:blogcite14
-	 },{
-	  id:'13', 
-	did:'06-29-18',
-	date:'July 29, 2018',
-	  author:'by Thomas Maestas',
-	  cat3:'A.I.Now',
-	  title:'A.I. &amp; Work, Part II<br />Learning to Learn alongside a Cheerful Automoton Work-Partner', 
-	  post:blogpost13,
-	 blogcite:blogcite13
-	},
-	 {
-		id:'12',
-	   
-	  did:'06-28-18',
-	  date:'June 28, 2018 ',
-		author:'by Thomas Maestas',
-		cat3:'A.I.Now',
-		title:'A.I. &amp; Work, Part I<br />Fighting Obsessive Compulsive Quantitative Optimization Disorder and the Slide into a Weberian Iron Shell',
-	
-		post:blogpost12,
-	   blogcite:blogcite12
-	 },{
-		id:'11',
-	   
-	  did:'06-27-18',
-	  date:'June 27, 2018 ',
-		author:'by Thomas Maestas',
-		cat3:'Web Dev Affairs',
-		title:'Apple: You are our Tech Leader!',
-	
-		post:blogpost11,
-	   blogcite:blogcite11
-	 }, {
-	  id:'10',
-	  did:'06-26-18',
-	  date:'June 26, 2018 ',
-		author:'by Thomas Maestas',
-		cat3:'Sociology Tomorrow!',
-		title:'T-Nation Makes the Case: Sprint Merger takes on the Senate',
-		
-	  post:blogpost10,
-	 blogcite:blogcite10
-	},  {
-		id:'9',
-		did:'06-25-18',
-		date:'June 25, 2018 ',
-		author:'by Thomas Maestas',
-		cat3:'A.I.Now',
-		title:'Modern Prometheus, Part III: <br />Accelerating Evolution of Neural Networks &agrave; la Nvidia GPU',
-		post:blogpost9,
-	   blogcite:blogcite9
-	 },  {
-		id:'8',
-		did:'06-23-18',
-		date:'June 23-24, 2018<br />Weekend',
-		author:'by Thomas Maestas',
-		cat3:'A.I.Now',
-		title:'Modern Prometheus, Part II: <br />Broadening Evolution of Deep Learning Species &agrave; la Neural Network',
-		post:blogpost8,
-	   blogcite:blogcite8
-	   },   { 
-		id:'7',
-		did:'06-22-18',
-		date:'June 22, 2018',
-		author:'by Thomas Maestas',
-		cat3:'A.I.Now',
-		title:'Modern Prometheus, Part I.<br />Made from 8 billion transistors and 1,000 Cuda Cores:<br /> Today\'s Irreplaceable NVidia GPU',
-		post:blogpost7,
-	   blogcite:blogcite7
-	   }, { 
-		id:'6',
-		did:'06-21-18',
-		date:'June 21, 2018',
-		author:'by Thomas Maestas',
-		cat3:'Sociology Tomorrow!',
-		title:'"Taxation Without Representation is Tyranny!"<br /><br />-- James Otis, 1776',
-		post:blogpost6,
-	   blogcite:blogcite6
-	   }, 
-	   { 
-		id:'5',
-		did:'06-20-18',
-		date:'June 20, 2018',
-		author:'by Thomas Maestas',
-		cat3:'Sociology Tomorrow!',
-		title:'A Healthy Internet is a Fast, Cooperative Internet: <br />Net Neutrality Protections move to State-Level Legislation',
-		post:blogpost5,
-	   blogcite:blogcite5
-	   }, { 
-		id:'4',
-		did:'06-19-18',
-		date:'June 19, 2018',
-		author:'by Thomas Maestas',
-		cat3:'Musing Blockchain',
-		title:'Rise of the Embattled 4th Estate',
-		post:blogpost4,
-	   blogcite:blogcite4
-	   },   
-		{ 
-		id:'3',
-		did:'06-18-18',
-		date:'June 18, 2018',
-		author:'by Thomas Maestas',
-		cat3:'A.I.Now',
-		title:'Machine Learning, Democratized:<br />Part II: Deep Learning\'s Origin Story',
-		post:blogpost3,
-	   blogcite:blogcite3
-	   },  { 
-		id:'2',
-		did:'06-16-18',
-		date:'June 16-17, 2018<br />Weekend',
-		author:'by Thomas Maestas',
-		cat3:'Sociology Tomorrow!',
-		title:'Machine Learning, Democratized<br />Part I: Google\'s ML Kit',
-		post:blogpost2,
-	   blogcite:blogcite2
-	   }, 
-		{ 
-		id:'1',
-		did:'06-15-18',
-		date:'June 15, 2018',
-		author:'by Thomas Maestas',
-		cat3:'Musing Blockchain',
-		title:' The Spectre of a Headless Horseman:<br /> Why  Sociologists <i> are<span class="new">n\'t </span></i> Key Players in Data Analysis within the Domain of Blockchain Technologies?<br /><span class="new">A Re-Do of my <s >Feb 10,2018</s> post</span>',
-		post:blogpost1,
-	   blogcite:blogcite1
-	   }
-	   ] ;
-	
-	   for (i=0;i<url.length;i++){ 
-		var cat = ` 
+
+			var url =
+				[
+					{
+						id: '14',
+						did: '06-30-18',
+						date: 'June 30-July 1, 2018<br />Weekend ',
+						author: 'by Thomas Maestas',
+						cat3: 'Sociology Tomorrow!',
+						title: 'The Space Powers that Be:<br />When Boeing issues a Ticket to the Moon',
+						post: blogpost14,
+						blogcite: blogcite14
+					}, {
+						id: '13',
+						did: '06-29-18',
+						date: 'July 29, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'A.I.Now',
+						title: 'A.I. &amp; Work, Part II<br />Learning to Learn alongside a Cheerful Automoton Work-Partner',
+						post: blogpost13,
+						blogcite: blogcite13
+					},
+					{
+						id: '12',
+
+						did: '06-28-18',
+						date: 'June 28, 2018 ',
+						author: 'by Thomas Maestas',
+						cat3: 'A.I.Now',
+						title: 'A.I. &amp; Work, Part I<br />Fighting Obsessive Compulsive Quantitative Optimization Disorder and the Slide into a Weberian Iron Shell',
+
+						post: blogpost12,
+						blogcite: blogcite12
+					}, {
+						id: '11',
+
+						did: '06-27-18',
+						date: 'June 27, 2018 ',
+						author: 'by Thomas Maestas',
+						cat3: 'Web Dev Affairs',
+						title: 'Apple: You are our Tech Leader!',
+
+						post: blogpost11,
+						blogcite: blogcite11
+					}, {
+						id: '10',
+						did: '06-26-18',
+						date: 'June 26, 2018 ',
+						author: 'by Thomas Maestas',
+						cat3: 'Sociology Tomorrow!',
+						title: 'T-Nation Makes the Case: Sprint Merger takes on the Senate',
+
+						post: blogpost10,
+						blogcite: blogcite10
+					}, {
+						id: '9',
+						did: '06-25-18',
+						date: 'June 25, 2018 ',
+						author: 'by Thomas Maestas',
+						cat3: 'A.I.Now',
+						title: 'Modern Prometheus, Part III: <br />Accelerating Evolution of Neural Networks &agrave; la Nvidia GPU',
+						post: blogpost9,
+						blogcite: blogcite9
+					}, {
+						id: '8',
+						did: '06-23-18',
+						date: 'June 23-24, 2018<br />Weekend',
+						author: 'by Thomas Maestas',
+						cat3: 'A.I.Now',
+						title: 'Modern Prometheus, Part II: <br />Broadening Evolution of Deep Learning Species &agrave; la Neural Network',
+						post: blogpost8,
+						blogcite: blogcite8
+					}, {
+						id: '7',
+						did: '06-22-18',
+						date: 'June 22, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'A.I.Now',
+						title: 'Modern Prometheus, Part I.<br />Made from 8 billion transistors and 1,000 Cuda Cores:<br /> Today\'s Irreplaceable NVidia GPU',
+						post: blogpost7,
+						blogcite: blogcite7
+					}, {
+						id: '6',
+						did: '06-21-18',
+						date: 'June 21, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'Sociology Tomorrow!',
+						title: '"Taxation Without Representation is Tyranny!"<br /><br />-- James Otis, 1776',
+						post: blogpost6,
+						blogcite: blogcite6
+					},
+					{
+						id: '5',
+						did: '06-20-18',
+						date: 'June 20, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'Sociology Tomorrow!',
+						title: 'A Healthy Internet is a Fast, Cooperative Internet: <br />Net Neutrality Protections move to State-Level Legislation',
+						post: blogpost5,
+						blogcite: blogcite5
+					}, {
+						id: '4',
+						did: '06-19-18',
+						date: 'June 19, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'Musing Blockchain',
+						title: 'Rise of the Embattled 4th Estate',
+						post: blogpost4,
+						blogcite: blogcite4
+					},
+					{
+						id: '3',
+						did: '06-18-18',
+						date: 'June 18, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'A.I.Now',
+						title: 'Machine Learning, Democratized:<br />Part II: Deep Learning\'s Origin Story',
+						post: blogpost3,
+						blogcite: blogcite3
+					}, {
+						id: '2',
+						did: '06-16-18',
+						date: 'June 16-17, 2018<br />Weekend',
+						author: 'by Thomas Maestas',
+						cat3: 'Sociology Tomorrow!',
+						title: 'Machine Learning, Democratized<br />Part I: Google\'s ML Kit',
+						post: blogpost2,
+						blogcite: blogcite2
+					},
+					{
+						id: '1',
+						did: '06-15-18',
+						date: 'June 15, 2018',
+						author: 'by Thomas Maestas',
+						cat3: 'Musing Blockchain',
+						title: ' The Spectre of a Headless Horseman:<br /> Why  Sociologists <i> are<span class="new">n\'t </span></i> Key Players in Data Analysis within the Domain of Blockchain Technologies?<br /><span class="new">A Re-Do of my <s >Feb 10,2018</s> post</span>',
+						post: blogpost1,
+						blogcite: blogcite1
+					}
+				];
+
+			for (i = 0; i < url.length; i++) {
+				var cat = ` 
 		<div id="${url[i].did}" class="blogDiv"> 
 		<hr />  
 		<a href="#top"><button>Top</button></a>  
@@ -6122,57 +6122,57 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
 		</div>
 		<div id="blogcite">${url[i].blogcite}
 		</div>` ;
-	
-		secretParagraphJUNE.innerHTML  += cat; 
-	 
-	 
-	} 
-	
-	document.getElementById("paragraph-june").innerHTML = cat; 
-	
-	
-	 
-	 
-	} else {
-	  secretParagraphJUNE.style.display = 'none';
+
+				secretParagraphJUNE.innerHTML += cat;
+
+
+			}
+
+			document.getElementById("paragraph-june").innerHTML = cat;
+
+
+
+
+		} else {
+			secretParagraphJUNE.style.display = 'none';
+		}
 	}
-	}
-/* JULY */
+	/* JULY */
 
 
 
-console.log('blogger-july');
-function updateSecretParagraphJULY() {
-	if (showSecretJULY) {
-	secretParagraphJULY.style.display = 'block';
-	secretParagraphJULY.style.fontFamily = 'Roboto';
-	secretParagraphJULY.style.opacity = '1';
-	secretParagraphJULY.style.color = 'darkslategray';
-	 
-	
- 
+	console.log('blogger-july');
+	function updateSecretParagraphJULY() {
+		if (showSecretJULY) {
+			secretParagraphJULY.style.display = 'block';
+			secretParagraphJULY.style.fontFamily = 'Roboto';
+			secretParagraphJULY.style.opacity = '1';
+			secretParagraphJULY.style.color = 'darkslategray';
 
-	blogpost24 = `<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka's of Technological Candy at a free tour's view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>
+
+
+
+			blogpost24 = `<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka's of Technological Candy at a free tour's view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>
 	<p class="quote">While Google is still looking up at Amazon Web Services and Microsoft Azure when it comes to infrastructure cloud computing, it appears to be finding the balance between keeping engineers happy with cloud-native computing tools and courting enterprise company suits with service-level agreements and steak dinners.<sup>1</sup></p>`;
-	blogcite24 =   `
+			blogcite24 = `
 	
 	<p class="cite">1. <a href="https://cloud.google.com"   target="_blank">https://cloud.google.com
 	</a>
 	</p><p class="cite">1. <a href="https://www.geekwire.com/2018/google-cloud-ceo-diane-greene-wane-cloud-pricing-wars-never-want-win-price/"   target="_blank">https://www.geekwire.com/2018/google-cloud-ceo-diane-greene-wane-cloud-pricing-wars-never-want-win-price/
 	</a>
 	</p>`;
- 
-	blogpost23 = `<p class="firstparagraph">Planet Green dodged a bullet recently, as activists' climate change research officially gains legitimacy from the Supreme Court, albeit a few of their qualms ... But who could deny that if there is one thing that will save the earth, it's knowledge, knowledge far outweighs any other salvo. This is because the more data, the more accurate the models to indicate specific environmental needs and threats--<i>not to mention all the clues the data could reveal toward helping earth regain balance. </i></p><p>A.I. training would starve if the Supreme Court would have allowed administration clamp-downs on knowledge. After all, the overwhelming popular and professional opinions favor earth-friendly policies. 
+
+			blogpost23 = `<p class="firstparagraph">Planet Green dodged a bullet recently, as activists' climate change research officially gains legitimacy from the Supreme Court, albeit a few of their qualms ... But who could deny that if there is one thing that will save the earth, it's knowledge, knowledge far outweighs any other salvo. This is because the more data, the more accurate the models to indicate specific environmental needs and threats--<i>not to mention all the clues the data could reveal toward helping earth regain balance. </i></p><p>A.I. training would starve if the Supreme Court would have allowed administration clamp-downs on knowledge. After all, the overwhelming popular and professional opinions favor earth-friendly policies. 
  <p class="quote">The Supreme Court on Monday denied the Trump administration’s plea to halt proceedings in a landmark lawsuit by young people seeking stronger federal action on climate change.<sup>1</sup>
  </p>`;
- blogcite23 = `<p class="footnotes">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
+			blogcite23 = `<p class="footnotes">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
  </a>
  </p>
  <p class="cite">1. <a href="http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate"   target="_blank">http://thehill.com/policy/energy-environment/399562-supreme-court-denies-trump-admin-request-to-halt-youth-climate
  </a>
  </p>
 	`;
- blogpost22 = `
+			blogpost22 = `
  <p class="quote"><i>“It feels like a magical mirror that reflects your moves with images of all kinds of human activity – from sports and dance to martial arts, acting and beyond.”</i></br></br>
  --Google creative technologist Irene Alvarado 
  </p>
@@ -6180,30 +6180,30 @@ function updateSecretParagraphJULY() {
 	The power of Big Data really proves itself, but Google's algorithm-sharing provides a real democracy of A.I. technology for everyone to use.  On the other side of the coin, accuracy in video and voice mimicry now means A.I.-driven authenticity detectors will soon prove pretty darn useful!
  </p>
  `
- blogcite22 = `<p class="cite"> 
+			blogcite22 = `<p class="cite"> 
  <p class="footnotes">1. <a href="https://www.standard.co.uk/tech/google-move-mirror-dancing-gif-a3892471.html"   target="_blank">https://www.standard.co.uk/tech/google-move-mirror-dancing-gif-a3892471.html
  </a>
  </p> 
  </p>`
- blogpost21 =   `<p class="firstparagraph">Wired.com ...</p>
+			blogpost21 = `<p class="firstparagraph">Wired.com ...</p>
  <p class="quote"> 
  "But big retailers can sell millions of products, so it's not feasible to have workers browse each item and manually adjust prices. Instead, the companies employ software to scan rival websites and collect prices, a process called “scraping.” From there, the companies can adjust their own prices."<br /><br />
  "Retailers want to see what their rivals are doing, but they want to prevent rivals from snooping on them; retailers also want to protect intellectual property like product photos and descriptions, which can be scraped and reused without permission by others. So many deploy defenses to subvert scraping ..." <sup>1</sup></p>`;
- blogcite21 = ` 
+			blogcite21 = ` 
  <p class="footnotes">1. <a href="https://www.wired.com/story/scraper-bots-and-the-secret-internet-arms-race/"   target="_blank">https://www.wired.com/story/scraper-bots-and-the-secret-internet-arms-race/
  </a>
  </p>   `;
- 
-	 blogpost20 =  `<p class="firstparagraph">Space.com ...</p>
+
+			blogpost20 = `<p class="firstparagraph">Space.com ...</p>
 	 <p class="quote">"NASA's Robonaut program and Roscosmos' FEDOR program seem to share the goal of creating robots that make it safer for humans to accomplish things in space that otherwise would be too dangerous for humans to attempt.<i> Still, the FEDOR androids' gun-wielding design might raise a few eyebrows."</i><sup>1</sup></p>
 	 <img src="dist/img/droid.jpg" class="zoom" width="288px" />
 	 `;
- blogcite20 = ` 
+			blogcite20 = ` 
  <p class="footnotes">1. <a href="https://www.space.com/41253-russian-robots-fly-to-space.html"   target="_blank">https://www.space.com/41253-russian-robots-fly-to-space.html
  </p>   `;
-	 
-	 blogpost19=
-	 `<p class="quote">
+
+			blogpost19 =
+				`<p class="quote">
 	 <i> One person familiar with the matter described the office scene as “chaotic” and said at one point more than 300 people tuned in to an emergency conference call.  “Currently out of capacity for scaling,” one of the updates said about the status of Amazon’s servers, roughly an hour after Prime Day’s launch. “Looking at scavenging hardware.” <sup>1</sup></i> </p>
 	 <p class="firstparagraph">Prime Day's saga of cascading failures stemming from an internal software reveals the <i> relentless challenge of Scalability</i>. In their words, the root cause was a "breakdown in auto-scaling, a critical component when dealing with unexpected traffic spikes"<sup>1</sup>. So the exponential spikes may be hard to expect because their nature is both spontaneous, but the inflection is calculable! ...only dramatically represented as the folding a sheet of paper 42 times to reach the moon ...
 	 </p>
@@ -6214,9 +6214,9 @@ function updateSecretParagraphJULY() {
 	 Amazon immediately launched a scaled-down "fallback" front page to reduce workload and temporarily killed all international traffic too. 
 	 </p><p>And so, the same Bezosian leadership that manages space exploration's <strong>Blue Origin</strong> inspired a system of fall-back redundencies to get back up to speed dramatically within 80 minutes. Perhaps the quick, albeit unconventional recovery strategy deserves great respect--because chance happens to all!   
 	 </p>
-	 `; 
- 
-	 blogcite19 = ` 
+	 `;
+
+			blogcite19 = ` 
 	 <p class="footnotes">Image Credit: <a href="http://wwvv.codersrevolution.com/blog/will-a-piece-of-paper-folded-42-times-reach-the-moon"   target="_blank">http://wwvv.codersrevolution.com/blog/will-a-piece-of-paper-folded-42-times-reach-the-moon
 	 </a>
 	 </p>   
@@ -6224,24 +6224,24 @@ function updateSecretParagraphJULY() {
  </a>
  </p>   
 	`;
-	 blogpost18=
-	 `
+			blogpost18 =
+				`
 	 <p class="firstparagraph">Business models of all shapes and sizes, and the diversity of tech that comes with them, are the natural consequence of<i> unlimited <strong>creative</strong> potential in Tech. So, a small business with few resources now has unlimited resources in the cloud with game-changing access to A.I.</i> Luckily, investments in smaller tech sources cover all sectors:</p>
 	
 	 <p class="quote">The Energy Department has announced that it will award 95 grants worth a total of $95 million to 80 small businesses located in 26 states as part of its Small Business Innovation Research and Small Business Technology Transfer programs. <sup>1</sup>
 	 </p>
 	 <p>So, for as much as tech giants grow out of proportion, so do smaller businesses; because not only is the economic horizon  not a zero-sum tech pie, but growing. Secondly, the pace of evolving needs and tech capabilities favor smaller, more maneuvrable entrepreneur-producers.`;
-	 
-	 blogcite18 = ` 
+
+			blogcite18 = ` 
  <p class="footnotes">1. <a href="http://www.executivegov.com/2018/07/doe-to-award-rd-grant-for-innovative-tech-to-80-small-businesses/
 	 "   target="_blank">http://www.executivegov.com/2018/07/doe-to-award-rd-grant-for-innovative-tech-to-80-small-businesses/
 	 
  </a>
  </p>   
 	`;
- 
-	 blogpost17 =
-	 `
+
+			blogpost17 =
+				`
 	 <p class="firstparagraph"> Cloud computing has never offered more convenience--especially in e-commerce. Walmart ramps up online presence, Amazon's Whole Foods ramps up offline presence. More importantly, everything and all businesses in between these two vortices has the opportunity to ride the same wave of platform and supply chain integration. </p>
 	 <p class="quote"> 
 	 </p>
@@ -6251,24 +6251,24 @@ function updateSecretParagraphJULY() {
 	 
 	 As part of the partnership, Walmart and Microsoft engineers will collaborate to migrate a significant portion of walmart.com and samsclub.com to Azure, Walmart added. <sup>1</sup>
 	 </p>`;
-	 
-	 blogcite17 = ` 
+
+			blogcite17 = ` 
  <p class="footnotes">1. <a href="https://www.usnews.com/news/technology/articles/2018-07-17/walmart-microsoft-in-partnership-to-use-cloud-tech
 	 "   target="_blank">https://www.usnews.com/news/technology/articles/2018-07-17/walmart-microsoft-in-partnership-to-use-cloud-tech
 	 
  </a>
  </p>   
 	`;
- 
-	 blogpost16 = `
+
+			blogpost16 = `
 	 <p class="firstparagraph">Alibaba--a Chinese search giant akin to Google--dwarfs the market value of Amazon. So much so, that Alibaba's earnings last year don't compete with Amazon's year, <i>but  past several years</i>.<sup>1</sup> Their success isn't a haphazard event, but years of strategy that focused on integrating services, whether online or offline origins, a true supply chain no longer discriminating marketplaces, logistics, cloud computing and payments. With unlimited global reach, big gets bigger and bigger. </p>
 	
 	 <p class="quote">  "Alibaba Cloud has always been dedicated to empower enterprises of different sizes to tap into opportunities in the digital age. With digital transformation poised to add close to $154 billion to India's GDP, this is a great opportunity for us to do business in India," Alex Li, General Manager of Alibaba Cloud Asia Pacific, said in a statement.<sup>2</sup> 
 		</p>
 		<p>
 		Ultimately, what goes up does not necessarily come back down with cloud computing. And the further integrated systems become, the less feasible to divide, no matter which part of the globe.<sup>3</sup></p>`;
-	 
-	 blogcite16 = `
+
+			blogcite16 = `
 	 <p class="footnotes">1. <a href="
 	 https://www.lemonde.fr/idees/article/2018/07/10/comment-alibaba-va-tuer-amazon_5329170_3232.html"   target="_blank">https://www.lemonde.fr/idees/article/2018/07/10/comment-alibaba-va-tuer-amazon_5329170_3232.html
 	 </a>
@@ -6280,8 +6280,8 @@ function updateSecretParagraphJULY() {
 	 </a>
 	 </p>    
 	`;
- 
-	 blogpost15 = `
+
+			blogpost15 = `
 	 <p class="firstparagraph">Ethereum Architect Vitalik Buterin's unwavering commitment to the Crypto-contract currency finally pays off. In my February blogposts, I recounted the technical challenges that Ethereum still faced: As a "Proof of Work" currency that requires Ether (in <i>Wei</i>) currency for each transaction hindered more widespread adoption. After the big boost from last month's Switzerland's Crypto Valley Conference, Ethereum walked away handily with scores of investors and renewed momentum. The 23-year old hero of the platform almost appears precocious for the recent feature in Fortune Magazine's Top 40 Under 40.</p>
 	 <p class="quote">
 	 [Buterin's] visionary project has rocketed to a market cap of nearly $30 billion—as high as the private valuations Airbnb and Snapchat achieved—from $1 billion a year ago, when Fortune first placed him on its 40 under 40 list.<sup>2</sup>
@@ -6289,8 +6289,8 @@ function updateSecretParagraphJULY() {
 	 <p>To recap the enormous advantages of Ethereum functions as a <i> global operating system--The Ethereum Virtual Machine--</i>  the platform upon which shared, distributed applications can be designed and deployed. Unlike Bitcoin's function-less platform, contracts from banking to betting to real-estate can easily be drawn up in Solidity code, into the DAPP, <i>Distributed Application  deployed onto a Fintech network so expansive</i>, no wonder that even a crypto-currency needs a Swiss bank account!
 	 </p>
 	 `;
- 
-	 blogcite15 = `<p class="footnotes">1. <a href="
+
+			blogcite15 = `<p class="footnotes">1. <a href="
  https://www.cnbc.com/2018/07/18/ethereum-is-a-leading-driver-in-blockchain-says-circle-ceo.html
  "   target="_blank">
  https://www.cnbc.com/2018/07/18/ethereum-is-a-leading-driver-in-blockchain-says-circle-ceo.html
@@ -6301,13 +6301,13 @@ function updateSecretParagraphJULY() {
  </a>
  </p>   
 	`;
-	
-	 blogpost14 = `
+
+			blogpost14 = `
 	<p class="firstparagraph">Prime's Allure begins with the greatest deals, the most convenient deliveries, and a new Accessibility of Whole Foods Breads, Pastries, and HoneyCrisp Apples to every citizen!</p>
 	<p>On a darker note, many articles and studies focus on the vendors' side of the Amazon effect, i.e. the push to remote shopping;<sup>1</sup> But the consumer side of the Amazon effect is more insidious: the sheer off-scale underpricing of goods, mock holidays, and shopping-memberships push new spending habits. <i>The more convenient shopping with 'one-click buy' becomes, the 'less convenient' becomes the explorative, exciting-/debate-filled shopping experiences that reward the Creative Entrepreneurs'</i> cultural interaction with consumers  
  
  `;
-	 blogcite14 = `
+			blogcite14 = `
  <p class="footnotes">1. <a href="
  https://www.statista.com/chart/10295/shopping-on-amazon/
  "   target="_blank">
@@ -6315,7 +6315,7 @@ function updateSecretParagraphJULY() {
  </a>
  </p>   
  `;
-	 blogpost13 = `
+			blogpost13 = `
 	 <p class="firstparagraph"> Now that 49% of American e-commerce passes through Amazon's gates, it's official: <i>50% market share signifies a hostile take-over of Amerian Culture.</i> From the remaining half of the Online Shopping pie goes to  the next top nine, 22%: 
 	</p>
 	<p class="quote">
@@ -6333,7 +6333,7 @@ function updateSecretParagraphJULY() {
 	 <p>These are more palatable organizations, without Amazon's cardboard-like culture.  There you still have the lofty, beautify Apple products, and who doesn't love the umbrella-cane only available on QVC limited quantities do apply!</p>
 	 <p>
 	 Of course, the remaining free birds, the 32% comprise the millions of home-office,brick-and-mortars, and online market entrepreneurs. (These do not include the independent vendor sales using Amazon's Marketplace). </p><p>So why does this 32-percentile slice of e-commerce represent the last stand of American Culture? The Creative Spirit may survive, even thrive; but it changes, and <i> creative verve takes on a reshaped form and a new pace, fitting to bureaucratic constraints and pricing schema. </p>   `;
-	 blogcite13 = `
+			blogcite13 = `
 	 <p class="footnotes">1. <a href="
 	 http://www.businessinsider.com/amazon-is-closing-in-on-owning-half-of-the-e-commerce-market-2018-7?utm_source=feedburner&amp%3Butm_medium=referral&utm_medium=feed&utm_campaign=Feed%3A+businessinsider%2Ftravel+%28Business+Insider%29&r=US&IR=T&IR=T
 	 "   target="_blank">
@@ -6342,7 +6342,7 @@ function updateSecretParagraphJULY() {
 	 </p>     
  
 	 `;
-	 blogpost12 = `
+			blogpost12 = `
 	 
 	 <p class="firstparagraph">Fintech's revered "Crypto Valley Conference on Blockchain Technology" in Zug, Switzerland, featured blockchain expertise from all corners, including Keynote Speakers, Stefan Thomas CTO of Ripple [cryptocurrency] and Professor Emin G&uuml;n Sirer of Cornell University, along with Economists and Swiss Government officials. World-class economists, investors, and Regulation authorities aside, the host-countries whole-hearted commitment to cryptocurrency is evident: </p>
 	 <p class="quote">“They want Switzerland to be the place to make it happen — but they don’t want to be seen
@@ -6356,7 +6356,7 @@ function updateSecretParagraphJULY() {
 	 <img src="dist/img/swissBlockchain.png" width="350" class="zoom" />
 	 <p><small>Image Credit: Source Lykke, Coindesk</small></p>
  `;
-	 blogcite12 = `<p class="footnotes">3. <a href="
+			blogcite12 = `<p class="footnotes">3. <a href="
 	 https://www.cryptovalleyconference.com
 	 "   target="_blank">
 	 
@@ -6371,25 +6371,25 @@ function updateSecretParagraphJULY() {
 	 </a>
 	 </p>
  `;
-	 blogpost11 = `
+			blogpost11 = `
 	 <p class="firstparagraph"><i>Zen of Python: "Beautiful is better than ugly.<i> Explicit is better than implicit.</i>  Simple is better than complex.  Complex is better than complicated. Flat is better than nested.  Sparse is better than dense"<br /></i> -- Pythoneer Tim Peters<p> In my April 19th post, I recount Python's near-mystical author and leader of language's development up to this month's retirement:  About Guido van Rossum, </p>
 	 <p class="quote">After almost 30 years of overseeing the development of the world's<i> most popular language, Python, its founder and Benevolent Dictator For Life" (BDFL), Guido van Rossum,</i> has decided he would like to remove myself entirely from the decision process.<sup>2</sup> </p><p>
  Python is NASA's drug-of-choice because of the language's superior handling of precision mathematics, and yet the syntax and module libraries makes the language easy for anyone to pick up. Few could argue against Guido van Rossum's reductionist philosophy that inspires the clear, expansive structure. So, farewell to the great Guido van Rossum's official leadership and Thank You! 
  </p>
  `;
-	 blogcite11 = ` <p class="footnotes"><a>1. Tim Peters <p class="footnotes">2. <a href="https://www.zdnet.com/article/python-language-founder-steps-down/  "   target="_blank">
+			blogcite11 = ` <p class="footnotes"><a>1. Tim Peters <p class="footnotes">2. <a href="https://www.zdnet.com/article/python-language-founder-steps-down/  "   target="_blank">
 	 https://www.zdnet.com/article/python-language-founder-steps-down/ </a>
 	 </p>
  
  `;
-	 blogpost10 = `<p class="quote">
+			blogpost10 = `<p class="quote">
  ...The colossal shift in the chip world came with the advent of artificial intelligence (AI) and machine learning (ML). With these emerging technologies, a flood of new processors has arrived—and they are coming from unlikely sources. <br /><br />
  Microsoft is preparing an AI chip for its HoloLens VR/AR headset, and there’s potential for use in other devices. 
  <i> Google has a special AI chip for neural networks called the Tensor Processing Unit, or TPU, which is available for AI apps on the Google Cloud Platform. </i>Apple is working on an AI processor called the Neural Engine that will power Siri and FaceID.  <sup>1</sup></p>
  <p class="firstparagraph">All ... All the A.I. Tools a busy bee could ask for!
  </p>
 	`;
-	 blogcite10 = `
+			blogcite10 = `
  <p class="footnotes">1. <a href="
  https://arstechnica.com/gadgets/2018/07/the-ai-revolution-has-spawned-a-new-chips-arms-race/
  "   target="_blank">
@@ -6397,8 +6397,8 @@ function updateSecretParagraphJULY() {
  </a>
  </p>     
  `;
- 
-	 blogpost9 = ` 
+
+			blogpost9 = ` 
  <p class="firstparagraph">Moore's Law--a function of transistor count--has guided CPU bench-mark expectations along a fairly linear path year-by-year. However, computing requirements have multiplied while the mathematical relevence of the law wanes. <br /><br />
  <img src="dist/img/moores_law.png" width="400px" class="zoom" title="Moore's Law Graphic" /><br />Image Credit: ourworldindata.org <br /><br /> <i>Enter the Decision Tree, the Random Forest, Na&iuml;ve Bayes, and K-Nearest Neighbors</i>: The machine learning tools and theoretical building blocks to get more bang for the buck from all that computing power. How? <i> Teaching software to teach itself, which is the pathway out of computing-power deficits and the move from theoretical to practical</i> ...</p> 
  <p class="quote">
@@ -6408,14 +6408,14 @@ function updateSecretParagraphJULY() {
  <sup>2</sup></p>
  <p>As the saying goes, <i>One crowded hour of glorious life is worth an age without a name.</i><sup>3</sup> And now the tide is high for Tech to venture out into the world and make a name for herself!
  `;
-	 blogcite9 = `<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
+			blogcite9 = `<p class="footnotes">2. <a href="https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.pngArticle"   target="_blank">https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png</a>
  </p>
  <p class="footnotes">2. <a href="https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era"   target="_blank">https://hbr.org/2018/07/the-industrial-era-ended-and-so-will-the-digital-era</a>
  </p>
  
  <p class="footnotes">3. Thomas Osbert Mordaunt`
- 
-	 blogpost8 = `<p class="firstparagraph">Advances in computer science and data research follow the path of the tools that pave a developer's path: The tools make the worker, and therefore the work. For example, any of the Industrial Revolutions leaped forward with every new tool. <i>Now, Artificial Intelligence research and design  lurches forward by the tooling, but in a new fashion: Open source tools owned and operated by the community, the work by and for any community.</i>
+
+			blogpost8 = `<p class="firstparagraph">Advances in computer science and data research follow the path of the tools that pave a developer's path: The tools make the worker, and therefore the work. For example, any of the Industrial Revolutions leaped forward with every new tool. <i>Now, Artificial Intelligence research and design  lurches forward by the tooling, but in a new fashion: Open source tools owned and operated by the community, the work by and for any community.</i>
  </p>
  <p> Neural network tools like TensorFlow.js, a "JavaScript library for training and deploying Machine Learning models in the browser and on Node.js" <sup>1</sup>  along with other programming-library frameworks, abstract away a layer of the visible mechanics. On the one hand, it is the democratization of cutting-edge technology, formerly siloed apart and under government, corporate or university controls. </p>
  <p>
@@ -6423,11 +6423,11 @@ function updateSecretParagraphJULY() {
  <p>Therefore,  bootstrapping open-source projects brings the community to the forefront of technological innovation! Though the common mobile app has grown familiar for changing landscapes, those apps chiefly leverage the social network (links) of friends and professionals; while the common-use spread of machine-learning research provides leverage to the actual work (nodes) of progress</p>
  <p>Therefore, the tools provide one dimension of A.I.'s path, while the democratized distribution of tools across social networks provides a second dimensional path. This alters the A.I. evolution in the long-term, by means of short-term and frequent tooling revolutions.   </p>
  `;
-	 blogcite8 = `
+			blogcite8 = `
  <p class="footnotes">1. <a href=" https://js.tensorflow.org/"   target="_blank"> https://js.tensorflow.org/</a>
  </p>   
  `;
-	 blogpost7 = `
+			blogpost7 = `
  <p class="firstparagraph">Panic and anxiety cover the Snapchat countries across far-flung locales from Latvia to Denver to Spain--</i>and in one case blighting the entire island of the United Kingdom...</i></p>
  <p class="quote">Some users went to Twitter and shared their frustration.
  "I've been sending people abuse on snapchat for not replying to me only to discover its down. Oops?" one user tweeted.<br /><br />
@@ -6444,7 +6444,7 @@ function updateSecretParagraphJULY() {
  
  This development has been coming for some time as Snapchat looks to placate advertisers who have grown frustrated by users who, on average, only stay on an ad for two seconds before skipping.</p> 
  <p>Every kind of Server malfunction pales in comparison to the Affordable Healthcare Act web-app's abysmal first few months.<i> Get Well Soon, Snapchat--you're breaking our heart!</i></p>`;
-	 blogcite7 = `
+			blogcite7 = `
  <p class="footnotes">1. <a href=" https://www.independent.co.uk/life-style/gadgets-and-tech/snapchat-down-not-working-android-broken-message-snap-inc-help-a8443236.html"   target="_blank"> https://www.independent.co.uk/life-style/gadgets-and-tech/snapchat-down-not-working-android-broken-message-snap-inc-help-a8443236.html</a>
  </p>    
  
@@ -6452,7 +6452,7 @@ function updateSecretParagraphJULY() {
  </p>    
  <p class="footnotes">3. <a href="https://outage.report/snapchat" target="_blank">https://outage.report/snapchat</a></p>
 	`;
-	 blogpost6 = `
+			blogpost6 = `
 	<p class="quote"><sup>0</sup><strong><small>
 	The term “extropy,” coined in 1967, is generally used to describe life’s capacity to reverse the spread of entropy across space and time. </small></strong><sup>1</sup>
 	</p>
@@ -6468,7 +6468,7 @@ function updateSecretParagraphJULY() {
 	<sup>1</sup></p>
 	<p>At the end of the day, we can ask "are we there yet?" over again, but a more pointed query asks not about time, but about place: "It may be highly unpredictable where a traveller will be one hour after the start of her journey, yet predictable that after five hours she will be at her destination.”
 	`;
-	 blogcite6 = `
+			blogcite6 = `
 	
  <p class="footnotes">1. <a href=" https://www.newyorker.com/magazine/2015/11/23/doomsday-invention-artificial-intelligence-nick-bostrom"   target="_blank"> https://www.newyorker.com/magazine/2015/11/23/doomsday-invention-artificial-intelligence-nick-bostrom</a>
  </p>    
@@ -6476,7 +6476,7 @@ function updateSecretParagraphJULY() {
  </p>  
  
 	`;
-	 blogpost5 = `
+			blogpost5 = `
 	<p class="firstparagraph">It turns out that data is unevenly distributed between sectors, leading to monopoles of dominance: After all, who controls the data, controls the commanding heights. And yet, the very substance of Big Data derives from and belongs precisely to  individuals, aggregated, that checked "Agree" to a given app's Privacy Policy, from a given Internet Service Provider, using a given Browser ....</p>
 	<p>Now that physical products lose relative value for many reasons (not to mention easy downloads for 3-D printing), and alternately<i> informational data products gain value in the digital economy: hence the problem of allocating the value of personal data back to the person </i>... To this, the Canadian A.I. Mafia chimes in:</p>
 	 <p class="quote">A persistent challenge for Element is the dearth of good data. The simplest way to train A.I. models is to feed them lots of well-labeled examples—thousands of cat images, or translated texts. Big Tech has access to so much consumer-oriented data that it’s all but impossible for anyone else to compete at building large-scale consumer products. But businesses, governments, and other institutions own huge amounts of private information. Even if a corporation uses Google for email, or Amazon for cloud computing, it doesn’t typically let those vendors access its internal databases about equipment malfunctions, or sales trends, or processing times. <br />
@@ -6484,16 +6484,16 @@ function updateSecretParagraphJULY() {
 	 <p>
 		<p>So will this kind of data democratization work? Not only so, but the Cambridge Analytica fiasco only briefly awakened public attention to the deep science underlying each of our "online digital signatures" ... the race is on among the Tech Giants to use A.I. to understand our lives, our keystrokes, our buying preferences better than we understand. And in turn, provide a great utility, and win our financial allegiance!
  `;
- 
- 
-	 blogcite5 = `
+
+
+			blogcite5 = `
  
  <p class="footnotes">1. <a href="http://fortune.com/longform/element-ai-startup-tech/"   target="_blank">http://fortune.com/longform/element-ai-startup-tech/</a>
  </p>    
  
  `;
- 
-	 blogpost4 = ` 
+
+			blogpost4 = ` 
 	 <p class="quote">In the Modern Field of Artiificial Intelligence, all roads seem to lead to three researchers with ties to Canadian universities. The first, Geoffrey Hinton, a 70-year-old Brit who teaches at the University of Toronto, pioneered the subfield called deep learning that has become synonymous with A.I. The second, a 57-year-old Frenchman named Yann LeCun, worked in Hinton’s lab in the 1980s and now teaches at New York University. The third, 54-year-old Yoshua Bengio, was born in Paris, raised in Montreal, and now teaches at the University of Montreal. The three men are close friends and collaborators, so much so that people in the A.I. community call them the Canadian Mafia.<sup>1.</sup></p>
  
 	 <p class="firstparagraph">A curious path of punctuated advancement due to insufficient memory and cpu power, characterized late 20th century A.I. development: Deep Learning development   lulls interrupted by rapid growth with each successive technological period.
@@ -6517,9 +6517,9 @@ function updateSecretParagraphJULY() {
 		
 	
 	 `;
- 
- 
-	 blogcite4 = `
+
+
+			blogcite4 = `
  
  
 	 <p class="footnotes">1. <a href="http://fortune.com/longform/element-ai-startup-tech/"   target="_blank">http://fortune.com/longform/element-ai-startup-tech/</a>
@@ -6529,8 +6529,8 @@ function updateSecretParagraphJULY() {
  
  
 	 `;
- 
-	 blogpost3 = ` 
+
+			blogpost3 = ` 
 	 <p class="firstparagraph">Already A.I. has shown its true colors as an ideal tool for solving disproportionately large, complex data problems: Similar to Watson's medical recommendations based on millions of pages read, the off-the scale amount of pages from every tech company is the item of interest. This is the flurry-to-snowstorm of Privacy Policies simultaneously released in response to the E.U.'s May 25th General Data Protection Regulations.  In reference to my June 30th post on A.I. workplace solutions, months of busy-reading-work all distilled to a fraction of the time to analyze those policies. Guess what? The rule-breaking is well under way!</p>
 	 <p class="quote">Researchers from the European Union Institute in Florence worked with an EU consumer organization to create the software. They then used the program to examine the privacy policies of 14 major technology businesses, including by Alphabet Inc., Amazon.com Inc., and Facebook Inc.<br /><br />
 	
@@ -6538,15 +6538,15 @@ function updateSecretParagraphJULY() {
 	
 	 <p>Aha! <i>The practices of Tech companies' use of A.I. to analyze customers' private data is well-known, but <strong>what do we actually know</strong> beyond just that? Behind the veil of commercial secret, much less is known than is led on ... until now. Now, A.I. becomes increasingly useful as a tattle-tale! </i> So by the same token that tech creates problems, Tech is the first to provide a solution. But A.I. rule-checking sounds good but raises another question: Who owns, or can access by alternate means, the personal data we have strewn across the internet? And what quality of data does each party have, or shares?  </p>
 	 `;
- 
-	 blogcite3 = `
+
+			blogcite3 = `
 	 
  <p class="footnotes">1. <a href="https://www.bloomberg.com/news/articles/2018-07-04/new-ai-tips-off-regulators-to-possible-eu-data-privacy-faults"   target="_blank">https://www.bloomberg.com/news/articles/2018-07-04/new-ai-tips-off-regulators-to-possible-eu-data-privacy-faults</a>
  </p>    
 	 `;
- 
-	 blogpost2 =
-		 `
+
+			blogpost2 =
+				`
  <p class="quote"><i>Power is “various forms of domination and subordination and the asymmetrical balance of forces which operate whenever and wherever social relations exist.”  </i><sup>1</sup><br /><br />--Michel Foucault</p>
  <p class="firstparagraph">Ties and balances of power, at their fundamental core are constantly changing variations of symmetry between two agents, whether unilateral or bilateral: Two nodes interlinked. Magnified by overlapping networks and layers of relations, it's easy to see why long-standing institutions are interlocked, for better or worse ... Clearly the trend of turbulence and power grabs reaches far and wide:
 	</p>
@@ -6558,8 +6558,8 @@ function updateSecretParagraphJULY() {
  <p>And so, two humans devise a new means to exchange without disruption--an indestructable scaffolding firmly set in the foreground from today's creaking and swaying institutions. Sounds good, but where's the music? There seems to be a subtle interlude between the honeymoon stage of investing and inventing new currencies, and little in the way of micro-transactions and <i> the actual <strong>using</strong> it</i>. It takes a little trust to make trust, so the effort is on to make a bridge from the <i>early adopters</i> stage to <i>mainstream adoption</i>...<sup>3</sup>  
  </p>
  `;
-	 blogcite2 =
-		 `
+			blogcite2 =
+				`
  <p class="footnotes">2. <a href="https://books.google.com/books?id=6rfP0H5TSmYC&printsec=frontcover"   target="_blank">Foucault, Michel. Discipline and punish: The birth of the prison. Vintage, 2012.</a>
  </p>   
  <p class="footnotes">2. <a href="https://www.nytimes.com/2018/07/03/world/europe/poland-supreme-court-protest.html"   target="_blank">https://www.nytimes.com/2018/07/03/world/europe/poland-supreme-court-protest.html</a>
@@ -6568,261 +6568,262 @@ function updateSecretParagraphJULY() {
  </p> 
  
  `;
- 
-	 blogpost1 = `<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
+
+			blogpost1 = `<p class="quote">A vast majority of the half-million bodies in the inner asteroid belt may in fact be shrapnel from as few as five parent bodies called "planetesimals," scientists say. But the tangled orbits of those lost worlds meant they were doomed to collide, producing fragments that also collided, producing still more fragments in a cataclysmic cascade that's been going on for more than 4 billion years.<sup>1</sup></p><p> 
  </p>
  `;
- 
-	 blogcite1 = `<p class="footnotes">1. <a href="https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632"   target="_blank">https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632</a>
+
+			blogcite1 = `<p class="footnotes">1. <a href="https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632"   target="_blank">https://www.washingtonpost.com/news/speaking-of-science/wp/2018/07/03/many-asteroids-might-be-remnants-of-five-destroyed-worlds-scientists-say/?noredirect=on&utm_term=.4f1e000cc632</a>
  </p> 
  `;
-	 var url =  [   
-				{ id: '24',
-				did: '07-28-18',
-				 date: 'July 28-29, 2018<br />Weekend',
-				 author: 'by Thomas Maestas',
-				 cat3: 'Web Dev Affairs',
-				 title: '',
-				 post: blogpost24,
-				 blogcite: blogcite24
-			 }, 
+			var url = [
 				{
-	id: '23',
-		 did: '07-27-18',
-		 date: 'July 27, 2018',
-		 author: 'by Thomas Maestas',
-		 cat3: 'Sociology Tomorrow!',
-		 title: 'Hooray for Planet Green!',
-		 post: blogpost23,
-		 blogcite: blogcite23
-		}, 
-	 
-		 {
-			 id: '22',
-			 did: '07-26-18',
-			 date: 'July 26, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Bot Mercenaries:<br />',
-			 title: 'As Long as I Can Feel the Beat, Baby I don\'t Need Dollar Bils to Have Fun Tonight<br /><span class="pull-left"> - Sia',
-			 post: blogpost22,
-			 blogcite: blogcite22
-		 },  
-			{
-		 id: '21',
-		 did: '07-25-18',
-		 date: 'July 25, 2018',
-		 author: 'by Thomas Maestas',
-		 cat3: 'Web Dev Affairs',
-		 title: 'Bot Mercenaries:<br />Armies of Secret Shoppers',
-		 post: blogpost21,
-		 blogcite: blogcite21
-	 },  {
-		 id: '20',
-		 did: '07-24-18',
-		 date: 'July 24, 2018',
-		 author: 'by Thomas Maestas',
-		 cat3: 'Sociology Tomorrow!',
-		 title: 'Bot Mercenaries:<br />Warrior Bots in Space',
-		 post: blogpost20,
-		 blogcite: blogcite20
-	 },
-		 {
-			 id: '19',
-			 did: '07-23-18',
-			 date: 'July 23, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Web Dev Affairs',
-			 title: 'Amazon\'s Prime Day Scaling Slip and Recovery:<br />A How-To Guide to Graceful Error Handling',
-			 post: blogpost19,
-			 blogcite: blogcite19
-		 },
-		 {
-			 id: '18',
-			 did: '07-21-18',
-			 date: 'July 21-22, 2018<br />Weekend',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Web Dev Affairs',
-			 title: 'Cloud Wars, Part III:<br />Creativity that Turns on a Dime',
-			 post: blogpost18,
-			 blogcite: blogcite18
-		 },
-		 {
-			 id: '17',
-			 did: '07-20-18',
-			 date: 'July 20, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Sociology Tomorrow!',
-			 title: 'Cloud Wars, Part II:<br />EZ-Commerce ',
-			 post: blogpost17,
-			 blogcite: blogcite17
-		 },
-		 {
-		 id: '16',
-		 did: '07-19-18',
-		 date: 'July 19, 2018',
-		 author: 'by Thomas Maestas',
-		 cat3: 'Web Dev Affairs',
-		 title: 'Cloud Wars, Part I:<br />Behomeths from Across the Sea  ',
-		 post: blogpost16,
-		 blogcite: blogcite16
-	 },{
-			 id: '15',
-			 did: '07-18-18',
-			 date: 'July 18, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Musing Blockchain',
-			 title: 'By the Light of Ethereum',
-			 post: blogpost15,
-			 blogcite: blogcite15
-		 },
-		 {
-			 id: '14',
-			 did: '07-17-18',
-			 date: 'July 17, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Sociology Tomorrow!',
-			 title: 'Annual Prime Day , Part II:<br /> The Credit Card Hangover',
-			 post: blogpost14,
-			 blogcite: blogcite14
-		 },
-		 {
-			 id: '13',
-			 did: '07-16-18',
-			 date: 'July 16, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Web Dev Affairs',
-			 title: 'Prime Day\'s Annual All-You-Can-Eat Buffet, Part I<br />',
-			 post: blogpost13,
-			 blogcite: blogcite13
-		 },
-		 {
-			 id: '12',
-			 did: '07-14-18',
-			 date: 'July 14-15, 2018<br />Weekend',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Musing Blockchain',
-			 title: 'Crypto Valley, Switzerland',
-			 post: blogpost12,
-			 blogcite: blogcite12
-		 },
-		 {
-			 id: '11',
-			 did: '07-13-18',
-			 date: 'July 13, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Web Dev Affairs',
-			 title: 'Simple is better than Complex. Complex is Better than Complicated.<br /><small>--Tim Peters</small>',
-			 post: blogpost11,
-			 blogcite: blogcite11
-		 },
- 
-		 {
-			 id: '10',
-			 did: '07-12-18',
-			 date: 'July 12, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'A.I.Now.',
-			 title: 'Tools of the A.I. Trade, Part III:<br />  Operation Architecture Drilldown',
-			 post: blogpost10,
-			 blogcite: blogcite10
-		 },
- 
-		 {
-			 id: '9',
-			 did: '07-11-18',
-			 date: 'July 11, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Web Dev Affairs',
-			 title: 'Tools of the A.I. Trade, Part II:<br />Machine Learning\'s Pedal to the Metal',
-			 post: blogpost9,
-			 blogcite: blogcite9
-		 },
-		 {
-			 id: '8',
-			 did: '07-10-18',
-			 date: 'July 10, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'A.I.Now.',
-			 title: 'Tools of the A.I. Trade, Part I: <br />The Proliferation of Machine Learning Modeling Libraries ',
-			 post: blogpost8,
-			 blogcite: blogcite8
-		 },
-		 {
-			 id: '7',
-			 did: '07-09-18',
-			 date: 'July 9, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Web Dev Affairs',
-			 title: '187 million Snapchat Users and Enquiring Minds want to Know: Did Multiple Clusters Fail at once?...or is there Foul Play?',
-			 post: blogpost7,
-			 blogcite: blogcite7
-		 },
-		 {
-			 id: '6',
-			 did: '07-07-18',
-			 date: 'July 7-8, 2018<br />Weekend',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Sociology Tomorrow!',
-			 title: 'Theories of Extropy <sup>0</sup>',
-			 post: blogpost6,
-			 blogcite: blogcite6
-		 },
-		 {
-			 id: '5',
-			 did: '07-06-18',
-			 date: 'July 6, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'A.I.Now.',
-			 title: 'The Canadian Mafia, Part II.<br />Data Better Recollected',
-			 post: blogpost5,
-			 blogcite: blogcite5
-		 },
- 
-		 {
-			 id: '4',
-			 did: '07-05-18',
-			 date: 'July 5, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'A.I.Now.',
-			 title: 'The Canadian Mafia, Part I.<br /> On the Good-Natured Vision of the Godfathers of A.I.',
-			 post: blogpost4,
-			 blogcite: blogcite4
-		 },
-		 {
-			 id: '3',
-			 did: '07-04-18',
-			 date: 'July 4, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'A.I.Now.',
-			 title: 'Training Data, Big and Beloved Data<br />Big Data\s Most Notorious Rule-Breaker and Rule-Enforcer: A.I.',
-			 post: blogpost3,
-			 blogcite: blogcite3
-		 },
-		 {
-			 id: '2',
-			 did: '07-03-18',
-			 date: 'July 3, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Musing Blockchain',
-			 title: 'What\'s Behind the Rebirth of the Nation-State?<br />There\'s a <i>Blockchain DAPP</i> for that!',
-			 post: blogpost2,
-			 blogcite: blogcite2
-		 },
-		 {
-			 id: '1',
-			 did: '07-02-18',
-			 date: 'July 2, 2018',
-			 author: 'by Thomas Maestas',
-			 cat3: 'Sociology Tomorrow!',
-			 title: 'Celestial Bodies: Always Out to Impress!',
-			 post: blogpost1,
-			 blogcite: blogcite1
-		 }
- 
-	 ];
-  
-	 for (i=0;i<url.length;i++){ 
-		var cat = ` 
+					id: '24',
+					did: '07-28-18',
+					date: 'July 28-29, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: '',
+					post: blogpost24,
+					blogcite: blogcite24
+				},
+				{
+					id: '23',
+					did: '07-27-18',
+					date: 'July 27, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Hooray for Planet Green!',
+					post: blogpost23,
+					blogcite: blogcite23
+				},
+
+				{
+					id: '22',
+					did: '07-26-18',
+					date: 'July 26, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Bot Mercenaries:<br />',
+					title: 'As Long as I Can Feel the Beat, Baby I don\'t Need Dollar Bils to Have Fun Tonight<br /><span class="pull-left"> - Sia',
+					post: blogpost22,
+					blogcite: blogcite22
+				},
+				{
+					id: '21',
+					did: '07-25-18',
+					date: 'July 25, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Bot Mercenaries:<br />Armies of Secret Shoppers',
+					post: blogpost21,
+					blogcite: blogcite21
+				}, {
+					id: '20',
+					did: '07-24-18',
+					date: 'July 24, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Bot Mercenaries:<br />Warrior Bots in Space',
+					post: blogpost20,
+					blogcite: blogcite20
+				},
+				{
+					id: '19',
+					did: '07-23-18',
+					date: 'July 23, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Amazon\'s Prime Day Scaling Slip and Recovery:<br />A How-To Guide to Graceful Error Handling',
+					post: blogpost19,
+					blogcite: blogcite19
+				},
+				{
+					id: '18',
+					did: '07-21-18',
+					date: 'July 21-22, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Cloud Wars, Part III:<br />Creativity that Turns on a Dime',
+					post: blogpost18,
+					blogcite: blogcite18
+				},
+				{
+					id: '17',
+					did: '07-20-18',
+					date: 'July 20, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Cloud Wars, Part II:<br />EZ-Commerce ',
+					post: blogpost17,
+					blogcite: blogcite17
+				},
+				{
+					id: '16',
+					did: '07-19-18',
+					date: 'July 19, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Cloud Wars, Part I:<br />Behomeths from Across the Sea  ',
+					post: blogpost16,
+					blogcite: blogcite16
+				}, {
+					id: '15',
+					did: '07-18-18',
+					date: 'July 18, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Musing Blockchain',
+					title: 'By the Light of Ethereum',
+					post: blogpost15,
+					blogcite: blogcite15
+				},
+				{
+					id: '14',
+					did: '07-17-18',
+					date: 'July 17, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Annual Prime Day , Part II:<br /> The Credit Card Hangover',
+					post: blogpost14,
+					blogcite: blogcite14
+				},
+				{
+					id: '13',
+					did: '07-16-18',
+					date: 'July 16, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Prime Day\'s Annual All-You-Can-Eat Buffet, Part I<br />',
+					post: blogpost13,
+					blogcite: blogcite13
+				},
+				{
+					id: '12',
+					did: '07-14-18',
+					date: 'July 14-15, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Musing Blockchain',
+					title: 'Crypto Valley, Switzerland',
+					post: blogpost12,
+					blogcite: blogcite12
+				},
+				{
+					id: '11',
+					did: '07-13-18',
+					date: 'July 13, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Simple is better than Complex. Complex is Better than Complicated.<br /><small>--Tim Peters</small>',
+					post: blogpost11,
+					blogcite: blogcite11
+				},
+
+				{
+					id: '10',
+					did: '07-12-18',
+					date: 'July 12, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'Tools of the A.I. Trade, Part III:<br />  Operation Architecture Drilldown',
+					post: blogpost10,
+					blogcite: blogcite10
+				},
+
+				{
+					id: '9',
+					did: '07-11-18',
+					date: 'July 11, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Tools of the A.I. Trade, Part II:<br />Machine Learning\'s Pedal to the Metal',
+					post: blogpost9,
+					blogcite: blogcite9
+				},
+				{
+					id: '8',
+					did: '07-10-18',
+					date: 'July 10, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'Tools of the A.I. Trade, Part I: <br />The Proliferation of Machine Learning Modeling Libraries ',
+					post: blogpost8,
+					blogcite: blogcite8
+				},
+				{
+					id: '7',
+					did: '07-09-18',
+					date: 'July 9, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: '187 million Snapchat Users and Enquiring Minds want to Know: Did Multiple Clusters Fail at once?...or is there Foul Play?',
+					post: blogpost7,
+					blogcite: blogcite7
+				},
+				{
+					id: '6',
+					did: '07-07-18',
+					date: 'July 7-8, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Theories of Extropy <sup>0</sup>',
+					post: blogpost6,
+					blogcite: blogcite6
+				},
+				{
+					id: '5',
+					did: '07-06-18',
+					date: 'July 6, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'The Canadian Mafia, Part II.<br />Data Better Recollected',
+					post: blogpost5,
+					blogcite: blogcite5
+				},
+
+				{
+					id: '4',
+					did: '07-05-18',
+					date: 'July 5, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'The Canadian Mafia, Part I.<br /> On the Good-Natured Vision of the Godfathers of A.I.',
+					post: blogpost4,
+					blogcite: blogcite4
+				},
+				{
+					id: '3',
+					did: '07-04-18',
+					date: 'July 4, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'Training Data, Big and Beloved Data<br />Big Data\s Most Notorious Rule-Breaker and Rule-Enforcer: A.I.',
+					post: blogpost3,
+					blogcite: blogcite3
+				},
+				{
+					id: '2',
+					did: '07-03-18',
+					date: 'July 3, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Musing Blockchain',
+					title: 'What\'s Behind the Rebirth of the Nation-State?<br />There\'s a <i>Blockchain DAPP</i> for that!',
+					post: blogpost2,
+					blogcite: blogcite2
+				},
+				{
+					id: '1',
+					did: '07-02-18',
+					date: 'July 2, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Celestial Bodies: Always Out to Impress!',
+					post: blogpost1,
+					blogcite: blogcite1
+				}
+
+			];
+
+			for (i = 0; i < url.length; i++) {
+				var cat = ` 
 		<div id="${url[i].did}" class="blogDiv"> 
 		<hr />  
 		<a href="#top"><button>Top</button></a>  
@@ -6836,55 +6837,55 @@ function updateSecretParagraphJULY() {
 		</div>
 		<div id="blogcite">${url[i].blogcite}
 		</div>` ;
-	
-		secretParagraphJULY.innerHTML  += cat;   
-	}  
-	document.getElementById("paragraph-july").innerHTML = cat; 
- 
- 
-} else {
-	secretParagraphJULY.style.display = 'none';
-} 
-}
 
-/* AUG */
+				secretParagraphJULY.innerHTML += cat;
+			}
+			document.getElementById("paragraph-july").innerHTML = cat;
 
 
+		} else {
+			secretParagraphJULY.style.display = 'none';
+		}
+	}
 
-console.log('blogger-aug');
-function updateSecretParagraphAUG() {
-	if (showSecretAUG) {
-	secretParagraphAUG.style.display = 'block';
-	secretParagraphAUG.style.fontFamily = 'Roboto';
-	secretParagraphAUG.style.opacity = '1';
-	secretParagraphAUG.style.color = 'darkslategray';
-	 
-  blogpost22 = `<p class="firstparagraph">Quantum computing, now readily available for science-venturing public consumption: IBM's Quantum Community and Resources offer cloud access to quantum hardware:
+	/* AUG */
+
+
+
+	console.log('blogger-aug');
+	function updateSecretParagraphAUG() {
+		if (showSecretAUG) {
+			secretParagraphAUG.style.display = 'block';
+			secretParagraphAUG.style.fontFamily = 'Roboto';
+			secretParagraphAUG.style.opacity = '1';
+			secretParagraphAUG.style.color = 'darkslategray';
+
+			blogpost22 = `<p class="firstparagraph">Quantum computing, now readily available for science-venturing public consumption: IBM's Quantum Community and Resources offer cloud access to quantum hardware:
   </p>
   <p class="quote">Check out our User Guides and interactive Demos to learn more about quantum principles. Or, dive right in to create and run algorithms on real quantum computing hardware, using the Quantum Composer and QISKit software developer kit.</p>
   <p>With an uncanny resemblence to 22nd century chandeliers, the hardware itself is no light matter: Each successive layer cools down to the the final chamber that runs at a cool .0017 &deg; Kelvin--colder than space!
   </p>`;
-  blogcite22 = `<p class="cite">. <a   href="https://quantumexperience.ng.bluemix.net/qx/experience"   target="_blank">https://quantumexperience.ng.bluemix.net/qx/experience
+			blogcite22 = `<p class="cite">. <a   href="https://quantumexperience.ng.bluemix.net/qx/experience"   target="_blank">https://quantumexperience.ng.bluemix.net/qx/experience
   </a>
   </p>`
- 
-  blogpost21 = ` 
+
+			blogpost21 = ` 
   <p class="quote">The Lamborghini Aventador SVJ already made a splash last month when it set a new Nürburgring Nordschleife record for production cars, running an incredible 6:44.97 lap time. Now, it sheds its camouflage, and yep, it looks exactly as crazy as we hoped. This might be one of the wildest Lamborghinis yet.<br /><br />
   Since we've tackled the SVJ's Nürburgring lap time, let's cover some other numbers. Its 6.5-liter V12 produces 770 horsepower, making this one of the most powerful naturally aspirated road cars of all time. Maximum torque is 531 lb-ft at 6750 rpm, while the power peak comes at 8500 rpm. Lamborghini claims a dry weight of 3362 lbs, which is 110 lbs lighter than an Aventador S coupe according to the factory. Acceleration is jaw-dropping, too, with 62 mph arriving in 2.8 seconds and 124 mph coming in 8.6. Top speed is 217 mph.<sup>1</sup></p>
   <img src="dist/img/huracan.jpg" /><br />
   <p>Image credit: Road &amp; Track</p>
  
     `;
-  blogcite21 = `   <p class="cite">1. <a   href="https://www.roadandtrack.com/car-shows/monterey-car-week/a22822020/2019-lamborghini-aventador-svj-debut-specs-photos-price/"   target="_blank">https://www.roadandtrack.com/car-shows/monterey-car-week/a22822020/2019-lamborghini-aventador-svj-debut-specs-photos-price/
+			blogcite21 = `   <p class="cite">1. <a   href="https://www.roadandtrack.com/car-shows/monterey-car-week/a22822020/2019-lamborghini-aventador-svj-debut-specs-photos-price/"   target="_blank">https://www.roadandtrack.com/car-shows/monterey-car-week/a22822020/2019-lamborghini-aventador-svj-debut-specs-photos-price/
     </a></p> 
     `;
-    blogpost20 = `<p class="firstparagraph">Security patches that couldn't have arrived sooner ... </p><p class="quote">The Fortnite Installer was easily exploitable to hijack the request to download the full game.      The problem, as Google's security team discovered, was that the Fortnite Installer was very easily exploitable to hijack the request to download Fortnite from Epic and instead download anything when you tap the button to download the game. It's what's known as a "man-in-the-disk" attack: an app on your phone looks for requests to download something from the internet and intercepts that request to download something else instead, unbeknownst to the original downloading app.<br /><br />Here's where things get really bad. Because of the way Android's permissions model works, you won't have to accept installation of an app from "unknown sources" beyond the time you accepted that installation for Fortnite.  </p>
+			blogpost20 = `<p class="firstparagraph">Security patches that couldn't have arrived sooner ... </p><p class="quote">The Fortnite Installer was easily exploitable to hijack the request to download the full game.      The problem, as Google's security team discovered, was that the Fortnite Installer was very easily exploitable to hijack the request to download Fortnite from Epic and instead download anything when you tap the button to download the game. It's what's known as a "man-in-the-disk" attack: an app on your phone looks for requests to download something from the internet and intercepts that request to download something else instead, unbeknownst to the original downloading app.<br /><br />Here's where things get really bad. Because of the way Android's permissions model works, you won't have to accept installation of an app from "unknown sources" beyond the time you accepted that installation for Fortnite.  </p>
       <p class="quote"></p>
       `;
-    blogcite20 = `   <p class="cite">1. <a   href="https://www.androidcentral.com/epic-games-first-fortnite-installer-allowed-hackers-download-install-silently"   target="_blank"> 
+			blogcite20 = `   <p class="cite">1. <a   href="https://www.androidcentral.com/epic-games-first-fortnite-installer-allowed-hackers-download-install-silently"   target="_blank"> 
     https://www.androidcentral.com/epic-games-first-fortnite-installer-allowed-hackers-download-install-silently </a></p> 
       `;
-      blogpost19 = `<p class="firstparagraph"> </p>
+			blogpost19 = `<p class="firstparagraph"> </p>
   <p class="quote">
 Computers do calculations using bits, too. After all, we want them to plug into our existing data and computers. But quantum bits, or qubits, have unique and powerful properties that allow a group of them to do much more than an equivalent number of conventional bits.
 
@@ -6893,10 +6894,10 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
 <p class="quote">For some problems that are very time consuming for conventional computers, this allows a quantum computer to find a solution in far fewer steps than a conventional computer would need. Grover’s algorithm, a famous quantum search algorithm, could find you in a phone book with 100 million names with just 10,000 operations. If a classical search algorithm just spooled through all the listings to find you, it would require 50 million operations, on average. </p>
         
         `;
-      blogcite19 = ` <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
+			blogcite19 = ` <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
       </a></p>     `;
-      
-  blogpost18 = `<p class="firstparagraph">Quantum research has finally progressed beyond proof-of-concept to practical utility. First photon state transfer, and now solid state transfer of "entangled states" allowing for binary, instant data transfer. Beyond medical and enterprise use, quantum entanglement's incremental progress now raises a few eyebrows: 
+
+			blogpost18 = `<p class="firstparagraph">Quantum research has finally progressed beyond proof-of-concept to practical utility. First photon state transfer, and now solid state transfer of "entangled states" allowing for binary, instant data transfer. Beyond medical and enterprise use, quantum entanglement's incremental progress now raises a few eyebrows: 
     </p>
    <p class="quote">That’s because Google, IBM, and others have decided it’s time to invest heavily in the technology, which, in turn, has helped quantum computing earn a bullet point on the corporate strategy PowerPoint slides of big companies in areas such as finance, like JPMorgan, and aerospace, like Airbus. In 2017, venture investors plowed $241 million into startups working on quantum computing hardware or software worldwide, according to CB Insights. That’s triple the amount in the previous year. <br /><br /><sup>1</sup></p>
   
@@ -6907,8 +6908,8 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
    <p>So, while there are algorithms, like <i>Shor's SHA-defeating algorithm, that have only existed in theory, can now be applied using capable computational power for the job.</i>
  </p> 
    `;
-  blogcite18 =
-    `  <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
+			blogcite18 =
+				`  <p class="cite">1.  <a   href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
    </a></p> 
    
    <p class="cite">2. <a   href="https://phys.org/news/2018-07-qubit-entanglement.html"   target="_blank">https://phys.org/news/2018-07-qubit-entanglement.html
@@ -6916,37 +6917,37 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
    `;
 
 
-  blogpost17 = `<p class="firstparagraph">Silicon Valley's tide has rolled in and the ships are tucked away for the night. At dawn, Silicon Valley arises and inherits the kingdom, along with Seattle: And, so   become <i> the intractable data needs of all institutions, public or private, big and small--needs only the cloud can answer.</i> </p>
+			blogpost17 = `<p class="firstparagraph">Silicon Valley's tide has rolled in and the ships are tucked away for the night. At dawn, Silicon Valley arises and inherits the kingdom, along with Seattle: And, so   become <i> the intractable data needs of all institutions, public or private, big and small--needs only the cloud can answer.</i> </p>
     <p>And why not? Cloud data storage offers security, direct service providers with big data jobs, Netflix and Linkedin's extensive real-time network analsyis using Kafka speeds up their ever-ready recommendations.  Reuters shows a glimpse of the Pentagon's (and other nations's) accelerating need to secure data as the intertwining networks of world data migrates to distributed, cloud storage. In this domain, public infrastructure, whether platform-as-a-service or servers, technology -- as usual -- must swoop to save the day. </p>
 
     <p class="quote">Consultants associated with the $927 billion Seattle juggernaut occupied top positions at the Pentagon ahead of the rollout of a massive cloud contract worth some $10 billion that Amazon looks poised to snag. Rivals complain the requirements were written to favor Bezos’s company. Either way, investors should be prepared for its government business to attract greater scrutiny.<sup>1</sup> 
     </p>
     <p>Surely controversy awaits any bid decision down here on earth, but all things that go up to the cloud need not come down.</p>
     `;
-  blogcite17 =
-    `   <p class="cite">1. <a   href="https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS"   target="_blank">https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS
+			blogcite17 =
+				`   <p class="cite">1. <a   href="https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS"   target="_blank">https://www.reuters.com/article/uk-usa-pentagon-breakingviews/breakingviews-amazon-pentagon-ties-may-receive-greater-scrutiny-idUSKBN1L10AS
     </a></p> 
     `;
 
-  blogpost16 = `<p class="firstparagraph">Einstein's remark on quantum entanglement's 'spooky' characteristics holds for those caught off-guard, but sudden isn't spooky when sudden is expected. Tokyo's first photon to satellite back to earth with a button switch control almost leads to banality. Yet, transmitting data through a shared quantum state from the first party to second party appears intuitive, even if it is   other-worldly. Wired Magazine:  </p>
+			blogpost16 = `<p class="firstparagraph">Einstein's remark on quantum entanglement's 'spooky' characteristics holds for those caught off-guard, but sudden isn't spooky when sudden is expected. Tokyo's first photon to satellite back to earth with a button switch control almost leads to banality. Yet, transmitting data through a shared quantum state from the first party to second party appears intuitive, even if it is   other-worldly. Wired Magazine:  </p>
     <p class="quote">You may have heard that a qubit in superposition is both 0 and 1 at the same time. That’s not quite true and also not quite false—there’s just no equivalent in Homo sapiens’ humdrum classical reality. If you have a yearning to truly grok it, you must make a mathematical odyssey WIRED cannot equip you for. But in the simplified and dare we say perfect world of this explainer, the important thing to know is that the math of a superposition describes the probability of discovering either a 0 or 1 when a qubit is read out—an operation that crashes it out of a quantum superposition into classical reality.<sup>1</sup>  
     </p>
     <p>Yale researchers on the topic:</p>
     <p class="quote">
     In a quantum process known as teleportation the unknown state of a quantum bit can be relayed to a distant party using shared entanglement and classical information. Here we present experiments in a solid-state system based on superconducting quantum circuits demonstrating the teleportation of the state of a qubit at the macroscopic scale. In our experiments teleportation is realized deterministically with high efficiency and achieves a high rate of transferred qubit states. This constitutes a significant step towards the realization of repeaters for quantum communication at microwave frequencies and broadens the tool set for quantum information processing with superconducting circuits. </i><sup>2</sup></p>
     `;
-  blogcite16 = `<p class="cite">1. <a href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
+			blogcite16 = `<p class="cite">1. <a href="https://www.wired.com/story/wired-guide-to-quantum-computing/"   target="_blank">https://www.wired.com/story/wired-guide-to-quantum-computing/
     </a></p>
     <p class="cite">2. <a href="https://seas.yale.edu/news-events/news/quantum-technology-chip"   target="_blank">https://seas.yale.edu/news-events/news/quantum-technology-chip
     </a></p>`;
 
-  blogpost15 = `
+			blogpost15 = `
     <p class="firstparagraph">Quantum communication of data offers instant data transfer, and impenatrability from 3rd parties ... Among the exciting on events on New Haven's public space Green Park, Yale researchers' quantum advances steal the headlines: </p>
     <p class="quote">The two essential requirements for a scalable quantum information processor are quantum interference (in which a photon – able to be in more than one place at a time – crosses its own path) and single-photon detectors. The chip that the researchers designed contains a nanophotonic waveguide, which can guide light into small spaces and to wherever is needed on the chip. It also has a directional coupler that can split a light beam into two identical beams, or conversely, combine two beams into one output.
     <br /><br />
     With this research, Schuck said the research team should eventually realize a programmable optical quantum processor that can run a quantum algorithm. The scalability of the nanofabrication routines for silicon chips will then allow them to solve problems difficult for classical computers.<sup>1</sup></p>
     <p>Besides the quantum characteristic of a third party's observation/interference, the state is broken and data transfer disappears--and, yet another state is but a button flip's switch away!</p> `;
-  blogcite15 = `
+			blogcite15 = `
     </p>
     <p class="cite">1. <a href="https://arxiv.org/abs/1302.5621"   target="_blank">https://arxiv.org/abs/1302.5621
     </p>
@@ -6955,10 +6956,10 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
     </p>
     
     `;
-  blogpost14 = `<p class="firstparagraph">      </p>
+			blogpost14 = `<p class="firstparagraph">      </p>
     <p class="quote">   </p> 
     `;
-  blogcite14 = ` 
+			blogcite14 = ` 
     <p class="cite">1. <a href="https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/"   target="_blank">https://www.zdnet.com/article/how-brand-new-science-will-manage-the-fourth-industrial-revolution/
     </a>
     </p>
@@ -6966,23 +6967,23 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
     </a>
     </p>
     `;
-  blogpost13 = `<p class="firstparagraph"> 
+			blogpost13 = `<p class="firstparagraph"> 
 </p><p class="quote"> 
 <p >“Historically, magnetism and superconductivity were very disparate fields of physics,” Birge said. “The 1960s’ point of view was that if you were to bring a ferromagnet near a superconductor, you would kill the conductivity.<br /><br />
 “It was found that you can put a ferromagnet near a superconductor; in fact, you can even make a ‘sandwich’—superconductor, ferromagnet, superconductor,” said Joseph Glick, a former doctorate student in Birge’s lab and the paper’s lead author. “Any sandwich of this type is called a Josephson junction, which is at the heart of everything we are doing.<sup>1</sup> </p> 
 `;
-  blogcite13 = `  
+			blogcite13 = `  
 <p class="cite">1. <a href="https://msutoday.msu.edu/news/2018/msu-physicists-solve-a-storied-problem/"   target="_blank">https://msutoday.msu.edu/news/2018/msu-physicists-solve-a-storied-problem/
 </a>
 </p>
 `;
-  blogpost12 = `<p class="firstparagraph">      </p>
+			blogpost12 = `<p class="firstparagraph">      </p>
     <p class="quote"> <sup> </sup>
     </p><br />    <p > </p>`;
-  blogcite12 = `<p class="cite">  <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
+			blogcite12 = `<p class="cite">  <a href="https://www.nature.com/articles/ncomms10352"   target="_blank">https://www.nature.com/articles/ncomms10352
     </a>
     </p>`;
-  blogpost11 = `<p class="firstparagraph">Marvels of anomaly detection extend from business and state security to software integriy -- why not extend the use to <i>social integrity traced by network interaction signatures ...</i> 
+			blogpost11 = `<p class="firstparagraph">Marvels of anomaly detection extend from business and state security to software integriy -- why not extend the use to <i>social integrity traced by network interaction signatures ...</i> 
     </p>
     <p class="quote">While some attempts to detect social-media accounts of malicious actors rely on content or language filters that terrorists and disinformers have proved capable of confusing, Mr. Alvari’s algorithm looks for accounts that spread content further and faster than expected. Since this is the goal of terrorist recruiters and propagandists alike, the method could be on the front lines of algorithmic filtering across social networks. Humans still need to make the final determination, to avoid false positives. <sup>1</sup>
     </p>
@@ -6990,12 +6991,12 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
     </p><br />  
     <p > </p>.
  `;
-  blogcite11 = ` 
+			blogcite11 = ` 
     <p class="cite">1. <a href="https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h"   target="_blank">https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h
     </a>
     </p>`;
 
-  blogpost10 = `<p class="firstparagraph"> 
+			blogpost10 = `<p class="firstparagraph"> 
     </p>
     <p class="quote">Machines used to be serviced according to a plan, and late maintenance would mean a risk of production downtime. Today, process data from machines is used for predicting remaining service life. Especially critical parameters such as temperature, noise, and vibration are recorded to help determine the optimal operating state or even necessary maintenance times. This allows unnecessary wear to be avoided and possible faults and their causes to be detected early on. With the help of this monitoring, considerable optimization potential in terms of facility availability and effectiveness arises, bringing with it decisive advantages.
 
@@ -7005,35 +7006,35 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
     </p><br />
     <img src="dist/img/mechDegrade.jpg" width="350px" class="zoom" /><br />
     <p > </p>`;
-  blogcite10 = ` 
+			blogcite10 = ` 
     <p class="cite">1. <a href="https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing"   target="_blank">https://www.sensorsmag.com/components/addressing-sensor-challenges-and-demands-for-future-servicing
     </a>
     </p>`;
 
-  blogpost9 = `<p class="firstparagraph"> 
+			blogpost9 = `<p class="firstparagraph"> 
     </p>
     <p class="quote">. Arrays of SQUIDs (superconducting quantum interference devices) are currently the most common magnetometer, while the SERF (spin exchange relaxation-free) magnetometer is being investigated for future machines.<sup>1</sup>
     </p><br /> 
     <p > </p>.
  `;
-  blogcite9 = `  
+			blogcite9 = `  
     <p class="cite">1. <a href="https://www.xlstat.com/en/solutions/features/classification-and-regression-trees"   target="_blank">https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
     </a>
     </p>`;
 
-  blogpost8 = `<p class="firstparagraph">Classification and Regression (Decision) Trees are not just accurate, multipurpose and foundational to predictive machine learning algorithms (e.g. random forests, bayesian trees, bagging), but the trees' final product reveals the different rationale for the output. Printed onto a sheet   of paper, both statistical practitioner and the domain professional intuitively and heuristically understand practical use for an analysis. This July 2017 Cancer study exemplifies the utility of healthcare-based algorithms of analysis ... 
+			blogpost8 = `<p class="firstparagraph">Classification and Regression (Decision) Trees are not just accurate, multipurpose and foundational to predictive machine learning algorithms (e.g. random forests, bayesian trees, bagging), but the trees' final product reveals the different rationale for the output. Printed onto a sheet   of paper, both statistical practitioner and the domain professional intuitively and heuristically understand practical use for an analysis. This July 2017 Cancer study exemplifies the utility of healthcare-based algorithms of analysis ... 
     </p>
     <p class="quote">The aim of this study was to develop and validate a clinical predictive model for 1-year mortality among patients with colon cancer who survive for at least 30 days after surgery.<br /><br />Random forest, genetic algorithms and classification and regression trees were combined in order to identify the variables and partition points that optimally classify patients by risk of mortality. The resulting decision tree was categorized into four risk categories. Split-sample and bootstrap validation were performed.<sup>1</sup>
     </p><br />
     <img src="dist/img/irisCART.jpg" width="350px" class="zoom" /><br />
     <p >And, now that sound methodology meets an increasingly user-friendly Machine Learning software toolset for wider practical applications, beginning firstly within healthcare technologies <i>and that second opinion!</i></p>.
  `;
-  blogcite8 = `Image credits: https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
+			blogcite8 = `Image credits: https://www.xlstat.com/en/solutions/features/classification-and-regression-trees
     <p class="cite">1. <a href="https://www.dovepress.com/combining-statistical-techniques-to-predict-postsurgical-risk-of-1-yea-peer-reviewed-article-CLEP#"   target="_blank">https://www.dovepress.com/combining-statistical-techniques-to-predict-postsurgical-risk-of-1-yea-peer-reviewed-article-CLEP#
     </a>
     </p>`;
 
-  blogpost7 = `<p class="firstparagraph">Predictive analytics  has slowly progressed in sophistication over the past 45 years, and the current nexus with powerful machine-learning tools changes the health game: </p>
+			blogpost7 = `<p class="firstparagraph">Predictive analytics  has slowly progressed in sophistication over the past 45 years, and the current nexus with powerful machine-learning tools changes the health game: </p>
     <p class="quote"> A report by ABI Research June 2018 report highlighted a significant rise in patient monitoring devices, including AI for home-based preventative healthcare and predictive analytics, which could save hospitals around $52bn by 2021.<br /><br />
 
     Accenture’s Digital Health Technology Vision 2018 report also claims that 85% of health executives in the US believe that every human will be directly impacted on a daily basis by an AI-based decision within the next three years.<br /><br />
@@ -7070,7 +7071,7 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
     studies in which selection bias or confounding is
     likely to occur .<sup>3</sup></p>
     <p>So, nowadays we don't ask for a second opinion when we can ask for a trillion opinions narrowed down to one heck of a second opinion!</p>`;
-  blogcite7 = `
+			blogcite7 = `
     <p class="cite">1. <a href="https://www.healthcareglobal.com/technology/ai-seen-less-threat-and-welcomed-health-professionals-research-reveals"   target="_blank">https://www.healthcareglobal.com/technology/ai-seen-less-threat-and-welcomed-health-professionals-research-reveals
     </a>
     </p>
@@ -7080,7 +7081,7 @@ Qubits can be built in various ways, but they all represent digital 0s and 1s us
     </a>
     </p>`;
 
-  blogpost6 = `<p class="quote">  <i>[Intel's]  i9-8950HK processor is the first mobile Intel processor with six cores and 12 threads. It comes fully unlocked. It has the new Intel thermal Velocity Boost, which automatically increases clock frequency up to 200 MHz if the processor temperature is low enough and there's enough turbo power, giving a turbo frequency of up to 4.8 GHz.</i></p>
+			blogpost6 = `<p class="quote">  <i>[Intel's]  i9-8950HK processor is the first mobile Intel processor with six cores and 12 threads. It comes fully unlocked. It has the new Intel thermal Velocity Boost, which automatically increases clock frequency up to 200 MHz if the processor temperature is low enough and there's enough turbo power, giving a turbo frequency of up to 4.8 GHz.</i></p>
     <p class="quote" The i9-8950HK processor is the first mobile Intel processor with six cores and 12 threads. It comes fully unlocked. It has the new Intel thermal Velocity Boost, which automatically increases clock frequency up to 200 MHz if the processor temperature is low enough and there's enough turbo power, giving a turbo frequency of up to 4.8 GHz.</i>
     </p>
     <p class="firstparagraph"> Needs shape our inventions and our inventions shape our needs: With the brand new set of mobile computing requirements serve up utility for the i9.  Intel's advances pale in comparison, however, to GPU and newer computing trends. This theme arises time after time in my posts, but mathematics will rewrite the rules of performance . . .</p>
@@ -7104,7 +7105,7 @@ The result of this predictive problem solving is that AI calculations can be don
 Developers may not benefit much from the new processors, Enderle said, because "with IDF shut down, Intel's developer efforts are largely moot."
 </p> `;
 
-  blogcite6 = ` 
+			blogcite6 = ` 
     <p class="cite">1. <a href="https://www.technewsworld.com/story/85252.html"   target="_blank">https://www.technewsworld.com/story/85252.html
     </a>
     </p>
@@ -7113,37 +7114,37 @@ Developers may not benefit much from the new processors, Enderle said, because "
     </a>
     </p>
      `;
-  blogpost5 = `<p class="firstparagraph">Batteries optimized by machine learning is a feature in the latest version of Android OS, Pie. Some may roll theirs, but the only of desserts that share nameship with the great constant, pi. <i>Mystical 3-1-4 also features A.I.-empowered Textual Analysis, which opens to multiple new possibilities:</i></p>
+			blogpost5 = `<p class="firstparagraph">Batteries optimized by machine learning is a feature in the latest version of Android OS, Pie. Some may roll theirs, but the only of desserts that share nameship with the great constant, pi. <i>Mystical 3-1-4 also features A.I.-empowered Textual Analysis, which opens to multiple new possibilities:</i></p>
     <p class="quote">The other new machine learning-powered feature is the smart text selection tool that recognizes the meaning of the text you selected and then allows you to suggest relevant actions like opening Google Maps or bringing up the share dialog for an address.<sup>1</sup></p>
     <p>Further, Android Pie's <i>Digital Wellness</i> features offer all the trending self-obedience features--not the least of which FitBit's guilt-inducing, and highly effective,<strong>walk prompts--already the bots are running my life and I obey!</p></strong>`;
-  blogcite5 = ` 
+			blogcite5 = ` 
     <p class="cite">1. <a href="https://techcrunch.com/2018/08/06/say-hello-to-android-9-pie/"   target="_blank">https://techcrunch.com/2018/08/06/say-hello-to-android-9-pie/
     </a>
     </p>
      `;
-  blogpost4 = `<p class="quote"><i>Bone is constantly turning over through a process in which cells called osteoclasts dig tunnels through bone, and then cells called osteoblasts re-pave those tunnels with new bone. Econs acknowledges that it sounds like an inefficient system, but it has to work this way because you obviously need to be able to use your bones while those repairs are taking place.</i><br /><br />
+			blogpost4 = `<p class="quote"><i>Bone is constantly turning over through a process in which cells called osteoclasts dig tunnels through bone, and then cells called osteoblasts re-pave those tunnels with new bone. Econs acknowledges that it sounds like an inefficient system, but it has to work this way because you obviously need to be able to use your bones while those repairs are taking place.</i><br /><br />
      --Michael Econ, physician and member of the American Society for Bone and Mineral Research   
      <p class="firstparagraph"><i>Bone loss in space can reach 5 to 10% over the course of a year, however the sure cure is Digital Responsibility, the trending fad of 2018, spans from the upcoming Android Pie's in-device digital behavioral tools across the spectrum to Fitbit, Youtube, and others' timed get-up-and-walk push notifications.       </p>  `;
-  blogcite4 = `<p class="cite">1. <a href="https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones"   target="_blank">https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones
+			blogcite4 = `<p class="cite">1. <a href="https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones"   target="_blank">https://tonic.vice.com/en_us/article/ne5zg8/this-is-the-effect-working-out-has-on-your-bones
      </a>
      </p> 
      `;
-  blogpost3 = `<p class="quote"><i>Responsive experience with real-time inferencing. There are many tasks where speed matters. This includes interactive speech, visual search, and video recommendations. As AI models increase in accuracy and complexity, traditional CPUs can’t keep up, and the Tesla P4 GPUs can cut latency by an order of magnitude.<br /><br />
+			blogpost3 = `<p class="quote"><i>Responsive experience with real-time inferencing. There are many tasks where speed matters. This includes interactive speech, visual search, and video recommendations. As AI models increase in accuracy and complexity, traditional CPUs can’t keep up, and the Tesla P4 GPUs can cut latency by an order of magnitude.<br /><br />
   Video decoding. The Tesla P4 has a dedicated hardware-accelerated decode engine that works in parallel with the GPU, enabling it to transcode and infer up to 35 HD video streams in real time. The integration of deep learning into video pipelines lets organizations offer smarter video services.<br /><br />
   The inferencing engine that the Tesla P4 uses is based on Nvidia’s Pascal architecture and is designed to increase the performance of servers running deep learning workloads. Google didn’t give a date for general availability other than saying it’s “coming soon” to its public cloud.</i></p>  
   <p class="firstparagraph">Toys, if they are offered as presents remain unconditional gifts, and yet the devotion they procure make for a reciprocal gift: Google's Developer Tools and little to no cost serve the same purpose as Microsoft's free provisions of Integrated Develepment Environments, i.e. VS Code and recent purchase of GitHub. The New Data Economy, applies as much to the developers' field as it does to consumers'. </p>  `;
-  blogcite3 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
+			blogcite3 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
   </a>
   </p> 
   `;
-  blogpost2 = `<p class="quote"><i>Google announced it is making Nvidia's Tesla P4 GPU available as a cloud service, enabling more businesses to get started with AI projects quicklyi><sup>1</sup></p>
+			blogpost2 = `<p class="quote"><i>Google announced it is making Nvidia's Tesla P4 GPU available as a cloud service, enabling more businesses to get started with AI projects quicklyi><sup>1</sup></p>
   <p class="firstparagraph">API Services &agrave; la Google Cloud have become a new Hallmark--available for 12-month free trial--of <i>Google's ambitious  kit: Cloud IoT (Internet of Things) API, Cloud Genomics API, Cloud Machine Learning Engine API, among dozens of others.</i> Rivers of Kubernetes Data,Tensor-Processing-Unit Automotons for Oompah-Loompahs, and the ever-lasting flavor of chewing gum in the name of publicly available data for your tasting pleasure!   </p>`;
-  blogcite2 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
+			blogcite2 = `<p class="cite">1. <a href="https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html"   target="_blank">https://www.cio.com/article/3293424/artificial-intelligence/more-artificial-intelligence-options-coming-to-google-cloud.html
   </a>
   </p>`;
 
 
-  blogpost1 = `<p class="quote"><i>In July, Blackrock — the world’s largest exchange-traded fund (ETF) — announced that it has launched a working group to assess the potential of investing in Bitcoin.  <br /><br />
+			blogpost1 = `<p class="quote"><i>In July, Blackrock — the world’s largest exchange-traded fund (ETF) — announced that it has launched a working group to assess the potential of investing in Bitcoin.  <br /><br />
     Blackrock’s move could be described as a preemptive strike to avoid missing the crypto bus. Goldman Sachs is making headway with cryptocurrency involvement and Blackrock is following suit.</i><sup>1</sup></p>
     <p class="firstparagraph">
     <p class="quote">Fintech broke onto the scene as a disruptive force following the 2008 crisis, but the industry's influence on the broader financial services system is changing.
@@ -7157,7 +7158,7 @@ Developers may not benefit much from the new processors, Enderle said, because "
     As this happens, the fintech industry is on the cusp of becoming an integral component of the broader financial services ecosystem. But it will likely first have to go through a complete credit cycle, and survive an economic downturn like the one that set the stage for its arrival in 2008, for this to happen.<sup>2</sup>
     </p>
     `;
-  blogcite1 = `
+			blogcite1 = `
     <p class="cite">1. <a href="https://cointelegraph.com/news/institutional-investors-and-fintech-will-wall-street-go-head-first-into-crypto"   target="_blank">https://cointelegraph.com/news/institutional-investors-and-fintech-will-wall-street-go-head-first-into-crypto
     </a>
     </p> 
@@ -7166,237 +7167,237 @@ Developers may not benefit much from the new processors, Enderle said, because "
   </p> 
     `;
 
-  var url = [  
-    {
-      id: '22',
-      did: '08-25-18',
-      date: 'August 25-26, 2018<br />Weekend',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: '',
-      post: blogpost22,
-      blogcite: blogcite22
-    }, 
-    {
-      id: '21',
-      did: '08-24-18',
-      date: 'August 24, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: 'Air, More Air, and the Tech of Fast Air',
-      post: blogpost21,
-      blogcite: blogcite21
-    }, 
-    {
-    id: '20',
-    did: '08-23-18',
-    date: 'August 23, 2018',
-    author: 'by Thomas Maestas',
-    cat3: 'Web Dev Affairs',
-    title: 'The Best Offense is a Good Defense',
-    post: blogpost20,
-    blogcite: blogcite20
-  }, 
-   {
-    id: '19',
-    did: '08-22-18',
-    date: 'August 22, 2018',
-    author: 'by Thomas Maestas',
-    cat3: 'Quantum Data',
-    title: 'Quantum Data V:<br />The Bits and Bolts of Zero, One, and the Superposed Third State',
-    post: blogpost19,
-    blogcite: blogcite19
-  }, 
-    {
-      id: '18',
-      did: '08-21-18',
-      date: 'August 21, 2018 ',
-      author: 'by Thomas Maestas',
-      cat3: 'Quantum Data',
-      title: 'Quantum Data IV:<br />The Business of Quantum Data  ',
-      post: blogpost18,
-      blogcite: blogcite18
-    },
+			var url = [
+				{
+					id: '22',
+					did: '08-25-18',
+					date: 'August 25-26, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: '',
+					post: blogpost22,
+					blogcite: blogcite22
+				},
+				{
+					id: '21',
+					did: '08-24-18',
+					date: 'August 24, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Air, More Air, and the Tech of Fast Air',
+					post: blogpost21,
+					blogcite: blogcite21
+				},
+				{
+					id: '20',
+					did: '08-23-18',
+					date: 'August 23, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'The Best Offense is a Good Defense',
+					post: blogpost20,
+					blogcite: blogcite20
+				},
+				{
+					id: '19',
+					did: '08-22-18',
+					date: 'August 22, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Quantum Data',
+					title: 'Quantum Data V:<br />The Bits and Bolts of Zero, One, and the Superposed Third State',
+					post: blogpost19,
+					blogcite: blogcite19
+				},
+				{
+					id: '18',
+					did: '08-21-18',
+					date: 'August 21, 2018 ',
+					author: 'by Thomas Maestas',
+					cat3: 'Quantum Data',
+					title: 'Quantum Data IV:<br />The Business of Quantum Data  ',
+					post: blogpost18,
+					blogcite: blogcite18
+				},
 
-    {
-      id: '17',
-      did: '08-20-18',
-      date: 'August 20, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
-      title: 'Data that Go Up but Do not Go Down',
-      post: blogpost17,
-      blogcite: blogcite17
-    },
-    {
-      id: '16',
-      did: '08-18-18',
-      date: 'August 18-19, 2018<br />Weekend',
-      author: 'by Thomas Maestas',
-      cat3: 'Quantum Data',
-      title: 'Quantum Data III: Sudden Data ',
-      post: blogpost16,
-      blogcite: blogcite16
-    },
+				{
+					id: '17',
+					did: '08-20-18',
+					date: 'August 20, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Data that Go Up but Do not Go Down',
+					post: blogpost17,
+					blogcite: blogcite17
+				},
+				{
+					id: '16',
+					did: '08-18-18',
+					date: 'August 18-19, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Quantum Data',
+					title: 'Quantum Data III: Sudden Data ',
+					post: blogpost16,
+					blogcite: blogcite16
+				},
 
-    {
-      id: '15',
-      did: '08-17-18',
-      date: 'August 17, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: 'Quantum Data, Part II:<br /> Quantum State-Entanglement across a Solid State',
-      post: blogpost15,
-      blogcite: blogcite15
-    },
-    {
-      id: '14',
-      did: '08-16-18',
-      date: 'August 16, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: ' ',
-      post: blogpost14,
-      blogcite: blogcite14
-    },
+				{
+					id: '15',
+					did: '08-17-18',
+					date: 'August 17, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Quantum Data, Part II:<br /> Quantum State-Entanglement across a Solid State',
+					post: blogpost15,
+					blogcite: blogcite15
+				},
+				{
+					id: '14',
+					did: '08-16-18',
+					date: 'August 16, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: ' ',
+					post: blogpost14,
+					blogcite: blogcite14
+				},
 
-    {
-      id: '13',
-      did: '08-15-18',
-      date: 'August 15, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: 'Quantum Data',
-      post: blogpost13,
-      blogcite: blogcite13
-    },
-    {
-      id: '12',
-      did: '08-14-18',
-      date: 'August 14, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Quantum Data',
-      title: '',
-      post: blogpost12,
-      blogcite: blogcite12
-    },
+				{
+					id: '13',
+					did: '08-15-18',
+					date: 'August 15, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'Quantum Data',
+					post: blogpost13,
+					blogcite: blogcite13
+				},
+				{
+					id: '12',
+					did: '08-14-18',
+					date: 'August 14, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Quantum Data',
+					title: '',
+					post: blogpost12,
+					blogcite: blogcite12
+				},
 
-    {
-      id: '11',
-      did: '08-12-18',
-      date: 'August 12-13, 2018<br />Weekend',
-      author: 'by Thomas Maestas',
-      cat3: 'A.I.Now.',
-      title: ' ',
-      post: blogpost11,
-      blogcite: blogcite11
-    },
+				{
+					id: '11',
+					did: '08-12-18',
+					date: 'August 12-13, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: ' ',
+					post: blogpost11,
+					blogcite: blogcite11
+				},
 
-    {
-      id: '10',
-      did: '08-11-18',
-      date: 'August 11, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
-      title: 'The Good Doctor, Part IV: Good Doctor, Heal Thyself!',
-      post: blogpost10,
-      blogcite: blogcite10
-    },
-    {
-      id: '9',
-      did: '08-10-18',
-      date: 'August 10, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'A.I.Now.',
-      title: 'The Good Doctor, Part III: Magneto Encephelop',
-      post: blogpost9,
-      blogcite: blogcite9
-    },
-    {
-      id: '8',
-      did: '08-09-18',
-      date: 'August 9, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: 'The Good Doctor, Part II:  <br />About that Second Opinion . . . <br />',
-      post: blogpost8,
-      blogcite: blogcite8
-    },
-    {
-      id: '7',
-      did: '08-08-18',
-      date: 'August 8, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'A.I.Now.',
-      title: 'The Good Doctor, Part I: <br /> How A.I.-Driven Predictive Analytics Rewrites Healthcare',
-      post: blogpost7,
-      blogcite: blogcite7
-    },
-    {
-      id: '6',
-      did: '08-07-18',
-      date: 'August 7, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
-      title: 'New Math &amp; the Speed of Antiquation, a Case Study:<br />Mobile 8th Generation Intel',
-      post: blogpost6,
-      blogcite: blogcite6
-    },
-    {
-      id: '5',
-      did: '08-06-18',
-      date: 'August 6, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
-      title: 'Android Pi(e) Day',
-      post: blogpost5,
-      blogcite: blogcite5
-    },
-    {
-      id: '4',
-      did: '08-04-18',
-      date: 'August 4-5, 2018<br />Weekend',
-      author: 'by Thomas Maestas',
-      cat3: 'Sociology Tomorrow!',
-      title: 'The New Age of Digital Responsibility',
-      post: blogpost4,
-      blogcite: blogcite4
-    },
-    {
-      id: '3',
-      did: '08-03-18',
-      date: 'August 3, 2018',
-      author: 'by Thomas Maestas',
-      cat3: ' ',
-      title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Glass Elevator into the Cloud',
-      post: blogpost3,
-      blogcite: blogcite3
-    },
-    {
-      id: '2',
-      did: '08-02-18',
-      date: 'August 02, 2018<br />Weekend',
-      author: 'by Thomas Maestas',
-      cat3: 'Web Dev Affairs',
-      title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Google\'s Golden Ticket',
-      post: blogpost2,
-      blogcite: blogcite2
-    },
-    {
-      id: '1',
-      did: '08-01-18',
-      date: 'August 1, 2018',
-      author: 'by Thomas Maestas',
-      cat3: 'Musing Blockchain',
-      title: 'Fintech Auchtung!',
-      post: blogpost1,
-      blogcite: blogcite1
-    }
+				{
+					id: '10',
+					did: '08-11-18',
+					date: 'August 11, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'The Good Doctor, Part IV: Good Doctor, Heal Thyself!',
+					post: blogpost10,
+					blogcite: blogcite10
+				},
+				{
+					id: '9',
+					did: '08-10-18',
+					date: 'August 10, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'The Good Doctor, Part III: Magneto Encephelop',
+					post: blogpost9,
+					blogcite: blogcite9
+				},
+				{
+					id: '8',
+					did: '08-09-18',
+					date: 'August 9, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'The Good Doctor, Part II:  <br />About that Second Opinion . . . <br />',
+					post: blogpost8,
+					blogcite: blogcite8
+				},
+				{
+					id: '7',
+					did: '08-08-18',
+					date: 'August 8, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'A.I.Now.',
+					title: 'The Good Doctor, Part I: <br /> How A.I.-Driven Predictive Analytics Rewrites Healthcare',
+					post: blogpost7,
+					blogcite: blogcite7
+				},
+				{
+					id: '6',
+					did: '08-07-18',
+					date: 'August 7, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'New Math &amp; the Speed of Antiquation, a Case Study:<br />Mobile 8th Generation Intel',
+					post: blogpost6,
+					blogcite: blogcite6
+				},
+				{
+					id: '5',
+					did: '08-06-18',
+					date: 'August 6, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Android Pi(e) Day',
+					post: blogpost5,
+					blogcite: blogcite5
+				},
+				{
+					id: '4',
+					did: '08-04-18',
+					date: 'August 4-5, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Sociology Tomorrow!',
+					title: 'The New Age of Digital Responsibility',
+					post: blogpost4,
+					blogcite: blogcite4
+				},
+				{
+					id: '3',
+					did: '08-03-18',
+					date: 'August 3, 2018',
+					author: 'by Thomas Maestas',
+					cat3: ' ',
+					title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Glass Elevator into the Cloud',
+					post: blogpost3,
+					blogcite: blogcite3
+				},
+				{
+					id: '2',
+					did: '08-02-18',
+					date: 'August 02, 2018<br />Weekend',
+					author: 'by Thomas Maestas',
+					cat3: 'Web Dev Affairs',
+					title: 'Tour of Google\'s Chocolate Factory, Part II:<br />Google\'s Golden Ticket',
+					post: blogpost2,
+					blogcite: blogcite2
+				},
+				{
+					id: '1',
+					did: '08-01-18',
+					date: 'August 1, 2018',
+					author: 'by Thomas Maestas',
+					cat3: 'Musing Blockchain',
+					title: 'Fintech Auchtung!',
+					post: blogpost1,
+					blogcite: blogcite1
+				}
 
-  ];
+			];
 
-  for (i = 0; i < url.length; i++) {
-    var cat = ` 
+			for (i = 0; i < url.length; i++) {
+				var cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 
     <hr />  
     <a href="#top"><button>Top</button></a>  
@@ -7411,22 +7412,22 @@ Developers may not benefit much from the new processors, Enderle said, because "
     <div id="blogcite">${url[i].blogcite}
    
    </div>` ;
-	
-   secretParagraphAUG.innerHTML  += cat;   
-}  
-document.getElementById("paragraph-aug").innerHTML = cat; 
 
-} else {
+				secretParagraphAUG.innerHTML += cat;
+			}
+			document.getElementById("paragraph-aug").innerHTML = cat;
 
-	secretParagraphAUG.style.display = 'none';
-	} 
-	} 
-/* END*/
-	$scope.getArchives = function(){
-		$http.get('/api/archives').success(function(response){
+		} else {
+
+			secretParagraphAUG.style.display = 'none';
+		}
+	}
+	/* END*/
+	$scope.getArchives = function () {
+		$http.get('/api/archives').success(function (response) {
 			$scope.archives = response;
 		});
 	};
- 
-  
+
+
 }]); 

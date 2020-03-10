@@ -1,12 +1,5 @@
 document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar">
-   
-    <style>
- li#banner {
-       
-        
-    }
-    </style>
- 
+    
  
     <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
         class="navbar-toggler navbar-toggler-center hidden-md-up" data-target="#navbarResponsive" data-toggle="collapse"

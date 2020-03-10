@@ -571,6 +571,6 @@ After taking this long journey with me, I’m sure you can appreciate the comple
     }
 
     console.log('blogger-dec');
-    console.log(angular.toJson(url));
+    // console.log(angular.toJson(url));
 };
 bloggerDec();

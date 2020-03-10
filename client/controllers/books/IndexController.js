@@ -3,13 +3,15 @@
 (function() {
 
     angular.module('app')
-        .controller('IndexController', ['$q', 'books', 'dataService', 'badgeService', '$cookies', '$cookieStore', '$log', '$route', 'currentUser', IndexController]);
+        .controller('IndexController', ['$q', '$scope',  '$http', 'books', 'dataService', 'badgeService', '$cookies', '$cookieStore', '$log', '$route', 'currentUser', IndexController]);
 
 
 
-    function IndexController($q, dataService, $cookies, $cookieStore, $log, $route, currentUser) {
+    function IndexController($q, $scope, $http, dataService, $cookies, $cookieStore, $log, $route, currentUser) {
 
-        var vm = this;
+        var vm = this; 
+        $scope.titleLambda = "AWS Lambda POSTS";
+        $http.get
         const okToGreet = function() {
             console.log(name);
             var favoriteName = name;

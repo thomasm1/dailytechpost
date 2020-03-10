@@ -187,7 +187,7 @@ Some police agencies have in recent years run facial-recognition searches agains
     }
 
     console.log('blogger-march19');
-    console.log(angular.toJson(url));
+    // console.log(angular.toJson(url));
 };
 
 bloggerMarch19();

@@ -181,6 +181,9 @@ innerform2.innerHTML = `
 .title {
   color:white; 
 }
+input.input {
+  max-width:90%;
+}
 span#result {
   border:inset 1px white;
   min-width:100px;
