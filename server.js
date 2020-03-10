@@ -16,12 +16,12 @@ var app = express();
 // app.set('views', path.join(__dirname, '/server/views'));
 // app.set('view engine', 'jade');
 
-app.use(favicon(path.join(__dirname, 'client/public/favicon.ico')));
+app.use(favicon(path.join(__dirname, 'client/favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/public')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 //API
 app.use('/', routes);

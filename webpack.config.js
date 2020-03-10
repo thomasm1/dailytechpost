@@ -4,12 +4,12 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      './client/public/src/index.js',
+      './client/src/index.js',
     ],
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-      path: path.resolve(__dirname, 'client/public/dist'),
+      path: path.resolve(__dirname, 'client/dist'),
     filename: 'bundle-daily.js'
   },
   module: {

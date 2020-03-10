@@ -6,23 +6,24 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
  
 function css() {
-  return src('client/public/src/app.scss')
+  return src('client/src/app.scss')
     .pipe(sass())
     .pipe(minifyCSS())
-    .pipe(dest('client/public/dist'))
+    .pipe(dest('client/dist'))
     .pipe(browserSync.stream())
 }
  
+ // Image minifier from src -> dist
 function img() {
-    return src('client/public/src/img/*')
+    return src('client/src/img/*')
     .pipe(imageMin())
-    .pipe(dest('client/public/dist/img', { sourcemaps: true }))
+    .pipe(dest('client/dist/img', { sourcemaps: true }))
 }
    
 function js() {
-  return src('client/public/src/js/*.js', { sourcemaps: true })
+  return src('client/src/js/*.js', { sourcemaps: true })
     .pipe(concat('app.min.js'))
-    .pipe(dest('client/public/dist', { sourcemaps: true }))
+    .pipe(dest('client/dist', { sourcemaps: true }))
 }
 
 exports.img = img;

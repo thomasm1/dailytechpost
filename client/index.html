@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" xml:lang="en">
+
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114267362-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114267362-1'); 
+    </script>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Technology Blog: Musing Blockchain | Web Dev Affairs | Sociology Tomorrow! Latest Developments in Technology Culture, 
+  Technology News, Tech Tools, Tech Talk Too! I explore daily tech topics on one of my three tech
+   blog topics: Blockchain, Web Dev, and Sociology in Tech" name="description" />
+    <meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests" name="keywords" />
+    <link rel="manifest" href="/manifest.json">
+    <meta content="Thomas M. Maestas" name="author" />
+    <title>OUR DAILY TECH</title>
+    <base href="/">
+    <link href="dist/app.css" rel="stylesheet" />
+
+    <script src="dist/js/vendor/d3v4.min.js"></script>
+    <script src="dist/js/vendor/jquery.2.1.min.js"></script>
+
+
+</head>
+
+
+
+<body class="with-top-navbar">
+
+
+    <div id="dailyNav">
+<nav class="navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar">
+   
+    <style>
+ li#banner {
+       
+        
+    }
+    </style>
+ 
+ 
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler-center hidden-md-up" data-target="#navbarResponsive" data-toggle="collapse"
+        type="button" on-click="fadeUp()" id="toggler"> </button>
+
+    <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto ">
+            <li  id="banner" >
+            <img src="dist/img/ourdailytechbanner.png" alt="our dailytech banner"  />
+            </li>
+            <li class="nav-item   ">
+                <a class="nav-link" href="/" data-target="#navbarResponsive" data-toggle="collapse" type="button"
+                    on-click="fadeUp()">
+                    <span class=" subdailytech"> TECH
+                        <br />BLOG </span>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link" href="/archives" data-target="#navbarResponsive" data-toggle="collapse"
+                    type="button" on-click="fadeUp()">
+                    <span class="subdailytech ">BLOG  ✨
+                        <br />ARCHIVES </span>
+                </a>
+            </li>
+            <li class="nav-item hidden">
+                <a class="nav-link" ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
+                    title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+                    <span class="caret subdailytech">FOR_CAT
+                        <br />EYES_ONLY</span>
+                </a>
+
+                <a class="nav-link" ng-href="/_For_Cat_Eyes_Only_" title="tmm FICTION" data-target="#navbarResponsive"
+                    data-toggle="collapse" type="button">
+                    <span class="caret subdailytech">FOR_CAT
+                        <br />EYES_ONLY</span>
+                </a>
+                <ul style="z-index:0" class="menu-left">
+                    <li>
+                        tmm FICTION
+                        <a style="z-index:199; " ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
+                            title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse" type="button">For
+                            Cat Eyes Only:
+                            <i>Early Months of Win&#39;s Campaign</i>
+                        </a>
+                    </li>
+                    <li style="z-index:199; ">
+                        tmm FICTION
+                        <a style="z-index:199; "
+                            ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing"
+                            title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse"
+                            type="button">Fiction Excerpts From:
+                            <br />
+                            <i>The Casperian Ancestries</i>
+                            <br />
+                            <small>Capturing One Cat&#39;s Past and Present</small>
+                        </a>
+                        tmm FICTION
+                    </li>
+                </ul>
+            </li>
+            <li style="z-index:5" class="nav-item">
+                <a class="nav-link" data-target="#navbarResponsive" data-toggle="collapse" type="button"
+                    on-click="fadeUp()">
+                    <span class=" subdailytech">DEV
+                        <br /> TOOLS
+                    </span>
+                </a>
+
+
+                <ul>
+
+                    <!--START UL -->
+
+                    <li style="z-index:100;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button"> Web &nbsp;&nbsp;
+                            <span> </span>
+                        </a>
+
+
+                        <ul>
+                            <li style="z-index:100;">
+                                <a href="http://webreference.com/" target="_blank">Web Reference</a>
+                            </li>
+                            <li>
+                                <a href="https://developer.mozilla.org" target="_blank">Mozilla Dev</a>
+                            </li>
+                            <li>
+                                <a href="http://support.google.com/webmasters/?hl=en" target="_blank">Google Dev</a>
+                            </li>
+                            <li>
+                                <a href="http://developer.yahoo.com/" target="_blank">Yahoo! Dev</a>
+                            </li>
+                            <li>
+                                <a href="http://www.w3schools.com" target="_blank">W3 schools</a>
+                            </li>
+                            <li>
+                                <a href="http://www.w3.org/" target="_blank">World Wide Web Consortium</a>
+                            </li>
+                            <li>
+                                <a href="https://www.icann.org" target="_blank">ICANN</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:98.2;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button"> D3 tools &nbsp;&nbsp; </a>
+                        <ul class="dropdown-menu">
+                            <li style="z-index:98">
+                                <a href="http://d3js.org" target="_blank">D3js</a>
+                            </li>
+                            <li style="z-index:98.5">
+                                <a
+                                    href="https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md">d3.v3</a>
+                            </li>
+                            <!--    <li style="z-index:98.5">
+        <a href="https://chartio.com/" target="_blank">chartio</a>
+    </li>
+    <li style="z-index:98.5">
+    <a href="http://code.shutterstock.com/rickshaw/" target="_blank">rickshaw</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://rawgraphs.io/" target="_blank">rawgraphs.io </a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://dimplejs.org" target="_blank">dimplejs</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://nvd3.org/" target="_blank">nvd3</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank">SVG</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://www.khronos.org/webgl/" target="_blank">WebGL</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
+</li>
+<li>
+<a href="https://www.telerik.com/kendo-ui"  >  <i class="fa fa-cog"></i></a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://alignedleft.com/tutorials/d3/binding-data" target="_blank">binding-data</a>
+</li>
+<li style="z-index:98.5">
+    <a href="http://datajournalismhandbook.org/1.0/en/getting_data_3.html" target="_blank">getting_data</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas</a>
+</li>
+<li style="z-index:98.5">
+    <a href="https://github.com/d3/d3/blob/master/CHANGES.md" target="_blank">d3.v4 changes</a>
+</li>
+-->
+                            <li style="z-index:98">
+                                <a href="https://github.com/d3/d3/blob/master/API.md" target="_blank">D3js APIs</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li style="z-index:98;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button">Javascript &nbsp;&nbsp; </a>
+                        <ul class="dropdown-menu">
+                            <li style="z-index:98">
+                                <a href="https://jsbin.com" target="_blank">JS Bin</a>
+                            </li>
+                            <li style="z-index:98">
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">JavaScript
+                                    APIs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:10 ;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button">Datasets &nbsp;&nbsp;</a>
+                        <ul>
+                            <li style="z-index:10 ;">
+                                <a href="http://www.icpsr.umich.edu/icpsrweb/ICPSR/index.jsp" target="_blank">ICPSR
+                                    Datasets</a>
+                            </li>
+                            <li style="z-index:10 ;">
+                                <a href="http://data.imf.org/?sk=7CB6619C-CF87-48DC-9443-2973E161ABEB"
+                                    target="_blank">Datasets IMF</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:101;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button">Stats &nbsp;&nbsp;</a>
+                        <ul>
+                            <li style="z-index:101;">
+                                <a href="https://stats.idre.ucla.edu/other/dae/" target="_blank">Stats</a>
+                            </li>
+                            <li style="z-index:101;">
+                                <a href="http://openrefine.org/" target="_blank">OpenRefine</a>
+                            </li>
+                            <li style="z-index:102;">
+                                <a href="http://statacumen.com" target="_blank">Stat Acumen</a>
+                            </li>
+                            <li style="z-index:102;">
+                                <a href="http://www.mapageweb.umontreal.ca/durandc/" target="_blank">Montr&eacute;al
+                                    Stats</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:12;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button">SQL &nbsp;&nbsp; </a>
+                        <ul>
+                            <li style="z-index:12;">
+                                <a target="_blank">MySQL &nbsp;&nbsp;</a>
+                            </li>
+                            <li style="z-index:12;">
+                                <a href="https://www.mysql.com/" target="_blank">MySQL</a>
+                            </li>
+                            <li style="z-index:121;">
+                                <a href="http://www.oracle.com/technetwork/developer-tools/apex/overview/index-155186.html"
+                                    target="_blank">Oracle Express</a>
+                            </li>
+                            <li style="z-index:121;">
+                                <a href="http://iacademy.oracle.com" target="_blank">Application Express</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:1;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button"> R-Project &nbsp;&nbsp; </a>
+                        <ul>
+                            <li style="z-index:1;">
+                                <a href="https://www.r-project.org/" target="_blank">R-Project </a>
+                            </li>
+                            <li>
+                                <a href="https://www.rstudio.com/" target="_blank">RStudio</a>
+                            </li>
+                            <li>
+                                <a href="https://shiny.rstudio.com/" target="_blank">Shiny</a>
+                            </li>
+                            <li>
+                                <a href="http://amsantac.co/blog/en/2015/10/31/qgis-r.html" target="_blank">Open GIS</a>
+                            </li>
+                            <li>
+                                <a href="http://www.tableau.com/products/cloud-bi" target="_blank">Tableau </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:1;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button"> Python &nbsp;&nbsp; </a>
+                        <ul>
+                            <li style="z-index:1;">
+                                <a href="https://www.python.org/" target="_blank">Python.org</a>
+                            </li>
+                            <li>
+                                <a href="https://pypi.python.org/pypi" target="_blank">Python Package Index</a>
+                            </li>
+                            <li>
+                                <a href="https://docs.python.org/2/library/index.html" target="_blank">Python Standard
+                                    Library</a>
+                            </li>
+                            <li>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/" target="_blank">Pandas Data
+                                    Analysis Toolkit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:9;">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button">Validators &nbsp;&nbsp;</a>
+                        <ul>
+                            <li style="z-index:9;">
+                                <a href="https://stats.idre.ucla.edu/other/dae/" target="_blank">Validators </a>
+                            </li>
+                            <li>
+                                <a href="http://validator.w3.org" target="_blank">HTML validator</a>
+                            </li>
+                            <li>
+                                <a href="http://jigsaw.w3.org/css-validator/" target="_blank">CSS validator</a>
+                            </li>
+                            <li>
+                                <a href="http://jsonlint.com/" target="_blank">JSON Validator</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="z-index:1;">
+                        <a href="http://html-color-codes.info/" target="_blank">Color Codes</a>
+                    </li>
+                    <li style="z-index:1;">
+                        <a href="https://inkscape.org/en/" target="_blank">Inkscape</a>
+                    </li>
+                    <li style="z-index:1;">
+                        <a href="https://v4-alpha.getbootstrap.com" target="_blank">Bootstrap</a>
+                    </li>
+                    <li style="z-index:1;">
+                        <a href="http://www.dynamicdrive.com/" target="_blank">Dynamic Drive</a>
+                    </li>
+                    <li style="z-index:1;">
+                        <a href="http://php.net" target="_blank">PHP.net</a>
+                    </li>
+                    <li>
+                        <a href="http://www.useit.com/" target="_blank">Jakob Nielson</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alistapart.com/" target="_blank">A List Apart</a>
+                    </li>
+                    <li>
+                        <a href="http://codepen.io/" target="_blank">codepen.io</a>
+                    </li>
+                    <li>
+                        <a href="http://www.sitepoint.com/" target="_blank">sitepoint</a>
+                    </li>
+                    <li>
+                        <a href="http://www.kaggle.com" target="_blank">Kaggle</a>
+                    </li>
+                    <li>
+                        <a href="http://plnkr.co/" target="_blank">Plunker</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://gist.github.com/" target="_blank">Gist
+                            <small>GitHub</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="last" href="http://stackoverflow.com" target="_blank">Stack Overflow</a>
+                    </li>
+                    <li>
+                        <a href="https://www.virtualbox.org/" target="_blank">Virtual Box</a>
+                    </li>
+                </ul>
+                <!--end UL-->
+
+
+            </li>
+        </ul>
+        <ul id="media" class="nav navbar-nav navbar-right">
+
+
+            <li>
+
+                <a title="Medium" href="https://medium.com/@thomasm1" target="_blank">
+
+                    <i class="fa fa-medium"></i>
+
+                </a>
+
+            </li>
+            <li>
+
+                <a title="github" href="https://github.com/thomasm1" target="_blank">
+
+                    <i class="fa fa-github"></i>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a title="facebook" href="https://www.facebook.com/thomasm1.maestas" target="_blank">
+
+                    <i class="fa fa-facebook"></i>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a title="linkedin" href="http://linkedin.com/in/thomasmaestas" target="_blank">
+
+                    <i class="fa fa-linkedin"></i>
+
+                </a>
+
+            </li>
+            
+            <!--End UL -->
+
+        </ul>
+        <abbr title="Our Daily Tech">
+
+            <img class="card-profile-img zoom" id="dailylogo" alt="image of Le Mont Real"
+                src="dist/img/blueColorTriomphe.png" />
+
+        </abbr>
+
+    </div>
+
+</nav>
+    </div> <!--end dailyNav --> 
+    <div class="container" id="foreground">
+        <!-- /.container -->
+
+        <div class="row">
+            <div class="col-md-12" id="view">
+
+
+
+                <div class="container pt-4">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card card-profile">
+
+                                <!-- <div id="planets">
+                                    <form class="form">
+                                        <br />
+                                        <input type="radio" name="reference" id="ref-annulus">
+                                        <label for="ref-annulus">Orbit📦 </label>
+                                        <br>
+                                        <input type="radio" name="reference" id="ref-planet" checked>
+                                        <label for="ref-planet">Planets✨</label>
+                                        <br>
+                                        <input type="radio" name="reference" id="ref-sun">
+                                        <label for="ref-sun">Sun</label><span>🔥</span>
+
+                                    </form>
+
+
+                                </div> -->
+
+
+                                <button id="mmodalBtn" class="mbutton title   hover" id="b-header">
+                  <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
+                        <a class="cover  ">SOCIOLOGY TOMORROW!</a>
+                   </h6>
+                  <h6 class="            subdailytech white hover">
+                    <a class="cover steel">WEB DEV &nbsp; AFFAIRS &nbsp; </a>
+                  </h6> 
+                  <h6 class=" subdailytech white" title="Machine Learning"> 
+                    <a class="cover ">A.I.NOW</a>
+                  </h6>
+                  <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
+                    <a class="cover steel">QUANTUM DATA</a>
+                  </h6>
+                  <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
+                    <a class="cover">MUSING BLOCKCHAIN</a>
+                  </h6> 
+                  <a class="btn btn-primary"><em>READING MODAL</em></a>
+                </button>
+
+                                <!-- <div id="map0">
+                                    <div class="map0"></div>
+                                    <div class="map0"></div>
+                                </div>
+                                <script src="dist/js/planets.js"></script> -->
+                                <div class="card-header" ng-class="">
+
+                                    <div ng-view class="view"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div id="msimpleModal" class="mmodal">
+                                <div class="mmodal-content">
+                                    <span class="mcloseBtn"> &nbsp;&times; &nbsp; </span>
+                                    <div class="mmodal-header">
+
+                                    </div>
+                                    <div class="mod-behave ">
+                                        <div id="top-mod"></div>
+
+                                        <div id="paragraph-may19-mod"></div>
+                                        <div id="paragraph-march19-mod"></div> 
+                                        <div id="paragraph-jan19-mod"></div>
+                                        <div id="paragraph-dec-mod"></div>
+                                        <div id="paragraph-nov-mod"></div>
+                                        <div id="paragraph-oct-mod"></div>
+                                        <div id="paragraph-sep-mod"></div>
+                                        <div id="paragraph-aug-mod"></div>
+                                        <div id="paragraph-july-mod"></div>
+                                        <div id="paragraph-june-mod"></div>
+                                        <div id="paragraph-may-mod"></div>
+                                        <div id="paragraph-apr-mod"></div>
+                                        <div id="paragraph-mar-mod"></div>
+                                        <div id="paragraph-feb-mod"></div>
+
+                                    </div>
+                                    <div class="mmodal-footer">
+                                        <p>&copy; 2018 All Rights Reserved. &nbsp;|
+                                            <a href="http://www.thomasmaestas.net" style="color:darkblue;text-decoration:none;">thomasmaestas.net &nbsp;|</a>
+                                            <a href="mailto:thomas@ourdailytech.com" style="color:darkblue;text-decoration:none;">
+                        thomas@ourdailytech.com &nbsp;|</a>
+                                            <a href="http://www.thomasmaestas.net/profile.html#contactme" title="Contact Information: thomasmaestas.net">
+                        Contact Information</a>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <ul class="list-group media-list media-list-stream mb-4" id="center-col">
+
+                                <li>
+                                    <div id="tech">
+
+                                        <div class="mod-behave ">
+                                            <div id="top"></div>
+
+                                            <div id="paragraph-may19"></div> 
+                                            <div id="paragraph-march19"></div>
+                                            <div id="paragraph-jan19"></div>
+                                            <div id="paragraph-dec"></div>
+                                            <div id="paragraph-nov"></div>
+                                            <div id="paragraph-oct"></div>
+                                            <div id="paragraph-sep"></div>
+                                            <div id="paragraph-aug"></div>
+                                            <div id="paragraph-july"></div>
+                                            <div id="paragraph-june"></div>
+                                            <div id="paragraph-may"></div>
+                                            <div id="paragraph-apr"></div>
+                                            <div id="paragraph-mar"></div>
+                                            <div id="paragraph-feb"></div>
+
+                                        </div>
+                                        <!-- blog-text.js  BEGINS HERE -->
+
+
+                                        <div id="febarchive">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card mb-4 ">
+                                <div class="card-block">
+
+                                    <div id="marsreader" class="marsreader">
+
+                                        <pre id="reqObject"></pre>
+                                        <img id="apod_img_id" class="zoom" />
+
+                                        <iframe id="apod_vid_id" type="text/html" width="426" height="262" frameborder="0"></iframe>
+
+                                        <p id="copyright"></p>
+                                        <h6 class="dailytech">Twython NASA API </h6>
+                                        <h5 id="apod_title"></h5>
+                                        <p id="apod_explaination"></p>
+                                        <pre id="returnObject"></pre>
+
+                                    </div>
+
+                                    <div class="media-body thesis">
+
+                                        <div id="message">
+
+                                        </div>
+
+                                    </div>
+                                    <div id="force">
+                                        <canvas class="canvas" height="700px"></canvas>
+
+                                    </div>
+
+                                    <div id="d-button">
+                                        <div class="button-wrap">
+                                            <div class="contain">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                            </div>
+                                            <div class="contain">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                                <img src="icon.png">
+                                            </div>
+                                        </div>
+
+                                        🔥🔥🔥🔥🔥🔥🔥
+                                        <button class="btn btn-primary">
+                                            <a href="https://ourdailytech.net/_For_Cat_Eyes_Only_/" target="_blank"><h6>Fiction Publications:</h6> 
+                                            <em>For Cat Eyes Only</em> <br />
+                                        <em>The Casperian Ancestries</em></a>
+                                        </button> 🔥🔥🔥🔥🔥🔥🔥🔥🔥
+                                    </div>
+                                    <!--end dbutton--> 
+
+                                </div>
+
+                                <link href="dist/calc.css" rel="stylesheet" />
+                                <div id="calc"></div>
+                                <script src="dist/calc.js"></script>
+                          
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- end card card-link-list -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- /.container -->
+
+
+    <div class="card-block" id="footer">
+
+        <a class="nav-link" href="/Books"><small>_</small></a>
+        <a class="nav-link" href="/posts">_</a>
+        <p>Copyright &copy; 2018, 2019, 2020 All Rights Reserved. &nbsp; | &nbsp;
+            <a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
+        thomasmaestas.net</a>&nbsp; | &nbsp;
+            <img src="dist/img/paypal.PNG" alt="PayPal Emblem" height="
+	   15" />
+            <a href="https://www.paypal.com/paypalme/ThomasMaestas" style="color:white;text-decoration:none;">
+        &nbsp; Blog contribution appreciated!</a>
+        </p>
+    </div>
+
+    </div>
+    </div>
+    </div>
+ 
+    <script src="dist/js/force.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js"></script>
+
+    <script src="dist/js/vendor/tether.min.js"></script>
+    <script src="dist/js/vendor/popper.min.js"></script>
+    <script src="dist/js/vendor/bootstrap.min.js"></script>
+
+ <!-- <script src="dist/app.min.js"></script> -->
+    <script src="dist/bundle-daily.js"></script>
+    <script src="app.js"></script>
+
+
+    <!-- <script src="dist/js/daily-nav.js"></script> -->
+    <script src="controllers/books/IndexController.js"></script>
+    <script src="controllers/blogs/BlogsController.js"></script>
+    <script src="controllers/books/BooksController.js"></script>
+    <script src="controllers/books/CatsController.js"></script>
+    <script src="controllers/books/ArchivesController.js"></script>
+    <script src="controllers/books/AddBookController.js"></script>
+    <script src="controllers/books/EditBookController.js"></script>
+    <script src="controllers/blogs/AddBlogController.js"></script>
+    <script src="controllers/blogs/EditBlogController.js"></script>
+    <script src="services/dataService.js"></script>
+    <script src="services/loggerService.js"></script>
+    <script src="services/constantService.js"></script>
+    <script src="services/badgeService.js"></script>
+    <script src="services/bookLoggerInterceptor.js"></script>
+    <script src="services/BooksResource.js"></script>
+    <script src="services/currentUser.js"></script>
+</body>
+
+</html>

@@ -12,13 +12,10 @@
         "year_published": "fgggggg"
     },
     {
-        "book_id": 7,
-        "title": "eeee",
-        "author": "eeee",
-        "year_published": "eeee"
-    },
-    {
-        "book_id": 8
+        "book_id": 8,
+        "title": "mar2020",
+        "author": "marAuthor",
+        "year_published": "2020"
     },
     {
         "book_id": 9,
@@ -36,5 +33,11 @@
         "book_id": 11,
         "title": "dd",
         "author": "d"
+    },
+    {
+        "book_id": 12,
+        "title": "march2020_title",
+        "author": "Thomas",
+        "year_published": "2020"
     }
 ]
