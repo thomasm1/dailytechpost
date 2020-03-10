@@ -9559,6 +9559,9 @@ document.getElementById("dailyNav").innerHTML = "<nav class=\"navbar navbar-togg
 
 var bloggerMay19 = function bloggerMay19() {
 
+    var blogpost37 = '<p>\n     Democratization of access to quantum software -- Cloud-backed hardware and open-software API\'s available to the public -- has been broadly expanded with Google Cloud Platform\'s March 6th White Paper, which outlines a package of (data analysis) simulation hardware, which "combines Cirq, an open source quantum circuit library, and the <a href="https://www.tensorflow.org/quantum" target="_blank">TensorFlow</a> machine learning platform." In short, the complete package: \n    </p> \n    <p class="quote">Google today announced the launch of TensorFlow Quantum, bringing together machine learning and quantum computing initiatives at the company. The framework can construct quantum datasets, prototype hybrid quantum and classic machine learning models, support quantum circuit simulators, and train discriminative and generative quantum models.\n    <sup>1 &nbsp; 2</sup>\n    </p>\n    <p>In my <a href="#12-22-18">12-22-18 blog post, Quantum Computing</a>, I wrote on IBM\'s pioneering efforts to provide public access to quantum hardware for limited use. IBM\'s <em>Q Experience</em> was the first to provide large-scale applications for public consumption, but those were test rides around a track while Google here is offering the track, the pit crew and unlimited supply of racing cars to work with and invent with, from under the hood to every tool in the shop. \n    <br /><br />\nFrom the White Paper:\n    </p>\n    <p class="quote">\nWe introduce TensorFlow Quantum (TFQ), an open source library for the rapid prototyping of hybrid quantum-classical models for classical or quantum data. This framework offers high-level abstractions for the design and training of both discriminative and generative quantum models under TensorFlow and supports high-performance quantum circuit simulators. We provide an overview of the software architecture and building blocks through several examples and review the theory of hybrid quantum-classical neural networks. We illustrate TFQ functionalities via several basic applications including supervised learning for quantum classification, quantum control, and quantum approximate optimization. Moreover, we demonstrate how one can apply TFQ to tackle advanced quantum learning tasks including meta-learning, Hamiltonian learning, and sampling thermal states. We hope this framework provides the necessary tools for the quantum computing and machine learning research communities to explore models of both natural and artificial quantum systems, and ultimately discover new quantum algorithms which could potentially yield a quantum advantage.\n    <sup>3</sup>\n</p> \n   ';
+    var blogcite37 = '  \n    <p>1. <a  target="_blank" href="https://venturebeat.com/2020/03/09/google-launches-tensorflow-quantum-a-machine-learning-framework-for-training-quantum-models/">https://venturebeat.com/2020/03/09/google-launches-tensorflow-quantum-a-machine-learning-framework-for-training-quantum-models/</a> \n</p>\n<p>2. <a  target="_blank" href="https://ai.googleblog.com/2020/03/announcing-tensorflow-quantum-open.html">https://ai.googleblog.com/2020/03/announcing-tensorflow-quantum-open.html</a> </p>  \n<p>3. <a  target="_blank" href="https://arxiv.org/abs/2003.02989">March 6th, 2020 Google White Paper</a> \n</p>  \n\n  ';
+
     var blogpost34 = '<p>\n    At a time when the national lines blur between multi-national corporations, and an interdependent global tech community, the 21st century space race is nonetheless well-defined -- however defined along the lines of sub-atomic inner-space. \n    </p>\n       <img src="dist/img/q-chandelier.jpg" width="400"  class="zoom" />\n    <p class="quote">\n    But just as the Soviet Union was the first to put both a satellite and a human being into orbit, before going on to lose the space race, China may be poised to outstrip any American achievements in a specific field of quantum technology \u2014 communication.<sup>1</sup>\n    </p>\n    <p>\n    But the goals are less abstract than sending a traveler to space; they define how national secrets can be securely stored, accessed and communicated: </p>\n\n    <p class="quote">With Micius, Chinese researchers are attempting to use a different type of quantum technology to develop new forms of secure communications that would be unbreakable. Micius is being used to share cryptography keys, which are used to encode and decode secure communications.\n<br /><br />\nOrdinarily, these keys are vulnerable to interception, but Micius uses photons in a quantum-superposition state \u2013 it\u2019s impossible to read them without changing what they say, so you can\u2019t copy or intercept a key sent in this manner.<sup>2</sup>\n</p> \n   ';
     var blogcite34 = '  \n    <p>1. <a  target="_blank" href="https://www.cnn.com/2019/10/24/tech/china-quantum-computing-intl-hnk/index.html">https://www.cnn.com/2019/10/24/tech/china-quantum-computing-intl-hnk/index.html</a> \n</p> \n<p>2. <a  target="_blank" href="https://www.wired.co.uk/article/quantum-computing-china-us">https://www.wired.co.uk/article/quantum-computing-china-us</a> \n</p>  \n\n<p>3. <a  target="_blank" href="https://www.technologyreview.com/s/615180/quantum-computer-race-ibm-google/">https://www.technologyreview.com/s/615180/quantum-computer-race-ibm-google/</a> \n</p>  ';
 
@@ -9685,12 +9688,21 @@ var bloggerMay19 = function bloggerMay19() {
     var blogcite1 = '\n  \n  \n  <p>1. [Post article 2/22/19]\n  <a href="https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8" target="_blank">\n  https://medium.com/s/story/algorithms-can-now-identify-cancerous-cells-better-than-humans-78e6518f65e8\n  </a>\n  </p>\n  \n  ';
 
     var url = [{
+        id: '37',
+        did: '20-03-09',
+        date: 'March 9, 2020 ',
+        author: 'by Thomas Maestas, MA',
+        cat3: 'Quantum Data',
+        title: 'Moving your Quantum Dreams into Today, Part V: <br />Quantum Data in the Cloud',
+        post: blogpost37,
+        cite: blogcite37
+    }, {
         id: '34',
         did: '20-03-05',
         date: 'March 5, 2020 ',
         author: 'by Thomas Maestas, MA',
         cat3: 'Quantum Data',
-        title: 'Moving your Dreams into Today, Part III: <br />The Nationalism of Quantum Data and Privacy',
+        title: 'Moving your Quantum Dreams into Today, Part III: <br />The Nationalism of Quantum Data and Privacy',
         post: blogpost34,
         cite: blogcite34
     }, {
@@ -9699,7 +9711,7 @@ var bloggerMay19 = function bloggerMay19() {
         date: 'March 4, 2020 ',
         author: 'by Thomas Maestas, MA',
         cat3: 'Quantum Data',
-        title: 'Moving your Dreams into Today, Part II:<br />The Business of Quantum Data and Privacy',
+        title: 'Moving your Quantum Dreams into Today, Part II:<br />The Business of Quantum Data and Privacy',
         post: blogpost33,
         cite: blogcite33
     }, {
@@ -9708,7 +9720,7 @@ var bloggerMay19 = function bloggerMay19() {
         date: 'March 3, 2020 ',
         author: 'by Thomas Maestas, MA',
         cat3: 'Sociology Today',
-        title: 'Moving your Dreams into Today, Part I: <br /> The Timing of Quantum Data and Privacy',
+        title: 'Moving your Quantum Dreams into Today, Part I: <br /> The Timing of Quantum Data and Privacy',
         post: blogpost32,
         cite: blogcite32
     }, {

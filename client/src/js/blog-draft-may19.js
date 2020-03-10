@@ -1,6 +1,31 @@
  
 var bloggerMay19 = function() {
     
+
+    var blogpost37 = `<p>
+     Democratization of access to quantum software -- Cloud-backed hardware and open-software API's available to the public -- has been broadly expanded with Google Cloud Platform's March 6th White Paper, which outlines a package of (data analysis) simulation hardware, which "combines Cirq, an open source quantum circuit library, and the <a href="https://www.tensorflow.org/quantum" target="_blank">TensorFlow</a> machine learning platform." In short, the complete package: 
+    </p> 
+    <p class="quote">Google today announced the launch of TensorFlow Quantum, bringing together machine learning and quantum computing initiatives at the company. The framework can construct quantum datasets, prototype hybrid quantum and classic machine learning models, support quantum circuit simulators, and train discriminative and generative quantum models.
+    <sup>1 &nbsp; 2</sup>
+    </p>
+    <p>In my <a href="#12-22-18">12-22-18 blog post, Quantum Computing</a>, I wrote on IBM's pioneering efforts to provide public access to quantum hardware for limited use. IBM's <em>Q Experience</em> was the first to provide large-scale applications for public consumption, but those were test rides around a track while Google here is offering the track, the pit crew and unlimited supply of racing cars to work with and invent with, from under the hood to every tool in the shop. 
+    <br /><br />
+From the White Paper:
+    </p>
+    <p class="quote">
+We introduce TensorFlow Quantum (TFQ), an open source library for the rapid prototyping of hybrid quantum-classical models for classical or quantum data. This framework offers high-level abstractions for the design and training of both discriminative and generative quantum models under TensorFlow and supports high-performance quantum circuit simulators. We provide an overview of the software architecture and building blocks through several examples and review the theory of hybrid quantum-classical neural networks. We illustrate TFQ functionalities via several basic applications including supervised learning for quantum classification, quantum control, and quantum approximate optimization. Moreover, we demonstrate how one can apply TFQ to tackle advanced quantum learning tasks including meta-learning, Hamiltonian learning, and sampling thermal states. We hope this framework provides the necessary tools for the quantum computing and machine learning research communities to explore models of both natural and artificial quantum systems, and ultimately discover new quantum algorithms which could potentially yield a quantum advantage.
+    <sup>3</sup>
+</p> 
+   `;
+    var blogcite37 =    `  
+    <p>1. <a  target="_blank" href="https://venturebeat.com/2020/03/09/google-launches-tensorflow-quantum-a-machine-learning-framework-for-training-quantum-models/">https://venturebeat.com/2020/03/09/google-launches-tensorflow-quantum-a-machine-learning-framework-for-training-quantum-models/</a> 
+</p>
+<p>2. <a  target="_blank" href="https://ai.googleblog.com/2020/03/announcing-tensorflow-quantum-open.html">https://ai.googleblog.com/2020/03/announcing-tensorflow-quantum-open.html</a> </p>  
+<p>3. <a  target="_blank" href="https://arxiv.org/abs/2003.02989">March 6th, 2020 Google White Paper</a> 
+</p>  
+
+  `;
+
     var blogpost34 = `<p>
     At a time when the national lines blur between multi-national corporations, and an interdependent global tech community, the 21st century space race is nonetheless well-defined -- however defined along the lines of sub-atomic inner-space. 
     </p>
@@ -538,13 +563,23 @@ Some police agencies have in recent years run facial-recognition searches agains
   `;
 
     var url = [
+        {
+            id: '37',
+            did: '20-03-09',
+            date: 'March 9, 2020 ',
+            author: 'by Thomas Maestas, MA',
+            cat3: 'Quantum Data',
+            title: 'Moving your Quantum Dreams into Today, Part V: <br />Quantum Data in the Cloud',
+            post: blogpost37,
+            cite: blogcite37
+        },
          {
             id: '34',
             did: '20-03-05',
             date: 'March 5, 2020 ',
             author: 'by Thomas Maestas, MA',
             cat3: 'Quantum Data',
-            title: 'Moving your Dreams into Today, Part III: <br />The Nationalism of Quantum Data and Privacy',
+            title: 'Moving your Quantum Dreams into Today, Part III: <br />The Nationalism of Quantum Data and Privacy',
             post: blogpost34,
             cite: blogcite34
         },
@@ -554,7 +589,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             date: 'March 4, 2020 ',
             author: 'by Thomas Maestas, MA',
             cat3: 'Quantum Data',
-            title: 'Moving your Dreams into Today, Part II:<br />The Business of Quantum Data and Privacy',
+            title: 'Moving your Quantum Dreams into Today, Part II:<br />The Business of Quantum Data and Privacy',
             post: blogpost33,
             cite: blogcite33
         },
@@ -564,7 +599,7 @@ Some police agencies have in recent years run facial-recognition searches agains
             date: 'March 3, 2020 ',
             author: 'by Thomas Maestas, MA',
             cat3: 'Sociology Today',
-            title: 'Moving your Dreams into Today, Part I: <br /> The Timing of Quantum Data and Privacy',
+            title: 'Moving your Quantum Dreams into Today, Part I: <br /> The Timing of Quantum Data and Privacy',
             post: blogpost32,
             cite: blogcite32
         },
