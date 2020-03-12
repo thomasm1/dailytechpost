@@ -75,6 +75,21 @@
             dataCache.remove('summary');
 
         }
+        function getAllBlogPosts() {
+
+            return $http({
+                method: 'GET',
+                url: 'https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                transformResponse: transformGetBlogs,
+                cache: true
+            })
+            .then(sendResponseData)
+            .catch(sendGetBlogsError)
+
+        }
 
         function getAllBooks() {
 
