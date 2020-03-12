@@ -29,4 +29,11 @@ describe('calc.js', function() {
 
     expect(calculator.total).toBe(100);
   });
+
+  it('should provide modulus operation', function() {
+    const calculator = new Calculator();
+    calculator.total = 200;
+    calculator.modulus(99);  
+    expect(calculator.total).toBe(2);
+  })
 });
