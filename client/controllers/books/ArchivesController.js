@@ -1,17 +1,41 @@
 var dailyTech = angular.module('app');
-dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$routeParams', function ArchivesController($scope, $http, $location, $routeParams) {
+dailyTech.controller('ArchivesController', ['$scope', '$filter', 'dataService', '$http', '$location', '$routeParams', function ArchivesController($scope, $filter, dataService, $http, $location, $routeParams) {
         console.log(' ArchivesController loaded...');
-        /*
-            console.log('header');
-            var headerauth = "--Ryan Dahl, Creator of JavaScript's Node.JS";
-            var headerquote = `
-             <strong>You Can Never Understand Everything.<br /><br />But You can Push Yourself to Understand the System.</strong>
+        $scope.array = [];
+
+        $scope.getSeptember = function () {
+        $http({
+                method: 'GET',
+                url: `https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/posts`,
+                headers: {
+                'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+    
+                $scope.arrayPosts = JSON.parse(response.data.body); 
+                //  $scope.arrayPosts = response.data.body ; 
+                
+                return $scope.arrayPosts;
+
+            }, function errorCallBack(error) {
+                console.log(error)
+            })
+           
+        }
+
+        $scope.getArchives = function () {
+            $http.get('/api/archives').success(function (response) {
+                $scope.archives = response;
+            });
+        };
+       
+            
+            $scope.headerauth = "--Ryan Dahl, Creator of JavaScript's Node.JS";
+            $scope.headerquote = `
+           You Can Never Understand Everything. \n But You can Push Yourself to Understand the System. 
             `;
-            document.getElementById("featured").innerHTML = `
-            <p class="left" id="headerquote">
-            ${headerquote}</p>  <p> -- ${headerauth} </p>
-            `;
-            */
+          
+       
         var secretButtonMP = document.querySelector('#secret-buttonMP'); // MY PHILOSOPHY (dailytech mission)
         var secretParagraphMP = document.querySelector('#secret-paragraphMP');
         //
@@ -31,6 +55,8 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
         var secretParagraphJULY = document.querySelector('#secret-paragraphJULY'); ///////////////////////////////// 
         var secretButtonAUG = document.querySelector('#secret-buttonAUG'); // AUG
         var secretParagraphAUG = document.querySelector('#secret-paragraphAUG'); ///////////////////////////////// 
+        var secretButtonSEPT = document.querySelector('#secret-buttonSEPT'); // AUG
+        var secretParagraphSEPT = document.querySelector('#secret-paragraphSEPT'); ///////////////////////////////// 
         var showSecret = false;
         var showSecretMP = false;
         var showSecretMPB = false;
@@ -40,6 +66,7 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
         var showSecretJUNE = false;
         var showSecretJULY = false;
         var showSecretAUG = false;
+        var showSecretSEPT = false;
         /////////////////////////////// 
         secretButton.addEventListener('click', toggleSecretState);
         secretButtonMP.addEventListener('click', toggleSecretStateMP);
@@ -57,6 +84,9 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
         updateSecretParagraphJULY();
         secretButtonAUG.addEventListener('click', toggleSecretStateAUG);
         updateSecretParagraphAUG();
+        
+        secretButtonSEPT.addEventListener('click', toggleSecretStateSEPT);
+        updateSecretParagraphSEPT();
         /////////////////////////////// 
         function toggleSecretState() {
             showSecret = !showSecret;
@@ -102,6 +132,11 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
             showSecretAUG = !showSecretAUG;
             updateSecretParagraphAUG();
             updateSecretButtonAUG();
+        }
+         function toggleSecretStateSEPT() {
+            showSecretSEPT = !showSecretSEPT;
+            updateSecretParagraphSEPT();
+            updateSecretButtonSEPT();
         }
         /////////////////////////////// 
         function updateSecretButton() {
@@ -206,7 +241,31 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
                 secretButtonAUG.style.color = 'lightsteelblue';
             }
         }
+              function updateSecretButtonSEPT() {
+            if (showSecretSEPT) {
+                secretButtonSEPT.innerHTML = ' Close SEPT Archives  '; // GOES BACK TO DEFAULT
+                secretButtonSEPT.style.fontFamily = 'Monoton';
+                secretButtonSEPT.style.color = 'lightsteelblue';
+            }
+            else {
+                secretButtonSEPT.innerHTML = 'OUR  &nbsp;&nbsp;  DAILY &nbsp;&nbsp;  TECH &nbsp;&nbsp; SEPT';
+                secretButtonSEPT.style.fontFamily = 'Monoton';
+                secretButtonSEPT.style.color = 'lightsteelblue';
+            }
+        }
         /////////////////////////////// 
+ 
+        function updateSecretParagraphSEPT() {
+            if (showSecretSEPT) {
+                secretParagraphSEPT.style.display = 'block';
+                secretParagraphSEPT.style.fontFamily = 'Roboto';
+                secretParagraphSEPT.style.opacity = '1';
+                secretParagraphSEPT.style.color = 'darkslategray';
+            }      else {
+                secretParagraphSEPT.style.display = 'none';
+            }
+        };
+        /////////
         function updateSecretParagraph() {
             if (showSecret) {
                 secretParagraph.style.display = 'block';
@@ -1073,9 +1132,5 @@ dailyTech.controller('ArchivesController', ['$scope', '$http', '$location', '$ro
             }
         }
         /* END*/
-        $scope.getArchives = function () {
-            $http.get('/api/archives').success(function (response) {
-                $scope.archives = response;
-            });
-        };
+      
     }]);

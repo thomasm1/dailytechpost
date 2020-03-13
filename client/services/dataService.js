@@ -75,7 +75,38 @@
             dataCache.remove('summary');
 
         }
-        function getAllBlogPosts() {
+          function getExample() {
+            return $http({
+                method: 'GET',
+                url: `https://my-json-server.typicode.com/typicode/demo/posts`,
+                headers: {
+'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                console.log(response);
+            }, function errorCallBack(error) {
+                console.log(error)
+            })
+        }
+        function getOnePost(id) {
+            
+             id = 'c208bd6d-fcdb-4a69-aa07-a90ea54f1c47';
+             return $http({
+                method: 'GET',
+                url: `https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/${id}?Content-Type=Application/JSON`,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                transformResponse: transformGetBlogs,
+                cache: true
+            }).then(function successCallback(response) {
+                $scope.post = response.data;
+                console.log($scope.post);
+            }, function errorCallback(response) {
+                console.log($scope.post);
+            })
+        }
+            function getAllBlogPosts() {
 
             return $http({
                 method: 'GET',
@@ -85,11 +116,31 @@
                 },
                 transformResponse: transformGetBlogs,
                 cache: true
+            }).then(function successCallback(response) {
+                $scope.posts = response.data;
+                console.log($scope.posts);
+            }, function errorCallback(response) {
+                console.log($scope.posts);
             })
-            .then(sendResponseData)
-            .catch(sendGetBlogsError)
+            // .then(sendResponseData)
+            // .catch(sendGetBlogsError)
 
         }
+        // function getAllBlogPosts() {
+
+        //     return $http({
+        //         method: 'GET',
+        //         url: 'https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         transformResponse: transformGetBlogs,
+        //         cache: true
+        //     })
+        //     .then(sendResponseData)
+        //     .catch(sendGetBlogsError)
+
+        // }
 
         function getAllBooks() {
 

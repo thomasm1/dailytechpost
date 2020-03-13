@@ -20,7 +20,8 @@
     <meta content="Technology Blog: Musing Blockchain | Web Dev Affairs | Sociology Tomorrow! Latest Developments in Technology Culture, 
   Technology News, Tech Tools, Tech Talk Too! I explore daily tech topics on one of my three tech
    blog topics: Blockchain, Web Dev, and Sociology in Tech" name="description" />
-    <meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests" name="keywords" />
+    <meta content="Thomas Maestas, Thomas M Maestas, data analysis and visualization, sociology statistical tests"
+        name="keywords" />
     <link rel="manifest" href="/manifest.json">
     <meta content="Thomas M. Maestas" name="author" />
     <title>OUR DAILY TECH</title>
@@ -40,7 +41,8 @@
 
     <div id="dailyNav">
 
-    </div> <!--end dailyNav --> 
+    </div>
+    <!--end dailyNav -->
     <div class="container" id="foreground">
         <!-- /.container -->
 
@@ -73,23 +75,25 @@
 
 
                                 <button id="mmodalBtn" class="mbutton title   hover" id="b-header">
-                  <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
-                        <a class="cover  ">SOCIOLOGY TOMORROW!</a>
-                   </h6>
-                  <h6 class="            subdailytech white hover">
-                    <a class="cover steel">WEB DEV &nbsp; AFFAIRS &nbsp; </a>
-                  </h6> 
-                  <h6 class=" subdailytech white" title="Machine Learning"> 
-                    <a class="cover ">A.I.NOW</a>
-                  </h6>
-                  <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
-                    <a class="cover steel">QUANTUM DATA</a>
-                  </h6>
-                  <h6 class="subdailytech white hover" title="About Blockchain Technologies in our Daily Lives">
-                    <a class="cover">MUSING BLOCKCHAIN</a>
-                  </h6> 
-                  <a class="btn btn-primary"><em>READING MODAL</em></a>
-                </button>
+                                    <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
+                                        <a class="cover  ">SOCIOLOGY TOMORROW!</a>
+                                    </h6>
+                                    <h6 class="            subdailytech white hover">
+                                        <a class="cover steel">WEB DEV &nbsp; AFFAIRS &nbsp; </a>
+                                    </h6>
+                                    <h6 class=" subdailytech white" title="Machine Learning">
+                                        <a class="cover ">A.I.NOW</a>
+                                    </h6>
+                                    <h6 class="subdailytech white hover"
+                                        title="About Blockchain Technologies in our Daily Lives">
+                                        <a class="cover steel">QUANTUM DATA</a>
+                                    </h6>
+                                    <h6 class="subdailytech white hover"
+                                        title="About Blockchain Technologies in our Daily Lives">
+                                        <a class="cover">MUSING BLOCKCHAIN</a>
+                                    </h6>
+                                    <a class="btn btn-primary"><em>READING MODAL</em></a>
+                                </button>
 
                                 <!-- <div id="map0">
                                     <div class="map0"></div>
@@ -98,7 +102,7 @@
                                 <script src="dist/js/planets.js"></script> -->
                                 <div class="card-header" ng-class="">
 
-                                    <div ng-view class="view"></div>
+                                 <!-- <div ng-view class="view"></div> -->
                                 </div>
 
 
@@ -117,7 +121,7 @@
 
                                         <div id="paragraph-March20-mod"></div>
                                         <div id="paragraph-may19-mod"></div>
-                                        <div id="paragraph-march19-mod"></div> 
+                                        <div id="paragraph-march19-mod"></div>
                                         <div id="paragraph-jan19-mod"></div>
                                         <div id="paragraph-dec-mod"></div>
                                         <div id="paragraph-nov-mod"></div>
@@ -134,11 +138,15 @@
                                     </div>
                                     <div class="mmodal-footer">
                                         <p>&copy; 2018 All Rights Reserved. &nbsp;|
-                                            <a href="http://www.thomasmaestas.net" style="color:darkblue;text-decoration:none;">thomasmaestas.net &nbsp;|</a>
-                                            <a href="mailto:thomas@ourdailytech.com" style="color:darkblue;text-decoration:none;">
-                        thomas@ourdailytech.com &nbsp;|</a>
-                                            <a href="http://www.thomasmaestas.net/profile.html#contactme" title="Contact Information: thomasmaestas.net">
-                        Contact Information</a>
+                                            <a href="http://www.thomasmaestas.net"
+                                                style="color:darkblue;text-decoration:none;">thomasmaestas.net
+                                                &nbsp;|</a>
+                                            <a href="mailto:thomas@ourdailytech.com"
+                                                style="color:darkblue;text-decoration:none;">
+                                                thomas@ourdailytech.com &nbsp;|</a>
+                                            <a href="http://www.thomasmaestas.net/profile.html#contactme"
+                                                title="Contact Information: thomasmaestas.net">
+                                                Contact Information</a>
                                         </p>
                                     </div>
 
@@ -150,12 +158,29 @@
 
                                 <li>
                                     <div id="tech">
+                                           <div ng-view class="view"></div>
+                                        <!-- <div ng-if="$scope.array">
 
+                                            <div ng-repeat="p in array" class="blogDivMod">
+                                                <hr />
+                                                <div id="mod_{{p.did}}"></div>
+                                                <a href="#top-mod"><button>Top</button></a>
+                                                <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>
+                                                <h5 id="cat3" class="  subdailytech">{{p.cat3}}</h5>
+                                                <p id="author" class="  author">{{p.author}}</p>
+                                                <h6 id="date" class="  chapternumber">{{p.date}}</h6>
+                                                <h6 id="title" class="dailytitle chapternumber">{{p.title}}</h6>
+                                                <br />
+                                                <div id="post">{{p.post}}</div>
+                                                <div id="blogcite">{{p.blogcite}}</div>
+                                            </div>
+
+                                        </div> -->
                                         <div class="mod-behave ">
                                             <div id="top"></div>
 
-                                            <div id="paragraph-March20"></div> 
-                                            <div id="paragraph-may19"></div> 
+                                            <div id="paragraph-March20"></div>
+                                            <div id="paragraph-may19"></div>
                                             <div id="paragraph-march19"></div>
                                             <div id="paragraph-jan19"></div>
                                             <div id="paragraph-dec"></div>
@@ -177,19 +202,19 @@
                                         <div id="febarchive">
                                         </div>
                                     </div>
-                                </li> 
+                                </li>
                                 <style>
                                     #lambda-posts {
-                                        max-height:400px;
+                                        max-height: 400px;
                                     }
                                 </style>
-                                <div   id="lambda-posts"  class="lambda-posts">
-                                Title  {{titleLambda}} endtitle
-                                  <div>POSTS-FILTER</div>
-                     <button ng-click="postBlogs()">Button POSTS </button>
-			<legend> </legend>
+                                <div id="lambda-posts" class="lambda-posts">
+                                    Title {{titleLambda}} endtitle
+                                    <div>POSTS-FILTER</div>
+                                    <button ng-click="postBlogs()">Button POSTS </button>
+                                    <legend> </legend>
                                 </div>
-                                
+
                             </ul>
 
 
@@ -204,7 +229,8 @@
                                         <pre id="reqObject"></pre>
                                         <img id="apod_img_id" class="zoom" />
 
-                                        <iframe id="apod_vid_id" type="text/html" width="426" height="262" frameborder="0"></iframe>
+                                        <iframe id="apod_vid_id" type="text/html" width="426" height="262"
+                                            frameborder="0"></iframe>
 
                                         <p id="copyright"></p>
                                         <h6 class="dailytech">Twython NASA API </h6>
@@ -252,12 +278,14 @@
 
                                         🔥🔥🔥🔥🔥🔥🔥
                                         <button class="btn btn-primary">
-                                            <a href="https://ourdailytech.net/_For_Cat_Eyes_Only_/" target="_blank"><h6>Fiction Publications:</h6> 
-                                            <em>For Cat Eyes Only</em> <br />
-                                        <em>The Casperian Ancestries</em></a>
+                                            <a href="https://ourdailytech.net/_For_Cat_Eyes_Only_/" target="_blank">
+                                                <h6>Fiction Publications:</h6>
+                                                <em>For Cat Eyes Only</em> <br />
+                                                <em>The Casperian Ancestries</em>
+                                            </a>
                                         </button> 🔥🔥🔥🔥🔥🔥🔥🔥🔥
                                     </div>
-                                    <!--end dbutton--> 
+                                    <!--end dbutton-->
 
                                 </div>
 
@@ -265,7 +293,7 @@
                                 <div id="calc"></div>
                                 <script src="dist/calc.js"></script>
                                 <script src="dist/calc-deux.js"></script>
-                          
+
                             </div>
                         </div>
 
@@ -290,18 +318,18 @@
         <a class="nav-link" href="/posts">_</a>
         <p>Copyright &copy; 2018, 2019, 2020 All Rights Reserved. &nbsp; | &nbsp;
             <a href="http://www.thomasmaestas.net" title="Contact Information: thomasmaestas.net/">
-        thomasmaestas.net</a>&nbsp; | &nbsp;
+                thomasmaestas.net</a>&nbsp; | &nbsp;
             <img src="dist/img/paypal.PNG" alt="PayPal Emblem" height="
 	   15" />
             <a href="https://www.paypal.com/paypalme/ThomasMaestas" style="color:white;text-decoration:none;">
-        &nbsp; Blog contribution appreciated!</a>
+                &nbsp; Blog contribution appreciated!</a>
         </p>
     </div>
 
     </div>
     </div>
     </div>
- 
+
     <script src="dist/js/force.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
@@ -314,7 +342,7 @@
     <script src="dist/js/vendor/popper.min.js"></script>
     <script src="dist/js/vendor/bootstrap.min.js"></script>
 
- <!-- <script src="dist/app.min.js"></script> -->
+    <!-- <script src="dist/app.min.js"></script> -->
     <script src="dist/bundle-daily2.js"></script>
     <script src="app.js"></script>
 
