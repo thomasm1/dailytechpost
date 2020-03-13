@@ -8,15 +8,15 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
     <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
         <ul class="navbar-nav mr-auto ">
             <li  id="banner" >
-            <img src="dist/img/ourdailytechbanner.png" alt="our dailytech banner"  />
+            <a href="/" class="banner" id="linkbanner" title="Our Daily Tech"><img src="dist/img/ourdailytechbanner.png" alt="our dailytech banner"  /></a>
             </li>
-            <li class="nav-item   ">
+        <!--    <li class="nav-item   ">
                 <a class="nav-link" href="/" data-target="#navbarResponsive" data-toggle="collapse" type="button"
                     on-click="fadeUp()">
                     <span class=" subdailytech"> TECH
                         <br />BLOG </span>
                 </a>
-            </li>
+            </li>-->
             <li class="nav-item  ">
                 <a class="nav-link" href="/archives" data-target="#navbarResponsive" data-toggle="collapse"
                     type="button" on-click="fadeUp()">
@@ -63,7 +63,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
             <li style="z-index:5" class="nav-item">
                 <a class="nav-link" data-target="#navbarResponsive" data-toggle="collapse" type="button"
                     on-click="fadeUp()">
-                    <span class=" subdailytech">DEV
+                    <span class=" subdailytech">DATA
                         <br /> TOOLS
                     </span>
                 </a>

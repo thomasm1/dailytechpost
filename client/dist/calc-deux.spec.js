@@ -36,4 +36,11 @@ describe('calc.js', function() {
     calculator.modulus(99);  
     expect(calculator.total).toBe(2);
   })
+  
+  it('should provide exponent operation', function() {
+    const calculator = new Calculator();
+    calculator.total = 3;
+    calculator.exponentiate(2);  
+    expect(calculator.total).toBe(9);
+  })
 });

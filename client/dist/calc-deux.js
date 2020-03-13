@@ -39,7 +39,7 @@ Calculator.prototype.multiply = function (number) {
 /**
  * Divides value to current total. 
  * @param {number} number
- * @returns {*}
+ * @returns {/}
  */
 
 Calculator.prototype.divide = function (number) {
@@ -59,6 +59,16 @@ Calculator.prototype.modulus = function (number) {
   return this.total %= number;
 }
 
+/**
+ * Divides value to current total. 
+ * @param {number} number
+ * @returns {^}
+ */ 
+Calculator.prototype.exponentiate = function (number) { 
+  this.total = Math.pow(this.total,number);
+  return this.total 
+};
+
 //////////////////////////////////////////////////////////
             // RESULTS //
 
@@ -68,7 +78,7 @@ Calculator.prototype.modulus = function (number) {
  * @param {string} inputValue
  */
 function calculate(inputValue) {
-  const expression = /\+|\-|\*|\/|\%/;
+  const expression = /\+|\-|\*|\/|\%|\^/;
   const numbers = inputValue.split(expression);
 
   const numberA = parseInt(numbers[0]);
@@ -101,8 +111,11 @@ function calculate(inputValue) {
     case '%':
       result = calculator.modulus(numberB);
       break;
+    case '^' :
+      result = calculator.exponentiate(numberB);
+      break;
     default:
-      result = 'Operation not recognized: must be +,-,*,/,%';
+      result = 'Operation not recognized: must be +,-,*,/,%,^';
   }
 
   updateResult(result);

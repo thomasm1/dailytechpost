@@ -43,7 +43,7 @@ innerform.innerHTML = `
     
     <input type="button" name="openparenth" id="bu" value="(" onclick="updateString('(')" /> 
     <input type="button" name="closeparenth" id="bu" value=")" onclick="updateString(')')" /> 
-    <input type="button" name="power" id="bu" value="^" onclick="updateString('^')" />  
+    <input type="button" name="power" id="bu" value="**" onclick="updateString('**')" />  
     <input type="button" name="modulus" id="bu" value="%" onclick="updateString('%')" />
    
     <br />
