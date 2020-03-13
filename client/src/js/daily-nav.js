@@ -8,7 +8,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
     <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
         <ul class="navbar-nav mr-auto ">
             <li  id="banner" >
-            <a href="/" class="banner" id="linkbanner" title="Our Daily Tech"><img src="dist/img/ourdailytechbanner.png" alt="our dailytech banner"  /></a>
+            <a href="/" class="banner" id="linkbanner" title="Our Daily Tech"><img src="https://our-daily-tech.s3.amazonaws.com/dist/img/ourdailytechBanner.png" alt="our dailytech banner"  /></a>
             </li>
         <!--    <li class="nav-item   ">
                 <a class="nav-link" href="/" data-target="#navbarResponsive" data-toggle="collapse" type="button"
