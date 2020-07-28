@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "dailytech"
+  "defaultProject": "dailytech",
+  "cli": {
+    "analytics": false
+  }
 }
