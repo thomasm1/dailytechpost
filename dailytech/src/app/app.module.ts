@@ -11,6 +11,7 @@ import { NasaComponent } from './components/nasa/nasa.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/user/login.component';
 import { AdminComponent } from './components/user/admin.component';
+import { HttpClientModule } from '@angular/common/http';
 // import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AdminComponent } from './components/user/admin.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
