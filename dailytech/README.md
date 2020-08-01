@@ -1,5 +1,15 @@
 # Dailytech
+### Java Spring Boot & Angular 10
+```shell
+Spring Boot
+Spring JPA
+Spring Security
+Angular Router Navigation
+Formatting Bootstrap 5
+Security JWToken
+C-R-U-D Functionality
 
+```
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
 ## Development server

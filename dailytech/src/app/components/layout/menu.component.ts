@@ -1,19 +1,17 @@
- 
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styles: [`
+     
   .monoton {
     font-family: Monoton;
   }
   .daily-title {
     color:rgb(61, 43, 226);
   }
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
+ 
   h1,
   h2,
   h3,
@@ -163,40 +161,7 @@
   a:hover {
     color: #125699;
   }
-
-  .terminal {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 6px;
-    padding-top: 45px;
-    margin-top: 8px;
-    overflow: hidden;
-    background-color: rgb(15, 15, 16);
-  }
-
-  .terminal::before {
-    content: "\2022 \2022 \2022";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: rgb(58, 58, 58);
-    color: #c2c3c4;
-    width: 100%;
-    font-size: 2rem;
-    line-height: 0;
-    padding: 14px 0;
-    text-indent: 4px;
-  }
-
-  .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
-
+ 
   .circle-link {
     height: 40px;
     width: 40px;
@@ -263,33 +228,14 @@
     width: 1920px;
   }
 
+ 
+    `]
+})
+export class MenuComponent implements OnInit {
 
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
+  constructor() { }
 
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
+  ngOnInit(): void {
   }
 
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  } 
+}

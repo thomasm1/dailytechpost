@@ -1,11 +1,13 @@
 package net.ourdailytech.rest.webservice;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class DailyController {
  
@@ -15,12 +17,17 @@ public class DailyController {
 	}
  
 	@GetMapping(path="/dailytech")
-	public DailyTechBean dailyTechBean() {
-		return new DailyTechBean("Daily Tech Blog");
+	public DailyTechBean dailyTechBean() { 
+		 return new DailyTechBean("Daily Tech Blog");
+	}
+	
+	@GetMapping(path="/dailytech/error")
+	public DailyTechBean errorPage() {
+		throw new RuntimeException("OOps! An error has occured"); 
 	}
 	
 	@GetMapping(path="/dailytech/user/{name}")
-	public DailyTechBean dailyTechUser(@PathVariable String name) {
+	public DailyTechBean dailyTechUser(@PathVariable String name) { 
 		return new DailyTechBean(String.format("Daily Post Author: %s", name));
 	}
 }

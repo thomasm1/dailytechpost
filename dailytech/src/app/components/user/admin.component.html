@@ -7,6 +7,11 @@
 </div>
 
 <div>
-    <button (click)="getUpdate()" class=".btn .btn-success">Update</button>
+    <button (click)="getParameterUpdate()" class=".btn .btn-success">Parameter Update</button> <br /> 
+    <button (click)="getUpdate()" class=".btn .btn-success">Update</button> <br /> 
+    <button (click)="getErrorUpdate()" class=".btn .btn-warning">get Error Update</button>
+</div>
+<div class="container" *ngIf="getPostFromService">
+    <h3>{{getPostFromService}}</h3>
 </div>
 </div>

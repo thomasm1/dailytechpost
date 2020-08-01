@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
-import { LoginComponent } from '../components/user/login.component';
+import { LoginComponent } from '../components/user/login.component'; 
 import { AdminComponent } from '../components/user/admin.component';
+import { PostsListComponent } from '../components/posts-list/posts-list.component'; 
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'posts', component: PostsListComponent },
   { path: 'admin/:name', component: AdminComponent },
   { path: '**', component: DashboardComponent },
 ];

@@ -12,7 +12,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/user/login.component';
 import { AdminComponent } from './components/user/admin.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/layout/footer.component';
+import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { MenuComponent } from './components/layout/menu.component'; 
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     LoginComponent,
     AdminComponent,
+    FooterComponent,
+    PostsListComponent,
+    MenuComponent,
     // AboutComponent
   ],
   imports: [
