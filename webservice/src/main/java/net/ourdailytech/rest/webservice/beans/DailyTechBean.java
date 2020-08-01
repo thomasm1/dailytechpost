@@ -1,4 +1,4 @@
-package net.ourdailytech.rest.webservice;
+package net.ourdailytech.rest.webservice.beans;
 
 public class DailyTechBean {
 	
