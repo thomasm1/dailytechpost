@@ -5,12 +5,13 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
 import { LoginComponent } from '../components/user/login.component'; 
 import { AdminComponent } from '../components/user/admin.component';
 import { PostsListComponent } from '../components/posts-list/posts-list.component'; 
+import { RouteGuardService } from '../service/route-guard.service';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'posts', component: PostsListComponent },
-  { path: 'admin/:name', component: AdminComponent },
+  { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
   { path: '**', component: DashboardComponent },
 ];
 

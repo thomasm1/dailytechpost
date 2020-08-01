@@ -8,22 +8,16 @@
    <header>
         <nav class="navbar navbar-expand-md navbar-dark ">
         <div> 
-        <!-- <ul class="navbar-nav">
-          
-             <li>
-                
-            </li>
-            
-        </ul> -->
+       
         <ul   class="navbar-nav navbar-collapse justify-content-end">
              <li>
                  <a routerLink="/posts" class="nav-link">Posts</a>  
             </li>
-             <li>
-                 <a routerLink="/login" class="nav-link">Admin</a>  
+            <li >
+                 <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link">Admin</a>  
             </li>
-             <li>
-                 <a routerLink="/logout" class="nav-link">Logout</a>  
+             <li >
+                 <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()" class="nav-link">Logout</a>  
             </li>
              <li>
                 <a aria-label="DailyTech on twitter" target="_blank" rel="noopener" href="https://twitter.com/thomasmaestas"
