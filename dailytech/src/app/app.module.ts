@@ -14,7 +14,8 @@ import { AdminComponent } from './components/user/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/layout/footer.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
-import { MenuComponent } from './components/layout/menu.component'; 
+import { MenuComponent } from './components/layout/menu.component';
+import { PostComponent } from './components/post/post.component'; 
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MenuComponent } from './components/layout/menu.component';
     FooterComponent,
     PostsListComponent,
     MenuComponent,
+    PostComponent,
     // AboutComponent
   ],
   imports: [

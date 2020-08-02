@@ -1,0 +1,23 @@
+<div class="container">
+    
+<fieldset class="form-group">
+    <label>Category</label>
+    <input [(ngModel)]="post.cat3" type="text" class="form-control" name="category"  >
+</fieldset>
+
+<fieldset class="form-group">
+    <label>Title</label>
+    <input [(ngModel)]="post.title" type="text" class="form-control" name="title"  >
+</fieldset>
+
+<fieldset class="form-group">
+    <label>Post</label>
+    <input [(ngModel)]="post.post" type="text" class="form-control" name="post"  >
+</fieldset>
+
+<fieldset class="form-group">
+    <label>Citation</label>
+    <input [(ngModel)]="post.blogcite" type="text" class="form-control" name="citation"  >
+</fieldset>
+<button class="btn btn-success" (click)="savePost()">Save</button>
+</div>

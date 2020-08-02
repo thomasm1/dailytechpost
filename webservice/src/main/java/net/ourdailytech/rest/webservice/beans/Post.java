@@ -6,25 +6,31 @@ public class Post {
 	private String did;
 	private String date;
 	private String author;
+	private String monthOrder;
 	private String cat3;
 	private String title;
 	private String post;
 	private String blogcite;	
 	
-	public Post(long id, String did, String date, String author, String cat3, String title, String post,
+	protected Post() {
+		
+	}
+	
+	public Post(long id, String did, String date, String author, String monthOrder, String cat3, String title, String post,
 			String blogcite) {
 		super();
 		this.id = id;
 		this.did = did;
 		this.date = date;
 		this.author = author;
+		this.monthOrder = monthOrder;
 		this.cat3 = cat3;
 		this.title = title;
 		this.post = post;
 		this.blogcite = blogcite;
 	}
  
-
+ 
 	public long getId() {
 		return id;
 	}
@@ -56,7 +62,15 @@ public class Post {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	public String getMonthOrder() {
+		return monthOrder;
+	}
 
+
+	public void setMonthOrder(String monthOrder) {
+		this.monthOrder = monthOrder;
+	}
 	public String getCat3() {
 		return cat3;
 	}
@@ -89,10 +103,13 @@ public class Post {
 		this.blogcite = blogcite;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", did=" + did + ", date=" + date + ", author=" + author + ", cat3=" + cat3
-				+ ", title=" + title + ", post=" + post + ", blogcite=" + blogcite + "]";
+		return "Post [id=" + id + ", did=" + did + ", date=" + date + ", author=" + author + ", monthOrder="
+				+ monthOrder + ", cat3=" + cat3 + ", title=" + title + ", post=" + post + ", blogcite=" + blogcite
+				+ "]";
 	}
+ 
 	
 }

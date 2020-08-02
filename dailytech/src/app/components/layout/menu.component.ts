@@ -34,7 +34,7 @@ import { HardcodedAuthService } from 'src/app/service/hardcoded-auth.service';
       top: 0;
       left: 0;
       right: 0;
-      height: 80px;
+      height: 110px;
       display: flex;
       align-items: center;
       background-color: #1976d2;

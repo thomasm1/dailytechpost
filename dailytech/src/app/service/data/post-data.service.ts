@@ -7,13 +7,17 @@ import { Post } from '../../components/posts-list/posts-list.component';
 })
 export class PostDataService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   retrieveAllPosts(username) {
     return this.http.get<Post[]>(`http://localhost:8089/dailytech/${username}/posts`)
   }
+  retrievePost(username, id) {
+    return this.http.get<Post>(`http://localhost:8089/dailytech/${username}/posts/${id}`)
+  }
 
-   deletePost(username, id) {
+  
+  deletePost(username, id) {
     return this.http.delete(`http://localhost:8089/dailytech/${username}/posts/${id}`)
   }
 }
