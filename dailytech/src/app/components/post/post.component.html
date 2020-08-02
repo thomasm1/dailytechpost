@@ -1,23 +1,29 @@
 <div class="container">
-    
-<fieldset class="form-group">
+    <!-- <div class="alert alert-warning" *ngIf="postForm.dirty && postForm.invalid">Enter valid values</div> -->
+    <div class="alert alert-warning" *ngIf="category.touched && category.invalid">category required</div>
+    <div class="alert alert-warning" *ngIf="title.touched && title.invalid">  title required</div>
+     <div class="alert alert-warning" *ngIf="blogpost.touched && blogpost.invalid">  blogpost required</div>
+
+<form (ngSubmit)="!postForm.invalid && savePost()" #postForm="ngForm">
+    <fieldset class="form-group">
     <label>Category</label>
-    <input [(ngModel)]="post.cat3" type="text" class="form-control" name="category"  >
+    <input [(ngModel)]="post.cat3" #category="ngModel" type="text" class="form-control" name="category" required="required" >
 </fieldset>
 
 <fieldset class="form-group">
     <label>Title</label>
-    <input [(ngModel)]="post.title" type="text" class="form-control" name="title"  >
+    <input [(ngModel)]="post.title" #title="ngModel" type="text"  class="form-control" name="title"  required="required">
 </fieldset>
 
 <fieldset class="form-group">
     <label>Post</label>
-    <input [(ngModel)]="post.post" type="text" class="form-control" name="post"  >
+    <input [(ngModel)]="post.post" #blogpost="ngModel"  type="text" class="form-control" name="blogpost" required="required"  >
 </fieldset>
 
 <fieldset class="form-group">
     <label>Citation</label>
-    <input [(ngModel)]="post.blogcite" type="text" class="form-control" name="citation"  >
+    <input [(ngModel)]="post.blogcite" #citation="ngModel" type="text" class="form-control" name="citation"  >
 </fieldset>
-<button class="btn btn-success" (click)="savePost()">Save</button>
+<button type="submit" class="btn btn-success" >Save</button>
+</form>
 </div>

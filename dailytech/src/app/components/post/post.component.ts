@@ -7,6 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styles: [
+    `
+    .ng-invalid:not(form) {
+      border-left:3px solid red;
+    }
+    `
   ]
 })
 export class PostComponent implements OnInit {

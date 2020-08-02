@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+ 
 import net.ourdailytech.rest.webservice.beans.DailyTechBean;
 
 @CrossOrigin(origins="http://localhost:4200")
@@ -17,7 +17,7 @@ public class DailyController {
 	public String landing() {
 		return "Daily Tech Landing";
 	}
- 
+	
 	@GetMapping(path="/dailytech")
 	public DailyTechBean dailyTechBean() { 
 		 return new DailyTechBean("Daily Tech Blog");

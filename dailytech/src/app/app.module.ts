@@ -11,11 +11,12 @@ import { NasaComponent } from './components/nasa/nasa.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/user/login.component';
 import { AdminComponent } from './components/user/admin.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FooterComponent } from './components/layout/footer.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { MenuComponent } from './components/layout/menu.component';
 import { PostComponent } from './components/post/post.component'; 
+import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter-basic-auth.service';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,7 @@ import { PostComponent } from './components/post/post.component';
     FooterComponent,
     PostsListComponent,
     MenuComponent,
-    PostComponent,
-    // AboutComponent
+    PostComponent, 
   ],
   imports: [
     BrowserModule,
@@ -38,7 +38,9 @@ import { PostComponent } from './components/post/post.component';
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    // {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Post } from '../../components/posts-list/posts-list.component';
 
 @Injectable({
@@ -10,22 +11,56 @@ export class PostDataService {
   constructor(private http: HttpClient) { }
 
   retrieveAllPosts(username) {
-    return this.http.get<Post[]>(`http://localhost:8089/dailytech/${username}/posts`)
+     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    let header = new HttpHeaders({
+        Authorization: basicAuthHeaderString
+    })
+    return this.http.get<Post[]>(`http://localhost:8089/dailytech/${username}/posts`,
+    {headers: header})
   }
-
+ 
   retrievePost(username, id) {
-    return this.http.get<Post>(`http://localhost:8089/dailytech/${username}/posts/${id}`)
+     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    let header = new HttpHeaders({
+        Authorization: basicAuthHeaderString
+    })
+    return this.http.get<Post>(`http://localhost:8089/dailytech/${username}/posts/${id}`,
+    {headers: header})
   }
 
   createPost(username, post) {
-    return this.http.post(`http://localhost:8089/dailytech/${username}/posts`, post)
+     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    let header = new HttpHeaders({
+        Authorization: basicAuthHeaderString
+    })
+    return this.http.post(`http://localhost:8089/dailytech/${username}/posts`, post,
+    {headers: header})
   }
   
   updatePost(username, id, post) {
-    return this.http.put(`http://localhost:8089/dailytech/${username}/posts/${id}`, post)
+     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    let header = new HttpHeaders({
+        Authorization: basicAuthHeaderString
+    })
+    return this.http.put(`http://localhost:8089/dailytech/${username}/posts/${id}`, post,
+    {headers: header})
   }
 
   deletePost(username, id) {
-    return this.http.delete(`http://localhost:8089/dailytech/${username}/posts/${id}`)
+     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    let header = new HttpHeaders({
+        Authorization: basicAuthHeaderString
+    })
+    return this.http.delete(`http://localhost:8089/dailytech/${username}/posts/${id}`,
+    {headers: header})
   }
+
+  
+  createBasicAuthenticationHttpHeader() {
+    let username = 'user'
+    let password = 'pass'
+    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+    return basicAuthHeaderString;
+  }
+
 }
