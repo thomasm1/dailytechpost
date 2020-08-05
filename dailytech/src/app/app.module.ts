@@ -39,7 +39,7 @@ import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    // {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
   ],
   bootstrap: [AppComponent]
 })
