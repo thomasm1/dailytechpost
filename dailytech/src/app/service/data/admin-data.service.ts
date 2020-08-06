@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 export class DailyTechBean {
   constructor(public post: string) { }
@@ -9,16 +10,22 @@ export class DailyTechBean {
 })
 export class AdminDataService {
 
+  baseUrl:string;
+
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+     
+    this.baseUrl = environment.API_URL;
+
+   }
 
   executeParameterService(name) {
     // let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<DailyTechBean>(`http://localhost:8089/dailytech/user/${name}`,
+    return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech/user/${name}`,
     // {headers: header}
     ); 
   }
@@ -31,10 +38,9 @@ export class AdminDataService {
   // }
 
   executeAdminService() {
-    return this.http.get<DailyTechBean>('http://localhost:8089/dailytech');
-    // console.log("admin");
+    return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech`); 
   }
   errorService() {
-    return this.http.get<DailyTechBean>('http://localhost:8089/dailytech/error');
+    return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech/error`);
   }
 }

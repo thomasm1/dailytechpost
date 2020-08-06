@@ -53,8 +53,7 @@ export class PostsListComponent implements OnInit {
   this.router.navigate(['post',id])
   }
 
-  deletePost(id) {
-    // console.log(`deleting post ${id}`);
+  deletePost(id) { 
     this.postService.deletePost(this.username, id).subscribe(
       response => {
         console.log(response);

@@ -2,20 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Post } from '../../components/posts-list/posts-list.component';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostDataService {
 
-  constructor(private http: HttpClient) { }
+  baseUrl:string;
+
+  constructor(private http: HttpClient) {
+    
+    this.baseUrl = environment.API_URL;
+
+   }
 
   retrieveAllPosts(username) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post[]>(`http://localhost:8089/dailytech/${username}/posts`,
+    return this.http.get<Post[]>(`${this.baseUrl}/dailytech/${username}/posts`,
     // {headers: header}
     )
   }
@@ -25,7 +32,7 @@ export class PostDataService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post>(`http://localhost:8089/dailytech/${username}/posts/${id}`,
+    return this.http.get<Post>(`${this.baseUrl}/dailytech/${username}/posts/${id}`,
     // {headers: header}
     )
   }
@@ -35,7 +42,7 @@ export class PostDataService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.post(`http://localhost:8089/dailytech/${username}/posts`, post,
+    return this.http.post(`${this.baseUrl}/dailytech/${username}/posts`, post,
     // {headers: header}
     )
   }
@@ -46,7 +53,7 @@ export class PostDataService {
     //     Authorization: basicAuthHeaderString
     // }
     // )
-    return this.http.put(`http://localhost:8089/dailytech/${username}/posts/${id}`, post,
+    return this.http.put(`${this.baseUrl}/dailytech/${username}/posts/${id}`, post,
     // {headers: header}
     )
   }
@@ -56,7 +63,7 @@ export class PostDataService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.delete(`http://localhost:8089/dailytech/${username}/posts/${id}`,
+    return this.http.delete(`${this.baseUrl}/dailytech/${username}/posts/${id}`,
     // {headers: header}
     )
   }

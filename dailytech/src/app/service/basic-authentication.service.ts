@@ -1,7 +1,8 @@
-import { API_URL } from './../app.constants';
+// import { API_URL } from './../app.constants';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export const TOKEN = 'token'
 export const AUTHENTICATED_USER = 'AuthenticatedUser'
@@ -9,12 +10,19 @@ export const AUTHENTICATED_USER = 'AuthenticatedUser'
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class BasicAuthenticationService {
 
-  constructor(private http: HttpClient) { }
+  baseUrl:string;
 
-  executeAuthenticationService(username, password) {
-    
+  constructor(private http: HttpClient) {
+
+    this.baseUrl = environment.API_URL;
+
+   }
+
+  executeAuthenticationService(username, password) { 
     let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
 
     let headers = new HttpHeaders({
@@ -22,7 +30,7 @@ export class BasicAuthenticationService {
       })
 
     return this.http.get<AuthenticationBean>(
-      `${API_URL}/dailytech/login`,
+      `${this.baseUrl}/dailytech/login`,
       {headers}).pipe(
         map(
           data => {

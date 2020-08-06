@@ -16,7 +16,7 @@ import { FooterComponent } from './components/layout/footer.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { MenuComponent } from './components/layout/menu.component';
 import { PostComponent } from './components/post/post.component'; 
-import { HttpIntercepterBasicAuthService } from './service/http/http-intercepter-basic-auth.service';
+import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
 
 @NgModule({
   declarations: [
