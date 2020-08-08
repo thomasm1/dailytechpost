@@ -1,13 +1,17 @@
-<div class="container">
-    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-        <div class="alert alert-success" *ngIf='!invalidLogin'>Welcome {{username}}</div>
+<div  class="container">
+    
+  <form (ngSubmit)="handleBasicAuthLogin()">
+        <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+        <div class="welcome alert  " *ngIf='!invalidLogin'><i >Welcome </i>{{username}}!</div>
 
     <div>
         User: <input type="text" name="username" [(ngModel)]="username"> &nbsp;
         Password: <input type="password" name="password" [(ngModel)]="password"> &nbsp;
-
+<hr>
         <!-- <button (click)=handleLogin() class="btn btn-success">SIGN ON</button> &nbsp;  -->
-        <button (click)=handleBasicAuthLogin() class="btn btn-success">SIGN ON</button> &nbsp; 
+        <button type="submit"  class="btn btn-success">SIGN ON</button> &nbsp; 
+        <hr>
     </div>
 
+  </form>
 </div>

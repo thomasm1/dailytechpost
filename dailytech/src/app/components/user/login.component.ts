@@ -6,7 +6,14 @@ import { BasicAuthenticationService } from '../../service/basic-authentication.s
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styles: [
+    `
+    .welcome { 
+      text-align: center;
+      color:whitesmoke;
+      background-color: rgba(100,100,100,.1);
+    }`
+  ]
 })
 export class LoginComponent implements OnInit {
 

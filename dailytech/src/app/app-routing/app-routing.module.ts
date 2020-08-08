@@ -12,8 +12,8 @@ import { RouteGuardService } from '../service/route-guard.service';
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'posts', component: PostsListComponent },
-  { path: 'post/:id', component: PostComponent, canActivate:[RouteGuardService] },
+  { path: 'admin/posts', component: PostsListComponent },
+  { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService] },
   { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
   { path: '**', component: DashboardComponent },
 ];

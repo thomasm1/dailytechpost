@@ -46,11 +46,11 @@ export class PostsListComponent implements OnInit {
   }
 
  addPost() { 
-  this.router.navigate(['post',-1])
+  this.router.navigate(['admin/post',-1])
   }
   
  updatePost(id) { 
-  this.router.navigate(['post',id])
+  this.router.navigate(['admin/post',id]);
   }
 
   deletePost(id) { 

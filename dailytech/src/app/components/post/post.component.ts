@@ -44,7 +44,7 @@ export class PostComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data)
-            this.router.navigate(['posts'])
+            this.router.navigate(['admin/posts'])
           }
         )
     } else {
@@ -52,7 +52,7 @@ export class PostComponent implements OnInit {
         .subscribe(
           data => {
             console.log(data)
-            this.router.navigate(['posts'])
+            this.router.navigate(['admin/posts'])
           }
         )
     }

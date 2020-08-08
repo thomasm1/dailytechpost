@@ -19,7 +19,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
 
     this.name = this.route.snapshot.params['name'];
-    console.log(this.name)
+    this.getParameterUpdate();
 
   }
   getParameterUpdate() {

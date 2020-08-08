@@ -13,13 +13,16 @@ import { Component, OnInit } from '@angular/core';
       bottom:0px;
       left:0px;
       right:0px;
+       margin-top: 8px;
       height: 80px; 
       color:rgb(220, 220, 247);
       padding-top:20px;
       text-align:center;
       line-height:2rem;
-      background-color:#1976d2;
+      // background-color: rgb(0, 0, 139)
+   
     }
+   
   `
 
   ]

@@ -1,17 +1,17 @@
 <div class="admin">
-<h3>{{message}}</h3>
 
-<hr>
-<div class="container">
-    <h4>Dashboard View for {{name}}<br /> <br /> <a routerLink="/tools">Manage tools</a></h4>
-</div>
+    <h3>{{message}}</h3>
+    <hr>
+    <div>
 
-<div>
-    <button (click)="getParameterUpdate()" class=".btn .btn-success">Parameter Update</button> <br /> 
-    <button (click)="getUpdate()" class=".btn .btn-success">Update</button> <br /> 
-    <button (click)="getErrorUpdate()" class=".btn .btn-warning">get Error Update</button>
-</div>
-<div class="container" *ngIf="getPostFromService">
-    <h3>{{getPostFromService}}</h3>
-</div>
+        <button (click)="getUpdate()" class=".btn .btn-success">Update</button> <br />
+        <button (click)="getErrorUpdate()" class=".btn .btn-warning">get Error Update</button>
+    </div>
+    <div class="container" *ngIf="getPostFromService">
+        <hr>
+        <h5>{{getPostFromService}}</h5>
+    </div>
+    <hr>
+    <h4><a routerLink="/admin/posts">Manage tools</a></h4>
+
 </div>
