@@ -1,0 +1,35 @@
+.box {
+     width: 199px;
+    min-height: 20px;
+    background-color: white;
+}
+
+.contain {
+    background-color: lightblue;
+     width: 400px;
+    min-height: 200px;
+}
+
+.parent {
+    min-width: 40px;
+    min-height: 30px;
+    background-color: lightblue;
+    display: grid;
+    place-items: center;
+}
+
+/* PANCAKE */
+.pancake {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    min-height:140px;
+    background-color: bisque;
+}
+
+.cake {
+    background-color:#1976d2;
+    flex: 1 1 150px;  /*stretching*/
+    /* flex: 0 1 150px;  no stretching */
+    margin: 15px;
+}

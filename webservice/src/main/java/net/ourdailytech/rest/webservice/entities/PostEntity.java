@@ -1,11 +1,11 @@
-package net.ourdailytech.rest.webservice.beans;
+package net.ourdailytech.rest.webservice.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class PostJpa {
+public class PostEntity {
 	
 	@Id
 	@GeneratedValue
@@ -21,11 +21,11 @@ public class PostJpa {
 	private String blogcite;	
 	private String username;
 	
-	protected PostJpa() {
+	protected PostEntity() {
 		
 	}
 	
-	public PostJpa(Long id, String did, String date, String author, String monthOrder, String cat3, String title, String post,
+	public PostEntity(Long id, String did, String date, String author, String monthOrder, String cat3, String title, String post,
 			String blogcite, String username) {
 		super();
 		this.id = id;

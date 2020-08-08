@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import net.ourdailytech.rest.webservice.beans.PostJpa;
+import net.ourdailytech.rest.webservice.entities.PostEntity;
 import net.ourdailytech.rest.webservice.repositories.PostRepository;
 import net.ourdailytech.rest.webservice.services.PostHardcodedService;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-public class PostJPAController {
+public class PostEntityController {
 	
 //	@Autowired
 //	private PostHardcodedService postService;
@@ -31,13 +31,13 @@ public class PostJPAController {
 	private PostRepository postRepository;
 	
 	@GetMapping(path="/api/dailytech/{username}/posts")
-	public List<PostJpa> getAllPosts(@PathVariable String username){
+	public List<PostEntity> getAllPosts(@PathVariable String username){
 		return postRepository.findByUsername(username);
 		//return postService.findAll(); 
 	}
 	
 	@GetMapping(path="/api/dailytech/{username}/posts/{id}")
-	public PostJpa getPost(@PathVariable String username, @PathVariable long id){
+	public PostEntity getPost(@PathVariable String username, @PathVariable long id){
 		return postRepository.findById(id).get();
 		//		return postService.findById(id); 
 	}
@@ -57,12 +57,12 @@ public class PostJPAController {
 	} 
 	
 	@PutMapping(path="/api/dailytech/{username}/posts/{id}")
-	public ResponseEntity<PostJpa> updatePost(
+	public ResponseEntity<PostEntity> updatePost(
 			@PathVariable String username, 
-			@PathVariable long id, @RequestBody PostJpa post){
+			@PathVariable long id, @RequestBody PostEntity post){
 		
-		PostJpa postUpdated = postRepository.save(post);
-		 return new ResponseEntity<PostJpa>(post, HttpStatus.OK);
+		PostEntity postUpdated = postRepository.save(post);
+		 return new ResponseEntity<PostEntity>(post, HttpStatus.OK);
 		
 //		 Post postUpdated = postService.save(post); 
 //		 return new ResponseEntity<Post>(post, HttpStatus.OK);
@@ -71,11 +71,11 @@ public class PostJPAController {
 	@PostMapping(path="/api/dailytech/{username}/posts")
 	public ResponseEntity<Void> createPost(
 			@PathVariable String username, 
-		    @RequestBody PostJpa post
+		    @RequestBody PostEntity post
 			){
 		 
 		post.setUsername(username);
-		PostJpa postCreated = postRepository.save(post);
+		PostEntity postCreated = postRepository.save(post);
 //		 Post postCreated = postService.save(post); 
  
 		 URI uri = ServletUriComponentsBuilder.fromCurrentRequest()

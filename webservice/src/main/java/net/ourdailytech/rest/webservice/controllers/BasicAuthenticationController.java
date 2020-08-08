@@ -12,7 +12,7 @@ import net.ourdailytech.rest.webservice.beans.AuthenticationBean;
 public class BasicAuthenticationController {
 
 	@GetMapping(path="/api/dailytech/login")
-	public AuthenticationBean dailyTechJpaLogin() { 
+	public AuthenticationBean dailyTechEntityLogin() { 
 		 return new AuthenticationBean("You have successfully logged in");
 	}
 	
