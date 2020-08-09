@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimationComponent } from '../util/animation/animation.component';
 
 @Component({
   selector: 'app-nasa',

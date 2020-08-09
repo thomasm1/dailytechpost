@@ -1,14 +1,17 @@
 <div class="contain">
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 
     <div class="parent blue">
-    <div   class="box coral" contenteditable>
-       
+        <div class="box coral" contenteditable>
+        <div class="col text-center">
+            <a (click)="changeState('state2')" class="btn btn-warning">State 2</a>
+        </div>
+          <div class="col text-center">
+            <a (click)="changeState('state1')" class="btn btn-warning">State 1</a>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <app-animation [currentState]="toState"></app-animation>
+        </div>
+        </div>
     </div>
-</div>
-<div class="pancake">
-<div class="cake"></div>
-<div class="cake"></div>
-<div class="cake"></div>
-</div>
 </div>
