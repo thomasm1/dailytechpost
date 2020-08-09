@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
 import { MenuComponent } from './components/layout/menu.component';
 import { PostComponent } from './components/post/post.component'; 
 import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
+import { AnimationComponent } from './components/util/animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basi
     FooterComponent,
     PostsListComponent,
     MenuComponent,
-    PostComponent, 
+    PostComponent,
+    AnimationComponent, 
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+.newBlock {
+    background-color: blue;
+    width:20px;
+    height:20px;
+    border-radius: 5px;
+    margin: 5rem;
+}
