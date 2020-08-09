@@ -8,9 +8,14 @@ import { AnimationComponent } from '../util/animation/animation.component';
 })
 export class NasaComponent implements OnInit {
 
+  toState = 'state1';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changeState(state: any) {
+    this.toState = state;
+  }
 }
