@@ -1,17 +1,15 @@
 <div class="contain">
     <router-outlet></router-outlet>
 
-    <div class="parent blue">
-        <div class="box coral" contenteditable>
-        <div class="col text-center">
-            <a (click)="changeState('state2')" class="btn btn-warning">State 2</a>
-        </div>
-          <div class="col text-center">
-            <a (click)="changeState('state1')" class="btn btn-warning">State 1</a>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <app-animation [currentState]="toState"></app-animation>
-        </div>
-        </div>
+    
+<div class="row parent">
+        <div class="col post-btn">
+     <button (click)="changeState('state2')" class="btn btn-gray pull-left">View Blog</button><br />
+        <button (click)="changeState('state1')" class="btn btn-gray pull-left">Close</button>
     </div>
+    <div class="col post"> 
+               <app-animation [currentState]="toState"></app-animation>
+    </div>
+</div>
+
 </div>

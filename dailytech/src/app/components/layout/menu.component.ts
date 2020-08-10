@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HardcodedAuthService } from 'src/app/service/hardcoded-auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,9 +10,12 @@ import { HardcodedAuthService } from 'src/app/service/hardcoded-auth.service';
 export class MenuComponent implements OnInit {
   // isAdminLoggedIn: boolean = false;
 
-  constructor(public authService:HardcodedAuthService) { }
+  variable: string = '';
+  constructor(private route: ActivatedRoute, 
+  public authService:HardcodedAuthService) { }
 
   ngOnInit() {
+    this.variable = this.route.snapshot.params['name'];
     // this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
   }
 

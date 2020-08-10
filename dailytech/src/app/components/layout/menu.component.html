@@ -22,7 +22,7 @@
                     <li>
                         <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link">SIGN ON</a>
                     </li>
-                    <li>
+                    <li> 
                         <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" class="nav-link">EDIT</a>
                     </li>
                     <li>
@@ -30,7 +30,7 @@
                             class="nav-link">SIGN OUT</a>
                     </li>
                     <li>
-                        <a aria-label="DailyTech on twitter" target="_blank" rel="noopener"
+                        <a *ngIf="!authService.isAdminLoggedIn()" aria-label="DailyTech on twitter" target="_blank" rel="noopener"
                             href="https://twitter.com/thomasmaestas" title="twitter.com/ThomasMaestas">
                             <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 400 400">
