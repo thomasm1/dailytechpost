@@ -7,30 +7,32 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { NasaComponent } from './components/nasa/nasa.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+// import { NasaComponent } from './components/nasa/nasa.component';
+// import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/user/login.component';
 import { AdminComponent } from './components/user/admin.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FooterComponent } from './components/layout/footer.component';
-import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
 import { MenuComponent } from './components/layout/menu.component';
-import { PostComponent } from './components/post/post.component'; 
+import { PostComponent } from './components/post-dir/post/post.component'; 
 import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
 import { AnimationComponent } from './components/util/animation/animation.component';
+import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NasaComponent,
-    DashboardComponent,
+    // NasaComponent,
+    // DashboardComponent,
     LoginComponent,
     AdminComponent,
     FooterComponent,
     PostsListComponent,
     MenuComponent,
     PostComponent,
-    AnimationComponent, 
+    AnimationComponent,
+    PostsViewerComponent, 
   ],
   imports: [
     BrowserModule,
