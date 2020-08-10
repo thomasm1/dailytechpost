@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostDataService } from 'src/app/service/data/post-data.service';
-import { Post } from '../../components/posts-list/posts-list.component';
+import { Post } from '../posts-list/posts-list.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

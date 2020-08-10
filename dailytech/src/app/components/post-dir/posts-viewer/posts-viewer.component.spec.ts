@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NasaComponent } from './nasa.component';
+import { PostsViewerComponent } from './posts-viewer.component';
 
-describe('NasaComponent', () => {
-  let component: NasaComponent;
-  let fixture: ComponentFixture<NasaComponent>;
+describe('PostsViewerComponent', () => {
+  let component: PostsViewerComponent;
+  let fixture: ComponentFixture<PostsViewerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NasaComponent ]
+      declarations: [ PostsViewerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NasaComponent);
+    fixture = TestBed.createComponent(PostsViewerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
