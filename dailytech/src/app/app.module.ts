@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms'; 
-
-import { AppComponent } from './app.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-// import { NasaComponent } from './components/nasa/nasa.component';
-// import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { AppComponent } from './app.component';
 import { LoginComponent } from './components/user/login.component';
 import { AdminComponent } from './components/user/admin.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FooterComponent } from './components/layout/footer.component';
 import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
 import { MenuComponent } from './components/layout/menu.component';
@@ -20,12 +20,12 @@ import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basi
 import { AnimationComponent } from './components/util/animation/animation.component';
 import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 import { BlogComponent } from './components/post-dir/blog/blog.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { SignonComponent } from './components/user/signon/signon.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // NasaComponent,
-    // DashboardComponent,
+    AppComponent, 
     LoginComponent,
     AdminComponent,
     FooterComponent,
@@ -34,11 +34,14 @@ import { BlogComponent } from './components/post-dir/blog/blog.component';
     PostComponent,
     AnimationComponent,
     PostsViewerComponent,
-    BlogComponent, 
+    BlogComponent,
+    RegisterComponent,
+    SignonComponent, 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
