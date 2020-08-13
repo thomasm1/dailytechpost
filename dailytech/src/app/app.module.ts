@@ -19,6 +19,7 @@ import { PostComponent } from './components/post-dir/post/post.component';
 import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
 import { AnimationComponent } from './components/util/animation/animation.component';
 import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
+import { BlogComponent } from './components/post-dir/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-v
     MenuComponent,
     PostComponent,
     AnimationComponent,
-    PostsViewerComponent, 
+    PostsViewerComponent,
+    BlogComponent, 
   ],
   imports: [
     BrowserModule,
