@@ -5,12 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './components/user/login.component';
+import { AppComponent } from './app.component'; 
 import { AdminComponent } from './components/user/admin.component';
 import { FooterComponent } from './components/layout/footer.component';
 import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
@@ -25,8 +25,7 @@ import { SignonComponent } from './components/user/signon/signon.component';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    LoginComponent,
+    AppComponent,  
     AdminComponent,
     FooterComponent,
     PostsListComponent,
@@ -42,6 +41,7 @@ import { SignonComponent } from './components/user/signon/signon.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

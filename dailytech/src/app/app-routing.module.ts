@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router'; 
-import { LoginComponent } from './components/user/login.component'; 
+import { SignonComponent } from './components/user/signon/signon.component'; 
+import { RegisterComponent } from './components/user/register/register.component';
 import { AdminComponent } from './components/user/admin.component';
 import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component'; 
 import { PostComponent } from './components/post-dir/post/post.component'; 
@@ -10,7 +11,8 @@ import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-v
 
 const routes: Routes = [
   { path: '', component: PostsViewerComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: SignonComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'posts', component: PostsViewerComponent },
   { path: 'admin/posts', component: PostsListComponent },
   { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService]},
