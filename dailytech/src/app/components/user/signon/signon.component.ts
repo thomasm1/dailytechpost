@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BasicAuthenticationService } from '../../../service/basic-authentication.service';
 
 @Component({
   selector: 'app-signon',
@@ -7,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignonComponent implements OnInit {
 
-  constructor() { }
+  username = '';
+  password = '';
+  errorMessage = 'Invalid Credentials';
+  invalidLogin = false;
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    // private authHardcode: HardcodedAuthService,
+    private authBasicService: BasicAuthenticationService
+  ) { }
+
+  ngOnInit() {
   }
 
+  handleBasicAuthLogin() {
+    this.authBasicService.executeAuthenticationService(this.username, this.password)
+      .subscribe(
+        data => {
+          console.log(data)
+          this.router.navigate(['admin', this.username])
+          this.invalidLogin = false
+        },
+        error => {
+          console.log(error)
+          this.invalidLogin = true
+        }
+      )
+  }
+  // handleLogin() { 
+  //   if(this.authHardcode.authenticate(this.username, this.password)) {
+  //     this.router.navigate(['admin', this.username])
+  //     this.invalidLogin = false;
+  //   } else {
+  //     this.invalidLogin = true;
+  //   }
+  // }
 }

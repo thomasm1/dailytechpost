@@ -1,10 +1,33 @@
-<section>
-  <form>
+<section class="signup-form">
+
+
+  <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+    
+      <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+  <div class="welcome alert  " *ngIf='!invalidLogin'><i>Welcome </i>{{username}}!</div>
+    <!--(ngSubmit)="handleBasicAuthLogin()"-->
+    <mat-form-field>
+      <input type="email" matInput placeholder="email/username" ngModel name="email" required #email />
+    </mat-form-field>
+
+    <!-- 
     <mat-form-field>
       <input type="email" matInput placeholder="Your email">
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field>
       <input type="password" matInput placeholder="Your password">
     </mat-form-field>
   </form>
 </section>
+
+<!-- 
+    <div>
+        <span class="login">User:</span> <input type="text" name="username" placeholder="demo: user" [(ngModel)]="username">
+        <hr>
+        <span class="login">Password:</span> <input type="password" name="password" placeholder="demo: pass" [(ngModel)]="password">
+<hr>
+        <!-- <button (click)=handleLogin() class="btn btn-success">SIGN ON</button> &nbsp;  -->
+
+<!-- <button type="submit"  class="btn btn-success">SIGN ON</button> &nbsp; 
+        <hr>
+    </div>  -->
