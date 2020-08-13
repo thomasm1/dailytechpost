@@ -8,6 +8,12 @@ import { BasicAuthenticationService } from '../../service/basic-authentication.s
   templateUrl: './login.component.html',
   styles: [
     `
+    span .login {
+     min-width:100px;
+    }
+    input {
+      margin-left:30px;
+    }
     .welcome { 
       text-align: center;
       color:whitesmoke;

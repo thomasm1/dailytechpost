@@ -5,8 +5,9 @@
         <div class="welcome alert  " *ngIf='!invalidLogin'><i >Welcome </i>{{username}}!</div>
 
     <div>
-        User: <input type="text" name="username" [(ngModel)]="username"> &nbsp;
-        Password: <input type="password" name="password" [(ngModel)]="password"> &nbsp;
+        <span class="login">User:</span> <input type="text" name="username" placeholder="demo: user" [(ngModel)]="username">
+        <hr>
+        <span class="login">Password:</span> <input type="password" name="password" placeholder="demo: pass" [(ngModel)]="password">
 <hr>
         <!-- <button (click)=handleLogin() class="btn btn-success">SIGN ON</button> &nbsp;  -->
         <button type="submit"  class="btn btn-success">SIGN ON</button> &nbsp; 
