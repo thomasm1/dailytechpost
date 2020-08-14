@@ -2,12 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { PostDataService } from 'src/app/service/data/post-data.service';
 import { Post } from '../posts-list/posts-list.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styles: [
     `
+    mat-form-field {
+      min-width: 300px;
+      width: 90%;
+    }
+
     .ng-invalid:not(form) {
       border-left:3px solid red;
     }
