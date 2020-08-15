@@ -9,70 +9,27 @@
             <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
         </a>
     </div>
-    <h3>
-        <span class=" daily-title monoton text-box">OUR DAILY TECH</span>
-    </h3>
+ 
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
             <li>
-                <a routerLink="/blogs" class="nav-link">POSTS</a>
+                <a routerLink="/blogs" class="nav-link daily-tech monoton">POSTS</a>
             </li>
             <li>
-                <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link">SIGN ON</a>
+                <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
             </li>
             <li>
-                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" class="nav-link">EDIT</a>
+                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" class="nav-link daily-tech monoton">EDIT</a>
             </li>
             <li>
                 <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()"
-                    class="nav-link">SIGN OUT</a>
+                    class="nav-link daily-tech monoton">SIGN OUT</a>
             </li>
-            <li>
+            <!-- <li>
                 <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/register" class="nav-link">REGISTER</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </mat-toolbar>
 
-
-
-    <!-- <div class="toolbar" role="banner">
-<div class="logo-box">
-        <a routerLink="/blogs" class="nav-link">
-            <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
-        </a>
-    </div> -->
-    <!-- <div>
-        <h3>
-            <span class=" daily-title monoton text-box">OUR DAILY TECH</span>
-        </h3>
-    </div>
-    <div class="spacer"></div> -->
-<!-- 
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark ">
-            <div>
-
-                <ul class="navbar-nav navbar-collapse justify-content-end"> -->
-                    <!-- <li>
-                        <a routerLink="/blogs" class="nav-link">POSTS</a>
-                    </li>
-                    <li>
-                        <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link">SIGN ON</a>  
-                    </li>
-                    <li> 
-                        <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" class="nav-link">EDIT</a>
-                    </li>
-                    <li>
-                        <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()"
-                            class="nav-link">SIGN OUT</a>
-                    </li>
-                    <li>
-                       <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/register" class="nav-link">REGISTER</a>
-                    </li> -->
-                <!-- </ul>
-            </div>
-        </nav>
-    </header>
-
-</div> -->
+ 

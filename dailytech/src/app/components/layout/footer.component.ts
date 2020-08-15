@@ -8,18 +8,13 @@ import { Component, OnInit } from '@angular/core';
     a {
       color:rgb(220, 220, 247);text-decoration:none;
     }
-    .footer {
-      position:absolute;
-      bottom:0px;
-      left:0px;
-      right:0px;
-       margin-top: 8px;
-      height: 80px; 
-      color:rgb(220, 220, 247);
-      padding-top:20px;
+    footer { 
+       padding: 20px 0px 20px;
+      color:rgb(220, 220, 247); 
       text-align:center;
-      line-height:2rem;
-      // background-color: rgb(0, 0, 139)
+      line-height:2rem; 
+    background: rgba(96, 79, 245, 0.692);
+ 
    
     }
    

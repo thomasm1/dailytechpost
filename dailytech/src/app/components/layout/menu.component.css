@@ -1,8 +1,5 @@
 
 
- .daily-title {
-     color: rgb(61, 43, 226);
- }
  
  h1,
  h2,
@@ -24,6 +21,9 @@
 mat-toolbar {
     height:100px;
 }
+mat-toolbar.mat-primary {
+    background: #673ab75c;
+}
  .logo {
      /* position: relative; */
      top: -10px;
@@ -35,20 +35,12 @@ mat-toolbar {
  
  
  a,
- a:visited,
- a:hover {
-     color: #1976d2;
+ a:visited, a:hover  { 
      text-decoration: none;
- }
- 
- a:hover {
-     color: #125699;
- }
- 
+     font-weight:500;
+     font-size: 1.4rem;
+ } 
  
  a:active {
      color: lightgray;
- }
- li {
-     list-style: none;
  }

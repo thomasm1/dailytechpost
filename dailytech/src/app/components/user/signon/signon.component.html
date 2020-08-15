@@ -1,35 +1,71 @@
-<section class="signup-form">
-
-
-  <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleBasicAuthLogin(f)" #f="ngForm">
-    
-      <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-  <div class="welcome alert  " *ngIf='!invalidLogin'><h4>LOGIN</h4> </div>
-    <!---->
-    <mat-form-field appearance="fill">
-      <input type="email" matInput placeholder="Username: user" ngModel name="username"   #username />
-    </mat-form-field>
- 
-    <mat-form-field appearance="fill">
-      <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password />
-    </mat-form-field>
-    <hr>
-     <div class="row">
-        <button type="submit"  mat-raised-button color="primary">SIGN ON</button> &nbsp; 
-       <button   mat-raised-button color="basic">CANCEL</button>
-     </div>
-  </form>
-
-</section>
-
-<!-- 
-    <div>
-        <span class="login">User:</span> <input type="text" name="username" placeholder="demo: user" [(ngModel)]="username">
-        <hr>
-        <span class="login">Password:</span> <input type="password" name="password" placeholder="demo: pass" [(ngModel)]="password">
 <hr>
-        <!-- <button (click)=handleLogin() class="btn btn-success">SIGN ON</button> &nbsp;  -->
+   <h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
+<hr>
+<mat-tab-group mat-align-tabs="center">
 
-<!-- 
-        <hr>
-    </div>  -->
+  <mat-tab label="SIGN ON">
+    <div class="temp">
+
+      <section class="signup-form">
+
+        <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleBasicAuthLogin(f)" #f="ngForm">
+
+          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          <div class="welcome alert  " *ngIf='!invalidLogin'>
+
+          </div>
+          <!---->
+          <mat-form-field appearance="fill">
+            <input type="email" matInput placeholder="Username: user" ngModel name="username" #username />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password />
+          </mat-form-field>
+          <hr>
+          <div class="row">
+            <button type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
+            <button mat-raised-button color="basic">CANCEL</button>
+          </div>
+        </form>
+
+      </section>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="REGISTER">
+    <div class="temp">
+
+      <section class="register-form">
+        <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+
+          <div class="welcome alert  ">
+          </div>
+ 
+          <mat-form-field appearance="fill">
+            <input type="email" matInput placeholder="email/username" ngModel name="email" required
+              #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
+              #pwInput="ngModel">
+            <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
+            <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+            <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error>
+          </mat-form-field>
+          <hr>
+
+          <div class="row">
+            <button type="submit" mat-raised-button color="primary">REGISTER</button>
+            <button mat-raised-button color="basic">CANCEL</button>
+          </div>
+
+        </form>
+      </section>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

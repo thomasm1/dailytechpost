@@ -1,23 +1,33 @@
-
-mat-card {
-    background: rgba(191, 185, 248, 0.233);
-}
-
-li {
-    list-style-type: none;
-}
-div.temp  {
-    max-height:600px;
-    width:90%;
-    overflow-y:scroll;
-    padding:10px;
-    color:whitesmoke;
-    background: rgba(96, 79, 245, 0.692);
-    border-radius:5px;
-    margin:30px auto;
-}
-hr {
-    background:rgb(195, 196, 255);
-    max-width:60%;
-    margin:30px auto;
-}
+ mat-card {
+     background: rgba(191, 185, 248, 0.233);
+ }
+ 
+ li {
+     list-style-type: none;
+ }
+ 
+ hr {
+     background: rgb(195, 196, 255);
+     max-width: 60%;
+     margin: 30px auto;
+ }
+ 
+ button {
+     margin-right: 10px;
+ }
+ 
+ .daily-title {
+     color: rgb(61, 43, 226);
+ }
+ 
+ div.temp {
+     max-height: 600px;
+     min-height: 500px;
+     width: 90%;
+     overflow-y: scroll;
+     padding: 10px;
+     color: whitesmoke;
+     background: rgba(96, 79, 245, 0.692);
+     border-radius: 5px;
+     margin: 30px auto;
+ }

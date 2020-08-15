@@ -1,38 +1,35 @@
-<section class="register-form">
-    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm"> 
-         
-  <div class="welcome alert  " ><h4>REGISTER</h4> </div>
-        <mat-form-field appearance="fill">
-            <input 
-            type="email" 
-            matInput 
-            placeholder="email/username" 
-            ngModel 
-            name="email" 
-            required
-            #emailInput="ngModel">
-            <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
-            <mat-error  *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
-        </mat-form-field>
+ <hr>
+   <h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
 <hr>
-        <mat-form-field   appearance="fill">
-            <input 
-            type="password" 
-            matInput 
-            placeholder="password" 
-            ngModel name="password" 
-            required 
-            minlength="6"
-            #pwInput="ngModel">
+ <div class="temp">
+<h4 class="daily-tech monoton">REGISTER</h4>
+      <section class="register-form">
+        <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+
+          <div class="welcome alert  ">
+          </div>
+ 
+          <mat-form-field appearance="fill">
+            <input type="email" matInput placeholder="email/username" ngModel name="email" required
+              #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
+              #pwInput="ngModel">
             <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
             <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
-            <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error> 
-        </mat-form-field>
-    <hr>
-     <div class="row">
-        <button type="submit"  mat-raised-button color="primary">REGISTER</button> 
-       <button   mat-raised-button color="basic">CANCEL</button>
-     </div>
- 
-    </form>
-</section>
+            <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error>
+          </mat-form-field>
+          <hr>
+
+          <div class="row">
+            <button type="submit" mat-raised-button color="primary">REGISTER</button>
+            <button mat-raised-button color="basic">CANCEL</button>
+          </div>
+
+        </form>
+      </section>
+    </div>
