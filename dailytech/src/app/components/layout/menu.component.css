@@ -1,7 +1,5 @@
- .monoton {
-     font-family: Monoton;
- }
- 
+
+
  .daily-title {
      color: rgb(61, 43, 226);
  }
@@ -23,56 +21,18 @@
      flex: 1;
  }
  
- .toolbar {
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     height: 160px;
-     display: flex;
-     align-items: center;
-     color: white;
-     font-weight: 400;
- }
- 
+mat-toolbar {
+    height:100px;
+}
  .logo {
-     position: relative;
+     /* position: relative; */
      top: -10px;
      height: 55px;
+     margin: 0 10px;
  }
- 
  /* ANIMATION */
-/* 
- .text-box {
-     animation:moveInRight 4s ease-in;
-     transform: translateX(-100px) !important;
- }
  
- @keyframes moveinRight {
-     0% {
-         opacity: .4;
-         transform: translateX(-400px);
-     }
-     80% {
-         opacity: .8;
-         transform: translateX(10px);
-     }
-     100% {
-         opacity: 1;
-         transform: translateX(0);
-     }
- }
-  .logo:hover {
-     animation: moveInRight 1s ease-out;
- } */
- .toolbar #twitter-logo {
-     height: 40px;
-     margin: 0 16px;
- }
  
- .toolbar #twitter-logo:hover {
-     opacity: 0.8;
- }
  
  a,
  a:visited,
@@ -83,4 +43,12 @@
  
  a:hover {
      color: #125699;
+ }
+ 
+ 
+ a:active {
+     color: lightgray;
+ }
+ li {
+     list-style: none;
  }

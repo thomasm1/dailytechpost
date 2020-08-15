@@ -3,13 +3,14 @@ li {
     list-style-type: none;
 }
 div.temp  {
-    max-height:500px;
-    width:80%;
+    max-height:600px;
+    width:90%;
     overflow-y:scroll;
     padding:10px;
     color:whitesmoke;
-    background: rgb(9, 1, 75);
-    border-radius:10px;
+    background: rgba(8, 1, 75, 0.493);
+    border-radius:5px;
+    margin:30px auto;
 }
 hr {
     background:rgb(195, 196, 255);

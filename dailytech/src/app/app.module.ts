@@ -9,30 +9,33 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
 
 import { AppComponent } from './app.component'; 
 import { AdminComponent } from './components/user/admin.component';
-import { FooterComponent } from './components/layout/footer.component';
-import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
-import { MenuComponent } from './components/layout/menu.component';
 import { PostComponent } from './components/post-dir/post/post.component'; 
-import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
+import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
 import { AnimationComponent } from './components/util/animation/animation.component';
 import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 import { BlogComponent } from './components/post-dir/blog/blog.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { SignonComponent } from './components/user/signon/signon.component';
 import { BlogsListComponent } from './components/post-dir/blogs-list/blogs-list.component';
+import { SidenavListComponent } from './components/layout/sidenav-list/sidenav-list.component';
+import { FooterComponent } from './components/layout/footer.component';
+import { MenuComponent } from './components/layout/menu.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,  
+    AnimationComponent,
     AdminComponent,
     FooterComponent,
-    PostsListComponent,
+    SidenavListComponent,
     MenuComponent,
     PostComponent,
-    AnimationComponent,
+    PostsListComponent,
     PostsViewerComponent,
     BlogComponent,
     RegisterComponent,

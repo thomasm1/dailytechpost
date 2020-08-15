@@ -1,0 +1,36 @@
+<mat-nav-list>
+<div class="logo-box">
+        <a routerLink="/blogs">
+            <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
+        </a>
+    </div>
+
+   <a mat-list-item  routerLink="/blogs" (click)="onClose()">
+    <mat-icon>book</mat-icon>
+    <span class="nav-caption">Posts</span>
+  </a>
+
+  <a mat-list-item *ngIf="!authService.isAdminLoggedIn()" routerLink="/register"  (click)="onClose()">
+    <mat-icon>face</mat-icon>
+    <span class="nav-caption">Register</span>
+  </a>
+ 
+  <a mat-list-item *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" (click)="onClose()">
+    <mat-icon>input</mat-icon>
+    <span class="nav-caption">Login</span>
+  </a>
+  
+  <mat-list-item>
+    <button mat-icon-button *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout();onClose()">
+      <mat-icon>eject</mat-icon>
+      <span class="nav-caption">Logout</span>
+    </button>
+  </mat-list-item>
+
+  <a mat-list-item *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" (click)="onClose()">
+    <mat-icon>edit</mat-icon>
+    <span class="nav-caption">Edit</span>
+  </a>
+   
+
+</mat-nav-list>

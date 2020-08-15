@@ -2,25 +2,25 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HardcodedAuthService } from 'src/app/service/hardcoded-auth.service';
 import { ActivatedRoute } from '@angular/router';
 
-@Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
-})
-export class MenuComponent implements OnInit {
-  // isAdminLoggedIn: boolean = false;
 
-  @Output() sidenavToggle = new EventEmitter<void>();
+@Component({
+  selector: 'app-sidenav-list',
+  templateUrl: './sidenav-list.component.html',
+  styleUrls: ['./sidenav-list.component.css']
+})
+export class SidenavListComponent implements OnInit {
+  @Output() closeSidenav = new EventEmitter<void>();
+
 
   variable: string = '';
   constructor(private route: ActivatedRoute, 
   public authService:HardcodedAuthService) { }
 
-  ngOnInit() {
-    this.variable = this.route.snapshot.params['name'];
+  ngOnInit()  {
+     this.variable = this.route.snapshot.params['name'];
     // this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
   }
-  onToggleSidenav() {
-    this.sidenavToggle.emit();
+  onClose() {
+    this.closeSidenav.emit();
   }
 }
