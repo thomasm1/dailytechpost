@@ -10,8 +10,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 // import { MatNativeDateModule } from '@angular/material'; 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-  
+import { MatListModule } from '@angular/material/list'; 
+import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatCardModule } from '@angular/material/card';
 
  
  
@@ -19,8 +20,8 @@ import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatDatepickerModule, MatToolbarModule, MatSidenavModule, MatListModule  
+    CommonModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatDatepickerModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTabsModule, MatCardModule
   ],
-  exports: [MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatDatepickerModule, MatToolbarModule, MatSidenavModule, MatListModule ]
+  exports: [MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatDatepickerModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTabsModule, MatCardModule ]
 })
 export class MaterialModule { }
