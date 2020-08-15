@@ -1,20 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostDataService } from '../../../service/data/post-data.service';
 import { Router } from '@angular/router';
+import { Post } from '../../../models/post.model'
 
-export class Post {
-  constructor(
-    public id: number,
-    public did: string,
-    public date: string,
-    public author: string,
-    public monthOrder: string,
-    public cat3: string,
-    public title: string,
-    public post: string,
-    public blogcite: string
-  ) { }
-}
 
 @Component({
   selector: 'app-posts-list',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Post } from '../../components/post-dir/posts-list/posts-list.component';
+import { Post } from '../../models/post.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({

@@ -1,6 +1,6 @@
 <div class="toolbar" role="banner">
     <div class="logo-box">
-        <a routerLink="/posts" class="nav-link">
+        <a routerLink="/blogs" class="nav-link">
             <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
         </a>
     </div>
@@ -17,7 +17,7 @@
 
                 <ul class="navbar-nav navbar-collapse justify-content-end">
                     <li>
-                        <a routerLink="/posts" class="nav-link">POSTS</a>
+                        <a routerLink="/blogs" class="nav-link">POSTS</a>
                     </li>
                     <li>
                         <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link">SIGN ON</a>  

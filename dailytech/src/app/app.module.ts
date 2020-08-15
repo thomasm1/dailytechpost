@@ -22,6 +22,7 @@ import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-v
 import { BlogComponent } from './components/post-dir/blog/blog.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { SignonComponent } from './components/user/signon/signon.component';
+import { BlogsListComponent } from './components/post-dir/blogs-list/blogs-list.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SignonComponent } from './components/user/signon/signon.component';
     PostsViewerComponent,
     BlogComponent,
     RegisterComponent,
-    SignonComponent, 
+    SignonComponent,
+    BlogsListComponent, 
   ],
   imports: [
     BrowserModule,

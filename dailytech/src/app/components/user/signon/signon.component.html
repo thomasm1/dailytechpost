@@ -1,23 +1,25 @@
 <section class="signup-form">
 
 
-  <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+  <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleBasicAuthLogin(f)" #f="ngForm">
     
       <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-  <div class="welcome alert  " *ngIf='!invalidLogin'><i>Welcome </i>{{username}}!</div>
-    <!--(ngSubmit)="handleBasicAuthLogin()"-->
-    <mat-form-field>
-      <input type="email" matInput placeholder="email/username" ngModel name="email" required #email />
+  <div class="welcome alert  " *ngIf='!invalidLogin'><h4>LOGIN</h4> </div>
+    <!---->
+    <mat-form-field appearance="fill">
+      <input type="email" matInput placeholder="Username: user" ngModel name="username"   #username />
     </mat-form-field>
-
-    <!-- 
-    <mat-form-field>
-      <input type="email" matInput placeholder="Your email">
-    </mat-form-field> -->
-    <mat-form-field>
-      <input type="password" matInput placeholder="Your password">
+ 
+    <mat-form-field appearance="fill">
+      <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password />
     </mat-form-field>
+    <hr>
+     <div class="row">
+        <button type="submit"  mat-raised-button color="primary">SIGN ON</button> &nbsp; 
+       <button   mat-raised-button color="basic">CANCEL</button>
+     </div>
   </form>
+
 </section>
 
 <!-- 
@@ -28,6 +30,6 @@
 <hr>
         <!-- <button (click)=handleLogin() class="btn btn-success">SIGN ON</button> &nbsp;  -->
 
-<!-- <button type="submit"  class="btn btn-success">SIGN ON</button> &nbsp; 
+<!-- 
         <hr>
     </div>  -->

@@ -1,7 +1,8 @@
 <section class="register-form">
-    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
-        <!--(ngSubmit)="handleBasicAuthLogin()"-->
-        <mat-form-field>
+    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm"> 
+         
+  <div class="welcome alert  " ><h4>REGISTER</h4> </div>
+        <mat-form-field appearance="fill">
             <input 
             type="email" 
             matInput 
@@ -14,7 +15,7 @@
             <mat-error  *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
         </mat-form-field>
 <hr>
-        <mat-form-field hintLabel="Should be at least 6 characters long">
+        <mat-form-field   appearance="fill">
             <input 
             type="password" 
             matInput 
@@ -23,15 +24,15 @@
             required 
             minlength="6"
             #pwInput="ngModel">
+            <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
             <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
             <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error> 
         </mat-form-field>
-<hr>
-        <button type="submit" mat-raised-button color="primary">Submit</button>
-
-        <!-- <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-        <div class="welcome alert  " *ngIf='!invalidLogin'><i>Welcome </i>{{username}}!</div> -->
-
-        
+    <hr>
+     <div class="row">
+        <button type="submit"  mat-raised-button color="primary">REGISTER</button> 
+       <button   mat-raised-button color="basic">CANCEL</button>
+     </div>
+ 
     </form>
 </section>

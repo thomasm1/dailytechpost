@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicAuthenticationService } from '../../../service/basic-authentication.service';
+import {  NgForm } from '@angular/forms'; 
 
 @Component({
   selector: 'app-signon',
@@ -23,12 +24,12 @@ export class SignonComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleBasicAuthLogin() {
-    this.authBasicService.executeAuthenticationService(this.username, this.password)
+  handleBasicAuthLogin(form:NgForm) {
+    this.authBasicService.executeAuthenticationService(form.value.username, form.value.password)
       .subscribe(
         data => {
           console.log(data)
-          this.router.navigate(['admin', this.username])
+          this.router.navigate(['admin', form.value.username])
           this.invalidLogin = false
         },
         error => {

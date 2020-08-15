@@ -8,13 +8,17 @@ import { PostsListComponent } from './components/post-dir/posts-list/posts-list.
 import { PostComponent } from './components/post-dir/post/post.component'; 
 import { RouteGuardService } from './service/route-guard.service';
 import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
+import { BlogsListComponent } from './components/post-dir/blogs-list/blogs-list.component';
+import { BlogComponent } from './components/post-dir/blog/blog.component';
 
 const routes: Routes = [
-  { path: '', component: PostsViewerComponent },
+  { path: '', component: BlogsListComponent },
   { path: 'login', component: SignonComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'blogs', component: BlogsListComponent },
+  { path: 'blog/:id', component: BlogComponent },
   { path: 'posts', component: PostsViewerComponent },
-  { path: 'admin/posts', component: PostsListComponent },
+  { path: 'admin/posts', component: PostsListComponent},
   { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService]},
   { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
   { path: '**', component: PostsViewerComponent },
