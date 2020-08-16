@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -21,9 +22,12 @@ import { BlogComponent } from './components/post-dir/blog/blog.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { SignonComponent } from './components/user/signon/signon.component';
 import { BlogsListComponent } from './components/post-dir/blogs-list/blogs-list.component';
+
 import { SidenavListComponent } from './components/layout/sidenav-list/sidenav-list.component';
 import { FooterComponent } from './components/layout/footer.component';
 import { MenuComponent } from './components/layout/menu.component';
+import { PostCancelComponent } from './components/post-dir/post-cancel/post-cancel.component';
+import { TitleBarComponent } from './components/layout/title-bar/title-bar.component';
 
 
 @NgModule({
@@ -40,21 +44,25 @@ import { MenuComponent } from './components/layout/menu.component';
     BlogComponent,
     RegisterComponent,
     SignonComponent,
-    BlogsListComponent, 
+    BlogsListComponent,
+    TitleBarComponent,
+    PostCancelComponent 
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule, 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PostCancelComponent, MatDialogModule]
 })
 export class AppModule { }

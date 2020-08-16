@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicAuthenticationService } from '../../../service/basic-authentication.service';
 import {  NgForm } from '@angular/forms'; 
-
+import { MatTabsModule } from '@angular/material/tabs';
 @Component({
   selector: 'app-signon',
   templateUrl: './signon.component.html',

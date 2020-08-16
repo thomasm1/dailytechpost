@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminDataService } from '../../service/data/admin-data.service';
 @Component({
@@ -7,11 +7,14 @@ import { AdminDataService } from '../../service/data/admin-data.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  @Output() writingStart = new EventEmitter<void>();
 
   name = '';
   message = 'Welcome ' + this.name;
   getPostFromService: string;
-
+  // cat3 = {
+  //   "a":"b"
+  // }
 
   constructor(private route: ActivatedRoute,
     private adminService: AdminDataService) { }
@@ -22,6 +25,10 @@ export class AdminComponent implements OnInit {
     this.getParameterUpdate();
 
   }
+onStartWriting() {
+      this.writingStart.emit();
+}
+
   getParameterUpdate() {
     this.adminService.executeParameterService(this.name).subscribe(
       response => this.handleResponse(response),

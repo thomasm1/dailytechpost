@@ -19,7 +19,7 @@
                 <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
             </li>
             <li>
-                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" class="nav-link daily-tech monoton">EDIT</a>
+                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">EDIT</a>
             </li>
             <li>
                 <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()"

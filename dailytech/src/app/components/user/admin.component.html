@@ -1,16 +1,80 @@
-<div class="admin">
-
-    <h5>{{message}}</h5>
-    <hr>
-<div class="row">
-        <div class="col post-btn">
-        <button (click)="getUpdate()" class="btn btn-gray pull-left ">Update</button> <br />
-        <button (click)="getErrorUpdate()" class="btn btn-gray pull-left">Errors</button>
-    </div>
-    <div class="col post"> 
-        <p *ngIf="getPostFromService">{{getPostFromService}}</p> 
-    </div>
-</div>
+<app-title-bar></app-title-bar>
+<mat-tab-group mat-align-tabs="center">
 
 
-</div>
+    <mat-tab label="My Console">
+        <div class="temp">
+            <div class="admin">
+
+                <div class="row">
+                    <div class="col post-btn">
+                        <button (click)="getUpdate()" class="btn btn-gray pull-left ">Update</button> <br />
+                        <button (click)="getErrorUpdate()" class="btn btn-gray pull-left">Errors</button>
+                    </div>
+                    <div class="col post">
+                        <h6>{{message}}</h6>
+                        <h6 *ngIf="getPostFromService">{{getPostFromService}}</h6>
+                    </div>
+                </div>
+                <section class="new-writing" fxLayout fxLayoutAlign="center">
+                    <mat-card fxFlex.xs="100%" fxFlex="100%">
+                        <mat-card-title fxLayoutAlign="center">Time to Write!</mat-card-title>
+                        <mat-card-content fxLayoutAlign="center">
+                            <mat-form-field>
+                                <mat-select placeholder="Category">
+                             <!--        <mat-option *ngFor="let cat of cat3" [value]="cat.value">
+                                      {{ cat.viewValue }}
+                                    </mat-option>
+                                    <mat-option value="Web">
+                                        Web Dev Affairs
+                                    </mat-option>
+                                    <mat-option value="Blockchain">
+                                        Musing Blockchain
+                                    </mat-option>
+                                    <mat-option value="A.I.">
+                                        A.I.Now.
+                                    </mat-option>
+                                    <mat-option value="Sociology">
+                                        Sociology Today
+
+                                    </mat-option>
+                                    <mat-option value="Quantum">
+                                        Quantum Data
+
+                                    </mat-option> -->
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-card-content>
+                        <mat-card-actions fxLayoutAlign="center">
+                            <button type="submit" mat-button (click)="onStartWriting()">Start</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </section>
+
+            </div>
+        </div>
+    </mat-tab>
+
+
+
+
+    <mat-tab label="My Blogs">
+        <div class="temp">
+
+            <app-posts-list></app-posts-list>
+
+        </div>
+    </mat-tab>
+
+    <mat-tab label="My Drafts">
+        <div class="temp">
+
+            <app-posts-list></app-posts-list>
+
+
+        </div>
+    </mat-tab>
+
+
+
+</mat-tab-group>

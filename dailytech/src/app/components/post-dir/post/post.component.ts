@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PostDataService } from 'src/app/service/data/post-data.service';
 import { Post } from '../../../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { PostCancelComponent } from '../post-cancel/post-cancel.component';
 
 @Component({
   selector: 'app-post',
@@ -15,19 +17,25 @@ import { ActivatedRoute, Router } from '@angular/router';
   ]
 })
 export class PostComponent implements OnInit {
+  @Output() writingExit = new EventEmitter();
+
+  progress = 0;
+  timer: number;
 
   id: number;
   username: string;
   post: Post;
 
   constructor(
+    private dialog: MatDialog,
     private postService: PostDataService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id']; 
+    this.startOrResumeWriting();
+    this.id = this.route.snapshot.params['id'];
     this.post = new Post(this.id, '', '', '', '', '', '', '', '');
 
     if (this.id != -1) {
@@ -36,6 +44,14 @@ export class PostComponent implements OnInit {
         data => this.post = data
       )
     }
+  }
+  startOrResumeWriting() {
+    this.timer = setInterval(() => {
+      this.progress = this.progress + 5;
+      if (this.progress >= 1000) {
+        clearInterval(this.timer);
+      }
+    }, 1000);
   }
 
   savePost() {
@@ -56,7 +72,24 @@ export class PostComponent implements OnInit {
           }
         )
     }
+  }
 
+  postCancel() {
+    console.log(this.post);
+    clearInterval(this.timer);
+    const dialogRef = this.dialog.open(PostCancelComponent, {
+      data: {
+        progress: this.progress
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.writingExit.emit();
+      } else {
+        this.startOrResumeWriting();
+      }
+    });
   }
 
 }
