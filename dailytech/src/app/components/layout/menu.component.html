@@ -12,15 +12,22 @@
  
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+           <li>
+                <a routerLink="/writing" class="nav-link daily-tech monoton">WRITE!</a>
+            </li>
+
+            <li>
+                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">CONSOLE</a>
+            </li> 
+           
             <li>
                 <a routerLink="/blogs" class="nav-link daily-tech monoton">POSTS</a>
             </li>
+
             <li>
                 <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
             </li>
-            <li>
-                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">EDIT</a>
-            </li>
+        
             <li>
                 <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()"
                     class="nav-link daily-tech monoton">SIGN OUT</a>

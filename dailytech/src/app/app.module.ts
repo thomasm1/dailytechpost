@@ -28,6 +28,11 @@ import { FooterComponent } from './components/layout/footer.component';
 import { MenuComponent } from './components/layout/menu.component';
 import { PostCancelComponent } from './components/post-dir/post-cancel/post-cancel.component';
 import { TitleBarComponent } from './components/layout/title-bar/title-bar.component';
+import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
+import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
+import { PastWritingsComponent } from './components/writing/past-writings/past-writings.component';
+import { StopWritingComponent } from './components/writing/current-writing/stop-writing.component';
+import { WritingComponent } from './components/writing/writing.component';
 
 
 @NgModule({
@@ -46,7 +51,12 @@ import { TitleBarComponent } from './components/layout/title-bar/title-bar.compo
     SignonComponent,
     BlogsListComponent,
     TitleBarComponent,
-    PostCancelComponent 
+    PostCancelComponent,
+    CurrentWritingComponent,
+    NewWritingComponent,
+    PastWritingsComponent,
+    StopWritingComponent,
+    WritingComponent 
   ],
   imports: [
     MatDialogModule,

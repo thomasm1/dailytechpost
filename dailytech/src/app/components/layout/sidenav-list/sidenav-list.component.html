@@ -5,6 +5,17 @@
         </a>
     </div>
 
+
+   <a mat-list-item routerLink="/writing" (click)="onClose()">
+    <mat-icon>edit</mat-icon>
+    <span class="nav-caption daily-tech monoton">Write!</span>
+  </a>
+    
+  <a mat-list-item *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" (click)="onClose()">
+    <mat-icon>computer</mat-icon>
+    <span class="nav-caption daily-tech monoton">Console</span>
+  </a>
+
    <a mat-list-item  routerLink="/blogs" (click)="onClose()">
     <mat-icon>book</mat-icon>
     <span class="nav-caption daily-tech monoton">Posts</span>
@@ -27,10 +38,7 @@
     </button>
   </mat-list-item>
 
-  <a mat-list-item *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" (click)="onClose()">
-    <mat-icon>edit</mat-icon>
-    <span class="nav-caption">Edit</span>
-  </a>
+
    
 
 </mat-nav-list>

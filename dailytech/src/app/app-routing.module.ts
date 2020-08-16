@@ -10,6 +10,7 @@ import { RouteGuardService } from './service/route-guard.service';
 import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 import { BlogsListComponent } from './components/post-dir/blogs-list/blogs-list.component';
 import { BlogComponent } from './components/post-dir/blog/blog.component';
+import { WritingComponent } from './components/writing/writing.component'; 
 
 const routes: Routes = [
   { path: '', component: BlogsListComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin/posts', component: PostsListComponent},
   { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService]},
   { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
+  { path: 'writing', component: WritingComponent },
   { path: '**', component: PostsViewerComponent },
 ];
 
