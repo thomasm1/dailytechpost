@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { User } from '../models/user.model';
-import { AuthData } from '../models/auth-data.model';
+import { User } from '../../models/user.model';
+import { AuthData } from '../../models/auth-data.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class JwtAuthService {
-  public authChange = new Subject<boolean>();
+  authChange = new Subject<boolean>();
   private user: User;
 
   constructor(private router: Router) { }
@@ -19,8 +19,7 @@ export class JwtAuthService {
       email: authData.email,
       userId: Math.round(Math.random() * 10000).toString()
     };
-    this.authChange.next(true);
-    this.router.navigate(['/writing'])
+    this.authSuccessful();
   }
 
   login(authData: AuthData) {
@@ -28,12 +27,13 @@ export class JwtAuthService {
       email: authData.email,
       userId: Math.round(Math.random() * 10000).toString()
     }
-    this.authChange.next(true);
+    this.authSuccessful();
   }
 
   logout() {
     this.user = null;
     this.authChange.next(false);
+    this.router.navigate(['/login'])
   }
 
   getUser() {
@@ -43,5 +43,10 @@ export class JwtAuthService {
 
   isAuth() {
     return this.user != null;
+  }
+
+  private authSuccessful() {
+    this.authChange.next(true);
+    this.router.navigate(['/writing'])
   }
 }

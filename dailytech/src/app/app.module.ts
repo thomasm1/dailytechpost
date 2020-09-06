@@ -4,16 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms'
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
+import { JwtAuthService } from './service/auth/jwt-auth.service'
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { HttpIntercepterBasicAuthService } from './service/http-intercepter-basic-auth.service';
-import { JwtAuthService } from './service/jwt-auth.service'
 import { AppComponent } from './app.component'; 
 import { AdminComponent } from './components/user/admin.component';
 import { PostComponent } from './components/post-dir/post/post.component'; 

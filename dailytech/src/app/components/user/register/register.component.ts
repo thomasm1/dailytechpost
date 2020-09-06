@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { BasicAuthenticationService } from '../../../service/basic-authentication.service';
-import { JwtAuthService } from '../../../service/jwt-auth.service';
+import { Router } from '@angular/router'; 
+import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import {  NgForm } from '@angular/forms'; 
 
 @Component({

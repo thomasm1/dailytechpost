@@ -17,7 +17,7 @@
             </li>
 
             <li>
-                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">CONSOLE</a>
+                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">ADMIN CONSOLE</a>
             </li> 
            
             <li>
@@ -25,11 +25,11 @@
             </li>
 
             <li>
-                <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
+                <a *ngIf="!authService.isAdminLoggedIn() && !isAuth" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
             </li>
         
             <li>
-                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()"
+                <a *ngIf="authService.isAdminLoggedIn() || isAuth" routerLink="/" (click)="onLogout();authService.logout()"
                     class="nav-link daily-tech monoton">SIGN OUT</a>
             </li>
             <!-- <li>

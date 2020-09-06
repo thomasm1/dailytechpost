@@ -2,7 +2,7 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 export const TOKEN = 'token'
 export const AUTHENTICATED_USER = 'AuthenticatedUser'

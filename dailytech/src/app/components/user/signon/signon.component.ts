@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BasicAuthenticationService } from '../../../service/basic-authentication.service';
-import { JwtAuthService } from '../../../service/jwt-auth.service';
+import { BasicAuthenticationService } from '../../../service/auth/basic-authentication.service';
+import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms'; 
 // import { MatTabsModule } from '@angular/material/tabs';
 
