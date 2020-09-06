@@ -5,6 +5,8 @@ import { HardcodedAuthService } from './hardcoded-auth.service';
 @Injectable({
   providedIn: 'root'
 })
+
+// ADMIN GUARD SERVICE
 export class RouteGuardService implements CanActivate {
 
   constructor(private hardcodedAuthService: HardcodedAuthService, private router: Router) { }
