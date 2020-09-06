@@ -3,18 +3,26 @@
  <div class="temp">
 <h4 class="daily-tech monoton">REGISTER</h4>
       <section class="register-form">
-        <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+        <form fxLayout="column" (ngSubmit)="onRegister(f)" fxLayoutAlign="center center" #f="ngForm">
 
           <div class="welcome alert  ">
           </div>
- 
+          <!-- email (Used for User Auth) -->
           <mat-form-field appearance="fill">
-            <input type="email" matInput placeholder="email/username" ngModel name="email" required
+            <input type="email" matInput placeholder="email" ngModel name="email" required
               #emailInput="ngModel">
             <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
             <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
           </mat-form-field>
 
+          <!-- username [Used for Admin Auth; And, used as username] -->
+          <mat-form-field appearance="fill">
+            <input type="text" matInput placeholder="username" ngModel name="username" required
+              #usernameInput="ngModel">
+            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error> 
+          </mat-form-field>
+
+          <!-- password (USERS) -->
           <mat-form-field appearance="fill">
             <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
               #pwInput="ngModel">
@@ -28,7 +36,7 @@
             <button type="submit" mat-raised-button color="primary">REGISTER</button>
             <button mat-raised-button color="basic">CANCEL</button>
           </div>
-
+<hr>
         </form>
       </section>
     </div>
