@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
-import { JwtAuthService } from './service/auth/jwt-auth.service'
+import { JwtAuthService } from './service/auth/jwt-auth.service';
+import { WritingService } from './service/writing.service';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -75,6 +76,7 @@ import { WritingComponent } from './components/writing/writing.component';
   ],
   providers: [
     JwtAuthService,
+    WritingService,
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
   ],
   bootstrap: [AppComponent],

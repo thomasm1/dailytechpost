@@ -1,17 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserGuardService } from './user-guard.service';
+import { WritingService } from './writing.service';
 
-describe('UserGuardService', () => {
-  let service: UserGuardService;
+describe('WritingService', () => {
+  let service: WritingService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UserGuardService);
+    service = TestBed.inject(WritingService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 });
- 

@@ -9,9 +9,14 @@ import { HardcodedAuthService } from './hardcoded-auth.service';
 // ADMIN GUARD SERVICE
 export class RouteGuardService implements CanActivate {
 
-  constructor(private hardcodedAuthService: HardcodedAuthService, private router: Router) { }
+  constructor(
+    private hardcodedAuthService: HardcodedAuthService,
+    private router: Router
+  ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    
+      //  ADMIN AUTH
     if (this.hardcodedAuthService.isAdminLoggedIn()) {
       return true;
     }

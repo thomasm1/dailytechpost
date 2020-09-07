@@ -1,4 +1,4 @@
-export interface WritingBlogs {
+export interface WritingBlog {
     id: string;
     name: string;
     category: string;
