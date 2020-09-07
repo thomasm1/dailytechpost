@@ -1,0 +1,10 @@
+.quote {
+    margin: 5px 10px;
+    padding:5px;
+}
+.cat-news {
+    background-color:rgba(229, 229, 250, 0.575);
+    border-radius: 5px;
+    margin: 5px 10px;
+    padding: 5px;
+}

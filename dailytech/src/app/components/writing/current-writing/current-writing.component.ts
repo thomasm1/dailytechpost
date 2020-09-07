@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
  import { MatDialog } from '@angular/material/dialog';
  import { StopWritingComponent } from './stop-writing.component';
+ import { WritingService } from '../../../service/writing.service';
+ 
 
 @Component({
   selector: 'app-current-writing',
@@ -9,22 +11,28 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class CurrentWritingComponent implements OnInit {
  @Output() writingExit = new EventEmitter();
-
+ 
+ 
   progress = 0;
   timer: number;
+  news: string[];
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private writingService: WritingService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.startOrResumeWriting();
+    this.news =  this.writingService.getWritingExercise().news;
   }
+
 startOrResumeWriting() {
+  const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
     this.timer = setInterval(() => {
-      this.progress = this.progress + 5;
-      if (this.progress >= 1000) {
+      this.progress = this.progress + 1;
+      if (this.progress >= 100) {
+        this.writingService.completeWriting();
         clearInterval(this.timer);
       }
-    }, 1000);
+    }, step); // 1000);
   }
 
     postCancel() {
@@ -38,7 +46,8 @@ startOrResumeWriting() {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.writingExit.emit();
+        // this.writingExit.emit();
+        this.writingService.cancelWriting(this.progress);
       } else {
         this.startOrResumeWriting();
       }
