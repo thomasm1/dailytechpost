@@ -17,11 +17,11 @@ export class WritingService {
   urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
 
   private availableWritingBlogs: WritingBlog[] = [
-    { id: 'web-dev-affairs', name: 'Web Dev Affairs', news: this.urlsWebDev, category: '', durationGoal: 120, wordCount: 0, date: new Date(), state: null },
-    { id: 'musing-blockchain', name: 'Musing Blockchain', news: this.urlsBlockchain, category: '', durationGoal: 120, wordCount: 0, date: new Date(), state: null },
-    { id: 'a-i-now', name: 'A.I.Now.', news: this.urlsAI, category: '', durationGoal: 120, wordCount: 0, date: new Date(), state: null },
-    { id: 'sociology-tomorrow', name: 'Sociology Tomorrow!', news: this.urlsSoc, category: '', durationGoal: 120, wordCount: 0, date: new Date(), state: null },
-    { id: 'quantum-data', name: 'Quantum Data', news: this.urlsQuantum, category: '', durationGoal: 0, wordCount: 120, date: new Date(), state: null }
+    { id: 'web-dev-affairs', name: 'Web Dev Affairs', news: this.urlsWebDev, category: '', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
+    { id: 'musing-blockchain', name: 'Musing Blockchain', news: this.urlsBlockchain, category: '', durationGoal: 120, wordCount: 40, date: new Date(), state: null },
+    { id: 'a-i-now', name: 'A.I.Now.', news: this.urlsAI, category: '', durationGoal: 120, wordCount: 450, date: new Date(), state: null },
+    { id: 'sociology-tomorrow', name: 'Sociology Tomorrow!', news: this.urlsSoc, category: '', durationGoal: 120, wordCount: 550, date: new Date(), state: null },
+    { id: 'quantum-data', name: 'Quantum Data', news: this.urlsQuantum, category: '', durationGoal: 120, wordCount: 4555, date: new Date(), state: null }
   ];
   private ongoingWriting: WritingBlog;
   private writingBlogs: WritingBlog[] = [];
@@ -61,5 +61,9 @@ export class WritingService {
 
   getWritingExercise() {
     return { ...this.ongoingWriting };
+  }
+  
+  getCompletedOrCancelledWritings() {
+    return this.writingBlogs.slice();
   }
 }

@@ -15,14 +15,53 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatDialogModule } from '@angular/material/dialog';  
- 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSortModule } from '@angular/material/sort';  
+import { MatPaginatorModule } from '@angular/material/paginator';   
+ import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatDatepickerModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTabsModule, MatCardModule,   MatSelectModule,   MatProgressSpinnerModule, MatDialogModule 
+    CommonModule, 
+    MatButtonModule, 
+    MatIconModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatTableModule, 
+    MatCheckboxModule, 
+    MatDatepickerModule, 
+    MatToolbarModule, 
+    MatSidenavModule, 
+    MatListModule, 
+    MatTabsModule, 
+    MatCardModule,   
+    MatSelectModule,   
+    MatProgressSpinnerModule, 
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatTooltipModule
   ],
-  exports: [MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatDatepickerModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTabsModule, MatCardModule,  MatSelectModule,  MatProgressSpinnerModule, MatDialogModule ]
+  exports: [MatButtonModule, 
+    MatIconModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatTableModule, 
+    MatCheckboxModule, 
+    MatDatepickerModule, 
+    MatToolbarModule, 
+    MatSidenavModule, 
+    MatListModule, 
+    MatTabsModule, 
+    MatCardModule, 
+     MatSelectModule, 
+      MatProgressSpinnerModule, 
+      MatDialogModule,
+      MatTableModule,
+      MatSortModule,
+      MatPaginatorModule,
+      MatTooltipModule ]
 })
 export class MaterialModule { }
