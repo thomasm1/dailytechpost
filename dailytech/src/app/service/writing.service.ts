@@ -17,11 +17,11 @@ export class WritingService {
   urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
 
   private availableWritingBlogs: WritingBlog[] = [
-    { id: 'web-dev-affairs', name: 'Web Dev Affairs', news: this.urlsWebDev, category: '', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
-    { id: 'musing-blockchain', name: 'Musing Blockchain', news: this.urlsBlockchain, category: '', durationGoal: 120, wordCount: 40, date: new Date(), state: null },
-    { id: 'a-i-now', name: 'A.I.Now.', news: this.urlsAI, category: '', durationGoal: 120, wordCount: 450, date: new Date(), state: null },
-    { id: 'sociology-tomorrow', name: 'Sociology Tomorrow!', news: this.urlsSoc, category: '', durationGoal: 120, wordCount: 550, date: new Date(), state: null },
-    { id: 'quantum-data', name: 'Quantum Data', news: this.urlsQuantum, category: '', durationGoal: 120, wordCount: 4555, date: new Date(), state: null }
+    { id: '1a', name: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
+    { id: '1b', name: 'Musing Blockchain', news: this.urlsBlockchain, category: 'musing-blockchain', durationGoal: 120, wordCount: 40, date: new Date(), state: null },
+    { id: '1c', name: 'A.I.Now.', news: this.urlsAI, category: 'a-i-now', durationGoal: 120, wordCount: 450, date: new Date(), state: null },
+    { id: '1d', name: 'Sociology Tomorrow!', news: this.urlsSoc, category: 'sociology-tomorrow', durationGoal: 120, wordCount: 550, date: new Date(), state: null },
+    { id: '1e', name: 'Quantum Data', news: this.urlsQuantum, category: 'quantum-data', durationGoal: 120, wordCount: 4555, date: new Date(), state: null }
   ];
   private ongoingWriting: WritingBlog;
   private writingBlogs: WritingBlog[] = [];
@@ -30,9 +30,9 @@ export class WritingService {
     return this.availableWritingBlogs.slice();
   }
 
-  startWriting(selectedId: string) {
+  startWriting(selectedCategory: string) {
     this.ongoingWriting = this.availableWritingBlogs.find(
-      ex => ex.id === selectedId
+      ex => ex.category === selectedCategory
     );
     this.writingChanged.next({ ...this.ongoingWriting });
   }

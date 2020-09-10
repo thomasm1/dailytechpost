@@ -5,7 +5,7 @@
         <mat-card-content fxLayoutAlign="center">
             <mat-form-field>
                 <mat-select placeholder="Category" ngModel name="writing" required>
-                    <mat-option *ngFor="let writing of writingBlogs" [value]="writing.id">
+                    <mat-option *ngFor="let writing of writingBlogs | async" [value]="writing.category">
                         {{ writing.name }}
                     </mat-option>
                 </mat-select>
