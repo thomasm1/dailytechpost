@@ -1,10 +1,10 @@
 export interface WritingBlog {
-    id: string;
-    name: string;
-    news: string[];
-    category: string;
-    durationGoal: number;
+    id?: string;
+    name?: string;
+    news?: string[];
+    category?: string;
+    durationGoal?: number;
     wordCount?: number;
     date?: Date;
-    state?: 'completed' | 'cancelled' | null;
+    state?: 'complete' | 'completed' | 'cancelled' | null;
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
- import { MatDialog } from '@angular/material/dialog';
- import { StopWritingComponent } from './stop-writing.component';
- import { WritingService } from '../../../service/writing.service';
- 
+import { MatDialog } from '@angular/material/dialog';
+import { StopWritingComponent } from './stop-writing.component';
+import { WritingService } from '../../../service/writing.service';
+
 
 @Component({
   selector: 'app-current-writing',
@@ -10,9 +10,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./current-writing.component.css']
 })
 export class CurrentWritingComponent implements OnInit {
- @Output() writingExit = new EventEmitter();
- 
- 
+  @Output() writingExit = new EventEmitter();
+
+
   progress = 0;
   timer: number;
   news: string[];
@@ -21,11 +21,11 @@ export class CurrentWritingComponent implements OnInit {
 
   ngOnInit() {
     this.startOrResumeWriting();
-    this.news =  this.writingService.getWritingExercise().news;
+    // this.news =  this.writingService.getWritingExercise().news;
   }
 
-startOrResumeWriting() {
-  const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
+  startOrResumeWriting() {
+    const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
     this.timer = setInterval(() => {
       this.progress = this.progress + 1;
       if (this.progress >= 100) {
@@ -35,8 +35,7 @@ startOrResumeWriting() {
     }, step); // 1000);
   }
 
-    postCancel() {
-    
+  postCancel() { 
     clearInterval(this.timer);
     const dialogRef = this.dialog.open(StopWritingComponent, {
       data: {
@@ -54,4 +53,3 @@ startOrResumeWriting() {
     });
   }
 }
- 

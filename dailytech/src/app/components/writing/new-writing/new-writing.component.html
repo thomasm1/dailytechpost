@@ -1,11 +1,11 @@
 <section class="new-writing" fxLayout fxLayoutAlign="center">
     <form (ngSubmit)="onStartWriting(f)" #f="ngForm">
-        <mat-card fxFlex.xs="100%" fxFlex="100%">
+        <mat-card fxFlex.xs="100%" fxFlex="400px">
         <mat-card-title fxLayoutAlign="center">Time to Write!</mat-card-title>
         <mat-card-content fxLayoutAlign="center">
             <mat-form-field>
                 <mat-select placeholder="Category" ngModel name="writing" required>
-                    <mat-option *ngFor="let writing of writingBlogs | async" [value]="writing.category">
+                    <mat-option *ngFor="let writing of writingBlogs" [value]="writing.id">
                         {{ writing.name }}
                     </mat-option>
                 </mat-select>
