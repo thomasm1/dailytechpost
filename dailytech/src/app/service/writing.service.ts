@@ -11,6 +11,7 @@ import { WritingBlog } from '../models/writing-blogs.model';
 export class WritingService {
   writingChanged = new Subject<WritingBlog>();
   writingsChanged = new Subject<WritingBlog[]>();
+  finishedWritingsChanged = new Subject<WritingBlog[]>();
 
   // urlsWebDev = ['https://www.wired.com/tag/the-web/','https://www.infoworld.com/category/web-development/'];
   // urlsBlockchain = ['https://www.wired.com/tag/blockchain/','https://cointelegraph.com/tags/blockchain'];
@@ -50,9 +51,9 @@ export class WritingService {
         });
       })
       ).subscribe((writingBlogs: WritingBlog[]) => {
-        console.log(writingBlogs)
+        console.log(writingBlogs);
         this.availableWritingBlogs = writingBlogs;
-        this.writingsChanged.next([...this.availableWritingBlogs])
+        this.writingsChanged.next([...this.availableWritingBlogs]);
       });
   }
 
@@ -64,7 +65,8 @@ export class WritingService {
   }
 
   completeWriting() {
-    this.writingBlogs.push({
+    // this.writingBlogs.push({
+    this.addDataToDatabase({
       ...this.ongoingWriting,
       date: new Date(),
       state: 'completed'
@@ -74,7 +76,8 @@ export class WritingService {
   }
 
   cancelWriting(progress: number) {
-    this.writingBlogs.push({
+    // this.writingBlogs.push({
+    this.addDataToDatabase({
       ...this.ongoingWriting,
       durationGoal: this.ongoingWriting.durationGoal * (progress / 100),
       wordCount: this.ongoingWriting.durationGoal * (progress / 100),
@@ -89,7 +92,17 @@ export class WritingService {
     return { ...this.ongoingWriting };
   }
 
-  getCompletedOrCancelledWritings() {
-    return this.writingBlogs.slice();
+  fetchCompletedOrCancelledWritings() {
+    // return this.writingBlogs.slice();
+    this.db
+      .collection('writing-blogs')
+      .valueChanges()
+      .subscribe((writingBlogs: WritingBlog[]) => {
+        this.finishedWritingsChanged.next(writingBlogs);
+      });
+  }
+
+  private addDataToDatabase(writingBlog: WritingBlog) {
+    this.db.collection('writing-blogs').add(writingBlog);
   }
 }
