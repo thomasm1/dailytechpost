@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
 import { AuthData } from '../../models/auth-data.model';
+import { WritingService } from '../writing.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class JwtAuthService {
   private isAuthenticated = false;
   private user: User;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) { }
+  constructor(private router: Router, private afAuth: AngularFireAuth, private writingService: WritingService) { }
 
   registerUser(authData: AuthData) {
     // this.user = {
@@ -51,6 +52,7 @@ export class JwtAuthService {
   }
 
   logout() {
+    this.writingService.cancelSubscriptions();
     // this.user = null;
     this.authChange.next(false);
     this.router.navigate(['/login'])

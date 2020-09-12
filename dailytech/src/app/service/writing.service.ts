@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { WritingBlog } from '../models/writing-blogs.model';
@@ -27,13 +28,15 @@ export class WritingService {
     // { id: '1e', name: 'Quantum Data', news: this.urlsQuantum, category: 'quantum-data', durationGoal: 120, wordCount: 4555, date: new Date(), state: null }
   ];
   private ongoingWriting: WritingBlog;
-  private writingBlogs: WritingBlog[] = [];
+  // private writingBlogs: WritingBlog[] = [];
+  private firebaseSubs: Subscription[] = [];
 
   constructor(private db: AngularFirestore) { }
 
   fetchAvailableWritingBlogs() {
     // return this.availableWritingBlogs.slice();
-    this.db
+    this.firebaseSubs.push(
+      this.db
       .collection('writing-blogs')
       .snapshotChanges()
       .pipe(map(docArray => {
@@ -54,7 +57,8 @@ export class WritingService {
         console.log(writingBlogs);
         this.availableWritingBlogs = writingBlogs;
         this.writingsChanged.next([...this.availableWritingBlogs]);
-      });
+      })
+    );  // END FIREBASE SUBSCRIPTION ARRAY
   }
 
   startWriting(selectedId: string) {
@@ -94,15 +98,22 @@ export class WritingService {
 
   fetchCompletedOrCancelledWritings() {
     // return this.writingBlogs.slice();
-    this.db
+    this.firebaseSubs.push(
+      this.db
       .collection('writing-blogs')
       .valueChanges()
       .subscribe((writingBlogs: WritingBlog[]) => {
         this.finishedWritingsChanged.next(writingBlogs);
-      });
+      })
+    );  // END FIREBASE SUBSCRIPTION ARRAY
+  }
+
+  cancelSubscriptions() {
+    this.firebaseSubs.forEach(sub =>sub.unsubscribe());
   }
 
   private addDataToDatabase(writingBlog: WritingBlog) {
     this.db.collection('writing-blogs').add(writingBlog);
   }
+
 }
