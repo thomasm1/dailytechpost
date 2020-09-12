@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Component, OnInit } from '@angular/core'; 
 import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import {  NgForm } from '@angular/forms'; 
 
@@ -11,8 +10,7 @@ import {  NgForm } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   maxDate;
 
-  constructor(
-    private router: Router,  
+  constructor( 
     private jwtAuthService: JwtAuthService, ) { 
   }
 

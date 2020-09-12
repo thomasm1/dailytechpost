@@ -11,6 +11,8 @@ import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
   styleUrls: ['./signon.component.css']
 })
 export class SignonComponent implements OnInit {
+  maxDate;
+  
   loginForm: FormGroup;
   username = '';
   password = '';
@@ -38,13 +40,15 @@ export class SignonComponent implements OnInit {
 
     // USER REGISTER (TABS)
   onRegister(form:NgForm) { 
+    console.log(form);
     
+    // USER REGISTER (SIDENAV --temporary)
     this.jwtAuthService.registerUser({
       username: form.value.username, 
       email: form.value.email, 
       password: form.value.password
     }); 
-  }
+  } 
 
     // USER AUTHENTICATION 
   handleJwtLogin(form:NgForm){
@@ -77,6 +81,8 @@ export class SignonComponent implements OnInit {
         }
       )
   }
+
+ 
   // handleLogin() { 
   //   if(this.authHardcode.authenticate(this.username, this.password)) {
   //     this.router.navigate(['admin', this.username])

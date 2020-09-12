@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
@@ -10,42 +11,63 @@ import { AuthData } from '../../models/auth-data.model';
 })
 export class JwtAuthService {
   authChange = new Subject<boolean>();
+  private isAuthenticated = false;
   private user: User;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private afAuth: AngularFireAuth) { }
 
   registerUser(authData: AuthData) {
-    this.user = {
-      email: authData.email,
-      userId: Math.round(Math.random() * 10000).toString()
-    };
-    this.authSuccessful();
+    // this.user = {
+    //   email: authData.email,
+    //   userId: Math.round(Math.random() * 10000).toString()
+    // };
+    this.afAuth.auth.createUserWithEmailAndPassword(
+      authData.email,
+      authData.password
+    )
+    .then(result => {
+      console.log(result);
+      this.authSuccessful();
+    })
+    .catch(error => {
+      console.log(error);
+    }); 
   }
 
   login(authData: AuthData) {
-    this.user = { 
-      email: authData.email,
-      userId: Math.round(Math.random() * 10000).toString()
-    }
-    this.authSuccessful();
+    // this.user = { 
+    //   email: authData.email,
+    //   userId: Math.round(Math.random() * 10000).toString()
+    // }
+    this.afAuth.auth
+      .signInWithEmailAndPassword(authData.email, authData.password)
+      .then(result => {
+        console.log(result);
+        this.authSuccessful();
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   logout() {
-    this.user = null;
+    // this.user = null;
     this.authChange.next(false);
     this.router.navigate(['/login'])
+    this.isAuthenticated = false;
   }
 
-  getUser() {
+  // getUser() {
     // returning new object with da spread operator
-    return { ...this.user };
-  }
+  //   return { ...this.user };
+  // }
 
   isAuth() {
-    return this.user != null;
+    return this.isAuthenticated;
   }
 
   private authSuccessful() {
+    this.isAuthenticated = true;
     this.authChange.next(true);
     this.router.navigate(['/writing'])
   }
