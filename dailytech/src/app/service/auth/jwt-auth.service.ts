@@ -13,9 +13,24 @@ import { WritingService } from '../writing.service';
 export class JwtAuthService {
   authChange = new Subject<boolean>();
   private isAuthenticated = false;
-  private user: User;
+  // private user: User;
 
   constructor(private router: Router, private afAuth: AngularFireAuth, private writingService: WritingService) { }
+
+  initAuthListener() {
+    this.afAuth.authState.subscribe(user => {
+      if (user) { 
+        this.isAuthenticated = true;
+        this.authChange.next(true);
+        this.router.navigate(['/writing']) 
+      } else {
+        this.writingService.cancelSubscriptions();
+        this.authChange.next(false);
+        this.router.navigate(['/login'])
+        this.isAuthenticated = false;
+      }
+    })
+  };
 
   registerUser(authData: AuthData) {
     // this.user = {
@@ -26,13 +41,13 @@ export class JwtAuthService {
       authData.email,
       authData.password
     )
-    .then(result => {
-      console.log(result);
-      this.authSuccessful();
-    })
-    .catch(error => {
-      console.log(error);
-    }); 
+      .then(result => {
+        console.log(result);
+        // this.authSuccessful();
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   login(authData: AuthData) {
@@ -44,7 +59,7 @@ export class JwtAuthService {
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         console.log(result);
-        this.authSuccessful();
+        // this.authSuccessful()/;
       })
       .catch(error => {
         console.log(error);
@@ -52,15 +67,14 @@ export class JwtAuthService {
   }
 
   logout() {
-    this.writingService.cancelSubscriptions();
+    // this.writingService.cancelSubscriptions();
     // this.user = null;
-    this.authChange.next(false);
-    this.router.navigate(['/login'])
-    this.isAuthenticated = false;
+    this.afAuth.auth.signOut();
+   
   }
 
   // getUser() {
-    // returning new object with da spread operator
+  // returning new object with da spread operator
   //   return { ...this.user };
   // }
 
@@ -68,9 +82,9 @@ export class JwtAuthService {
     return this.isAuthenticated;
   }
 
-  private authSuccessful() {
-    this.isAuthenticated = true;
-    this.authChange.next(true);
-    this.router.navigate(['/writing'])
-  }
+  // private authSuccessful() {
+  //   this.isAuthenticated = true;
+  //   this.authChange.next(true);
+  //   this.router.navigate(['/writing'])
+  // }
 }

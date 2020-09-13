@@ -1,5 +1,5 @@
 <hr>
-   <h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
+<h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
 <hr>
 <mat-tab-group mat-align-tabs="center">
 
@@ -8,7 +8,8 @@
 
       <section class="signup-form">
 
-        <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleJwtLogin(f)" #f="ngForm">
+        <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="handleJwtLogin()">
+          <!-- #f="ngForm"> -->
 
           <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
           <div class="welcome alert  " *ngIf='!invalidLogin'>
@@ -16,32 +17,41 @@
           </div>
           <!---->
           <mat-form-field appearance="fill">
-            <input type="email" matInput placeholder="Email" ngModel name="email" #email />
-          </mat-form-field> 
+            <input type="email" matInput placeholder="Email" formControlName="email">
+            <!-- ngModel name="email" #email /> -->
+            <!-- <mat-hint>Please enter a valid email.</mat-hint> -->
+            <mat-error>Invalid or missing email.</mat-error>
+          </mat-form-field>
 
           <mat-form-field appearance="fill">
-            <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password />
+            <input type="password" matInput placeholder="Password: pass" formControlName="password">
+            <!-- ngModel name="password" #password /> -->
+            <!-- <mat-hint>Please enter your password.</mat-hint> -->
+            <mat-error>Missing password.</mat-error>
           </mat-form-field>
           <hr>
           <div class="row">
-            <button type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
+            <button type="submit" mat-raised-button color="primary" >SIGN ON</button>
+            <!-- [disabled]="loginform.invalid" -->
+            &nbsp;
             <button mat-raised-button color="basic">CANCEL</button>
           </div>
         </form>
-          <hr>
-          
-          <!--ADMIN-->
-          <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
+        <hr>
 
-          <mat-form-field  >
+        <!--ADMIN-->
+        <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleAdminAuthLogin(fAdmin)"
+          #fAdmin="ngForm">
+
+          <mat-form-field>
             <input type="text" matInput placeholder="Admin: user" ngModel name="username" #username />
           </mat-form-field>
 
-          <mat-form-field  >
+          <mat-form-field>
             <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password />
           </mat-form-field>
           <hr>
-          
+
           <div class="row">
             <button type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
             <button mat-raised-button color="basic">CANCEL</button>
@@ -61,11 +71,10 @@
 
           <div class="welcome alert  ">
           </div>
- 
+
           <!-- email (Used for User Auth) -->
           <mat-form-field appearance="fill">
-            <input type="email" matInput placeholder="email" ngModel name="email" required
-              #emailInput="ngModel">
+            <input type="email" matInput placeholder="email" ngModel name="email" required #emailInput="ngModel">
             <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
             <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
           </mat-form-field>
@@ -74,7 +83,7 @@
           <mat-form-field appearance="fill">
             <input type="text" matInput placeholder="username" ngModel name="username" required
               #usernameInput="ngModel">
-            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error> 
+            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill">

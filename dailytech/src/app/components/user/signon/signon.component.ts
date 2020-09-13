@@ -51,13 +51,13 @@ export class SignonComponent implements OnInit {
   } 
 
     // USER AUTHENTICATION 
-  handleJwtLogin(form:NgForm){
-    console.log(form);
+  handleJwtLogin(){  //(form:NgForm){
+    // console.log(form);
     
     this.jwtAuthService.login({
-      username: form.value.username,
-      email: form.value.email, 
-      password: form.value.password
+      username: this.loginForm.value.username,
+      email: this.loginForm.value.email, 
+      password: this.loginForm.value.password
     });
    
   }
