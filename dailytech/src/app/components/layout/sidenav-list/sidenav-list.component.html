@@ -33,7 +33,7 @@
   </a>
   
   <mat-list-item>
-    <button mat-icon-button *ngIf="adminAuthService.isAdminLoggedIn() || isAuth" routerLink="/" (click)="authService.logout();onLogout()">
+    <button mat-icon-button *ngIf="adminAuthService.isAdminLoggedIn() || isAuth" routerLink="/" (click)="onLogout()">
       <mat-icon>eject</mat-icon>
       <span class="nav-caption daily-tech monoton">Logout</span>
     </button>

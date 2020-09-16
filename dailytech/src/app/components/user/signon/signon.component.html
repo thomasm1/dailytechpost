@@ -47,8 +47,9 @@
           <hr>
           
           <div class="row">
-            <button type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
-            <button mat-raised-button color="basic">CANCEL</button>
+            <button  *ngIf="!isLoading"  type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
+            <button  *ngIf="!isLoading" mat-raised-button color="basic">CANCEL</button>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
           </div>
         </form>
 
