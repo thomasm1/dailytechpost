@@ -17,7 +17,7 @@
             </li>
 
             <li>
-                <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">ADMIN CONSOLE</a>
+                <a *ngIf="adminAuthService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">ADMIN CONSOLE</a>
             </li> 
            
             <li>
@@ -25,16 +25,14 @@
             </li>
 
             <li>
-                <a *ngIf="!authService.isAdminLoggedIn() && !isAuth" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
+                <a *ngIf="!adminAuthService.isAdminLoggedIn() && !isAuth" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
             </li>
         
             <li>
-                <a *ngIf="authService.isAdminLoggedIn() || isAuth" routerLink="/" (click)="onLogout();authService.logout()"
+                <a *ngIf="adminAuthService.isAdminLoggedIn() || isAuth" routerLink="/" (click)="onLogout();authService.logout()"
                     class="nav-link daily-tech monoton">SIGN OUT</a>
             </li>
-            <!-- <li>
-                <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/register" class="nav-link">REGISTER</a>
-            </li> -->
+        
         </ul>
     </div>
 </mat-toolbar>

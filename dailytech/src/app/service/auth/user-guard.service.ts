@@ -7,13 +7,13 @@ import {
 } from '@angular/router';
 
 import { JwtAuthService } from './jwt-auth.service';
-import { HardcodedAuthService } from './hardcoded-auth.service';
+import { AdminAuthenticationService } from './admin-authentication.service';
 
 @Injectable()
 export class UserGuardService implements CanActivate {
 
   constructor(
-    private hardcodedAuthService: HardcodedAuthService,
+    private adminAuthService: AdminAuthenticationService,
     private authService: JwtAuthService,
     private router: Router
   ) { }
@@ -21,7 +21,7 @@ export class UserGuardService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     
         // USER AUTH  ----------------------   ADMIN AUTH 
-    if (this.authService.isAuth() || this.hardcodedAuthService.isAdminLoggedIn()) {
+    if (this.authService.isAuth() || this.adminAuthService.isAdminLoggedIn()) {
       return true;
     } else {
       this.router.navigate(['/login']);

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, OnDestroy, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { HardcodedAuthService } from 'src/app/service/auth/hardcoded-auth.service';
+import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
 import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class SidenavListComponent implements OnInit, OnDestroy {
   authSubscription: Subscription;
 
   constructor(private route: ActivatedRoute,
-    public authService: HardcodedAuthService,
+    public adminAuthService: AdminAuthenticationService,
     private jwtAuthService: JwtAuthService) { }
 
   ngOnInit() {
@@ -40,7 +40,7 @@ export class SidenavListComponent implements OnInit, OnDestroy {
   
   onLogout() {
     this.onClose();
-    this.authService.logout();
+    this.adminAuthService.logout();
 
     // BUG FIX TEMPORARY
     this.isAuth = false;

@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
 import { JwtAuthService } from './service/auth/jwt-auth.service';
 import { WritingService } from './service/writing.service';
+import { UiService } from './service/ui.service';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -83,6 +84,7 @@ import { WritingComponent } from './components/writing/writing.component';
   providers: [
     JwtAuthService,
     WritingService,
+    UiService,
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
   ],
   bootstrap: [AppComponent],

@@ -12,7 +12,7 @@ export const AUTHENTICATED_USER = 'AuthenticatedUser'
 })
 
 
-export class BasicAuthenticationService {
+export class AdminAuthenticationService {
 
   baseUrl:string;
 
@@ -50,7 +50,7 @@ export class BasicAuthenticationService {
       return sessionStorage.getItem(TOKEN)
   }
 
-  isUserLoggedIn() {
+  isAdminLoggedIn() {
     let user = sessionStorage.getItem(AUTHENTICATED_USER)
     return !(user === null)
   }

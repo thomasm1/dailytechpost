@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { HardcodedAuthService } from '../../service/auth/hardcoded-auth.service';
+import { AdminAuthenticationService } from '../../service/auth/admin-authentication.service';
 import { JwtAuthService } from '../../service/auth/jwt-auth.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   authSubscription: Subscription;
 
   constructor(private route: ActivatedRoute,
-    public authService: HardcodedAuthService,
+    public adminAuthService: AdminAuthenticationService,
     private jwtAuthService: JwtAuthService
   ) { }
 
@@ -37,7 +37,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
-    this.authService.logout();
+    this.adminAuthService.logout();
 
     // BUG FIX TEMPORARY
     this.isAuth = false;

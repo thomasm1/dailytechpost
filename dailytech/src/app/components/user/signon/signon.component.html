@@ -7,22 +7,20 @@
     <div class="temp">
 
       <section class="signup-form">
-
-        <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleJwtLogin(f)" #f="ngForm">
-
-          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-          <div class="welcome alert  " *ngIf='!invalidLogin'>
-
-          </div>
+  <!-- <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleJwtLogin(f)" #f="ngForm"> -->
+    <form fxLayout="column" fxLayoutAlign="center center"  [formGroup]="loginForm" (ngSubmit)="handleJwtLogin()" > 
+       
+            <h6>LOGIN</h6>
           <!---->
           <mat-form-field appearance="fill">
-            <input type="email" matInput placeholder="Email" ngModel name="email" #email />
-          </mat-form-field> 
+          <!-- <input type="email" matInput placeholder="Email" ngModel name="email" #email /> -->
+          <input type="email" matInput placeholder="Email"   name="email"  formControlName="email" />
+        </mat-form-field> 
 
           <mat-form-field appearance="fill">
-            <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password />
-          </mat-form-field>
-          <hr>
+             <!-- <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password /> -->
+             <input type="password" matInput placeholder="Password: pass"   name="password" formControlName="password" />
+           </mat-form-field> 
           <div class="row">
             <button type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
             <button mat-raised-button color="basic">CANCEL</button>
@@ -31,8 +29,14 @@
           <hr>
           
           <!--ADMIN-->
-          <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
-
+          
+          <h6  class="admin-flag" ><a *ngIf="!adminFlag" class="admin-flag" (click)="adminOpen()">ADMIN LOGIN</a></h6> 
+          <h6  class="admin-flag" ><a *ngIf="adminFlag" class="admin-flag" (click)="adminOpen()">CLOSE</a></h6> 
+          <form *ngIf="adminFlag"  fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
+       
+            <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          
+  
           <mat-form-field  >
             <input type="text" matInput placeholder="Admin: user" ngModel name="username" #username />
           </mat-form-field>
