@@ -1,9 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
-import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms'; 
 import { Subscription } from 'rxjs';
+
+import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
+import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import { UiService } from 'src/app/service/ui.service';
 
 @Component({
@@ -94,8 +95,11 @@ export class SignonComponent implements OnInit, OnDestroy {
       )
   }
 
+ 
   ngOnDestroy() {
-    this.loadingSubs.unsubscribe();
+    if (this.loadingSubs) {
+      this.loadingSubs.unsubscribe();
+    }
   }
   
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core'; 
+import { Subscription } from 'rxjs'; 
 
 import { WritingService } from '../../service/writing.service';
 
@@ -26,4 +26,9 @@ export class WritingComponent implements OnInit {
     );
   }
 
+  ngOnDestroy() {
+    if (this.writingSubscription) {
+      this.writingSubscription.unsubscribe();
+    }
+  }
 }

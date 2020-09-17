@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../../../service/writing.service';
 
@@ -10,9 +11,7 @@ import { WritingService } from '../../../service/writing.service';
   styleUrls: ['./current-writing.component.css']
 })
 export class CurrentWritingComponent implements OnInit {
-  @Output() writingExit = new EventEmitter();
-
-
+   
   progress = 0;
   timer: number;
   news: string[];
@@ -21,7 +20,7 @@ export class CurrentWritingComponent implements OnInit {
 
   ngOnInit() {
     this.startOrResumeWriting();
-    // this.news =  this.writingService.getWritingExercise().news;
+     
   }
 
   startOrResumeWriting() {
@@ -44,8 +43,7 @@ export class CurrentWritingComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // this.writingExit.emit();
+      if (result) { 
         this.writingService.cancelWriting(this.progress);
       } else {
         this.startOrResumeWriting();

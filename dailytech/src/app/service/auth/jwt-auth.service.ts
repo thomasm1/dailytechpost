@@ -3,6 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
+
 import { AuthData } from '../../models/auth-data.model';
 import { WritingService } from '../writing.service';
 import { UiService } from '../ui.service';

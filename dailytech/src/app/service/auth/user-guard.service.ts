@@ -3,14 +3,16 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  Router
+  Router, 
+  CanLoad,
+  Route
 } from '@angular/router';
 
 import { JwtAuthService } from './jwt-auth.service';
 import { AdminAuthenticationService } from './admin-authentication.service';
 
 @Injectable()
-export class UserGuardService implements CanActivate {
+export class UserGuardService implements CanActivate, CanLoad {
 
   constructor(
     private adminAuthService: AdminAuthenticationService,
@@ -22,6 +24,13 @@ export class UserGuardService implements CanActivate {
     
         // USER AUTH  ----------------------   ADMIN AUTH 
     if (this.authService.isAuth() || this.adminAuthService.isAdminLoggedIn()) {
+      return true;
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
+  canLoad(route: Route) {
+    if (this.authService.isAuth()) {
       return true;
     } else {
       this.router.navigate(['/login']);

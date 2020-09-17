@@ -43,7 +43,10 @@ export class PastWritingsComponent implements OnInit, AfterViewInit, OnDestroy {
   blogFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+ 
   ngOnDestroy() {
-    this.exChangedSubscription.unsubscribe();
+    if (this.exChangedSubscription) {
+      this.exChangedSubscription.unsubscribe();
+    }
   }
 }

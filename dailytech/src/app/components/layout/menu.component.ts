@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AdminAuthenticationService } from '../../service/auth/admin-authentication.service';
 import { JwtAuthService } from '../../service/auth/jwt-auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit, OnDestroy {
-
+export class MenuComponent implements OnInit, OnDestroy { 
   @Output() sidenavToggle = new EventEmitter<void>();
   variable: string = '';
 

@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { WritingBlog } from '../models/writing-blogs.model';
+import { UiService } from '../service/ui.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,10 +32,11 @@ export class WritingService {
   // private writingBlogs: WritingBlog[] = [];
   private firebaseSubs: Subscription[] = [];
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore,  private uiService: UiService) { }
 
   fetchAvailableWritingBlogs() {
     // return this.availableWritingBlogs.slice();
+    this.uiService.loadingStateChanged.next(true);
     this.firebaseSubs.push(
       this.db
       .collection('writing-blogs')
@@ -57,8 +59,11 @@ export class WritingService {
         console.log(writingBlogs);
         this.availableWritingBlogs = writingBlogs;
         this.writingsChanged.next([...this.availableWritingBlogs]);
-      })
-    );  // END FIREBASE SUBSCRIPTION ARRAY
+      }, error => {
+        this.uiService.loadingStateChanged.next(false);
+        this.uiService.showSnackBar('Database is down, and fetching Blogs failed, please try again later', null, 3000);
+        this.writingsChanged.next(null); 
+       }));  // END FIREBASE SUBSCRIPTION ARRAY
   }
 
   startWriting(selectedId: string) {

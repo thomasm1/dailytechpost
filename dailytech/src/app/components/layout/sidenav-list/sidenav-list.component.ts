@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, OnDestroy, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter , Output, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
 import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
@@ -30,9 +30,6 @@ export class SidenavListComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnDestroy() {
-    this.authSubscription.unsubscribe();
-  }
 
   onClose() {
     this.closeSidenav.emit();
@@ -44,5 +41,11 @@ export class SidenavListComponent implements OnInit, OnDestroy {
 
     // BUG FIX TEMPORARY
     this.isAuth = false;
+  }
+  
+  ngOnDestroy() {
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
+    }
   }
 }
