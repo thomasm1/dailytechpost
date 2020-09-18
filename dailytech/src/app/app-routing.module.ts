@@ -14,6 +14,7 @@ import { WritingComponent } from './components/writing/writing.component';
 import { RouteGuardService } from './service/auth/route-guard.service';
 import { UserGuardService } from './service/auth/user-guard.service';
 
+
 const routes: Routes = [
   { path: '', component: BlogsListComponent },
   { path: 'login', component: SignonComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent },
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
+  // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [UserGuardService] },
   { path: '**', component: PostsViewerComponent },
 ];
 

@@ -16,7 +16,12 @@ import { SignonComponent } from './components/user/signon/signon.component';
 // import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
-  declarations: [RegisterComponent, SignonComponent, TitleBarComponent,  AdminComponent, PostsListComponent],
+  declarations: [
+    RegisterComponent, 
+    SignonComponent, 
+    TitleBarComponent,  
+    AdminComponent, 
+    PostsListComponent],
   imports: [
     CommonModule,
     FormsModule,

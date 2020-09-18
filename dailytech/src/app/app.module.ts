@@ -31,13 +31,14 @@ import { SidenavListComponent } from './components/layout/sidenav-list/sidenav-l
 import { FooterComponent } from './components/layout/footer.component';
 import { MenuComponent } from './components/layout/menu.component';
 import { PostCancelComponent } from './components/post-dir/post-cancel/post-cancel.component'; 
-import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
-import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
-import { PastWritingsComponent } from './components/writing/past-writings/past-writings.component';
-import { StopWritingComponent } from './components/writing/current-writing/stop-writing.component';
-import { WritingComponent } from './components/writing/writing.component';
+// import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
+// import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
+// import { PastWritingsComponent } from './components/writing/past-writings/past-writings.component';
+// import { StopWritingComponent } from './components/writing/current-writing/stop-writing.component';
+// import { WritingComponent } from './components/writing/writing.component';
+import { WritingModule } from './writing.module';
 import { AuthModule } from './auth.module';
-
+import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
   declarations: [
@@ -56,11 +57,11 @@ import { AuthModule } from './auth.module';
     // TitleBarComponent,
     BlogsListComponent,
     PostCancelComponent,
-    CurrentWritingComponent,
-    NewWritingComponent,
-    PastWritingsComponent,
-    StopWritingComponent,
-    WritingComponent 
+          // CurrentWritingComponent,
+          // NewWritingComponent,
+          // PastWritingsComponent,
+          // StopWritingComponent,
+          // WritingComponent 
   ],
   imports: [
     MatDialogModule,
@@ -75,8 +76,11 @@ import { AuthModule } from './auth.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    
+
+    WritingModule,
     AuthModule,
+    WritingRoutingModule,
+    
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
