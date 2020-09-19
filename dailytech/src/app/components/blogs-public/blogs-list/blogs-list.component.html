@@ -1,0 +1,93 @@
+<hr>
+   <h2> <span class="daily-title monoton text-box">OUR DAILY TECH</span> </h2>
+<hr>
+<mat-tab-group mat-align-tabs="center">
+
+    <mat-tab label="Web Dev Affairs">
+        <div class="temp">
+            <ul *ngFor="let blog of blogs"  class="view-blog">
+                <mat-card (click)="viewBlog(blog.id)">
+                    <li>{{blog.date}} &nbsp;   </li>
+                    <li>{{blog.title}}</li>
+                    <li>{{blog.cat3}}</li> 
+                </mat-card>
+
+            </ul>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Musing Blockchain">
+        <div class="temp">
+
+            <ul *ngFor="let blog of blogs">
+                <mat-card  (click)="viewBlog(blog.id)" class="view-blog">
+                    <li>{{blog.date}} </li>
+                    <li>{{blog.title}}</li>
+                    <li>{{blog.cat3}}</li> 
+                </mat-card>
+
+            </ul>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="A.I.Now.">
+        <div class="temp">
+            <ul *ngFor="let blog of blogs">
+                <mat-card (click)="viewBlog(blog.id)" class="view-blog">
+                    <li>{{blog.date}} </li>
+                    <li>{{blog.title}}</li>
+                    <li>{{blog.cat3}}</li> 
+                </mat-card>
+            </ul>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Sociology Today">
+        <div class="temp">
+            <ul *ngFor="let blog of blogs">
+                <mat-card (click)="viewBlog(blog.id)" class="view-blog">
+                    <li>{{blog.date}}  </li>
+                    <li>{{blog.title}}</li>
+                    <li>{{blog.cat3}}</li> 
+                </mat-card>
+
+            </ul>
+        </div>
+    </mat-tab>
+    <mat-tab label="Quantum Data">
+        <div class="temp">
+            <ul *ngFor="let blog of blogs">
+                <mat-card (click)="viewBlog(blog.id)" class="view-blog">
+                    <li>{{blog.date}} </li>
+                    <li>{{blog.title}}</li>
+                    <li>{{blog.cat3}}</li> 
+                </mat-card>
+
+            </ul>
+        </div>
+    </mat-tab>
+    
+    <!-- <mat-tab label="Quantum Data">
+        <table mat-table class="mat-elevation-z8" *ngFor="let blog of blogs"> 
+           
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let blog"> {{blog.date}}</td>
+            </ng-container> 
+            
+            <ng-container matColumnDef="cat3">
+                <th mat-header-cell *matHeaderCellDef> Category </th>
+                <td mat-cell *matCellDef="let blog">{{blog.cat3}}</td>
+            </ng-container> 
+          
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Title </th>
+                <td mat-cell *matCellDef="let blog">{{blog.title}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-tab> -->
+
+</mat-tab-group>

@@ -19,4 +19,20 @@ export class BlogComponent implements OnInit {
     // this.blogClicked.emit();
     this.blogsService.hideBlog(this.blogName);
   }
+  // addBlog(blogName: string) {
+  //   this.blogs.push(blogName);
+  //   this.blogsUpdated.next();
+  // }
+
+  // getBlogsArray() {
+  //   console.log(this.blogs);
+  //   return [...this.blogs];
+  // }
+
+  // hideBlog(blogName: string) {
+  //   this.blogs = this.blogs.filter(b => b !== blogName);
+  //   this.blogsUpdated.next();
+  // }
+
+
 }
