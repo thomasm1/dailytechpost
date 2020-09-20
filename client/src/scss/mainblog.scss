@@ -1,8 +1,8 @@
- 
 #blogs {
-    cursor:pointer;
-    padding:0px;
+    cursor: pointer;
+    padding: 0px;
 }
+
 .blog {
     float: left;
     min-height: 500px;
@@ -12,50 +12,44 @@
     background-color: white;
     padding: 0px;
     margin: 0px;
+
+    & h2, h3 {
+        text-shadow: 3px 3px 3px #aaa;
+        font-size: 1em;
+        padding: 3px 4px 3px 4px;
+        margin-bottom: 5px;
+    }
+
+    & p {
+        line-height: 1.2em;
+    }
 }
 
-.blog h2, h3 {
-    text-shadow: 3px 3px 3px #aaa;
-    font-size: 1em; 
-    padding: 3px 4px 3px 4px;   
-    margin-bottom: 5px;  
+.mod-behave {
+    text-align: justify;
+    padding: 4%;
+    margin: 2%;
+    max-height: 800px;
+    color: darkslategray;
+    background-color: rgb(206, 229, 248);
+    overflow-y: scroll;
 }
 
-.blog p {
-    line-height: 1.2em;
+.longtitle * {
+    margin-top: 20px;
 }
 
-
- .mod-behave {
-     text-align: justify;
-     padding: 4%;
-     margin: 2%;
-     max-height: 800px;
-     color: darkslategray;
-     background-color: rgb(206, 229, 248);
-     overflow-y: scroll;
- }
-
- .longtitle * {
-     margin-top: 20px;
- }
-
- .title {
-     color: darkblue;
-     text-align: center;
-     font-size: 105%;
-     margin-top: 10px;
- }
-
- .featured {
-     font-weight: 300;
- }
- .white {
-    color: white !important;
+.title {
+    color: darkblue;
+    text-align: center;
+    font-size: 105%;
+    margin-top: 10px;
 }
-.sky {
-    color: skyblue !important;
+
+.featured {
+    font-weight: 300;
 }
+
 #headerquote {
     padding-top: 2%;
     padding-left: 4%;
@@ -65,58 +59,58 @@
     font-weight: 500;
     color: rgb(212, 229, 250);
     line-height: 1.1rem;
-overflow-y:hidden;
+    overflow-y: hidden;
+
+    & > .mb-4 {
+        line-height: 2rem;
+    }
 }
 
-#headerquote>.mb-4 {
-    line-height: 2rem;
+.author {
+    font-size: 125%;
+    text-align: center;
+    color: slategray;
+    border-bottom: 1px solid black;
+    padding-bottom: 12pt;
+    margin-left: 30pt;
+    margin-right: 30pt;
 }
 
- .author {
-     font-size: 125%;
-     text-align: center;
-     color: slategray;
-     border-bottom: 1px solid black;
-     padding-bottom: 12pt;
-     margin-left: 30pt;
-     margin-right: 30pt;
- }
+.chapternumber {
+    margin: 4px 0px 8px;
+    color: blue;
+}
 
- .chapternumber {
-     margin: 4px 0px 8px;
-     color: blue;
- }
+.dailytitle {
+    text-align: left;
+    color: darkslategray;
+    font-family: 'Roboto';
+    padding: 3px 0px;
+    margin: 5px 0px 5px;
+}
 
- .dailytitle {
-     text-align: left;
-     color: darkslategray;
-     font-family: 'Roboto';
-     padding: 3px 0px;
-     margin: 5px 0px 5px;
- }
+h6.dailytitle {
+    text-align: center;
+    font-weight: 600;
 
- h6.dailytitle.chapternumber {
-     margin-bottom: 5px;
-     padding-bottom: 10px;
-     line-height: 1.2rem;
- }
+    &.chapternumber {
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        line-height: 1.2rem;
+    }
+}
 
- h6.dailytitle {
-     text-align: center;
-     font-weight: 600;
- }
+i {
+    font-weight: 500;
+}
 
- i {
-     font-weight: 500;
- }
+strong {
+    font-weight: 700;
+}
 
- strong {
-     font-weight: 700;
- }
-
- .chaptertitle {
-     margin-left: 30pt;
- }
+.chaptertitle {
+    margin-left: 30pt;
+}
 
 /* Enlarge the first letter of a paragraph 
 .fourthp:first-letter {
@@ -124,77 +118,77 @@ overflow-y:hidden;
     float: left;
     line-height: 1;
   }*/
- .firstparagraph::first-letter {
-     font-size: 200%;
-     font-weight: bold;
-     border: solid thin darkslategrey;
-     padding: 4pt;
-     margin: 5px 4px 0px 0px;
- }
+.firstparagraph::first-letter {
+    font-size: 200%;
+    font-weight: bold;
+    border: solid thin darkslategrey;
+    padding: 4pt;
+    margin: 5px 4px 0px 0px;
+}
+
 .firstp::first-letter {
-    font-size:200%;
-    font-weight:bold;
+    font-size: 200%;
+    font-weight: bold;
     border: solid thin white;
     padding: 4pt;
     margin: 5px 4px 0px 0px;
-
 }
- img.rounded-circle {
-     opacity: 1;
- }
 
- img#tom {
-     opacity: 1;
-     background-color: white;
- }
+img {
+    &.rounded-circle {
+        opacity: 1;
+    }
 
- a.trans-back {
-     background-color: blue;
- }
+    &#tom {
+        opacity: 1;
+        background-color: white;
+    }
+}
 
- .quote {
-     margin: 0px 20px 10px 20px;
-     line-height: 1.2rem;
-     font-weight: 500;
- }
+a.trans-back {
+    background-color: blue;
+}
+
+.quote {
+    margin: 0px 20px 10px 20px;
+    line-height: 1.2rem;
+    font-weight: 500;
+}
+
 .quotelong {
-
     margin: 0px  0px 10px 20px;
     line-height: 1.2rem;
     font-weight: 500;
 }
- .footnotes {
-     margin-top: 30px;
-     text-align: left;
- }
 
- .dailytech {
-     padding-top: 3%;
-     padding-bottom: 2%;
-     font-family: 'Monoton';
-     font-weight: 100;
-     font-size: 1.5rem;
-     font-family:'Monoton';
- }
- 
- .subdailytech {
-     font-family: 'Monoton';
-     font-weight: 100;
-     font-size: 1.2rem;
-     line-height: 1.3rem;
-     text-align: center;
-     color: darkblue;
-     font-family:'Monoton';
- }
+.footnotes {
+    margin-top: 30px;
+    text-align: left;
+}
 
- #tom {
-     opacity: 1;
- }
+.dailytech {
+    padding-top: 3%;
+    padding-bottom: 2%;
+    font-family: 'Monoton';
+    font-weight: 100;
+    font-size: 1.5rem;
+    font-family: 'Monoton';
+}
 
- .hidden {
-     display: none;
- }
+.subdailytech {
+    font-family: 'Monoton';
+    font-weight: 100;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    text-align: center;
+    color: darkblue;
+    font-family: 'Monoton';
+}
 
- .border {
-     border: 1px solid white;
- }
+#tom {
+    opacity: 1;
+}
+
+.border {
+    border: 1px solid white;
+}

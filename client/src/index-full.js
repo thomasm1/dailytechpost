@@ -3,6 +3,7 @@
 //require('./js/force');  
 
 require('./js/daily-nav'); 
+require('./js/marsreader');     
      
 require('./js/blog-draft-2020mar');  
 require('./js/blog-draft-may19');
@@ -19,7 +20,6 @@ require('./js/blog-draft-may');
 require('./js/blog-draft-apr');
 require('./js/blog-draft-mar');
 require('./js/blog-draft-feb'); 
-require('./js/marsreader');     
     
  // modal
 var modal = document.getElementById('msimpleModal');  
