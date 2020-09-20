@@ -10,7 +10,7 @@ import { UiService } from '../../../service/ui.service';
 @Component({
   selector: 'app-new-writing',
   templateUrl: './new-writing.component.html',
-  styleUrls: ['./new-writing.component.css']
+  styleUrls: ['./new-writing.component.scss']
 })
 export class NewWritingComponent implements OnInit, OnDestroy {
   // @Output() writingStart = new EventEmitter<void>();

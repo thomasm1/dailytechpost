@@ -4,7 +4,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 @Component({
   selector: 'app-animation',
   templateUrl: './animation.component.html',
-  styleUrls: ['./animation.component.css'],
+  styleUrls: ['./animation.component.scss'],
   animations: [
     trigger('changeState', [
       state('state1', style({

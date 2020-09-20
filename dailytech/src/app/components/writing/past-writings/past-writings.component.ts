@@ -12,7 +12,7 @@ import { WritingBlog } from '../../../models/writing-blogs.model';
 @Component({
   selector: 'app-past-writings',
   templateUrl: './past-writings.component.html',
-  styleUrls: ['./past-writings.component.css']
+  styleUrls: ['./past-writings.component.scss']
 })
 export class PastWritingsComponent implements OnInit, AfterViewInit, OnDestroy {
 
