@@ -8,7 +8,7 @@ import { WritingService } from '../../../service/writing.service';
 @Component({
   selector: 'app-current-writing',
   templateUrl: './current-writing.component.html',
-  styleUrls: ['./current-writing.component.css']
+  styleUrls: ['./current-writing.component.scss']
 })
 export class CurrentWritingComponent implements OnInit {
    

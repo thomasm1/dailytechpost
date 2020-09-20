@@ -32,9 +32,9 @@ import { FooterComponent } from './components/layout/footer.component';
 import { MenuComponent } from './components/layout/menu.component';
 import { PostCancelComponent } from './components/post-dir/post-cancel/post-cancel.component';
 
-import { WritingModule } from './writing.module';
 import { AuthModule } from './auth.module';
-import { WritingRoutingModule } from './writing-routing.module';
+import { WritingModule } from './writing.module';
+// import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
   declarations: [
@@ -46,14 +46,16 @@ import { WritingRoutingModule } from './writing-routing.module';
     PostComponent,
     PostsViewerComponent,
     BlogComponent,
+    BlogsListComponent,
+    PostCancelComponent,
+    
     /////// AUTH MODULE ///////
     // AdminComponent,
     // PostsListComponent,
     // RegisterComponent,
     // SignonComponent,
     // TitleBarComponent,
-    BlogsListComponent,
-    PostCancelComponent,
+
     ////// WRITING MODULE //////
     // CurrentWritingComponent,
     // NewWritingComponent,
@@ -77,7 +79,7 @@ import { WritingRoutingModule } from './writing-routing.module';
 
     WritingModule,
     AuthModule,
-    WritingRoutingModule,
+    // WritingRoutingModule,
 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

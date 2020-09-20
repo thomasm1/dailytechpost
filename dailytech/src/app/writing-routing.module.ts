@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+// import { NgModule } from '@angular/core';
+// import { Routes, RouterModule } from '@angular/router';
  
-import { WritingComponent } from './components/writing/writing.component'; 
+// import { WritingComponent } from './components/writing/writing.component'; 
 
-const routes: Routes = [
-  { path: '', component: WritingComponent } 
-];
+// const routes: Routes = [
+//   { path: '', component: WritingComponent } 
+// ];
 
-@NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
-})
-export class WritingRoutingModule {}
+// @NgModule({
+//   imports: [
+//     RouterModule.forChild(routes)
+//   ],
+//   exports: [RouterModule]
+// })
+// export class WritingRoutingModule {}

@@ -7,7 +7,7 @@ import { PostDataService } from '../../../service/data/post-data.service';
 @Component({
   selector: 'app-posts-viewer',
   templateUrl: './posts-viewer.component.html',
-  styleUrls: ['./posts-viewer.component.css']
+  styleUrls: ['./posts-viewer.component.scss']
 })
 export class PostsViewerComponent implements OnInit, OnDestroy {
 

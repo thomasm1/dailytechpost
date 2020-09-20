@@ -10,7 +10,7 @@ import { UiService } from 'src/app/service/ui.service';
 @Component({
   selector: 'app-signon',
   templateUrl: './signon.component.html',
-  styleUrls: ['./signon.component.css']
+  styleUrls: ['./signon.component.scss']
 })
 export class SignonComponent implements OnInit, OnDestroy {
   maxDate;
