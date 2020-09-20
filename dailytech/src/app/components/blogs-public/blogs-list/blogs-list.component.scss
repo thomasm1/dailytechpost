@@ -1,3 +1,5 @@
+$color-primary-text:  rgb(19, 1, 179); 
+
  mat-card {
      background: rgba(191, 185, 248, 0.233);
  }
@@ -16,9 +18,9 @@
      margin-right: 10px;
  }
  
- .daily-title {
-     color: rgb(61, 43, 226);
- }
+ .daily-tech {
+    color: $color-primary-text;
+}
  
  div.temp {
      max-height: 600px;

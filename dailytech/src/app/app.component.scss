@@ -1,0 +1,15 @@
+
+mat-sidenav-container { 
+    background-image: url("../assets/bluechipTile.jpg");
+}
+
+mat-sidenav-content,
+mat-sidenav {
+    height: 100%;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.497), rgb(0, 0, 139));
+}
+
+mat-sidenav {
+    width: 250px;
+}
+ 

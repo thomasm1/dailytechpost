@@ -7,7 +7,7 @@ import { Post } from 'src/app/models/post.model';
 @Component({
   selector: 'app-blogs-list',
   templateUrl: './blogs-list.component.html',
-  styleUrls: ['./blogs-list.component.css']
+  styleUrls: ['./blogs-list.component.scss']
 })
 export class BlogsListComponent implements OnInit {
 
