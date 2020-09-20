@@ -2,11 +2,13 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: [
-      'babel-polyfill',
+    app1: 
+    // [  'babel-polyfill',
       './client/src/index1.js',
-      './client/src/index2.js',
-    ],
+    // ],
+    app2: './client/src/index2.js',
+    app3: './client/src/index3.js',
+    app4: './client/src/index4.js',
   },
   output: {
     path: path.resolve(__dirname, 'build'),

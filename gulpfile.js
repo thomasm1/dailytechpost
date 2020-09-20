@@ -8,7 +8,7 @@ const browserSync = require('browser-sync').create();
 function css() {
   return src('client/src/app.scss')
     .pipe(sass())
-    // .pipe(minifyCSS())
+    .pipe(minifyCSS())
     .pipe(dest('client/dist'))
     .pipe(browserSync.stream())
 }
