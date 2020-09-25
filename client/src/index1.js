@@ -7,8 +7,8 @@ require('./js/marsreader');
      
 require('./js/blog-draft-2020mar');  
 require('./js/blog-draft-may19');
-// require('./js/blog-draft-march19');
-// require('./js/blog-draft-jan19');
+require('./js/blog-draft-march19');
+require('./js/blog-draft-jan19');
 // require('./js/blog-draft-dec');
 // require('./js/blog-draft-nov');
 // require('./js/blog-draft-oct');

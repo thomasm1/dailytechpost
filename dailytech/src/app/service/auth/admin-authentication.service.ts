@@ -22,8 +22,8 @@ export class AdminAuthenticationService {
 
    }
 
-  executeAuthenticationService(username, password) { 
-    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+  executeAuthenticationService(adminName, password) {
+    let basicAuthHeaderString = 'Basic ' + window.btoa(adminName + ':' + password);
 
     let headers = new HttpHeaders({
         Authorization: basicAuthHeaderString
@@ -34,12 +34,12 @@ export class AdminAuthenticationService {
       {headers}).pipe(
         map(
           data => {
-            sessionStorage.setItem(AUTHENTICATED_USER, username);
+            sessionStorage.setItem(AUTHENTICATED_USER, adminName);
             sessionStorage.setItem(TOKEN, basicAuthHeaderString);
             return data;
           }
         )
-      ); 
+      );
   }
 
   getAuthenticatedUser() {

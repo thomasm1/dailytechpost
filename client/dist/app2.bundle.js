@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -69,7 +69,9 @@
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84,10 +86,10 @@
 // require('./js/blog-draft-may19');
 // require('./js/blog-draft-march19');
 // require('./js/blog-draft-jan19');
-__webpack_require__(6);
-__webpack_require__(7);
 __webpack_require__(8);
 __webpack_require__(9);
+__webpack_require__(10);
+__webpack_require__(11);
 // require('./js/blog-draft-aug');
 // require('./js/blog-draft-jul');
 // require('./js/blog-draft-june');
@@ -121,7 +123,7 @@ __webpack_require__(9);
 // };
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -428,7 +430,7 @@ var bloggerDec = function bloggerDec() {
 bloggerDec();
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -803,7 +805,7 @@ var bloggerNov = function bloggerNov() {
 bloggerNov();
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1079,7 +1081,7 @@ var bloggerOct = function bloggerOct() {
 bloggerOct();
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

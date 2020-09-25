@@ -1,34 +1,34 @@
  
 var bloggerMarch20 = function() {
  
-  var blogpost11 =  `<p>
-    </p>
-    <p class="quote">Graphene batteries are one of the fastest energy-storing solutions available, globally. Graphene utilized as electrode material in batteries needs to be of high quality, that is, single to few layered graphene.<sup>1</sup>
-    </p>
-    <p class="quote">
-    `
-     var blogcite11 =    ` 
-      <p>1. <a  target="_blank" href="https://nysenewstimes.com/huge-demand-for-graphene-battery-market-2020-statistics-facts-and-figures-growth-overview-size-swot-analysis-and-forecast-to-2026-by-cabot-corporation-nanoxplore-graphene-3d-lab/">https://nysenewstimes.com/huge-demand-for-graphene-battery-market-2020-statistics-facts-and-figures-growth-overview-size-swot-analysis-and-forecast-to-2026-by-cabot-corporation-nanoxplore-graphene-3d-lab/</a> 
-</p>
-<p>2. <a  target="_blank" href="https://www.graphene-info.com/graphene-batteries">https://www.graphene-info.com/graphene-batteries</a> </p>  
-<p>3. <a  target="_blank" href="https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/">https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/</a> 
-</p>  
-  `;
-    var blogpost10 = `<p>The Nuts &amp; Bolts of one of graphene's contributions ...
-    </p>
-    <p class="quote">When a lithium-ion battery is charging, lithium ions flow to the anode, which is typically made of a type of carbon called graphite. If you swap graphite for silicon, far more lithium ions can be stored in the anode, which increases the energy capacity of the battery. But packing all these lithium ions into the electrode causes it to swell like a balloon; in some cases, it can grow up to four times larger.
-<br /><br />
-The swollen anode can pulverize the nanoengineered silicon particles and rupture the protective barrier between the anode and the battery’s electrolyte, which ferries the lithium ions between the electrodes. Over time, crud builds up at the boundary between the anode and electrolyte. This both blocks the efficient transfer of lithium ions and takes many of the ions out of service. It quickly kills any performance improvements the silicon anode provided.
-<br /><br />
-One way out of this problem is to sprinkle small amounts of silicon oxide—better known as sand—throughout a graphite anode. This is what Tesla currently does with its batteries. Silicon oxide comes pre-puffed, so it reduces the stress on the anode from swelling during charging. But it also limits the amount of lithium that can be stored in the anode. Juicing a battery this way isn’t enough to produce double-digit performance gains, but it’s better than nothing.
-<br /><br />
-Cary Hayner, cofounder and CTO of NanoGraf, thinks it’s possible to get the best of silicon and graphite without the loss of energy capacity from silicon oxide. At NanoGraf, he and his colleagues are boosting the energy of carbon-silicon batteries by embedding silicon particles in graphene, graphite’s Nobel Prize-winning cousin. Their design uses a graphene matrix to give silicon room to swell and to protect the anode from damaging reactions with the electrolyte. Hayner says a graphene-silicon anode can increase the amount of energy in a lithium-ion battery by up to 30 percent.<sup>1</sup>
-    </p>
-    `
-     var blogcite10 =    ` 
-      <p>1. <a  target="_blank" href="https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/">https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/</a>  </p>
+//   var blogpost11 =  `<p>
+//     </p>
+//     <p class="quote">Graphene batteries are one of the fastest energy-storing solutions available, globally. Graphene utilized as electrode material in batteries needs to be of high quality, that is, single to few layered graphene.<sup>1</sup>
+//     </p>
+//     <p class="quote">
+//     `
+//      var blogcite11 =    ` 
+//       <p>1. <a  target="_blank" href="https://nysenewstimes.com/huge-demand-for-graphene-battery-market-2020-statistics-facts-and-figures-growth-overview-size-swot-analysis-and-forecast-to-2026-by-cabot-corporation-nanoxplore-graphene-3d-lab/">https://nysenewstimes.com/huge-demand-for-graphene-battery-market-2020-statistics-facts-and-figures-growth-overview-size-swot-analysis-and-forecast-to-2026-by-cabot-corporation-nanoxplore-graphene-3d-lab/</a> 
+// </p>
+// <p>2. <a  target="_blank" href="https://www.graphene-info.com/graphene-batteries">https://www.graphene-info.com/graphene-batteries</a> </p>  
+// <p>3. <a  target="_blank" href="https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/">https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/</a> 
+// </p>  
+//   `;
+//     var blogpost10 = `<p>The Nuts &amp; Bolts of one of graphene's contributions ...
+//     </p>
+//     <p class="quote">When a lithium-ion battery is charging, lithium ions flow to the anode, which is typically made of a type of carbon called graphite. If you swap graphite for silicon, far more lithium ions can be stored in the anode, which increases the energy capacity of the battery. But packing all these lithium ions into the electrode causes it to swell like a balloon; in some cases, it can grow up to four times larger.
+// <br /><br />
+// The swollen anode can pulverize the nanoengineered silicon particles and rupture the protective barrier between the anode and the battery’s electrolyte, which ferries the lithium ions between the electrodes. Over time, crud builds up at the boundary between the anode and electrolyte. This both blocks the efficient transfer of lithium ions and takes many of the ions out of service. It quickly kills any performance improvements the silicon anode provided.
+// <br /><br />
+// One way out of this problem is to sprinkle small amounts of silicon oxide—better known as sand—throughout a graphite anode. This is what Tesla currently does with its batteries. Silicon oxide comes pre-puffed, so it reduces the stress on the anode from swelling during charging. But it also limits the amount of lithium that can be stored in the anode. Juicing a battery this way isn’t enough to produce double-digit performance gains, but it’s better than nothing.
+// <br /><br />
+// Cary Hayner, cofounder and CTO of NanoGraf, thinks it’s possible to get the best of silicon and graphite without the loss of energy capacity from silicon oxide. At NanoGraf, he and his colleagues are boosting the energy of carbon-silicon batteries by embedding silicon particles in graphene, graphite’s Nobel Prize-winning cousin. Their design uses a graphene matrix to give silicon room to swell and to protect the anode from damaging reactions with the electrolyte. Hayner says a graphene-silicon anode can increase the amount of energy in a lithium-ion battery by up to 30 percent.<sup>1</sup>
+//     </p>
+//     `
+//      var blogcite10 =    ` 
+//       <p>1. <a  target="_blank" href="https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/">https://www.wired.com/story/welcome-to-the-era-of-supercharged-lithium-silicon-batteries/</a>  </p>
 
-      <!-- <p>2. <a  target="_blank" href=""></a> </p>  -->  `;
+//       <!-- <p>2. <a  target="_blank" href=""></a> </p>  -->  `;
 
 //     var blogpost8 =     `<p>
 //     </p>
@@ -137,26 +137,26 @@ Cloud computing is sweeping through the industry, and it will enable the use of 
   
 
     var url = [
-          {
-            id: '11',
-            did: '20-03-17',
-            date: 'March 17, 2020 ',
-            author: 'by Thomas Maestas, MA',
-            cat3: 'Sociology Tomorrow!',
-            title: 'Graphene Relief: Batteries\' Demand',
-            post: blogpost11,
-            cite: blogcite11
-        },
-          {
-            id: '10',
-            did: '20-03-16',
-            date: 'March 16, 2020 ',
-            author: 'by Thomas Maestas, MA',
-            cat3: 'Sociology Tomorrow!',
-            title: 'Graphene Relief: Batteries\' Context',
-            post: blogpost10,
-            cite: blogcite10
-        },
+        //   {
+        //     id: '11',
+        //     did: '20-03-17',
+        //     date: 'March 17, 2020 ',
+        //     author: 'by Thomas Maestas, MA',
+        //     cat3: 'Sociology Tomorrow!',
+        //     title: 'Graphene Relief: Batteries\' Demand',
+        //     post: blogpost11,
+        //     cite: blogcite11
+        // },
+        //   {
+        //     id: '10',
+        //     did: '20-03-16',
+        //     date: 'March 16, 2020 ',
+        //     author: 'by Thomas Maestas, MA',
+        //     cat3: 'Sociology Tomorrow!',
+        //     title: 'Graphene Relief: Batteries\' Context',
+        //     post: blogpost10,
+        //     cite: blogcite10
+        // },
         //   {
         //     id: '8',
         //     did: '20-03-14',

@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 15:
+/***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88,9 +88,9 @@
 // require('./js/blog-draft-jul');
 // require('./js/blog-draft-june');
 // require('./js/blog-draft-may');
-__webpack_require__(16);
-__webpack_require__(17);
 __webpack_require__(18);
+__webpack_require__(19);
+__webpack_require__(20);
 
 // modal
 // var modal = document.getElementById('msimpleModal');  
@@ -118,7 +118,7 @@ __webpack_require__(18);
 
 /***/ }),
 
-/***/ 16:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -375,7 +375,7 @@ bloggerApr();
 
 /***/ }),
 
-/***/ 17:
+/***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -605,7 +605,7 @@ bloggerMar();
 
 /***/ }),
 
-/***/ 18:
+/***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

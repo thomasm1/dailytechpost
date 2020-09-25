@@ -1,4 +1,3 @@
-console.log('blogger-july');  
 
   var bloggerJuly = function () {
 

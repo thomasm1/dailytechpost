@@ -9,17 +9,17 @@ import { AdminAuthenticationService } from './admin-authentication.service';
 export class HttpIntercepterBasicAuthService implements HttpInterceptor {
 
   constructor(
-    private basicAuthenticationService: AdminAuthenticationService
+    private adminAuthenticationService: AdminAuthenticationService
   ) { }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler) { 
-    let basicAuthHeaderString = this.basicAuthenticationService.getAuthenticatedToken();
-    let username = this.basicAuthenticationService.getAuthenticatedUser()
+  intercept(request: HttpRequest<any>, next: HttpHandler) {
+    let adminAuthHeaderString = this.adminAuthenticationService.getAuthenticatedToken();
+    let username = this.adminAuthenticationService.getAuthenticatedUser()
 
-    if (basicAuthHeaderString && username) {
+    if (adminAuthHeaderString && username) {
       request = request.clone({
         setHeaders: {
-          Authorization: basicAuthHeaderString
+          Authorization: adminAuthHeaderString
         }
       })
     }

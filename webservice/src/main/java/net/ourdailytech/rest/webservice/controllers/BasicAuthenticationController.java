@@ -13,11 +13,11 @@ public class BasicAuthenticationController {
 
 	@GetMapping(path="/api/dailytech/login")
 	public AuthenticationBean dailyTechEntityLogin() { 
-		 return new AuthenticationBean("You have successfully logged in");
+		 return new AuthenticationBean("You have successfully logged into /api/dailytech/login");
 	}
 	
 	@GetMapping(path="/dailytech/login")
 	public AuthenticationBean dailyTechLogin() { 
-		 return new AuthenticationBean("You have successfully logged in");
+		 return new AuthenticationBean("You have successfully logged into /dailytech/login");
 	}
 }
