@@ -414,8 +414,6 @@ bloggerAug();
 "use strict";
 
 
-console.log('blogger-july');
-
 var bloggerJuly = function bloggerJuly() {
 
   var blogpost24 = '<p class="firstparagraph">Cloud.google.com wins the day for offering the Willy Wonka\'s of Technological Candy at a free tour\'s view: You won the Golden Ticket. Google Cloud CEO Diane Greene explains that prioritizing customers\' needs rather than drifting with market forces offers solid growth moving past technological shifts and drifts with little course correction.</p>\n <p class="quote">While Google is still looking up at Amazon Web Services and Microsoft Azure when it comes to infrastructure cloud computing, it appears to be finding the balance between keeping engineers happy with cloud-native computing tools and courting enterprise company suits with service-level agreements and steak dinners.<sup>1</sup></p>';

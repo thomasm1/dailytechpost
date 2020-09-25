@@ -135,12 +135,11 @@ var url = "https://api.nasa.gov/planetary/apod?api_key=mF6DQEqY3WtCubgab5P2otQQ6
 var xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function () {
-  console.log("onreadystate changed");
-  // if (xhttp.readyState == 4 && xhttp.statusText == 200) {
-  console.log("First time checking for APOD 200" + this.responseText.code);
-  if (this.responseText.code != undefined) {
-    console.log(this.responseText);
+
+  if (xhttp.readyState == 4 && xhttp.statusText == "OK") {
+    console.log("onreadystate changed- xhttp.statusText: " + xhttp.statusText);
     var result = JSON.parse(this.responseText);
+    console.log("this.responseText: " + this.responseText);
     if (result.copyright != "") {
       document.getElementById("copyright").innerHTML = "Image Credits: " + result.copyright;
     } else {
@@ -158,32 +157,7 @@ xhttp.onreadystatechange = function () {
     document.getElementById("returnObject").innerHTML = JSON.stringify(result, null, 4);
     document.getElementById("apod_explaination").innerHTML = result.explanation;
     document.getElementById("apod_title").innerHTML = result.title;
-  } else {
-    setTimeout(function () {
-      if (this.responseText.code != undefined) {
-        console.log("2nd attempt" + this.responseText);
-        var _result = JSON.parse(this.responseText);
-        if (_result.copyright != "") {
-          document.getElementById("copyright").innerHTML = "Image Credits: " + _result.copyright;
-        } else {
-          document.getElementById("copyright").innerHTML = "Image Credits: " + "Public Domain";
-        }
-
-        if (_result.media_type == "video") {
-          document.getElementById("apod_img_id").style.display = "none";
-          document.getElementById("apod_vid_id").setAttribute("src", _result.url);
-        } else {
-          document.getElementById("apod_vid_id").style.display = "none";
-          document.getElementById("apod_img_id").setAttribute("src", _result.url);
-        }
-        document.getElementById("reqObject").text = url;
-        document.getElementById("returnObject").innerHTML = JSON.stringify(_result, null, 4);
-        document.getElementById("apod_explaination").innerHTML = _result.explanation;
-        document.getElementById("apod_title").innerHTML = _result.title;
-      }
-    }, 15000);
-  }
-  // }
+  } /// IF 200
 };
 xhttp.open("GET", url, true);
 xhttp.send();
