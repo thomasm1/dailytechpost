@@ -68,6 +68,10 @@ strong {
     color: skyblue !important;
 }
 
+.opaque {
+    opacity: .8;
+}
+
 @import "scss/application-toolkit";
 @import "scss/application";
 @import "scss/dag";

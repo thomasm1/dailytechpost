@@ -14,3 +14,10 @@ h1,h2,h3,h4,h5,h6 {
 #reqObject { 
   display:none;
 }
+
+#apod_explaination {
+  max-height: 350px;
+  padding: 1%;
+  overflow-y: scroll;
+  background-color: rgba(4, 142, 196, 0.459);
+}

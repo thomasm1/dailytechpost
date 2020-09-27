@@ -134,31 +134,6 @@ img {
     }
 }
 
-div.card-block {
-    &#cal {
-        padding-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: transparent;
-        opacity: .9;
-    }
-
-    &#footer {
-        min-width: 100%;
-        opacity: .8;
-        color: white;
-        min-width: 100%;
-        background-color: #3097D1 !important;
-        text-align: center;
-        border-radius: 0px;
-        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-
-        & a {
-            color: blue;
-        }
-    }
-}
-
 .card-block {
     padding: 1.0rem;
 
@@ -220,28 +195,55 @@ li.card-menu-item {
     list-style-type: none;
 }
 
-div.card-block img {
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-    border: 0px solid blue;
-    background-color: #00b0ec;
-    font-weight: 800;
-}
 
-div.card-block.text-center a {
-    background-color: #00b0ec;
-    color: blue;
-    background-image: $rey;
-}
+div.card-block {
+    &#cal {
+        padding-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
+        opacity: .9;
+    }
 
-div.card-block.text-center {
-    background-color: #00b0ec;
-    background-image: $rey;
-    box-shadow: 0px 10px 50px transparent;
-    font-weight: 800;
-}
+    &#footer {
+        min-width: 100%;
+        opacity: .8;
+        color: white;
+        min-width: 100%;
+        background-color: #3097D1 !important;
+        text-align: center;
+        border-radius: 0px;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 
-div.card-block#right-col {
-    min-height: 200px;
+        & a {
+            color: blue;
+        }
+    } 
+
+    & img {
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+        border: 0px solid blue;
+        background-color: #00b0ec;
+        font-weight: 800;
+    }
+    
+    &.text-center a {
+        background-color: #00b0ec;
+        color: blue;
+        background-image: $rey;
+    }
+    
+    &.text-center {
+        background-color: #00b0ec;
+        background-image: $rey;
+        box-shadow: 0px 10px 50px transparent;
+        font-weight: 800;
+    }
+    
+    &#right-col {
+        min-height: 200px;
+    }
+    
 }
 
 /* SECTION blocks 2, 3 */
@@ -419,20 +421,9 @@ ul.imgcol {
     margin-right: auto;
 }
 
-.opaque {
-    opacity: .8;
-}
-
 .smalltech {
     font-size: 1.3rem !important;
     color: purple;
-}
-
-#apod_explaination {
-    max-height: 350px;
-    padding: 1%;
-    overflow-y: scroll;
-    background-color: rgba(4, 142, 196, 0.459);
 }
 
 h2.title {
@@ -578,9 +569,6 @@ p.mb4card {
     margin-left: 15px;
 }
 
-.archive button {
-    width: 100%;
-}
 
 .archive {
     list-style-type: none;
@@ -588,6 +576,11 @@ p.mb4card {
     li {
         padding-bottom: 4px;
     }
+    
+    & button {
+        width: 100%;
+    }
+    
 }
 
 .new {
