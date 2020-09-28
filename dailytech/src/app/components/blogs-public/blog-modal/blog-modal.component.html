@@ -1,0 +1,23 @@
+<div *ngIf="blog">
+  <b>  {{blog.cat3}} </b>
+  <h6> {{blog.title}}</h6>
+<div  >
+  <ul    class="view-blog">
+      <mat-card class="blog-box" >
+          <li> {{blog.date}} &nbsp; </li>
+
+          <li> {{blog.post   }}</li>
+      </mat-card>
+
+  </ul>
+</div>
+</div>
+<div>
+  <!-- REACTION or Navigation-->
+    <!-- <mat-form-field>
+        <input matInput [(ngModel)]="fromDialog" placeholder="Enter value to send back">
+    </mat-form-field> -->
+</div>
+<div>
+    <button mat-raised-button (click)="closeDialog()">Close</button>
+</div>

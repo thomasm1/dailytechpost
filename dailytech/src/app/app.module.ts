@@ -34,6 +34,7 @@ import { PostCancelComponent } from './components/post-dir/post-cancel/post-canc
 
 import { AuthModule } from './auth.module';
 import { WritingModule } from './writing.module';
+import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 // import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { WritingModule } from './writing.module';
     BlogComponent,
     BlogsListComponent,
     PostCancelComponent,
+    BlogModalComponent,
     
     /////// AUTH MODULE ///////
     // AdminComponent,
