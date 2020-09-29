@@ -15,15 +15,15 @@ import { UiService } from '../../../service/ui.service';
 export class NewWritingComponent implements OnInit, OnDestroy {
   // @Output() writingStart = new EventEmitter<void>();
   // writingBlogs: WritingBlog[] = [];
-  // writingBlogs: Observable<WritingBlog[]>; 
-  isLoading = true;
+  // writingBlogs: Observable<WritingBlog[]>;
   writingBlogs: WritingBlog[];
-  writingSubscription: Subscription;
+  isLoading = true;
+  private writingSubscription: Subscription;
   private loadingSubscription: Subscription;
 
   constructor(private writingService: WritingService, private uiService: UiService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
       isLoading => { this.isLoading = isLoading;  }
     );
@@ -37,7 +37,7 @@ export class NewWritingComponent implements OnInit, OnDestroy {
     this.writingService.fetchAvailableWritingBlogs();
   }
 
-  onStartWriting(form: NgForm) { 
+  onStartWriting(form: NgForm) {
     this.writingService.startWriting(form.value.writing);
   }
 

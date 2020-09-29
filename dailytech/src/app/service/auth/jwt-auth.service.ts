@@ -15,16 +15,30 @@ import { UiService } from '../ui.service';
 export class JwtAuthService {
   authChange = new Subject<boolean>();
   private isAuthenticated = false;
-  private user: User;
+  // private user: User;
 
   constructor(
-    private router: Router, 
-    private afAuth: AngularFireAuth, 
+    private router: Router,
+    private afAuth: AngularFireAuth,
     private writingService: WritingService,
     private uiService: UiService
     ) { }
 
-  registerUser(authData: AuthData) { 
+    initAuthListener() {
+      this.afAuth.authState.subscribe(user => {
+        if (user) {
+          this.isAuthenticated = true;
+          this.authChange.next(true);
+          this.router.navigate(['/writing']);
+        } else {
+          this.writingService.cancelSubscriptions();
+          this.authChange.next(false);
+          this.router.navigate(['/login']);
+          this.isAuthenticated = false;
+        }
+      });
+    }
+  registerUser(authData: AuthData) {
     this.uiService.loadingStateChanged.next(true);
     this.afAuth.auth.createUserWithEmailAndPassword(
       authData.email,
@@ -33,45 +47,48 @@ export class JwtAuthService {
     .then(result => {
       console.log(result);
       this.uiService.loadingStateChanged.next(false);
-      this.authSuccessful();
+      // this.authSuccessful();
     })
     .catch(error => {
       console.log(error);
       this.uiService.loadingStateChanged.next(false);
       this.uiService.showSnackBar(error.message, null, 2500  );
-    });  
+    });
   }
 
-  login(authData: AuthData) { 
+  login(authData: AuthData) {
+    this.uiService.loadingStateChanged.next(true);
     this.afAuth.auth
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
-        console.log(result);
+
         this.uiService.loadingStateChanged.next(false);
-        this.authSuccessful();
+        console.log("logged in" + result);
+        // this.authSuccessful();
       })
       .catch(error => {
         console.log(error);
         this.uiService.loadingStateChanged.next(false);
         this.uiService.showSnackBar(error.message, null, 2500  );
-      });  
+      });
   }
 
   logout() {
-    this.writingService.cancelSubscriptions(); 
-    this.authChange.next(false);
-    this.router.navigate(['/login'])
-    this.isAuthenticated = false;
+    this.afAuth.auth.signOut();
+    // this.writingService.cancelSubscriptions();
+    // this.authChange.next(false);
+    // this.router.navigate(['/login'])
+    // this.isAuthenticated = false;
   }
- 
+
 
   isAuth() {
     return this.isAuthenticated;
   }
 
-  private authSuccessful() {
-    this.isAuthenticated = true;
-    this.authChange.next(true);
-    this.router.navigate(['/writing'])
-  }
+  // private authSuccessful() {
+  //   this.isAuthenticated = true;
+  //   this.authChange.next(true);
+  //   this.router.navigate(['/writing'])
+  // }
 }

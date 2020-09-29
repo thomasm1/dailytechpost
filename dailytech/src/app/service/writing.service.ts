@@ -57,12 +57,13 @@ export class WritingService {
       })
       ).subscribe((writingBlogs: WritingBlog[]) => {
         console.log(writingBlogs);
+        this.uiService.loadingStateChanged.next(false);
         this.availableWritingBlogs = writingBlogs;
         this.writingsChanged.next([...this.availableWritingBlogs]);
       }, error => {
         this.uiService.loadingStateChanged.next(false);
         this.uiService.showSnackBar('Database is down, and fetching Blogs failed, please try again later', null, 3000);
-        this.writingsChanged.next(null); 
+        this.writingsChanged.next(null);
        }));  // END FIREBASE SUBSCRIPTION ARRAY
   }
 

@@ -1,5 +1,7 @@
- 
- 
+ li.pointer  {
+   cursor: pointer;
+ }
+
  h1,
  h2,
  h3,
@@ -8,15 +10,15 @@
  h6 {
      margin: 8px 0;
  }
- 
+
  p {
      margin: 0;
  }
- 
+
  .spacer {
      flex: 1;
  }
- 
+
 mat-toolbar {
     height:100px;
 }
@@ -30,16 +32,16 @@ mat-toolbar.mat-primary {
      margin: 0 10px;
  }
  /* ANIMATION */
- 
- 
- 
+
+
+
  a,
- a:visited, a:hover  { 
+ a:visited, a:hover  {
      text-decoration: none;
      font-weight:500;
      font-size: 1.4rem;
- } 
- 
+ }
+
  a:active {
      color: lightgray;
  }

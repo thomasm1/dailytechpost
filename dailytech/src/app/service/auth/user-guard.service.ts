@@ -3,7 +3,7 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  Router, 
+  Router,
   CanLoad,
   Route
 } from '@angular/router';
@@ -21,8 +21,8 @@ export class UserGuardService implements CanActivate, CanLoad {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    
-        // USER AUTH  ----------------------   ADMIN AUTH 
+
+        // USER AUTH  ----------------------   ADMIN AUTH
     if (this.authService.isAuth() || this.adminAuthService.isAdminLoggedIn()) {
       return true;
     } else {

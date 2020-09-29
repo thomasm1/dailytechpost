@@ -9,32 +9,31 @@
             <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
         </a>
     </div>
- 
+
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
            <li>
                 <a routerLink="/writing" class="nav-link daily-tech monoton">WRITE!</a>
             </li>
 
-            <li>
-                <a *ngIf="adminAuthService.isAdminLoggedIn()" routerLink="/admin/user" class="nav-link daily-tech monoton">ADMIN CONSOLE</a>
-            </li> 
-           
+            <li *ngIf="adminAuthService.isAdminLoggedIn()">
+                <a  routerLink="/admin/user" class="nav-link daily-tech monoton">ADMIN CONSOLE</a>
+            </li>
+
             <li>
                 <a routerLink="/blogs" class="nav-link daily-tech monoton">POSTS</a>
             </li>
 
-            <li>
-                <a *ngIf="!adminAuthService.isAdminLoggedIn() && !isAuth" routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
+            <li  *ngIf="!adminAuthService.isAdminLoggedIn() && !isAuth">
+                <a routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
             </li>
-        
-            <li>
-                <a *ngIf="adminAuthService.isAdminLoggedIn() || isAuth" routerLink="/" (click)="onLogout();authService.logout()"
+
+            <li class="pointer" *ngIf="isAuth || adminAuthService.isAdminLoggedIn()">
+                <a  (click)="onLogout(); adminAuthService.logout()"  routerLink="/login"
                     class="nav-link daily-tech monoton">SIGN OUT</a>
             </li>
-        
+
         </ul>
     </div>
 </mat-toolbar>
 
- 

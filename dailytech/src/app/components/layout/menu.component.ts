@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit, OnDestroy { 
+export class MenuComponent implements OnInit, OnDestroy {
   @Output() sidenavToggle = new EventEmitter<void>();
   variable: string = '';
 
@@ -37,10 +37,11 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
+    this.jwtAuthService.logout();
     this.adminAuthService.logout();
 
     // BUG FIX TEMPORARY
-    this.isAuth = false;
+    // this.isAuth = false;
   }
 
   ngOnDestroy() {
