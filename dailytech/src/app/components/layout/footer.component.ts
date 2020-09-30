@@ -5,19 +5,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './footer.component.html',
   styles: [
     `
-    a {
+    p {
+      font-size:.9rem;
+      color:rgb(220, 220, 247);text-decoration:none;
+
+    }
+    a.footer-text {
       color:rgb(220, 220, 247);text-decoration:none;
     }
-    footer { 
+    footer {
        padding: 20px 0px 20px;
-      color:rgb(220, 220, 247); 
+      color:rgb(220, 220, 247);
       text-align:center;
-      line-height:2rem; 
+      line-height:2rem;
     background: rgba(96, 79, 245, 0.692);
- 
-   
+
+
     }
-   
+
   `
 
   ]

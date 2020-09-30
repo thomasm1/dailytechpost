@@ -6,7 +6,7 @@ import { WritingService } from '../../service/writing.service';
 @Component({
   selector: 'app-writing',
   templateUrl: './writing.component.html',
-  styleUrls: ['./writing.component.css']
+  styleUrls: ['./writing.component.scss']
 })
 export class WritingComponent implements OnInit {
   ongoingWriting = false;
