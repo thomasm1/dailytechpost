@@ -31,6 +31,11 @@ mat-toolbar.mat-primary {
      height: 75px;
      margin: 0 10px;
  }
+ .logo-box {
+   background-color:transparent;
+   cursor:pointer;
+ }
+
  /* ANIMATION */
 
 
@@ -40,8 +45,11 @@ mat-toolbar.mat-primary {
      text-decoration: none;
      font-weight:500;
      font-size: 1.4rem;
+     min-height:100%;
  }
 
  a:active {
      color: lightgray;
  }
+
+

@@ -2,7 +2,7 @@
 
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-$color-primary-text:  rgb(19, 1, 179); 
+$color-primary-text:  rgb(19, 1, 179);
 $color-secondary-text: darken($color-primary-text, 25%);
 
 * {
@@ -32,6 +32,7 @@ h5,
 h6 {
     margin: 8px 0;
     text-align: center;
+    color:rgb(221, 219, 219);
 }
 
 li {

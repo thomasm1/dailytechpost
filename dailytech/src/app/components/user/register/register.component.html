@@ -1,7 +1,6 @@
         <app-title-bar></app-title-bar>
-<hr>
- <div class="temp">
-<h4 class="daily-tech monoton">REGISTER</h4>
+<div class="temp">
+<h6>REGISTER</h6>
       <section class="register-form">
         <form fxLayout="column" (ngSubmit)="onRegister(f)" fxLayoutAlign="center center" #f="ngForm">
 
@@ -19,7 +18,7 @@
           <mat-form-field appearance="fill">
             <input type="text" matInput placeholder="username" ngModel name="username" required
               #usernameInput="ngModel">
-            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error> 
+            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
           </mat-form-field>
 
           <!-- password (USERS) -->

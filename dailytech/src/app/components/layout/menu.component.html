@@ -1,39 +1,44 @@
 <mat-toolbar color="primary">
-    <div fxHide.gt-xs>
-        <button mat-icon-button (click)="onToggleSidenav()">
-            <mat-icon>menu</mat-icon>
-        </button>
-    </div>
-    <div class="logo-box">
-        <a routerLink="/blogs">
-            <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
-        </a>
-    </div>
+  <mat-toolbar class="logo-box" routerLink="/blogs">
+    <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
+  </mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
 
-    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-           <li>
-                <a routerLink="/writing" class="nav-link daily-tech monoton">WRITE!</a>
-            </li>
-
-            <li *ngIf="adminAuthService.isAdminLoggedIn()">
-                <a  routerLink="/admin/user" class="nav-link daily-tech monoton">ADMIN CONSOLE</a>
-            </li>
-
-            <li>
-                <a routerLink="/blogs" class="nav-link daily-tech monoton">POSTS</a>
-            </li>
-
-            <li  *ngIf="!adminAuthService.isAdminLoggedIn() && !isAuth">
-                <a routerLink="/login" class="nav-link  daily-tech monoton">LOGIN</a>
-            </li>
-
-            <li class="pointer" *ngIf="isAuth || adminAuthService.isAdminLoggedIn()">
-                <a  (click)="onLogout(); adminAuthService.logout()"  routerLink="/login"
-                    class="nav-link daily-tech monoton">SIGN OUT</a>
-            </li>
-
-        </ul>
-    </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <mat-nav-list fxLayout fxLayoutGap="10px" class="navigation-items">
+      <a mat-list-item routerLink="/writing" class="nav-link daily-tech monoton"  title="{{pleaseSign}}"
+        >WRITE!</a
+      >
+      <a
+        mat-list-item
+        *ngIf="adminAuthService.isAdminLoggedIn()"
+        routerLink="/admin/user"
+        class="nav-link daily-tech monoton"
+        >ADMIN CONSOLE</a
+      >
+      <a mat-list-item routerLink="/blogs" class="nav-link daily-tech monoton"
+        >POSTS</a
+      >
+      <a
+        mat-list-item
+        *ngIf="!adminAuthService.isAdminLoggedIn() && !isAuth"
+        routerLink="/login"
+        class="nav-link daily-tech monoton"
+        >LOGIN</a
+      >
+      <a
+        mat-list-item
+        class="pointer"
+        *ngIf="isAuth || adminAuthService.isAdminLoggedIn()"
+        (click)="onLogout(); adminAuthService.logout()"
+        routerLink="/login"
+        class="nav-link daily-tech monoton"
+        >SIGN OUT</a
+      >
+    </mat-nav-list>
+  </div>
 </mat-toolbar>
-
