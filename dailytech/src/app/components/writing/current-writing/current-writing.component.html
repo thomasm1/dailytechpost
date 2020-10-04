@@ -1,24 +1,49 @@
-<section class="current-writing" fxLayout="column" fxLayoutAlign="center center">
- 
-    <section class="quote">
-        <pre>
+<section   fxLayout="column"
+fxLayoutAlign="center center">
+  <section
+    class="quote current-writing"
+
+  >
+    <pre>
             "Be ruthless about protecting writing days, i.e., do not cave in to endless requests to have "essential" and
             "long overdue" meetings on those days. The funny thing is that, although writing has been my actual job for
             several years now, I still seem to have to fight for time in which to do it. Some people do not seem to grasp
             that I still have to sit down in peace and write the books, apparently believing that they pop up like mushrooms
             without my connivance."
             ― J.K. Rowling
-        </pre>
+        </pre
+    >
+  </section>
+  <section class="clearfix">
+    <section class="left">
+      <section class="cat-news">
+        <h4>Resources</h4>
+        <ul *ngFor="let new of news">
+          <li>
+            <a href="{{ new }} " target="_blank">{{ new }}</a>
+          </li>
+        </ul>
+        <p>Add Research</p>
+        <button (click)="addUrl()">+</button>
+      </section>
+      <mat-progress-spinner
+        mode="determinate"
+        [value]="progress"
+      ></mat-progress-spinner>
+      <h1>{{ progress }}%</h1>
+      <button mat-raised-button color="accent" (click)="postCancel()">
+        Pause writing
+      </button>
+      <hr />
     </section>
- 
-    <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
-    <h1>{{ progress }}%</h1>
-    <button mat-raised-button color="accent" (click)="postCancel()">Pause writing</button>
-    <hr>
-   <section  class="cat-news">
-    <ul *ngFor="let new of news">
-        <li> <a href="{{ new }} " target="_blank">{{ new }}</a> </li>
-    </ul> 
-   </section>
-  
+    <section class="right clearfix">
+      <section class="writing-form">
+        WRITING TEXT AREA FORM
+      </section>
+
+
+     <hr>
+    </section>
+  </section>
 </section>
+

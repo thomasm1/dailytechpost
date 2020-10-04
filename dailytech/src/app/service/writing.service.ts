@@ -106,7 +106,7 @@ export class WritingService {
     // return this.writingBlogs.slice();
     this.firebaseSubs.push(
       this.db
-      .collection('writing-blogs')
+      .collection('finished-writing-blogs')
       .valueChanges()
       .subscribe((writingBlogs: WritingBlog[]) => {
         this.finishedWritingsChanged.next(writingBlogs);
@@ -119,7 +119,7 @@ export class WritingService {
   }
 
   private addDataToDatabase(writingBlog: WritingBlog) {
-    this.db.collection('writing-blogs').add(writingBlog);
+    this.db.collection('finished-writing-blogs').add(writingBlog);
   }
 
 }

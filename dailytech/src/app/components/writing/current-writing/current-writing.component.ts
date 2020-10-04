@@ -11,7 +11,7 @@ import { WritingService } from '../../../service/writing.service';
   styleUrls: ['./current-writing.component.scss']
 })
 export class CurrentWritingComponent implements OnInit {
-   
+
   progress = 0;
   timer: number;
   news: string[];
@@ -20,10 +20,11 @@ export class CurrentWritingComponent implements OnInit {
 
   ngOnInit() {
     this.startOrResumeWriting();
-     
+
   }
 
   startOrResumeWriting() {
+    this.news = this.writingService.getWritingExercise().news;
     const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
     this.timer = setInterval(() => {
       this.progress = this.progress + 1;
@@ -34,7 +35,7 @@ export class CurrentWritingComponent implements OnInit {
     }, step); // 1000);
   }
 
-  postCancel() { 
+  postCancel() {
     clearInterval(this.timer);
     const dialogRef = this.dialog.open(StopWritingComponent, {
       data: {
@@ -43,7 +44,7 @@ export class CurrentWritingComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) { 
+      if (result) {
         this.writingService.cancelWriting(this.progress);
       } else {
         this.startOrResumeWriting();
