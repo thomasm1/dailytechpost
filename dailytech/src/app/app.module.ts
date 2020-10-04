@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { StoreModule } from '@ngrx/store';
+import { appReducer} from './app.reducer';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -50,7 +52,7 @@ import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-mo
     BlogsListComponent,
     PostCancelComponent,
     BlogModalComponent,
-    
+
     /////// AUTH MODULE ///////
     // AdminComponent,
     // PostsListComponent,
@@ -63,7 +65,7 @@ import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-mo
     // NewWritingComponent,
     // PastWritingsComponent,
     // StopWritingComponent,
-    // WritingComponent 
+    // WritingComponent
   ],
   imports: [
     MatDialogModule,
@@ -78,6 +80,7 @@ import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-mo
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    StoreModule.forRoot({ui: appReducer}),
 
     WritingModule,
     AuthModule,
