@@ -2,7 +2,7 @@ var inputString = "";
 
 function updateString(value) { 
     inputString += value; 
-    document.forms[0].input.value = inputString; 
+    document.forms[1].input.value = inputString; 
 }
 
 const innerform = document.querySelector("#calc");
@@ -36,7 +36,7 @@ innerform.innerHTML = `
     
     <input type="button" name="zero" id="bu" value="0" onclick="updateString('0')" /> 
     <input type="button" name="dot" id="bu" value="." onclick="updateString('.')" /> 
-    <input type="button" name="clear" id="bu" value="C" onclick="document.forms[0].input.value='';inputString=''" /> 
+    <input type="button" name="clear" id="bu" value="C" onclick="document.forms[1].input.value='';inputString=''" /> 
     <input type="button" name="minus" id="bu" value="-" onclick="updateString('-')" />
     <br />
     <br />
@@ -49,12 +49,12 @@ innerform.innerHTML = `
     <br />
     <br />
     
-    <input type="button" style="background-color:blue;color:white;" name="calc" id="bu" value="=" onclick="document.forms[0].input.value = eval(inputString); inputString=''"
+    <input type="button" style="background-color:blue;color:white;" name="calc" id="bu" value="=" onclick="document.forms[1].input.value = eval(inputString); inputString=''"
     /> 
-    <input type="button" name="mem" id="bu" value="M +" onclick="document.forms[0].storedValue.value = parseInt(document.forms[0].storedValue.value) + parseInt(document.forms[0].input.value)"
+    <input type="button" name="mem" id="bu" value="M +" onclick="document.forms[1].storedValue.value = parseInt(document.forms[1].storedValue.value) + parseInt(document.forms[1].input.value)"
     /> 
-    <input type="button" name="recall" id="bu" value="MRC" onclick="updateString(document.forms[0].storedValue.value)" /> 
-    <input type="button" name="memClear" id="bu" value="MC" onclick="document.forms[0].storedValue.value=0" /><br /> 
+    <input type="button" name="recall" id="bu" value="MRC" onclick="updateString(document.forms[1].storedValue.value)" /> 
+    <input type="button" name="memClear" id="bu" value="MC" onclick="document.forms[1].storedValue.value=0" /><br /> 
     <input type="hidden" name="storedValue" value="0" /> 
     <input id="window" type="text" size="40" name="input" />
      

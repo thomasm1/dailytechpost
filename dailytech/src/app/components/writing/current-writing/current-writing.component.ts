@@ -51,4 +51,7 @@ export class CurrentWritingComponent implements OnInit {
       }
     });
   }
+  addUrl() {
+    console.log("add-url");
+  }
 }
