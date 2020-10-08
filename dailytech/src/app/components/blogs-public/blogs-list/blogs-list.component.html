@@ -1,76 +1,99 @@
-<hr>
-   <h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
-<hr>
+<hr />
+<h2><span class="daily-tech monoton text-box">OUR DAILY TECH</span></h2>
+<hr />
 <mat-tab-group mat-align-tabs="center">
+  <mat-tab label="All Categories">
+    <div class="temp">
+      <ul *ngFor="let blog of blogs" class="view-blog">
+        <!-- <mat-card (click)="viewBlog(blog.id)"> -->
+        <mat-card (click)="openBlogModal(blog.id)">
+          <li>
+            <span class="category">{{ blog.cat3 }}</span>
+            <button class="btnModal" mat-stroked-button>Modal View</button>
+            {{ blog.date }}
+          </li>
+          <li>{{ blog.title }}</li>
+        </mat-card>
+      </ul>
+    </div>
+  </mat-tab>
 
-    <mat-tab label="Web Dev Affairs">
-        <div class="temp">
-            <ul *ngFor="let blog of blogs"  class="view-blog">
-                <!-- <mat-card (click)="viewBlog(blog.id)"> -->
-                  <mat-card (click)="openBlogModal(blog.id)">
-                    <li>{{blog.date}} &nbsp; <button  mat-stroked-button
+  <mat-tab label="Web Dev Affairs">
+    <div class="temp">
+      <ul *ngFor="let blog of blogsWeb" class="view-blog">
+        <!-- <mat-card (click)="viewBlog(blog.id)"> -->
+        <mat-card (click)="openBlogModal(blog.id)">
+          <li>
+            <span class="category">{{ blog.cat3 }}</span>
+            <button class="btnModal" mat-stroked-button>Modal View</button>
+            {{ blog.date }}
+          </li>
+          <li>{{ blog.title }}</li>
+        </mat-card>
+      </ul>
+    </div>
+  </mat-tab>
 
-                      >Modal View</button>    </li>
-                    <li>{{blog.title}}</li>
-                    <li>{{blog.cat3}}</li>
-                </mat-card>
+  <mat-tab label="Musing Blockchain">
+    <div class="temp">
+      <ul *ngFor="let blog of blogsBlockchain" class="view-blog">
+        <mat-card (click)="openBlogModal(blog.id)">
+          <li>
+            <span class="category">{{ blog.cat3 }}</span>
+            <button class="btnModal" mat-stroked-button>Modal View</button>
+            {{ blog.date }}
+          </li>
+          <li>{{ blog.title }}</li>
+        </mat-card>
+      </ul>
+    </div>
+  </mat-tab>
 
-            </ul>
-        </div>
-    </mat-tab>
+  <mat-tab label="A.I.Now.">
+    <div class="temp">
+      <ul *ngFor="let blog of blogsAI" class="view-blog">
+        <mat-card (click)="openBlogModal(blog.id)">
+          <li>
+            <span class="category">{{ blog.cat3 }}</span>
+            <button class="btnModal" mat-stroked-button>Modal View</button>
+            {{ blog.date }}
+          </li>
+          <li>{{ blog.title }}</li>
+        </mat-card>
+      </ul>
+    </div>
+  </mat-tab>
 
-    <mat-tab label="Musing Blockchain">
-        <div class="temp">
+  <mat-tab label="Sociology Tomorrow!">
+    <div class="temp">
+      <ul *ngFor="let blog of blogsSoc" class="view-blog">
+        <mat-card (click)="openBlogModal(blog.id)">
+          <li>
+            <span class="category">{{ blog.cat3 }}</span>
+            <button class="btnModal" mat-stroked-button>Modal View</button>
+            {{ blog.date }}
+          </li>
+          <li>{{ blog.title }}</li>
+        </mat-card>
+      </ul>
+    </div>
+  </mat-tab>
+  <mat-tab label="Quantum Data">
+    <div class="temp">
+      <ul *ngFor="let blog of blogsQuantum" class="view-blog">
+        <mat-card (click)="openBlogModal(blog.id)">
+          <li>
+            <span class="category">{{ blog.cat3 }}</span>
+            <button class="btnModal" mat-stroked-button>Modal View</button>
+            {{ blog.date }}
+          </li>
+          <li>{{ blog.title }}</li>
+        </mat-card>
+      </ul>
+    </div>
+  </mat-tab>
 
-            <ul *ngFor="let blog of blogs">
-                <mat-card  (click)="viewBlog(blog.id)" class="view-blog">
-                    <li>{{blog.date}} </li>
-                    <li>{{blog.title}}</li>
-                    <li>{{blog.cat3}}</li>
-                </mat-card>
-
-            </ul>
-        </div>
-    </mat-tab>
-
-    <mat-tab label="A.I.Now.">
-        <div class="temp">
-            <ul *ngFor="let blog of blogs">
-                <mat-card (click)="viewBlog(blog.id)" class="view-blog">
-                    <li>{{blog.date}} </li>
-                    <li>{{blog.title}}</li>
-                    <li>{{blog.cat3}}</li>
-                </mat-card>
-            </ul>
-        </div>
-    </mat-tab>
-
-    <mat-tab label="Sociology Today">
-        <div class="temp">
-            <ul *ngFor="let blog of blogs">
-                <mat-card (click)="viewBlog(blog.id)" class="view-blog">
-                    <li>{{blog.date}}  </li>
-                    <li>{{blog.title}}</li>
-                    <li>{{blog.cat3}}</li>
-                </mat-card>
-
-            </ul>
-        </div>
-    </mat-tab>
-    <mat-tab label="Quantum Data">
-        <div class="temp">
-            <ul *ngFor="let blog of blogs">
-                <mat-card (click)="viewBlog(blog.id)" class="view-blog">
-                    <li>{{blog.date}} </li>
-                    <li>{{blog.title}}</li>
-                    <li>{{blog.cat3}}</li>
-                </mat-card>
-
-            </ul>
-        </div>
-    </mat-tab>
-
-    <!-- <mat-tab label="Quantum Data">
+  <!-- <mat-tab label="Quantum Data">
         <table mat-table class="mat-elevation-z8" *ngFor="let blog of blogs">
 
             <ng-container matColumnDef="date">
@@ -92,5 +115,4 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </mat-tab> -->
-
 </mat-tab-group>

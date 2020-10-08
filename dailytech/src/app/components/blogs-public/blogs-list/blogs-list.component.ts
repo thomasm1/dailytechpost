@@ -18,6 +18,13 @@ export class BlogsListComponent implements OnInit {
   blog: Post;
   blogs = [];
 
+  blogsWeb = [];
+  blogsBlockchain = [];
+  blogsAI = [];
+  blogsSoc = [];
+  blogsQuantum = [];
+
+
   dialogValue: string;
   sendValue: string;
 
@@ -29,8 +36,7 @@ export class BlogsListComponent implements OnInit {
     // this.blogs = this.postDataService.retrieveAllPosts();
     // this.postsSubscription =
 
-
-    this.refreshBlogs()
+    this.refreshBlogs();
   }
 
   refreshBlogs() {
@@ -38,9 +44,19 @@ export class BlogsListComponent implements OnInit {
       response => {
         console.log(response);
         this.blogs = response;
+        this.blogsWeb = this.blogs.filter(x => x.cat3 == "Web Dev Affairs");
+        this.blogsBlockchain = this.blogs.filter(x => x.cat3 == "Musing Blockchain");
+        this.blogsAI = this.blogs.filter(x => x.cat3 == "A.I.Now.");
+        this.blogsSoc = this.blogs.filter(x => x.cat3 == "Sociology Tomorrow!");
+        this.blogsQuantum = this.blogs.filter(x => x.cat3 == "Quantum Data");
       }
     );
   }
+
+  // filterBlockchain(cat3: string) {
+  // filterBlockchain() {
+  //   this.blogs = this.blogs.filter(x => x.cat3 !== "Musing Blockchain");
+  // }
 
   viewBlog(id) {
     this.blogsService.getBlog(id).subscribe((response) =>{

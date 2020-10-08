@@ -1,27 +1,27 @@
-$color-primary-text:  rgb(19, 1, 179); 
+$color-primary-text:  rgb(19, 1, 179);
 
  mat-card {
      background: rgba(191, 185, 248, 0.233);
  }
- 
+
  li {
      list-style-type: none;
  }
- 
+
  hr {
      background: rgb(195, 196, 255);
      max-width: 60%;
      margin: 30px auto;
  }
- 
+
  button {
      margin-right: 10px;
  }
- 
+
  .daily-tech {
     color: $color-primary-text;
 }
- 
+
  div.temp {
      max-height: 600px;
      min-height: 500px;
@@ -38,4 +38,11 @@ $color-primary-text:  rgb(19, 1, 179);
  }
  .view-blog:hover {
     background: rgba(96, 79, 245, 0.692);
+ }
+ .category {
+     font-weight:bold;
+
+ }
+ .btnModal {
+   margin:0 4px;
  }

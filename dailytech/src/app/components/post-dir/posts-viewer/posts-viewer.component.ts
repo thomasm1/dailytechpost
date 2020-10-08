@@ -23,9 +23,9 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
   ngOnInit() {
      this.username = sessionStorage.getItem('AuthenticatedUser');
     this.refreshPosts();
-   
+
     // this.blogs = this.postDataService.retrieveAllPosts();
-    // this.postsSubscription = 
+    // this.postsSubscription =
     this.postDataService.retrieveAllPosts(this.username).subscribe((response) => {
       console.log(response);
       this.posts = response;
