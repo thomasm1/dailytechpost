@@ -249,7 +249,8 @@ Cloud computing is sweeping through the industry, and it will enable the use of 
     }
 
     console.log('blogger-March-20');
-    // console.log(angular.toJson(url));
+    console.log(url);
+    console.log(angular.toJson(url));
 };
 
 bloggerMarch20();

@@ -307,7 +307,8 @@ var bloggerMarch20 = function bloggerMarch20() {
     }
 
     console.log('blogger-March-20');
-    // console.log(angular.toJson(url));
+    console.log(url);
+    console.log(angular.toJson(url));
 };
 
 bloggerMarch20();
