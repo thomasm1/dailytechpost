@@ -24,6 +24,7 @@ export class BlogsListComponent implements OnInit {
   blogsSoc = [];
   blogsQuantum = [];
 
+  someVar = '<h5>h5-title</h5>';
 
   dialogValue: string;
   sendValue: string;
@@ -71,7 +72,7 @@ export class BlogsListComponent implements OnInit {
     // const dialogRef =
     this.dialog.open(BlogModalComponent, {
       width: '80%',
-      maxWidth: '450px',
+      maxWidth: '600px',
       backdropClass: 'custom-dialog-backdrop-class',
       panelClass: 'custom-dialog-panel-class',
       data: { idValue: id } // this.sendValue }

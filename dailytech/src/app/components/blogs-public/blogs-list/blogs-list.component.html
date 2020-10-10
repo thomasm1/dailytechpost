@@ -1,6 +1,6 @@
-<hr />
+<hr class="bar-white" />
 <h2><span class="daily-tech monoton text-box">OUR DAILY TECH</span></h2>
-<hr />
+<hr class="bar-white"/>
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="All Categories">
     <div class="temp">
@@ -9,10 +9,11 @@
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
             <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button>Modal View</button>
-            {{ blog.date }}
+            <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+         <span class="date" [innerHTML]="blog.date"></span>
           </li>
-          <li>{{ blog.title }}</li>
+          <hr class="bar-title">
+          <h6 [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>
@@ -24,11 +25,12 @@
         <!-- <mat-card (click)="viewBlog(blog.id)"> -->
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button>Modal View</button>
-            {{ blog.date }}
-          </li>
-          <li>{{ blog.title }}</li>
+            <span class="category" >{{ blog.cat3 }}</span>
+            <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+         <span class="date" [innerHTML]="blog.date"></span>
+        </li>
+        <hr class="bar-title">
+        <h6 [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>
@@ -40,10 +42,11 @@
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
             <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button>Modal View</button>
-            {{ blog.date }}
-          </li>
-          <li>{{ blog.title }}</li>
+            <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+         <span class="date" [innerHTML]="blog.date"></span>
+        </li>
+        <hr class="bar-title">
+        <h6 [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>
@@ -55,10 +58,11 @@
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
             <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button>Modal View</button>
-            {{ blog.date }}
-          </li>
-          <li>{{ blog.title }}</li>
+          <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+          <span class="date" [innerHTML]="blog.date"></span>
+        </li>
+        <hr class="bar-title">
+        <h6 [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>
@@ -70,10 +74,11 @@
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
             <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button>Modal View</button>
-            {{ blog.date }}
-          </li>
-          <li>{{ blog.title }}</li>
+            <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+         <span class="date" [innerHTML]="blog.date"></span>
+        </li>
+        <hr class="bar-title">
+        <h6 [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>
@@ -84,10 +89,11 @@
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
             <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button>Modal View</button>
-            {{ blog.date }}
-          </li>
-          <li>{{ blog.title }}</li>
+              <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+         <span class="date" [innerHTML]="blog.date"></span>
+        </li>
+        <hr class="bar-title">
+        <h6 [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>
