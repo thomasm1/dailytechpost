@@ -5,14 +5,16 @@
   <mat-tab label="All Categories">
     <div class="temp">
       <ul *ngFor="let blog of blogs" class="view-blog">
-        <mat-card (click)="viewBlog(blog.id)"> 
+        <mat-card (click)="openBlogModal(blog.id)">
           <li>
             <span class="category">{{ blog.cat3 }}</span>
-            <button class="btnModal" mat-stroked-button (click)="openBlogModal(blog.id)">Modal</button> <button class="btnModal" mat-stroked-button (click)="viewBlog(blog.id)">View</button> 
+            <button class="btnModal" mat-stroked-button (click)="openBlogModal(blog.id)">Reader</button>
+
+            <button class="btnModal" mat-stroked-button (click)="viewBlog(blog.id)">PageView</button>
          <span class="date" [innerHTML]="blog.date"></span>
           </li>
           <hr class="bar-title">
-          <h6 [innerHTML]="blog.title"></h6>
+          <h6  [innerHTML]="blog.title"></h6>
         </mat-card>
       </ul>
     </div>

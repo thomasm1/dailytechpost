@@ -3,7 +3,10 @@
 </article> -->
 <div class="outer-div">
   <div  class="inner-div" *ngIf="blog">
-    <h5 class="inner-title" [innerHTML]="blog.title"></h5>
+    <span class="category">{{ blog.cat3 }}</span>
+    <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
+  <span class="date" [innerHTML]="blog.date"></span>
+    <h5 class="blog-title" [innerHTML]="blog.title"></h5>
     <p [innerHTML]="blog.post"></p>
     <p [innerHTML]="blog.blogcite"></p>
   </div>

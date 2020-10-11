@@ -92,10 +92,13 @@ hr.bar-white {
   margin: 30px auto;
 }
 
-/*  BLOG LIST & MODAL *******************************/
+
+/*  BLOG LIST & MODAL ************** *****************/
+
 .category {
   font-size:1rem;
   color:  rgba(19, 1, 179, .8);
+  padding-right:15px;
 }
 .date {
 float:right;
@@ -104,10 +107,15 @@ color:  rgba(19, 1, 179, .8);
 }
 .btnModal {
 margin:0 4px;
+color:  rgba(19, 1, 179, .8);
 }
 
 hr.bar-title {
 margin: 2px 0 1px;
+
+}
+.blog-title {
+  color:rgb(85, 85, 85);
 }
 
 .blog-top {

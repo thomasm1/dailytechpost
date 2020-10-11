@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+// import { Subject } from 'rxjs';
+import { Subscription } from 'rxjs'; 
 import { Router, ActivatedRoute } from '@angular/router';
 import { PostDataService } from '../../../service/data/post-data.service';
 import { BlogsService } from '../../../service/data/blogs.service';
@@ -12,10 +13,12 @@ import { BlogModalComponent } from '../blog-modal/blog-modal.component';
   templateUrl: './blogs-list.component.html',
   styleUrls: ['./blogs-list.component.scss']
 })
-export class BlogsListComponent implements OnInit {
+export class BlogsListComponent implements OnInit, OnDestroy {
+
+  blogsSubscription: Subscription;
 
   username: string;
-  blogsUpdated = new Subject();
+  // blogsUpdated = new Subject();
   blog: Post;
   blogs = [];
 
@@ -30,6 +33,7 @@ export class BlogsListComponent implements OnInit {
   dialogValue: string;
   sendValue: string;
 
+
   constructor(private blogsService: BlogsService,  public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
@@ -42,7 +46,7 @@ export class BlogsListComponent implements OnInit {
   }
 
   refreshBlogs() {
-    this.blogsService.getAllBlogs().subscribe(
+    this.blogsSubscription = this.blogsService.getAllBlogs().subscribe(
       response => {
         console.log(response);
         this.blogs = response;
@@ -83,5 +87,10 @@ export class BlogsListComponent implements OnInit {
     //   console.log('Blog Modal closed', result);
     //   this.dialogValue = result.data;
     // });
+  }
+   ngOnDestroy() {
+    if (this.blogsSubscription) {
+      this.blogsSubscription.unsubscribe();
+    }
   }
 }

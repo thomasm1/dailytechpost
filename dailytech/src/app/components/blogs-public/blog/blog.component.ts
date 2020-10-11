@@ -2,16 +2,19 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../../../service/data/blogs.service';
 import { Post } from 'src/app/models/post.model';
+import { Subscription } from 'rxjs'; 
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
-export class BlogComponent implements OnInit {
+export class BlogComponent implements OnInit, OnDestroy {
+  
+  blogSubscription: Subscription; 
+
   @Input() blogName: string;
   @Output() blogClicked = new EventEmitter();
-
   private id: string;
   public blog: Post;
 
@@ -23,7 +26,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
-      this.blogsService.getBlog(this.id).subscribe((response) =>{   this.blog = response;
+      this.blogSubscription = this.blogsService.getBlog(this.id).subscribe((response) =>{   this.blog = response;
             console.log(this.blog)})
     })
 
@@ -33,6 +36,13 @@ export class BlogComponent implements OnInit {
     // this.blogClicked.emit();
     this.blogsService.hideBlog(this.blogName);
   }
+
+   ngOnDestroy() {
+    if (this.blogSubscription) {
+      this.blogSubscription.unsubscribe();
+    }
+  }
+
   // addBlog(blogName: string) {
   //   this.blogs.push(blogName);
   //   this.blogsUpdated.next();
