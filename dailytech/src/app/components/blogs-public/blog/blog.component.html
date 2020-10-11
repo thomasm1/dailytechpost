@@ -1,3 +1,11 @@
-<article class="blog" (click)="onClicked()">
-    <div>{{ blogName }}</div>
-</article>
+<!-- <article class="blog" (click)="onClicked()">
+    <div>{{ blog  }}</div>
+</article> -->
+<div class="outer-div">
+  <div  class="inner-div" *ngIf="blog">
+    <h5 class="inner-title" [innerHTML]="blog.title"></h5>
+    <p [innerHTML]="blog.post"></p>
+    <p [innerHTML]="blog.blogcite"></p>
+  </div>
+
+</div>

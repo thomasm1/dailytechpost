@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../../../service/data/blogs.service';
+import { Post } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-blog',
@@ -10,9 +12,21 @@ export class BlogComponent implements OnInit {
   @Input() blogName: string;
   @Output() blogClicked = new EventEmitter();
 
-  constructor(private blogsService: BlogsService) { }
+  private id: string;
+  public blog: Post;
 
-  ngOnInit(): void {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private blogsService: BlogsService) { }
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      this.blogsService.getBlog(this.id).subscribe((response) =>{   this.blog = response;
+            console.log(this.blog)})
+    })
+
   }
 
   onClicked() {

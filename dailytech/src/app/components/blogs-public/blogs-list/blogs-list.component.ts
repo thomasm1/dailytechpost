@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PostDataService } from '../../../service/data/post-data.service';
 import { BlogsService } from '../../../service/data/blogs.service';
 import { Post } from 'src/app/models/post.model';
@@ -29,7 +30,7 @@ export class BlogsListComponent implements OnInit {
   dialogValue: string;
   sendValue: string;
 
-  constructor(private blogsService: BlogsService,  public dialog: MatDialog) { }
+  constructor(private blogsService: BlogsService,  public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
     this.username = sessionStorage.getItem('AuthenticatedUser');
@@ -60,10 +61,10 @@ export class BlogsListComponent implements OnInit {
   // }
 
   viewBlog(id) {
-    this.blogsService.getBlog(id).subscribe((response) =>{
-      // console.log(response);
-      this.blog = response;
-    })
+    // this.blogsService.getBlog(id).subscribe((response) =>{   this.blog = response; })
+    this.router.navigate(['/blog', id]
+      // , { maybe put in query params...   } 
+ )
   }
 
   openBlogModal(id)  {
