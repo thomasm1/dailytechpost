@@ -109,9 +109,12 @@ color:  rgba(19, 1, 179, .8);
 margin:0 4px;
 color:  rgba(19, 1, 179, .8);
 }
-
+.btnCat {
+  margin-right:20px;
+}
 hr.bar-title {
 margin: 2px 0 1px;
+display:block;
 
 }
 .blog-title {
@@ -128,6 +131,22 @@ mat-dialog-container.mat-dialog-container {
   background:rgba(190, 200, 255, 0.8);
 }
 
+/* BLOG & BLOG-CATEGORY PAGE ************ *******/
+.outer-div {
+  min-height:800px;
+
+}
+.inner-div {
+  max-width:80%;
+  width:600px;
+  margin-right:auto;
+  margin-left:auto;
+  padding:20px;
+  background:whitesmoke;
+}
+.bar-blogs {
+  margin:10px 0;
+}
 /*  mainblog Legacy CONTENT  ************************/
 
 #blogs {

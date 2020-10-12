@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../../../service/data/blogs.service';
 import { Post } from 'src/app/models/post.model';
-import { Subscription } from 'rxjs'; 
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-blog',
@@ -10,8 +10,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit, OnDestroy {
-  
-  blogSubscription: Subscription; 
+
+  blogSubscription: Subscription;
 
   @Input() blogName: string;
   @Output() blogClicked = new EventEmitter();
@@ -24,12 +24,15 @@ export class BlogComponent implements OnInit, OnDestroy {
     private blogsService: BlogsService) { }
 
   ngOnInit() {
+    this.getBlog();
+  }
+
+  getBlog() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
       this.blogSubscription = this.blogsService.getBlog(this.id).subscribe((response) =>{   this.blog = response;
             console.log(this.blog)})
     })
-
   }
 
   onClicked() {
