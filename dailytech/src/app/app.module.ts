@@ -38,6 +38,7 @@ import { AuthModule } from './auth.module';
 import { WritingModule } from './writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
+import { NasaComponent } from './components/nasa/nasa.component';
 // import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
@@ -54,6 +55,7 @@ import { BlogsComponent } from './components/blogs-public/blogs/blogs.component'
     PostCancelComponent,
     BlogModalComponent,
     BlogsComponent,
+    NasaComponent,
 
     /////// AUTH MODULE ///////
     // AdminComponent,
