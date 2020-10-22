@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -20,7 +19,6 @@ export class JwtAuthService {
   // private user: User;
 
   constructor(
-    private http: HttpClient,
     private router: Router,
     private afAuth: AngularFireAuth,
     private writingService: WritingService,
@@ -28,24 +26,6 @@ export class JwtAuthService {
     private store: Store<{ ui: fromApp.State }>
     ) { }
 
-    getGoogleApi() {
-      this.http
-        .get(`http://54.174.82.153:8080/login/getGoogleApi`)
-        .subscribe((response) => {
-          //console.log(response);
-          if (response["googleMapAPIKey"] != undefined) {
-            new Promise((resolve) => {
-              let script: HTMLScriptElement = document.createElement("script");
-              script.addEventListener("load", (r) => resolve());
-
-              script.src = `http://maps.googleapis.com/maps/api/js?key=${response["googleMapAPIKey"][0]}`;
-              // script.src = `http://maps.googleapis.com/maps/api/js?key=${environment.googleMapAPIKey}`;
-
-              document.head.appendChild(script);
-            });
-          }
-        });
-    }
 
     initAuthListener() {
       this.afAuth.authState.subscribe(user => {

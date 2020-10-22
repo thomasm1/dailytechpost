@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { KeysService } from 'src/app/service/keys.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nasa',
@@ -7,12 +9,18 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   styleUrls: ['./nasa.component.scss']
 })
 export class NasaComponent implements OnInit {
+  nasaKey:string = '';
+  urlNasa =  `https://api.nasa.gov/planetary/apod?api_key=${this.nasaKey}`;
 
-  url =  "https://api.nasa.gov/planetary/apod?api_key=mF6DQEqY3WtCubgab5P2otQQ6bP1b8nY24VmiJw0";
-
-  constructor() { }
+  constructor(
+    private http:HttpClient,
+    private keys:KeysService
+  ) { }
 
   ngOnInit(): void {
+
+    this.keys.getNasaApi();
+    this.nasaKey = environment.nasaKey;
   }
 //  xhttp = new XMLHttpRequest();
 //  xhttp.onreadystatechange() {

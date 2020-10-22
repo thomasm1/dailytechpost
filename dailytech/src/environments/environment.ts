@@ -6,6 +6,8 @@ export const environment = {
   production: false,
   API_URL: "http://localhost:8089",
   //  API_URL: "http://localhost:8089/api",
+  nasaKey: 'mF6DQEqY3WtCubgab5P2otQQ6bP1b8nY24VmiJw0',
+
   firebase: {
     apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',
     authDomain: 'ourdailytechdata.firebaseapp.com',
@@ -14,7 +16,7 @@ export const environment = {
     storageBucket: 'ourdailytechdata.appspot.com',
     messagingSenderId: '99505496502'
   }
-  
+
 };
 
 /*
