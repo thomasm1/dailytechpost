@@ -17,10 +17,12 @@ export class NasaComponent implements OnInit {
     private keys:KeysService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit()  {
 
-    this.keys.getNasaApi();
-    this.nasaKey = environment.nasaKey;
+    this.nasaKey = this.keys.getNasaApi();
+
+    console.log(this.nasaKey);
+    // this.nasaKey = environment.nasaKey;
   }
 //  xhttp = new XMLHttpRequest();
 //  xhttp.onreadystatechange() {

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   API_URL: "http://localhost:8089",
   //  API_URL: "http://localhost:8089/api",
-  nasaKey: 'mF6DQEqY3WtCubgab5P2otQQ6bP1b8nY24VmiJw0',
+  // nasaKey: 'mF6DQE******w0',
 
   firebase: {
     apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',

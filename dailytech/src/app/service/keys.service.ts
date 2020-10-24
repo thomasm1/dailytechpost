@@ -7,6 +7,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 })
 export class KeysService {
 
+  nasaApi:string = '';
+
   constructor(
     private http: HttpClient
     ) { }
@@ -32,7 +34,7 @@ export class KeysService {
 
   getNasaApi() {
     this.http
-      .get(`http://54.174.82.153:8080/nasa/getNasaApi`)
+      .get(`http://54.174.82.153:8080/keys/getNasaApi`)
       .subscribe((response) => {
         //console.log(response);
         if (response["nasaAPIKey"] != undefined) {
@@ -44,9 +46,15 @@ export class KeysService {
             // script.src = `https://api.nasa.gov/planetary/apod?api_key=${environment.nasaKey}`;
 
             document.head.appendChild(script);
+
+            // REMOVE LATER
+            console.log(response["nasaAPIKey"][0]);
+            this.nasaApi = response["nasaAPIKey"][0];
+
           });
         }
       });
+      return this.nasaApi;
   }
 
 }

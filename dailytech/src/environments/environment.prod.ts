@@ -3,7 +3,7 @@ export const environment = {
   API_URL: "https://54.174.82.153:8089",
   //  API_URL: "https://54.174.82.153:8089/api",
 
-  nasaKey: 'mF6DQEqY3WtCubgab5P2otQQ6bP1b8nY24VmiJw0',
+  // nasaKey: 'mF6DQ******iJw0',
 
   firebase: {
     apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',

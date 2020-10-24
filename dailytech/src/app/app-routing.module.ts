@@ -14,6 +14,7 @@ import { WritingComponent } from './components/writing/writing.component';
 import { RouteGuardService } from './service/auth/route-guard.service';
 import { UserGuardService } from './service/auth/user-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
+import { NasaComponent } from './components/nasa/nasa.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent },
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
+  { path: 'nasa', component: NasaComponent },
   // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [UserGuardService] },
   { path: '**', component: PostsViewerComponent },
 ];
