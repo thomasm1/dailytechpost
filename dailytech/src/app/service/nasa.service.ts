@@ -1,0 +1,68 @@
+import { Injectable, OnInit } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { KeysService } from 'src/app/service/keys.service';
+import { Nasa } from '../models/nasa.model';
+
+import { Observable } from 'rxjs';
+import 'rxjs';
+// import { catchError } from 'rxjs/operators';
+// import { ErrorObservable } from 'rxjs/';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class NasaService   {
+  nasaKey:string = '';
+  private newId: number;
+  private json_url;
+  private listNasa: Nasa[] = [];
+  object;
+
+  constructor(
+    private http:HttpClient,
+    private keys:KeysService
+    ) {
+      this.json_url = environment.json_url;  //local-server
+
+        // this.aws_url = environment.aws_url; // AWS ENDPOINT
+
+        this.getNasaStores().subscribe(
+          (response) => {
+            this.listNasa = response;
+          },
+          error => {
+               console.log(error);
+          });
+    }
+
+    getNasaKey() {
+      this.nasaKey = this.keys.getNasaApi();
+      return this.nasaKey;
+    }
+    getNasa() {
+      this.getNasaKey()
+      console.log(this.nasaKey);
+
+      this.http.get(`https://api.nasa.gov/planetary/apod?api_key=${this.nasaKey}`)
+      .subscribe((response) => {
+        this.object = response;
+        console.log(this.object);
+      })
+      return this.object;
+    }
+    getNasaStores(): Observable<Nasa[]> {
+      return this.http.get<Nasa[]>(this.json_url)
+        // .pipe(catchError(this.handleError));
+    }
+    storeNasa(nasa: Nasa): Observable<Nasa> {
+      this.newId = this.listNasa.length +1;
+      console.log(this.newId);
+      return this.http.post<Nasa>(`${this.json_url}/${this.newId}`, nasa, {
+        headers: new HttpHeaders({
+          'Accept': 'application/json'
+        })
+      })
+        // .pipe(catchError(this.handleError));
+    }
+}

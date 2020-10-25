@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { KeysService } from 'src/app/service/keys.service';
 import { environment } from 'src/environments/environment';
+import { NasaService } from '../../service/nasa.service';
+import { Nasa } from '../../models/nasa.model';
 
 @Component({
   selector: 'app-nasa',
@@ -9,31 +9,30 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./nasa.component.scss']
 })
 export class NasaComponent implements OnInit {
-  nasaKey:string = '';
-  object;
   // urlNasa =  `https://api.nasa.gov/planetary/apod?api_key=${this.nasaKey}`;
+  object;
+    listNasa: Nasa[] ;
 
   constructor(
-    private http:HttpClient,
-    private keys:KeysService
+    private nasa: NasaService
   ) { }
 
   ngOnInit()  {
-    this.nasaKey = this.keys.getNasaApi();
-
+    this.displayNasa();
+    this.getNasaStores();
   }
+getNasaStores() {
+   this.nasa.getNasaStores().subscribe(response => {
+      this.listNasa = response;
+      console.log(this.listNasa)
+   });
+   return this.listNasa;
+}
+displayNasa() {
+  this.object = this.nasa.getNasa();
+}
 
-  displayNasa() {
-    this.nasaKey = this.keys.getNasaApi();
-    console.log(this.nasaKey);
 
-    this.http.get(`https://api.nasa.gov/planetary/apod?api_key=${this.nasaKey}`)
-    .subscribe((response) => {
-      this.object = response;
-      console.log(this.object);
-    })
-    return this.object;
-  }
     // if (this.object.copyright != "") {
     //   document.getElementById("copyright").innerHTML =
     //     "Image Credits: " + this.object.copyright;

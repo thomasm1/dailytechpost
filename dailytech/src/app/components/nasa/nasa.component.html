@@ -1,10 +1,10 @@
 <h6 class="dailytech">Twython NASA API</h6>
 <button (click)="displayNasa()">Display Nasa API </button>
 <div class="nasa">
+  <h6>Today's Nasa Apod</h6>
   <div *ngIf="object">
     <h6>{{ object.title }}</h6>
     <!-- <p> {{ object | json }}</p> -->
-
     <p id="date"><strong>Date:</strong> {{ object.date }}</p>
 
     <img [src]="object.url" width="400" />
@@ -15,5 +15,21 @@
       <strong>{{ object.media_type }} Copyright:</strong> {{ object.copyright }}
     </p>
     <p><strong>URL:</strong> {{ object.hdurl }}</p>
+  </div>
+
+  <h6>Archive Nasa Apod</h6>
+  <div *ngFor="let nasa of listNasa">
+    <h6>{{ nasa.title }}</h6>
+    <!-- <p> {{ object | json }}</p> -->
+    <p id="date"><strong>Date:</strong> {{ nasa.date }}</p>
+
+    <img [src]="nasa.url" width="400" />
+    <p id="apod_explaination">
+      <strong>Summary:</strong> {{ nasa.explanation }}
+    </p>
+    <p id="copyright">
+      <strong>{{ nasa.media_type }} Copyright:</strong> {{ nasa.copyright }}
+    </p>
+    <p><strong>URL:</strong> {{ nasa.hdurl }}</p>
   </div>
 </div>

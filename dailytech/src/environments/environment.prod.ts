@@ -5,6 +5,10 @@ export const environment = {
 
   // nasaKey: 'mF6DQ******iJw0',
 
+  json_url: "http://localhost:3000/nasa",
+  // AWS Lambda-DynamoDB-APIgateway
+  aws_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Dailytech_Production/dailytech-nasa",
+
   firebase: {
     apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',
     authDomain: 'ourdailytechdata.firebaseapp.com',
