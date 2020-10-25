@@ -8,7 +8,7 @@ export const environment = {
   //  API_URL: "http://localhost:8089/api",
   // nasaKey: 'mF6DQE******w0',
 
-  json_url: "http://localhost:3000/nasa",
+  json_url: "http://localhost:3000/nasa/",
   // AWS Lambda-DynamoDB-APIgateway
   aws_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Dailytech_Production/dailytech-nasa",
 

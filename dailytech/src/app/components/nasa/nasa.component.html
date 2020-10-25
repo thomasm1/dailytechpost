@@ -1,5 +1,6 @@
 <h6 class="dailytech">Twython NASA API</h6>
 <button (click)="displayNasa()">Display Nasa API </button>
+<button (click)="storeNasa()">Store Nasa API </button>
 <div class="nasa">
   <h6>Today's Nasa Apod</h6>
   <div *ngIf="object">
@@ -27,7 +28,11 @@
     <p id="apod_explaination">
       <strong>Summary:</strong> {{ nasa.explanation }}
     </p>
-    <p id="copyright">
+    <p id="copyright" >
+      <strong>{{ nasa.media_type }}  Credit:  </strong><span *ngIf="nasa.copyright !=''">{{ nasa.copyright }}</span>
+      <span *ngIf="nasa.copyright ==''">Public Domain</span>
+    </p>
+    <p id="copyright" *ngIf="nasa.copyright==''">
       <strong>{{ nasa.media_type }} Copyright:</strong> {{ nasa.copyright }}
     </p>
     <p><strong>URL:</strong> {{ nasa.hdurl }}</p>
