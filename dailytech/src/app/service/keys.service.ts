@@ -36,25 +36,9 @@ export class KeysService {
     this.http
       .get(`http://54.174.82.153:8080/keys/getNasaApi`)
       .subscribe((response) => {
-        //console.log(response);
-        if (response["nasaAPIKey"] != undefined) {
-          new Promise((resolve) => {
-            let script: HTMLScriptElement = document.createElement("script");
-            script.addEventListener("load", (r) => resolve());
-
-            script.src = `https://api.nasa.gov/planetary/apod?api_key=${response["nasaAPIKey"][0]}`;
-            // script.src = `https://api.nasa.gov/planetary/apod?api_key=${environment.nasaKey}`;
-
-            document.head.appendChild(script);
-
-            // REMOVE LATER
             console.log(response["nasaAPIKey"][0]);
             this.nasaApi = response["nasaAPIKey"][0];
-
-          });
-        }
       });
       return this.nasaApi;
   }
-
 }

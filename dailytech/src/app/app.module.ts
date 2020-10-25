@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
 import { JwtAuthService } from './service/auth/jwt-auth.service';
 import { WritingService } from './service/writing.service';
+import { KeysService } from './service/keys.service';
 import { UiService } from './service/ui.service';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -93,6 +94,7 @@ import { NasaComponent } from './components/nasa/nasa.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
+    KeysService,
     JwtAuthService,
     WritingService,
     UiService,
