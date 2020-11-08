@@ -11,6 +11,7 @@ public interface PostService {
  
 	
 	public List<PostEntity> getAllPosts();
+	public List<PostEntity> findAll();
 	public PostEntity updatesPost(PostEntity change);
 	public boolean deletePost(PostEntity post);
 }

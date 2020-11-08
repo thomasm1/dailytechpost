@@ -50,9 +50,15 @@ public class PostServiceImpl implements PostService {
 	
 	@Override
 	public List<PostEntity> getAllPosts() {
-		return (List<PostEntity>)pr.findAll();
+		return (List<PostEntity>) pr.findAll();
 	}
-
+	
+	@Override
+	public List<PostEntity> findAll() {
+		// TODO Auto-generated method stub
+		return (List<PostEntity>) pr.findAll();
+	}
+	
 	@Override
 	public PostEntity updatesPost(PostEntity change) {
 		return pr.save(change);
@@ -68,6 +74,5 @@ public class PostServiceImpl implements PostService {
 		}
 		return true; 
 	}
-
-
+ 
 }
