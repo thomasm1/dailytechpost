@@ -19,7 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import net.ourdailytech.rest.webservice.beans.Post;
 import net.ourdailytech.rest.webservice.services.PostHardcodedService;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 @RestController
 public class PostController {
 	

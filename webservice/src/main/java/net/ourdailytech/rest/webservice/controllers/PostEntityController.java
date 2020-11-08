@@ -18,14 +18,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import net.ourdailytech.rest.webservice.entities.PostEntity;
 import net.ourdailytech.rest.webservice.repositories.PostRepository;
-import net.ourdailytech.rest.webservice.services.PostHardcodedService;
+import net.ourdailytech.rest.webservice.services.PostService;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 @RestController
 public class PostEntityController {
 	
-//	@Autowired
-//	private PostHardcodedService postService;
+	@Autowired
+	private PostService postService;
 	
 	@Autowired
 	private PostRepository postRepository;

@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.webservice.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,17 +10,36 @@ public class PostEntity {
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "Id")
 	private Long id;
-	
+
+	@Column(name = "DID")
 	private String did;
+
+	@Column(name = "DATE_")
 	private String date;
+	
+	@Column(name = "AUTHOR")
 	private String author;
+	
+	@Column(name = "MONTH_ORDER")
 	private String monthOrder;
+	
+	@Column(name = "CAT3")
 	private String cat3;
+	
+	@Column(name = "TITLE")
 	private String title;
+	
+	@Column(name = "POST")
 	private String post;
+	
+	@Column(name = "BLOGCITE")
 	private String blogcite;	
+	
+	@Column(name = "USERNAME")
 	private String username;
+	 
 	
 	protected PostEntity() {
 		
