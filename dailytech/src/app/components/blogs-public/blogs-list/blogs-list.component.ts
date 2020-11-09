@@ -29,7 +29,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
   blogsQuantum = [];
 
   someVar = '<h5>h5-title</h5>';
-
+  blogsLoading = true;
   dialogValue: string;
   sendValue: string;
 
@@ -55,6 +55,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
       .subscribe((response) => {
         // console.log(response);
         this.blogs = response;
+        this.blogsLoading = false;
       });
   }
 

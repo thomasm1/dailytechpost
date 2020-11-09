@@ -5,6 +5,7 @@
     <div>{{ blog  }}</div>
 </article> -->
 <div class="outer-div">
+  <mat-spinner *ngIf="blogsLoading" class="centerSpinner"></mat-spinner>
   <div  class="inner-div" *ngIf="blog">
     <span class="category">{{ blog.cat3 }}</span>
     <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->

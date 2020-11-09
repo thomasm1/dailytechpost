@@ -3,6 +3,7 @@
 <hr class="bar-white" />
 <div class="temp">
   <div class="outer-div">
+    <mat-spinner *ngIf="blogsLoading" class="centerSpinner"></mat-spinner>
     <div class="inner-div" *ngIf="blogsByCat">
       <ul *ngFor="let blog of blogsByCat" class="view-blog">
         <li>

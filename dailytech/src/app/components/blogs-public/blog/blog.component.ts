@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   @Output() blogClicked = new EventEmitter();
   private id: string;
   public blog: Post;
-
+  blogsLoading = true;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -32,6 +32,8 @@ export class BlogComponent implements OnInit, OnDestroy {
       this.id = params.get('id');
       this.blogSubscription = this.blogsService.getBlog(this.id).subscribe((response) =>{   this.blog = response;
             console.log(this.blog)})
+
+          this.blogsLoading = false;
     })
   }
 

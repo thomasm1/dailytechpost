@@ -4,6 +4,7 @@
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="All Categories">
     <div class="temp">
+      <mat-spinner *ngIf="blogsLoading" class="centerSpinner"></mat-spinner>
       <ul *ngFor="let blog of blogs" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
           <li>

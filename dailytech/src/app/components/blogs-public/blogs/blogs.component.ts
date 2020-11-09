@@ -14,8 +14,8 @@ export class BlogsComponent implements OnInit {
   blogsSubscription: Subscription;
   private cat: string;
   blogs = [];
-
   blogsByCat = [];
+  blogsLoading = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,6 +40,7 @@ export class BlogsComponent implements OnInit {
             this.blogsByCat = this.blogs.filter((x) => x.cat3 == this.cat);
             console.log('other', this.blogsByCat);
           }
+          this.blogsLoading = false;
         });
     });
   }
