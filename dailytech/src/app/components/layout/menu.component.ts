@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   // isAdminLoggedIn: boolean = false;
   isAuth = false;
   authSubscription: Subscription;
-  pleaseSign:string="";
+  pleaseSign:string=(this.isAuth==false)?"Please sign on":"";
 
   constructor(private route: ActivatedRoute,
     public adminAuthService: AdminAuthenticationService,
@@ -29,9 +29,11 @@ export class MenuComponent implements OnInit, OnDestroy {
     // this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
     this.authSubscription = this.jwtAuthService.authChange.subscribe(authStatus => {
       this.isAuth = authStatus;
+      return this.isAuth;
     })
-    // this.pleaseSign = (this.isAuth==false)?"Please sign on":"";
+
   }
+
 
 
   onToggleSidenav() {

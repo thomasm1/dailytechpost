@@ -19,20 +19,23 @@ import { NasaComponent } from './components/nasa/nasa.component';
 
 const routes: Routes = [
   { path: '', component: BlogsListComponent },
-  { path: 'login', component: SignonComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'admin/posts', component: PostsListComponent},
-  { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService]},
-  { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
 
   { path: 'blogs', component: BlogsListComponent },
   { path: 'blogs/:cat', component: BlogsComponent},
   { path: 'blog/:id', component: BlogComponent },
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
-  { path: 'nasa', component: NasaComponent },
+  { path: 'nasa', component: NasaComponent }, // NEEDS KEY
+
+  { path: 'admin/posts', component: PostsListComponent},
+  { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService]},
+  { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
+
+
+  { path: 'login', component: SignonComponent },
+  { path: 'register', component: RegisterComponent },
   // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [UserGuardService] },
-  { path: '**', component: PostsViewerComponent },
+  { path: '**', component: BlogsListComponent },
 ];
 
 @NgModule({
