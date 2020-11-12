@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-// import { environment } from 'src/environments/environment'
+import { environment } from 'src/environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,17 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 export class KeysService {
 
   nasaApi:string = '';
-
+  googleApi:string = '';
   constructor(
-    private http: HttpClient
-    ) { }
+    private http: HttpClient,
+    ) {
+      this.googleApi = environment.google_url;
+      this.nasaApi = environment.nasa_url;
+    }
 
   getGoogleApi() {
     this.http
-      .get(`http://54.174.82.153:8080/login/getGoogleApi`)
+      .get(`${this.googleApi}`)
       .subscribe((response) => {
         //console.log(response);
         if (response["googleMapAPIKey"] != undefined) {
@@ -34,7 +37,7 @@ export class KeysService {
 
   getNasaApi() {
     this.http
-      .get(`http://54.174.82.153:8080/keys/getNasaApi`)
+      .get(`${this.nasaApi}`)
       .subscribe((response) => {
             console.log(response["nasaAPIKey"][0]);
             this.nasaApi = response["nasaAPIKey"][0];

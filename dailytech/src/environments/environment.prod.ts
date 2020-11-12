@@ -4,6 +4,8 @@ export const environment = {
   //  API_URL: "https://54.174.82.153:8089/api",
 
   // nasaKey: 'mF6DQ******iJw0',
+  google_url: "http://54.174.82.153:8080/login/getGoogleApi",
+  nasa_url: "http://54.174.82.153:8080/login/getNasaApi",
 
   json_url: "http://localhost:3000/nasa",
   // AWS Lambda-DynamoDB-APIgateway
