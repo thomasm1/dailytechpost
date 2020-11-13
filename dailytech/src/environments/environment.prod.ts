@@ -8,8 +8,10 @@ export const environment = {
   nasa_url: "http://54.174.82.153:8080/login/getNasaApi",
 
   json_url: "http://localhost:3000/nasa",
+
   // AWS Lambda-DynamoDB-APIgateway
-  aws_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Dailytech_Production/dailytech-nasa",
+  aws_url: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+  // aws_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Dailytech_Production/dailytech-nasa",
 
   firebase: {
     apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',

@@ -15,13 +15,14 @@ import { throwError } from 'rxjs';
 export class NasaService {
   nasaKey: string = '';
   private newId: number;
+  private aws_url;
   private json_url;
   private listNasa: Nasa[] = [];
   object;
 
   constructor(private http: HttpClient, private keys: KeysService) {
     this.json_url = environment.json_url; //local-server
-    // this.aws_url = environment.aws_url; // AWS ENDPOINT
+    this.aws_url = environment.aws_url; // AWS ENDPOINT
 
     this.getNasaStores().subscribe(
       (response) => {
@@ -51,7 +52,9 @@ export class NasaService {
   }
 
   getNasaStores(): Observable<Nasa[]> {
-    return this.http.get<Nasa[]>(this.json_url)
+    // return this.http.get<Nasa[]>(this.json_url)
+    return this.http.get<Nasa[]>(this.aws_url)
+
     .pipe(catchError(this.handleError));
   }
 

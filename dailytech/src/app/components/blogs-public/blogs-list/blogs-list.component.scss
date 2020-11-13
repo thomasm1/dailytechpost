@@ -34,3 +34,7 @@ $color-primary-text:  rgb(19, 1, 179);
     background: rgba(96, 79, 245, 0.692);
  }
 
+.blog-post {
+max-height:80px;
+overflow-y: hidden;
+}
