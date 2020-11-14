@@ -42,8 +42,8 @@ module.exports.createNasa = (event, context, callback) => {
 
   const nasaItem = {
     // id:   uuid(), //id,
-    id: reqBody.id,
     // createdAt: new Date().toISOString(), 
+    id: reqBody.id,
     title: reqBody.title,
     date: reqBody.date,  
     copyright: reqBody.copyright,
@@ -138,8 +138,9 @@ module.exports.updateNasa = (event, context, callback) => {
     },
     TableName: nasaTable,
     ConditionExpression: 'attribute_exists(id)',
-    UpdateExpression: 'SET title = :title,  date = :date, copyright = :copyright, explanation = :explanation, url = :url, hdurl = :hdurl, media_type = :media_type,',
-    ExpressionAttributeValues: { 
+    UpdateExpression: 'SET id = :id, title = :title,  date = :date, copyright = :copyright, explanation = :explanation, url = :url, hdurl = :hdurl, media_type = :media_type,',
+    ExpressionAttributeValues: {
+    ':id': id,
     ':title':  title,
     ':date':  date,
     ':copyright':  copyright,
