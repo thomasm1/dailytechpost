@@ -65,7 +65,7 @@ export class NasaService {
     console.log(nasa.id);
     //http://localhost:3000/nasa/
     // return this.http.post<Nasa>(`${this.json_url}/${this.newId}`,
-      return this.http.post<Nasa>(`${this.json_url}`, nasa, {
+      return this.http.post<Nasa>(`${this.aws_url}`, nasa, {
       headers: new HttpHeaders({
         Accept: 'application/json',
       }),
