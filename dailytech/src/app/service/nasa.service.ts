@@ -63,13 +63,14 @@ export class NasaService {
     console.log("id: "+this.newId+" title: " +nasa.title);
     nasa.id = this.newId;
     console.log(nasa.id);
-    //http://localhost:3000/nasa/
     // return this.http.post<Nasa>(`${this.json_url}/${this.newId}`,
-      return this.http.post<Nasa>(`${this.aws_url}`, nasa, {
-      headers: new HttpHeaders({
-        Accept: 'application/json',
-      }),
-    })
+      return this.http.post<Nasa>(`${this.aws_url}`, nasa
+    //   , {
+    //   headers: new HttpHeaders({
+    //     Accept: 'application/json',    // NO LONGER NEED WITH HTTP-INTERCEPTER ////////////
+    //   }),
+    // }
+    )
     .pipe(catchError(this.handleError));
   }
 

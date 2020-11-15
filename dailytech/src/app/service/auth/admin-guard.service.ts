@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  Router
+} from '@angular/router';
+
 import { AdminAuthenticationService } from './admin-authentication.service';
 
 @Injectable({
@@ -7,7 +13,7 @@ import { AdminAuthenticationService } from './admin-authentication.service';
 })
 
 // ADMIN GUARD SERVICE
-export class RouteGuardService implements CanActivate {
+export class AdminGuardService implements CanActivate {
 
   constructor(
     private adminAuthService: AdminAuthenticationService,
@@ -15,7 +21,7 @@ export class RouteGuardService implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    
+
       //  ADMIN AUTH
     if (this.adminAuthService.isAdminLoggedIn()) {
       return true;

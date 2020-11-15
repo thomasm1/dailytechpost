@@ -29,7 +29,7 @@ export class AdminAuthenticationService {
         Authorization: basicAuthHeaderString
       })
 
-    return this.http.get<AuthenticationBean>(
+    return this.http.get<BasicAuthBean>(
       `${this.baseUrl}/dailytech/login`,
       {headers}).pipe(
         map(
@@ -61,6 +61,6 @@ export class AdminAuthenticationService {
 
 }
 
-export class AuthenticationBean{
+export class BasicAuthBean{
   constructor(public message:string) { }
 }

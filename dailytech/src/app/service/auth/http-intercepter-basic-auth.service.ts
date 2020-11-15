@@ -19,7 +19,8 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor {
     if (adminAuthHeaderString && username) {
       request = request.clone({
         setHeaders: {
-          Authorization: adminAuthHeaderString
+          Authorization: adminAuthHeaderString,
+          Accept: 'application/json',
         }
       })
     }

@@ -11,7 +11,7 @@ import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-l
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { WritingComponent } from './components/writing/writing.component';
 
-import { RouteGuardService } from './service/auth/route-guard.service';
+import { AdminGuardService } from './service/auth/admin-guard.service';
 import { UserGuardService } from './service/auth/user-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 import { NasaComponent } from './components/nasa/nasa.component';
@@ -25,11 +25,11 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent },
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
-  { path: 'nasa', component: NasaComponent }, // NEEDS KEY
+  { path: 'nasa', component: NasaComponent },
 
   { path: 'admin/posts', component: PostsListComponent},
-  { path: 'admin/post/:id', component: PostComponent, canActivate:[RouteGuardService]},
-  { path: 'admin/:name', component: AdminComponent, canActivate:[RouteGuardService]},
+  { path: 'admin/post/:id', component: PostComponent, canActivate:[AdminGuardService]},
+  { path: 'admin/:name', component: AdminComponent, canActivate:[AdminGuardService]},
 
 
   { path: 'login', component: SignonComponent },
