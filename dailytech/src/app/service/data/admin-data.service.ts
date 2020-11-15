@@ -15,7 +15,7 @@ export class AdminDataService {
   constructor(
     private http: HttpClient
   ) {
-     
+
     this.baseUrl = environment.API_URL;
 
    }
@@ -27,7 +27,7 @@ export class AdminDataService {
     // })
     return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech/user/${name}`,
     // {headers: header}
-    ); 
+    );
   }
 
   // createBasicAuthenticationHttpHeader() {
@@ -38,7 +38,7 @@ export class AdminDataService {
   // }
 
   executeAdminService() {
-    return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech`); 
+    return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech`);
   }
   errorService() {
     return this.http.get<DailyTechBean>(`${this.baseUrl}/dailytech/error`);

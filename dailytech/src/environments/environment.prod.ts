@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  API_URL: "https://54.174.82.153:8089",
+  BASE: "http://54.174.82.153:8080",
+  API_URL: "https://54.174.82.153:8080/api",
   //  API_URL: "https://54.174.82.153:8089/api",
 
   // nasaKey: 'mF6DQ******iJw0',

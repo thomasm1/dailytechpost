@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
 
     this.name = this.route.snapshot.params['name'];
-    this.getParameterUpdate();
+    this.getParameterUpdate();   // /DISABLED UNTIL BASIC AUTH ==> JWT
 
   }
 onStartWriting() {
@@ -30,10 +30,10 @@ onStartWriting() {
 }
 
   getParameterUpdate() {
-    this.adminService.executeParameterService(this.name).subscribe(
-      response => this.handleResponse(response),
-      error => this.handleErrorResponse(error)
-    );
+    // this.adminService.executeParameterService(this.name).subscribe(
+    //   response => this.handleResponse(response),
+    //   error => this.handleErrorResponse(error)      // /DISABLED UNTIL BASIC AUTH ==> JWT
+    // );
     this.message = 'Welcome ' + this.name;
   }
   getUpdate() {

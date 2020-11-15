@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms'; 
+import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
@@ -14,7 +14,7 @@ import { UiService } from 'src/app/service/ui.service';
 })
 export class SignonComponent implements OnInit, OnDestroy {
   maxDate;
-  
+
   loginForm: FormGroup;
   username = '';
   password = '';
@@ -27,13 +27,13 @@ export class SignonComponent implements OnInit, OnDestroy {
   private loadingSubs: Subscription;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private adminAuthService: AdminAuthenticationService,
-    private jwtAuthService: JwtAuthService, 
+    private jwtAuthService: JwtAuthService,
     private uiService: UiService
   ) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
       this.isLoading = isLoading;
     });
@@ -42,50 +42,51 @@ export class SignonComponent implements OnInit, OnDestroy {
         validators: [Validators.required, Validators.email]
 
       }),
-      password: new FormControl('', { 
+      password: new FormControl('', {
         validators: [Validators.required] })
     });
   }
-   // USER AUTHENTICATION 
+   // USER AUTHENTICATION
    handleJwtLogin( ){
     console.log(this.loginForm);
-    
+
     this.jwtAuthService.login({
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     });
-   
+
   }
 
     // USER REGISTER (TABS)
-  onRegister(form:NgForm) { 
+  onRegister(form:NgForm) {
     console.log(form);
-    
+
     // USER REGISTER (SIDENAV --temporary)
     this.jwtAuthService.registerUser({
-      username: form.value.username, 
-      email: form.value.email, 
+      username: form.value.username,
+      email: form.value.email,
       password: form.value.password
-    }); 
-  } 
+    });
+  }
 
- 
+
     // ADMIN AUTHENTICATION ////////////////////////
-    
+
   adminOpen() {
     this.adminFlag = (this.adminFlag===true)?false:true;
   }
 
   handleAdminAuthLogin(form:NgForm) {
-    console.log(form); 
-    
-    this.adminAuthService.executeAuthenticationService(form.value.username, form.value.password)
-      .subscribe(
+    console.log(form);
+
+    // this.adminAuthService.executeAuthenticationService(form.value.username, form.value.password)
+      this.adminAuthService.executeAuthJwtService(form.value.username, form.value.password)
+    .subscribe(
         data => {
           console.log(data)
           this.router.navigate(['admin', form.value.username])
           this.invalidLogin = false
-          this.authLogin = true 
+          this.authLogin = true
         },
         error => {
           console.log(error)
@@ -95,11 +96,11 @@ export class SignonComponent implements OnInit, OnDestroy {
       )
   }
 
- 
+
   ngOnDestroy() {
     if (this.loadingSubs) {
       this.loadingSubs.unsubscribe();
     }
   }
-  
+
 }

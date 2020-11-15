@@ -14,32 +14,49 @@ export const AUTHENTICATED_USER = 'AuthenticatedUser'
 
 export class AdminAuthenticationService {
 
+  base:string;
   baseUrl:string;
 
   constructor(private http: HttpClient) {
 
+    this.base = environment.BASE;
     this.baseUrl = environment.API_URL;
 
    }
 
-  executeAuthenticationService(adminName, password) {
-    let basicAuthHeaderString = 'Basic ' + window.btoa(adminName + ':' + password);
+  // executeAuthenticationService(adminName, password) {
+    // Basic Authentication
+    // let basicAuthHeaderString = 'Basic ' + window.btoa(adminName + ':' + password);
+    // let headers = new HttpHeaders({
+    //     Authorization: basicAuthHeaderString
+    //   })
+    // return this.http.get<BasicAuthBean>(
+    //   `${this.baseUrl}/dailytech/login`,
+    //   {headers}).pipe(
+    //     map(
+    //       data => {
+    //         sessionStorage.setItem(AUTHENTICATED_USER, adminName);
+    //         sessionStorage.setItem(TOKEN, basicAuthHeaderString);
+    //         return data;
+    //       }
+    //     )
+    //   );
 
-    let headers = new HttpHeaders({
-        Authorization: basicAuthHeaderString
-      })
+  executeAuthJwtService(username, password) {
+    return this.http.post<any>(
+        `${this.base}/authenticate`,{
+          username,
+          password
+        }).pipe(
+          map(
+            data => {
+              sessionStorage.setItem(AUTHENTICATED_USER, username);
+              sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+              return data;
+            }
+          )
+        );
 
-    return this.http.get<BasicAuthBean>(
-      `${this.baseUrl}/dailytech/login`,
-      {headers}).pipe(
-        map(
-          data => {
-            sessionStorage.setItem(AUTHENTICATED_USER, adminName);
-            sessionStorage.setItem(TOKEN, basicAuthHeaderString);
-            return data;
-          }
-        )
-      );
   }
 
   getAuthenticatedUser() {
