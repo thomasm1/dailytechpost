@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+// import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
 import { Store } from '@ngrx/store';
 
@@ -10,14 +10,15 @@ import { WritingService } from '../writing.service';
 import { UiService } from '../ui.service';
 import * as fromRoot from '../../reducers/app.reducer';
 import * as UI from '../../reducers/ui.actions';
+import * as Auth from '../../reducers/auth.actions'
 
 @Injectable({
   providedIn: 'root'
 })
 export class JwtAuthService {
-  authChange = new Subject<boolean>();
-  private isAuthenticated = false;
   // private user: User;
+  // authChange = new Subject<boolean>();
+  // private isAuthenticated = false;
 
   constructor(
     private router: Router,
@@ -32,14 +33,16 @@ export class JwtAuthService {
     initAuthListener() {
       this.afAuth.authState.subscribe(user => {
         if (user) {
-          this.isAuthenticated = true;
-          this.authChange.next(true);
+          // this.isAuthenticated = true;
+          // this.authChange.next(true);
+          this.store.dispatch(new Auth.SetAuthenticated());
           this.router.navigate(['/writing']);
         } else {
           this.writingService.cancelSubscriptions();
-          this.authChange.next(false);
+          // this.isAuthenticated = false;
+          // this.authChange.next(false);
+          this.store.dispatch(new Auth.SetUnauthenticated());
           this.router.navigate(['/']);
-          this.isAuthenticated = false;
         }
       });
     }
@@ -101,14 +104,13 @@ export class JwtAuthService {
     // this.isAuthenticated = false;
   }
 
-
-  isAuth() {
-    return this.isAuthenticated;
-  }
-
   // private authSuccessful() {
   //   this.isAuthenticated = true;
   //   this.authChange.next(true);
   //   this.router.navigate(['/writing'])
+  // }
+
+  // isAuth() {
+  //   return this.isAuthenticated;
   // }
 }

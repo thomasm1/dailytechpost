@@ -1,8 +1,10 @@
 import { Component, OnInit, EventEmitter , Output, OnDestroy} from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
 import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as fromRoot from '../../../reducers/app.reducer';
 
 
 @Component({
@@ -10,24 +12,27 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './sidenav-list.component.html',
   styleUrls: ['./sidenav-list.component.scss']
 })
-export class SidenavListComponent implements OnInit, OnDestroy {
+export class SidenavListComponent implements OnInit { // }, OnDestroy {
   @Output() closeSidenav = new EventEmitter<void>();
-  variable: string = '';
 
+  variable = '';
   // isAdminLoggedIn: boolean = false;
-  isAuth: boolean = false;
+  // isAuth: boolean = false;
+  isAuth$: Observable<boolean>;
   authSubscription: Subscription;
 
   constructor(private route: ActivatedRoute,
     public adminAuthService: AdminAuthenticationService,
-    private jwtAuthService: JwtAuthService) { }
+    private jwtAuthService: JwtAuthService,
+    private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
     this.variable = this.route.snapshot.params['name'];
     // this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
-    this.authSubscription = this.jwtAuthService.authChange.subscribe(authStatus => {
-      this.isAuth = authStatus;
-    })
+    // this.authSubscription = this.jwtAuthService.authChange.subscribe(authStatus => {
+    //   this.isAuth = authStatus;
+    // })
+    this.isAuth$ = this.store.select(fromRoot.getIsAuth);
   }
 
 
@@ -40,13 +45,11 @@ export class SidenavListComponent implements OnInit, OnDestroy {
     this.jwtAuthService.logout();
     this.adminAuthService.logout();
 
-    // BUG FIX TEMPORARY
-    // this.isAuth = false;
   }
 
-  ngOnDestroy() {
-    if (this.authSubscription) {
-      this.authSubscription.unsubscribe();
-    }
-  }
+  // ngOnDestroy() {
+  //   if (this.authSubscription) {
+  //     this.authSubscription.unsubscribe();
+  //   }
+  // }
 }

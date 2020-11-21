@@ -10,7 +10,7 @@
 
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <mat-nav-list fxLayout fxLayoutGap="10px" class="navigation-items">
-      <a mat-list-item routerLink="/writing" class="nav-link daily-tech monoton"  title="{{pleaseSign}}"
+      <a mat-list-item routerLink="/writing" class="nav-link daily-tech monoton" *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()"
         >WRITE!</a
       >
       <a
@@ -25,7 +25,7 @@
       >
       <a
         mat-list-item
-        *ngIf="!adminAuthService.isAdminLoggedIn() && !isAuth"
+        *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async )"
         routerLink="/login"
         class="nav-link daily-tech monoton"
         >LOGIN</a
@@ -33,7 +33,7 @@
       <a
         mat-list-item
         class="pointer"
-        *ngIf="isAuth || adminAuthService.isAdminLoggedIn()"
+        *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()"
         (click)="onLogout(); adminAuthService.logout()"
         routerLink="/login"
         class="nav-link daily-tech monoton"
