@@ -7,7 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { StoreModule } from '@ngrx/store';
-import { appReducer} from './app.reducer';
+import { reducers } from './reducers/app.reducer';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -85,7 +85,9 @@ import { NasaComponent } from './components/nasa/nasa.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    StoreModule.forRoot({ui: appReducer}),
+    // StoreModule.forRoot({ui: appReducer}),
+    StoreModule.forRoot( reducers ),
+
 
     WritingModule,
     AuthModule,

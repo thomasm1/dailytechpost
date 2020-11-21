@@ -46,7 +46,7 @@
 
 
           <div class="row">
-            <button  *ngIf="!isLoading"  type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
+            <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
             <button  *ngIf="!(isLoading$ | async)" mat-raised-button color="basic">CANCEL</button>
             <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
           </div>
@@ -90,10 +90,10 @@
           <hr>
 
           <div class="row">
-            <button type="submit" mat-raised-button color="primary">REGISTER</button>
-            <button mat-raised-button color="basic">CANCEL</button>
+            <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">REGISTER</button> &nbsp;
+            <button  *ngIf="!(isLoading$ | async)" mat-raised-button routerLink="/login" color="basic">CANCEL</button>
+            <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
           </div>
-
         </form>
       </section>
     </div>

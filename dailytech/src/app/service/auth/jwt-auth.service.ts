@@ -8,7 +8,8 @@ import { Store } from '@ngrx/store';
 import { AuthData } from '../../models/auth-data.model';
 import { WritingService } from '../writing.service';
 import { UiService } from '../ui.service';
-import * as fromApp from '../../app.reducer';
+import * as fromRoot from '../../reducers/app.reducer';
+import * as UI from '../../reducers/ui.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class JwtAuthService {
     private afAuth: AngularFireAuth,
     private writingService: WritingService,
     private uiService: UiService,
-    private store: Store<{ ui: fromApp.State }>
+    // private store: Store<{ ui: fromApp.State }>
+    private store: Store<fromRoot.State>
     ) { }  // Dispatch actions & Listen to Changes
 
 
@@ -42,9 +44,10 @@ export class JwtAuthService {
       });
     }
   registerUser(authData: AuthData) {
-                // DISPATCHING THE ACTION WHEN START LOADING
     // this.uiService.loadingStateChanged.next(true);
-    this.store.dispatch({ type: 'START_LOADING' });
+                // DISPATCHING THE ACTION WHEN START LOADING
+    // this.store.dispatch({ type: 'START_LOADING' });
+    this.store.dispatch(new UI.StartLoading());
 
     this.afAuth.auth.createUserWithEmailAndPassword(
       authData.email,
@@ -54,32 +57,38 @@ export class JwtAuthService {
       console.log(result);
       // this.authSuccessful();
       // this.uiService.loadingStateChanged.next(false);
-      this.store.dispatch({ type: 'STOP_LOADING' });
-        // DISPATCHING THE ACTION WHEN STOP LOADING
+              // DISPATCHING THE ACTION WHEN STOP LOADING
+      // this.store.dispatch({ type: 'STOP_LOADING' });
+      this.store.dispatch(new UI.StopLoading());
+
     })
     .catch(error => {
       console.log(error);
       // this.uiService.loadingStateChanged.next(false);
-      this.store.dispatch({ type: 'STOP_LOADING' });
+      // this.store.dispatch({ type: 'STOP_LOADING' });
+      this.store.dispatch(new UI.StopLoading());
       this.uiService.showSnackBar(error.message, null, 2500  );
     });
   }
 
   login(authData: AuthData) {
+    // this.uiService.loadingStateChanged.next(true);
     // this.store.dispatch({ type: 'START_LOADING' });
-    this.uiService.loadingStateChanged.next(true);
+    this.store.dispatch(new UI.StartLoading());
     this.afAuth.auth
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
+        // this.uiService.loadingStateChanged.next(false);
         // this.store.dispatch({ type: 'STOP_LOADING' });
-        this.uiService.loadingStateChanged.next(false);
+        this.store.dispatch(new UI.StopLoading());
         console.log("logged in" + result);
         // this.authSuccessful();
       })
       .catch(error => {
         console.log(error);
+        // this.uiService.loadingStateChanged.next(false);
         // this.store.dispatch({ type: 'STOP_LOADING' });
-        this.uiService.loadingStateChanged.next(false);
+      this.store.dispatch(new UI.StopLoading());
         this.uiService.showSnackBar(error.message, null, 2500  );
       });
   }

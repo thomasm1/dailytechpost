@@ -8,7 +8,7 @@ import { AdminAuthenticationService } from '../../../service/auth/admin-authenti
 import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import { UiService } from 'src/app/service/ui.service';
 import { Store } from '@ngrx/store';
-import * as fromApp from '../../../app.reducer';
+import * as fromRoot from '../../../reducers/app.reducer';
 
 @Component({
   selector: 'app-signon',
@@ -35,16 +35,19 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     private adminAuthService: AdminAuthenticationService,
     private jwtAuthService: JwtAuthService,
     private uiService: UiService,
-    private store: Store<{ ui: fromApp.State }>
+    // private store: Store<{ ui: fromApp.State }>,
+    private store: Store< fromRoot.State >
   ) { }
 
   ngOnInit() {
-    this.isLoading$ = this.store.pipe(map(state => state.ui.isLoading));
-    // this.store.subscribe(data => console.log(data));
-
     // this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
     //   this.isLoading = isLoading;
     // });
+
+    // this.store.subscribe(data => console.log(data));Ver
+    // this.isLoading$ = this.store.pipe(map(state => state.ui.isLoading));
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+
     this.loginForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email]
