@@ -1,18 +1,21 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
 import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
 import { UiService } from 'src/app/service/ui.service';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../../app.reducer';
 
 @Component({
   selector: 'app-signon',
   templateUrl: './signon.component.html',
   styleUrls: ['./signon.component.scss']
 })
-export class SignonComponent implements OnInit, OnDestroy {
+export class SignonComponent implements OnInit { //, OnDestroy {
   maxDate;
 
   loginForm: FormGroup;
@@ -23,20 +26,25 @@ export class SignonComponent implements OnInit, OnDestroy {
   authLogin = false;
 
   adminFlag: boolean = false
-  isLoading = false;
+  // isLoading = false;
+  isLoading$ : Observable<boolean>; // $ at end of variable ngrx convention
   private loadingSubs: Subscription;
 
   constructor(
     private router: Router,
     private adminAuthService: AdminAuthenticationService,
     private jwtAuthService: JwtAuthService,
-    private uiService: UiService
+    private uiService: UiService,
+    private store: Store<{ ui: fromApp.State }>
   ) { }
 
   ngOnInit() {
-    this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
-      this.isLoading = isLoading;
-    });
+    this.isLoading$ = this.store.pipe(map(state => state.ui.isLoading));
+    // this.store.subscribe(data => console.log(data));
+
+    // this.loadingSubs = this.uiService.loadingStateChanged.subscribe(isLoading => {
+    //   this.isLoading = isLoading;
+    // });
     this.loginForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email]
@@ -97,10 +105,10 @@ export class SignonComponent implements OnInit, OnDestroy {
   }
 
 
-  ngOnDestroy() {
-    if (this.loadingSubs) {
-      this.loadingSubs.unsubscribe();
-    }
-  }
+  // ngOnDestroy() {
+  //   if (this.loadingSubs) {
+  //     this.loadingSubs.unsubscribe();
+  //   }
+  // }
 
 }

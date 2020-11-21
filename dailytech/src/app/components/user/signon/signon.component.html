@@ -47,8 +47,8 @@
 
           <div class="row">
             <button  *ngIf="!isLoading"  type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
-            <button  *ngIf="!isLoading" mat-raised-button color="basic">CANCEL</button>
-            <mat-spinner *ngIf="isLoading"></mat-spinner>
+            <button  *ngIf="!(isLoading$ | async)" mat-raised-button color="basic">CANCEL</button>
+            <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
           </div>
         </form>
 

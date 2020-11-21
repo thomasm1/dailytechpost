@@ -24,7 +24,7 @@ export class JwtAuthService {
     private writingService: WritingService,
     private uiService: UiService,
     private store: Store<{ ui: fromApp.State }>
-    ) { }
+    ) { }  // Dispatch actions & Listen to Changes
 
 
     initAuthListener() {
@@ -36,14 +36,15 @@ export class JwtAuthService {
         } else {
           this.writingService.cancelSubscriptions();
           this.authChange.next(false);
-          this.router.navigate(['/']); 
+          this.router.navigate(['/']);
           this.isAuthenticated = false;
         }
       });
     }
   registerUser(authData: AuthData) {
-    // this.store.dispatch({ type: 'START_LOADING' });
-    this.uiService.loadingStateChanged.next(true);
+                // DISPATCHING THE ACTION WHEN START LOADING
+    // this.uiService.loadingStateChanged.next(true);
+    this.store.dispatch({ type: 'START_LOADING' });
 
     this.afAuth.auth.createUserWithEmailAndPassword(
       authData.email,
@@ -51,14 +52,15 @@ export class JwtAuthService {
     )
     .then(result => {
       console.log(result);
-      // this.store.dispatch({ type: 'STOP_LOADING' });
-      this.uiService.loadingStateChanged.next(false);
       // this.authSuccessful();
+      // this.uiService.loadingStateChanged.next(false);
+      this.store.dispatch({ type: 'STOP_LOADING' });
+        // DISPATCHING THE ACTION WHEN STOP LOADING
     })
     .catch(error => {
       console.log(error);
-      // this.store.dispatch({ type: 'STOP_LOADING' });
-      this.uiService.loadingStateChanged.next(false);
+      // this.uiService.loadingStateChanged.next(false);
+      this.store.dispatch({ type: 'STOP_LOADING' });
       this.uiService.showSnackBar(error.message, null, 2500  );
     });
   }
