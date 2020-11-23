@@ -14,7 +14,7 @@ export class NewsPageComponent implements OnInit   {
       .replace(/ /g, '')
       .split(',');
   results: any[] = [];
-  selectedSection: string = 'home';
+  selectedSection: string = 'technology';
 constructor(
     private newsService: NewsService
   ) { }

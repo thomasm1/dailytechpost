@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
@@ -8,21 +10,25 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/app.reducer';
-
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
-import { JwtAuthService } from './service/auth/jwt-auth.service';
-import { WritingService } from './service/writing.service';
-import { KeysService } from './service/keys.service';
-import { UiService } from './service/ui.service';
-
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 
+// PIPES
+import { TitleCasePipe } from '@angular/common';
+import { PipeCapitalizeCategoryPipe } from './utility/pipe-capitalize-category.pipe';
+
+// SERVICES
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
+import { JwtAuthService } from './service/auth/jwt-auth.service';
+import { WritingService } from './service/writing.service';
+import { KeysService } from './service/keys.service';
+import { UiService } from './service/ui.service';
+import { NewsService } from './service/news.service';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { PostComponent } from './components/post-dir/post/post.component';
 import { AnimationComponent } from './components/util/animation/animation.component';
@@ -64,6 +70,7 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
     BlogModalComponent,
     BlogsComponent,
     NasaComponent,
+    PipeCapitalizeCategoryPipe,
 
     // TECH NEWS
     NewsPageComponent,
@@ -111,8 +118,10 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
   providers: [
     KeysService,
     JwtAuthService,
+    NewsService,
     WritingService,
     UiService,
+    TitleCasePipe,
     { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
   ],
   bootstrap: [AppComponent],

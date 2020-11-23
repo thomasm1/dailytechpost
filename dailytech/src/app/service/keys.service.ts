@@ -52,11 +52,11 @@ export class KeysService {
   }
   getNytApi() {
     this.http
-      .get(`${this.nytApi}`)
+      .get(`${this.nytUrl}`)
       .subscribe((response) => {
             // console.log(response["NYT_API"][0]);
-            this.nasaApi = response["NYT_API"][0];
+            this.nytApi = response["NYT_API"][0];
       });
-      return this.nasaApi;
+      return this.nytApi;
   }
 }
