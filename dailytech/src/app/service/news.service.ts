@@ -17,10 +17,11 @@ export class NewsService {
     return this.nytKey;
   }
   search(data) {
-    // this.getNytKey();
+    this.getNytKey();
 
     let params: HttpParams = new HttpParams();
-    params = params.set('api-key', this.nytKey);
+    params = params.set('api-key', '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5'); // this.nytKey);
+
     if (data.q !== undefined) {
       params = params.set('q', data.q);
     }
@@ -41,10 +42,10 @@ export class NewsService {
     );
   }
   getArticles(section: string = 'technology') {
-    this.getNytKey();
+
 
     let params: HttpParams = new HttpParams();
-    params = params.set('api-key', this.nytKey);
+    params = params.set('api-key', '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5'); // this.nytKey);
 
     return this.http.get(
       `${environment.apiUrlNYT}/topstories/v2/${section}.json`,
