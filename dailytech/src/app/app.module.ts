@@ -40,6 +40,13 @@ import { WritingModule } from './writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 import { NasaComponent } from './components/nasa/nasa.component';
+
+// NEWS
+import { NewsPageComponent } from './components/news/news-page/news-page.component';
+import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
+import { NewsArticleResultsComponent } from './components/news/news-article-results/news-article-results.component';
+import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-bar.component';
+
 // import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
@@ -57,6 +64,12 @@ import { NasaComponent } from './components/nasa/nasa.component';
     BlogModalComponent,
     BlogsComponent,
     NasaComponent,
+
+    // TECH NEWS
+    NewsPageComponent,
+    NewsArticleSearchComponent,
+    NewsArticleResultsComponent,
+    NewsToolBarComponent,
 
     /////// AUTH MODULE ///////
     // AdminComponent,

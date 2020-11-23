@@ -1,0 +1,56 @@
+<br />
+<h3>{{selectedSection | pipeCapitalizeCategory }}</h3> 
+<hr> 
+<div class="news">
+    <div gdAreas="header header | side content" gdColumns="150px calc(90vw - 150px)"gdGap="16px"
+    gdAreas.lt-md="header | menu | content" gdRows.lt-md="auto auto auto auto" gdColumns.lt-md="90vw">
+    <!-- <div gdArea="header">
+        <div >
+            <h3>{{selectedSection | pipeCapitalizeCategory }}</h3>
+        </div>
+    </div> -->
+    <div gdArea='menu'>
+        <button mat-raised-button [matMenuTriggerFor]="appMenu">
+            Sections
+        </button>
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item *ngFor='let s of sections'
+                (click)='selectedSection = s; getArticles()'>{{s | pipeCapitalizeCategory }}
+            </button>
+        </mat-menu>
+    </div>
+    <div gdArea="side">
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor='let s of sections'>
+                <a class="sidebar-links" (click)='selectedSection = s; getArticles()'>{{s | pipeCapitalizeCategory }}</a>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="news-content" *ngIf="results" gdArea="content">
+        <mat-card *ngFor='let r of results'>
+            <mat-list role="list">
+                <mat-list-item>
+                    <mat-card-title>
+                        {{r.title}}
+                    </mat-card-title>
+                </mat-list-item>
+            </mat-list>
+            <mat-card-subtitle>
+                <mat-list role="list">
+                    <mat-list-item>Published Date: {{r.published_date | date: 'full' }}</mat-list-item>
+                    <mat-list-item><a href='{{r.url}}' target="_blank">Link</a></mat-list-item>
+                    <mat-list-item *ngIf='r.byline'>{{ r.byline }}</mat-list-item>
+                </mat-list>
+            </mat-card-subtitle>
+            <mat-card-content>
+                <mat-list role="list">
+                    <mat-list-item>{{r.abstract}}</mat-list-item>
+                </mat-list>
+                <img *ngIf='r.multimedia[r.multimedia.length - 1]?.url'
+                    [src]='r.multimedia[r.multimedia.length - 1]?.url'
+                    [alt]='r.multimedia[r.multimedia.length - 1]?.caption' class="image">
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+</div>

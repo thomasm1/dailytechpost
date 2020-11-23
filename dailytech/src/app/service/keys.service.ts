@@ -7,18 +7,24 @@ import { environment } from 'src/environments/environment'
 })
 export class KeysService {
 
+  nasaUrl:string = '';
+  googleUrl:string = '';
+  nytUrl: string = '';
+
   nasaApi:string = '';
-  googleApi:string = '';
+  nytApi: string = '';
+
   constructor(
     private http: HttpClient,
     ) {
-      this.googleApi = environment.google_url;
-      this.nasaApi = environment.nasa_url;
+      this.googleUrl = environment.google_url;
+      this.nasaUrl = environment.nasa_url;
+      this.nytUrl = environment.nyt_url;
     }
 
   getGoogleApi() {
     this.http
-      .get(`${this.googleApi}`)
+      .get(`${this.googleUrl}`)
       .subscribe((response) => {
         //console.log(response);
         if (response["googleMapAPIKey"] != undefined) {
@@ -37,10 +43,19 @@ export class KeysService {
 
   getNasaApi() {
     this.http
-      .get(`${this.nasaApi}`)
+      .get(`${this.nasaUrl}`)
       .subscribe((response) => {
-            console.log(response["nasaAPIKey"][0]);
+            // console.log(response["nasaAPIKey"][0]);
             this.nasaApi = response["nasaAPIKey"][0];
+      });
+      return this.nasaApi;
+  }
+  getNytApi() {
+    this.http
+      .get(`${this.nytApi}`)
+      .subscribe((response) => {
+            // console.log(response["NYT_API"][0]);
+            this.nasaApi = response["NYT_API"][0];
       });
       return this.nasaApi;
   }

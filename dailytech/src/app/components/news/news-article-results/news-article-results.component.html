@@ -1,0 +1,22 @@
+<mat-card *ngFor='let s of searchResults'>
+    <mat-list role="list">
+        <mat-list-item>
+            <mat-card-title>
+                {{s.headline.main}}
+            </mat-card-title>
+        </mat-list-item>
+    </mat-list>
+    <mat-card-subtitle>
+        <mat-list role="list">
+            <mat-list-item>Date: {{s.pub_date | date: 'full' }}</mat-list-item>
+            <mat-list-item><a href='{{s.web_url}}'>Link</a></mat-list-item>
+            <mat-list-item *ngIf='s.byline.original'>{{s.byline.original}}</mat-list-item>
+        </mat-list>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <div class="content">
+            <p>{{s.lead_paragraph}}</p>
+            <p>{{s.snippet}}</p>
+        </div>
+    </mat-card-content>
+</mat-card>

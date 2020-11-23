@@ -15,6 +15,8 @@ import { AdminGuardService } from './service/auth/admin-guard.service';
 import { UserGuardService } from './service/auth/user-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 import { NasaComponent } from './components/nasa/nasa.component';
+import { NewsPageComponent } from './components/news/news-page/news-page.component';
+import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
   { path: 'nasa', component: NasaComponent },
+  { path: 'news', component: NewsPageComponent },
+  { path: 'search', component: NewsArticleSearchComponent },
 
   { path: 'admin/posts', component: PostsListComponent},
   { path: 'admin/post/:id', component: PostComponent, canActivate:[AdminGuardService]},

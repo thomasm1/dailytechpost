@@ -24,7 +24,14 @@ export const environment = {
     projectId: 'ourdailytechdata',
     storageBucket: 'ourdailytechdata.appspot.com',
     messagingSenderId: '99505496502'
-  }
+  },
+  //  apiNYT: "http://54.174.82.153:8080/login/getFirebaseApi",
+// FIREBASE_API
+
+  // apiKeyNYT: "06**d5",
+  nyt_url: "http://54.174.82.153:8080/login/getNytApi",
+  apiUrlNYT: "https://api.nytimes.com/svc"
+  // NYT_API
 
 };
 
