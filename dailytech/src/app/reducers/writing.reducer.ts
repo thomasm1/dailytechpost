@@ -1,0 +1,58 @@
+import { Action } from '@ngrx/store';
+import {
+  WritingActions,
+  SET_AVAILABLE_WRITINGS,
+  SET_FINISHED_WRITINGS,
+  START_WRITING,
+  STOP_WRITING,
+} from './writing.actions';
+import { WritingBlog } from '../models/writing-blogs.model';
+import * as fromRoot from './app.reducer';
+
+export interface WritingState {
+  /// State for this module;
+  availableWritingBlogs: WritingBlog[]; /// bc this is lazy loaded;
+  finishedWritingBlogs: WritingBlog[]; // Writing State Knows about the app state, but app state doesn't know about Writing!!
+  activeWriting: WritingBlog[];
+}
+
+export interface State extends fromRoot.State {
+  writing: WritingState;
+}
+const initialState: WritingState = {
+  availableWritingBlogs: [], // based on writing state
+  finishedWritingBlogs: [],
+  activeWriting: null,
+};
+
+export function authReducer(state = initialState, action: WritingActions) {
+  switch (action.type) {
+    case SET_AVAILABLE_WRITINGS:
+      return {
+        ...state, // this will pull out available and finished
+       availableWritingBlogs: action.payload
+      };
+    case SET_FINISHED_WRITINGS:
+      return {
+        ...state, // this will pull out available and finished
+        finishedWritingBlogs: action.payload
+      };
+    case START_WRITING:
+      return {
+        ...state, // this will pull out available and finished
+        activeWriting: action.payload
+      };
+    case STOP_WRITING:
+      return {
+        ...state,
+        activeWriting: null
+      };
+    default: {
+      return state;
+    }
+  }
+}
+
+export const getAvailableWritingBlogs = (state: WritingState) => state.availableWritingBlogs;
+export const getFinishedWritingBlogs = (state: WritingState) => state.finishedWritingBlogs;
+export const getActiveWriting = (state: WritingState) => state.activeWriting;

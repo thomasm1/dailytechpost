@@ -23,10 +23,7 @@ export class WritingService {
 
   private availableWritingBlogs: WritingBlog[] = [
     // { id: '1a', name: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
-    // { id: '1b', name: 'Musing Blockchain', news: this.urlsBlockchain, category: 'musing-blockchain', durationGoal: 120, wordCount: 40, date: new Date(), state: null },
-    // { id: '1c', name: 'A.I.Now.', news: this.urlsAI, category: 'a-i-now', durationGoal: 120, wordCount: 450, date: new Date(), state: null },
-    // { id: '1d', name: 'Sociology Tomorrow!', news: this.urlsSoc, category: 'sociology-tomorrow', durationGoal: 120, wordCount: 550, date: new Date(), state: null },
-    // { id: '1e', name: 'Quantum Data', news: this.urlsQuantum, category: 'quantum-data', durationGoal: 120, wordCount: 4555, date: new Date(), state: null }
+     // ....
   ];
   private ongoingWriting: WritingBlog;
   // private writingBlogs: WritingBlog[] = [];
