@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { Action, createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   WritingActions,
   SET_AVAILABLE_WRITINGS,
@@ -25,7 +25,7 @@ const initialState: WritingState = {
   activeWriting: null,
 };
 
-export function authReducer(state = initialState, action: WritingActions) {
+export function writingReducer(state = initialState, action: WritingActions) {
   switch (action.type) {
     case SET_AVAILABLE_WRITINGS:
       return {
@@ -53,6 +53,12 @@ export function authReducer(state = initialState, action: WritingActions) {
   }
 }
 
-export const getAvailableWritingBlogs = (state: WritingState) => state.availableWritingBlogs;
-export const getFinishedWritingBlogs = (state: WritingState) => state.finishedWritingBlogs;
-export const getActiveWriting = (state: WritingState) => state.activeWriting;
+
+export const getWritingState = createFeatureSelector<WritingState>('writing');
+
+// export const getAvailableWritingBlogs = (state: WritingState) => state.availableWritingBlogs;
+export const getAvailableWritingBlogs = createSelector(getWritingState, (state: WritingState) => state.availableWritingBlogs);
+
+export const getFinishedWritingBlogs = createSelector(getWritingState, (state: WritingState) => state.finishedWritingBlogs);
+
+export const getActiveWriting = createSelector(getWritingState, (state: WritingState) => state.activeWriting);
