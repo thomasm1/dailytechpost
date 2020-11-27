@@ -13,7 +13,7 @@ export interface WritingState {
   /// State for this module;
   availableWritingBlogs: WritingBlog[]; /// bc this is lazy loaded;
   finishedWritingBlogs: WritingBlog[]; // Writing State Knows about the app state, but app state doesn't know about Writing!!
-  activeWriting: WritingBlog[];
+  activeWriting: WritingBlog;
 }
 
 export interface State extends fromRoot.State {
@@ -62,3 +62,6 @@ export const getAvailableWritingBlogs = createSelector(getWritingState, (state: 
 export const getFinishedWritingBlogs = createSelector(getWritingState, (state: WritingState) => state.finishedWritingBlogs);
 
 export const getActiveWriting = createSelector(getWritingState, (state: WritingState) => state.activeWriting);
+
+export const getIsWriting = createSelector(getWritingState, (state: WritingState) => state.activeWriting != null);
+

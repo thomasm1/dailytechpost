@@ -17,8 +17,8 @@ import * as fromWriting from '../reducers/writing.reducer';
 })
 
 export class WritingService {
-  writingChanged = new Subject<WritingBlog>();
-  writingsChanged = new Subject<WritingBlog[]>();
+  // writingChanged = new Subject<WritingBlog>();
+  // writingsChanged = new Subject<WritingBlog[]>();
   finishedWritingsChanged = new Subject<WritingBlog[]>();
 
   // urlsWebDev = ['https://www.wired.com/tag/the-web/','https://www.infoworld.com/category/web-development/'];
@@ -27,10 +27,10 @@ export class WritingService {
   // urlsSoc = ['https://www.wired.com/','https://www.sociologylens.net/article-types/opinion/digital-sociology-reinvention-social-research-noortje-marres-digital-technology-contributes-sociology/18108'];
   // urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
 
-  private availableWritingBlogs: WritingBlog[] = [
+  // private availableWritingBlogs: WritingBlog[] = [
     // { id: '1a', name: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
      // ....
-  ];
+  // ];
   private ongoingWriting: WritingBlog;
   // private writingBlogs: WritingBlog[] = [];
   private firebaseSubs: Subscription[] = [];
@@ -50,7 +50,6 @@ export class WritingService {
       .snapshotChanges()
       .pipe(map(docArray => {
         return docArray.map(doc => {
-          console.log("docArray.map(doc =>... ", doc);
           return {
             id: doc.payload.doc.id,
             // spread operator pulling objects out of payload, and adding to object returned
@@ -72,7 +71,7 @@ export class WritingService {
       }, error => {
         this.uiService.loadingStateChanged.next(false);
         this.uiService.showSnackBar('Database is down, and fetching Blogs failed, please try again later', null, 3000);
-        this.writingsChanged.next(null);
+        // this.writingsChanged.next(null);
        }));  // END FIREBASE SUBSCRIPTION ARRAY
   }
 
@@ -86,6 +85,7 @@ export class WritingService {
 
   completeWriting() {
     // this.writingBlogs.push({
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(ex => {
     this.addDataToDatabase({
       ...this.ongoingWriting,
       date: new Date(),
@@ -94,10 +94,12 @@ export class WritingService {
     // this.ongoingWriting = null;
     // this.writingChanged.next(null);
     this.store.dispatch(new Writing.StopWriting());
+  });
   }
 
   cancelWriting(progress: number) {
     // this.writingBlogs.push({
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(ex => {
     this.addDataToDatabase({
       ...this.ongoingWriting,
       durationGoal: this.ongoingWriting.durationGoal * (progress / 100),
@@ -108,6 +110,7 @@ export class WritingService {
     // this.ongoingWriting = null;
     // this.writingChanged.next(null);
     this.store.dispatch(new Writing.StopWriting());
+  });
   }
 
   getWritingExercise() {
@@ -120,9 +123,9 @@ export class WritingService {
       this.db
       .collection('finished-writing-blogs')
       .valueChanges()
-      .subscribe((finishedWritingBlogs: WritingBlog[]) => {
-        // this.finishedWritingsChanged.next(finishedWritingBlogs);
-        this.store.dispatch(new Writing.SetFinishedWritings(finishedWritingBlogs))
+      .subscribe((writingBlogs: WritingBlog[]) => {
+        // this.finishedWritingsChanged.next(writingBlogs);
+        this.store.dispatch(new Writing.SetFinishedWritings(writingBlogs))
       })
     );  // END FIREBASE SUBSCRIPTION ARRAY
   }
@@ -131,8 +134,8 @@ export class WritingService {
     this.firebaseSubs.forEach(sub =>sub.unsubscribe());
   }
 
-  private addDataToDatabase(finishedWritingBlog: WritingBlog) {
-    this.db.collection('finished-writing-blogs').add(finishedWritingBlog);
+  private addDataToDatabase(writingBlog: WritingBlog) {
+    this.db.collection('finished-writing-blogs').add(writingBlog);
   }
 
 }
