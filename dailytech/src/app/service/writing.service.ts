@@ -85,9 +85,10 @@ export class WritingService {
 
   completeWriting() {
     // this.writingBlogs.push({
-    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(ex => {
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingBlog => {
     this.addDataToDatabase({
-      ...this.ongoingWriting,
+      // ...this.ongoingWriting,
+      ...writingBlog,
       date: new Date(),
       state: 'completed'
     });
@@ -99,11 +100,13 @@ export class WritingService {
 
   cancelWriting(progress: number) {
     // this.writingBlogs.push({
-    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(ex => {
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingBlog => {
     this.addDataToDatabase({
-      ...this.ongoingWriting,
-      durationGoal: this.ongoingWriting.durationGoal * (progress / 100),
-      wordCount: this.ongoingWriting.durationGoal * (progress / 100),
+      // ...this.ongoingWriting,
+      ...writingBlog,
+      // durationGoal: this.ongoingWriting.durationGoal * (progress / 100),
+      durationGoal: writingBlog.durationGoal * (progress / 100),
+      wordCount: writingBlog.durationGoal * (progress / 100),
       date: new Date(),
       state: 'cancelled'
     });
@@ -113,9 +116,9 @@ export class WritingService {
   });
   }
 
-  getWritingExercise() {
-    return { ...this.ongoingWriting };
-  }
+  // getWritingExercise() {
+  //   return { ...this.ongoingWriting };
+  // }
 
   fetchCompletedOrCancelledWritings() {
     // return this.writingBlogs.slice();
