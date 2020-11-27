@@ -6,5 +6,6 @@ export interface WritingBlog {
     durationGoal?: number;
     wordCount?: number;
     date?: Date;
+    blog?: string;
     state?: 'complete' | 'completed' | 'cancelled' | null;
 }

@@ -3,13 +3,19 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
 
 import { WritingBlog } from '../models/writing-blogs.model';
 import { UiService } from '../service/ui.service';
+import * as UI from '../reducers/ui.actions';
+import * as Writing from '../reducers/writing.actions';
+import * as fromWriting from '../reducers/writing.reducer';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class WritingService {
   writingChanged = new Subject<WritingBlog>();
   writingsChanged = new Subject<WritingBlog[]>();
@@ -29,7 +35,11 @@ export class WritingService {
   // private writingBlogs: WritingBlog[] = [];
   private firebaseSubs: Subscription[] = [];
 
-  constructor(private db: AngularFirestore,  private uiService: UiService) { }
+  constructor(
+    private db: AngularFirestore,
+    private uiService: UiService,
+    private store: Store<fromWriting.State>
+    ) { }
 
   fetchAvailableWritingBlogs() {
     // return this.availableWritingBlogs.slice();
@@ -40,6 +50,7 @@ export class WritingService {
       .snapshotChanges()
       .pipe(map(docArray => {
         return docArray.map(doc => {
+          console.log("docArray.map(doc =>... ", doc);
           return {
             id: doc.payload.doc.id,
             // spread operator pulling objects out of payload, and adding to object returned
@@ -55,8 +66,9 @@ export class WritingService {
       ).subscribe((writingBlogs: WritingBlog[]) => {
         console.log(writingBlogs);
         this.uiService.loadingStateChanged.next(false);
-        this.availableWritingBlogs = writingBlogs;
-        this.writingsChanged.next([...this.availableWritingBlogs]);
+        // this.availableWritingBlogs = writingBlogs;
+        // this.writingsChanged.next([...this.availableWritingBlogs]);
+        this.store.dispatch(new Writing.SetAvailableWritings(writingBlogs));
       }, error => {
         this.uiService.loadingStateChanged.next(false);
         this.uiService.showSnackBar('Database is down, and fetching Blogs failed, please try again later', null, 3000);
@@ -65,10 +77,11 @@ export class WritingService {
   }
 
   startWriting(selectedId: string) {
-    this.ongoingWriting = this.availableWritingBlogs.find(
-      ex => ex.id === selectedId
-    );
-    this.writingChanged.next({ ...this.ongoingWriting });
+    // this.ongoingWriting = this.availableWritingBlogs.find(
+    //   ex => ex.id === selectedId
+    // );
+    // this.writingChanged.next({ ...this.ongoingWriting });
+    this.store.dispatch(new Writing.StartWriting(selectedId));
   }
 
   completeWriting() {
@@ -78,8 +91,9 @@ export class WritingService {
       date: new Date(),
       state: 'completed'
     });
-    this.ongoingWriting = null;
-    this.writingChanged.next(null);
+    // this.ongoingWriting = null;
+    // this.writingChanged.next(null);
+    this.store.dispatch(new Writing.StopWriting());
   }
 
   cancelWriting(progress: number) {
@@ -91,8 +105,9 @@ export class WritingService {
       date: new Date(),
       state: 'cancelled'
     });
-    this.ongoingWriting = null;
-    this.writingChanged.next(null);
+    // this.ongoingWriting = null;
+    // this.writingChanged.next(null);
+    this.store.dispatch(new Writing.StopWriting());
   }
 
   getWritingExercise() {
@@ -105,8 +120,9 @@ export class WritingService {
       this.db
       .collection('finished-writing-blogs')
       .valueChanges()
-      .subscribe((writingBlogs: WritingBlog[]) => {
-        this.finishedWritingsChanged.next(writingBlogs);
+      .subscribe((finishedWritingBlogs: WritingBlog[]) => {
+        // this.finishedWritingsChanged.next(finishedWritingBlogs);
+        this.store.dispatch(new Writing.SetFinishedWritings(finishedWritingBlogs))
       })
     );  // END FIREBASE SUBSCRIPTION ARRAY
   }
@@ -115,8 +131,8 @@ export class WritingService {
     this.firebaseSubs.forEach(sub =>sub.unsubscribe());
   }
 
-  private addDataToDatabase(writingBlog: WritingBlog) {
-    this.db.collection('finished-writing-blogs').add(writingBlog);
+  private addDataToDatabase(finishedWritingBlog: WritingBlog) {
+    this.db.collection('finished-writing-blogs').add(finishedWritingBlog);
   }
 
 }

@@ -40,7 +40,7 @@ export function writingReducer(state = initialState, action: WritingActions) {
     case START_WRITING:
       return {
         ...state, // this will pull out available and finished
-        activeWriting: action.payload
+        activeWriting: { ... state.availableWritingBlogs.find(ex => ex.id === action.payload) }
       };
     case STOP_WRITING:
       return {
