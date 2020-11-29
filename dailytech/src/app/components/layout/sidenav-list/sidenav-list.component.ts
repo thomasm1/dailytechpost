@@ -19,7 +19,7 @@ export class SidenavListComponent implements OnInit { // }, OnDestroy {
   // isAdminLoggedIn: boolean = false;
   // isAuth: boolean = false;
   isAuth$: Observable<boolean>;
-  authSubscription: Subscription;
+  // authSubscription: Subscription;
 
   constructor(private route: ActivatedRoute,
     public adminAuthService: AdminAuthenticationService,

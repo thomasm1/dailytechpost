@@ -24,8 +24,8 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   writingBlogs$: Observable<WritingBlog[]>;
 
   isLoading = true;
-
   private loadingSubscription: Subscription;
+  // isLoading$: Observable<boolean>;
 
   constructor(
     private writingService: WritingService,
@@ -35,8 +35,10 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
 
   ngOnInit() {
     this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
-      isLoading => { this.isLoading = isLoading;  }
+      isLoading => { this.isLoading = isLoading;  }    // GONNA KEEP SUBSCRIPTION FOR THIS LOADING SPINNER
     );
+    // this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+
     // this.writingSubscription = this.writingService.writingsChanged.subscribe(
     //   writingBlogs => { this.writingBlogs = writingBlogs; }
     // );
@@ -52,12 +54,12 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
     this.writingService.startWriting(form.value.writing);
   }
 
-  // ngOnDestroy() {
-  //   if (this.loadingSubscription) {
-  //     this.loadingSubscription.unsubscribe();
-  //   }
-  //   if (this.writingSubscription) {
-  //     this.writingSubscription.unsubscribe();
-  //   }
-  // }
+  ngOnDestroy() {
+    if (this.loadingSubscription) {
+      this.loadingSubscription.unsubscribe();
+    }
+    // if (this.writingSubscription) {
+    //   this.writingSubscription.unsubscribe();
+    // }
+  }
 }

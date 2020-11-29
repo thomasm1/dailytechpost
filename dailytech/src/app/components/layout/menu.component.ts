@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit { //}, OnDestroy {
   // isAdminLoggedIn: boolean = false;
   // isAuth = false;
   isAuth$: Observable<boolean>;
-  authSubscription: Subscription;
+  // authSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
