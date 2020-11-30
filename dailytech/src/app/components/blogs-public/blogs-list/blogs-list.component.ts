@@ -46,7 +46,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.blogUpdater();
+  //   this.blogUpdater(this.blogs);
   }
 
   refreshBlogs() {
@@ -55,26 +55,18 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
       .subscribe((response) => {
         // console.log(response);
         this.blogs = response;
+        this.blogUpdater(this.blogs)
         this.blogsLoading = false;
       });
   }
 
-  blogUpdater() {
-    this.blogsSubscription = this.blogsService
-      .getAllBlogs()
-      .subscribe((response) => {
-        // console.log(response);
-        this.blogs = response;
-        this.blogsWeb = this.blogs.filter((x) => x.cat3 == 'Web Dev Affairs');
-        this.blogsBlockchain = this.blogs.filter(
-          (x) => x.cat3 == 'Musing Blockchain'
-        );
-        this.blogsAI = this.blogs.filter((x) => x.cat3 == 'A.I.Now.');
-        this.blogsSoc = this.blogs.filter(
-          (x) => x.cat3 == 'Sociology Tomorrow!'
-        );
-        this.blogsQuantum = this.blogs.filter((x) => x.cat3 == 'Quantum Data');
-      });
+  blogUpdater(blogs) {
+        // console.log(blogs);
+        this.blogsWeb = blogs.filter((x) => x.cat3 == 'Web Dev Affairs');
+        this.blogsBlockchain = blogs.filter( (x) => x.cat3 == 'Musing Blockchain'  );
+        this.blogsAI =  blogs.filter((x) => x.cat3 == 'A.I.Now.');
+        this.blogsSoc = blogs.filter( (x) => x.cat3 == 'Sociology Tomorrow!' );
+        this.blogsQuantum = blogs.filter((x) => x.cat3 == 'Quantum Data');
   }
 
   viewBlog(id) {

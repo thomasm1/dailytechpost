@@ -19,10 +19,12 @@ import { Component, OnInit } from '@angular/core';
       text-align:center;
       line-height:2rem;
     background: rgba(96, 79, 245, 0.692);
+    }
+    i.fa {
+      color:white;
 
 
     }
-
   `
 
   ]
@@ -31,7 +33,7 @@ export class FooterComponent implements OnInit {
 
   dt = new Date;
 
-  copyright = `Copyright 2019, ${this.dt.getFullYear()} All Rights Reserved.    |  `;
+  copyright = `Copyright 2019, ${this.dt.getFullYear()} All Rights Reserved.      `;
 
   constructor() { }
 
