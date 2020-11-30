@@ -1,7 +1,9 @@
 .menu-button {
   margin-top: 6px;
   margin-right: 10px;
-  cursor: pointer;
+}
+ a {
+  cursor: pointer !important;
 }
 .mat-toolbar {
   background: #009688;
