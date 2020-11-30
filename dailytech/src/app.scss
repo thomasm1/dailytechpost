@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Monoton:300,400,500,600");
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600");
-
-/*@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
-*/
 $tmmSquare: url('img/tmmsquare.png');
 $tmmPurple: url('img/tmmpurple.png');
 $tmmBlue: url('img/tmmblue.png');
@@ -27,8 +22,8 @@ $color: #fff;
 body {
     font-family: $font-roboto;
     color: rgb(61, 58, 151);
-    background-image: $bluechip;
     opacity: .9;
+    background-image: url("../assets/bluechipTile.jpg");
     background-color: $background-color;
     max-width: 950px;
     margin: 0;

@@ -18,13 +18,17 @@ import { Component, OnInit } from '@angular/core';
       color:rgb(220, 220, 247);
       text-align:center;
       line-height:2rem;
-    background: rgba(96, 79, 245, 0.692);
+    background-color: rgba(96, 79, 245, 0.592);
+    }
+    div.menu {
+
+    background-image: url("../../../assets/bluechipTile.jpg");
     }
     i.fa {
       color:white;
-
-
     }
+
+
   `
 
   ]
