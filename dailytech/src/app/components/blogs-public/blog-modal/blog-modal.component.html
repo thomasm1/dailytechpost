@@ -1,15 +1,15 @@
 <div *ngIf="blog" class="blog-top">
   <span class="category">{{ blog.cat3 }}</span>
   <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
-<span class="date" [innerHTML]="blog.date"></span>
+<span class="date" [innerHTML]="blog.date | safeHtml"></span>
 <hr class="bar-title">
-<h6 class="blog-title" [innerHTML]="blog.title"></h6>
+<h6 class="blog-title" [innerHTML]="blog.title | safeHtml"></h6>
 <div  >
   <ul    class="view-blog">
       <mat-card class="blog-box" >
-        <span [innerHTML]="blog.post"></span>
+        <span [innerHTML]="blog.post | safeHtml"></span>
         <hr>
-        <span [innerHTML]="blog.blogcite"></span>
+        <span [innerHTML]="blog.blogcite | safeHtml"></span>
       </mat-card>
 
   </ul>

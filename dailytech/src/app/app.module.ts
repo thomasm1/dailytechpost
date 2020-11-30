@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 // PIPES
 import { TitleCasePipe } from '@angular/common';
 import { PipeCapitalizeCategoryPipe } from './utility/pipe-capitalize-category.pipe';
+import { SafeHtmlPipe } from './utility/safe-html.pipe';
 
 // SERVICES
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -71,6 +72,7 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
     BlogsComponent,
     NasaComponent,
     PipeCapitalizeCategoryPipe,
+    SafeHtmlPipe,
 
     // TECH NEWS
     NewsPageComponent,
@@ -122,6 +124,7 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
     WritingService,
     UiService,
     TitleCasePipe,
+    SafeHtmlPipe,
     { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
   ],
   bootstrap: [AppComponent],

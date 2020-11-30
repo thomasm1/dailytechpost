@@ -8,7 +8,7 @@
       <ul *ngFor="let blog of blogs" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span [innerHTML]="blog.cat3" class="category"></span>
+            <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
               class="btnModal btnCat"
               mat-stroked-button
@@ -30,10 +30,10 @@
             >
               Print
             </button>
-            <span class="date" [innerHTML]="blog.date"></span>
+            <span class="date" [innerHTML]="blog.date | safeHtml"></span>
           </li>
-          <h6 [innerHTML]="blog.title"></h6>
-          <p class="blog-post" [innerHTML]="blog.post"></p>
+          <h6 [innerHTML]="blog.title | safeHtml"></h6>
+          <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
         </mat-card>
       </ul>
     </div>
@@ -45,7 +45,7 @@
         <!-- <mat-card (click)="viewBlog(blog.id)"> -->
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span [innerHTML]="blog.cat3" class="category"></span>
+            <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
               class="btnModal btnCat"
               mat-stroked-button
@@ -66,10 +66,10 @@
           >
             Print
           </button>
-          <span class="date" [innerHTML]="blog.date"></span>
+          <span class="date" [innerHTML]="blog.date | safeHtml"></span>
         </li>
-        <h6 [innerHTML]="blog.title"></h6>
-        <p class="blog-post" [innerHTML]="blog.post"></p>
+        <h6 [innerHTML]="blog.title | safeHtml"></h6>
+        <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
       </mat-card>
       </ul>
     </div>
@@ -80,7 +80,7 @@
       <ul *ngFor="let blog of blogsBlockchain" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span [innerHTML]="blog.cat3" class="category"></span>
+            <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
               class="btnModal btnCat"
               mat-stroked-button
@@ -101,10 +101,10 @@
           >
             Print
           </button>
-          <span class="date" [innerHTML]="blog.date"></span>
+          <span class="date" [innerHTML]="blog.date | safeHtml"></span>
         </li>
-        <h6 [innerHTML]="blog.title"></h6>
-        <p class="blog-post" [innerHTML]="blog.post"></p>
+        <h6 [innerHTML]="blog.title | safeHtml"></h6>
+        <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
       </mat-card>
       </ul>
     </div>
@@ -115,7 +115,7 @@
       <ul *ngFor="let blog of blogsAI" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span [innerHTML]="blog.cat3" class="category"></span>
+            <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
               class="btnModal btnCat"
               mat-stroked-button
@@ -136,11 +136,11 @@
           >
             Print
           </button>
-          <span class="date" [innerHTML]="blog.date"></span>
+          <span class="date" [innerHTML]="blog.date | safeHtml"></span>
           <hr class="bar-title" />
           <br />
         </li>
-        <h6 [innerHTML]="blog.title"></h6>
+        <h6 [innerHTML]="blog.title | safeHtml"></h6>
       </mat-card>
       </ul>
     </div>
@@ -151,7 +151,7 @@
       <ul *ngFor="let blog of blogsSoc" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span [innerHTML]="blog.cat3" class="category"></span>
+            <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
               class="btnModal btnCat"
               mat-stroked-button
@@ -172,10 +172,10 @@
           >
             Print
           </button>
-          <span class="date" [innerHTML]="blog.date"></span>
+          <span class="date" [innerHTML]="blog.date | safeHtml"></span>
         </li>
-        <h6 [innerHTML]="blog.title"></h6>
-        <p class="blog-post" [innerHTML]="blog.post"></p>
+        <h6 [innerHTML]="blog.title | safeHtml"></h6>
+        <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
       </mat-card>
       </ul>
     </div>
@@ -185,7 +185,7 @@
       <ul *ngFor="let blog of blogsQuantum" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
           <li>
-            <span [innerHTML]="blog.cat3" class="category"></span>
+            <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
               class="btnModal btnCat"
               mat-stroked-button
@@ -206,10 +206,10 @@
           >
             Print
           </button>
-          <span class="date" [innerHTML]="blog.date"></span>
+          <span class="date" [innerHTML]="blog.date | safeHtml"></span>
         </li>
-        <h6 [innerHTML]="blog.title"></h6>
-        <p class="blog-post" [innerHTML]="blog.post"></p>
+        <h6 [innerHTML]="blog.title | safeHtml"></h6>
+        <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
       </mat-card>
       </ul>
     </div>

@@ -16,7 +16,7 @@ export class BlogsService {
   protected urlDev: string = 'https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev';
 
   // private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  
+
   blogsUpdated = new Subject();
   private blogs;
 
@@ -25,17 +25,17 @@ export class BlogsService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post[]>(`${this.urlDev}/posts`  // , 
+    return this.http.get<Post[]>(`${this.urlDev}/posts`  // ,
     )
   }
 
   getBlog(id) {
-    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    //  let basicAuthHeaderString = this.zcreateBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
     console.log(id)
-    return this.http.get<Post>(`${this.urlDev2}/post/${id}`, 
+    return this.http.get<Post>(`${this.urlDev2}/post/${id}`,
       // {headers: header}
     )
   }

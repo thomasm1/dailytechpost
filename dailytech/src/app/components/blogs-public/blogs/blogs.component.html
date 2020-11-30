@@ -8,10 +8,10 @@
       <ul *ngFor="let blog of blogsByCat" class="view-blog">
         <li>
           <span class="category">{{ blog.cat3 }}</span>
-          <span class="date" [innerHTML]="blog.date"></span>
-          <h5 class="blog-title" [innerHTML]="blog.title"></h5>
-          <span class="posts" [innerHTML]="blog.post"></span>
-          <p [innerHTML]="blog.blogcite"></p>
+          <span class="date" [innerHTML]="blog.date | safeHtml"></span>
+          <h5 class="blog-title" [innerHTML]="blog.title | safeHtml"></h5>
+          <span class="posts" [innerHTML]="blog.post | safeHtml"></span>
+          <p [innerHTML]="blog.blogcite | safeHtml"></p>
         </li>
         <hr class="bar-blogs" />
         <hr class="bar-blogs" />
