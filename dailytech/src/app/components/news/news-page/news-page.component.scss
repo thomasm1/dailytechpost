@@ -2,16 +2,19 @@
 img.image {
   max-width: 75%;
   min-width: 40%;
-  padding:5px 10px 2px;
-  margin-top: 25px;
+  margin:25px 10px 2px;
   margin-right: 10px;
+  border: rgb(37, 37, 252) 3px solid;
 }
 .news {
  position:relative;
  left:10px;
 }
+#abstract {
+  padding:5px 0px;
+}
 mat-card-title {
-  font-size:20px;
+  font-size:18px;
   line-height: 1.2rem;
   padding-bottom:8px;
   text-align:center;

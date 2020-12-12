@@ -1,51 +1,78 @@
 <mat-nav-list>
-<div class="logo-box">
-        <a routerLink="/blogs"  (click)="onClose()">
-            <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
-        </a>
-    </div>
-
-
-   <a mat-list-item routerLink="/writing" (click)="onClose()" *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()">
+  <div class="logo-box">
+    <a routerLink="/blogs" (click)="onClose()">
+      <img
+        class="logo"
+        alt="DailyTech Logo"
+        src="assets/blueColorTriomphe.png"
+      />
+    </a>
+  </div>
+<hr>
+  <a
+    mat-list-item
+    routerLink="/writing"
+    (click)="onClose()"
+    *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
+  >
     <mat-icon>edit</mat-icon>
     <span class="nav-caption daily-tech monoton">Write!</span>
   </a>
 
-  <a mat-list-item *ngIf="adminAuthService.isAdminLoggedIn()" routerLink="/admin/posts" (click)="onClose()">
-    <mat-icon>computer</mat-icon>
-    <span class="nav-caption daily-tech monoton">Admin Console</span>
+  <a mat-list-item routerLink="/blogs" (click)="onClose()">
+    <mat-icon>book</mat-icon>
+    <span class="nav-caption daily-tech monoton">Blog</span>
   </a>
 
-  <a mat-list-item  routerLink="/news" (click)="onClose()">
-    <mat-icon>news</mat-icon>
+  <a mat-list-item routerLink="/news" (click)="onClose()">
+    <mat-icon>import_contacts</mat-icon>
     <span class="nav-caption daily-tech monoton">NEWS</span>
   </a>
 
-  <a mat-list-item  routerLink="/nasa" (click)="onClose()">
-   <mat-icon>nasa</mat-icon>
-   <span class="nav-caption daily-tech monoton">NASA</span>
- </a>
-
-   <a mat-list-item  routerLink="/blogs" (click)="onClose()">
-    <mat-icon>book</mat-icon>
-    <span class="nav-caption daily-tech monoton">Posts</span>
+  <a mat-list-item routerLink="/nasa" (click)="onClose()">
+    <mat-icon>api</mat-icon>
+    <span class="nav-caption daily-tech monoton">NASA</span>
   </a>
-
-  <a mat-list-item *ngIf="!(isAuth$ | async ) && !adminAuthService.isAdminLoggedIn()" routerLink="/register"  (click)="onClose()">
+  <hr />
+  <a
+    mat-list-item
+    *ngIf="!(isAuth$ | async) && !adminAuthService.isAdminLoggedIn()"
+    routerLink="/register"
+    (click)="onClose()"
+  >
     <mat-icon>face</mat-icon>
     <span class="nav-caption daily-tech monoton">Register</span>
   </a>
 
-  <a mat-list-item *ngIf="!(isAuth$ | async ) && !adminAuthService.isAdminLoggedIn()" routerLink="/login" (click)="onClose()">
+  <a
+    mat-list-item
+    *ngIf="!(isAuth$ | async) && !adminAuthService.isAdminLoggedIn()"
+    routerLink="/login"
+    (click)="onClose()"
+  >
     <mat-icon>input</mat-icon>
     <span class="nav-caption daily-tech monoton">Login</span>
   </a>
 
+  <a
+    mat-list-item
+    *ngIf="adminAuthService.isAdminLoggedIn()"
+    routerLink="/admin/posts"
+    (click)="onClose()"
+  >
+    <mat-icon>computer</mat-icon>
+    <span class="nav-caption daily-tech monoton">Admin Console</span>
+  </a>
+
   <mat-list-item>
-    <button mat-icon-button *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn() "  (click)="onLogout(); adminAuthService.logout()"  routerLink="/login" >
+    <button
+      mat-icon-button
+      *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
+      (click)="onLogout(); adminAuthService.logout()"
+      routerLink="/login"
+    >
       <mat-icon>eject</mat-icon>
       <span class="nav-caption daily-tech monoton">Logout</span>
     </button>
   </mat-list-item>
 </mat-nav-list>
-

@@ -2,8 +2,41 @@
   min-width:600px;
   background:rgba(255, 255, 255, 0.452);
   padding:20px;
-  margin:0 30%;
+
   p {
     margin:4px 0;
   }
+}
+.nasa-image {
+    max-width: 100%;
+}
+img.image {
+  max-width: 75%;
+  min-width: 40%;
+
+}
+.nasa-url {
+  overflow-x: hidden;
+}
+.news {
+ position:relative;
+ left:10px;
+}
+#abstract {
+  padding:5px 0px;
+}
+mat-card {
+  background: rgba(191, 185, 248, 0.233);
+}
+mat-card-title {
+  font-size:18px;
+  line-height: 1.2rem;
+  padding-bottom:8px;
+  text-align:center;
+}
+mat-list-item a {
+  cursor: pointer;
+}
+.mat-list-item {
+  width:95%;
 }

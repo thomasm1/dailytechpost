@@ -1,40 +1,51 @@
-<h6 class="dailytech">Twython NASA API</h6>
-<button (click)="displayNasa()">Display Nasa API </button>
-<button (click)="storeNasa()">Store Nasa API </button>
+ <h6 class="dailytech">Twython NASA API</h6>
+
 <div class="nasa">
-  <h6>Today's Nasa Apod</h6>
-  <div *ngIf="object">
+  <div gdArea="menu">
+    <button  mat-raised-button  (click)="displayNasa()">Update Nasa API </button>
+  </div>
+  <div
+  gdAreas="header header | side content"
+  gdColumns="350px calc(90vw - 350px)"
+  gdGap="16px"
+  gdAreas.lt-md="header | menu | content"
+  gdRows.lt-md="auto auto auto auto"
+  gdColumns.lt-md="90vw"
+>
+
+  <mat-card  *ngIf="object">
     <h6>{{ object.title }}</h6>
     <!-- <p> {{ object | json }}</p> -->
     <p id="date"><strong>Date:</strong> {{ object.date }}</p>
 
-    <img [src]="object.url" width="400" />
+    <img [src]="object.url" class="nasa-image" />
     <p id="apod_explaination">
       <strong>Summary:</strong> {{ object.explanation }}
     </p>
     <p id="copyright">
       <strong>{{ object.media_type }} Copyright:</strong> {{ object.copyright }}
     </p>
-    <p><strong>URL:</strong> {{ object.hdurl }}</p>
-  </div>
+    <p class="nasa-url" ><strong>URL:</strong><a target="_blank" rel="noopener" [href]="object.hdurl"> {{ object.hdurl }}</a></p>
+  </mat-card>
 
-  <h6>Archive Nasa Apod</h6>
-  <div *ngFor="let nasa of listNasa">
+  <mat-card  *ngFor="let nasa of listNasa">
     <h6>{{ nasa.title }}</h6>
     <!-- <p> {{ object | json }}</p> -->
     <p id="date"><strong>Date:</strong> {{ nasa.date }}</p>
 
-    <img [src]="nasa.url" width="400" />
+    <img [src]="nasa.url" class="nasa-image" />
     <p id="apod_explaination">
       <strong>Summary:</strong> {{ nasa.explanation }}
     </p>
-    <p id="copyright" >
-      <strong>{{ nasa.media_type }}  Credit:  </strong><span *ngIf="nasa.copyright !=''">{{ nasa.copyright }}</span>
+    <p id="copyright" *ngIf="nasa.copyright != '' ">
+      <strong>{{ nasa.media_type }}  credit:  </strong><span >{{ nasa.copyright }}</span>
       <span *ngIf="nasa.copyright ==''">Public Domain</span>
     </p>
     <p id="copyright" *ngIf="nasa.copyright==''">
       <strong>{{ nasa.media_type }} Copyright:</strong> {{ nasa.copyright }}
     </p>
-    <p><strong>URL:</strong> {{ nasa.hdurl }}</p>
+    <p class="nasa-url" ><strong>URL: </strong><a  target="_blank" rel="noopener" [href]="nasa.hdurl">{{ nasa.hdurl }}</a></p>
+  </mat-card>
   </div>
 </div>
+<button  mat-raised-button  (click)="storeNasa()"><small>Store Nasa</small> </button>

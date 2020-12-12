@@ -101,6 +101,13 @@ hr.bar-white {
   margin:10% auto;
 }
 
+.zoom {
+   width: 100%;
+}
+ .zoom:hover {
+  width: 700px;
+  transition: transform .8s;
+}
 /*  BLOG LIST & MODAL ************** *****************/
 
 .category {
