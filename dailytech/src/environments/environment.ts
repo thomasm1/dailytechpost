@@ -6,10 +6,14 @@ export const environment = {
   production: false,
   BASE: "http://localhost:8080",
   API_URL: "http://localhost:8080/api",
+
+  // BASE: "http://34.199.129.2:8088",
+  // API_URL: "https://34.199.129.2:8088/api",
+
   //  API_URL: "http://localhost:8089/api",
   // nasaKey: 'mF6DQE******w0',
-  google_url: "http://52.70.39.146:8080/login/getGoogleApi",
-  nasa_url: "http://52.70.39.146:8080/login/getNasaApi",
+  google_url: "http://34.199.129.2:8090/login/getGoogleApi",
+  nasa_url: "http://34.199.129.2:8090/login/getNasaApi",
 
   json_url: "http://localhost:3000/nasa/",
 
@@ -25,11 +29,11 @@ export const environment = {
     storageBucket: 'ourdailytechdata.appspot.com',
     messagingSenderId: '99505496502'
   },
-  //  apiNYT: "http://52.70.39.146:8080/login/getFirebaseApi",
+  //  apiNYT: "http://34.199.129.2:8090/login/getFirebaseApi",
 // FIREBASE_API
 
   // apiKeyNYT: "06**d5",
-  nyt_url: "http://52.70.39.146:8080/login/getNytApi",
+  nyt_url: "http://34.199.129.2:8090/login/getNytApi",
   apiUrlNYT: "https://api.nytimes.com/svc"
   // NYT_API
 
