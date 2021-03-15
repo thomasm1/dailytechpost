@@ -21,7 +21,7 @@ export const environment = {
   // AWS Lambda-DynamoDB-APIgateway
   aws_url: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
 
-  firebase: {
+  firebase: {    // Per Firebase - apiKey not security concern
     apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',
     authDomain: 'ourdailytechdata.firebaseapp.com',
     databaseURL: 'https://ourdailytechdata.firebaseio.com',

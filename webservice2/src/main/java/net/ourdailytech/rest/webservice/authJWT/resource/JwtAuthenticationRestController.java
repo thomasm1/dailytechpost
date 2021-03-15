@@ -24,7 +24,7 @@ import net.ourdailytech.rest.webservice.authJWT.JwtTokenUtil;
 import net.ourdailytech.rest.webservice.authJWT.JwtUserDetails;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 public class JwtAuthenticationRestController {
 
   @Value("${jwt.http.request.header}")
