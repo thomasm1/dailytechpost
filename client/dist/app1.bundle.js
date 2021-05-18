@@ -60,110 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-//require('./js/force');  
-
-__webpack_require__(1);
-__webpack_require__(2);
-
-__webpack_require__(3);
-__webpack_require__(4);
-__webpack_require__(5);
-__webpack_require__(6);
-// require('./js/blog-draft-dec');
-// require('./js/blog-draft-nov');
-// require('./js/blog-draft-oct');
-// require('./js/blog-draft-sep');
-// require('./js/blog-draft-aug');
-// require('./js/blog-draft-jul');
-// require('./js/blog-draft-june');
-// require('./js/blog-draft-may');
-// require('./js/blog-draft-apr');
-// require('./js/blog-draft-mar');
-// require('./js/blog-draft-feb'); 
-
-// modal
-var modal = document.getElementById('msimpleModal');
-var modalBtn = document.getElementById('mmodalBtn');
-var closeBtn = document.getElementsByClassName('mcloseBtn')[0];
-
-modalBtn.addEventListener('click', openModal);
-closeBtn.addEventListener('click', closeModal);
-window.addEventListener('click', outsideClick);
-
-function openModal() {
-  modal.style.display = 'block';
-  modalBtn.style.display = 'none';
-}
-function closeModal() {
-  modal.style.display = 'none';
-  modalBtn.style.display = 'block';
-}
-function outsideClick(e) {
-  if (e.target == modal) {
-    modal.style.display = 'none';
-    modalBtn.style.display = 'block';
-  }
-};
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-document.getElementById("dailyNav").innerHTML = "<nav class=\"navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar\">\n    \n \n<button aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n    class=\"navbar-toggler navbar-toggler-center hidden-md-up\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\"\n    type=\"button\" on-click=\"fadeUp()\" id=\"toggler\"> </button>\n\n<div class=\"collapse navbar-collapse   multi_drop_menu   menu\" id=\"navbarResponsive\">\n    <ul class=\"navbar-nav mr-auto \">\n        <li  id=\"banner\" >\n        <a href=\"/\" class=\"banner\" id=\"linkbanner\" title=\"Our Daily Tech\"><img src=\"https://s3.amazonaws.com/ourdailytech.net/dist/img/ourdailytechbanner.png\" alt=\"our dailytech banner\"  /></a>\n        </li>\n    <!--    <li class=\"nav-item   \">\n            <a class=\"nav-link\" href=\"/\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\"\n                on-click=\"fadeUp()\">\n                <span class=\" subdailytech\"> TECH\n                    <br />BLOG </span>\n            </a>\n        </li>-->\n        <li class=\"nav-item  \">\n            <a class=\"nav-link\" href=\"/archives\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\"\n                type=\"button\" on-click=\"fadeUp()\">\n                <span class=\"subdailytech \">BLOG  \u2728\n                    <br />ARCHIVES </span>\n            </a>\n        </li>\n        <li class=\"nav-item hidden\">\n            <a class=\"nav-link\" ng-href=\"https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html\"\n                title=\"tmm FICTION\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\">\n                <span class=\"caret subdailytech\">FOR_CAT\n                    <br />EYES_ONLY</span>\n            </a>\n\n            <a class=\"nav-link\" ng-href=\"/_For_Cat_Eyes_Only_\" title=\"tmm FICTION\" data-target=\"#navbarResponsive\"\n                data-toggle=\"collapse\" type=\"button\">\n                <span class=\"caret subdailytech\">FOR_CAT\n                    <br />EYES_ONLY</span>\n            </a>\n            <ul style=\"z-index:0\" class=\"menu-left\">\n                <li>\n                    tmm FICTION\n                    <a style=\"z-index:199; \" ng-href=\"https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html\"\n                        title=\"tmm FICTION\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\">For\n                        Cat Eyes Only:\n                        <i>Early Months of Win&#39;s Campaign</i>\n                    </a>\n                </li>\n                <li style=\"z-index:199; \">\n                    tmm FICTION\n                    <a style=\"z-index:199; \"\n                        ng-href=\"https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing\"\n                        title=\"tmm FICTION\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\"\n                        type=\"button\">Fiction Excerpts From:\n                        <br />\n                        <i>The Casperian Ancestries</i>\n                        <br />\n                        <small>Capturing One Cat&#39;s Past and Present</small>\n                    </a>\n                    tmm FICTION\n                </li>\n            </ul>\n        </li>\n        <li style=\"z-index:5\" class=\"nav-item\">\n            <a class=\"nav-link\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\"\n                on-click=\"fadeUp()\">\n                <span class=\" subdailytech\">DATA\n                    <br /> TOOLS\n                </span>\n            </a>\n\n\n            <ul>\n\n                <!--START UL -->\n\n                <li style=\"z-index:100;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\"> Web &nbsp;&nbsp;\n                        <span> </span>\n                    </a>\n\n\n                    <ul>\n                        <li style=\"z-index:100;\">\n                            <a href=\"http://webreference.com/\" target=\"_blank\">Web Reference</a>\n                        </li>\n                        <li>\n                            <a href=\"https://developer.mozilla.org\" target=\"_blank\">Mozilla Dev</a>\n                        </li>\n                        <li>\n                            <a href=\"http://support.google.com/webmasters/?hl=en\" target=\"_blank\">Google Dev</a>\n                        </li>\n                        <li>\n                            <a href=\"http://developer.yahoo.com/\" target=\"_blank\">Yahoo! Dev</a>\n                        </li>\n                        <li>\n                            <a href=\"http://www.w3schools.com\" target=\"_blank\">W3 schools</a>\n                        </li>\n                        <li>\n                            <a href=\"http://www.w3.org/\" target=\"_blank\">World Wide Web Consortium</a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.icann.org\" target=\"_blank\">ICANN</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:98.2;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Data-Driven Docs</a>\n                    <ul  >\n                        <li style=\"z-index:98\">\n                            <a href=\"http://d3js.org\" target=\"_blank\">D3js</a>\n                        </li> \n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://chartio.com/\" target=\"_blank\">chartio</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://code.shutterstock.com/rickshaw/\" target=\"_blank\">rickshaw</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://rawgraphs.io/\" target=\"_blank\">rawgraphs.io </a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://dimplejs.org\" target=\"_blank\">dimplejs</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://nvd3.org/\" target=\"_blank\">nvd3</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/SVG\" target=\"_blank\">SVG</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://www.khronos.org/webgl/\" target=\"_blank\">WebGL</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API\" target=\"_blank\">Canvas</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://alignedleft.com/tutorials/d3/binding-data\" target=\"_blank\">binding-data</a>\n                        </li> \n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API\" target=\"_blank\">Canvas</a>\n                        </li>\n\n\n                    </ul>\n                </li>\n                <li style=\"z-index:98;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Javascript &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:98\">\n                            <a href=\"https://jsbin.com\" target=\"_blank\">JS Bin</a>\n                        </li>\n                        <li style=\"z-index:98\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/API\" target=\"_blank\">JavaScript\n                                APIs</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:10 ;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Datasets &nbsp;&nbsp;</a>\n                    <ul>\n                        <li style=\"z-index:10 ;\">\n                            <a href=\"http://www.icpsr.umich.edu/icpsrweb/ICPSR/index.jsp\" target=\"_blank\">ICPSR\n                                Datasets</a>\n                        </li>\n                        <li style=\"z-index:10 ;\">\n                            <a href=\"http://data.imf.org/?sk=7CB6619C-CF87-48DC-9443-2973E161ABEB\"\n                                target=\"_blank\">Datasets IMF</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                        <a href=\"http://datajournalismhandbook.org/1.0/en/getting_data_3.html\" target=\"_blank\">getting_data</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:101;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Data Analysis &nbsp;&nbsp;</a>\n                    <ul>\n                        <li style=\"z-index:101;\">\n                            <a href=\"https://stats.idre.ucla.edu/other/dae/\" target=\"_blank\">UCLA Stats</a>\n                        </li>\n                        <li style=\"z-index:101;\">\n                            <a href=\"http://openrefine.org/\" target=\"_blank\">OpenRefine</a>\n                        </li>\n                        <li style=\"z-index:102;\">\n                            <a href=\"http://statacumen.com\" target=\"_blank\">Stat Acumen</a>\n                        </li>\n                        <li style=\"z-index:102;\">\n                            <a href=\"http://www.mapageweb.umontreal.ca/durandc/\" target=\"_blank\">Montr&eacute;al\n                                Stats</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:12;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">SQL &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:12;\">\n                            <a target=\"_blank\">MySQL &nbsp;&nbsp;</a>\n                        </li>\n                        <li style=\"z-index:12;\">\n                            <a href=\"https://www.mysql.com/\" target=\"_blank\">MySQL</a>\n                        </li>\n                        <li style=\"z-index:121;\">\n                            <a href=\"http://www.oracle.com/technetwork/developer-tools/apex/overview/index-155186.html\"\n                                target=\"_blank\">Oracle Express</a>\n                        </li>\n                        <li style=\"z-index:121;\">\n                            <a href=\"http://iacademy.oracle.com\" target=\"_blank\">Application Express</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:1;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\"> R-Project &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:1;\">\n                            <a href=\"https://www.r-project.org/\" target=\"_blank\">R-Project </a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.rstudio.com/\" target=\"_blank\">RStudio</a>\n                        </li>\n                        <li>\n                            <a href=\"https://shiny.rstudio.com/\" target=\"_blank\">Shiny</a>\n                        </li>\n                        <li>\n                            <a href=\"http://amsantac.co/blog/en/2015/10/31/qgis-r.html\" target=\"_blank\">Open GIS</a>\n                        </li>\n                        <li>\n                            <a href=\"http://www.tableau.com/products/cloud-bi\" target=\"_blank\">Tableau </a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:1;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\"> Python &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:1;\">\n                            <a href=\"https://www.python.org/\" target=\"_blank\">Python.org</a>\n                        </li>\n                        <li>\n                            <a href=\"https://pypi.python.org/pypi\" target=\"_blank\">Python Package Index</a>\n                        </li>\n                        <li>\n                            <a href=\"https://docs.python.org/2/library/index.html\" target=\"_blank\">Python Standard\n                                Library</a>\n                        </li>\n                        <li>\n                            <a href=\"https://pandas.pydata.org/pandas-docs/stable/\" target=\"_blank\">Pandas Data\n                                Analysis Toolkit</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:9;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Validators &nbsp;&nbsp;</a>\n                    <ul>\n                        <li style=\"z-index:9;\">\n                            <a href=\"https://stats.idre.ucla.edu/other/dae/\" target=\"_blank\">Validators </a>\n                        </li>\n                        <li>\n                            <a href=\"http://validator.w3.org\" target=\"_blank\">HTML validator</a>\n                        </li>\n                        <li>\n                            <a href=\"http://jigsaw.w3.org/css-validator/\" target=\"_blank\">CSS validator</a>\n                        </li>\n                        <li>\n                            <a href=\"http://jsonlint.com/\" target=\"_blank\">JSON Validator</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:101;\">\n                <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                    role=\"button\">Styles &nbsp;&nbsp;</a>\n                <ul>\n                    <li style=\"z-index:101;\">\n                      <a href=\"http://html-color-codes.info/\" target=\"_blank\">Color Codes</a>\n                    </li>\n                    <li style=\"z-index:101;\">\n                       <a href=\"https://inkscape.org/en/\" target=\"_blank\">Inkscape</a>\n                    </li>\n                    <li style=\"z-index:102;\">\n                       <a href=\"http://codepen.io/\" target=\"_blank\">codepen.io</a>\n                    </li>\n                    <li style=\"z-index:102;\">\n                        <a href=\"http://www.dynamicdrive.com/\" target=\"_blank\">Dynamic Drive</a>\n                    </li>\n                    <li style=\"z-index:102;\">\n                        <a href=\"http://www.useit.com/\" target=\"_blank\">Nielson Norman Group</a>\n                    </li>\n                  </ul>\n                 </li>\n                <li>\n                    <a href=\"http://www.kaggle.com\" target=\"_blank\">Kaggle</a>\n                </li>\n                <li>\n                    <a href=\"http://plnkr.co/\" target=\"_blank\">Plunker</a>\n                </li> \n                <li>\n                    <a class=\"last\" href=\"http://stackoverflow.com\" target=\"_blank\">Stack Overflow</a>\n                </li> \n\n\n              </li>\n               \n            </ul>\n            <!--end UL-->\n\n\n        </li>\n    </ul>\n    <ul id=\"media\" class=\"nav navbar-nav navbar-right\">\n\n\n        <li>\n\n            <a title=\"Medium\" href=\"https://medium.com/@thomasm1\" target=\"_blank\">\n\n                <i class=\"fa fa-medium\"></i>\n\n            </a>\n\n        </li>\n        <li>\n\n            <a title=\"github\" href=\"https://github.com/thomasm1\" target=\"_blank\">\n\n                <i class=\"fa fa-github\"></i>\n\n            </a>\n\n        </li>\n\n\n        <li>\n\n            <a title=\"facebook\" href=\"https://www.facebook.com/thomasm1.maestas\" target=\"_blank\">\n\n                <i class=\"fa fa-facebook\"></i>\n\n            </a>\n\n        </li>\n\n        <li>\n\n            <a title=\"linkedin\" href=\"http://linkedin.com/in/thomasmaestas\" target=\"_blank\">\n\n                <i class=\"fa fa-linkedin\"></i>\n\n            </a>\n\n        </li>\n        \n        <!--End UL -->\n\n    </ul>\n    <abbr title=\"Our Daily Tech\">\n\n        <img class=\"card-profile-img zoom\" id=\"dailylogo\" alt=\"image of Le Mont Real\"\n            src=\"dist/img/blueColorTriomphe.png\" />\n\n    </abbr>\n\n</div>\n\n</nav>";
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var url = "https://api.nasa.gov/planetary/apod?api_key=mF6DQEqY3WtCubgab5P2otQQ6bP1b8nY24VmiJw0";
-var xhttp = new XMLHttpRequest();
-
-xhttp.onreadystatechange = function () {
-
-  if (xhttp.readyState == 4 && xhttp.statusText == "OK") {
-    console.log("onreadystate changed- xhttp.statusText: " + xhttp.statusText);
-    var result = JSON.parse(this.responseText);
-    console.log("this.responseText: " + this.responseText);
-    if (result.copyright != "") {
-      document.getElementById("copyright").innerHTML = "Image Credits: " + result.copyright;
-    } else {
-      document.getElementById("copyright").innerHTML = "Image Credits: " + "Public Domain";
-    }
-
-    if (result.media_type == "video") {
-      document.getElementById("apod_img_id").style.display = "none";
-      document.getElementById("apod_vid_id").setAttribute("src", result.url);
-    } else {
-      document.getElementById("apod_vid_id").style.display = "none";
-      document.getElementById("apod_img_id").setAttribute("src", result.url);
-    }
-    document.getElementById("reqObject").text = url;
-    document.getElementById("returnObject").innerHTML = JSON.stringify(result, null, 4);
-    document.getElementById("apod_explaination").innerHTML = result.explanation;
-    document.getElementById("apod_title").innerHTML = result.title;
-  } /// IF 200
-};
-xhttp.open("GET", url, true);
-xhttp.send();
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -314,7 +215,172 @@ var bloggerMarch20 = function bloggerMarch20() {
 bloggerMarch20();
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+//require('./js/force');  
+
+__webpack_require__(2);
+__webpack_require__(3);
+
+__webpack_require__(4);
+__webpack_require__(0);
+__webpack_require__(0);
+__webpack_require__(5);
+__webpack_require__(6);
+__webpack_require__(7);
+// require('./js/blog-draft-dec');
+// require('./js/blog-draft-nov');
+// require('./js/blog-draft-oct');
+// require('./js/blog-draft-sep');
+// require('./js/blog-draft-aug');
+// require('./js/blog-draft-jul');
+// require('./js/blog-draft-june');
+// require('./js/blog-draft-may');
+// require('./js/blog-draft-apr');
+// require('./js/blog-draft-mar');
+// require('./js/blog-draft-feb'); 
+
+// modal
+var modal = document.getElementById('msimpleModal');
+var modalBtn = document.getElementById('mmodalBtn');
+var closeBtn = document.getElementsByClassName('mcloseBtn')[0];
+
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+function openModal() {
+  modal.style.display = 'block';
+  modalBtn.style.display = 'none';
+}
+function closeModal() {
+  modal.style.display = 'none';
+  modalBtn.style.display = 'block';
+}
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+    modalBtn.style.display = 'block';
+  }
+};
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+document.getElementById("dailyNav").innerHTML = "<nav class=\"navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar\">\n    \n \n<button aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n    class=\"navbar-toggler navbar-toggler-center hidden-md-up\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\"\n    type=\"button\" on-click=\"fadeUp()\" id=\"toggler\"> </button>\n\n<div class=\"collapse navbar-collapse   multi_drop_menu   menu\" id=\"navbarResponsive\">\n    <ul class=\"navbar-nav mr-auto \">\n        <li  id=\"banner\" >\n        <a href=\"/\" class=\"banner\" id=\"linkbanner\" title=\"Our Daily Tech\"><img src=\"https://s3.amazonaws.com/ourdailytech.net/dist/img/ourdailytechbanner.png\" alt=\"our dailytech banner\"  /></a>\n        </li>\n    <!--    <li class=\"nav-item   \">\n            <a class=\"nav-link\" href=\"/\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\"\n                on-click=\"fadeUp()\">\n                <span class=\" subdailytech\"> TECH\n                    <br />BLOG </span>\n            </a>\n        </li>-->\n        <li class=\"nav-item  \">\n            <a class=\"nav-link\" href=\"/archives\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\"\n                type=\"button\" on-click=\"fadeUp()\">\n                <span class=\"subdailytech \">BLOG  \u2728\n                    <br />ARCHIVES </span>\n            </a>\n        </li>\n        <li class=\"nav-item hidden\">\n            <a class=\"nav-link\" ng-href=\"https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html\"\n                title=\"tmm FICTION\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\">\n                <span class=\"caret subdailytech\">FOR_CAT\n                    <br />EYES_ONLY</span>\n            </a>\n\n            <a class=\"nav-link\" ng-href=\"/_For_Cat_Eyes_Only_\" title=\"tmm FICTION\" data-target=\"#navbarResponsive\"\n                data-toggle=\"collapse\" type=\"button\">\n                <span class=\"caret subdailytech\">FOR_CAT\n                    <br />EYES_ONLY</span>\n            </a>\n            <ul style=\"z-index:0\" class=\"menu-left\">\n                <li>\n                    tmm FICTION\n                    <a style=\"z-index:199; \" ng-href=\"https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html\"\n                        title=\"tmm FICTION\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\">For\n                        Cat Eyes Only:\n                        <i>Early Months of Win&#39;s Campaign</i>\n                    </a>\n                </li>\n                <li style=\"z-index:199; \">\n                    tmm FICTION\n                    <a style=\"z-index:199; \"\n                        ng-href=\"https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing\"\n                        title=\"tmm FICTION\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\"\n                        type=\"button\">Fiction Excerpts From:\n                        <br />\n                        <i>The Casperian Ancestries</i>\n                        <br />\n                        <small>Capturing One Cat&#39;s Past and Present</small>\n                    </a>\n                    tmm FICTION\n                </li>\n            </ul>\n        </li>\n        <li style=\"z-index:5\" class=\"nav-item\">\n            <a class=\"nav-link\" data-target=\"#navbarResponsive\" data-toggle=\"collapse\" type=\"button\"\n                on-click=\"fadeUp()\">\n                <span class=\" subdailytech\">DATA\n                    <br /> TOOLS\n                </span>\n            </a>\n\n\n            <ul>\n\n                <!--START UL -->\n\n                <li style=\"z-index:100;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\"> Web &nbsp;&nbsp;\n                        <span> </span>\n                    </a>\n\n\n                    <ul>\n                        <li style=\"z-index:100;\">\n                            <a href=\"http://webreference.com/\" target=\"_blank\">Web Reference</a>\n                        </li>\n                        <li>\n                            <a href=\"https://developer.mozilla.org\" target=\"_blank\">Mozilla Dev</a>\n                        </li>\n                        <li>\n                            <a href=\"http://support.google.com/webmasters/?hl=en\" target=\"_blank\">Google Dev</a>\n                        </li>\n                        <li>\n                            <a href=\"http://developer.yahoo.com/\" target=\"_blank\">Yahoo! Dev</a>\n                        </li>\n                        <li>\n                            <a href=\"http://www.w3schools.com\" target=\"_blank\">W3 schools</a>\n                        </li>\n                        <li>\n                            <a href=\"http://www.w3.org/\" target=\"_blank\">World Wide Web Consortium</a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.icann.org\" target=\"_blank\">ICANN</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:98.2;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Data-Driven Docs</a>\n                    <ul  >\n                        <li style=\"z-index:98\">\n                            <a href=\"http://d3js.org\" target=\"_blank\">D3js</a>\n                        </li> \n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://chartio.com/\" target=\"_blank\">chartio</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://code.shutterstock.com/rickshaw/\" target=\"_blank\">rickshaw</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://rawgraphs.io/\" target=\"_blank\">rawgraphs.io </a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://dimplejs.org\" target=\"_blank\">dimplejs</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://nvd3.org/\" target=\"_blank\">nvd3</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/SVG\" target=\"_blank\">SVG</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://www.khronos.org/webgl/\" target=\"_blank\">WebGL</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API\" target=\"_blank\">Canvas</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                            <a href=\"http://alignedleft.com/tutorials/d3/binding-data\" target=\"_blank\">binding-data</a>\n                        </li> \n                        <li style=\"z-index:98.5\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API\" target=\"_blank\">Canvas</a>\n                        </li>\n\n\n                    </ul>\n                </li>\n                <li style=\"z-index:98;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Javascript &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:98\">\n                            <a href=\"https://jsbin.com\" target=\"_blank\">JS Bin</a>\n                        </li>\n                        <li style=\"z-index:98\">\n                            <a href=\"https://developer.mozilla.org/en-US/docs/Web/API\" target=\"_blank\">JavaScript\n                                APIs</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:10 ;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Datasets &nbsp;&nbsp;</a>\n                    <ul>\n                        <li style=\"z-index:10 ;\">\n                            <a href=\"http://www.icpsr.umich.edu/icpsrweb/ICPSR/index.jsp\" target=\"_blank\">ICPSR\n                                Datasets</a>\n                        </li>\n                        <li style=\"z-index:10 ;\">\n                            <a href=\"http://data.imf.org/?sk=7CB6619C-CF87-48DC-9443-2973E161ABEB\"\n                                target=\"_blank\">Datasets IMF</a>\n                        </li>\n                        <li style=\"z-index:98.5\">\n                        <a href=\"http://datajournalismhandbook.org/1.0/en/getting_data_3.html\" target=\"_blank\">getting_data</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:101;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Data Analysis &nbsp;&nbsp;</a>\n                    <ul>\n                        <li style=\"z-index:101;\">\n                            <a href=\"https://stats.idre.ucla.edu/other/dae/\" target=\"_blank\">UCLA Stats</a>\n                        </li>\n                        <li style=\"z-index:101;\">\n                            <a href=\"http://openrefine.org/\" target=\"_blank\">OpenRefine</a>\n                        </li>\n                        <li style=\"z-index:102;\">\n                            <a href=\"http://statacumen.com\" target=\"_blank\">Stat Acumen</a>\n                        </li>\n                        <li style=\"z-index:102;\">\n                            <a href=\"http://www.mapageweb.umontreal.ca/durandc/\" target=\"_blank\">Montr&eacute;al\n                                Stats</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:12;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">SQL &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:12;\">\n                            <a target=\"_blank\">MySQL &nbsp;&nbsp;</a>\n                        </li>\n                        <li style=\"z-index:12;\">\n                            <a href=\"https://www.mysql.com/\" target=\"_blank\">MySQL</a>\n                        </li>\n                        <li style=\"z-index:121;\">\n                            <a href=\"http://www.oracle.com/technetwork/developer-tools/apex/overview/index-155186.html\"\n                                target=\"_blank\">Oracle Express</a>\n                        </li>\n                        <li style=\"z-index:121;\">\n                            <a href=\"http://iacademy.oracle.com\" target=\"_blank\">Application Express</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:1;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\"> R-Project &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:1;\">\n                            <a href=\"https://www.r-project.org/\" target=\"_blank\">R-Project </a>\n                        </li>\n                        <li>\n                            <a href=\"https://www.rstudio.com/\" target=\"_blank\">RStudio</a>\n                        </li>\n                        <li>\n                            <a href=\"https://shiny.rstudio.com/\" target=\"_blank\">Shiny</a>\n                        </li>\n                        <li>\n                            <a href=\"http://amsantac.co/blog/en/2015/10/31/qgis-r.html\" target=\"_blank\">Open GIS</a>\n                        </li>\n                        <li>\n                            <a href=\"http://www.tableau.com/products/cloud-bi\" target=\"_blank\">Tableau </a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:1;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\"> Python &nbsp;&nbsp; </a>\n                    <ul>\n                        <li style=\"z-index:1;\">\n                            <a href=\"https://www.python.org/\" target=\"_blank\">Python.org</a>\n                        </li>\n                        <li>\n                            <a href=\"https://pypi.python.org/pypi\" target=\"_blank\">Python Package Index</a>\n                        </li>\n                        <li>\n                            <a href=\"https://docs.python.org/2/library/index.html\" target=\"_blank\">Python Standard\n                                Library</a>\n                        </li>\n                        <li>\n                            <a href=\"https://pandas.pydata.org/pandas-docs/stable/\" target=\"_blank\">Pandas Data\n                                Analysis Toolkit</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:9;\">\n                    <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                        role=\"button\">Validators &nbsp;&nbsp;</a>\n                    <ul>\n                        <li style=\"z-index:9;\">\n                            <a href=\"https://stats.idre.ucla.edu/other/dae/\" target=\"_blank\">Validators </a>\n                        </li>\n                        <li>\n                            <a href=\"http://validator.w3.org\" target=\"_blank\">HTML validator</a>\n                        </li>\n                        <li>\n                            <a href=\"http://jigsaw.w3.org/css-validator/\" target=\"_blank\">CSS validator</a>\n                        </li>\n                        <li>\n                            <a href=\"http://jsonlint.com/\" target=\"_blank\">JSON Validator</a>\n                        </li>\n                    </ul>\n                </li>\n                <li style=\"z-index:101;\">\n                <a aria-expanded=\"false\" aria-haspopup=\"true\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"\n                    role=\"button\">Styles &nbsp;&nbsp;</a>\n                <ul>\n                    <li style=\"z-index:101;\">\n                      <a href=\"http://html-color-codes.info/\" target=\"_blank\">Color Codes</a>\n                    </li>\n                    <li style=\"z-index:101;\">\n                       <a href=\"https://inkscape.org/en/\" target=\"_blank\">Inkscape</a>\n                    </li>\n                    <li style=\"z-index:102;\">\n                       <a href=\"http://codepen.io/\" target=\"_blank\">codepen.io</a>\n                    </li>\n                    <li style=\"z-index:102;\">\n                        <a href=\"http://www.dynamicdrive.com/\" target=\"_blank\">Dynamic Drive</a>\n                    </li>\n                    <li style=\"z-index:102;\">\n                        <a href=\"http://www.useit.com/\" target=\"_blank\">Nielson Norman Group</a>\n                    </li>\n                  </ul>\n                 </li>\n                <li>\n                    <a href=\"http://www.kaggle.com\" target=\"_blank\">Kaggle</a>\n                </li>\n                <li>\n                    <a href=\"http://plnkr.co/\" target=\"_blank\">Plunker</a>\n                </li> \n                <li>\n                    <a class=\"last\" href=\"http://stackoverflow.com\" target=\"_blank\">Stack Overflow</a>\n                </li> \n\n\n              </li>\n               \n            </ul>\n            <!--end UL-->\n\n\n        </li>\n    </ul>\n    <ul id=\"media\" class=\"nav navbar-nav navbar-right\">\n\n\n        <li>\n\n            <a title=\"Medium\" href=\"https://medium.com/@thomasm1\" target=\"_blank\">\n\n                <i class=\"fa fa-medium\"></i>\n\n            </a>\n\n        </li>\n        <li>\n\n            <a title=\"github\" href=\"https://github.com/thomasm1\" target=\"_blank\">\n\n                <i class=\"fa fa-github\"></i>\n\n            </a>\n\n        </li>\n\n\n        <li>\n\n            <a title=\"facebook\" href=\"https://www.facebook.com/thomasm1.maestas\" target=\"_blank\">\n\n                <i class=\"fa fa-facebook\"></i>\n\n            </a>\n\n        </li>\n\n        <li>\n\n            <a title=\"linkedin\" href=\"http://linkedin.com/in/thomasmaestas\" target=\"_blank\">\n\n                <i class=\"fa fa-linkedin\"></i>\n\n            </a>\n\n        </li>\n        \n        <!--End UL -->\n\n    </ul>\n    <abbr title=\"Our Daily Tech\">\n\n        <img class=\"card-profile-img zoom\" id=\"dailylogo\" alt=\"image of Le Mont Real\"\n            src=\"dist/img/blueColorTriomphe.png\" />\n\n    </abbr>\n\n</div>\n\n</nav>";
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var url = "https://api.nasa.gov/planetary/apod?api_key=mF6DQEqY3WtCubgab5P2otQQ6bP1b8nY24VmiJw0";
+var xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function () {
+
+  if (xhttp.readyState == 4 && xhttp.statusText == "OK") {
+    console.log("onreadystate changed- xhttp.statusText: " + xhttp.statusText);
+    var result = JSON.parse(this.responseText);
+    console.log("this.responseText: " + this.responseText);
+    if (result.copyright != "") {
+      document.getElementById("copyright").innerHTML = "Image Credits: " + result.copyright;
+    } else {
+      document.getElementById("copyright").innerHTML = "Image Credits: " + "Public Domain";
+    }
+
+    if (result.media_type == "video") {
+      document.getElementById("apod_img_id").style.display = "none";
+      document.getElementById("apod_vid_id").setAttribute("src", result.url);
+    } else {
+      document.getElementById("apod_vid_id").style.display = "none";
+      document.getElementById("apod_img_id").setAttribute("src", result.url);
+    }
+    document.getElementById("reqObject").text = url;
+    document.getElementById("returnObject").innerHTML = JSON.stringify(result, null, 4);
+    document.getElementById("apod_explaination").innerHTML = result.explanation;
+    document.getElementById("apod_title").innerHTML = result.title;
+  } /// IF 200
+};
+xhttp.open("GET", url, true);
+xhttp.send();
+
+/***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+//Top Vars Above
+
+var bloggerMay21 = function bloggerMay21() {
+
+  // var blogpost2 =  ` 
+  // <p class="firstparagraph">, 
+  // <p class="quote"><i>A Dogecoin (DOGE)-focused division of publicly traded over-the-counter software firm AppSwarm is looking to bring together global development teams to build off of the Dogecoin blockchain.<br /><br />
+  // DogeLabs — a newly launched division of AppSwarm’s blockchain research lab, TulsaLabs — announced Wednesday a new initiative calling on DevOps teams to unite their efforts in building a “sort of decentralized network” of DOGE developers across the globe.</i><sup>1</sup> 
+  // </p>
+  // `;
+  // var blogcite2 = `
+  // <p class="footnotes">1. <a href="https://cointelegraph.com/news/appswarm-s-doge-division-calls-for-a-global-dev-teams-to-build-off-dogecoin"   target="_blank">https://cointelegraph.com/news/appswarm-s-doge-division-calls-for-a-global-dev-teams-to-build-off-dogecoin</a>
+  // </p>   `;
+
+
+  var blogpost1 = ' \n<p>Doubtless, New Chain Lifecycle is 5% utility, 5% hype and 90% Decentralized App developers\' community -- the ingredient <i>par excellence</i> for lasting hype and adoption. Here we have the exponential growth of Ethereum interest, let alone price of token. On the contrary we have Cardano Network, powered by Proof-of-Stake ADA token, which has yet to evolve past TestNet phase, a point of paralysis for Cardano chain DAPP development. One last step before final main net launch, and finally, we can witness David face Goliath...</p>\n\n<p class="quote"><i>This year, we are seeing the direct competitors clashing. Ethereum has made great strides to make it scalable and affordable, with the Berlin fork already finalized and London hard fork scheduled for July.\nIn the meantime, Cardano smart contracts should be entering the Cardano testnet by the end of this month.</i><sup>1</sup> \n</p>\n<p>Even if Cardono does launch main net, the multi-year delay in final completion of the the chain --for all its bells and whistles -- has stunted new development and developer solidarity. So why has ADA token reached its All-Time-High of $2.33, with a market cap of 66 billion</p>\n\n';
+  var blogcite1 = '\n \n<p class="footnotes">1. <a href="https://finance.yahoo.com/news/cardano-prepares-launch-alonzo-testnet-130000976.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKH0bKJvZsFbQBykBexupKV-HvvhwSDQjmlBmyM4Q69AaNPYvc4Tk8LSJIyBqekdp0PAPL7kz0hTgJFEwOB3jchU4gzkApL6bQay9JZ2z16ddSW5RsCYEp049RRj-L_zFhrhze_83BrLCQjxz_-oOvLEbc8l3X_T4KdO8-eQf6cz"   target="_blank">cardano-prepares-launch-alonzo-testnet</a>\n</p>   \n';
+
+  var url = [
+  // { 
+  //   id:'2',
+  //   did:'may-21-05-17',
+  //   date:'May 17, 2021',
+  //   author:'by Thomas Maestas, MA',
+  //   cat3:'Web Dev Affairs',
+  //   title:'Doge Days are Here Again:  ',
+  //   post:blogpost1,
+  //  blogcite:blogcite1
+  //  },
+  {
+    id: '1',
+    did: 'may-21-05-17',
+    date: 'May 17, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Web Dev Affairs',
+    title: 'ETH v. BTC v. ADA: Varying levels of DAPP Community-Building and the Law of Large Numbers',
+    post: blogpost1,
+    blogcite: blogcite1
+  }];
+
+  for (i = 0; i < url.length; i++) {
+    var cat = ' \n    <div id="' + url[i].did + '" class="blogDiv"> \n    <hr />  \n    <a href="#top"><button>Top</button></a>  \n    <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n    <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5> \n    <p id="author" class="  author">' + url[i].author + '</p>   \n    <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n    <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n    <br />\n    <div id="post">' + url[i].post + '\n    </div>\n    <div id="blogcite">' + url[i].blogcite + '\n    </div>';
+    document.getElementById("paragraph-may21").innerHTML += cat;
+  }
+
+  var i;
+  for (i = 0; i < url.length; i++) {
+    var catMod = '\n  <div id="' + url[i].did + '_mod" class="blogDivMod"> \n  <hr />  \n  <a href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="  author">' + url[i].author + '</p>   \n  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
+    document.getElementById("paragraph-mod-may21").innerHTML += catMod;
+  }
+
+  console.log('blogger-may21');
+  console.log(angular.toJson(url));
+};
+
+bloggerMay21();
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -635,7 +701,7 @@ var bloggerMay19 = function bloggerMay19() {
 bloggerMay19();
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -715,7 +781,7 @@ var bloggerMarch19 = function bloggerMarch19() {
 bloggerMarch19();
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

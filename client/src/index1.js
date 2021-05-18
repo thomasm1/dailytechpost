@@ -3,8 +3,10 @@
 //require('./js/force');  
 
 require('./js/daily-nav'); 
-require('./js/marsreader');     
+require('./js/marsreader');
      
+require('./js/blog-draft-may21');  
+require('./js/blog-draft-2020mar');  
 require('./js/blog-draft-2020mar');  
 require('./js/blog-draft-may19');
 require('./js/blog-draft-march19');
