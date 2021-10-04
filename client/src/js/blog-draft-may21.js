@@ -3,33 +3,34 @@
 
 var bloggerMay21 = function () {
  
-  // var blogpost2 =  ` 
-{/* <p class="firstparagraph">  Hence, the Application Interface Polygon's (MATIC) Layer-2 solutions.
-</p> */}
-// <p class="quote"><i>  .<br /><br />
-// </i><sup>1</sup> 
-// </p>
-// `;
-// var blogcite2 = `
-// <p class="footnotes">1. <a href="h "   target="_blank"> </a>
-// </p>   `;
 
+  // var blogpost4 =  ` 
+  // <p class="firstparagraph"></p>
+  // <p class="quote"><i> </i><sup>1</sup> </p>
+  // `;
+  // var blogcite4 = `
+  // <p class="footnotes">1. <a href=""   target="_blank"> </a>
+  // </p>   `;
+   
 
-// var blogpost2 =  ` 
-// <p class="firstparagraph">, 
-// <p class="quote"><i>A Dogecoin (DOGE)-focused division of publicly traded over-the-counter software firm AppSwarm is looking to bring together global development teams to build off of the Dogecoin blockchain.<br /><br />
-// DogeLabs — a newly launched division of AppSwarm’s blockchain research lab, TulsaLabs — announced Wednesday a new initiative calling on DevOps teams to unite their efforts in building a “sort of decentralized network” of DOGE developers across the globe.</i><sup>1</sup> 
-// </p>
-// `;
-// var blogcite2 = `
-// <p class="footnotes">1. <a href="https://cointelegraph.com/news/appswarm-s-doge-division-calls-for-a-global-dev-teams-to-build-off-dogecoin"   target="_blank">https://cointelegraph.com/news/appswarm-s-doge-division-calls-for-a-global-dev-teams-to-build-off-dogecoin</a>
-// </p>   `;
+var blogpost3 =  ` 
+<p class="firstparagraph">This year does feel reminiscingly like 4th quarter 2017 when Ethereum price jumped from 300's to 1400. Whatever the direction and timing Ethereum's price point in the 4th quarter, the utility of Ethereum\'s "gas" is the true value: Ethereum gas exclusively runs all Ethereum-based tokens (ERC-20) circulating as smart contracts on the Ethereum Virtual Machine. 
+After all, any of the tokens on Ethereum network will always require Ether to transact, swap, send or any other smart contract function. This article covers the finer points of Ethereum's current value.<br />
+<br />Technical Indicators<br />
+1. Stochastic RSI - compares its closing price with the price range over a given period. (a reading above 80 is considered excessively bought and below 20 is considered excessively sold)<br />
+2. Relative Strength Index (RSI) - measures the magnitude of recent price changes to evaluate overbought or oversold conditions in the price of a stock or other asset. The RSI is displayed as an oscillator (a line graph that moves between two extremes) and can have a reading from 0 to 100.<br />
+3. Bullish Hammer - candle that indicates the likely bottom of a trend. It is characterized by a long wick at the bottom with a short body on top. That shows that bears pushed the price down during the time frame, only to see significant buying pressure step in to close higher than the candle open. <br />
+4. Fibonacci retracement level - Method for determining support and resistance levels. It is named after the Fibonacci sequence of numbers, whose ratios provide price levels to which markets tend to retrace a portion of a move, before a trend continues in the original direction.
+<br />
+</p>
  
-
-
+`;
+var blogcite3 = `
+<p class="footnotes"> <a href="https://cointelegraph.com/news/ethereum-fractal-from-2017-that-resulted-in-7-000-gains-for-eth-appears-again-in-2021"   target="_blank">https://cointelegraph.com/news/ethereum-fractal-from-2017-that-resulted-in-7-000-gains-for-eth-appears-again-in-2021 </a>
+</p>   `;
+ 
 var blogpost2 =  ` 
-<p class="firstparagraph">Ethereum's world virtual machine has proven utility already, and only the tip of the iceberg has been reached for potential. DeFi applications have locked 2/3 Ethereum, which boosts from $600 to $4000 summing to market cap of $388,000,000. <img src="dist/img/ada-btc-eth.png" class="zoom"   /> <p><i><small>Matic vs Ada vs ETH vs BTC performance (source: TradingView)</small></i></p> <p>The interesting matter is Ethereum's DeFi applicibility--from real estate to pools and loans--based on sophisticated smart contracts. Bitcoin, aside from form of value, has no parallel attraction...
- 
+<p class="firstparagraph">Ethereum's world virtual machine has proven utility already, and only the tip of the iceberg has been reached for potential. DeFi applications have locked 2/3 Ethereum, which boosts from $600 to $4000, summing to market cap of $388,000,000. <img src="dist/img/ada-btc-eth.png" class="zoom"   /> <p><i><small>Matic vs Ada vs ETH vs BTC performance (source: TradingView)</small></i></p> <p>The interesting matter is Ethereum's DeFi applicibility--from real estate to pools and loans--based on sophisticated smart contracts. Bitcoin, aside from form of value, has no parallel attraction...
 `;
 var blogcite2 = `
 <p class="footnotes">1. <a href="https://www.benzinga.com/node/21184597"   target="_blank">Is the Bitcoin-Ethereum 'Flippening' a Likely Scenario?</a>
@@ -63,30 +64,40 @@ var blogcite1 =
 `; 
    
   var url =  
-  [     
+  [         
+    { 
+    id:'3',
+    did:'21-10-01',
+    date:'October 1, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Musing Blockchain',
+    title:'Ethereum\'s Next Leap Year',
+    post:blogpost3,
+   blogcite:blogcite3
+   },
     // { 
-    //   id:'2',
-    //   did:'may-21-05-17',
-    //   date:'May 17, 2021',
+    //   id:'4',
+    //   did:'21-10-02',
+    //   date:'October 2, 2021',
     //   author:'by Thomas Maestas, MA',
     //   cat3:'Web Dev Affairs',
-    //   title:'Doge Days are Here Again:  ',
-    //   post:blogpost1,
-    //  blogcite:blogcite1
-    //  },and the Law of Large Numbers
+    //   title:'',
+    //   post:blogpost3,
+    //  blogcite:blogcite3
+    //  },
      { 
       id:'2',
-      did:'may-21-05-18',
+      did:'21-05-18',
       date:'May 18, 2021',
       author:'by Thomas Maestas, MA',
       cat3:'Musing Blockchain',
-      title:'ETH v. BTC v. ADA, Part I: The Law of Large Numbers & the Inefficiency of    ',
+      title:'ETH v. BTC v. ADA, Part I: Ethereum\'s Law of Large Numbers',
       post:blogpost2,
      blogcite:blogcite2
      },
     { 
     id:'1',
-    did:'may-21-05-17',
+    did:'21-05-17',
     date:'May 17, 2021',
     author:'by Thomas Maestas, MA',
     cat3:'Web Dev Affairs',
