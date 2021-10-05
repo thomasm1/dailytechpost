@@ -4,13 +4,22 @@
 var bloggerMay21 = function () {
  
 
-  // var blogpost4 =  ` 
-  // <p class="firstparagraph"></p>
-  // <p class="quote"><i> </i><sup>1</sup> </p>
-  // `;
-  // var blogcite4 = `
-  // <p class="footnotes">1. <a href=""   target="_blank"> </a>
-  // </p>   `;
+  var blogpost4 =  ` 
+  <p class="firstparagraph">Financial Institutions' acceptance and adoption (i.e., BofA,Visa,PayPal,GrayScale,...) resembles the retail's interest and adoption resulting in the 2017 run-up. More importantly, interest in actual utility (smart contraacts and distributed ledger's utility in mediating real estate, titles, trusts, etc.) and applicability differentiates the current era.  </p>
+
+  <p class="quote"><i>“In the near future, you may use blockchain technology to unlock your phone; buy a stock, house or fraction of a Ferrari; receive a dividend; borrow, loan or save money; or even pay for gas or pizza,” the report states.
+
+  Along the way, Bank of America cites sizable figures—such as more than $17 billion worth of venture capital investments in digital assets and blockchain firms in the first half of 2021 alone, compared to $5.5 billion across all of 2020.
+   </i><sup>1</sup> </p>
+   <p>The article further outlines assets that outstrip the mere market value of the tokens themselves: After all, doesn't the value of a socio-economic disruption underlie the mere, simplistic value of the token's market cap? 
+   Distributed <i>(decentralized)</i> Applications (DAPPs) represent a new means of accomplishing a formerly centralized task: i.e. government ID's, titles, etc.) </p>
+   <p class="quote"><i> ... the report states that the “digital asset sector [is] too large to ignore,” and that there’s more to watch beyond Bitcoin. “We believe crypto-based digital assets could form an entirely new asset class,” the report reads. 
+   “Bitcoin is important with a market value of ~$900 billion, but the digital asset ecosystem is so much more.” </i><sup>1</sup> </p>
+<p>So now, we need to alter our favorite cliche, "There's a DAPP for that!"
+    `;
+  var blogcite4 = `
+  <p class="footnotes">1. <a href="https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts"   target="_blank"> https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts</a>
+  </p>   `;
    
 
 var blogpost3 =  ` 
@@ -64,7 +73,17 @@ var blogcite1 =
 `; 
    
   var url =  
-  [         
+  [    
+       { 
+      id:'4',
+      did:'21-10-04',
+      date:'October 4, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'Ethereum\'s Institutional DAPP Coronation',
+      post:blogpost4,
+     blogcite:blogcite4
+     },     
     { 
     id:'3',
     did:'21-10-01',
@@ -75,16 +94,7 @@ var blogcite1 =
     post:blogpost3,
    blogcite:blogcite3
    },
-    // { 
-    //   id:'4',
-    //   did:'21-10-02',
-    //   date:'October 2, 2021',
-    //   author:'by Thomas Maestas, MA',
-    //   cat3:'Web Dev Affairs',
-    //   title:'',
-    //   post:blogpost3,
-    //  blogcite:blogcite3
-    //  },
+ 
      { 
       id:'2',
       did:'21-05-18',

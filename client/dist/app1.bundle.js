@@ -326,14 +326,8 @@ xhttp.send();
 
 var bloggerMay21 = function bloggerMay21() {
 
-  // var blogpost4 =  ` 
-  // <p class="firstparagraph"></p>
-  // <p class="quote"><i> </i><sup>1</sup> </p>
-  // `;
-  // var blogcite4 = `
-  // <p class="footnotes">1. <a href=""   target="_blank"> </a>
-  // </p>   `;
-
+  var blogpost4 = ' \n  <p class="firstparagraph">Financial Institutions\' acceptance and adoption (i.e., BofA,Visa,PayPal,GrayScale,...) resembles the retail\'s interest and adoption resulting in the 2017 run-up. More importantly, interest in actual utility (smart contraacts and distributed ledger\'s utility in mediating real estate, titles, trusts, etc.) and applicability differentiates the current era.  </p>\n\n  <p class="quote"><i>\u201CIn the near future, you may use blockchain technology to unlock your phone; buy a stock, house or fraction of a Ferrari; receive a dividend; borrow, loan or save money; or even pay for gas or pizza,\u201D the report states.\n\n  Along the way, Bank of America cites sizable figures\u2014such as more than $17 billion worth of venture capital investments in digital assets and blockchain firms in the first half of 2021 alone, compared to $5.5 billion across all of 2020.\n   </i><sup>1</sup> </p>\n   <p>The article further outlines assets that outstrip the mere market value of the tokens themselves: After all, doesn\'t the value of a socio-economic disruption underlie the mere, simplistic value of the token\'s market cap? \n   Distributed <i>(decentralized)</i> Applications (DAPPs) represent a new means of accomplishing a formerly centralized task: i.e. government ID\'s, titles, etc.) </p>\n   <p class="quote"><i> ... the report states that the \u201Cdigital asset sector [is] too large to ignore,\u201D and that there\u2019s more to watch beyond Bitcoin. \u201CWe believe crypto-based digital assets could form an entirely new asset class,\u201D the report reads. \n   \u201CBitcoin is important with a market value of ~$900 billion, but the digital asset ecosystem is so much more.\u201D </i><sup>1</sup> </p>\n<p>So now, we need to alter our favorite cliche, "There\'s a DAPP for that!"\n    ';
+  var blogcite4 = '\n  <p class="footnotes">1. <a href="https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts"   target="_blank"> https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts</a>\n  </p>   ';
 
   var blogpost3 = ' \n<p class="firstparagraph">This year does feel reminiscingly like 4th quarter 2017 when Ethereum price jumped from 300\'s to 1400. Whatever the direction and timing Ethereum\'s price point in the 4th quarter, the utility of Ethereum\'s "gas" is the true value: Ethereum gas exclusively runs all Ethereum-based tokens (ERC-20) circulating as smart contracts on the Ethereum Virtual Machine. \nAfter all, any of the tokens on Ethereum network will always require Ether to transact, swap, send or any other smart contract function. This article covers the finer points of Ethereum\'s current value.<br />\n<br />Technical Indicators<br />\n1. Stochastic RSI - compares its closing price with the price range over a given period. (a reading above 80 is considered excessively bought and below 20 is considered excessively sold)<br />\n2. Relative Strength Index (RSI) - measures the magnitude of recent price changes to evaluate overbought or oversold conditions in the price of a stock or other asset. The RSI is displayed as an oscillator (a line graph that moves between two extremes) and can have a reading from 0 to 100.<br />\n3. Bullish Hammer - candle that indicates the likely bottom of a trend. It is characterized by a long wick at the bottom with a short body on top. That shows that bears pushed the price down during the time frame, only to see significant buying pressure step in to close higher than the candle open. <br />\n4. Fibonacci retracement level - Method for determining support and resistance levels. It is named after the Fibonacci sequence of numbers, whose ratios provide price levels to which markets tend to retrace a portion of a move, before a trend continues in the original direction.\n<br />\n</p>\n \n';
   var blogcite3 = '\n<p class="footnotes"> <a href="https://cointelegraph.com/news/ethereum-fractal-from-2017-that-resulted-in-7-000-gains-for-eth-appears-again-in-2021"   target="_blank">https://cointelegraph.com/news/ethereum-fractal-from-2017-that-resulted-in-7-000-gains-for-eth-appears-again-in-2021 </a>\n</p>   ';
@@ -345,6 +339,15 @@ var bloggerMay21 = function bloggerMay21() {
   var blogcite1 = '\n \n<p class="footnotes">1. <a href="https://finance.yahoo.com/news/cardano-prepares-launch-alonzo-testnet-130000976.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKH0bKJvZsFbQBykBexupKV-HvvhwSDQjmlBmyM4Q69AaNPYvc4Tk8LSJIyBqekdp0PAPL7kz0hTgJFEwOB3jchU4gzkApL6bQay9JZ2z16ddSW5RsCYEp049RRj-L_zFhrhze_83BrLCQjxz_-oOvLEbc8l3X_T4KdO8-eQf6cz"   target="_blank">cardano-prepares-launch-alonzo-testnet</a>\n</p>   \n<p class="footnotes">2. <a href="https://www.benzinga.com/node/21184597"   target="_blank">Is the Bitcoin-Ethereum \'Flippening\' a Likely Scenario?</a>\n</p>\n';
 
   var url = [{
+    id: '4',
+    did: '21-10-04',
+    date: 'October 4, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Musing Blockchain',
+    title: 'Ethereum\'s Institutional DAPP Coronation',
+    post: blogpost4,
+    blogcite: blogcite4
+  }, {
     id: '3',
     did: '21-10-01',
     date: 'October 1, 2021',
@@ -353,18 +356,7 @@ var bloggerMay21 = function bloggerMay21() {
     title: 'Ethereum\'s Next Leap Year',
     post: blogpost3,
     blogcite: blogcite3
-  },
-  // { 
-  //   id:'4',
-  //   did:'21-10-02',
-  //   date:'October 2, 2021',
-  //   author:'by Thomas Maestas, MA',
-  //   cat3:'Web Dev Affairs',
-  //   title:'',
-  //   post:blogpost3,
-  //  blogcite:blogcite3
-  //  },
-  {
+  }, {
     id: '2',
     did: '21-05-18',
     date: 'May 18, 2021',
