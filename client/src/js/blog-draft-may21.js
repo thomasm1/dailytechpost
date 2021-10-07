@@ -2,8 +2,49 @@
 //Top Vars Above
 
 var bloggerMay21 = function () {
- 
+  var blogpost6 = `
+  <p class="firstparagraph">Hex<sup>0</sup> white papers<sup>3</sup> reveal a seemingly ordinary DeFi Ethereum smart contract, 
+  which by design is the first Certificate of Deposit. An interesting side-effect incentivizes hodling the Hex token, 
+  rather than trading it or selling it. This behavior is by definition the single most effective factor on dictating a token's Market Cap value: More buyers (and hodlers) than sellers ...</p>
+  <p>Therefore, Hex, ranked #3 in Market Cap<sup>1</sup>, is the only crypto that can drive up in value, but cannot lower in price ... <i>because there will never be enough sellers to outmatch the Hex hodlers (usually staking) and Hex buyers!</i>
+  
+<p class="quote"> </p>
+`;
+var blogcite6 = `
+<h6>Pre-2019 immutable record of Hex Citations, White Papers, Security & Financial Audits</h6>
+<p class="footnotes">0. <a href="https://hex.com"   target="_blank">https://hex.com</a>
+<br />1. <a href="https://nomics.com"   target="_blank">https://nomics.com</a>
+<br />2. <a href="hex.com/techspecs"   target="_blank">hex.com/techspecs</a>
+<br />3. <a href="https://docs.google.com/document/d/1P0ZDaBQx4ghkdX5IUwZb1n8ThvYf7i22MSt9Gm00JRU/edit"   target="_blank">Hex Smart Contract</a>
+<br />4. <a href="https://hex.com/docs/HEX-Security-Audit-by-CoinFabrik-DEC2019.pdf"   target="_blank">Coinfabric security audit</a>
+<br />5. <a href="https://hex.com/docs/HEX%20Economics%20Audit%20by%20CoinFabrik.pdf"   target="_blank">Coinfabric financial audit</a></p>
 
+
+ 
+ 
+</p>   `;
+ 
+  var blogpost5 = `
+  <p class="firstparagraph">Since October 1st I have felt very bullish on both Bitcoin and Ethereum. As it happens, their respective price values have rose from 48k to 55k, & Ethereum's 3k to 3.5k. 
+  September is always a bad month for crypto. </p><p>More importantly, what drives the utility of the Ethereum Token is its irreducible requirement to run, operate, and transact any smart contracts on the Ethereum Virtual Machine, i.e., distributed, global Operating System.
+  </p>
+ 
+    
+<p class="quote">Oracles from Chainlink, a provider of data feeds to smart contracts, have been integrated into Ethereum scaling solution Arbitrum One.</i><sup>1</sup> </p>
+  <ul class="quote"><li class="quote">
+  Chainlink's U.S. dollar-denominated price feeds are available now, with support for new price pairs to follow, according to an announcement shared with CoinDesk Thursday.
+  </li><li>Arbitrum says it is addressing a common request from smart-contract developers, who require high-quality data from financial markets to power decentralized exchanges, futures and options platforms and algorithmic stablecoins.
+  </li><li>The Chainlink feeds provide Arbitrum with high-frequency price updates allowing assets to be valued on-chain and in real time.
+  </li><li class="quote">Arbitrum says developers will be able to receive the same data quality and reliability as on the Ethereum base layer, but at lower cost and with more frequent updates.</li>
+  </ul>
+`;
+var blogcite5 = `
+<p class="footnotes">1. <a href="https://www.coindesk.com/markets/2021/08/12/chainlink-oracles-become-available-on-ethereum-scaler-arbitrum-one/"   target="_blank">https://www.coindesk.com/markets/2021/08/12/chainlink-oracles-become-available-on-ethereum-scaler-arbitrum-one/</a>
+<br /><a href="https://chain.link/"   target="_blank">https://chain.link/</a>
+ 
+</p> 
+  `;
+ 
   var blogpost4 =  ` 
   <p class="firstparagraph">Financial Institutions' acceptance and adoption (i.e., BofA,Visa,PayPal,GrayScale,...) resembles the retail's interest and adoption resulting in the 2017 run-up. More importantly, interest in actual utility (smart contraacts and distributed ledger's utility in mediating real estate, titles, trusts, etc.) and applicability differentiates the current era.  </p>
 
@@ -15,7 +56,7 @@ var bloggerMay21 = function () {
    Distributed <i>(decentralized)</i> Applications (DAPPs) represent a new means of accomplishing a formerly centralized task: i.e. government ID's, titles, etc.) </p>
    <p class="quote"><i> ... the report states that the “digital asset sector [is] too large to ignore,” and that there’s more to watch beyond Bitcoin. “We believe crypto-based digital assets could form an entirely new asset class,” the report reads. 
    “Bitcoin is important with a market value of ~$900 billion, but the digital asset ecosystem is so much more.” </i><sup>1</sup> </p>
-<p>So now, we need to alter our favorite cliche, "There's a DAPP for that!"
+<p>So now, we need to alter our favorite cliche, "There's a DAPP for that!</p>"
     `;
   var blogcite4 = `
   <p class="footnotes">1. <a href="https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts"   target="_blank"> https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts</a>
@@ -74,6 +115,36 @@ var blogcite1 =
    
   var url =  
   [    
+    // { 
+    //   id:'6',
+    //   did:'21-10-06',
+    //   date:'October 6, 2021',
+    //   author:'by Thomas Maestas, MA',
+    //   cat3:'Musing Blockchain',
+    //   title:'Blockchain Oracles, Part II:<br />Trading Pair Price Updates Feed Ethereum\'s Institutional Extensibility to Existing Markets',
+    //   post:blogpost6,
+    //  blogcite:blogcite6
+    //  }, 
+    { 
+      id:'6',
+      did:'21-10-06',
+      date:'October 6, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'Blockchain Miracles, Part II: CDs<br />Hex\'s utility as the First Blockchain CD and Building Innate Resistance to Price Drops',
+      post:blogpost6,
+     blogcite:blogcite6
+     },     
+    { 
+      id:'5',
+      did:'21-10-05',
+      date:'October 5, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'Blockchain Miracles, Part I: Oracles<br />Chainlink\'s Real Time Data and the secret to Ethereum\'s DeFi Network (Decentralized Finance) ',
+      post:blogpost5,
+     blogcite:blogcite5
+     },     
        { 
       id:'4',
       did:'21-10-04',
