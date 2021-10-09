@@ -1,15 +1,34 @@
 const Module = function (id) {
-  const coinArr = ['BTC','XRP', 'HEX','ETH','ADA','AAVE','YFI','XLM'];
-  const colorArr = ['yellow', 'cyan', 'magenta', 'teal','silver','green','blue','orange'];
+  const coinArr = ['XRP', 'HEX','ETH','ADA','AAVE','YFI','XLM','BTC'];
+  const colorArr = [ 'cyan', 'magenta', 'teal','silver','green','blue','orange','yellow'];
 
-  const sizeArr = [37, 23, 33, 30, 20, 23, 24, 21];
+  const sizeArr = [23, 33, 30, 20, 23, 24, 21, 37];
   console.log("sizeArr", sizeArr);
   let sortedClose = sizeArr; 
    
 //  MarketValue will be price per token X tokens in circulation
-sortedClose.sort().reverse();
+sortedClose = sortedClose.sort().reverse();
 
 console.log("sortedClose", sortedClose);
+
+// let sortedObject = {};
+// sortedObject.objArr = [];
+// sortedObject.objArr.symbol;
+// sortedObject.objArr.color;
+// sortedObject.objArr.close;
+
+
+ 
+// for (let i=0;i<sortedClose.length;i++) {
+//   sortedObject.objArr[i].symbol = coinArr[i];
+//   sortedObject.objArr[i].color = colorArr[i];
+//   sortedObject.objArr[i].close = sizeArr[i];
+// }
+// console.log("sortedObject",sortedObject);
+
+
+
+
 
   document.getElementById(id).innerHTML = `  
     <svg id='thisSVG'>
