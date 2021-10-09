@@ -3,17 +3,17 @@
 
 var bloggerMay21 = function () {
 
-  var blogpost6 = `
+  var blogpost7 = `
   <p class="firstparagraph">
    European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. 
-    The future organization of trustless transactions and distributed ledger "blockchain" technologies are inextricably linlked, and whether markets or government early adopters of Crypto hold the higher ground. <br />Never one to shy away from new Technology, the land of the pioneering explorers has of recent turned Luddite, fearing change. Same as the cliff diver that 
+    Future organization of global trustless transactions is inextriably linked to distributed ledger "blockchain" technologies. Whether markets or government institutios, it is the early adopters of Crypto technologie (and assets) will hold the higher ground. <br />Never one to shy away from new Technology, the land of the pioneering explorers has of recent turned Luddite, fearing change. Same as the cliff diver that 
    hesitates before a jump, only a rock and hard place are the new dreaded options.
   </p>
   <p class="quote">Crypto market capitalization is the total value of a cryptocurrency. Where stock market capitalization i
   s calculated by multiplying share price times shares outstanding, 
   crypto market capitalization is calculated by multiplying the price of the cryptocurrency with the number of coins in circulation. </p>
 `;
-var blogcite6 = `
+var blogcite7 = `
 
 <p class="footnotes">1. <a href="https://decrypt.co/82997/biden-crypto-executive-order"   target="_blank">decrypt.co/82997/biden-crypto-executive-order</a>
  
@@ -139,16 +139,16 @@ var blogcite1 =
    
   var url =  
   [    
-    // { 
-    //   id:'6',
-    //   did:'21-10-06',
-    //   date:'October 6, 2021',
-    //   author:'by Thomas Maestas, MA',
-    //   cat3:'Musing Blockchain',
-    //   title:'Blockchain Oracles, Part II:<br />Trading Pair Price Updates Feed Ethereum\'s Institutional Extensibility to Existing Markets',
-    //   post:blogpost6,
-    //  blogcite:blogcite6
-    //  }, 
+    { 
+      id:'7',
+      did:'21-10-07',
+      date:'October 7, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'Blockchain Miracles, Part III:<br />Freedom to Innovate on Blockchain is a Critical Function of 21st century Democracy',
+      post:blogpost7,
+     blogcite:blogcite7
+     }, 
     { 
       id:'6',
       did:'21-10-06',

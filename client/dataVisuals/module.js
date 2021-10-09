@@ -1,8 +1,16 @@
 const Module = function (id) {
   const coinArr = ['BTC','XRP', 'HEX','ETH','ADA','AAVE','YFI','XLM'];
   const colorArr = ['yellow', 'cyan', 'magenta', 'teal','silver','green','blue','orange'];
-  const sizeArr = [30, 30, 30, 30, 30, 30,30,30];
-  
+
+  const sizeArr = [37, 23, 33, 30, 20, 23, 24, 21];
+  console.log("sizeArr", sizeArr);
+  let sortedClose = sizeArr; 
+   
+//  MarketValue will be price per token X tokens in circulation
+sortedClose.sort().reverse();
+
+console.log("sortedClose", sortedClose);
+
   document.getElementById(id).innerHTML = `  
     <svg id='thisSVG'>
     </svg>  
@@ -23,7 +31,7 @@ const Module = function (id) {
   const radiusScale = d3
     .scaleOrdinal()
     .domain(coinArr)
-    .range(sizeArr);
+    .range(sortedClose);
 
   const xPosition = (d, i) => i * 70 + 70;
 
@@ -54,7 +62,7 @@ const Module = function (id) {
     text
       .enter().append('text')
       .attr('x', xPosition)
-      .attr('y', (height / 3) +5 )
+      .attr('y', (height / 3) +15 )
     .merge(text)  
       .text(d => d.type);  
     text.exit().remove();
