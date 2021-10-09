@@ -2,19 +2,40 @@
 //Top Vars Above
 
 var bloggerMay21 = function () {
+
+  var blogpost6 = `
+  <p class="firstparagraph">
+   European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. 
+    The future organization of trustless transactions and distributed ledger "blockchain" technologies are inextricably linlked, and whether markets or government early adopters of Crypto hold the higher ground. <br />Never one to shy away from new Technology, the land of the pioneering explorers has of recent turned Luddite, fearing change. Same as the cliff diver that 
+   hesitates before a jump, only a rock and hard place are the new dreaded options.
+  </p>
+  <p class="quote">Crypto market capitalization is the total value of a cryptocurrency. Where stock market capitalization i
+  s calculated by multiplying share price times shares outstanding, 
+  crypto market capitalization is calculated by multiplying the price of the cryptocurrency with the number of coins in circulation. </p>
+`;
+var blogcite6 = `
+
+<p class="footnotes">1. <a href="https://decrypt.co/82997/biden-crypto-executive-order"   target="_blank">decrypt.co/82997/biden-crypto-executive-order</a>
+ 
+ 
+</p>   `;
+
+  
   var blogpost6 = `
   <p class="firstparagraph">Hex<sup>0</sup> white papers<sup>3</sup> reveal a seemingly ordinary DeFi Ethereum smart contract, 
   which by design is the first Certificate of Deposit. An interesting side-effect incentivizes hodling the Hex token, 
-  rather than trading it or selling it. This behavior is by definition the single most effective factor on dictating a token's Market Cap value: More buyers (and hodlers) than sellers ...</p>
-  <p>Therefore, Hex, ranked #3 in Market Cap<sup>1</sup>, is the only crypto that can drive up in value, but cannot lower in price ... <i>because there will never be enough sellers to outmatch the Hex hodlers (usually staking) and Hex buyers!</i>
+  rather than trading it or selling it, thereby dropping price. This behavior is by definition the single most effective factor on dictating a token's Market Cap value: More buyers (and hodlers) than sellers ...</p>
+  <p>Therefore, Hex, ranked #3 in Market Cap<sup>1</sup>, is the only crypto that can drive up in value, but cannot drop in price ... without quickly being bought up: This is <i>because there will never be enough sellers to outmatch the widening base of Hex buyers, and of course the Hex staker-hodlers!</i>
   
 <p class="quote"> </p>
 `;
 var blogcite6 = `
-<h6>Pre-2019 immutable record of Hex Citations, White Papers, Security & Financial Audits</h6>
+
 <p class="footnotes">0. <a href="https://hex.com"   target="_blank">https://hex.com</a>
-<br />1. <a href="https://nomics.com"   target="_blank">https://nomics.com</a>
-<br />2. <a href="hex.com/techspecs"   target="_blank">hex.com/techspecs</a>
+<br />1. <a href="https://nomics.com"   target="_blank">https://nomics.com</a></p>
+<h6>Pre-2019 immutable record of Hex Citations, White Papers, Security & Financial Audits</h6>
+<p class="footnotes">
+2. <a href="hex.com/techspecs"   target="_blank">hex.com/techspecs</a>
 <br />3. <a href="https://docs.google.com/document/d/1P0ZDaBQx4ghkdX5IUwZb1n8ThvYf7i22MSt9Gm00JRU/edit"   target="_blank">Hex Smart Contract</a>
 <br />4. <a href="https://hex.com/docs/HEX-Security-Audit-by-CoinFabrik-DEC2019.pdf"   target="_blank">Coinfabric security audit</a>
 <br />5. <a href="https://hex.com/docs/HEX%20Economics%20Audit%20by%20CoinFabrik.pdf"   target="_blank">Coinfabric financial audit</a></p>
@@ -28,15 +49,18 @@ var blogcite6 = `
   <p class="firstparagraph">Since October 1st I have felt very bullish on both Bitcoin and Ethereum. As it happens, their respective price values have rose from 48k to 55k, & Ethereum's 3k to 3.5k. 
   September is always a bad month for crypto. </p><p>More importantly, what drives the utility of the Ethereum Token is its irreducible requirement to run, operate, and transact any smart contracts on the Ethereum Virtual Machine, i.e., distributed, global Operating System.
   </p>
- 
+ <p>While Banks, Financial management, Hedge Funds, and the lot are busy buying into Smart Contracts, the only barrier to cross-chain leverage trading is the common
+  denominator of real-time, global price updates: for which only a trusted 3rd party can triangulate common prices. For this reason, Chainlink's promise of continuing its hegemony over DeFi data sharing contracts. Chainlink will make this happen.
+  </p>
     
 <p class="quote">Oracles from Chainlink, a provider of data feeds to smart contracts, have been integrated into Ethereum scaling solution Arbitrum One.</i><sup>1</sup> </p>
-  <ul class="quote"><li class="quote">
+ <ul ><li  >
   Chainlink's U.S. dollar-denominated price feeds are available now, with support for new price pairs to follow, according to an announcement shared with CoinDesk Thursday.
   </li><li>Arbitrum says it is addressing a common request from smart-contract developers, who require high-quality data from financial markets to power decentralized exchanges, futures and options platforms and algorithmic stablecoins.
   </li><li>The Chainlink feeds provide Arbitrum with high-frequency price updates allowing assets to be valued on-chain and in real time.
   </li><li class="quote">Arbitrum says developers will be able to receive the same data quality and reliability as on the Ethereum base layer, but at lower cost and with more frequent updates.</li>
   </ul>
+  </p>
 `;
 var blogcite5 = `
 <p class="footnotes">1. <a href="https://www.coindesk.com/markets/2021/08/12/chainlink-oracles-become-available-on-ethereum-scaler-arbitrum-one/"   target="_blank">https://www.coindesk.com/markets/2021/08/12/chainlink-oracles-become-available-on-ethereum-scaler-arbitrum-one/</a>

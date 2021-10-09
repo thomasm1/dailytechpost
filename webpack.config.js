@@ -9,6 +9,7 @@ module.exports = {
     app2: './client/src/index2.js',
     app3: './client/src/index3.js',
     app4: './client/src/index4.js',
+    app5: './client/src/index5_d3.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
