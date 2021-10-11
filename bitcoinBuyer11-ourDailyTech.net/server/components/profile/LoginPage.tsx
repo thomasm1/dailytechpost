@@ -8,12 +8,12 @@ const makeLoginPage = ({ register = false }) => {
   return () => (
     <>
       <Head>
-        <title>{register ? 'REGISTER' : 'LOGIN'} | NEXT REALWORLD</title>
+        <title>{register ? 'REGISTER' : 'LOGIN'} | OUR DAILY TECH</title>
         <meta
           name="description"
           content={register
             ? "Please register before login"
-            : "Please login to use fully-featured next-realworld site. (Post articles, comments, and like, follow etc.)"
+            : "Please login to access interactive, fully-featured site. (Post articles, comments, and like, follow etc.)"
           }
         />
       </Head>

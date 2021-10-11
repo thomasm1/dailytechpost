@@ -9,7 +9,7 @@ const Footer = () => (
       </CustomLink>
       <span className="attribution">
         {" "}© 2021. An interactive learning project from{" "}
-        <a href="https://thinkster.io">Thinkster</a>. Code licensed under MIT.
+        <a href="https://thomasmaestas.net">Our Daily Tech by Armchair Bitcoinist</a>. Code licensed under MIT.
       </span>
     </div>
   </footer>

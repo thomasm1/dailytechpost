@@ -1,7 +1,7 @@
 import { apiPath } from 'config'
 
 export const SERVER_BASE_URL = apiPath;
-export const APP_NAME = `Conduit`;
+export const APP_NAME = `Daily Tech`;
 export const ARTICLE_QUERY_MAP = {
   "tab=feed": `${SERVER_BASE_URL}/articles/feed`,
   "tab=tag": `${SERVER_BASE_URL}/articles/tag`
