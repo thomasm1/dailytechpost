@@ -1,12 +1,12 @@
-package api.users;
+package api;
 
 import com.intuit.karate.junit5.Karate;
 
-class UsersRunner {
+class ProductsRunner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("users").relativeTo(getClass());
+        return Karate.run("products").relativeTo(getClass());
     }    
 
 }
