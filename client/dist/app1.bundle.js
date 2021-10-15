@@ -302,6 +302,12 @@ xhttp.send();
 
 var bloggerMay21 = function bloggerMay21() {
 
+  var blogpost14 = '\n  <p class="firstparagraph">\n    Data, unstructured and unrefined, serves little purpose for \n    machine-learning training data: Contextual data, semi-structured, \n    is the proper nutrition for the refinement of AI algorithm development.  \n    Petabytes of data come at a cost, notwithstanding!</p>\n  </p>\n  <p class="quote">AI has spawned exciting breakthroughs in the past \n  decade\u2014programs that can beat humans at complex games, steer cars through \n  city streets under certain conditions, respond to spoken commands, and write \n  coherent text based on a short prompt. Writing in particular relies on recent advances in computers\u2019 ability to parse and manipulate language.\n  <br /><br />\n  Those advances are largely the result of feeding the algorithms more text as \n  examples to learn from, and giving them more chips with which to digest it. And \n  that costs money.\n  <br /><br />\n  Consider OpenAI\u2019s language model GPT-3, a large, mathematically simulated neural \n  network that was fed reams of text scraped from the web. GPT-3 can find \n  statistical patterns that predict, with striking coherence, which words \n  should follow others. Out of the box, GPT-3 is significantly better than \n  previous AI models at tasks such as answering questions, summarizing text, \n  and correcting grammatical errors. By one measure, it is 1,000 times more capable than its predecessor, GPT-2. \n  But training GPT-3 cost, by some estimates, almost $5 million.<sup>1</sup></p>\n';
+  var blogcite14 = '\n\n<p class="footnotes">1. <a href="https://www.wired.com/story/ai-smarts-big-price-tag/"   target="_blank"> https://www.wired.com/story/ai-smarts-big-price-tag/</a>\n  \n</p>   ';
+
+  var blogpost13 = '\n<p class="firstparagraph">M1 Chip, as most know, signifies an architectural departure from traditional laptop design. Normally, the CPU, RAM, I/O, etc. are separate components. M1 combines all these chips into 1 chip, the M1. <br /><br />\nThe M1 design is not entirely novel, as it is the architecture already powering iPhone/iPad. This year\'s event will unveil the next\n iteration, M1X<sup>1</sup> MacBook Pro, along with a redesign.  </p>\n</p>\n<p class="quote">\u201CThe PC industry continues to be hampered by supply and \nlogistical challenges and unfortunately these issues have not seen much \nimprovement in recent months,\u201D said IDC analyst Jitesh Ubrani in a recent report. <br /><br />\nIn a separate report, Canalys analyst Ishan Dutt echoed this same thought, saying, \n\u201CThe shortfall in supply of PCs is expected to last well into 2022, with the \nholiday season of this year set to see a significant portion of orders not met.\u201D<sup>2</sup>\n \n </p>\n <p>\n Sadly, this article makes a great point that supply chain delays will likely rain on the parade... \nI\'m still waiting another month for my iPhone 13 Max to arrive!</p>\n';
+  var blogcite13 = '\n \n<p class="footnotes">1. <a href="https://appleinsider.com/articles/21/10/14/new-macbook-pros-are-coming-oct-18-and-the-design-remains-a-mystery"   target="_blank">\nhttps://appleinsider.com/articles/21/10/14/new-macbook-pros-are-coming-oct-18-and-the-design-remains-a-mystery</a>\n</p>  \n\n<p class="footnotes">2. <a href="https://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html"   target="_blank">\nhttps://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html</a>\n</p> \n<p class="footnotes">3. <a href="https://www.macrumors.com/how-to/watch-october-18-apple-event/"   target="_blank">\nhttps://www.macrumors.com/how-to/watch-october-18-apple-event/</a>\n</p>   ';
+
   var blogpost7 = '\n  <p class="firstparagraph">\n   European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. \n    Future organization of global trustless transactions is inextriably linked to distributed ledger "blockchain" technologies. Whether markets or government institutios, it is the early adopters of Crypto technologie (and assets) will hold the higher ground. <br />Never one to shy away from new Technology, the land of the pioneering explorers has of recent turned Luddite, fearing change. Same as the cliff diver that \n   hesitates before a jump, only a rock and hard place are the new dreaded options.\n  </p>\n  <p class="quote">Crypto market capitalization is the total value of a cryptocurrency. Where stock market capitalization i\n  s calculated by multiplying share price times shares outstanding, \n  crypto market capitalization is calculated by multiplying the price of the cryptocurrency with the number of coins in circulation. </p>\n';
   var blogcite7 = '\n\n<p class="footnotes">1. <a href="https://decrypt.co/82997/biden-crypto-executive-order"   target="_blank">decrypt.co/82997/biden-crypto-executive-order</a>\n \n \n</p>   ';
 
@@ -324,6 +330,24 @@ var bloggerMay21 = function bloggerMay21() {
   var blogcite1 = '\n \n<p class="footnotes">1. <a href="https://finance.yahoo.com/news/cardano-prepares-launch-alonzo-testnet-130000976.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKH0bKJvZsFbQBykBexupKV-HvvhwSDQjmlBmyM4Q69AaNPYvc4Tk8LSJIyBqekdp0PAPL7kz0hTgJFEwOB3jchU4gzkApL6bQay9JZ2z16ddSW5RsCYEp049RRj-L_zFhrhze_83BrLCQjxz_-oOvLEbc8l3X_T4KdO8-eQf6cz"   target="_blank">cardano-prepares-launch-alonzo-testnet</a>\n</p>   \n<p class="footnotes">2. <a href="https://www.benzinga.com/node/21184597"   target="_blank">Is the Bitcoin-Ethereum \'Flippening\' a Likely Scenario?</a>\n</p>\n';
 
   var url = [{
+    id: '14',
+    did: '21-10-14',
+    date: 'October 14, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'A.I.Now.',
+    title: 'Data is the New Oil, Part I: <br /> AI\'s dependence on structured data',
+    post: blogpost14,
+    blogcite: blogcite14
+  }, {
+    id: '13',
+    did: '21-10-13',
+    date: 'October 13, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Web Dev Affairs',
+    title: 'Unveiling of the M1X MacBook Pro',
+    post: blogpost13,
+    blogcite: blogcite13
+  }, {
     id: '7',
     did: '21-10-07',
     date: 'October 7, 2021',

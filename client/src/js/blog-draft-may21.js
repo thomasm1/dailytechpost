@@ -3,6 +3,67 @@
 
 var bloggerMay21 = function () {
 
+  var blogpost14= `
+  <p class="firstparagraph">
+    Data, unstructured and unrefined, serves little purpose for 
+    machine-learning training data: Contextual data, semi-structured, 
+    is the proper nutrition for the refinement of AI algorithm development.  
+    Petabytes of data come at a cost, notwithstanding!</p>
+  </p>
+  <p class="quote">AI has spawned exciting breakthroughs in the past 
+  decade—programs that can beat humans at complex games, steer cars through 
+  city streets under certain conditions, respond to spoken commands, and write 
+  coherent text based on a short prompt. Writing in particular relies on recent advances in computers’ ability to parse and manipulate language.
+  <br /><br />
+  Those advances are largely the result of feeding the algorithms more text as 
+  examples to learn from, and giving them more chips with which to digest it. And 
+  that costs money.
+  <br /><br />
+  Consider OpenAI’s language model GPT-3, a large, mathematically simulated neural 
+  network that was fed reams of text scraped from the web. GPT-3 can find 
+  statistical patterns that predict, with striking coherence, which words 
+  should follow others. Out of the box, GPT-3 is significantly better than 
+  previous AI models at tasks such as answering questions, summarizing text, 
+  and correcting grammatical errors. By one measure, it is 1,000 times more capable than its predecessor, GPT-2. 
+  But training GPT-3 cost, by some estimates, almost $5 million.<sup>1</sup></p>
+`;
+var blogcite14 = `
+
+<p class="footnotes">1. <a href="https://www.wired.com/story/ai-smarts-big-price-tag/"   target="_blank"> https://www.wired.com/story/ai-smarts-big-price-tag/</a>
+  
+</p>   `;
+
+var blogpost13= `
+<p class="firstparagraph">M1 Chip, as most know, signifies an architectural departure from traditional laptop design. Normally, the CPU, RAM, I/O, etc. are separate components. M1 combines all these chips into 1 chip, the M1. <br /><br />
+The M1 design is not entirely novel, as it is the architecture already powering iPhone/iPad. This year's event will unveil the next
+ iteration, M1X<sup>1</sup> MacBook Pro, along with a redesign.  </p>
+</p>
+<p class="quote">“The PC industry continues to be hampered by supply and 
+logistical challenges and unfortunately these issues have not seen much 
+improvement in recent months,” said IDC analyst Jitesh Ubrani in a recent report. <br /><br />
+In a separate report, Canalys analyst Ishan Dutt echoed this same thought, saying, 
+“The shortfall in supply of PCs is expected to last well into 2022, with the 
+holiday season of this year set to see a significant portion of orders not met.”<sup>2</sup>
+ 
+ </p>
+ <p>
+ Sadly, this article makes a great point that supply chain delays will likely rain on the parade... 
+I'm still waiting another month for my iPhone 13 Max to arrive!</p>
+`;
+var blogcite13 = `
+ 
+<p class="footnotes">1. <a href="https://appleinsider.com/articles/21/10/14/new-macbook-pros-are-coming-oct-18-and-the-design-remains-a-mystery"   target="_blank">
+https://appleinsider.com/articles/21/10/14/new-macbook-pros-are-coming-oct-18-and-the-design-remains-a-mystery</a>
+</p>  
+
+<p class="footnotes">2. <a href="https://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html"   target="_blank">
+https://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html</a>
+</p> 
+<p class="footnotes">3. <a href="https://www.macrumors.com/how-to/watch-october-18-apple-event/"   target="_blank">
+https://www.macrumors.com/how-to/watch-october-18-apple-event/</a>
+</p>   `;
+
+
   var blogpost7 = `
   <p class="firstparagraph">
    European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. 
@@ -19,7 +80,7 @@ var blogcite7 = `
  
  
 </p>   `;
-
+ 
   
   var blogpost6 = `
   <p class="firstparagraph">Hex<sup>0</sup> white papers<sup>3</sup> reveal a seemingly ordinary DeFi Ethereum smart contract, 
@@ -138,7 +199,26 @@ var blogcite1 =
 `; 
    
   var url =  
-  [    
+  [      { 
+    id:'14',
+    did:'21-10-14',
+    date:'October 14, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'A.I.Now.',
+    title:'Data is the New Oil, Part I: <br /> AI\'s dependence on structured data',
+    post:blogpost14,
+   blogcite:blogcite14
+   },
+   { 
+    id:'13',
+    did:'21-10-13',
+    date:'October 13, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Web Dev Affairs',
+    title:'Unveiling of the M1X MacBook Pro',
+    post:blogpost13,
+   blogcite:blogcite13
+   },
     { 
       id:'7',
       did:'21-10-07',
