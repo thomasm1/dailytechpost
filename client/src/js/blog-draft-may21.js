@@ -5,7 +5,7 @@ var bloggerMay21 = function () {
 
   var blogpost15= `
   <p class="firstparagraph">
-<i><strong>    Bitcoin ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States SEC</strong> (Security and Exchange Commission) makes a <i><strong>milestone event in CryptoCurrency</i>. <br /><br /></p>
+<i><strong>    Bitcoin's ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>
   </p>
   <p>The U.S. joins other nations like France and Canada<sup>1</sup> to approve the only mildly speculative art of trading in futures. Predicting The Future would require a real A.I. Oracle!</p>
 

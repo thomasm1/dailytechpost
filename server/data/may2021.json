@@ -1,5 +1,15 @@
 [
     {
+        "id": "15",
+        "did": "21-10-15",
+        "date": "October 15, 2021",
+        "author": "by Thomas Maestas, MA",
+        "cat3": "Musing Blockchain",
+        "title": "The Knighting of Bitcoin ETF's by the Sword of the SEC",
+        "post": "\n  <p class=\"firstparagraph\">\n<i><strong>    Bitcoin ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States SEC</strong> (Security and Exchange Commission) makes a <i><strong>milestone event in CryptoCurrency</i>. <br /><br /></p>\n  </p>\n  <p>The U.S. joins other nations like France and Canada<sup>1</sup> to approve the only mildly speculative art of trading in futures. Predicting The Future would require a real A.I. Oracle!</p>\n\n  <p class=\"quote\">Though dozens of companies like VanEck and Fidelity have submitted applications to the Securities and Exchange Commission to create the first Bitcoin ETF, none have received approval thus far. \n\n\n  Instead, the SEC has given the green light to the Volt Crypto Industry Revolution and Tech ETF, which offers investors access to companies with significant exposure to the world's \n  largest cryptocurrency, rather than the ability to trade it directly. <sup>2</sup></p>\n  <p>All in all, this is a mild development because the underlying asset of these ETF's are future contracts --<i>not actual bitcoin</i>. So, Bitcoin-backed ETF's may be next on the horizon!\n",
+        "blogcite": "\n<p class=\"footnotes\">1. <a href=\"https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/\"\n   target=\"_blank\">https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/</a>\n  \n</p> \n\n<p class=\"footnotes\">1. <a href=\"https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval\"   target=\"_blank\">https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval</a>\n  \n</p>   "
+    },
+    {
         "id": "14",
         "did": "21-10-14",
         "date": "October 14, 2021",
@@ -18,6 +28,16 @@
         "title": "Unveiling of the M1X MacBook Pro",
         "post": "\n<p class=\"firstparagraph\">M1 Chip, as most know, signifies an architectural departure from traditional laptop design. Normally, the CPU, RAM, I/O, etc. are separate components. M1 combines all these chips into 1 chip, the M1. <br /><br />\nThe M1 design is not entirely novel, as it is the architecture already powering iPhone/iPad. This year's event will unveil the next\n iteration, M1X<sup>1</sup> MacBook Pro, along with a redesign.  </p>\n</p>\n<p class=\"quote\">“The PC industry continues to be hampered by supply and \nlogistical challenges and unfortunately these issues have not seen much \nimprovement in recent months,” said IDC analyst Jitesh Ubrani in a recent report. <br /><br />\nIn a separate report, Canalys analyst Ishan Dutt echoed this same thought, saying, \n“The shortfall in supply of PCs is expected to last well into 2022, with the \nholiday season of this year set to see a significant portion of orders not met.”<sup>2</sup>\n \n </p>\n <p>\n Sadly, this article makes a great point that supply chain delays will likely rain on the parade... \nI'm still waiting another month for my iPhone 13 Max to arrive!</p>\n",
         "blogcite": "\n \n<p class=\"footnotes\">1. <a href=\"https://appleinsider.com/articles/21/10/14/new-macbook-pros-are-coming-oct-18-and-the-design-remains-a-mystery\"   target=\"_blank\">\nhttps://appleinsider.com/articles/21/10/14/new-macbook-pros-are-coming-oct-18-and-the-design-remains-a-mystery</a>\n</p>  \n\n<p class=\"footnotes\">2. <a href=\"https://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html\"   target=\"_blank\">\nhttps://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html</a>\n</p> \n<p class=\"footnotes\">3. <a href=\"https://www.macrumors.com/how-to/watch-october-18-apple-event/\"   target=\"_blank\">\nhttps://www.macrumors.com/how-to/watch-october-18-apple-event/</a>\n</p>   "
+    },
+    {
+        "id": "12",
+        "did": "21-10-12",
+        "date": "October 12, 2021",
+        "author": "by Thomas Maestas, MA",
+        "cat3": "Web Dev Affairs",
+        "title": "Unveiling of the M1X MacBook Pro",
+        "post": "\n<p class=\"firstparagraph\"> \n \n </p>\n <p class=\"quote\">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”\n\n But Hancock says he expects that trend to peak in the fall and fade over the next year. \n I’m arguing for something much more radical: Cargoes, or something like them, should become the new jeans.\n  It should be perfectly acceptable to wear them to the office or dinner at a nice restaurant. There is \n  just no reason to keep stuffing these giant phones, \n AirPods charging cases, and EDC multitools into front pockets where they don’t fit.<sup>1</sup></p>\n",
+        "blogcite": "\n \n<p class=\"footnotes\">1. <a href=\"https://www.wired.com/story/bring-back-cargo-pants/?itm_campaign=BottomRelatedStories&itm_content=footer-recirc\"   target=\"_blank\">\nwired.com/story/bring-back-cargo-pants/ </a>\n</p>  \n  "
     },
     {
         "id": "7",
