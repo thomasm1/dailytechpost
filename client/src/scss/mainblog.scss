@@ -118,15 +118,8 @@ strong {
     float: left;
     line-height: 1;
   }*/
-.firstparagraph::first-letter {
-    font-size: 200%;
-    font-weight: bold;
-    border: solid thin darkslategrey;
-    padding: 4pt;
-    margin: 5px 4px 0px 0px;
-}
 
-.firstp::first-letter {
+.firstparagraph::first-letter {
     font-size: 200%;
     font-weight: bold;
     border: solid thin white;

@@ -118,6 +118,9 @@ strong {
     float: left;
     line-height: 1;
   }*/
+  .firstparagraph::after {
+   content:" ... ";
+}
 .firstparagraph::first-letter {
     font-size: 200%;
     font-weight: bold;

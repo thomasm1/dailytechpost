@@ -3,6 +3,28 @@
 
 var bloggerMay21 = function () {
 
+  var blogpost15= `
+  <p class="firstparagraph">
+<i><strong>    Bitcoin ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States SEC</strong> (Security and Exchange Commission) makes a <i><strong>milestone event in CryptoCurrency</i>. <br /><br /></p>
+  </p>
+  <p>The U.S. joins other nations like France and Canada<sup>1</sup> to approve the only mildly speculative art of trading in futures. Predicting The Future would require a real A.I. Oracle!</p>
+
+  <p class="quote">Though dozens of companies like VanEck and Fidelity have submitted applications to the Securities and Exchange Commission to create the first Bitcoin ETF, none have received approval thus far. 
+
+
+  Instead, the SEC has given the green light to the Volt Crypto Industry Revolution and Tech ETF, which offers investors access to companies with significant exposure to the world's 
+  largest cryptocurrency, rather than the ability to trade it directly. <sup>2</sup></p>
+  <p>All in all, this is a mild development because the underlying asset of these ETF's are future contracts --<i>not actual bitcoin</i>. So, Bitcoin-backed ETF's may be next on the horizon!
+`;
+var blogcite15 = `
+<p class="footnotes">1. <a href="https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/"
+   target="_blank">https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/</a>
+  
+</p> 
+
+<p class="footnotes">1. <a href="https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval"   target="_blank">https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval</a>
+  
+</p>   `;
   var blogpost14= `
   <p class="firstparagraph">
     Data, unstructured and unrefined, serves little purpose for 
@@ -63,6 +85,24 @@ https://www.macworld.com/article/544115/m1x-macbook-pro-supply-chain-demand.html
 https://www.macrumors.com/how-to/watch-october-18-apple-event/</a>
 </p>   `;
 
+var blogpost12= `
+<p class="firstparagraph"> 
+ 
+ </p>
+ <p class="quote">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”
+
+ But Hancock says he expects that trend to peak in the fall and fade over the next year. 
+ I’m arguing for something much more radical: Cargoes, or something like them, should become the new jeans.
+  It should be perfectly acceptable to wear them to the office or dinner at a nice restaurant. There is 
+  just no reason to keep stuffing these giant phones, 
+ AirPods charging cases, and EDC multitools into front pockets where they don’t fit.<sup>1</sup></p>
+`;
+var blogcite12= `
+ 
+<p class="footnotes">1. <a href="https://www.wired.com/story/bring-back-cargo-pants/?itm_campaign=BottomRelatedStories&itm_content=footer-recirc"   target="_blank">
+wired.com/story/bring-back-cargo-pants/ </a>
+</p>  
+  `;
 
   var blogpost7 = `
   <p class="firstparagraph">
@@ -198,8 +238,17 @@ var blogcite1 =
 </p>
 `; 
    
-  var url =  
-  [      { 
+  var url =  [
+  { 
+    id:'15',
+    did:'21-10-15',
+    date:'October 15, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Musing Blockchain',
+    title:'The Knighting of Bitcoin ETF\'s by the Sword of the SEC',
+    post:blogpost15,
+   blogcite:blogcite15
+   },    { 
     id:'14',
     did:'21-10-14',
     date:'October 14, 2021',
@@ -218,6 +267,16 @@ var blogcite1 =
     title:'Unveiling of the M1X MacBook Pro',
     post:blogpost13,
    blogcite:blogcite13
+   },
+   { 
+    id:'12',
+    did:'21-10-12',
+    date:'October 12, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Web Dev Affairs',
+    title:'Unveiling of the M1X MacBook Pro',
+    post:blogpost12,
+   blogcite:blogcite12
    },
     { 
       id:'7',
