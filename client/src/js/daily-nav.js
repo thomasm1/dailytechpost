@@ -1,6 +1,4 @@
 document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggleable-sm  fixed-top bg-primary app-navbar">
-    
- 
 <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
     class="navbar-toggler navbar-toggler-center hidden-md-up" data-target="#navbarResponsive" data-toggle="collapse"
     type="button" on-click="fadeUp()" id="toggler"> </button>
@@ -8,7 +6,8 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 <div class="collapse navbar-collapse   multi_drop_menu   menu" id="navbarResponsive">
     <ul class="navbar-nav mr-auto ">
         <li  id="banner" >
-        <a href="/" class="banner" id="linkbanner" title="Our Daily Tech"><img src="https://s3.amazonaws.com/ourdailytech.net/dist/img/ourdailytechbanner.png" alt="our dailytech banner"  /></a>
+        <a href="/" class="banner" id="linkbanner" title="Our Daily Tech">
+        <img src="https://s3.amazonaws.com/ourdailytech.net/dist/img/ourdailytechbanner.png" alt="our dailytech banner"  /></a>
         </li>
     <!--    <li class="nav-item   ">
             <a class="nav-link" href="/" data-target="#navbarResponsive" data-toggle="collapse" type="button"
@@ -17,6 +16,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
                     <br />BLOG </span>
             </a>
         </li>-->
+
         <li class="nav-item  ">
             <a class="nav-link" href="/archives" data-target="#navbarResponsive" data-toggle="collapse"
                 type="button" on-click="fadeUp()">
@@ -24,6 +24,13 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
                     <br />ARCHIVES </span>
             </a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="https://blog.ourdailytech.net" target="_blank" type="button">
+        <span class="subdailytech ">
+        Daily<br />Tech v2</span>
+        <i class="fa fa-external-link"></i>
+        </a></li>
+
         <li class="nav-item hidden">
             <a class="nav-link" ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
                 title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse" type="button">
@@ -315,6 +322,15 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 
 
         </li>
+        <li>
+ 
+     
+▂▄▄▓▄▄▂
+◢◤█▀████▄▄▄▄▄▄◢◤
+█  🦄 █▀▀▀▀▀▀╬
+◥█████◤
+══╩══╩═ 
+       
     </ul>
     <ul id="media" class="nav navbar-nav navbar-right">
 
@@ -323,7 +339,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 
             <a title="Medium" href="https://medium.com/@thomasm1" target="_blank">
 
-                <i class="fa fa-medium"></i>
+                <i class="white fa fa-medium"></i>
 
             </a>
 
@@ -332,7 +348,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 
             <a title="github" href="https://github.com/thomasm1" target="_blank">
 
-                <i class="fa fa-github"></i>
+                <i class="white fa fa-github"></i>
 
             </a>
 
@@ -343,7 +359,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 
             <a title="facebook" href="https://www.facebook.com/thomasm1.maestas" target="_blank">
 
-                <i class="fa fa-facebook"></i>
+                <i class="white fa fa-facebook"></i>
 
             </a>
 
@@ -353,7 +369,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 
             <a title="linkedin" href="http://linkedin.com/in/thomasmaestas" target="_blank">
 
-                <i class="fa fa-linkedin"></i>
+                <i class="white fa fa-linkedin"></i>
 
             </a>
 

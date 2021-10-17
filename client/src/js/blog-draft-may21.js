@@ -5,7 +5,7 @@ var bloggerMay21 = function () {
 
   var blogpost15= `
   <p class="firstparagraph">
-<i><strong>    Bitcoin's ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>
+   Bitcoin's ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States <strong>  SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>
   </p>
   <p>The U.S. joins other nations like France and Canada<sup>1</sup> to approve the only mildly speculative art of trading in futures. Predicting The Future would require a real A.I. Oracle!</p>
 
@@ -87,8 +87,9 @@ https://www.macrumors.com/how-to/watch-october-18-apple-event/</a>
 
 var blogpost12= `
 <p class="firstparagraph"> 
- 
- </p>
+ Pockets will ever be the false target for many fashionistas. This author defends the utility of, perhaps, modernized cargo pants thus accomodating my smartphone, Ipad mini, etc. 
+ Made famous by Napolean Dynamites failed smuggle of Tater-Tots in his cargo pockets. Illustrious.
+<br />Not to be outdone, Black Widow's sister, now an Avenger, Yelena Belova praises a cargo-fashioned jacket with pockets she can't stop praising! </p>
  <p class="quote">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”
 
  But Hancock says he expects that trend to peak in the fall and fade over the next year. 
@@ -104,6 +105,42 @@ wired.com/story/bring-back-cargo-pants/ </a>
 </p>  
   `;
 
+  var blogpost11= `
+  <p class="firstparagraph">Cardano's namesake derives from the Italian Mathemetician X Cardano, while the Token symbol is ADA - a nod to computing pioneer Ada Lovelace, AKA <i>The Countess of Lovelace</i> 
+  (Lord Byron's daughter and first to write a functioning algorithm!), n&eacute;e 1815!. 
+ </p><p>Cardano claims to augur in the 3rd major period in Blockchain evolution. The first generation, a "dumb", but secure, chain exemplified by Bitcoin that can only record monetary, "floating point" data. Next generation, Ethereum's "smart" contracts augur limitless utility for every industry by creating an immutable--unchangeable--ledger of receipts in a distributed data table. Unfortunately, none of these scale for Visa-like, global-scale transactional throughput! <br /><br />Thus, we return to Charles Hoskinson and the 3rd generation of Blockchain technology - Scalability (through slots)</p> 
+
+    <p class="quote">Each Cardano epoch consists of a number of slots, where each slot lasts for one second. A Cardano epoch currently includes 432,000 slots (5 days) 
+ <sup>0</sup></p>
+ <p>Other innovations of this 3rd generation include innate cross-chain compatibility and bridging. (A feature that PulseChain has recently launched to TestNet). 
+Kudos to Charles for continuing the innovation under the watchful eye of academic peer-review -- unlike the lone-wolf community of shadowy Ethereum Developers!</p>
+
+  `;
+  var blogcite11= `
+  
+  <p class="footnotes">
+  0. <a href="https://cardano-foundation.gitbook.io/stake-pool-course/lessons/introduction/about-cardano"   target="_blank">cardano-foundation.gitbook.io/stake-pool-course/lessons/introduction/about-cardano</a>
+  1. <a href="https://cardano.org/"   target="_blank">
+  cardano.org</a>
+  2. <a href="https://iohk.io/en/blog/posts/2021/09/28/boost-mobile-and-dish-tv-call-on-cardano/" target="_blank">https://iohk.io/en/blog/posts/2021/09/28/boost-mobile-and-dish-tv-call-on-cardano/
+  </a>
+  </p>  
+    `;
+
+    
+//   var blogpost10= ` <p> <sup>0</sup></p>
+//  <p> </p>
+
+//   `;
+//   var blogcite10= `
+  
+//   <p class="footnotes">
+//   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
+//   cardano.org</a>
+ 
+//   </p>  
+//     `;
+  
   var blogpost7 = `
   <p class="firstparagraph">
    European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. 
@@ -273,11 +310,31 @@ var blogcite1 =
     did:'21-10-12',
     date:'October 12, 2021',
     author:'by Thomas Maestas, MA',
-    cat3:'Web Dev Affairs',
-    title:'Unveiling of the M1X MacBook Pro',
+    cat3:'Sociology Tomorrow!',
+    title:'Return of the Cargo Pants',
     post:blogpost12,
    blogcite:blogcite12
    },
+   { 
+    id:'11',
+    did:'21-10-11',
+    date:'October 11, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Musing Blockchain ',
+    title:'Ethereum\'s Bad Son: Cardano Chain Founder Charles Hoskinson\'s Quest',
+    post:blogpost11,
+   blogcite:blogcite11
+   },
+  //  { 
+  //   id:'10',
+  //   did:'21-10-10',
+  //   date:'October 10, 2021',
+  //   author:'by Thomas Maestas, MA',
+  //   cat3:'Sociology Tomorrow!',
+  //   title:'An Ode to the Countess of Lovelace',
+  //   post:blogpost10,
+  //  blogcite:blogcite10
+  //  },
     { 
       id:'7',
       did:'21-10-07',
@@ -361,7 +418,6 @@ var blogcite1 =
     <p id="author" class="  author">${url[i].author}</p>   
     <h6  id="date" class="  chapternumber">${url[i].date}</h6>    
     <h6  id="title"   class="dailytitle chapternumber">${url[i].title}</h6>
-    <br />
     <div id="post">${url[i].post}
     </div>
     <div id="blogcite">${url[i].blogcite}
