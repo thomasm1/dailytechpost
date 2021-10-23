@@ -85,7 +85,16 @@
 
                                 </div>  
 
+                                <div id="to-read">
+                                    <ul id="todos"></ul>
+                                    
+                                    <form>
+                                        <input name="todo" type="text">
+                                        <<input type="submit" value="Add Post">
+                                    </form>
 
+
+                                </div>
                                 <button id="mmodalBtn" class="mbutton title   hover" id="b-header">
                                     <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
                                         <a class="cover  ">SOCIOLOGY TOMORROW!</a>
@@ -321,6 +330,38 @@
  
     </div>
     </div>
+
+
+
+    <script>
+        
+const form = document.querySelector('form');
+const input = document.querySelector("[name='todo']");
+const todoList = document.getElementById('todos');
+
+// Side Effects / LifeCycle
+
+const existingTodos = JSON.parse(localStorage.getItem('todos'));
+
+const todoData = existingTodos || [];
+
+todoData.forEach(todo => {
+    addTodo(todo);
+});
+
+
+function addTodo(todoText) {
+    todoData.push(todoText);
+    const li = document.createElement('li');
+    li.innerHTML = todoText;
+    todoList.appendChild(li);
+    localStorage.setItem('todos', JSON.stringify(todoData));
+}
+form.onsubmit = (event) => {
+    event.preventDefault();
+    addTodo(input.value);
+}
+    </script>
 
     <script src="dist/js/force.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular.min.js"></script>

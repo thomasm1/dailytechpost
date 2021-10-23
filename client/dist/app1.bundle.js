@@ -302,6 +302,25 @@ xhttp.send();
 
 var bloggerMay21 = function bloggerMay21() {
 
+  var blogpost18 = '<p class="firstparagraph">\n  The computing divide between the Apple world and PC\'s has widened further with the expansion of Native M1 Chip to the \n  Pro and the Pro Max. \n  Native API\'s are the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. \n</p> \n  \n \n   ';
+  var blogcite18 = '\n   \n   <p class="footnotes">\n   0. <a href="https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/"   target="_blank">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>\n  \n   </p>  \n     ';
+
+  var blogpost17 = ' <p class="firstparagraph">Photoshop\'s woe begins with its OpenGL dependence<sup>1</sup></p>\n\n  <p class="quote">Photoshop\u2019s embrace of the GPU was made practical only through the \n  emergence of a common GPU software interface (called Open GL) that offered standard methods for using \n  GPUs across both Macintosh and Windows systems. OpenGL was at the heart of Photoshop\u2019s first 3D features\n   introduced over 10 years ago, first as a special benefit of \u2018Photoshop Extended\u2019, then later incorporated \n   into every Creative Cloud subscription for Photoshop.\n  <br />  <br />\n  Over time, increasing hardware capabilities and customizations have exceeded the limits of those original,\n   cross-platform APIs, and now \u2018native\u2019 GPU APIs for Windows (Direct X) and Macintosh (Metal) offers better \n   stability and performance than the older generation of APIs.\n  <br />  <br />\n  With this transition to newer native APIs, together with the recent reboot of 3D tooling at Adobe featuring \n  the Substance line of 3D products, the time has come to retire Photoshop\u2019s legacy 3D feature set\n  <sup>0</sup></p>\n  <p>For now, Adobe\'s 3D Rendering is caught in the middle, but thank goodness for Adobe\'s work with Substance\'s 3D tooling...\n   <br /><br />Unfortunately, Substance isn\'t included in my Creative Cloud subscription!</p> \n  \n  </p>\n\n  ';
+  var blogcite17 = '\n  \n  <p class="footnotes">\n  1. <a href="https://helpx.adobe.com/photoshop/kb/3d-faq.html"   target="_blank">helpx.adobe.com/photoshop/kb/3d-faq.html</a>\n \n  </p>  ';
+
+  //   var blogpost16= ` <p> <sup>0</sup></p>
+  //  <p> </p>
+
+  //   `;
+  //   var blogcite16= `
+
+  //   <p class="footnotes">
+  //   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
+  //   cardano.org</a>
+
+  //   </p>  
+  //     `;
+
   var blogpost15 = '\n  <p class="firstparagraph">\n   Bitcoin\'s ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States <strong>  SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>\n  </p>\n  <p>The U.S. joins other nations like France and Canada<sup>1</sup> to approve the only mildly speculative art of trading in futures. Predicting The Future would require a real A.I. Oracle!</p>\n\n  <p class="quote">Though dozens of companies like VanEck and Fidelity have submitted applications to the Securities and Exchange Commission to create the first Bitcoin ETF, none have received approval thus far. \n\n\n  Instead, the SEC has given the green light to the Volt Crypto Industry Revolution and Tech ETF, which offers investors access to companies with significant exposure to the world\'s \n  largest cryptocurrency, rather than the ability to trade it directly. <sup>2</sup></p>\n  <p>All in all, this is a mild development because the underlying asset of these ETF\'s are future contracts --<i>not actual bitcoin</i>. So, Bitcoin-backed ETF\'s may be next on the horizon!\n';
   var blogcite15 = '\n<p class="footnotes">1. <a href="https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/"\n   target="_blank">https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/</a>\n  \n</p> \n\n<p class="footnotes">1. <a href="https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval"   target="_blank">https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval</a>\n  \n</p>   ';
   var blogpost14 = '\n  <p class="firstparagraph">\n    Data, unstructured and unrefined, serves little purpose for \n    machine-learning training data: Contextual data, semi-structured, \n    is the proper nutrition for the refinement of AI algorithm development.  \n    Petabytes of data come at a cost, notwithstanding!</p>\n  </p>\n  <p class="quote">AI has spawned exciting breakthroughs in the past \n  decade\u2014programs that can beat humans at complex games, steer cars through \n  city streets under certain conditions, respond to spoken commands, and write \n  coherent text based on a short prompt. Writing in particular relies on recent advances in computers\u2019 ability to parse and manipulate language.\n  <br /><br />\n  Those advances are largely the result of feeding the algorithms more text as \n  examples to learn from, and giving them more chips with which to digest it. And \n  that costs money.\n  <br /><br />\n  Consider OpenAI\u2019s language model GPT-3, a large, mathematically simulated neural \n  network that was fed reams of text scraped from the web. GPT-3 can find \n  statistical patterns that predict, with striking coherence, which words \n  should follow others. Out of the box, GPT-3 is significantly better than \n  previous AI models at tasks such as answering questions, summarizing text, \n  and correcting grammatical errors. By one measure, it is 1,000 times more capable than its predecessor, GPT-2. \n  But training GPT-3 cost, by some estimates, almost $5 million.<sup>1</sup></p>\n';
@@ -316,18 +335,8 @@ var bloggerMay21 = function bloggerMay21() {
   var blogpost11 = '\n  <p class="firstparagraph">Cardano\'s namesake derives from the Italian Mathemetician X Cardano, while the Token symbol is ADA - a nod to computing pioneer Ada Lovelace, AKA <i>The Countess of Lovelace</i> \n  (Lord Byron\'s daughter and first to write a functioning algorithm!), n&eacute;e 1815!. \n </p><p>Cardano claims to augur in the 3rd major period in Blockchain evolution. The first generation, a "dumb", but secure, chain exemplified by Bitcoin that can only record monetary, "floating point" data. Next generation, Ethereum\'s "smart" contracts augur limitless utility for every industry by creating an immutable--unchangeable--ledger of receipts in a distributed data table. Unfortunately, none of these scale for Visa-like, global-scale transactional throughput! <br /><br />Thus, we return to Charles Hoskinson and the 3rd generation of Blockchain technology - Scalability (through slots)</p> \n\n    <p class="quote">Each Cardano epoch consists of a number of slots, where each slot lasts for one second. A Cardano epoch currently includes 432,000 slots (5 days) \n <sup>0</sup></p>\n <p>Other innovations of this 3rd generation include innate cross-chain compatibility and bridging. (A feature that PulseChain has recently launched to TestNet). \nKudos to Charles for continuing the innovation under the watchful eye of academic peer-review -- unlike the lone-wolf community of shadowy Ethereum Developers!</p>\n\n  ';
   var blogcite11 = '\n  \n  <p class="footnotes">\n  0. <a href="https://cardano-foundation.gitbook.io/stake-pool-course/lessons/introduction/about-cardano"   target="_blank">cardano-foundation.gitbook.io/stake-pool-course/lessons/introduction/about-cardano</a>\n  1. <a href="https://cardano.org/"   target="_blank">\n  cardano.org</a>\n  2. <a href="https://iohk.io/en/blog/posts/2021/09/28/boost-mobile-and-dish-tv-call-on-cardano/" target="_blank">https://iohk.io/en/blog/posts/2021/09/28/boost-mobile-and-dish-tv-call-on-cardano/\n  </a>\n  </p>  \n    ';
 
-  //   var blogpost10= ` <p> <sup>0</sup></p>
-  //  <p> </p>
-
-  //   `;
-  //   var blogcite10= `
-
-  //   <p class="footnotes">
-  //   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
-  //   cardano.org</a>
-
-  //   </p>  
-  //     `;
+  var blogpost10 = ' <p> <sup>0</sup></p>\n <p> </p>\n\n  ';
+  var blogcite10 = '\n  \n  <p class="footnotes">\n  1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace\n  cardano.org</a>\n \n  </p>  \n    ';
 
   var blogpost7 = '\n  <p class="firstparagraph">\n   European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. \n    Future organization of global trustless transactions is inextriably linked to distributed ledger "blockchain" technologies. Whether markets or government institutios, it is the early adopters of Crypto technologie (and assets) will hold the higher ground. <br />Never one to shy away from new Technology, the land of the pioneering explorers has of recent turned Luddite, fearing change. Same as the cliff diver that \n   hesitates before a jump, only a rock and hard place are the new dreaded options.\n  </p>\n  <p class="quote">Crypto market capitalization is the total value of a cryptocurrency. Where stock market capitalization i\n  s calculated by multiplying share price times shares outstanding, \n  crypto market capitalization is calculated by multiplying the price of the cryptocurrency with the number of coins in circulation. </p>\n';
   var blogcite7 = '\n\n<p class="footnotes">1. <a href="https://decrypt.co/82997/biden-crypto-executive-order"   target="_blank">decrypt.co/82997/biden-crypto-executive-order</a>\n \n \n</p>   ';
@@ -351,6 +360,35 @@ var bloggerMay21 = function bloggerMay21() {
   var blogcite1 = '\n \n<p class="footnotes">1. <a href="https://finance.yahoo.com/news/cardano-prepares-launch-alonzo-testnet-130000976.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKH0bKJvZsFbQBykBexupKV-HvvhwSDQjmlBmyM4Q69AaNPYvc4Tk8LSJIyBqekdp0PAPL7kz0hTgJFEwOB3jchU4gzkApL6bQay9JZ2z16ddSW5RsCYEp049RRj-L_zFhrhze_83BrLCQjxz_-oOvLEbc8l3X_T4KdO8-eQf6cz"   target="_blank">cardano-prepares-launch-alonzo-testnet</a>\n</p>   \n<p class="footnotes">2. <a href="https://www.benzinga.com/node/21184597"   target="_blank">Is the Bitcoin-Ethereum \'Flippening\' a Likely Scenario?</a>\n</p>\n';
 
   var url = [{
+    id: '18',
+    did: '21-10-18',
+    date: 'October 18, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Web Dev Affairs',
+    title: 'Shifting Technological Super-Structures, Part II: <br />M1 Chip: Apple\'s Strike Across the Bow',
+    post: blogpost18,
+    blogcite: blogcite18
+  }, {
+    id: '17',
+    did: '21-10-17',
+    date: 'October 17, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Sociology Tomorrow!',
+    title: 'Shifting Technological Super-Structures, Part I: <br />PC v. Apple OS, and Adobe\'s OpenGL dependence',
+    post: blogpost17,
+    blogcite: blogcite17
+  },
+  //   {
+  //   id:'16',
+  //   did:'21-10-16',
+  //   date:'October 16, 2021',
+  //   author:'by Thomas Maestas, MA',
+  //   cat3:'Sociology Tomorrow!',
+  //   title:'An Ode to the Countess of Lovelace',
+  //   post:blogpost16,
+  //  blogcite:blogcite16
+  //  },
+  {
     id: '15',
     did: '21-10-15',
     date: 'October 15, 2021',
@@ -395,18 +433,16 @@ var bloggerMay21 = function bloggerMay21() {
     title: 'Ethereum\'s Bad Son: Cardano Chain Founder Charles Hoskinson\'s Quest',
     post: blogpost11,
     blogcite: blogcite11
-  },
-  //  { 
-  //   id:'10',
-  //   did:'21-10-10',
-  //   date:'October 10, 2021',
-  //   author:'by Thomas Maestas, MA',
-  //   cat3:'Sociology Tomorrow!',
-  //   title:'An Ode to the Countess of Lovelace',
-  //   post:blogpost10,
-  //  blogcite:blogcite10
-  //  },
-  {
+  }, {
+    id: '10',
+    did: '21-10-10',
+    date: 'October 10, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Sociology Tomorrow!',
+    title: 'An Ode to the Countess of Lovelace',
+    post: blogpost10,
+    blogcite: blogcite10
+  }, {
     id: '7',
     did: '21-10-07',
     date: 'October 7, 2021',

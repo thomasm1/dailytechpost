@@ -3,6 +3,65 @@
 
 var bloggerMay21 = function () {
 
+
+
+  var blogpost18= `<p class="firstparagraph">
+  The computing divide between the Apple world and PC's has widened further with the expansion of Native M1 Chip to the 
+  Pro and the Pro Max. 
+  Native API's are the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. 
+</p> 
+  
+ 
+   `;
+   var blogcite18= `
+   
+   <p class="footnotes">
+   0. <a href="https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/"   target="_blank">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>
+  
+   </p>  
+     `;
+
+  var blogpost17= ` <p class="firstparagraph">Photoshop's woe begins with its OpenGL dependence<sup>1</sup></p>
+
+  <p class="quote">Photoshop’s embrace of the GPU was made practical only through the 
+  emergence of a common GPU software interface (called Open GL) that offered standard methods for using 
+  GPUs across both Macintosh and Windows systems. OpenGL was at the heart of Photoshop’s first 3D features
+   introduced over 10 years ago, first as a special benefit of ‘Photoshop Extended’, then later incorporated 
+   into every Creative Cloud subscription for Photoshop.
+  <br />  <br />
+  Over time, increasing hardware capabilities and customizations have exceeded the limits of those original,
+   cross-platform APIs, and now ‘native’ GPU APIs for Windows (Direct X) and Macintosh (Metal) offers better 
+   stability and performance than the older generation of APIs.
+  <br />  <br />
+  With this transition to newer native APIs, together with the recent reboot of 3D tooling at Adobe featuring 
+  the Substance line of 3D products, the time has come to retire Photoshop’s legacy 3D feature set
+  <sup>0</sup></p>
+  <p>For now, Adobe's 3D Rendering is caught in the middle, but thank goodness for Adobe's work with Substance's 3D tooling...
+   <br /><br />Unfortunately, Substance isn't included in my Creative Cloud subscription!</p> 
+  
+  </p>
+
+  `;
+  var blogcite17= `
+  
+  <p class="footnotes">
+  1. <a href="https://helpx.adobe.com/photoshop/kb/3d-faq.html"   target="_blank">helpx.adobe.com/photoshop/kb/3d-faq.html</a>
+ 
+  </p>  `;
+
+//   var blogpost16= ` <p> <sup>0</sup></p>
+//  <p> </p>
+
+//   `;
+//   var blogcite16= `
+  
+//   <p class="footnotes">
+//   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
+//   cardano.org</a>
+ 
+//   </p>  
+//     `;
+  
   var blogpost15= `
   <p class="firstparagraph">
    Bitcoin's ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States <strong>  SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>
@@ -86,11 +145,12 @@ https://www.macrumors.com/how-to/watch-october-18-apple-event/</a>
 </p>   `;
 
 var blogpost12= `
-<p class="firstparagraph"> 
+<p class="firstparagraph">
  Pockets will ever be the false target for many fashionistas. This author defends the utility of, perhaps, modernized cargo pants thus accomodating my smartphone, Ipad mini, etc. 
  Made famous by Napolean Dynamites failed smuggle of Tater-Tots in his cargo pockets. Illustrious.
 <br />Not to be outdone, Black Widow's sister, now an Avenger, Yelena Belova praises a cargo-fashioned jacket with pockets she can't stop praising! </p>
- <p class="quote">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”
+ 
+<p class="quote">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”
 
  But Hancock says he expects that trend to peak in the fall and fade over the next year. 
  I’m arguing for something much more radical: Cargoes, or something like them, should become the new jeans.
@@ -128,18 +188,18 @@ Kudos to Charles for continuing the innovation under the watchful eye of academi
     `;
 
     
-//   var blogpost10= ` <p> <sup>0</sup></p>
-//  <p> </p>
+  var blogpost10= ` <p> <sup>0</sup></p>
+ <p> </p>
 
-//   `;
-//   var blogcite10= `
+  `;
+  var blogcite10= `
   
-//   <p class="footnotes">
-//   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
-//   cardano.org</a>
+  <p class="footnotes">
+  1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
+  cardano.org</a>
  
-//   </p>  
-//     `;
+  </p>  
+    `;
   
   var blogpost7 = `
   <p class="firstparagraph">
@@ -276,6 +336,36 @@ var blogcite1 =
 `; 
    
   var url =  [
+    {
+    id:'18',
+    did:'21-10-18',
+    date:'October 18, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Web Dev Affairs',
+    title:'Shifting Technological Super-Structures, Part II: <br />M1 Chip: Apple\'s Strike Across the Bow',
+    post:blogpost18,
+   blogcite:blogcite18
+   },
+    {
+      id:'17',
+      did:'21-10-17',
+      date:'October 17, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Sociology Tomorrow!',
+      title:'Shifting Technological Super-Structures, Part I: <br />PC v. Apple OS, and Adobe\'s OpenGL dependence',
+      post:blogpost17,
+     blogcite:blogcite17
+     },
+  //   {
+  //   id:'16',
+  //   did:'21-10-16',
+  //   date:'October 16, 2021',
+  //   author:'by Thomas Maestas, MA',
+  //   cat3:'Sociology Tomorrow!',
+  //   title:'An Ode to the Countess of Lovelace',
+  //   post:blogpost16,
+  //  blogcite:blogcite16
+  //  },
   { 
     id:'15',
     did:'21-10-15',
@@ -325,16 +415,16 @@ var blogcite1 =
     post:blogpost11,
    blogcite:blogcite11
    },
-  //  { 
-  //   id:'10',
-  //   did:'21-10-10',
-  //   date:'October 10, 2021',
-  //   author:'by Thomas Maestas, MA',
-  //   cat3:'Sociology Tomorrow!',
-  //   title:'An Ode to the Countess of Lovelace',
-  //   post:blogpost10,
-  //  blogcite:blogcite10
-  //  },
+   { 
+    id:'10',
+    did:'21-10-10',
+    date:'October 10, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Sociology Tomorrow!',
+    title:'An Ode to the Countess of Lovelace',
+    post:blogpost10,
+   blogcite:blogcite10
+   },
     { 
       id:'7',
       did:'21-10-07',

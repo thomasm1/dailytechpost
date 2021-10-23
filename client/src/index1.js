@@ -2,6 +2,7 @@
  
 //require('./js/force');  
 
+
 require('./js/daily-nav'); 
 require('./js/marsreader');
      
@@ -23,3 +24,17 @@ require('./js/blog-draft-jan19');
 // require('./js/blog-draft-mar');
 // require('./js/blog-draft-feb'); 
     
+
+const form = document.querySelector('form');
+const input = document.querySelector("[name='todo']");
+const todoList = document.getElementById('todos');
+
+const todoData = [];
+
+function addTodo(todoText) {
+    todoData.push(todoText);
+    const li = document.createElement();
+    li.innerHTML = todoText;
+    todoList.appendChild(li);
+    localStorage
+}
