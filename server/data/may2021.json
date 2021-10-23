@@ -1,13 +1,23 @@
 [
   {
+    "id": "19",
+    "did": "21-10-19",
+    "date": "October 19, 2021",
+    "author": "by Thomas Maestas, MA",
+    "cat3": "Web Dev Affairs",
+    "title": "Shifting Technological Super-Structures, Part III: <br />M1 Chip: What, Technically, is the Advantage?",
+    "post": "\n  <p class=\"firstparagraph\">\n  Apple's evolution toward native API's is the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. That being said, the tech is not exactly new since\n  this chip integration has been behind iPhone & iPad architecture for years....\n</p> \n  <p class=\"quote\">\n  The M1 is not a CPU, it is a whole system of multiple chips put into one large silicon package. The CPU is just one of these chips.\nBasically, the M1 is one whole computer onto a chip. The M1 contains a CPU, graphical processing unit (GPU), memory, input and output controllers, \nand many more things making up a whole computer. This is what we call a system on a chip (SoC).\n  </p>\n  <p>The logic is unmatched, so what's the downside of splitting up a CPU's jobs into specialized chips? Speed:  <p>\n  <p class=\"quote\">\n  Instead of adding ever more general-purpose CPU cores, Apple has followed another strategy: \n  They have started adding ever more specialized chips doing a few specialized tasks. \n  The benefit of this is that specialized chips\n  to be able to perform their tasks significantly faster using much less electric current than a general-purpose CPU core.\n  </p>\n<p>Engineering advances are never without great effect, and given Intel's admission that they also are pursuing System-on-a-Chip\n designs, Apple has indeed taken the lead!</p>\n \n   ",
+    "blogcite": "   \n   <p class=\"footnotes\">\n  1.(2020 article, but very clear) -<a href=\"https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2\"   target=\"_blank\">https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2</a>\n\n   <br />\n 2.  <a href=\"https://www.toptal.com/apple/apple-m1-processor-compatibility-overview\"   target=\"_blank\"> https://www.toptal.com/apple/apple-m1-processor-compatibility-overview</a>\n \n   </p>  \n     "
+  },
+  {
     "id": "18",
     "did": "21-10-18",
     "date": "October 18, 2021",
     "author": "by Thomas Maestas, MA",
     "cat3": "Web Dev Affairs",
     "title": "Shifting Technological Super-Structures, Part II: <br />M1 Chip: Apple's Strike Across the Bow",
-    "post": "<p class=\"firstparagraph\">\n  The computing divide between the Apple world and PC's has widened further with the expansion of Native M1 Chip to the \n  Pro and the Pro Max. \n  Native API's are the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. \n</p> \n  \n \n   ",
-    "blogcite": "\n   \n   <p class=\"footnotes\">\n   0. <a href=\"https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/\"   target=\"_blank\">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>\n  \n   </p>  \n     "
+    "post": "<p class=\"firstparagraph\">\n  Global computing divide between the Apple world and PC's has widened further with the expansion of Native M1 Chip to the \n  Pro and the Pro Max.  \n</p> \n<p class=\"quote\">\nWhen compared to the AMD Radeon Pro 5300M, which is the GPU found in the base model of the previous\n 16-inch MacBook Pro with Intel processor, the M1 Max chip has 181% faster graphics, as the AMD 5300M scores only 24461 in Geekbench 5. Even compared to the best GPU available\n for the previous model (which is AMD Radeon Pro 5600M), M1 Max still has 62% more powerful graphics.\n</p>\n  <p>\n Blazing Fast Speed when not \"BUS\"ing data around for every clock cycle... \n <br /><&nbsp;> ...and in the age of supply-chain woes, the wisdom is evident!\n  </p>\n \n   ",
+    "blogcite": "\n   \n   <p class=\"footnotes\">\n . <a href=\"https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/\"   target=\"_blank\">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>\n \n   </p>  \n     "
   },
   {
     "id": "17",
@@ -56,7 +66,7 @@
     "author": "by Thomas Maestas, MA",
     "cat3": "Sociology Tomorrow!",
     "title": "Return of the Cargo Pants",
-    "post": "\n<p class=\"firstparagraph\"> \n Pockets will ever be the false target for many fashionistas. This author defends the utility of, perhaps, modernized cargo pants thus accomodating my smartphone, Ipad mini, etc. \n Made famous by Napolean Dynamites failed smuggle of Tater-Tots in his cargo pockets. Illustrious.\n<br />Not to be outdone, Black Widow's sister, now an Avenger, Yelena Belova praises a cargo-fashioned jacket with pockets she can't stop praising! </p>\n <p class=\"quote\">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”\n\n But Hancock says he expects that trend to peak in the fall and fade over the next year. \n I’m arguing for something much more radical: Cargoes, or something like them, should become the new jeans.\n  It should be perfectly acceptable to wear them to the office or dinner at a nice restaurant. There is \n  just no reason to keep stuffing these giant phones, \n AirPods charging cases, and EDC multitools into front pockets where they don’t fit.<sup>1</sup></p>\n",
+    "post": "\n<p class=\"firstparagraph\">\n Pockets will ever be the false target for many fashionistas. This author defends the utility of, perhaps, modernized cargo pants thus accomodating my smartphone, Ipad mini, etc. \n Made famous by Napolean Dynamites failed smuggle of Tater-Tots in his cargo pockets. Illustrious.\n<br />Not to be outdone, Black Widow's sister, now an Avenger, Yelena Belova praises a cargo-fashioned jacket with pockets she can't stop praising! </p>\n \n<p class=\"quote\">Levi’s, who I always look at as a global retailer because they’re so popular worldwide, they actually now have four styles of cargoes.”\n\n But Hancock says he expects that trend to peak in the fall and fade over the next year. \n I’m arguing for something much more radical: Cargoes, or something like them, should become the new jeans.\n  It should be perfectly acceptable to wear them to the office or dinner at a nice restaurant. There is \n  just no reason to keep stuffing these giant phones, \n AirPods charging cases, and EDC multitools into front pockets where they don’t fit.<sup>1</sup></p>\n",
     "blogcite": "\n \n<p class=\"footnotes\">1. <a href=\"https://www.wired.com/story/bring-back-cargo-pants/?itm_campaign=BottomRelatedStories&itm_content=footer-recirc\"   target=\"_blank\">\nwired.com/story/bring-back-cargo-pants/ </a>\n</p>  \n  "
   },
   {

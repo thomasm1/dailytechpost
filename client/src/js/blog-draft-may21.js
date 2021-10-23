@@ -3,21 +3,57 @@
 
 var bloggerMay21 = function () {
 
+  var blogpost19= `
+  <p class="firstparagraph">
+  Apple's evolution toward native API's is the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. That being said, the tech is not exactly new since
+  this chip integration has been behind iPhone & iPad architecture for years....
+</p> 
+  <p class="quote">
+  The M1 is not a CPU, it is a whole system of multiple chips put into one large silicon package. The CPU is just one of these chips.
+Basically, the M1 is one whole computer onto a chip. The M1 contains a CPU, graphical processing unit (GPU), memory, input and output controllers, 
+and many more things making up a whole computer. This is what we call a system on a chip (SoC).
+  </p>
+  <p>The logic is unmatched, so what's the downside of splitting up a CPU's jobs into specialized chips? Speed:  <p>
+  <p class="quote">
+  Instead of adding ever more general-purpose CPU cores, Apple has followed another strategy: 
+  They have started adding ever more specialized chips doing a few specialized tasks. 
+  The benefit of this is that specialized chips
+  to be able to perform their tasks significantly faster using much less electric current than a general-purpose CPU core.
+  </p>
+<p>Engineering advances are never without great effect, and given Intel's admission that they also are pursuing System-on-a-Chip
+ designs, Apple has indeed taken the lead!</p>
+ 
+   `;
+   var blogcite19= `   
+   <p class="footnotes">
+  1.(2020 article, but very clear) -<a href="https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2"   target="_blank">https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2</a>
 
+   <br />
+ 2.  <a href="https://www.toptal.com/apple/apple-m1-processor-compatibility-overview"   target="_blank"> https://www.toptal.com/apple/apple-m1-processor-compatibility-overview</a>
+ 
+   </p>  
+     `;
 
   var blogpost18= `<p class="firstparagraph">
-  The computing divide between the Apple world and PC's has widened further with the expansion of Native M1 Chip to the 
-  Pro and the Pro Max. 
-  Native API's are the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. 
+  Global computing divide between the Apple world and PC's has widened further with the expansion of Native M1 Chip to the 
+  Pro and the Pro Max.  
 </p> 
-  
+<p class="quote">
+When compared to the AMD Radeon Pro 5300M, which is the GPU found in the base model of the previous
+ 16-inch MacBook Pro with Intel processor, the M1 Max chip has 181% faster graphics, as the AMD 5300M scores only 24461 in Geekbench 5. Even compared to the best GPU available
+ for the previous model (which is AMD Radeon Pro 5600M), M1 Max still has 62% more powerful graphics.
+</p>
+  <p>
+ Blazing Fast Speed when not "BUS"ing data around for every clock cycle... 
+ <br /><&nbsp;> ...and in the age of supply-chain woes, the wisdom is evident!
+  </p>
  
    `;
    var blogcite18= `
    
    <p class="footnotes">
-   0. <a href="https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/"   target="_blank">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>
-  
+ . <a href="https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/"   target="_blank">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>
+ 
    </p>  
      `;
 
@@ -336,6 +372,16 @@ var blogcite1 =
 `; 
    
   var url =  [
+    {
+    id:'19',
+    did:'21-10-19',
+    date:'October 19, 2021',
+    author:'by Thomas Maestas, MA',
+    cat3:'Web Dev Affairs',
+    title:'Shifting Technological Super-Structures, Part III: <br />M1 Chip: What, Technically, is the Advantage?',
+    post:blogpost19,
+   blogcite:blogcite19
+   },
     {
     id:'18',
     did:'21-10-18',

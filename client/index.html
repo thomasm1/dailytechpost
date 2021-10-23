@@ -85,16 +85,7 @@
 
                                 </div>  
 
-                                <div id="to-read">
-                                    <ul id="todos"></ul>
-                                    
-                                    <form>
-                                        <input name="todo" type="text">
-                                        <<input type="submit" value="Add Post">
-                                    </form>
-
-
-                                </div>
+                                
                                 <button id="mmodalBtn" class="mbutton title   hover" id="b-header">
                                     <h6 class="    subdailytech white hover" title="Social Data &amp; Statistics ">
                                         <a class="cover  ">SOCIOLOGY TOMORROW!</a>
@@ -121,10 +112,12 @@
                                     <div class="map0"></div>
                                 </div>
                                 <script src="dist/js/planets.js"></script> -->
-                                <div class="card-header" ng-class="">
+                                
+
+                                <!-- <div class="card-header" ng-class=""> -->
 
                                  <!-- <div ng-view class="view"></div> -->
-                                </div>
+                                <!-- </div> -->
 
 
                             </div>
@@ -141,6 +134,7 @@
                                         <div id="top-mod"></div>
  
                                         <div id="paragraph-mod-may21"></div>
+                                        <div id="paragraph-March20-mod"></div>
                                         <div id="paragraph-may19-mod"></div>
                                         <div id="paragraph-march19-mod"></div>
                                         <div id="paragraph-jan19-mod"></div>
@@ -297,7 +291,26 @@
                                 <script src="dist/calc.js"></script>
                                 <!-- <script src="dist/calc-deux.js"></script> -->
 
+
+                                                            <!-- TEMPORARY -->
+                            <div> 
+                                <hr/>
+                                <
+                                <form id="reader">
+                                    <input name="todo" type="text">
+                                    <<input type="submit" value="Add Post">
+                                    <<button type="button"  onclick="clearList()">Delete</button>
+                                </form> 
+                                <hr>
+                                <div id="todo-list">
+                                    <ul id="todos"></ul>
+                                </div>
+
+
                             </div>
+                            </div>
+
+
                         </div>
 
 
@@ -334,16 +347,17 @@
 
 
     <script>
-        
-const form = document.querySelector('form');
+        // TEMPORARY
+const form = document.querySelector("[id='reader']");
 const input = document.querySelector("[name='todo']");
 const todoList = document.getElementById('todos');
+// todoList.style('background',  'red' ); 
 
 // Side Effects / LifeCycle
 
-const existingTodos = JSON.parse(localStorage.getItem('todos'));
+let existingTodos = JSON.parse(localStorage.getItem('todos'));
 
-const todoData = existingTodos || [];
+let todoData = existingTodos || [];
 
 todoData.forEach(todo => {
     addTodo(todo);
@@ -357,9 +371,20 @@ function addTodo(todoText) {
     todoList.appendChild(li);
     localStorage.setItem('todos', JSON.stringify(todoData));
 }
+function clearList() {
+    console.log(todoData);
+    localStorage.clear();
+   todoData = [];
+ existingTodos = [];
+    console.log(todoData);
+}
+// form.onclick = () => {
+//     todoData = [];
+// }
 form.onsubmit = (event) => {
     event.preventDefault();
     addTodo(input.value);
+    input.value = "";
 }
     </script>
 
