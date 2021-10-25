@@ -1,14 +1,14 @@
 
-$tmmSquare: url('img/tmmsquare.png');
-$tmmPurple: url('img/tmmpurple.png');
-$tmmBlue: url('img/tmmblue.png');
+$tmmSquare: url('tmmsquare.png');
+$tmmPurple: url('tmmpurple.png');
+$tmmBlue: url('tmmblue.png');
 
-$silverchip: url('img/silverchip.png');
-$bluechip: url('img/bluechipTileT8.png');
+$silverchip: url('silverchip.png');
+$bluechip: url('bluechipTileT8.png');
 
-$dailyIcon: url('img/blueColorTriomphe.png');
-$rey: url('img/MaestasReykjavikBanner.jpg');
-$rey_back: url('../img/MaestasReykjavikBanner.jpg');
+$dailyIcon: url('blueColorTriomphe.png');
+$rey: url('MaestasReykjavikBanner.jpg');
+$rey_back: url('./MaestasReykjavikBanner.jpg');
 $body-bg: blue;
 $font-roboto: "Roboto", sans-serif;
 $font-monoton: "Monoton", "Roboto", sans-serif;
@@ -23,7 +23,7 @@ body {
     font-family: $font-roboto;
     color: rgb(61, 58, 151);
     opacity: .9;
-    background-image: url("../assets/bluechipTile.jpg");
+    background-image: url("assets/bluechipTile.jpg");
     background-color: $background-color;
     max-width: 950px;
     margin: 0;
