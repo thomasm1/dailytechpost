@@ -2,6 +2,53 @@
 //Top Vars Above
 
 var bloggerMay21 = function () {
+  
+  var blogpost21= `
+  <p class="firstparagraph">Heterogenous computing. “Unified Memory Architecture” (UMA). These terms' esoteric nature shouldn't detract our attention from the the paradigm shift they signal.  
+  Instead of integrating CPU and GPU functionality (this combo is exceedingly slow), the overall theme of M1 changes centers on specialization of chips, id est, a digital instance of division of labor! 
+  
+  </p> 
+  <p class="quote">
+  M1 contains a wide variety of specialized chips:
+  <ul>  <li>Central processing unit (CPU) — the “brains” of the SoC. Runs most of the code of the operating system and your apps.
+  </li>
+  <li>Graphics processing unit (GPU) — handles graphics-related tasks, such as visualizing an app’s user 
+  interface and 2D/3D gaming.</li>
+  <li>Image processing unit (ISP) — can be used to speed up common tasks done by image processing applications.</li>
+  <li>Digital signal processor (DSP) — handles more mathematically intensive functions than a CPU. 
+  Includes decompressing music files.</li>
+  <li>Neural processing unit (NPU) — used in high-end smartphones to accelerate machine learning 
+  (A.I.) tasks. These include voice recognition and camera processing.</li>
+  <li>Video encoder/decoder — handles the power-efficient conversion of video files and formats.
+  Secure Enclave — encryption, authentication, and security.</li>
+  <li>Unified memory — allows the CPU, GPU, and other cores to quickly exchange information.</li>  
+  </ul> 
+  This is part of the reason why a lot of people working on images and video editing 
+  with the M1 Macs are seeing such speed improvements. A lot of the tasks they do can run directly on specialized hardware. That is what allows a cheap M1 Mac Mini to encode a large video file without breaking a sweat 
+  while an expensive iMac has all its fans going full blast and still cannot keep up.
+  </p>
+  
+  <p>Clearly, this specialization of </p>
+  
+  <p class="quote">
+  Instead of adding ever more general-purpose CPU cores, Apple has followed another strategy: 
+  They have started adding ever more specialized chips doing a few specialized tasks. 
+  The benefit of this is that specialized chips
+  to be able to perform their tasks significantly faster using much less electric current than a general-purpose CPU core.
+  </p>
+<p>Engineering advances are never without great effect, and given Intel's admission that they also are pursuing System-on-a-Chip
+ designs, Apple has indeed taken the lead!</p>
+ 
+   `;
+   var blogcite21= `   
+   <p class="footnotes">
+  
+   1. <a href="https://erik-engheim.medium.com/apple-m1-foreshadows-risc-v-dd63a62b2562"   target="_blank"> erik-engheim.medium.com/apple-m1-foreshadows-risc-v </a>
+<br />   2. (2020 article, but very clear) <a href="https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2"   target="_blank"> https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2</a>
+ 
+   
+   </p>  
+     `;
 
   var blogpost19= `
   <p class="firstparagraph">
@@ -26,10 +73,7 @@ and many more things making up a whole computer. This is what we call a system o
    `;
    var blogcite19= `   
    <p class="footnotes">
-  1.(2020 article, but very clear) -<a href="https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2"   target="_blank">https://debugger.medium.com/why-is-apples-m1-chip-so-fast-3262b158cba2</a>
-
-   <br />
- 2.  <a href="https://www.toptal.com/apple/apple-m1-processor-compatibility-overview"   target="_blank"> https://www.toptal.com/apple/apple-m1-processor-compatibility-overview</a>
+  1. <a href="https://www.toptal.com/apple/apple-m1-processor-compatibility-overview"   target="_blank"> https://www.toptal.com/apple/apple-m1-processor-compatibility-overview</a>
  
    </p>  
      `;
@@ -372,6 +416,16 @@ var blogcite1 =
 `; 
    
   var url =  [
+    {
+      id:'21',
+      did:'21-10-21',
+      date:'October 21, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Web Dev Affairs',
+      title:'Shifting Technological Super-Structures, Part III: <br />M1 Chip: What, Technically, is the Advantage?',
+      post:blogpost21,
+     blogcite:blogcite21
+     },
     {
     id:'19',
     did:'21-10-19',

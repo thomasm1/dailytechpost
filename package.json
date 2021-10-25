@@ -14,7 +14,7 @@
   "scripts": {
     "build": "webpack",
     "gulp": "gulp",
-    "start": "node ./server.js",
+    "start": "nodemon ./server.js",
     "server": "webpack-dev-server --output-public-path=/"
   },
   "author": "thomas maestas",
