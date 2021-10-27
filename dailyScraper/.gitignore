@@ -1,0 +1,5 @@
+*.zip
+.next
+node_modules
+bower_components
+fullstacktech
