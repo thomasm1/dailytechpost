@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./server/routes/index');
+var tech = require('./server/routes/tech');
 var readers = require('./server/routes/readers');
 var books = require('./server/routes/books');
 var blogs = require('./server/routes/blogs');
@@ -24,10 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client')));
 
 //API
-app.use('/', routes);
-app.use('/api/readers', readers);
-app.use('/api/books', books);
-app.use('/api/blogs', blogs);
+app.use('/', routes);                   // ./server/routes/index' 
+// app.use('/api/tech', tech);                   // ./server/routes/index' 
+app.use('/api/readers', readers);       //  ./server/routes/readers
+app.use('/api/books', books);           //  ./server/routes/books
+app.use('/api/blogs', blogs);           //  ./server/routes/blogs
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
