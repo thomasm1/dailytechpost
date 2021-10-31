@@ -3,20 +3,14 @@
 
 var bloggerMay21 = function () {
   
-  var blogpost23= `
+  var blogpost22= `
   <p class="firstparagraph">I've always enjoyed the maxim that if you want to get somewhere fast, go it alone.<sup>1</sup> If you want to go far collaborate. 
-  I like to to fast. So does Apple. And since the <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank"> "End of Moore's Law"</a>, the only viable solution was multi-core processors because separate vendors would need to provide separate, specialized chips.  Because Apple manufactures in-house chips, and owns the hardware, System-on-a-Chip can be realized, 
+  I like to to fast. So does Apple. And since the <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank"> "End of Moore's Law"</a>, the only viable solution was multi-core processors. The only heretofore impossible other option requires separate vendors to provide separate, specialized chips ...<i>However,</i> 
+    Because Apple manufactures in-house chips, and owns the hardware, System-on-a-Chip can be realized, 
   providing a much better solution to the crisis of the "End of Moore's Law".<sup>2</sup> 
-  </p> 
-  <p class="quote"> 
-  </p>
-  
-  <p>Clearly, this specialization of </p>
-  
-  <p class="quote"> </p>
- 
+  </p>   
    `;
-   var blogcite23= `   
+   var blogcite22= `   
    <p class="footnotes">
   
    1. <span>Source: Ancient African Proverb
@@ -446,7 +440,7 @@ var blogcite1 =
       date:'October 22, 2021',
       author:'by Thomas Maestas, MA',
       cat3:'Web Dev Affairs',
-      title:'Shifting Technological Super-Structures, Part IV: <br />M1 Chip: What, Technically, is the Advantage?',
+      title:'Shifting Technological Super-Structures, Part V: <br />M1 Chip: The Long-awaited salve to the End of Moore\'s Law',
       post:blogpost22,
      blogcite:blogcite22
      },
@@ -456,7 +450,7 @@ var blogcite1 =
       date:'October 21, 2021',
       author:'by Thomas Maestas, MA',
       cat3:'Web Dev Affairs',
-      title:'Shifting Technological Super-Structures, Part IV: <br />M1 Chip: What, Technically, is the Advantage?',
+      title:'Shifting Technological Super-Structures, Part IV: <br />M1 Chip: Heterogeneous Computing',
       post:blogpost21,
      blogcite:blogcite21
      },
