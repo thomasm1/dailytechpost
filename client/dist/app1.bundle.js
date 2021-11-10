@@ -302,6 +302,9 @@ xhttp.send();
 
 var bloggerMay21 = function bloggerMay21() {
 
+  var blogpost23 = '\n  <p class="firstparagraph">As a cyclist, a runner, a pedestrian, and sometimes driver, my earbuds stay in. Whether ordering from my Starbucks Barista or listening to traffic, proximal noise matters! <br /><br />\n  Given the importance of hearing your surroundings crystal-clear while conversing or listening to music is a safety feature extraordinaire. Yet, Apple\'s 2021 AirPods don\'t carry this essential feature that any typical $100 earbud surely offers. So, IMHO, the only worthwhile Apple AirPod is the very pricey AirPod Pro.  \n  </p>   \n  \n<p class="quote">Once you get them seated in your ears, the new AirPods sound OK. But it\'s annoying how much outside sound gets in when you\u2019re out and about, which makes everything much muddier. Again, in comparison to similarly priced models from Jabra, \nSamsung, and other top-tier modern producers, these get left in the dust. \n<sup>1</sup>\n</p>\n<p>Whether for safety or enhancement, AirPod Pro is the way to go ...</p>';
+  var blogcite23 = '   \n   <p class="footnotes">\n   1. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>\n \n  \n<br />   2. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>\n \n   \n   </p>  \n     ';
+
   var blogpost22 = '\n  <p class="firstparagraph">I\'ve always enjoyed the maxim that if you want to get somewhere fast, go it alone.<sup>1</sup> If you want to go far collaborate. \n  I like to to fast. So does Apple. And since the <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank"> "End of Moore\'s Law"</a>, the only viable solution was multi-core processors. The only heretofore impossible other option requires separate vendors to provide separate, specialized chips ...<i>However,</i> \n    Because Apple manufactures in-house chips, and owns the hardware, System-on-a-Chip can be realized, \n  providing a much better solution to the crisis of the "End of Moore\'s Law".<sup>2</sup> \n  </p>   \n   ';
   var blogcite22 = '   \n   <p class="footnotes">\n  \n   1. <span>Source: Ancient African Proverb\n<br />   2. <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank">https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/</a>\n \n   \n   </p>  \n     ';
 
@@ -369,6 +372,15 @@ var bloggerMay21 = function bloggerMay21() {
   var blogcite1 = '\n \n<p class="footnotes">1. <a href="https://finance.yahoo.com/news/cardano-prepares-launch-alonzo-testnet-130000976.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKH0bKJvZsFbQBykBexupKV-HvvhwSDQjmlBmyM4Q69AaNPYvc4Tk8LSJIyBqekdp0PAPL7kz0hTgJFEwOB3jchU4gzkApL6bQay9JZ2z16ddSW5RsCYEp049RRj-L_zFhrhze_83BrLCQjxz_-oOvLEbc8l3X_T4KdO8-eQf6cz"   target="_blank">cardano-prepares-launch-alonzo-testnet</a>\n</p>   \n<p class="footnotes">2. <a href="https://www.benzinga.com/node/21184597"   target="_blank">Is the Bitcoin-Ethereum \'Flippening\' a Likely Scenario?</a>\n</p>\n';
 
   var url = [{
+    id: '23',
+    did: '21-10-23',
+    date: 'October 23, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Sociology Tomorrow!',
+    title: 'Salutations of Safety, and the Wonderous Era of Conxtext-Aware Noise Canceling and Amplification',
+    post: blogpost23,
+    blogcite: blogcite23
+  }, {
     id: '22',
     did: '21-10-22',
     date: 'October 22, 2021',

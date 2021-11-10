@@ -3,6 +3,29 @@
 
 var bloggerMay21 = function () {
   
+
+  var blogpost23= `
+  <p class="firstparagraph">As a cyclist, a runner, a pedestrian, and sometimes driver, my earbuds stay in. Whether ordering from my Starbucks Barista or listening to traffic, proximal noise matters! <br /><br />
+  Given the importance of hearing your surroundings crystal-clear while conversing or listening to music is a safety feature extraordinaire. Yet, Apple's 2021 AirPods don't carry this essential feature that any typical $100 earbud surely offers. So, IMHO, the only worthwhile Apple AirPod is the very pricey AirPod Pro.  
+  </p>   
+  
+<p class="quote">Once you get them seated in your ears, the new AirPods sound OK. But it's annoying how much outside sound gets in when you’re out and about, which makes everything much muddier. Again, in comparison to similarly priced models from Jabra, 
+Samsung, and other top-tier modern producers, these get left in the dust. 
+<sup>1</sup>
+</p>
+<p>Whether for safety or enhancement, AirPod Pro is the way to go ...</p>`;
+   var blogcite23= `   
+   <p class="footnotes">
+   1. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>
+ 
+  
+<br />   2. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>
+ 
+   
+   </p>  
+     `;
+
+
   var blogpost22= `
   <p class="firstparagraph">I've always enjoyed the maxim that if you want to get somewhere fast, go it alone.<sup>1</sup> If you want to go far collaborate. 
   I like to to fast. So does Apple. And since the <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank"> "End of Moore's Law"</a>, the only viable solution was multi-core processors. The only heretofore impossible other option requires separate vendors to provide separate, specialized chips ...<i>However,</i> 
@@ -434,6 +457,18 @@ var blogcite1 =
 `; 
    
   var url =  [
+    
+    {
+      id:'23',
+      did:'21-10-23',
+      date:'October 23, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Sociology Tomorrow!',
+      title:'Salutations of Safety, and the Wonderous Era of Conxtext-Aware Noise Canceling and Amplification',
+      post:blogpost23,
+     blogcite:blogcite23
+     },
+    
     {
       id:'22',
       did:'21-10-22',
