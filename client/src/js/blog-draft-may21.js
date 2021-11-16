@@ -4,6 +4,23 @@
 var bloggerMay21 = function () {
   
 
+  
+  var blogpost24= `
+  <p class="firstparagraph">  </p>   
+  
+<p class="quote"> 
+<sup>1</sup>
+</p>
+<p> </p>`;
+   var blogcite24= `   
+   <p class="footnotes">
+   1. <a href="https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976"   target="_blank">https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976</a>
+ 
+  
+<br /> 
+   
+   </p>  
+     `;
   var blogpost23= `
   <p class="firstparagraph">As a cyclist, a runner, a pedestrian, and sometimes driver, my earbuds stay in. Whether ordering from my Starbucks Barista or listening to traffic, proximal noise matters! <br /><br />
   Given the importance of hearing your surroundings crystal-clear while conversing or listening to music is a safety feature extraordinaire. Yet, Apple's 2021 AirPods don't carry this essential feature that any typical $100 earbud surely offers. So, IMHO, the only worthwhile Apple AirPod is the very pricey AirPod Pro.  
@@ -457,7 +474,17 @@ var blogcite1 =
 `; 
    
   var url =  [
-    
+       
+    {
+      id:'24',
+      did:'21-10-24',
+      date:'October 24, 2021',
+      author:'by Thomas Maestas, MA',
+      cat3:'Sociology Tomorrow!',
+      title:'The Beginning of the End of Passwords',
+      post:blogpost24,
+     blogcite:blogcite24
+     },
     {
       id:'23',
       did:'21-10-23',
