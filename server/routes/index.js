@@ -9,10 +9,10 @@ router.get('/', function(req, res) {
 
 });
 
-router.ws('/ws/', (ws, req) => { // WEB SOCKET
-  ws.on('message', (msg) => {
-    ws.send(msg);
-  });
-});
+// router.ws('/ws/', (ws, req) => { // WEB SOCKET
+//   ws.on('message', (msg) => {
+//     ws.send(msg);
+//   });
+// });
 module.exports = router;
 
