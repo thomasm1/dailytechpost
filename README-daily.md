@@ -1,4 +1,13 @@
 ## npm run gulp
+## NEWS UPDATE 2222
+a. le premier stage - ourdailytech vanillajs -> transfer the <ul><li>'s in the loop as diagrammed: 
+b. le deuxieme stage - cryptomaven.xyz -> XX!!!-destroy!!!
+c. le troisieme stage - CryptoMaven App on AWS - 12/21; CryptoMaven NFT conversion tool DAPP - 3/22
+d. le quatrieme stage, 'fait accompli'
+## LONGTERM SCHEDULE:
+GPS system from Doggywood boulevard, home mapping system from BitcoinTracker.net, Lysius also reboot -- note to self: I hate cobwebs!
+### Crypto Maven new home stationed within the Ethereum Virtual Machine - as blog, owner-input binded; Name: Thomas  Milton D3
+### Our-Daily-Tech's past home in Mongo and AWS
 ## npm run build
 ## mongo, db poststore, collection posts
 ##
