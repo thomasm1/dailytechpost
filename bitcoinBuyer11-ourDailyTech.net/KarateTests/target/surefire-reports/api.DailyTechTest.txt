@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: api.DailyTechTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.159 s <<< FAILURE! - in api.DailyTechTest
+testAll  Time elapsed: 0.158 s  <<< ERROR!
+java.lang.RuntimeException: mismatched input '<EOF>' expecting {FEATURE_TAGS, FEATURE}
+

@@ -3,7 +3,21 @@
 a. le premier stage - ourdailytech vanillajs -> transfer the <ul><li>'s in the loop as diagrammed: 
 b. le deuxieme stage - cryptomaven.xyz -> XX!!!-destroy!!!
 c. le troisieme stage - CryptoMaven App on AWS - 12/21; CryptoMaven NFT conversion tool DAPP - 3/22
-d. le quatrieme stage, 'fait accompli'
+d. le quatrieme stage, 'fait accompli':: Solidity Contract on PulseChain for: 1.dailytech, cryptomaven, ourdailytech, friendsofgrootsociety, doggywoodboulevard'
+
+
+## ARCHITECTURE CRYPTO MAVEN
+A. Newsfeed: Nomics, MetaMask API: GATEWAY to PULSECHAIN
+B. RATE EXCHANGE: -1:1- Pulse Chain :: Ethereum
+C. Community: Aggregation of Twitter, combined with site community forum, in same dashboard; 
+D. ChainLink data sync per minute;
+E. Avatar design page; and manual walk-thru to crypto currencies and meta-resources.
+
+##
+Mongo DB: AWS
+
+
+
 ## LONGTERM SCHEDULE:
 GPS system from Doggywood boulevard, home mapping system from BitcoinTracker.net, Lysius also reboot -- note to self: I hate cobwebs!
 ### Crypto Maven new home stationed within the Ethereum Virtual Machine - as blog, owner-input binded; Name: Thomas  Milton D3

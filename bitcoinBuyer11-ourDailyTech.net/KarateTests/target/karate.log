@@ -1,0 +1,2 @@
+19:10:39.013 [main] ERROR com.intuit.karate.core.FeatureParser - syntax error: mismatched input '<EOF>' expecting {FEATURE_TAGS, FEATURE}
+19:10:39.015 [main] ERROR com.intuit.karate.core.FeatureParser - not a valid feature file: classpath:api/posts/posts.feature - mismatched input '<EOF>' expecting {FEATURE_TAGS, FEATURE}
