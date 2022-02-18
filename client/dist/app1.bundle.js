@@ -302,6 +302,13 @@ xhttp.send();
 
 var bloggerMay21 = function bloggerMay21() {
 
+  var blogpost25 = '\n  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and arch-enemy for the Greedy, yet the also the easiest way to share; and sharing, whether compulsory or not, feels good. \n  So, by extension, taxes are good. \n  </p>   \n  <p>Yet another positive attribute of Tax is the power of attention.  \n  There is no brighter light of scrutiny and organization than tax, to de-complicate and elucidate <i>where</i> money is, where it goes, and what it does. </p>\n  <p>On the subject of On the subject of complicated, changing , obscure financial landscapes ... <br /> <&nbsp;><&nbsp;><&nbsp;><&nbsp;><&nbsp;><&nbsp;> < /> ... Deeply complicated, dynamic systems like the crypto space can do well with a \n  set of pliable, flexible regulation to further efficiency and faireness for the cryptocurrency system; but most of all, further intuitive clarity for the wider public.\n          </p>\n  <p class="quote">\n  However exciting crypto may be, if you gave it as a gift, you should be aware of IRS rules on gifting. There\u2019s a $15,000 gift threshold for 2021, meaning the giver doesn\u2019t have to pay taxes on the gift as long as it\'s worth $14,999 or less. If the value of the gift is over $15,000, the tax burden falls on the generous donor, who must file IRS form 709.\n\n\u201CIf my parents give me $10,000 in bitcoin, that\'s not taxable income for me,\u201D said David Kemmerer, CEO and co-founder of CoinLedger, a crypto tax reporting software.<sup>1</sup>\n  </p>\n ';
+
+  var blogcite25 = '   \n   <p class="footnotes">\n   1. <a href="https://www.coindesk.com/learn/you-may-owe-crypto-taxes-on-these-surprising-things-in-2022/"   target="_blank">https://www.coindesk.com/learn/you-may-owe-crypto-taxes-on-these-surprising-things-in-2022/</a> \n<br />  \n   </p>  \n     ';
+
+  var blogpost24 = '\n  <p class="firstparagraph">  </p>   \n  \n<p class="quote"> \n<sup>1</sup>\n</p>\n<p> </p>';
+  var blogcite24 = '   \n   <p class="footnotes">\n   1. <a href="https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976"   target="_blank">https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976</a>\n \n  \n<br /> \n   \n   </p>  \n     ';
+
   var blogpost23 = '\n  <p class="firstparagraph">As a cyclist, a runner, a pedestrian, and sometimes driver, my earbuds stay in. Whether ordering from my Starbucks Barista or listening to traffic, proximal noise matters! <br /><br />\n  Given the importance of hearing your surroundings crystal-clear while conversing or listening to music is a safety feature extraordinaire. Yet, Apple\'s 2021 AirPods don\'t carry this essential feature that any typical $100 earbud surely offers. So, IMHO, the only worthwhile Apple AirPod is the very pricey AirPod Pro.  \n  </p>   \n  \n<p class="quote">Once you get them seated in your ears, the new AirPods sound OK. But it\'s annoying how much outside sound gets in when you\u2019re out and about, which makes everything much muddier. Again, in comparison to similarly priced models from Jabra, \nSamsung, and other top-tier modern producers, these get left in the dust. \n<sup>1</sup>\n</p>\n<p>Whether for safety or enhancement, AirPod Pro is the way to go ...</p>';
   var blogcite23 = '   \n   <p class="footnotes">\n   1. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>\n \n  \n<br />   2. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>\n \n   \n   </p>  \n     ';
 
@@ -320,11 +327,11 @@ var bloggerMay21 = function bloggerMay21() {
   var blogpost17 = ' <p class="firstparagraph">Photoshop\'s woe begins with its OpenGL dependence<sup>1</sup></p>\n\n  <p class="quote">Photoshop\u2019s embrace of the GPU was made practical only through the \n  emergence of a common GPU software interface (called Open GL) that offered standard methods for using \n  GPUs across both Macintosh and Windows systems. OpenGL was at the heart of Photoshop\u2019s first 3D features\n   introduced over 10 years ago, first as a special benefit of \u2018Photoshop Extended\u2019, then later incorporated \n   into every Creative Cloud subscription for Photoshop.\n  <br />  <br />\n  Over time, increasing hardware capabilities and customizations have exceeded the limits of those original,\n   cross-platform APIs, and now \u2018native\u2019 GPU APIs for Windows (Direct X) and Macintosh (Metal) offers better \n   stability and performance than the older generation of APIs.\n  <br />  <br />\n  With this transition to newer native APIs, together with the recent reboot of 3D tooling at Adobe featuring \n  the Substance line of 3D products, the time has come to retire Photoshop\u2019s legacy 3D feature set\n  <sup>0</sup></p>\n  <p>For now, Adobe\'s 3D Rendering is caught in the middle, but thank goodness for Adobe\'s work with Substance\'s 3D tooling...\n   <br /><br />Unfortunately, Substance isn\'t included in my Creative Cloud subscription!</p> \n  \n  </p>\n\n  ';
   var blogcite17 = '\n  \n  <p class="footnotes">\n  1. <a href="https://helpx.adobe.com/photoshop/kb/3d-faq.html"   target="_blank">helpx.adobe.com/photoshop/kb/3d-faq.html</a>\n \n  </p>  ';
 
-  //   var blogpost16= ` <p> <sup>0</sup></p>
+  //   let blogpost16= ` <p> <sup>0</sup></p>
   //  <p> </p>
 
   //   `;
-  //   var blogcite16= `
+  //   let blogcite16= `
 
   //   <p class="footnotes">
   //   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
@@ -372,6 +379,24 @@ var bloggerMay21 = function bloggerMay21() {
   var blogcite1 = '\n \n<p class="footnotes">1. <a href="https://finance.yahoo.com/news/cardano-prepares-launch-alonzo-testnet-130000976.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKH0bKJvZsFbQBykBexupKV-HvvhwSDQjmlBmyM4Q69AaNPYvc4Tk8LSJIyBqekdp0PAPL7kz0hTgJFEwOB3jchU4gzkApL6bQay9JZ2z16ddSW5RsCYEp049RRj-L_zFhrhze_83BrLCQjxz_-oOvLEbc8l3X_T4KdO8-eQf6cz"   target="_blank">cardano-prepares-launch-alonzo-testnet</a>\n</p>   \n<p class="footnotes">2. <a href="https://www.benzinga.com/node/21184597"   target="_blank">Is the Bitcoin-Ethereum \'Flippening\' a Likely Scenario?</a>\n</p>\n';
 
   var url = [{
+    id: '25',
+    did: '22-17-22',
+    date: 'February 17, 2022',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Sociology Tomorrow!',
+    title: 'The Clarity of Money',
+    post: blogpost25,
+    blogcite: blogcite25
+  }, {
+    id: '24',
+    did: '21-10-24',
+    date: 'October 24, 2021',
+    author: 'by Thomas Maestas, MA',
+    cat3: 'Sociology Tomorrow!',
+    title: 'The Beginning of the End of Passwords',
+    post: blogpost24,
+    blogcite: blogcite24
+  }, {
     id: '23',
     did: '21-10-23',
     date: 'October 23, 2021',
@@ -560,7 +585,7 @@ var bloggerMay21 = function bloggerMay21() {
     document.getElementById("paragraph-may21").innerHTML += cat;
   }
 
-  var i;
+  var i = void 0;
   for (i = 0; i < url.length; i++) {
     var catMod = '\n  <div id="' + url[i].did + '_mod" class="blogDivMod"> \n  <hr />  \n  <a href="#top-mod"><button>Top</button></a>   \n  <h4 class="title dailytech longtitle">OUR DAILY TECH:</h4>  \n  <h5 id="cat3" class="  subdailytech">' + url[i].cat3 + '</h5>  \n  <p id="author" class="  author">' + url[i].author + '</p>   \n  <h6  id="date" class="  chapternumber">' + url[i].date + '</h6>    \n  <h6  id="title"   class="dailytitle chapternumber">' + url[i].title + '</h6>\n  <br />\n  <div id="post">' + url[i].post + '</div>\n  </div>\n <div id="blogcite">' + url[i].blogcite + '\n </div>';
     document.getElementById("paragraph-mod-may21").innerHTML += catMod;
