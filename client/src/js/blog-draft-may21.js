@@ -2,21 +2,45 @@
 //Top Vars Above
 
 let bloggerMay21 = function () {
-  
+    
+  let blogpost26= `
+  <p class="firstparagraph">Beyond computing power and discussions of "A.I. Winters" and processing limitations, one may overlook a more decisive action to guide machine learning, if ever to evolve from the what to the why.
+  <br /><br /> This classic on artificial intelligence is worth a read - </p>   
+
+  <p class="quote">
+  More recently, techniques of machine learning have been used to gain an understanding from a database of successful proofs to generate more proofs. But although the proofs are new, they do not pass the test of exciting the mathematical mind. It’s the same for powerful algorithms, which can generate convincing short-form text, but are a long way from writing a novel.
+<br/><br /> 
+But in 2021 I think we will see – or at least be close to – an algorithm with the ability to write its first mathematical story. Storytelling through the written word is based on millions of years of human evolution, and it takes a human many years to reach the maturity to write a novel. But mathematics is a much younger evolutionary development. A person immersed in the mathematical world can reach maturity quite quickly, which is why one sees mathematical breakthroughs made by young minds.
+This is why I think that it won’t take long for an AI to understand the quality of the proofs we love and celebrate, before it too will be writing proofs. Perhaps, given its internal architecture, these may be mathematical theorems about networks – a subject that deserves its place on the shelves of the mathematical libraries we humans have been filling for centuries.
+
+<sup>1</sup>
+  </p>
+ `;
+ 
+   let blogcite26= `   
+   <p class="footnotes">
+   1. <a href="https://www.wired.co.uk/article/marcus-du-sautoy-maths-proofs"   target="_blank">https://www.wired.co.uk/article/marcus-du-sautoy-maths-proofs</a> 
+<br />  
+   </p>  
+     `;
+
   
   let blogpost25= `
-  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and arch-enemy for the Greedy, yet the also the easiest way to share; and sharing, whether compulsory or not, feels good. 
+  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and archenemy for the Greedy, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. 
   So, by extension, taxes are good. 
   </p>   
   <p>Yet another positive attribute of Tax is the power of attention.  
   There is no brighter light of scrutiny and organization than tax, to de-complicate and elucidate <i>where</i> money is, where it goes, and what it does. </p>
-  <p>On the subject of On the subject of complicated, changing , obscure financial landscapes ... <br /> <&nbsp;><&nbsp;><&nbsp;><&nbsp;><&nbsp;><&nbsp;> < /> ... Deeply complicated, dynamic systems like the crypto space can do well with a 
+  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with a 
   set of pliable, flexible regulation to further efficiency and faireness for the cryptocurrency system; but most of all, further intuitive clarity for the wider public.
           </p>
   <p class="quote">
-  However exciting crypto may be, if you gave it as a gift, you should be aware of IRS rules on gifting. There’s a $15,000 gift threshold for 2021, meaning the giver doesn’t have to pay taxes on the gift as long as it's worth $14,999 or less. If the value of the gift is over $15,000, the tax burden falls on the generous donor, who must file IRS form 709.
+  Crypto may have started out as a discreet decentralized economy, but now that the nearly $2 trillion sector has gone mainstream enough to occupy coveted Super Bowl ad space, the Internal Revenue Service (IRS) is well clued in.
 
-“If my parents give me $10,000 in bitcoin, that's not taxable income for me,” said David Kemmerer, CEO and co-founder of CoinLedger, a crypto tax reporting software.<sup>1</sup>
+The IRS classifies cryptocurrency as intangible property for tax purposes, which means the profits you make from selling virtual currency are subject to capital gains taxes. This holds true whether you bought bitcoin or altcoins on a crypto exchange like Coinbase, or simply used an app like Venmo or PayPal to buy and use cryptocurrency.
+<br/><br />
+  However exciting crypto may be, if you gave it as a gift, you should be aware of IRS rules on gifting. There’s a $15,000 gift threshold for 2021, meaning the giver doesn’t have to pay taxes on the gift as long as it's worth $14,999 or less. 
+  If the value of the gift is over $15,000, the tax burden falls on the generous donor, who must file IRS form 709.<sup>1</sup>
   </p>
  `;
 
@@ -499,8 +523,18 @@ var blogcite1 =
    
   let url =  [
     {
+      id:'26',
+      did:'22-02-18',
+      date:'February 18, 2022',
+      author:'by Thomas Maestas, MA',
+      cat3:'A.I.Now.',
+      title:'I Think Therefore I am',
+      post:blogpost26,
+     blogcite:blogcite26
+     },
+    {
       id:'25',
-      did:'22-17-22',
+      did:'22-02-17',
       date:'February 17, 2022',
       author:'by Thomas Maestas, MA',
       cat3:'Sociology Tomorrow!',

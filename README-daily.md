@@ -1,7 +1,14 @@
 ## npm run gulp
 ## NEWS UPDATE 2222
 a. le premier stage - ourdailytech vanillajs -> transfer the <ul><li>'s in the loop as diagrammed: 
-b. le deuxieme stage - cryptomaven.xyz -> XX!!!-destroy!!!
+b. le deuxieme stage - cryptomaven.xyz -> 
+```sh
+/**
+ * @param {number[]} array
+ * @param {number} target
+ * @return {number[]}
+ */
+ ``` 
 c. le troisieme stage - CryptoMaven App on AWS - 12/21; CryptoMaven NFT conversion tool DAPP - 3/22
 d. le quatrieme stage, 'fait accompli':: Solidity Contract on PulseChain for: 1.dailytech, cryptomaven, ourdailytech, friendsofgrootsociety, doggywoodboulevard'
 
