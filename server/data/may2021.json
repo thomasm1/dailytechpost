@@ -1,5 +1,45 @@
 [
   {
+    "id": "26",
+    "did": "22-02-18",
+    "date": "February 18, 2022",
+    "author": "by Thomas Maestas, MA",
+    "cat3": "A.I.Now.",
+    "title": "I Think Therefore I am",
+    "post": "\n  <p class=\"firstparagraph\">Beyond computing power and discussions of \"A.I. Winters\" and processing limitations, one may overlook a more decisive approach to machine learning development, evolving from the what and how, to the why ...  however hard it is to extricate Hollywood's depictions of hope and fear from our minds!\n  \n  <br /><br /> \n  This 2021 Wired article's prescience on artificial intelligence is worth a read:  </p>   \n\n  <p class=\"quote\">\n  More recently, techniques of machine learning have been used to gain an understanding from a database of successful proofs to generate more proofs. But although the proofs are new, they do not pass the test of exciting the mathematical mind. It’s the same for powerful algorithms, which can generate convincing short-form text, but are a long way from writing a novel.\n<br/><br /> \nBut in 2021 I think we will see – or at least be close to – an algorithm with the ability to write its first mathematical story. Storytelling through the written word is based on millions of years of human evolution, and it takes a human many years to reach the maturity to write a novel. But mathematics is a much younger evolutionary development. A person immersed in the mathematical world can reach maturity quite quickly, which is why one sees mathematical breakthroughs made by young minds.\n<br/><br />\nThis is why I think that it won’t take long for an AI to understand the quality of the proofs we love and celebrate, before it too will be writing proofs. Perhaps, given its internal architecture, these may be mathematical theorems about networks – a subject that deserves its place on the shelves of the mathematical libraries we humans have been filling for centuries.\n\n<sup>1</sup>\n  </p>\n ",
+    "blogcite": "   \n   <p class=\"footnotes\">\n   1. <a href=\"https://www.wired.co.uk/article/marcus-du-sautoy-maths-proofs\"   target=\"_blank\">https://www.wired.co.uk/article/marcus-du-sautoy-maths-proofs</a> \n<br />  \n   </p>  \n     "
+  },
+  {
+    "id": "25",
+    "did": "22-02-17",
+    "date": "February 17, 2022",
+    "author": "by Thomas Maestas, MA",
+    "cat3": "Sociology Tomorrow!",
+    "title": "The Clarity of Money",
+    "post": "\n  <p class=\"firstparagraph\">Taxes ... simultaneously the ultimate bane and archenemy for the Greedy, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. \n  So, by extension, taxes are good. \n  </p>   \n  <p>Yet another positive attribute of Tax is the power of attention.  \n  There is no brighter light of scrutiny and organization than tax, to de-complicate and elucidate <i>where</i> money is, where it goes, and what it does. </p>\n  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with a \n  set of pliable, flexible regulation to further efficiency and faireness for the cryptocurrency system; but most of all, further intuitive clarity for the wider public.\n          </p>\n  <p class=\"quote\">\n  Crypto may have started out as a discreet decentralized economy, but now that the nearly $2 trillion sector has gone mainstream enough to occupy coveted Super Bowl ad space, the Internal Revenue Service (IRS) is well clued in.\n\nThe IRS classifies cryptocurrency as intangible property for tax purposes, which means the profits you make from selling virtual currency are subject to capital gains taxes. This holds true whether you bought bitcoin or altcoins on a crypto exchange like Coinbase, or simply used an app like Venmo or PayPal to buy and use cryptocurrency.\n<br/><br />\n  However exciting crypto may be, if you gave it as a gift, you should be aware of IRS rules on gifting. There’s a $15,000 gift threshold for 2021, meaning the giver doesn’t have to pay taxes on the gift as long as it's worth $14,999 or less. \n  If the value of the gift is over $15,000, the tax burden falls on the generous donor, who must file IRS form 709.<sup>1</sup>\n  </p>\n ",
+    "blogcite": "   \n   <p class=\"footnotes\">\n   1. <a href=\"https://www.coindesk.com/learn/you-may-owe-crypto-taxes-on-these-surprising-things-in-2022/\"   target=\"_blank\">https://www.coindesk.com/learn/you-may-owe-crypto-taxes-on-these-surprising-things-in-2022/</a> \n<br />  \n   </p>  \n     "
+  },
+  {
+    "id": "24",
+    "did": "21-10-24",
+    "date": "October 24, 2021",
+    "author": "by Thomas Maestas, MA",
+    "cat3": "Sociology Tomorrow!",
+    "title": "The Beginning of the End of Passwords",
+    "post": "\n  <p class=\"firstparagraph\">  </p>   \n  \n<p class=\"quote\"> \n<sup>1</sup>\n</p>\n<p> </p>",
+    "blogcite": "   \n   <p class=\"footnotes\">\n   1. <a href=\"https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976\"   target=\"_blank\">https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976</a>\n \n  \n<br /> \n   \n   </p>  \n     "
+  },
+  {
+    "id": "23",
+    "did": "21-10-23",
+    "date": "October 23, 2021",
+    "author": "by Thomas Maestas, MA",
+    "cat3": "Sociology Tomorrow!",
+    "title": "Salutations of Safety, and the Wonderous Era of Conxtext-Aware Noise Canceling and Amplification",
+    "post": "\n  <p class=\"firstparagraph\">As a cyclist, a runner, a pedestrian, and sometimes driver, my earbuds stay in. Whether ordering from my Starbucks Barista or listening to traffic, proximal noise matters! <br /><br />\n  Given the importance of hearing your surroundings crystal-clear while conversing or listening to music is a safety feature extraordinaire. Yet, Apple's 2021 AirPods don't carry this essential feature that any typical $100 earbud surely offers. So, IMHO, the only worthwhile Apple AirPod is the very pricey AirPod Pro.  \n  </p>   \n  \n<p class=\"quote\">Once you get them seated in your ears, the new AirPods sound OK. But it's annoying how much outside sound gets in when you’re out and about, which makes everything much muddier. Again, in comparison to similarly priced models from Jabra, \nSamsung, and other top-tier modern producers, these get left in the dust. \n<sup>1</sup>\n</p>\n<p>Whether for safety or enhancement, AirPod Pro is the way to go ...</p>",
+    "blogcite": "   \n   <p class=\"footnotes\">\n   1. <a href=\"https://www.wired.com/review/apple-airpods-pro/\"   target=\"_blank\">https://www.wired.com/review/apple-airpods-pro/</a>\n \n  \n<br />   2. <a href=\"https://www.wired.com/review/apple-airpods-pro/\"   target=\"_blank\">https://www.wired.com/review/apple-airpods-pro/</a>\n \n   \n   </p>  \n     "
+  },
+  {
     "id": "22",
     "did": "21-10-22",
     "date": "October 22, 2021",

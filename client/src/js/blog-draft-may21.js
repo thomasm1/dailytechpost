@@ -4,13 +4,16 @@
 let bloggerMay21 = function () {
     
   let blogpost26= `
-  <p class="firstparagraph">Beyond computing power and discussions of "A.I. Winters" and processing limitations, one may overlook a more decisive action to guide machine learning, if ever to evolve from the what to the why.
-  <br /><br /> This classic on artificial intelligence is worth a read - </p>   
+  <p class="firstparagraph">Beyond computing power and discussions of "A.I. Winters" and processing limitations, one may overlook a more decisive approach to machine learning development, evolving from the what and how, to the why ...  however hard it is to extricate Hollywood's depictions of hope and fear from our minds!
+  
+  <br /><br /> 
+  This 2021 Wired article's prescience on artificial intelligence is worth a read:  </p>   
 
   <p class="quote">
   More recently, techniques of machine learning have been used to gain an understanding from a database of successful proofs to generate more proofs. But although the proofs are new, they do not pass the test of exciting the mathematical mind. It’s the same for powerful algorithms, which can generate convincing short-form text, but are a long way from writing a novel.
 <br/><br /> 
 But in 2021 I think we will see – or at least be close to – an algorithm with the ability to write its first mathematical story. Storytelling through the written word is based on millions of years of human evolution, and it takes a human many years to reach the maturity to write a novel. But mathematics is a much younger evolutionary development. A person immersed in the mathematical world can reach maturity quite quickly, which is why one sees mathematical breakthroughs made by young minds.
+<br/><br />
 This is why I think that it won’t take long for an AI to understand the quality of the proofs we love and celebrate, before it too will be writing proofs. Perhaps, given its internal architecture, these may be mathematical theorems about networks – a subject that deserves its place on the shelves of the mathematical libraries we humans have been filling for centuries.
 
 <sup>1</sup>
