@@ -1,4 +1,4 @@
- package api.posts;
+ package dailytech.posts;
 
  import com.intuit.karate.junit5.Karate;
 

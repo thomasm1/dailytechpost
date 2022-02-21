@@ -12,6 +12,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.version>3.6.0</maven.compiler.version>
         <karate.version>0.9.5</karate.version>
+        <gatling.plugin.version>3.0.5</gatling.plugin.version>
     </properties>    
 
     <dependencies>
@@ -26,7 +27,29 @@
             <artifactId>karate-junit5</artifactId>
             <version>${karate.version}</version>
             <scope>test</scope>
-        </dependency>		
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-gatling</artifactId>
+            <version>${karate.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>8.4.1.jre11</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -54,7 +77,21 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-            </plugin>            
+                <configuration>
+                    <systemProperties>
+                        <karate.options>--tags ~@ignore</karate.options>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling.plugin.version}</version>
+                <configuration>
+                    <simulationsFolder>src/test/java/dailytech/performance</simulationsFolder>
+                    <configFolder>src/test/java/dailytech/performance/data</configFolder>
+                </configuration>
+            </plugin>
         </plugins>        
     </build>       
     

@@ -1,4 +1,4 @@
-package api;
+package dailytech;
 
 import com.intuit.karate.junit5.Karate;
 
