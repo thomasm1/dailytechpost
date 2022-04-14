@@ -38,7 +38,7 @@
     "method-override": "2.3.5",
     "methods": "1.1.2",
     "morgan": "^1.7.0",
-    "next": "10.2.2",
+    "next": "12.1.0",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
     "pg": "8.5.1",
