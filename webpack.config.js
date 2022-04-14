@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
@@ -11,19 +13,27 @@ module.exports = {
     app4: './client/src/index4.js',
     app5: './client/src/index5_d3.js'
   },
-  output: {
-    path: path.resolve(__dirname, 'build'),
-      path: path.resolve(__dirname, 'client/dist'),
-    filename: '[name].bundle.js'
-  },
   module: {
     rules: [{
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         // query: {
         //    presets: ['env', 'stage-0']
         // }
-    }]
+    },  
+    {test:/\.(s(a|c)ss)$/,
+  use:["style-loader","css-loader","sass-loader"]},
+]
+  },
+  output: { 
+      path: path.resolve(__dirname, 'client/dist'),
+    filename: '[name].bundle.js'
+  },
+  plugins:[ new HtmlWebpackPlugin(), new MiniCssExtractPlugin()],
+  mode: process.env.NODE_ENV==="production"?"production":"development",
+  devServer: {
+    contentBase: path.resolve(__dirname, './public'),
+    hot:true
   }
 }

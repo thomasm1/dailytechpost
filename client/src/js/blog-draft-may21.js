@@ -3,6 +3,38 @@
 
 let bloggerMay21 = function () {
     
+  let blogpost28= `
+  <p class="firstparagraph"> </p><p> </p>   
+
+  <p class="quote"> <sup>1</sup>
+  </p>
+
+ `;
+ 
+   let blogcite28= `   
+   <p class="footnotes">
+   1. <a href="https://filecoin.io/"   target="_blank">https://filecoin.io/</a> 
+<br />  
+   </p>  
+     `;
+
+  let blogpost27= `
+  <p class="firstparagraph">Whether it's the Thrill of the Hunt or the Conquest of new Territory to claim one's own, Property, and the definition thereof, surpasses John Locke's best arguments for a common pact. Everyone knows the decentralized territory of the database realm, which connects by address rather than user account -- thus, one of the more trustworthy and secure method for storing data in decentralized space. Now, how to incentivize such a realm better than FileCoin:  <br /><br /> 
+</p><p>So, does that mean IPFS Interplanety File System, (with Linked List structures across decentralized servers) interrupt or comply with the web2.0's AWS-GCP-AZURE dominaed landscape? 
+It does both:</p>   
+
+  <p class="quote">Filecoin is a decentralized storage network signed to store humanity's most important information"<sup>1</sup>
+  </p>
+
+ `;
+ 
+   let blogcite27= `   
+   <p class="footnotes">
+   1. <a href="https://filecoin.io/"   target="_blank">https://filecoin.io/</a> 
+<br />  
+   </p>  
+     `;
+
   let blogpost26= `
   <p class="firstparagraph">Beyond computing power and discussions of "A.I. Winters" and processing limitations, one may overlook a more decisive approach to machine learning development, evolving from the what and how, to the why ...  however hard it is to extricate Hollywood's depictions of hope and fear from our minds!
   
@@ -525,6 +557,26 @@ var blogcite1 =
 `; 
    
   let url =  [
+    {
+      id:'28',
+      did:'22-04-08',
+      date:'April 8, 2022',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'',
+      post:blogpost28,
+     blogcite:blogcite28
+     },
+    {
+      id:'27',
+      did:'22-04-05',
+      date:'April 5, 2022',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'It\'s my Mouth I can Sing what I want to',
+      post:blogpost27,
+     blogcite:blogcite27
+     },
     {
       id:'26',
       did:'22-02-18',
