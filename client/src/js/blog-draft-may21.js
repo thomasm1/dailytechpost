@@ -4,33 +4,34 @@
 let bloggerMay21 = function () {
     
   let blogpost28= `
-  <p class="firstparagraph"> </p><p> </p>   
+  <p class="firstparagraph"> The importance of reducing electricity cannot be overstated, most importantly it provides an ecological image boost--but not much more.  Ethereum's Merge from Proof-of-work to Proof-of-stake is the big news, however the big liabilities such as gas transactioanal fees and throughput will not improve at all! Layer 2 solutions and side chains create an uncomforatable level of platform dependence. </p>   
 
-  <p class="quote"> <sup>1</sup>
-  </p>
-
+  <p class="quote">Beiko was questioned by an individual about Ethereum miners who have been securing the network. The individual asked the Ethereum developer if miners would be “left out to dry.”
+<br /><br >
+  Beiko responded to the person and explained that he would not invest in any mining devices going forward. “I would strongly suggest not investing more in mining equipment at this point,” the Ethereum developer tweeted. Then the individual asked if developers planned the “plug pull” for June or if the ether mining community has more time. Beiko also replied to that question as well and said:
+  <br /><br >
+  It won’t be June, but likely in the few months after. No firm date yet, but we’re definitely in the final chapter of PoW on Ethereum.<sup>1</sup>
+  </p> 
  `;
  
    let blogcite28= `   
    <p class="footnotes">
-   1. <a href="https://filecoin.io/"   target="_blank">https://filecoin.io/</a> 
+   1. <a href="https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/"   target="_blank">https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/</a> 
 <br />  
    </p>  
      `;
 
   let blogpost27= `
-  <p class="firstparagraph">Whether it's the Thrill of the Hunt or the Conquest of new Territory to claim one's own, Property, and the definition thereof, surpasses John Locke's best arguments for a common pact. Everyone knows the decentralized territory of the database realm, which connects by address rather than user account -- thus, one of the more trustworthy and secure method for storing data in decentralized space. Now, how to incentivize such a realm better than FileCoin:  <br /><br /> 
-</p><p>So, does that mean IPFS Interplanety File System, (with Linked List structures across decentralized servers) interrupt or comply with the web2.0's AWS-GCP-AZURE dominaed landscape? 
-It does both:</p>   
+  <p class="firstparagraph">It's almost comical to think that anyone would have spent money on Ethereum 1.0 rigs in the past year ...
+  </p>   
 
-  <p class="quote">Filecoin is a decentralized storage network signed to store humanity's most important information"<sup>1</sup>
-  </p>
+ 
 
  `;
  
    let blogcite27= `   
    <p class="footnotes">
-   1. <a href="https://filecoin.io/"   target="_blank">https://filecoin.io/</a> 
+   1. <a href="https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/"   target="_blank">https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/</a> 
 <br />  
    </p>  
      `;
@@ -61,13 +62,12 @@ This is why I think that it won’t take long for an AI to understand the qualit
 
   
   let blogpost25= `
-  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and archenemy for the Greedy, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. 
+  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and archenemy of small business, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. 
   So, by extension, taxes are good. 
   </p>   
   <p>Yet another positive attribute of Tax is the power of attention.  
   There is no brighter light of scrutiny and organization than tax, to de-complicate and elucidate <i>where</i> money is, where it goes, and what it does. </p>
-  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with a 
-  set of pliable, flexible regulation to further efficiency and faireness for the cryptocurrency system; but most of all, further intuitive clarity for the wider public.
+  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with <i>Laissez-Faire</i>approach with regulation to permit efficiency and faireness in the cryptocurrency system; but most of all, further intuitive clarity for the wider public.
           </p>
   <p class="quote">
   Crypto may have started out as a discreet decentralized economy, but now that the nearly $2 trillion sector has gone mainstream enough to occupy coveted Super Bowl ad space, the Internal Revenue Service (IRS) is well clued in.
@@ -559,21 +559,21 @@ var blogcite1 =
   let url =  [
     {
       id:'28',
-      did:'22-04-08',
-      date:'April 8, 2022',
+      did:'22-04-14',
+      date:'April 14, 2022',
       author:'by Thomas Maestas, MA',
       cat3:'Musing Blockchain',
-      title:'',
+      title:'The Big Merge',
       post:blogpost28,
      blogcite:blogcite28
      },
     {
       id:'27',
-      did:'22-04-05',
-      date:'April 5, 2022',
+      did:'22-04-13',
+      date:'April 13, 2022',
       author:'by Thomas Maestas, MA',
       cat3:'Musing Blockchain',
-      title:'It\'s my Mouth I can Sing what I want to',
+      title:'In the Former Days of Ethereum 1.0 ...',
       post:blogpost27,
      blogcite:blogcite27
      },
@@ -810,7 +810,7 @@ var blogcite1 =
    }
    ] ;
 
-   for (i=0;i<url.length;i++){ 
+   for (let i=0;i<url.length;i++){ 
     let cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 
     <hr />  
@@ -827,8 +827,8 @@ var blogcite1 =
 document.getElementById("paragraph-may21").innerHTML += cat; 
 } 
  
-let i;
-for (i=0;i<url.length;i++){ 
+ 
+for (let i=0;i<url.length;i++){ 
   let catMod = `
   <div id="${url[i].did}_mod" class="blogDivMod"> 
   <hr />  

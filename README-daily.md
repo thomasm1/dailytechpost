@@ -1,3 +1,7 @@
+
+
+
+
 ## npm run gulp
 ## NEWS UPDATE 2222
 a. le premier stage - ourdailytech vanillajs -> transfer the <ul><li>'s in the loop as diagrammed: 
@@ -162,3 +166,121 @@ A starter pack to build JavaScript applications using standards from ES2015, ES2
 ## OTHER:
 * Public API Resources - https://github.com/toddmotto/public-apis?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
 * Organized Docs for all Popular Web Technologies - https://devdocs.io
+
+
+
+# TODO
+
+####  MARKDOWN  ##########################################
+	*I am _very_  ~excited~ today* will display as [bold]I am [italic]very [strikethrough]excited today.
+	 H6
+	Alt-H1
+	======
+	*asterisks* **bold**  ~~Scratch~~
+	1. First ordered list item
+	3. Still numbers to two b/c ordered list.
+	  * Unordered sub-list
+	Line break without new paragraph.  (two trailing spaces)
+	   Beginning Indentation (space above)
+	[inline link](https://link.com)
+	[inline link with title](https:/link.com "Link's HomePage")
+	![alt text](https://link.icon.png "Logo Title Text 1"
+	`Back-ticks make inline code ` 
+
+	
+	##  MARKDOWN  #### h1
+	## h2 
+	### h3
+	###### h6
+
+	U-H1
+	======
+	U-H2
+	-----
+	*asterisks* _asterisks_
+	**asterisks**
+	~~strikethrough~~
+	#### ORDERED LIST
+	1. First ol
+	2.
+	#### BULLETS
+	  * First ul
+	  * Second ul
+	  - First ul
+	  + First ul
+	  1. First sub-ol
+	  2. Second sub-ol
+	..
+	...
+	   Indented paragraphs
+	Line break without paragraph..
+	Line break without paragraph  
+	#### BLOCKS OF CODE
+	```
+	no language indicated
+	```javascript 
+	var s = "javascript";
+	console.log(s);
+	```
+
+	```python
+	s = "python"
+	print s
+	#### Horizontal Rule
+	--- 
+	***
+	___
+	#### TABLES
+	| Tables | Are    | Cool |
+	|--------|:------:|-----:|
+	| col 3   | r-align| $1600|
+	| col 2  | center | $120 |
+	#### BLOCKQUOTES
+	> blockquotes
+	> this line in same blockquote
+	[arbitrary case-insensitive reference text]: https://www.mozilla.org
+	#### HTML
+	<dl>
+	 <dt>Definition List</dt>
+	 <dd>stuff here...</dd>
+	</dl>
+
+	[1]: http://slashdot.org
+	[link text itself]: http://www.reddit.com
+	## JUPYTER
+	### Typeface and fonts
+	\textrm{Roman} 
+	\rm roman
+	\rm\tiny tiny \Tiny Tiny 
+	\small small 
+	\normal normal
+	\large lg 
+	\LARGE LG 
+	\huge hg 
+	\Huge Hg
+
+	http://statacumen.com/teaching/ada1/
+	UNM Stat 427/527: Advanced Data Analysis I (ADA1)
+	Prof Erik Erhardt
+	Fall 2015
+
+	Converting from Markdown to LaTeX for poster.
+
+	----------
+
+	Step 1:
+	Export the source code from your Rmd (Markdown) file so it can be read into
+	your Rnw (LaTeX) file.
+
+	  R Console: Output R code from your homework (see top of my HW.Rmd file)
+		fn.this <- "ADA1_HW_ALL_NESARC_Project_20151118.Rmd"
+		setwd("C:/Dropbox/UNM/teach/ADA_Redesign_2015/ADA1_Content/homework")
+		library(knitr)
+		purl(fn.this)
+
+	  LaTeX
+	  %% Add your HW file's *.R file (from perl()) here
+	  <<source, comment = NA, echo = FALSE, message = FALSE, warning=FALSE, results='hide', include=FALSE>>=
+	  setwd("C:/Dropbox/UNM/teach/ADA_Redesign_2015/ADA1_Content/homework")
+	  source("ADA1_HW_ALL_NESARC_Project_20151118.R")
+	  @

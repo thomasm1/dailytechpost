@@ -33,7 +33,9 @@ module.exports = {
   plugins:[ new HtmlWebpackPlugin(), new MiniCssExtractPlugin()],
   mode: process.env.NODE_ENV==="production"?"production":"development",
   devServer: {
-    contentBase: path.resolve(__dirname, './public'),
+    static: {
+     directory: path.resolve(__dirname, './client')
+    },
     hot:true
   }
 }

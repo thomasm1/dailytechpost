@@ -3,34 +3,26 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// var bodyParser = require('body-parser'); // necessary for getting POST requests
+const dotenv = require('dotenv')
+const exphbs = require('express-handlebars') 
+const {formatDate } = require('./utils/funcHandlebars');  // VIEW HElPERS, i.e. moment
 
-var routes = require('./server/routes/index');
-var tech = require('./server/routes/tech');
-var readers = require('./server/routes/readers');
-var books = require('./server/routes/books');
-var blogs = require('./server/routes/blogs');
+var routes = require('./routes/index');
+var tech = require('./routes/tech');
+var readers = require('./routes/readers');
+var books = require('./routes/books');
+var blogs = require('./routes/blogs');
+
+// Load config
+dotenv.config({ path: './config/config.env' })
 
 var app = express();
 
-// // VIEW
-// app.set('views', path.join(__dirname, '/server/views'));
-// app.set('view engine', 'jade');
-
-app.use(favicon(path.join(__dirname, 'client/favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client')));
-
-//API
-app.use('/', routes);                   // ./server/routes/index' 
-// app.use('/api/tech', tech);                   // ./server/routes/index' 
-app.use('/api/readers', readers);       //  ./server/routes/readers
-app.use('/api/books', books);           //  ./server/routes/books
-app.use('/api/blogs', blogs);           //  ./server/routes/blogs
-
+// BODY PARSING VIEWS
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser()); 
+app.use(express.json());
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -38,8 +30,21 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-// error handlers
 
+// VIEW
+app.engine('.hbs', 
+    exphbs({
+    helpers: {formatDate}, 
+    defaultLayout:'main',
+    extname:'.hbs'
+})
+)
+app.set('view engine', '.hbs');
+app.use(favicon(path.join(__dirname, 'client/favicon.ico')));
+// app.set('views', path.join(__dirname, '/views'));
+
+
+// error handlers
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -61,6 +66,19 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
+app.use(logger('dev'));
+
+// @docu API
+// @api
+
+app.use('/', routes);                   // ./routes/index' 
+// app.use('/api/tech', tech);                   // ./routes/index' 
+app.use('/api/readers', readers);       //  ./routes/readers
+app.use('/api/books', books);           //  ./routes/books
+app.use('/api/blogs', blogs);           //  ./routes/blogs 
+
 
 var debug = require('debug')('server');
 
