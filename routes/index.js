@@ -1,12 +1,12 @@
-const express = require('express'); 
+import express from 'express'; 
 
-const router = express.Router();  // Router class
+export const router = express.Router();  // Router class
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });  // index == dir
+router.get('/', (req, res) => {
+  res.render('login', { 
+    layout: 'login' 
+  }) // login == dir
 
 });
- 
-module.exports = router;
-
+  

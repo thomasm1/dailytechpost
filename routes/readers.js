@@ -1,10 +1,10 @@
-var express = require('express');
-var fs = require('fs');
-var datafile = 'server/data/readers.json';
-var router = express.Router();
+import express from 'express';
+import fs from 'fs';
+const datafile = 'server/data/posts.json';
+export const readersRouter = express.Router();
 
 /* GET all books and POST new readers */
-router.route('/')
+readersRouter.route('/')
     .get(function(req, res) {
         var data = getReaderData();
         res.send(data);
@@ -31,7 +31,7 @@ router.route('/')
 
 
 /* GET, PUT and DELETE individual readers */
-router.route('/:id')
+readersRouter.route('/:id')
 
     .get(function(req, res) {
 
@@ -121,4 +121,4 @@ function saveReaderData(data) {
     });
 }
 
-module.exports = router;
+ 

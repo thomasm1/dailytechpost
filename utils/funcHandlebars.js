@@ -1,6 +1,6 @@
-const moment = require ("moment")
+import moment from  "moment"
 
-module.exports = {
+export const formatDate = {
     formatDate: function (date, format) {
         return moment(date).utc().format(format)
     }

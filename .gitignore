@@ -2,4 +2,5 @@
 .next
 node_modules
 bower_components
-fullstacktech
+fullstacktech 
+config/config.env

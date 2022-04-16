@@ -1,23 +1,22 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-// var bodyParser = require('body-parser'); // necessary for getting POST requests
-const dotenv = require('dotenv')
-const exphbs = require('express-handlebars') 
-const {formatDate } = require('./utils/funcHandlebars');  // VIEW HElPERS, i.e. moment
+import express from 'express';
+import path from 'path';
+import favicon from 'serve-favicon';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+// import bodyParser from 'body-parser'; // necessary for getting POST requests
+import  dotenv from 'dotenv'
+import  exphbs from 'express-handlebars'
+import  {formatDate } from './utils/funcHandlebars.js';  // VIEW HElPERS, i.e. moment
 
-var routes = require('./routes/index');
-var tech = require('./routes/tech');
-var readers = require('./routes/readers');
-var books = require('./routes/books');
-var blogs = require('./routes/blogs');
+import {router} from './routes/index.js';
+import {techRouter} from './routes/tech.js';
+import {readersRouter} from './routes/readers.js'; 
+import {postsRouter} from './routes/posts.js';
 
 // Load config
 dotenv.config({ path: './config/config.env' })
 
-var app = express();
+export const app = express();
 
 // BODY PARSING VIEWS
 app.use(express.urlencoded({ extended: false }));
@@ -40,7 +39,7 @@ app.engine('.hbs',
 })
 )
 app.set('view engine', '.hbs');
-app.use(favicon(path.join(__dirname, 'client/favicon.ico')));
+ 
 // app.set('views', path.join(__dirname, '/views'));
 
 
@@ -50,7 +49,7 @@ app.use(favicon(path.join(__dirname, 'client/favicon.ico')));
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('error/500', {
             message: err.message,
             error: err
         });
@@ -73,19 +72,18 @@ app.use(logger('dev'));
 // @docu API
 // @api
 
-app.use('/', routes);                   // ./routes/index' 
+app.use('/', router);                   // ./routes/index' 
 // app.use('/api/tech', tech);                   // ./routes/index' 
-app.use('/api/readers', readers);       //  ./routes/readers
-app.use('/api/books', books);           //  ./routes/books
-app.use('/api/blogs', blogs);           //  ./routes/blogs 
+app.use('/api/readers', readersRouter);       //  ./routes/readers 
+app.use('/api/posts', postsRouter);           //  ./routes/posts 
 
 
-var debug = require('debug')('server');
+import debug from 'debug'; 
+debug('server');
 
 app.set('port', process.env.PORT || 4000);
 
 app.listen(app.get('port'));
 
 console.log('Listening on port: ' + app.get('port'));
-
-module.exports = app;
+ 
