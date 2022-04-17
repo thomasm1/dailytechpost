@@ -92,7 +92,22 @@ module.exports = {
 A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
 
 ### Version
-1.1.0
+1.2.0
+ APRIL 17, 2022 
+ 
+ DB MONGO
+
+ const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://thomas:<password>@cluster1.jgrue.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+
 ## GENERATORS:
 * Text Content Generator - http://www.lipsum.com
 * Favicon Generator - http://tools.dynamicdrive.com/favicon		

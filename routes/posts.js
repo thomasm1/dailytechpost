@@ -4,7 +4,7 @@ const datafile = 'server/data/posts.json';
 export const postsRouter = express.Router();
 
 /* GET all posts and POST new posts */
-postsRouter.route('/')
+postsRouter.route('/posts')
     .get(function(req, res) {
         var data = getPostData();
         res.send(data);

@@ -1,4 +1,4 @@
-const fs = require('fs-extra')
+import fs from 'fs-extra'
 
 try {
     fs.copySync('./config/config.env.qa', './config/config.env')
