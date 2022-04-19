@@ -1,10 +1,30 @@
-var express = require('express');
-var fs = require('fs');
-var datafile = 'server/data/readers.json';
-var router = express.Router();
+import express from 'express';
+import fs from 'fs';
+const datafile = 'server/data/posts.json';
+
+function tagsMatcher(text, searchTags){
+    let textArr = text.split(' ');
+    let searchTagArr = searchTags.split(' ')
+    let searchTagObject = {}
+
+    searchTagArr.forEach(word => {
+    if(!searchTagObject[word]) searchTagObject[word]=0;
+    searchTagObject[word]++
+    })
+    let searchSuccess = true;
+    textArr.forEach(word => {
+        if(searchTagObject[word]) {
+            searchTagObject[word]--
+            if(searchTagObject[word]<0) searchSuccess=false; // not necessary here
+        }
+        else searchSuccess = false
+    })
+    return searchSuccess
+}
+export const readersRouter = express.Router();
 
 /* GET all books and POST new readers */
-router.route('/')
+readersRouter.route('/readers')
     .get(function(req, res) {
         var data = getReaderData();
         res.send(data);
@@ -31,7 +51,7 @@ router.route('/')
 
 
 /* GET, PUT and DELETE individual readers */
-router.route('/:id')
+readersRouter.route('/:id')
 
     .get(function(req, res) {
 
@@ -121,4 +141,4 @@ function saveReaderData(data) {
     });
 }
 
-module.exports = router;
+ 

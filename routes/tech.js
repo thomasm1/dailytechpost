@@ -1,13 +1,12 @@
-// const PORT = 3001
-const express = require('express');
-const axios = require('axios')
-const cheerio = require('cheerio')
-
-var fs = require('fs');
+import express from 'express';
+import fs from 'fs';
+import axios from 'axios'
+import cheerio from 'cheerio'
+ 
 // var datafile = 'server/data/tech.json';
 
 
-var router = express.Router();
+export const techRouter = express.Router();
 
 const app = express()
 
@@ -53,10 +52,9 @@ newspapers.forEach(newspaper => {
 })
 
 /* GET tech page. */
-router.get('/api/tech', (req, res) => {
+techRouter.get('/api/tech', (req, res) => {
     // res.render('tech', { title: 'Express' });
     res.render('tech', articles);
     // res.json(articles)
   });
-  
-module.exports = router;
+ 

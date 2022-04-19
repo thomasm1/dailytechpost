@@ -1,21 +1,21 @@
-var express = require('express');
-var fs = require('fs');
-var datafile = 'server/data/blogs.json';
-var router = express.Router();
+import express from 'express';
+import fs from 'fs';
+const datafile = 'server/data/posts.json';
+export const postsRouter = express.Router();
 
-/* GET all blogs and POST new blogs */
-router.route('/')
+/* GET all posts and POST new posts */
+postsRouter.route('/posts')
     .get(function(req, res) {
-        var data = getBlogData();
+        var data = getPostData();
         res.send(data);
     })
 
     .post(function(req, res) {
 
-        var data = getBlogData();
+        var data = getPostData();
         var nextID = getNextAvailableID(data);
 
-        var newBlog = {  
+        var newPost = {  
             id: nextID,
             did: req.body.did,
             date: req.body.date,
@@ -23,41 +23,41 @@ router.route('/')
             cat3: req.body.cat3,
             title: req.body.title,
             post: req.body.post,
-            blogcite: req.body.blogcite
+            postcite: req.body.postcite
         };
 
-        data.push(newBlog);
+        data.push(newPost);
 
-        saveBlogData(data);
+        savePostData(data);
 
 //        res.set('Content-Type', 'application/json');
-        res.status(201).send(newBlog);
+        res.status(201).send(newPost);
     });
 
 
-/* GET, PUT and DELETE individual blogs */
-router.route('/:id')
+/* GET, PUT and DELETE individual posts */
+postsRouter.route('/:id')
 
     .get(function(req, res) {
 
-        //console.log('Retrieving blog id: ' + req.params.id);
+        //console.log('Retrieving post id: ' + req.params.id);
 
-        var data = getBlogData();
+        var data = getPostData();
 
-        var matchingBlogs = data.filter(function(item) {
+        var matchingPosts = data.filter(function(item) {
             return item.id == req.params.id;
         });
 
-        if(matchingBlogs.length === 0) {
+        if(matchingPosts.length === 0) {
             res.sendStatus(404);
         } else {
-            res.send(matchingBlogs[0]);
+            res.send(matchingPosts[0]);
         }
     })
 
     .delete(function(req, res) {
 
-        var data = getBlogData();
+        var data = getPostData();
 
         var pos = data.map(function(e) {
             return e.id;
@@ -69,42 +69,42 @@ router.route('/:id')
             res.sendStatus(404);
         }
 
-        saveBlogData(data);
+        savePostData(data);
         res.sendStatus(204);
 
     })
 
     .put(function(req, res) {
 
-        var data = getBlogData();
+        var data = getPostData();
 
-        var matchingBlogs = data.filter(function(item) {
+        var matchingPosts = data.filter(function(item) {
             return item.id == req.params.id;
         });
 
-        if(matchingBlogs.length === 0) {
+        if(matchingPosts.length === 0) {
             res.sendStatus(404);
         } else {
 
-            var blogToUpdate = matchingBlogs[0];
-            blogToUpdate.id =  req.body.id,
-            blogToUpdate.title = req.body.title;
-            blogToUpdate.author = req.body.author;
-            blogToUpdate.date = req.body.date;
-            blogToUpdate.cat3 = req.body.cat3;
-            blogToUpdate.blogcite = req.body.blogcite; 
+            var postToUpdate = matchingPosts[0];
+            postToUpdate.id =  req.body.id,
+            postToUpdate.title = req.body.title;
+            postToUpdate.author = req.body.author;
+            postToUpdate.date = req.body.date;
+            postToUpdate.cat3 = req.body.cat3;
+            postToUpdate.blogcite = req.body.blogcite; 
 
-            saveBlogData(data);
+            savePostData(data);
             res.sendStatus(204);
 
         }
     });
 
-function getNextAvailableID(allBlogs) {
+function getNextAvailableID(allPosts) {
 
     var maxID = 0;
 
-    allBlogs.forEach(function(element, index, array) {
+    allPosts.forEach(function(element, index, array) {
 
         if(element.id > maxID) {
             maxID = element.id;
@@ -116,12 +116,12 @@ function getNextAvailableID(allBlogs) {
 
 }
 
-function getBlogData() {
+function getPostData() {
     var data = fs.readFileSync(datafile, 'utf8');
     return JSON.parse(data);
 }
 
-function saveBlogData(data) {
+function savePostData(data) {
     fs.writeFile(datafile, JSON.stringify(data, null, 4), function (err) {
         if (err) {
             console.log(err);
@@ -129,4 +129,4 @@ function saveBlogData(data) {
     });
 }
 
-module.exports = router;
+  

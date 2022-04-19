@@ -3,6 +3,39 @@
 
 let bloggerMay21 = function () {
     
+  let blogpost28= `
+  <p class="firstparagraph"> The importance of reducing electricity cannot be overstated, most importantly it provides an ecological image boost--but not much more.  Ethereum's Merge from Proof-of-work to Proof-of-stake is the big news, however the big liabilities such as gas transactioanal fees and throughput will not improve at all! Layer 2 solutions and side chains create an uncomforatable level of platform dependence. </p>   
+
+  <p class="quote">Beiko was questioned by an individual about Ethereum miners who have been securing the network. The individual asked the Ethereum developer if miners would be “left out to dry.”
+<br /><br >
+  Beiko responded to the person and explained that he would not invest in any mining devices going forward. “I would strongly suggest not investing more in mining equipment at this point,” the Ethereum developer tweeted. Then the individual asked if developers planned the “plug pull” for June or if the ether mining community has more time. Beiko also replied to that question as well and said:
+  <br /><br >
+  It won’t be June, but likely in the few months after. No firm date yet, but we’re definitely in the final chapter of PoW on Ethereum.<sup>1</sup>
+  </p> 
+ `;
+ 
+   let blogcite28= `   
+   <p class="footnotes">
+   1. <a href="https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/"   target="_blank">https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/</a> 
+<br />  
+   </p>  
+     `;
+
+  let blogpost27= `
+  <p class="firstparagraph">It's almost comical to think that anyone would have spent money on Ethereum 1.0 rigs in the past year ...
+  </p>   
+
+ 
+
+ `;
+ 
+   let blogcite27= `   
+   <p class="footnotes">
+   1. <a href="https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/"   target="_blank">https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/</a> 
+<br />  
+   </p>  
+     `;
+
   let blogpost26= `
   <p class="firstparagraph">Beyond computing power and discussions of "A.I. Winters" and processing limitations, one may overlook a more decisive approach to machine learning development, evolving from the what and how, to the why ...  however hard it is to extricate Hollywood's depictions of hope and fear from our minds!
   
@@ -29,13 +62,12 @@ This is why I think that it won’t take long for an AI to understand the qualit
 
   
   let blogpost25= `
-  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and archenemy for the Greedy, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. 
+  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and archenemy of small business, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. 
   So, by extension, taxes are good. 
   </p>   
   <p>Yet another positive attribute of Tax is the power of attention.  
   There is no brighter light of scrutiny and organization than tax, to de-complicate and elucidate <i>where</i> money is, where it goes, and what it does. </p>
-  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with a 
-  set of pliable, flexible regulation to further efficiency and faireness for the cryptocurrency system; but most of all, further intuitive clarity for the wider public.
+  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with <i>Laissez-Faire</i>approach with regulation to permit efficiency and faireness in the cryptocurrency system; but most of all, further intuitive clarity for the wider public.
           </p>
   <p class="quote">
   Crypto may have started out as a discreet decentralized economy, but now that the nearly $2 trillion sector has gone mainstream enough to occupy coveted Super Bowl ad space, the Internal Revenue Service (IRS) is well clued in.
@@ -526,6 +558,26 @@ var blogcite1 =
    
   let url =  [
     {
+      id:'28',
+      did:'22-04-14',
+      date:'April 14, 2022',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'The Big Merge',
+      post:blogpost28,
+     blogcite:blogcite28
+     },
+    {
+      id:'27',
+      did:'22-04-13',
+      date:'April 13, 2022',
+      author:'by Thomas Maestas, MA',
+      cat3:'Musing Blockchain',
+      title:'In the Former Days of Ethereum 1.0 ...',
+      post:blogpost27,
+     blogcite:blogcite27
+     },
+    {
       id:'26',
       did:'22-02-18',
       date:'February 18, 2022',
@@ -758,7 +810,7 @@ var blogcite1 =
    }
    ] ;
 
-   for (i=0;i<url.length;i++){ 
+   for (let i=0;i<url.length;i++){ 
     let cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 
     <hr />  
@@ -775,8 +827,8 @@ var blogcite1 =
 document.getElementById("paragraph-may21").innerHTML += cat; 
 } 
  
-let i;
-for (i=0;i<url.length;i++){ 
+ 
+for (let i=0;i<url.length;i++){ 
   let catMod = `
   <div id="${url[i].did}_mod" class="blogDivMod"> 
   <hr />  

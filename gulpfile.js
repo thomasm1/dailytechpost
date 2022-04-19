@@ -1,16 +1,16 @@
-const { src, dest, parallel } = require('gulp'); 
-const sass   = require('gulp-sass'); 
-const minifyCSS = require('gulp-csso');
-const imageMin = require('gulp-imagemin'); 
-const concat = require('gulp-concat');
-const browserSync = require('browser-sync').create();
+import pkg from 'gulp';
+const { src, dest } = pkg; 
+import sass   from 'gulp-sass'; 
+import minifyCSS from 'gulp-csso';
+import imageMin from 'gulp-imagemin'; 
+import concat from 'gulp-concat';
+ 
  
 function css() {
   return src('client/src/app.scss')
     .pipe(sass())
     .pipe(minifyCSS())
-    .pipe(dest('client/dist'))
-    .pipe(browserSync.stream())
+    .pipe(dest('client/dist')) 
 }
  
  // Image minifier from src -> dist
@@ -25,8 +25,12 @@ function js() {
     .pipe(concat('app.min.js'))
     .pipe(dest('client/dist', { sourcemaps: true }))
 }
+export default () => src('input/*.js')
+.pipe(babel())
+.pipe(dest('output/'))
 
-exports.img = img;
-exports.js = js;
-exports.css = css; 
-exports.default = parallel(img, css, js);
+
+// exports.img = img;
+// exports.js = js;
+// exports.css = css; 
+// exports.default = parallel(img, css, js);
