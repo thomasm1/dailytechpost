@@ -1,9 +1,10 @@
+
 Feature: demo karate test script
   for help, see: https://github.com/intuit/karate/wiki/IDE-Support
 
   Background:
-    * url 'https://jsonplaceholder.typicode.com'
-
+    * url typicodeUrl
+    * print url
   Scenario: get all users and then get the first user by id
     Given path 'users'
     When method get
@@ -31,7 +32,7 @@ Feature: demo karate test script
       }
       """
 
-    Given url 'https://jsonplaceholder.typicode.com/users'
+    Given url typicodeUrl
     And request user
     When method post
     Then status 201
