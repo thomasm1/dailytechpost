@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "build": "webpack",
-    "gulp": "gulp",
+    "run":"nodemon server.js",
+"gulp": "gulp",
     "server": "webpack-dev-server --output-public-path=/",
     "postinstall": "node ./scripts/node-post-install.js"
   },
