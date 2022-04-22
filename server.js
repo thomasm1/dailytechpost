@@ -81,7 +81,7 @@ app.use('/api/posts', postsRouter);           //  ./routes/posts
 import debug from 'debug'; 
 debug('server');
 
-app.set('port', process.env.PORT || 4000);
+app.set('port', 4000);// process.env.PORT || );
 
 app.listen(app.get('port'));
 
