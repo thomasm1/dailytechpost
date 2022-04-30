@@ -2,8 +2,7 @@
   "name": "ourdailytechblog",
   "version": "1.1.0",
   "description": "Blog Commentaries on Technology",
-  "main": "index.js",
-  "type":"module",
+  "main": "server.js",
   "keywords": [
     "blockchain",
     "crypto",
@@ -21,8 +20,8 @@
   ],
   "scripts": {
     "build": "webpack",
-    "run":"nodemon server.js",
-"gulp": "gulp",
+    "start": "nodemon server.js",
+    "gulp": "gulp",
     "server": "webpack-dev-server --output-public-path=/",
     "postinstall": "node ./scripts/node-post-install.js"
   },
@@ -37,7 +36,7 @@
     "debug": "^4.3.3",
     "dotenv": "^8.6.0",
     "express": "^4.17.2",
-    "express-handlebars": "^4.0.6",
+    "express-handlebars": "^6.0.5",
     "express-session": "^1.17.1",
     "express-ws": "^5.0.2",
     "font-awesome": "^4.7.0",
@@ -51,12 +50,15 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.2.3",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "browser-sync": "^2.27.7",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime": "^7.17.8",
+    "babel-loader": "^8.2.5",
+    "browser-sync": "^2.27.9",
     "cross-env": "^7.0.2",
     "css-loader": "^6.7.1",
     "gulp": "^4.0.2",
@@ -70,9 +72,9 @@
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "svg-inline-loader": "^0.8.2",
-    "webpack": "^5.65.0",
+    "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.2"
+    "webpack-dev-server": "^4.8.1"
   },
   "repository": {
     "type": "git",
