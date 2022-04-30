@@ -66,7 +66,7 @@
     "newman": "5.2.3",
     "nodemon": "1.11.0",
     "prettier": "1.12.1",
-    "sqlite3": "5.0.2",
+    "sqlite3": "5.0.3",
     "typescript": "3.9.7"
   },
   "cacheDirectories": [
