@@ -15,17 +15,19 @@ module.exports = {
   },
   output: { 
       path: path.resolve(__dirname, 'client/dist'),
-    filename: '[name].[contenthash].bundle.js',
-    clean:true,
+    filename: '[name].bundle.js' //[contenthash].bundle.js' 
   },
   module: {
-    rules: [{
-        test: /\.(js|jsx)$/,
+    rules: [{ // without additional settings, this will reference .babelrc
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
-        // query: {
-        //    presets: ['env', 'stage-0']
-        // }
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env"],  "@babel/preset-typescript"],
+            // cacheDirectory:true
+          }
+        }
     },  
     {test:/\.(s(a|c)ss)$/,
   use:["style-loader","css-loader","sass-loader"]},
@@ -33,6 +35,7 @@ module.exports = {
   },
   plugins:[ new HtmlWebpackPlugin(), new MiniCssExtractPlugin()],
   mode: process.env.NODE_ENV==="production"?"production":"development",
+  devtool: "source-map",
   devServer: {
     static: {
      directory: path.resolve(__dirname, './client')
