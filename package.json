@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Blog Commentaries on Technology",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "keywords": [
     "blockchain",
     "crypto",
@@ -21,8 +21,9 @@
   ],
   "scripts": {
     "build": "webpack",
-    "run":"nodemon server.js",
-"gulp": "gulp",
+    "prod": "webpack --config webpack.config.prod.js",
+    "run": "nodemon server.js",
+    "gulp": "gulp",
     "server": "webpack-dev-server --output-public-path=/",
     "postinstall": "node ./scripts/node-post-install.js"
   },
@@ -58,6 +59,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.27.7",
     "cross-env": "^7.0.2",
+    "crypto-maven": "file:../xyz",
     "css-loader": "^6.7.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
@@ -67,6 +69,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
+    "querystring-es3": "^0.2.1",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "svg-inline-loader": "^0.8.2",
