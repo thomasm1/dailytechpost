@@ -289,21 +289,8 @@ strong {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-p.blog-post {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-p.firstparagraph {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-p.firstparagraph {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+ 
+ 
   p.blog-post::after {
       content: " ... ";
          
