@@ -8,6 +8,8 @@ import { Nasa } from '../../models/nasa.model';
   styleUrls: ['./nasa.component.scss'],
 })
 export class NasaComponent implements OnInit {
+  nasaLoading: boolean = true;
+  nasaObjectLoading: boolean = true;
   object:Nasa;
   listNasa: Nasa[];
 
@@ -28,6 +30,7 @@ export class NasaComponent implements OnInit {
     this.nasa.getNasaStores().subscribe((response) => {
       this.listNasa = response;
       console.log(this.listNasa);
+      this.nasaLoading = false;
     });
     return this.listNasa;
   }

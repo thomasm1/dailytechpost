@@ -40,6 +40,7 @@
       </mat-list>
     </div>
     <div class="news-content" *ngIf="results" gdArea="content">
+      <mat-spinner *ngIf="newsLoading" class="centerSpinner"></mat-spinner>
       <mat-card *ngFor="let r of results">
         <mat-list role="list">
           <mat-list-item>

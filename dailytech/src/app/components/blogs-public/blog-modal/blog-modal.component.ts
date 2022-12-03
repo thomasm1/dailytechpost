@@ -9,7 +9,7 @@ import { BlogsService } from '../../../service/data/blogs.service';
   styleUrls: ['./blog-modal.component.scss']
 })
 export class BlogModalComponent implements OnInit {
-
+  modalLoading: boolean = true;
   idFromBlogList: string;
   fromDialog: string;
   blog: Post;
@@ -23,7 +23,7 @@ export class BlogModalComponent implements OnInit {
       console.log("this.fromBlogList string-" + this.idFromBlogList);
 
         this.blogsService.getBlog(this.idFromBlogList).subscribe((response) =>{
-
+          this.modalLoading = false;
           this.blog = response;
           console.log(this.blog);
         })

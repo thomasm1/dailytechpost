@@ -14,7 +14,7 @@
   gdRows.lt-md="auto auto auto auto"
   gdColumns.lt-md="90vw"
 >
-
+<mat-spinner *ngIf="nasaLoading" class="centerSpinner"></mat-spinner>
   <mat-card  *ngIf="object">
     <h6>{{ object.title }}</h6>
     <!-- <p> {{ object | json }}</p> -->

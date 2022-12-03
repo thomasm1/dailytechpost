@@ -1,14 +1,14 @@
 export const environment = {
   production: true,
-  BASE: "http://34.199.129.2:8089",
-  API_URL: "https://34.199.129.2:8089/api",
-  //  API_URL: "https://52.70.39.146:8089/api",
+  BASE: "http://34.199.129.2:8080",
+  API_URL: "https://34.199.129.2:8080/api",
+ 
 
   // nasaKey: 'mF6DQ******iJw0',
 
   // * Doggywood's
-  google_url: "http://34.199.129.2:8090/login/getGoogleApi",
-  nasa_url: "http://34.199.129.2:8090/login/getNasaApi",
+  google_url: "http://34.199.129.2:8080/login/getGoogleApi",
+  nasa_url: "http://34.199.129.2:8080/login/getNasaApi",
 
   json_url: "http://localhost:3000/nasa",
 
@@ -27,6 +27,6 @@ export const environment = {
   // apiKeyNYT: "06**d5",
 
   // * Doggywood's
-  nyt_url: "http://34.199.129.2:8090/login/getNytApi",
+  nyt_url: "http://34.199.129.2:8080/login/getNytApi",
   apiUrlNYT: "https://api.nytimes.com/svc"
 };
