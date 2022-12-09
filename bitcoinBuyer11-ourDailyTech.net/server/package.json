@@ -29,7 +29,7 @@
     "commander": "6.2.1",
     "cors": "2.7.1",
     "errorhandler": "1.4.3",
-    "express": "4.13.4",
+    "express": "4.17.3",
     "express-jwt": "3.3.0",
     "express-session": "1.13.0",
     "ionicons": "2.0.1",
