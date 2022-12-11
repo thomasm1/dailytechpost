@@ -1,0 +1,17 @@
+
+<div class="nfts">
+  <section> 
+     <app-nft-add >
+
+     </app-nft-add></section>
+  <section> 
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="nfts">
+      <app-chaindata   [nftData]="nftData"></app-chaindata> 
+  </div> 
+  </section>
+  <section> 
+      <div fxLayout="row" fxLayoutAlign="center center" *ngIf="nfts">
+        <app-nft *ngFor="let nft of nfts" [inputNft]="nft" [nftData]="nftData"></app-nft>
+      </div> 
+  </section>
+</div>

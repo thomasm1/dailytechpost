@@ -55,7 +55,11 @@ export class NasaService {
     // return this.http.get<Nasa[]>(this.json_url)
     return this.http.get<Nasa[]>(this.aws_url)
 
-    .pipe(catchError(this.handleError));
+    .pipe(
+      catchError(err => {
+        throw 'error in source. Details: ' + err;
+      })
+    );  
   }
 
   storeNasa(nasa: Nasa): Observable<Nasa>  {
@@ -71,7 +75,10 @@ export class NasaService {
     //   }),
     // }
     )
-    .pipe(catchError(this.handleError));
+    .pipe( 
+      catchError(err => {
+      throw 'error in source. Details: ' + err;
+    }));
   }
 
   private handleError(errorResponse: HttpErrorResponse) {
@@ -81,6 +88,6 @@ export class NasaService {
       console.error('Server Side Error: ', errorResponse);
     }
     // return new ErrorObservable('Oops, there is a problem with the
-     return throwError('Oops, there is a problem with the service ... IT is notified & working on it. Please try again later, thanks :-)')
+       throw 'Oops, there is a problem with the service ... IT is notified & working on it. Please try again later, thanks :-)'
   }
 }

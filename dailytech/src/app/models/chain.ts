@@ -1,13 +1,11 @@
-
-
 export interface Chain {
-    id:number;
-    description:string;
-    name:string;
-    state:string;
-    iconUrl?: string;
-    chainListIcon?: string;
+    category?: string;
+    id?: string;
+    name?: string;
+    symbol?: string[];
+    description?: string; 
     longDescription?: string;
-    category?:string;
-    addresssCount?:number;
-}
+    iconUrl?:  string;
+    chainListIcon?: string; 
+    addressesCount?: number; 
+} 

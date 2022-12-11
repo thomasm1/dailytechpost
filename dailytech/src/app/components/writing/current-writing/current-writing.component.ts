@@ -16,7 +16,7 @@ import * as fromWriting from '../../../reducers/writing.reducer';
 export class CurrentWritingComponent implements OnInit {
 
   progress = 0;
-  timer: number;
+  timer: any;
   news: string[];
 
   constructor(

@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
   @Output() writingExit = new EventEmitter();
 
   progress = 0;
-  timer: number;
+  timer: any;
 
   id: number;
   username: string;

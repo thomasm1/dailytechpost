@@ -47,7 +47,7 @@ export class BlogsService {
 
   hideBlog(blogName: string) {
     this.blogs = this.blogs.filter(b => b !== blogName);
-    this.blogsUpdated.next();
+    this.blogsUpdated.next({value: this.blogs});
   }
 
 }

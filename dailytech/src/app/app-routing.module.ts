@@ -20,9 +20,12 @@ import { NasaComponent } from './components/nasa/nasa.component';
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 
+import { NftsComponent } from './components/crypto/nfts.component';
 
 const routes: Routes = [
-  { path: '', component: BlogsListComponent },
+  { path: '', component: NftsComponent },
+  { path: 'nfts', component: NftsComponent },
+  { path: 'home', component: HomeComponent },
 
   { path: 'blogs', component: BlogsListComponent },
   { path: 'blogs/:cat', component: BlogsComponent},
@@ -41,7 +44,7 @@ const routes: Routes = [
   { path: 'login', component: SignonComponent },
   { path: 'register', component: RegisterComponent },
   // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [UserGuardService] },
-  { path: '**', component: BlogsListComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

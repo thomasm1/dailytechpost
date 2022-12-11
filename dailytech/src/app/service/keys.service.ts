@@ -13,13 +13,19 @@ export class KeysService {
 
   nasaApi:string = '';
   nytApi: string = '';
-
+ //crupto
+      
+ private rinkebyUrl = environment.rinkebyUrl;
+ moralisApi:string =  `${environment.cle_url}/getMoralisApi`;
+ moralisKey:string = "";
   constructor(
     private http: HttpClient,
     ) {
       this.googleUrl = environment.google_url;
       this.nasaUrl = environment.nasa_url;
       this.nytUrl = environment.nyt_url;
+     
+
     }
 
   getGoogleApi() {
@@ -59,4 +65,15 @@ export class KeysService {
       });
       return this.nytApi;
   }
+  
+  getMoralisKey() {
+    this.http.get(`${this.moralisApi}`)
+    .subscribe((data:any) => {
+      if(data["MORALIS_API_KEY"] != undefined){
+        this.moralisKey = data["MORALIS_API_KEY"][0];
+      }
+      });
+      return this.moralisKey;
+  } 
+
 }

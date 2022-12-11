@@ -1,0 +1,18 @@
+ 
+ <div *ngFor="let ch of chains">
+  {{ch.name}}
+ </div>
+<article class="nft" (click)="onClicked()">
+    <div fxLayout="row" fxLayoutAlign="center center ">  
+        <div  fxLayout="column" fxLayoutAlign="center center"  fxLayoutGap="10px">
+            <mat-card>
+            <h5 class="child">{{ nft.metadata.name}}</h5>      
+          <div fxLayoutAlign="center">
+            <img src="{{nft.metadata.image}}"  class="img-fluid" alt="nft image" /> 
+          </div>
+            <h5 class="child">{{ nft.name}}</h5>
+            <p class="child"> {{ nft.metadata.description }} </p>
+            </mat-card>
+        </div>  
+    </div> 
+</article>

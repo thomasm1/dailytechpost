@@ -10,6 +10,13 @@ export const environment = {
   google_url: "http://34.199.129.2:8080/login/getGoogleApi",
   nasa_url: "http://34.199.129.2:8080/login/getNasaApi", 
   json_url: "http://localhost:3000/nasa", 
+  
+  //crypto
+  rinkebyUrl: 'https://api-rinkeby.etherscan.io/api',
+  local_url: 'http://localhost:9000',
+  nft_url: 'http://34.199.129.2:8887',
+  cle_url: 'http://34.199.129.2:8080/login',
+  
   // AWS Lambda-DynamoDB-APIgateway
   aws_url: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa", 
   firebase: {  // Per Firebase - apiKey not security concern

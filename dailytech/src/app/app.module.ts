@@ -56,6 +56,12 @@ import { NewsArticleResultsComponent } from './components/news/news-article-resu
 import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-bar.component';
 import { HomeComponent } from './components/home/home.component';
 
+// CRYPTO
+import { NftsComponent } from './components/crypto/nfts.component';
+import { NftComponent } from './components/crypto/nft/nft.component';
+import { NftAddComponent } from './components/crypto/nft-add/nft-add.component';
+import { ChaindataComponent } from './components/crypto/chaindata/chaindata.component';
+
 // import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
@@ -73,15 +79,21 @@ import { HomeComponent } from './components/home/home.component';
     BlogModalComponent,
     BlogsComponent,
     NasaComponent,
-    PipeCapitalizeCategoryPipe,
-    SafeHtmlPipe,
-
+    //CRYPTO
+    NftsComponent,
+    NftComponent,
+    NftAddComponent,
+    ChaindataComponent,
+    
     // TECH NEWS
     NewsPageComponent,
     NewsArticleSearchComponent,
     NewsArticleResultsComponent,
     NewsToolBarComponent,
     HomeComponent,
+    
+    PipeCapitalizeCategoryPipe,
+    SafeHtmlPipe,
 
     /////// AUTH MODULE ///////
     // AdminComponent,
