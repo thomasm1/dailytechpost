@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { PostDataService } from 'src/app/service/data/post-data.service';
+import { PostDataService } from '../post-data.service';
 import { Post } from '../../../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';

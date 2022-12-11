@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchData } from '../../../models/search-data';
 import { NgForm } from '@angular/forms';
-import { NewsService } from '../../../service/news.service';
+import { NewsService } from '../news.service';
 import * as moment from 'moment';
 import { Store } from '@ngrx/store';
 import { SET_SEARCH_RESULT } from '../../../reducers/news-search.reducer';

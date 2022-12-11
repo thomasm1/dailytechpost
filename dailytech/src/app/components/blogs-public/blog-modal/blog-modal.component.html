@@ -1,10 +1,11 @@
+<mat-spinner *ngIf="modalLoading"></mat-spinner>
 <div *ngIf="blog" class="blog-top">
   <span class="category">{{ blog.cat3 }}</span>
   <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
 <span class="date" [innerHTML]="blog.date | safeHtml"></span>
 <hr class="bar-title">
 <h6 class="blog-title" [innerHTML]="blog.title | safeHtml"></h6>
-<mat-spinner *ngIf="modalLoading"></mat-spinner>
+
 <div  >
   <ul    class="view-blog">
       <mat-card class="blog-box" >

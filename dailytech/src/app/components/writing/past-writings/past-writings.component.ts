@@ -7,7 +7,7 @@ import {  MatSort } from '@angular/material/sort';
 import {  MatPaginator } from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
-import { WritingService } from '../../../service/writing.service';
+import { WritingService } from '../writing.service';
 import { WritingBlog } from '../../../models/writing-blogs.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NasaService } from '../../service/nasa.service';
+import { NasaService } from './nasa.service';
 import { Nasa } from '../../models/nasa.model';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Optional, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Post } from 'src/app/models/post.model';
-import { BlogsService } from '../../../service/data/blogs.service';
+import { BlogsService } from '../blogs.service';
 
 @Component({
   selector: 'app-blog-modal',

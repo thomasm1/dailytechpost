@@ -28,7 +28,7 @@ export class KeysService {
       .subscribe((response) => {
         //console.log(response);
         if (response["googleMapAPIKey"] != undefined) {
-          new Promise((resolve) => {
+          new Promise<void>((resolve) => {
             let script: HTMLScriptElement = document.createElement("script");
             script.addEventListener("load", (r) => resolve());
 

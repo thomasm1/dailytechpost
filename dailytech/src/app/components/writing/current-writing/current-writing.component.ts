@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 
 import { StopWritingComponent } from './stop-writing.component';
-import { WritingService } from '../../../service/writing.service';
+import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 
 

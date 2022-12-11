@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { KeysService } from 'src/app/service/keys.service';
-import { Nasa } from '../models/nasa.model';
+import { Nasa } from '../../models/nasa.model';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 

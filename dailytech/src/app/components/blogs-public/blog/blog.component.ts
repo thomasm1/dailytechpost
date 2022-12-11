@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BlogsService } from '../../../service/data/blogs.service';
+import { BlogsService } from '../blogs.service';
 import { Post } from 'src/app/models/post.model';
 import { Subscription } from 'rxjs';
 

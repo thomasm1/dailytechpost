@@ -6,11 +6,11 @@ import { map } from 'rxjs/operators';
 import { take } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
-import { WritingBlog } from '../models/writing-blogs.model';
-import { UiService } from '../service/ui.service';
-import * as UI from '../reducers/ui.actions';
-import * as Writing from '../reducers/writing.actions';
-import * as fromWriting from '../reducers/writing.reducer';
+import { WritingBlog } from '../../models/writing-blogs.model';
+import { UiService } from '../../service/ui.service';
+import * as UI from '../../reducers/ui.actions';
+import * as Writing from '../../reducers/writing.actions';
+import * as fromWriting from '../../reducers/writing.reducer';
 
 @Injectable({
   providedIn: 'root'

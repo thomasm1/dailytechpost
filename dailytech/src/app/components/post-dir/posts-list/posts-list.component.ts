@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostDataService } from '../../../service/data/post-data.service';
+import { PostDataService } from '../post-data.service';
 import { Router } from '@angular/router';
 import { Post } from '../../../models/post.model'
 

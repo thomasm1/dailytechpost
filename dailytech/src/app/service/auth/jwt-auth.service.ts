@@ -6,7 +6,7 @@ import { User } from '../../models/user.model';
 import { Store } from '@ngrx/store';
 
 import { AuthData } from '../../models/auth-data.model';
-import { WritingService } from '../writing.service';
+import { WritingService } from '../../components/writing/writing.service';
 import { UiService } from '../ui.service';
 import * as fromRoot from '../../reducers/app.reducer';
 import * as UI from '../../reducers/ui.actions';

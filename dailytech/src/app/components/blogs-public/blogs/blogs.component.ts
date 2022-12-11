@@ -3,7 +3,7 @@ import { throwMatDialogContentAlreadyAttachedError } from '@angular/material/dia
 import { ActivatedRoute } from '@angular/router';
 // import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';
-import { BlogsService } from '../../../service/data/blogs.service';
+import { BlogsService } from '../blogs.service';
 
 @Component({
   selector: 'app-blogs',

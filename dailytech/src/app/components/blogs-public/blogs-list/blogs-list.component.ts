@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 // import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
-import { PostDataService } from '../../../service/data/post-data.service';
-import { BlogsService } from '../../../service/data/blogs.service';
+import { Router, ActivatedRoute } from '@angular/router'; 
+import { BlogsService } from '../blogs.service';
 import { Post } from 'src/app/models/post.model';
 import { MatDialog } from '@angular/material/dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';

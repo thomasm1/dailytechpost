@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { WritingService } from '../../../service/writing.service';
+import { WritingService } from '../writing.service';
 import { WritingBlog } from '../../../models/writing-blogs.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';

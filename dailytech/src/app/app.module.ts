@@ -24,10 +24,11 @@ import { SafeHtmlPipe } from './utility/safe-html.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
 import { JwtAuthService } from './service/auth/jwt-auth.service';
-import { WritingService } from './service/writing.service';
+import { WritingService } from './components/writing/writing.service';
 import { KeysService } from './service/keys.service';
 import { UiService } from './service/ui.service';
-import { NewsService } from './service/news.service';
+import { NewsService } from './components/news/news.service';
+// import { LoggingService } from './service/logging.service';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { NewsPageComponent } from './components/news/news-page/news-page.compone
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 import { NewsArticleResultsComponent } from './components/news/news-article-results/news-article-results.component';
 import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-bar.component';
+import { HomeComponent } from './components/home/home.component';
 
 // import { WritingRoutingModule } from './writing-routing.module';
 
@@ -79,6 +81,7 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
     NewsArticleSearchComponent,
     NewsArticleResultsComponent,
     NewsToolBarComponent,
+    HomeComponent,
 
     /////// AUTH MODULE ///////
     // AdminComponent,
@@ -125,6 +128,7 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
     UiService,
     TitleCasePipe,
     SafeHtmlPipe,
+    // LoggingService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
   ],
   bootstrap: [AppComponent],

@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AnimationComponent } from '../../util/animation/animation.component';
-import { Subscription } from 'rxjs';
-import { BlogsService } from '../../../service/data/blogs.service';
-import { PostDataService } from '../../../service/data/post-data.service';
+import { Subscription } from 'rxjs'; 
+import { PostDataService } from '../post-data.service';
 
 @Component({
   selector: 'app-posts-viewer',
@@ -18,7 +17,7 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
   blogs = ['a','b','c'];
   posts = [];
 
-  constructor(private blogsService: BlogsService, private postDataService: PostDataService) { }
+  constructor(private postDataService: PostDataService) { }
 
   ngOnInit() {
      this.username = sessionStorage.getItem('AuthenticatedUser');

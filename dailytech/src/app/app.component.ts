@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NasaService } from './components/nasa/nasa.service';
+
 import { JwtAuthService } from './service/auth/jwt-auth.service';
 import { KeysService } from './service/keys.service';
-import { NasaService } from './service/nasa.service';
+import { LoggingService } from './service/logging.service';
+
 
 @Component({
   selector: 'app-root',
@@ -14,12 +17,14 @@ export class AppComponent implements OnInit {
   constructor(
     private authService: JwtAuthService,
     private keysService: KeysService,
-    private nasaKey:NasaService
+    private nasaKey:NasaService,
+    private loggingService: LoggingService,
     ) {}
 
   ngOnInit() {
     this.authService.initAuthListener();
     this.keysService.getGoogleApi();
     this.nasaKey.getNasaKey();
+    this.loggingService.printLog('AppComponent ngOnInit'); 
   }
 }

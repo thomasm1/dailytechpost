@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { WritingService } from '../../service/writing.service';
+import { WritingService } from './writing.service';
 import * as fromWriting from '../../reducers/writing.reducer';
 
 @Component({

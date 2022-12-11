@@ -284,10 +284,11 @@ strong {
     float: left;
     line-height: 1;
   }*/
-  p.blog-post {
-    white-space: nowrap;
+//   #####################
+  p.blog-post { 
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+    max-height:200px;
 }
  
  
