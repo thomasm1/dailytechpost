@@ -5,15 +5,14 @@ import { observable, Observable, Subject, Subscription, of } from 'rxjs';
 import { NftsService } from '../nfts.service';
 import { Store } from '@ngrx/store';
 
-import { Chain } from '../../../models/Chain';
- 
+import { Chain } from '../../../models/Chain'; 
 
 @Component({
   selector: 'app-nft-add',
   templateUrl: './nft-add.component.html',
   styleUrls: ['./nft-add.component.scss']
 }) 
-export class NftAddComponent implements OnInit, OnDestroy { 
+export class NftAddComponent implements OnInit { 
   chains$!: Observable<Chain[]>;   
   chain: string = 'eth'; // default chain
   nftData: any;
@@ -25,8 +24,7 @@ export class NftAddComponent implements OnInit, OnDestroy {
   nftDataUpdated = new Subject<any>();
   nftsUpdated = new Subject<any[]>();
   key: string = ''; 
-  nftAddress: string = ""; 
- 
+  nftAddress: string = "";  
  
   private nftSubscription: Subscription = new Subscription;
   
@@ -43,23 +41,9 @@ export class NftAddComponent implements OnInit, OnDestroy {
     }
    
     formReplaceNft(form: { valid: any; value: { chain: string, nftAddress: string; }; }) { 
+      console.log(form.value.chain, form.value.nftAddress);
       if(form.valid) {
-      this.nftsService.replaceNfts(form.value.chain, form.value.nftAddress)
-        // .subscribe((data: any) => {
-        //   if (data != undefined) {
-        //     this.nftData = data;
-        //     console.log("this.nftData")
-        //     console.log(this.nftData);
-  
-        //    this.nftDataUpdated.next(this.nftData);
-        //     this.tokens = data.tokens; 
-  
-        //     this.nfts = data.nfts;
-        //     console.log(this.nfts);
-        //     console.log(this.nfts[0])
-        //     this.nftsUpdated.next([...this.nfts]);
-        //   }
-        // })
+      this.nftsService.replaceNfts(form.value.chain, form.value.nftAddress) 
         return this.nftData;
       } 
     }
@@ -75,8 +59,8 @@ export class NftAddComponent implements OnInit, OnDestroy {
   //   this.nfts = this.nfts.filter((nft: string) => { return nft != nftAddress; });
   //   // this.nfts = this.nftsService.deleteNft(nftName);
   // }
-  ngOnDestroy(): void {
-    this.nftSubscription.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.nftSubscription.unsubscribe();
+  // }
 
 }

@@ -1,18 +1,14 @@
-
-
-<mat-card >  
-    <h6>Address Balance</h6>
-  <div class="row full">
-
-    <div class="col-4">
-        
-     {{ nftData.native | number: '.00' }} ETH<br> 
+<mat-card>
+  <h6>Address Balances</h6>
+  <div class="row full"> 
+    <div class="col-4"> 
+     <!-- TODO: Total # of NFTS -->
     </div>
     <div class="col-8">
-        <span *ngFor="let token of nftData.tokens;let i = index">
+      <strong>0: </strong>{{ nftData.native | number: '.000' }} ETH<br>
+      <span *ngFor="let token of nftData.tokens;let i = index">
         <span> <strong>{{i+1}}:</strong></span> {{ token }} <br>
-       </span>
+      </span>
     </div>
   </div>
-   
-  </mat-card>
+</mat-card>

@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { KeysService } from '../../service/keys.service';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from "src/environments/environment";
-import { catchError, Observable, throwError } from "rxjs";
+import {  Observable, throwError } from "rxjs";
 // import Moralis from 'moralis'.default();
 // import { EvmChain } from '@moralisweb3/evm-utils'
 
 import { Subject } from 'rxjs';
+import { catchError } from 'rxjs/operators';
  
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,9 @@ export class NftsService {
  
   collectNfts():Observable<any>  { 
    return  this.http.get(`${environment.nft_url}/nft`)    
-   .pipe(catchError(this.handleError)); 
+   .pipe(
+    catchError(this.handleError)
+   ); 
 
   }
 
