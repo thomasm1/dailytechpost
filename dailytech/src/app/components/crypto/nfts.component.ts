@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { NftsService } from './nfts.service';
 
-import { Chain } from '../../models/Chain';
+import { Chain } from '../../models/chain';
 import { Store } from 'src/app/utility/store.service';
 @Component({
   selector: 'app-nfts',

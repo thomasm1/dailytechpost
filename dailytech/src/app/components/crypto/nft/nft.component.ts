@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Chain } from 'src/app/models/Chain';
+import { Chain } from 'src/app/models/chain';
 
 import { NftsService } from '../nfts.service';
 

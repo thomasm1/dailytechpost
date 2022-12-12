@@ -5,7 +5,7 @@ import { observable, Observable, Subject, Subscription, of } from 'rxjs';
 import { NftsService } from '../nfts.service';
 import { Store } from '@ngrx/store';
 
-import { Chain } from '../../../models/Chain'; 
+import { Chain } from '../../../models/chain'; 
 
 @Component({
   selector: 'app-nft-add',
