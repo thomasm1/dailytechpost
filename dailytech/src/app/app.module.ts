@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
@@ -61,6 +63,7 @@ import { NftsComponent } from './components/crypto/nfts.component';
 import { NftComponent } from './components/crypto/nft/nft.component';
 import { NftAddComponent } from './components/crypto/nft-add/nft-add.component';
 import { ChaindataComponent } from './components/crypto/chaindata/chaindata.component';
+import { QrcodeComponent } from './utility/qrcode/qrcode.component';
 
 // import { WritingRoutingModule } from './writing-routing.module';
 
@@ -94,6 +97,7 @@ import { ChaindataComponent } from './components/crypto/chaindata/chaindata.comp
     
     PipeCapitalizeCategoryPipe,
     SafeHtmlPipe,
+    QrcodeComponent,
 
     /////// AUTH MODULE ///////
     // AdminComponent,
@@ -110,6 +114,7 @@ import { ChaindataComponent } from './components/crypto/chaindata/chaindata.comp
     // WritingComponent
   ],
   imports: [
+    NgxQRCodeModule,
     MatDialogModule,
     BrowserModule,
     BrowserAnimationsModule,

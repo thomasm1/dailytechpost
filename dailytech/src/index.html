@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1976d2">
 
 </head>
@@ -18,4 +18,13 @@
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
+<SCRIPT>
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/service-worker.js')
+		.then((registration) => {
+			console.log('SW registered');
+			})
+		.catch((err) => {
+			console.log('SW error', err); }); } </SCRIPT>
+
 </html>

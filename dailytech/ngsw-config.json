@@ -9,9 +9,15 @@
         "files": [
           "/favicon.ico",
           "/index.html",
-          "/manifest.webmanifest",
+          "/manifest.json",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
+          "https://fonts.googleapis.com/icon?family=Material+Icons",
+          "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2",
+          "https://fonts.gstatic.com/s/materialicons/v36/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2"
         ]
       }
     },
@@ -24,6 +30,17 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "posts+apis",
+      "urls": ["http:34.199.129.2:8887/nft","https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts"],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "1d",
+        "timeout": "10s"
       }
     }
   ]
