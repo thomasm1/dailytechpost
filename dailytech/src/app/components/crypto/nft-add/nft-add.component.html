@@ -9,7 +9,7 @@
           <mat-form-field class="        " > 
             <mat-label>Select Chain</mat-label>
             <mat-select ngModel name="chain" >
-              <mat-option *ngFor="let c of chains$ | async" [value]="c.name">{{c.name}}</mat-option> 
+              <mat-option *ngFor="let c of chains$ | async" [value]="c.name">{{c.name | uppercase}} | {{c.type}}</mat-option> 
             </mat-select> 
           </mat-form-field>
         </div>

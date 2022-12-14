@@ -32,7 +32,14 @@ export class NftAddComponent implements OnInit {
     private nftsService: NftsService,
     // private store: Store<fromChains.State>
   ) {   
-    this.chains$ = of([{id:"1",name:"eth"},{id:"2",name:"polygon"},{id:"3",name:"bnc"}])
+    this.chains$ = of([
+      {id:"1",name:"eth",description:"Ethereum Mainnet",type:"Mainnet"},
+      {id:"4",name:"rinkeby",description:"Ethereum Rinkeby",type:"Testnet"},
+      {id:"137",name:"polygon",description:"Polygon Mainnet",type:"Mainnet"},
+      {id:"80001",name:"mumbai",description:"Polygon Mumbai",type:"Testnet"},
+      {id:"56",name:"bsc",description:"BNB Mainnet",type:"Mainnet"},
+      {id:"97",name:"bsc testnet",description:"BNB Chain Testnet",type:"Testnet"},     
+      {id:"43114",name:"avalanche",description:"Avalanche C-Chain",type:"Mainnet"}])
      }
   
     ngOnInit(): void {
@@ -43,7 +50,7 @@ export class NftAddComponent implements OnInit {
     formReplaceNft(form: { valid: any; value: { chain: string, nftAddress: string; }; }) { 
       console.log(form.value.chain, form.value.nftAddress);
       if(form.valid) {
-      this.nftsService.replaceNfts(form.value.chain, form.value.nftAddress) 
+      this.nftsService.replacePostNfts(form.value.chain, form.value.nftAddress) 
         return this.nftData;
       } 
     }

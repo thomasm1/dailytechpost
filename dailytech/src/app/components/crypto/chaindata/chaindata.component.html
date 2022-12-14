@@ -5,6 +5,7 @@
      <!-- TODO: Total # of NFTS -->
     </div>
     <div class="col-8">
+      <mat-spinner *ngIf="!nftData"></mat-spinner>
       <strong>0: </strong>{{ nftData.native | number: '.000' }} ETH<br>
       <span *ngFor="let token of nftData.tokens;let i = index">
         <span> <strong>{{i+1}}:</strong></span> {{ token }} <br>

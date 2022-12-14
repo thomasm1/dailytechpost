@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChaindataComponent implements OnInit {
 @Input() nftData: any;
+ 
   constructor() { }
 
   ngOnInit(): void {
