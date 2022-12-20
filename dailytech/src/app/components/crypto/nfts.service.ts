@@ -54,6 +54,10 @@ export class NftsService {
       chain = this.chain;
     }
     this.http.get(`${environment.nft_url}/nft/${chain}/${address}`)
+    .pipe(
+      catchError(err => {
+        throw 'error in source. Details: ' + err;
+      }))
       .subscribe((data: any) => {
         this.nftData = data;
         console.log(this.nftData);

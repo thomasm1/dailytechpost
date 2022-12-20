@@ -26,7 +26,7 @@ export class NftAddComponent implements OnInit {
   key: string = ''; 
   nftAddress: string = "";  
  
-  private nftSubscription: Subscription = new Subscription;
+  // private nftSubscription: Subscription = new Subscription;
   
   constructor(
     private nftsService: NftsService,
