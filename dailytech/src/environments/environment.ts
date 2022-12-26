@@ -7,6 +7,10 @@ export const environment = {
   BASE: "http://34.199.129.2:8080",
   API_URL: "http://34.199.129.2:8080/api", 
   // nasaKey: 'mF6DQ******iJw0',  
+  apiKeyNYT: '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5',
+  nyt_url: "http://34.199.129.2:8080/login/getNytApi",
+  apiUrlNYT: "https://api.nytimes.com/svc",
+  marvelKey: '5fbd9e22b0c348faa25fd3d07bee8248',
   google_url: "http://34.199.129.2:8080/login/getGoogleApi",
   nasa_url: "http://34.199.129.2:8080/login/getNasaApi", 
   json_url: "http://localhost:3000/nasa",  
@@ -26,10 +30,8 @@ export const environment = {
     projectId: 'ourdailytechdata',
     storageBucket: 'ourdailytechdata.appspot.com',
     messagingSenderId: '99505496502',
+    baseUrl: 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=',
   }, 
-  // apiKeyNYT: "06**d5",  
-  nyt_url: "http://34.199.129.2:8080/login/getNytApi",
-  apiUrlNYT: "https://api.nytimes.com/svc"
 };
  
 /*

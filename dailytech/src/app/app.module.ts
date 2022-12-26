@@ -64,6 +64,10 @@ import { NftAddComponent } from './components/crypto/nft-add/nft-add.component';
 import { ChaindataComponent } from './components/crypto/chaindata/chaindata.component';
 import { QrcodeComponent } from './utility/qrcode/qrcode.component';
 
+// FEATURES 
+import { StarwarsComponent } from './components/features/starwars/starwars.component';
+import { MarvelComponent } from './components/features/marvel/marvel.component';
+import { GrootService } from './service/groot.service';
 // import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
@@ -97,6 +101,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';
     PipeCapitalizeCategoryPipe,
     SafeHtmlPipe,
     QrcodeComponent,
+    StarwarsComponent,
 
     /////// AUTH MODULE ///////
     // AdminComponent,
@@ -144,6 +149,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';
     UiService,
     TitleCasePipe,
     SafeHtmlPipe,
+    GrootService, 
     // LoggingService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
   ],

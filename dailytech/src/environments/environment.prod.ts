@@ -22,9 +22,11 @@ export const environment = {
     projectId: 'ourdailytechdata',
     storageBucket: 'ourdailytechdata.appspot.com',
     messagingSenderId: '99505496502',
-  }, 
-  // apiKeyNYT: "06**d5",  
+  },  
+    apiKeyNYT: '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5',
   nyt_url: "http://34.199.129.2:8080/login/getNytApi",
-  apiUrlNYT: "https://api.nytimes.com/svc"
+  apiUrlNYT: "https://api.nytimes.com/svc",
+  marvelKey: '5fbd9e22b0c348faa25fd3d07bee8248',
+  baseUrl: 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=',
 };
  

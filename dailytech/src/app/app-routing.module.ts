@@ -20,6 +20,8 @@ import { NasaComponent } from './components/nasa/nasa.component';
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 
+import { StarwarsComponent } from './components/features/starwars/starwars.component';
+import { MarvelComponent } from './components/features/marvel/marvel.component';
 import { NftsComponent } from './components/crypto/nfts.component';
 
 const routes: Routes = [
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
   { path: 'nasa', component: NasaComponent },
+  // { path: 'marvel', component: MarvelComponent },
+  // { path: 'marvel/:guardiansId', component: MarvelComponent },
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 
