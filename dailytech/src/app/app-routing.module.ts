@@ -21,15 +21,11 @@ import { NewsPageComponent } from './components/news/news-page/news-page.compone
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 
 import { StarwarsComponent } from './components/features/starwars/starwars.component';
-import { MarvelComponent } from './components/features/marvel/marvel.component';
-import { NftsComponent } from './components/crypto/nfts.component';
+import { MarvelComponent } from './components/features/marvel/marvel.component'; 
 
-const routes: Routes = [
-  { path: '', component: NftsComponent },
-  { path: 'nfts', component: NftsComponent },
+const routes: Routes = [ 
+  { path: '', component: BlogsListComponent },
   { path: 'home', component: HomeComponent },
-
-  { path: 'blogs', component: BlogsListComponent },
   { path: 'blogs/:cat', component: BlogsComponent},
   { path: 'blog/:id', component: BlogComponent },
   { path: 'posts', component: PostsViewerComponent },

@@ -3,7 +3,7 @@
 <hr class="bar-white" />
  
 <mat-tab-group  mat-align-tabs="center">
-  <mat-tab label="All Categories">
+  <mat-tab color="primary" label="All Categories">
     <div class="temp">
       <mat-spinner *ngIf="blogsLoading" class="centerSpinner"></mat-spinner>
       <ul *ngFor="let blog of blogs" class="view-blog">
@@ -41,7 +41,7 @@
     </div>
   </mat-tab>
 
-  <mat-tab label="Web Dev Affairs" >
+  <mat-tab color="primary" label="Web Dev Affairs" >
     <div class="temp">
       <ul *ngFor="let blog of blogsWeb" class="view-blog">
         <!-- <mat-card (click)="viewBlog(blog.id)"> -->
@@ -77,7 +77,7 @@
     </div>
   </mat-tab>
 
-  <mat-tab label="Musing Blockchain">
+  <mat-tab color="primary" label="Musing Blockchain">
     <div class="temp">
       <ul *ngFor="let blog of blogsBlockchain" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
@@ -112,7 +112,7 @@
     </div>
   </mat-tab>
 
-  <mat-tab label="A.I.Now.">
+  <mat-tab color="primary" label="A.I.Now.">
     <div class="temp">
       <ul *ngFor="let blog of blogsAI" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
@@ -148,7 +148,7 @@
     </div>
   </mat-tab>
 
-  <mat-tab label="Sociology Tomorrow!">
+  <mat-tab color="primary" label="Sociology Tomorrow!">
     <div class="temp">
       <ul *ngFor="let blog of blogsSoc" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
@@ -182,7 +182,7 @@
       </ul>
     </div>
   </mat-tab>
-  <mat-tab label="Quantum Data">
+  <mat-tab color="primary" label="Quantum Data">
     <div class="temp">
       <ul *ngFor="let blog of blogsQuantum" class="view-blog">
         <mat-card (click)="openBlogModal(blog.id)">
@@ -217,7 +217,7 @@
     </div>
   </mat-tab>
 
-  <!-- <mat-tab label="Quantum Data">
+  <!-- <mat-tab color="primary" label="Quantum Data">
         <table mat-table class="mat-elevation-z8" *ngFor="let blog of blogs">
 
             <ng-container matColumnDef="date">

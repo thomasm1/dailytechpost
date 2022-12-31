@@ -4,27 +4,33 @@
 <mat-tab-group mat-align-tabs="center">
 
   <mat-tab label="SIGN ON">
-    <div class="temp">
+    <mat-card class="temp">
 
       <section class="signup-form">
   <!-- <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleJwtLogin(f)" #f="ngForm"> -->
     <form *ngIf="!adminFlag" fxLayout="column" fxLayoutAlign="center center"  [formGroup]="loginForm" (ngSubmit)="handleJwtLogin()" >
 
-            <h6>LOGIN</h6>
+      <mat-card-title>Login</mat-card-title>
           <!---->
-          <mat-form-field appearance="fill">
+    
+        <mat-form-field appearance="outline">
           <!-- <input type="email" matInput placeholder="Email" ngModel name="email" #email /> -->
-          <input type="email" matInput placeholder="Email"   name="email"  formControlName="email" />
+          <input type="email" matInput placeholder="Email" class="form-control"
+           name="email" color="primary" formControlName="email" />
         </mat-form-field>
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
              <!-- <input type="password" matInput placeholder="Password: pass" ngModel name="password" #password /> -->
-             <input type="password" matInput placeholder="Password"   name="password" formControlName="password" />
+             <input type="password" matInput placeholder="Password" class="form-control"
+            name="password" formControlName="password" />
            </mat-form-field>
+      
+        <mat-card-actions>
           <div class="row">
-            <button type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
+            <button type="submit" mat-raised-button color="primary">LOGIN</button> &nbsp;
             <button mat-raised-button color="basic">CANCEL</button>
           </div>
+        </mat-card-actions>
         </form>
 
 
@@ -36,11 +42,11 @@
           <form *ngIf="adminFlag"  fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
 
             <h6>ADMIN LOGIN</h6>
-          <mat-form-field appearance="fill" >
+          <mat-form-field appearance="outline" >
             <input type="text" matInput placeholder="Administration" ngModel name="username" #username />
           </mat-form-field>
 
-          <mat-form-field appearance="fill" >
+          <mat-form-field appearance="outline" >
             <input type="password" matInput placeholder="Password" ngModel name="password" #password />
           </mat-form-field>
 
@@ -55,7 +61,7 @@
         <h6  ><a *ngIf="adminFlag" class="admin-flag" (click)="adminOpen()">       <hr>
           USER LOGIN</a></h6>
       </section>
-    </div>
+    </mat-card>
   </mat-tab>
 
   <!--REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER-->
@@ -66,29 +72,29 @@
         <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onRegister(f)" #f="ngForm">
           <h6>REGISTER</h6>
           <!-- email (Used for User Auth) -->
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <input type="email" matInput placeholder="email" ngModel name="email" required
               #emailInput="ngModel">
             <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
             <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
           </mat-form-field>
-
+<br />
           <!-- username [Used for Admin Auth; And, used as username] -->
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <input type="text" matInput placeholder="username" ngModel name="username" required
               #usernameInput="ngModel">
             <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
           </mat-form-field>
-
-          <mat-form-field appearance="fill">
+          <br />
+          <mat-form-field appearance="outline">
             <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
               #pwInput="ngModel">
-            <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
-            <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+            <mat-hint *ngIf="pwInput.value?.length<5"><small>Should be at least 6 characters long</small></mat-hint>
+            <mat-hint flexAlign="end">{{ pwInput.value?.length }} / 6</mat-hint>
             <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error>
           </mat-form-field>
           <hr>
-
+          <br />
           <div class="row">
             <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">REGISTER</button> &nbsp;
             <button  *ngIf="!(isLoading$ | async)" mat-raised-button routerLink="/login" color="basic">CANCEL</button>

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "pwa": "ng build --configuration production && sw-precache --root=dist --config=precache-config.js",
+    "pwa": "ng build --configuration production && sw-precache --root=dist --configuration=precache-config.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

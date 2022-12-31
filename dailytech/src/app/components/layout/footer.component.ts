@@ -14,6 +14,11 @@ import { Component, OnInit } from '@angular/core';
       color:rgb(220, 220, 247);text-decoration:none;
     }
     footer {
+      position:fixed;
+      bottom:0;
+      width:100%;
+      z-index:100;
+
        padding: 20px 0px 20px;
       color:rgb(220, 220, 247);
       text-align:center;

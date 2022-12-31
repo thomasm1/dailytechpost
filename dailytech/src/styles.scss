@@ -7,7 +7,7 @@
       // Defined in daily-theme.scss ....old  angular.json
       // "styles": [ "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss" ],
 
-$color-primary-text:  rgb(19, 1, 179);
+$color-primary-text:  rgb(177, 171, 226);
 $color-secondary-text: darken($color-primary-text, 25%);
 
 * {
@@ -22,7 +22,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
-    color: #777;
+    color: rgb(30, 21, 71);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ h5,
 h6 {
     margin: 8px 0;
     text-align: center;
-    color:rgb(221, 219, 219);
+    color:rgb(47, 37, 100);
 }
 
 li {
@@ -50,14 +50,14 @@ p {
 
 a {
     text-decoration: none;
-    color: #1976d2;
+    color: #1e4061;
 
     &:visited {
-        color: #1976d2;
+        color: #3d556d;
     }
 
     &:hover {
-        color: #125699;
+        color: #1a2938;
     }
 }
 

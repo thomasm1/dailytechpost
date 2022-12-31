@@ -7,7 +7,7 @@
           <div class="welcome alert  ">
           </div>
           <!-- email (Used for User Auth) -->
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <input type="email" matInput placeholder="email" ngModel name="email" required
               #emailInput="ngModel">
             <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
@@ -15,18 +15,18 @@
           </mat-form-field>
 
           <!-- username [Used for Admin Auth; And, used as username] -->
-          <mat-form-field appearance="fill">
+          <mat-form-field  appearance="outline">
             <input type="text" matInput placeholder="username" ngModel name="username" required
               #usernameInput="ngModel">
             <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
           </mat-form-field>
 
           <!-- password (USERS) -->
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
               #pwInput="ngModel">
             <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
-            <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+            <mat-hint flexAlign="end">{{ pwInput.value?.length }} / 6</mat-hint>
             <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error>
           </mat-form-field>
           <hr>
