@@ -3,7 +3,7 @@ DROP TABLE POST;
 COMMIT;
 SELECT * FROM POST;
 insert into post(id, did, date_, author, month_order, cat3, title, post, blogcite, username)
-values(1001,'did1','date_1', 'author','monthOrder1','cat3', 'title1', 'post1', 'blogcite1', 'username1');
+values(1001,'did1xxxx','date_1', 'authorxxxxxxx','monthOrder1','cat3', 'title1', 'post1', 'blogcite1', 'username1');
 
 insert into post(id, did, date_, author, month_order, cat3, title, post, blogcite, username)
 values(1002,'did2','date_2', 'author','monthOrder2','cat23', 'title2', 'post2', 'blogcite2', 'username2');

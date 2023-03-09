@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Optional, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Post } from 'src/app/models/post.model';
+import { Post } from 'src/app/models/Post';
+import { BlogsStore } from '../blogs-store.service'; 
 import { BlogsService } from '../blogs.service';
+import { SafeHtmlPipe } from 'src/app/utility/safe-html.pipe';
 
 @Component({
   selector: 'app-blog-modal',
@@ -15,6 +17,8 @@ export class BlogModalComponent implements OnInit {
   blog: Post;
 
   constructor(
+    
+    private blogsStore: BlogsStore,
     private blogsService: BlogsService,
     public dialogRef: MatDialogRef<BlogModalComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -30,6 +34,10 @@ export class BlogModalComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+  saveMaterial(id: number, post : Post) {    
+this.blogsStore.saveBlog(id,post).subscribe();
+    this.dialogRef.close({ event: 'save', data: this.fromDialog });
   }
 
   closeDialog() {

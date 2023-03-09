@@ -6,20 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import net.ourdailytech.rest.webservice.entities.PostEntity;
 import net.ourdailytech.rest.webservice.repositories.PostRepository;
 import net.ourdailytech.rest.webservice.services.PostService;
 
+@RequestMapping(path = "/api")
 @CrossOrigin(origins="*")
 @RestController
 public class PostEntityController {
@@ -30,15 +24,12 @@ public class PostEntityController {
 	@Autowired
 	private PostRepository postRepository;
 	
-	@GetMapping(path="/api/dailytech/{username}/posts")
-	@CrossOrigin(origins = "*")
+	@GetMapping(path="/dailytech/{username}/posts")
 	public List<PostEntity> getAllPosts(@PathVariable String username){
-//		return postRepository.findByUsername(username);
-		return postService.findAll(); 
+		return postRepository.findByUsername(username);
 	}
 	
-	@PostMapping(path="/api/dailytech/{username}/posts")
-	@CrossOrigin(origins = "*")
+	@PostMapping(path="/dailytech/{username}/posts")
 	public ResponseEntity<Void> createPost(
 			@PathVariable String username, 
 		    @RequestBody PostEntity post
@@ -54,14 +45,14 @@ public class PostEntityController {
 		 return ResponseEntity.created(uri).build();
  
 	}
-			@GetMapping(path="/api/dailytech/{username}/posts/{id}")
+			@GetMapping(path="/dailytech/{username}/posts/{id}")
 			@CrossOrigin(origins = "*")
 			public PostEntity getPost(@PathVariable String username, @PathVariable long id){
 				return postRepository.findById(id).get();
 				//		return postService.findById(id); 
 			}
 		
-			@DeleteMapping(path="/api/dailytech/{username}/posts/{id}")
+			@DeleteMapping(path="/dailytech/{username}/posts/{id}")
 			@CrossOrigin(origins = "*")
 			public ResponseEntity<Void> deletePost(
 					@PathVariable String username, @PathVariable long id){
@@ -76,7 +67,7 @@ public class PostEntityController {
 		//		return ResponseEntity.notFound().build();
 			} 
 			
-			@PutMapping(path="/api/dailytech/{username}/posts/{id}")
+			@PutMapping(path="/dailytech/{username}/posts/{id}")
 			@CrossOrigin(origins = "*")
 			public ResponseEntity<PostEntity> updatePost(
 					@PathVariable String username, 

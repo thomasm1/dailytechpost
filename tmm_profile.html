@@ -1,0 +1,656 @@
+<title>TMM | Profile</title>
+<style>
+  .top-row {}
+
+  pre h4 {
+    padding: 0px;
+    margin: 0px 0px -10px;
+  }
+</style>
+
+<link rel="stylesheet" href="dist/css/profile.min.css" />
+
+<div class="container">
+
+  <div style="background:transparent" class="row mediat-row">
+
+    <div class="col-xs-6" id="skills-wrap">
+
+      <div id="skills" class="media mediat skills">
+        <h4 class="banner" id="skills-title">Thomas M. Maestas </h4>
+        <p>I specialize in Java/JavaScript web technologies, with full product development life-cycle experience from
+          Proof-of-Concept to General Audience Release, using Agile Methodology. My professional experience includes
+          modern UI/UX technologies, <span class="tog" id="tog-button" onclick="tog()"> more ...</span><span
+            id="tog-paragraph"></span>
+        </p>
+
+      </div>
+      <script>
+        var togButton = document.querySelector("#tog-button")
+        var togParagraph = document.querySelector('#tog-paragraph');
+        var skillsParagraph = document.querySelector('#skills');
+        var skillsTitle = document.querySelector('#skills-title');
+        var togState = false;
+        togButton.style.color = "yellow";
+        togButton.style.cursor = "pointer";
+
+        function tog() {
+          togState = !togState;
+          if (togState) {
+            togParagraph.textContent = " including AngularJS/2+, React, HTML5/CSS3-SASS/ES6+/XSLT. My Cloud proficiency includes AWS, Google Cloud Platform/Firebase. </p><p>My data-app focus includes AJAX, REST API, MEAN/MERN full-stack, Angular-Django, and Linux-Apache-MySQL-Python skills. In sum, I'm a team player whether Linux Bash or DOS, I learn fast and I work with passion.";
+            togButton.innerHTML = "<button>hide</button> ";
+            togButton.style.color = "orange";
+            skillsParagraph.style.overflowY = "scroll";
+
+            skillsParagraph.style.maxHeight = "234px";
+          } else {
+            togParagraph.textContent = ''; // TOGGLE OPEN
+            togButton.textContent = "more  ... ";
+            togButton.style.color = "yellow";
+            skillsTitle.style.display = "block";
+          }
+        };
+      </script>
+    </div>
+
+    <div class="col-xs-6  mediat  " style="text-align:left !important;padding-left:2px;padding-right:2px;">
+
+      <div style="background:transparent" class="row ">
+        <div style="background:transparent" class="col-lg-6 mediac media   skills">
+          <h4 class="banner">Contact Information
+          </h4>
+
+          <!-- <h6 class="two lowercase">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <a target="_blank" class=h ref="https://thomasmaestas.net"> &nbsp;www.thomasmaestas.net</a>
+            </h6> -->
+          <h6 class=" lowercase">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"> </span>
+            <a target="_blank" href="mailto:thomasm1.maestas@gmail.com"> &nbsp;thomasm1.maestas@gmail.com</a>
+          </h6>
+          <!-- <h6 class="lowercase">
+              <span class="glyphicon glyphicon-envelope" aria-hidden="true"> </span>
+              <a target="_blank" href="mailto:thomas@ourdailytech.com"> &nbsp;thomas@ourdailytech.com</a>
+            </h6> -->
+          <h6 class="two  lowercase">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            <a target="_blank" href="mailto:thomas.maestas@thomasmilton.net">
+              thomas.maestas@thomasmilton.net</a>
+          </h6>
+
+          <h6 class="two  lowercase">
+                        <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+                        <a target="_blank" href="https://www.linkedin.com/in/thomasmaestas/">
+              &nbsp;linkedin.com/in/thomasmaestas/</a>
+        </h6>
+          <h6 class="two capitalize lowercase">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"> </span>
+            <a target="_blank" href="dist/docs/CV_2019_webv_MaestasThomas.pdf"> &nbsp;2019 Resume</a>
+          </h6>
+          <!-- <h6 class=" capitalize lowercase">
+              <span class="glyphicon glyphicon-download" aria-hidden="true"> </span>
+              <a target="_blank" href="dist/docs/CVacademicEN_ThomasMaestas.pdf"> &nbsp;2019 Academic Resume</a>
+            </h6> -->
+          <!-- <h6 class="">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+              <span style="color:lightskyblue">
+              Albuquerque, NM </span> 
+            </h6> -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row media-left  mediat-row">
+
+    <div class="row top-row">
+      <div class="col media-left mediat col-sm-4 ">
+        <h4 class="banner text-center">Education</h4>
+
+        <div style="background:transparent" class="row ">
+
+          <h5>
+            <span class=" label label-default">Masters, Quantitative Sociology</span>
+          </h5>
+          <div class="col-xs-10">
+
+            <h5>University of New Mexico</h5>
+
+          </div>
+
+          <div class="col-xs-2">
+
+            <!-- <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> -->
+            <h6 class="text-right"> 2015
+            </h6>
+
+          </div>
+
+          <!-- </div>
+
+ 
+        <div class="row second"  > -->
+
+          <h5>
+            <span class="b label label-default">Bachelors, History (Cum laude)</span>
+          </h5>
+          <div class="col-xs-10">
+
+            <h5>University of New Mexico</h5>
+
+          </div>
+
+          <div class="col-xs-2">
+            <!-- <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> -->
+            <h6 class="text-right">
+              2001</h6>
+
+          </div>
+
+        </div>
+        <!----->
+        <div class="multi_drop_menu">
+          <ul>
+
+            <li style="display:block;">
+              <a ui-sref="profile" class="pro white ">
+                Academic Portfolio </a>
+              <ul>
+                <li>
+                  <a href="https://thomasmaestas.net/dist/docs/CVacademicEN_ThomasMaestas.pdf" target="_blank">Academic
+                    CV</a>
+                </li>
+                <li>
+                  <a href="https://thomasmaestas.net/dist/docs/CVacademicFR_ThomasMaestas.pdf"
+                    target="_blank">CV-français</a>
+                </li>
+                <li>
+                  <a class=" ">
+                    <span>Academic<br />Presentations</span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="http://tinyurl.com/gmtj4v4" target="_blank" style="width:350px;">
+                        <span>
+                          <em>
+                            <strong>
+                              "Great Expectations Deferred: Contextualizing Community College Transfer Intentions"
+                              <br />
+                            </strong>
+                          </em>
+                        </span>2016 ASA-American Sociological Conference
+                        <br />@Seattle, WA</a>
+                    </li> 
+                      <!--http://hscmediasite.unm.edu/unm/Catalog-->
+                      <!-- <li>
+                          <a href="#" target="_blank" style="width:350px;">
+                        <span>
+                          <strong>
+                            <em>
+                              "Social Determinants of Healthy Aging"
+                              <br />
+                            </em>
+                          </strong>
+                        </span>Dec 2015 UNM Health Sciences Institute for Ethics Colloquium
+                        <br />@Albuquerque, NM</a>
+                    </li> -->
+                    <li>
+                      <a href="http://tinyurl.com/pcq6mjx" target="_blank" style="width:350px;">
+                        <span>
+                          <i>
+                            <strong>"The Effects of Peer Association on Adolescents' Graduation Outcomes: An HLM
+                              Approach"
+                              <br />
+                            </strong>
+                          </i>
+                        </span>2015 ASA Conference
+                        <br />@Chicago, Illinois</a>
+                    </li>
+                    <li>
+                      <a href="http://www.cpc.unc.edu/projects/addhealth/events/20140613AddHealthUsersConferenceAbstracts.pdf"
+                        target="_blank" style="width:350px;">
+                        <span>
+                          <em>
+                            <strong>
+                              "Great Expectations: A Study on the Determinants of College Graduation Expectations"
+                              <br />
+                            </strong>
+                          </em>
+                          2014 National Institutes of Health/UNC Adolescent Health Data Users Conference
+                          <br /> @Bethesda, Maryland
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="http://hdl.handle.net/1928/31677" target="_blank">Education Thesis</a>
+                </li>
+                <li>
+                  <a href="https://thomasmaestas.net/dist/docs/DataPresentADD_health_networks.pdf"
+                    target="_blank">Education Data Analysis R-LaTeX</a>
+                </li>
+
+                <li>
+                  <a href="https://thomasmaestas.net/dist/docs/edregression.htm" target="_blank">Education Data Analysis
+                    SPSS-24</a>
+                </li>
+
+
+
+              </ul>
+            </li>
+
+
+          </ul>
+        </div>
+        <!---->
+      </div>
+
+      <div class="mediat col col-sm-4 ">
+
+        <h4 class="banner text-center">Data Visualization </h4>
+
+
+        <!-- Green Progress Bar -->
+
+        <!-- Blue Progress Bar -->
+
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+              aria-valuemax="100" style="width: 80%">
+              JavaScript: <a target="_blank" href="http://tmm-world-cup.s3-website-us-east-1.amazonaws.com/">D3</a>,
+              NVD3 </div>
+          </small>
+
+        </div>
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+              aria-valuemax="100" style="width: 80%"><a href="https://thomasmaestas.net/dist/docs/IKM-Exam_Python3.pdf"
+                target="_blank" title="IKM Exam: Python3 Proficiency, 2019">Python</a>: Plot.ly/Matplotlib</div>
+          </small>
+
+        </div>
+        <small>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+              aria-valuemax="100" style="width: 70%">
+              <li>
+                <a href="https://thomasmaestas.net/dist/docs/ADAHighSchoolNetworks.html" target="_blank"
+                  title="DEMO LINK:  Education Data Analysis, using R-Studio">R: R-Studio ggplot2</a>
+              </li>
+            </div>
+          </div>
+        </small>
+
+        <div class="progress">
+          <small>
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+              aria-valuemax="100" style=" width: 60%">
+              <a href="https://public.tableau.com/profile/thomas.milton.maestas" target="_blank"
+                title="DEMO LINK:  CO2 Environment Data Analysis, using Tableau">Tableau</a>
+            </div>
+          </small>
+
+        </div>
+      </div>
+
+      <div class="mediat col col-sm-4   ">
+
+        <h4 class="text-center banner">App &amp; Web Dev </h4>
+
+        <!-- Green Progress Bar -->
+
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+              aria-valuemax="100" style="width: 85%">
+
+              <a href="https://thomasmaestas.net/dist/docs/IKM-Exam_Angular2.pdf" target="_blank"
+                title="IKM Exam: Angular Proficiency, 2019">Angular, </a>
+              <a target="_blank" href="https://thomasmaestas.net/dist/docs/IKM-Exam_React_React-Native.pdf"
+                title="IKM Exam: React Proficiency, 2019">React</a>
+            </div>
+          </small>
+
+        </div>
+
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+              aria-valuemax="100" style="width: 80%">JavaScript, TypeScript</div>
+          </small>
+
+        </div>
+
+        <!-- Blue Progress Bar -->
+
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+              aria-valuemax="100" style="width:78%"><a
+                href="https://thomasmaestas.net/dist/docs/AWSDeveloperAssociateCertificate_TMaestas.pdf" target="_blank"
+                title="AWS Partners Certification: Technical Professional and Cloud Economics">AWS Microservices</a>
+            </div>
+          </small>
+
+        </div>
+        <!-- Yellow Progress Bar -->
+
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+              aria-valuemax="100" style="width:75%">GIT, Unit Testing</div>
+          </small>
+        </div>
+
+        <!-- Red Progress Bar -->
+
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="76" aria-valuemin="0"
+              aria-valuemax="100" style="width: 70%">NodeJS,
+              <a href="https://thomasmaestas.net/dist/docs/IKM-Exam_Python3.pdf" target="_blank"
+                title="IKM Exam: Python3 Proficiency, 2019">Python</a></div>
+          </small>
+
+        </div>
+        <div class="progress">
+
+          <small>
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+              aria-valuemax="100" style="width: 55%">MySQL</div>
+        </div>
+
+      </div>
+      <!--
+  <div class="row second mediat  media-left hidden " id="second">
+    <hr />
+    <h4 class="text-center">Experience</h4>
+
+    <hr>
+
+    <div class="col-lg-6">
+
+      <div class="row">
+
+        <div class="col-xs-5">
+
+          <h5>Xpansiv Data Systems</h5>z
+
+        </div>
+
+        <div class="col-xs-5 col-sm-6">
+
+          <h6 class="text-right">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> July 2017 - Jan 2018</h6>
+
+        </div>
+
+      </div>
+
+      <h5>
+        <span class="b label label-default">App Developer</span>
+      </h5>
+
+      <p>Xpansiv Data Systems, San Francisco, CA. Contractual Duties include data visualization, application
+        development,
+        and distributed ledger smart contracts. </p>
+
+      <ul>
+
+        <li></li>
+
+      </ul>
+
+    </div>
+
+    <div class="col-lg-6">
+
+      <div class="row">
+
+        <div class="col-xs-5">
+
+          <h5>Pivot Evaluation </h5>
+
+        </div>
+
+        <div class="col-xs-6">
+
+          <h6 class="text-right">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jan 2016 - May 2016</h6>
+
+        </div>
+
+      </div>
+
+      <h5>
+        <span class="label label-default"> Education Program Evaluator</span>
+      </h5>
+
+      <p>Pivot Evaluation, Albuquerque, NM. Contract duties included program evaluation design, data collection and
+        analysis.
+        Development and maintenance of company website using Google Sites and Adobe Creative Cloud.
+      </p>
+
+      <ul>
+
+        <li> </li>
+
+      </ul>
+
+    </div>
+
+    <div class="col-lg-6">
+
+      <div class="row">
+
+        <div class="col-xs-5">
+
+          <h5>University of New Mexico</h5>
+
+        </div>
+
+        <div class="col-xs-6">
+
+          <h6 class="text-right">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Aug 2012 - Dec 2015</h6>
+
+        </div>
+
+      </div>
+
+      <h5>
+        <span class="label label-default">Research &amp; Project Assistant</span>
+      </h5>
+
+      <p>Sociology Department, TRIO Student Support Services of UNM, Albuquerque, NM. Contract duties included
+        supervision
+        over graduate IT lab and Department Website; Teaching and grading undergraduate labs, Office Hours; Provided
+        project
+        leadership, team-building, student guidance, and grant compliance reports. </p>
+
+      <ul>
+
+        <li> </li>
+
+      </ul>
+
+    </div>
+
+    <div class="col-lg-6">
+
+      <div class="row">
+
+        <div class="col-xs-5">
+
+          <h5>Institute for Social Research</h5>
+
+        </div>
+
+        <div class="col-xs-6">
+
+          <h6 class="text-right">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sept 2013 - June 2014</h6>
+
+        </div>
+
+      </div>
+
+      <h5>&nbsp;
+        <span class="b label label-default">Research Assistant</span>
+      </h5>
+
+      <p>Statistical Analysis Center at Institute for Social Research, UNM, Albuquerque, NM. Duties included education-
+        and criminology-related data collection and analysis, co-authoring and editing of institute-published reports.
+      </p>
+
+
+
+    </div>
+
+  </div> -->
+    </div>
+    <!--end top-row-->
+    <div class="row">
+      <div class="col-xs-11">
+        <div class="links" id="portfolio">
+          <h3 class="banner">Coding Portfolio</h3>
+          <h4 class="banner sub">Front-End Applications &amp; Cloud-Based Services</h4>
+          <pre id="pre">
+<h4> JavaScript Calculator and Data Retriever App </h4>  
+ <a href="http://btc-calculator.s3-website-us-east-1.amazonaws.com/" target="_blank"> Bitcoin-Calculator (output in developer console)</a>
+
+<h4> Angular 8, Google Cloud DB &amp; Authentication, with SSL </h4>  
+ <a href="https://armchairbitcoinist.com" target="_blank"> Bitcoin &amp; Altcoin Analysis App</a>
+<!--  
+<h4> Bitcoin Data Retriever </h4>
+ AWS API-Gateway &amp; Lambda Serverless DB
+ <a href="https://thomasmilton.net" target="_blank">thomasmilton.net</a> -->
+<h4> Python, Flask, SQL DB and Authentication  </h4>  
+ <a href="https://armchair-bitcoinist.herokuapp.com/home" target="_blank"> Armchair Bitcoinist Organizer and Calculator App</a>
+
+<h4> React Front-End, Serverless DynamoDB backend </h4>   
+ <a href="https://bitcointracker.net" target="_blank"> React-coin-tracker</a>
+  Create-Read-Update-Delete App using AWS Lambda API Gateway-DynamoDB: 
+ <a href="http://dailytech-react.s3-website-us-east-1.amazonaws.com/" target="_blank"> Dailytech-React</a>
+  Authenticated routing, forms, &amp; Data API:
+
+<h4> Angular 6 data filter <applet></applet></h4>  
+ <a href="https://thomasmilton.net" target="_blank"> CRUD data control, form validation, Angular animation </a>   
+  
+<h4> AngularJS 1.5 Blog app with AWS Route 53 DNS:</h4> 
+  Data filtering, routing, modals, and XML-Http method API calls
+ <a href="https://dailytechfilter.net" target="_blank"> Dailytechfilter.net </a>
+ 
+<h4> Google Cloud Firestore Serverless App</h4>  
+ <a href="https://bitcoinbuyer-ce650.firebaseapp.com/" target="_blank"> Non-relational database, Serverless data functions, and Google Authentication</a> 
+
+<h4>  AngularJS and Vanilla JavaScript Apps</h4>
+  Data API
+ <a href="http://tmm.net.s3-website-us-east-1.amazonaws.com" target="_blank" class=" "> OMDb Film Search  &nbsp; </a> 
+
+  Directed Acyclic Graph Tool converted to downloadable JSON
+ <a href="http://tmm-dag.s3-website-us-east-1.amazonaws.com"  target="_blank"  class=" "> DAG to JSON Editor Tool &nbsp; </a> 
+
+  Web Browser Editor 
+ <a href="http://abq-aws-thomas-maestas.s3-website-us-east-1.amazonaws.com/#/codePlayer"  target="_blank"  class=" "> JavaScript/HTML/CSS  Editor Tool     </a> 
+
+  Vanilla JavaScript
+<a href="http://dice-match-tmm-aws.s3-website-us-east-1.amazonaws.com/" target="_blank"  class=" ">  Dice Game  </a>
+ 
+<h4> AWS Data Service</h4> 
+ <a href="https://s3.amazonaws.com/tmm-nov/posts/april.json" target="_blank"> AWS S3 Static Data API</a>
+
+   Amazon RDS PostgreSQL Relational Database Endpoints
+ <a  > sensor-instance.caq9hvksjohf.us-east-1.rds.amazonaws.com</a> 
+
+      </pre>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <button class="btn btn-primary pull-right" style="margin:5px -15px 5px 0px"
+          ng-click="demos=demos===true?false:true">More</button>
+        <nav ng-show="demos" id="rightmenu" class="rightmenu col-md-2 d-none d-md-block bg-light sidebar">
+
+          <div class="nav flex-column rightnav sidebar-sticky home-nav">
+            <div class="  list-group"> <br />
+              <span class="blue">&nbsp;TMM Demos&nbsp;</span> <br />
+              <!-- <a href="https://thomasmaestas.net/#/globe" ui-sref-active="active"  class="yellow  list-group-item list-group-item-action">Dynamic Maps</a>  -->
+              <!-- -->
+              <a ui-sref="planets" ui-sref-active="active"
+                class="yellow  list-group-item list-group-item-action">Dynamic
+                JavaScript</a>
+              <!-- <a ui-sref="dendro" ui-sref-active="active" class="hidden yellow  list-group-item list-group-item-action">Static Data</a> -->
+              <a ui-sref="dataMVVM" ui-sref-active="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <br /><br /><br />
+
+              <span class="blue">&nbsp;Geo Maps&nbsp;</span> <br />
+              <a href="https://public.tableau.com/profile/thomas.milton.maestas" target="_blank"
+                class="yellow  list-group-item list-group-item-action">Tableau DataViz&nbsp;<img class="external-link"
+                  width="18px" src="dist/img/external.png" /></a>
+              <a ui-sref="chlor" ui-sref-active="active"
+                class="yellow  list-group-item list-group-item-action">Chloropleth Map</a>
+
+              <a href="http://tmm-world-cup.s3-website-us-east-1.amazonaws.com/" target="_blank"
+                class="yellow  list-group-item list-group-item-action">Interactive Map&nbsp;<img class="external-link"
+                  width="18px" src="dist/img/external.png" /></a>
+              <!-- <a ui-sref="dendro" ui-sref-active="active" class="hidden yellow  list-group-item list-group-item-action">Static Data</a> -->
+              <!-- <a ui-sref="dataMVVM" ui-sref-active="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> -->
+              <br /><br /><br />
+              <div class="external">
+
+                <a href="http://tmm-react.s3-website-us-east-1.amazonaws.com" target="_blank"
+                  class="yellow  list-group-item list-group-item-action">React Redux &nbsp;<img class="external-link"
+                    width="18px" src="dist/img/external.png" /></a>
+
+
+                <a href="http://abq-aws-thomas-maestas.s3-website-us-east-1.amazonaws.com/register.html" target="_blank"
+                  class="yellow  list-group-item list-group-item-action">AWS Cognito<br />Authentication Lambda
+                  &nbsp;<img class="external-link" width="18px" src="dist/img/external.png" /></a>
+
+
+
+
+
+                <a href="http://abq-aws-thomas-maestas.s3-website-us-east-1.amazonaws.com" target="_blank"
+                  class="list-group-item list-group-item-action">
+                  AWS S3 Hosting<img class="external-link" width="18px" src="dist/img/external.png" /></a>
+
+                <!-- <a href="http://www.thomasmaestas.net/tmm_demo/index.html"   class="list-group-item list-group-item-action">Demo Dashboard
+           &nbsp;<img class="external-link" width="18px" src="dist/img/external.png"/></a> -->
+
+                <br /> <br /><span class="blue">&nbsp;Blog&nbsp;</span>
+                <a href="https://ourdailytech.net" target="_blank"
+                  class="yellow  list-group-item list-group-item-action">
+                  Our_Daily_Tech_Blog &nbsp;<img class="external-link" width="18px" src="dist/img/external.png" /><br />
+                </a>
+
+                <!-- <br /><span class="blue">&nbsp;Fiction&nbsp;</span>
+          <a href="https://ourdailytech.net/_For_Cat_Eyes_Only_" target="_blank"  class=" list-group-item list-group-item-action com btn btn-primary"><small>_For_Cat_Eyes_Only_&nbsp;<img class="external-link" width="18px" src="dist/img/external.png"/><br />
+          </a> <br />  -->
+
+              </div>
+              <!--end external class    </div> -->
+
+            </div>
+        </nav>
+
+      </div>
+    </div>
+
+  </div>

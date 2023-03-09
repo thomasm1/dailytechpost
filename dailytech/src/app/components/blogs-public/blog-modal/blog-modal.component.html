@@ -2,27 +2,29 @@
 <div *ngIf="blog" class="blog-top">
   <span class="category">{{ blog.cat3 }}</span>
   <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->
-<span class="date" [innerHTML]="blog.date | safeHtml"></span>
-<hr class="bar-title">
-<h6 class="blog-title" [innerHTML]="blog.title | safeHtml"></h6>
+  <span class="date" [innerHTML]="blog.date | safeHtml"></span>
+  <hr class="bar-title">
+  <h6 class="blog-title" [innerHTML]="blog.title | safeHtml"></h6>
 
-<div  >
-  <ul    class="view-blog">
-      <mat-card class="blog-box" >
+  <div>
+    <ul class="view-blog">
+      <mat-card class="blog-box">
         <span [innerHTML]="blog.post | safeHtml"></span>
         <hr>
         <span [innerHTML]="blog.blogcite | safeHtml"></span>
       </mat-card>
 
-  </ul>
-</div>
-</div>
-<div>
-  <!-- REACTION or Navigation-->
+    </ul>
+  </div>
+
+  <div>
+    <!-- REACTION or Navigation-->
     <!-- <mat-form-field>
-        <input matInput [(ngModel)]="fromDialog" placeholder="Enter value to send back">
-    </mat-form-field> -->
-</div>
-<div>
-    <button mat-raised-button (click)="closeDialog()">Close</button>
+          <input matInput [(ngModel)]="fromDialog" placeholder="Enter value to send back">
+      </mat-form-field> -->
+  </div>
+  <div>
+    <button mat-raised-button class="mat-elevation-z8" (click)="saveMaterial(-1, blog);closeDialog()">Save</button>
+    <button mat-raised-button class="mat-elevation-z8" (click)="closeDialog()">Close</button>
+  </div>
 </div>

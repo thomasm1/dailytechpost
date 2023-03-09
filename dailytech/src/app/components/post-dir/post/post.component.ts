@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PostDataService } from '../post-data.service';
-import { Post } from '../../../models/post.model';
+import { Post } from '../../../models/Post';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PostCancelComponent } from '../post-cancel/post-cancel.component';

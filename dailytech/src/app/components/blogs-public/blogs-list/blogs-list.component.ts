@@ -3,7 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { BlogsService } from '../blogs.service';
-import { Post } from 'src/app/models/post.model';
+import { Post } from 'src/app/models/Post';
 import { MatDialog } from '@angular/material/dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
@@ -54,12 +54,12 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
       .subscribe((response) => {
         // console.log(response);
         this.blogs = response;
-        this.blogUpdater(this.blogs)
+        this.categoryUpdater(this.blogs)
         this.blogsLoading = false;
       });
   }
 
-  blogUpdater(blogs) {
+  categoryUpdater(blogs) {
         // console.log(blogs);
         this.blogsWeb = blogs.filter((x) => x.cat3 == 'Web Dev Affairs');
         this.blogsBlockchain = blogs.filter( (x) => x.cat3 == 'Musing Blockchain'  );

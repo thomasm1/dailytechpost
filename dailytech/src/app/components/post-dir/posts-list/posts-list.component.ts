@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostDataService } from '../post-data.service';
 import { Router } from '@angular/router';
-import { Post } from '../../../models/post.model'
+import { Post } from '../../../models/Post'
 
 
 @Component({

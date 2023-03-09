@@ -143,6 +143,7 @@
           <br />
         </li>
         <h6 [innerHTML]="blog.title | safeHtml"></h6>
+        <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
       </mat-card>
       </ul>
     </div>

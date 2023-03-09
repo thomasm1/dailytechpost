@@ -26,8 +26,11 @@ import { MarvelComponent } from './components/features/marvel/marvel.component';
 const routes: Routes = [ 
   { path: '', component: BlogsListComponent },
   { path: 'home', component: HomeComponent },
+  
+  { path: 'blogs', component: BlogsListComponent }, 
   { path: 'blogs/:cat', component: BlogsComponent},
   { path: 'blog/:id', component: BlogComponent },
+  
   { path: 'posts', component: PostsViewerComponent },
   { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
   { path: 'nasa', component: NasaComponent },

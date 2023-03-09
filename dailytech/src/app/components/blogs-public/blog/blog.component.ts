@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../blogs.service';
-import { Post } from 'src/app/models/post.model';
+import { Post } from 'src/app/models/Post';
 import { Subscription } from 'rxjs';
 
 @Component({

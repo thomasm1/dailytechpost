@@ -18,7 +18,10 @@ export const environment = {
   //crypto
   rinkebyUrl: 'https://api-rinkeby.etherscan.io/api',
   local_url: 'http://localhost:9000',
-  nft_url: 'http://34.199.129.2:8887',
+  nftsURL: '//34.199.129.2:9000',
+  nft_url: '//localhost:8080/api' ,
+  test_env: '',
+  
   cle_url: 'http://34.199.129.2:8080/login',
 
   // AWS Lambda-DynamoDB-APIgateway

@@ -1,13 +1,14 @@
-@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css);
 @import url('https://fonts.googleapis.com/css?family=Monoton:100,200,300,400,500,600');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,600,600i,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
-
-// @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* ANGULAR  MATERIAL */
+// @import '@angular/material/prebuilt-themes/indigo-pink.css';  
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
       // Defined in daily-theme.scss ....old  angular.json
       // "styles": [ "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss" ],
 
-$color-primary-text:  rgb(177, 171, 226);
+$color-primary-text:  rgb(19, 1, 179);
 $color-secondary-text: darken($color-primary-text, 25%);
 
 * {
@@ -22,11 +23,12 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
-    color: rgb(30, 21, 71);
+    color: #777;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
+    background-color: #1976d2;
 }
 
 h1,
@@ -37,7 +39,7 @@ h5,
 h6 {
     margin: 8px 0;
     text-align: center;
-    color:rgb(47, 37, 100);
+    color:rgb(17, 122, 192);
 }
 
 li {
@@ -50,14 +52,14 @@ p {
 
 a {
     text-decoration: none;
-    color: #1e4061;
+    color: #1976d2;
 
     &:visited {
-        color: #3d556d;
+        color: #1976d2;
     }
 
     &:hover {
-        color: #1a2938;
+        color: #125699;
     }
 }
 
@@ -284,14 +286,26 @@ strong {
     float: left;
     line-height: 1;
   }*/
-//   #####################
-  p.blog-post { 
+  p.blog-post {
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; 
-    max-height:200px;
+    text-overflow: ellipsis;
 }
- 
- 
+p.blog-post {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.firstparagraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.firstparagraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
   p.blog-post::after {
       content: " ... ";
          
