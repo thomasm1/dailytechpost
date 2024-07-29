@@ -8,8 +8,8 @@
 
   <div>
     <ul class="view-blog">
-      <mat-card class="blog-box">
-        <span [innerHTML]="blog.post | safeHtml"></span>
+      <mat-card style="margin: 0px 0px 0px 0px !important;"  class="blog-box">
+        <span style="font-size:.8rem !important;  color:rgb(4, 4, 56) !important;"  [innerHTML]="blog.post | safeHtml"></span>
         <hr>
         <span [innerHTML]="blog.blogcite | safeHtml"></span>
       </mat-card>
@@ -23,8 +23,8 @@
           <input matInput [(ngModel)]="fromDialog" placeholder="Enter value to send back">
       </mat-form-field> -->
   </div>
-  <div>
-    <button mat-raised-button class="mat-elevation-z8" (click)="saveMaterial(-1, blog);closeDialog()">Save</button>
-    <button mat-raised-button class="mat-elevation-z8" (click)="closeDialog()">Close</button>
+  <div >
+    <!-- <button mat-raised-button class="mat-elevation-z8" (click)="saveMaterial(-1, blog);closeDialog()">Save</button> -->
+    <button fxFlex fxLayout="row" fxLayoutAlign="center" mat-raised-button class="mat-elevation-z8" (click)="closeDialog()">Close</button>
   </div>
 </div>
