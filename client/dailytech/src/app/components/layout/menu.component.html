@@ -1,0 +1,40 @@
+<div class="toolbar" role="banner">
+    <div class="logo-box">
+        <a routerLink="/posts" class="nav-link">
+            <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
+        </a>
+    </div>
+    <div>
+        <h3>
+            <span class=" daily-title monoton text-box">OUR DAILY TECH</span>
+        </h3>
+    </div>
+    <div class="spacer"></div>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark ">
+            <div>
+
+                <ul class="navbar-nav navbar-collapse justify-content-end">
+                    <li>
+                        <a routerLink="/posts" class="nav-link">POSTS</a>
+                    </li>
+                    <li>
+                        <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/login" class="nav-link">SIGN ON</a>  
+                    </li>
+                    <li> 
+                        <a *ngIf="authService.isAdminLoggedIn()" routerLink="/admin/posts" class="nav-link">EDIT</a>
+                    </li>
+                    <li>
+                        <a *ngIf="authService.isAdminLoggedIn()" routerLink="/" (click)="authService.logout()"
+                            class="nav-link">SIGN OUT</a>
+                    </li>
+                    <li>
+                       <a *ngIf="!authService.isAdminLoggedIn()" routerLink="/register" class="nav-link">REGISTER</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+</div>

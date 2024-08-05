@@ -27,12 +27,8 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
         <li class="nav-item">
         <a class="nav-link" href="https://blog.ourdailytech.net" target="_blank" type="button">
         <span class="subdailytech ">
-        <span style="white-space:nowrap;">Daily &nbsp;<small><i class="fa fa-external-link"></i></small></span>
-
-        
-        <br />
-        Tech <small>v2</small></span>
-        
+        Daily<br />Tech v2</span>
+        <i class="fa fa-external-link"></i>
         </a></li>
 
         <li class="nav-item hidden">
@@ -326,9 +322,17 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
 
 
         </li>
-        <li> 
-        </ul>
-        <ul id="media" class="nav navbar-nav navbar-right">
+        <li>
+ 
+     
+▂▄▄▓▄▄▂
+◢◤█▀████▄▄▄▄▄▄◢◤
+█  🦄 █▀▀▀▀▀▀╬
+◥█████◤
+══╩══╩═ 
+       
+    </ul>
+    <ul id="media" class="nav navbar-nav navbar-right">
 
 
         <li>

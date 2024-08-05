@@ -1,0 +1,67 @@
+ 
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css);
+
+/* @import '@angular/material/prebuilt-themes/indigo-pink.css'; */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient( to right bottom, rgba(255, 255, 255, 0.897), rgb(0, 0, 139));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 8px 0;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}
+
+a,
+a:visited,
+a:hover {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #125699;
+}
+
+
+/* CUSTOM */
+
+.monoton {
+    font-family: Monoton;
+}
+.btn-gray {
+    background-color: rgba(255, 255, 255, 0.363);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom:2px;
+    min-width:110px;
+
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

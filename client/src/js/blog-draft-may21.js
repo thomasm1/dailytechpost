@@ -1,151 +1,10 @@
  
 //Top Vars Above
 
-let bloggerMay21 = function () {
-    
-  let blogpost28= `
-  <p class="firstparagraph"> The importance of reducing electricity cannot be overstated, most importantly it provides an ecological image boost--but not much more.  Ethereum's Merge from Proof-of-work to Proof-of-stake is the big news, however the big liabilities such as gas transactioanal fees and throughput will not improve at all! Layer 2 solutions and side chains create an uncomforatable level of platform dependence. </p>   
-
-  <p class="quote">Beiko was questioned by an individual about Ethereum miners who have been securing the network. The individual asked the Ethereum developer if miners would be “left out to dry.”
-<br /><br >
-  Beiko responded to the person and explained that he would not invest in any mining devices going forward. “I would strongly suggest not investing more in mining equipment at this point,” the Ethereum developer tweeted. Then the individual asked if developers planned the “plug pull” for June or if the ether mining community has more time. Beiko also replied to that question as well and said:
-  <br /><br >
-  It won’t be June, but likely in the few months after. No firm date yet, but we’re definitely in the final chapter of PoW on Ethereum.<sup>1</sup>
-  </p> 
- `;
- 
-   let blogcite28= `   
-   <p class="footnotes">
-   1. <a href="https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/"   target="_blank">https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/</a> 
-<br />  
-   </p>  
-     `;
-
-  let blogpost27= `
-  <p class="firstparagraph">It's almost comical to think that anyone would have spent money on Ethereum 1.0 rigs in the past year ...
-  </p>   
-
- 
-
- `;
- 
-   let blogcite27= `   
-   <p class="footnotes">
-   1. <a href="https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/"   target="_blank">https://news.bitcoin.com/ethereum-dev-says-the-merge-could-be-delayed-a-few-months-strongly-suggests-not-investing-in-eth-mining-rigs/</a> 
-<br />  
-   </p>  
-     `;
-
-  let blogpost26= `
-  <p class="firstparagraph">Beyond computing power and discussions of "A.I. Winters" and processing limitations, one may overlook a more decisive approach to machine learning development, evolving from the what and how, to the why ...  however hard it is to extricate Hollywood's depictions of hope and fear from our minds!
+var bloggerMay21 = function () {
   
-  <br /><br /> 
-  This 2021 Wired article's prescience on artificial intelligence is worth a read:  </p>   
-
-  <p class="quote">
-  More recently, techniques of machine learning have been used to gain an understanding from a database of successful proofs to generate more proofs. But although the proofs are new, they do not pass the test of exciting the mathematical mind. It’s the same for powerful algorithms, which can generate convincing short-form text, but are a long way from writing a novel.
-<br/><br /> 
-But in 2021 I think we will see – or at least be close to – an algorithm with the ability to write its first mathematical story. Storytelling through the written word is based on millions of years of human evolution, and it takes a human many years to reach the maturity to write a novel. But mathematics is a much younger evolutionary development. A person immersed in the mathematical world can reach maturity quite quickly, which is why one sees mathematical breakthroughs made by young minds.
-<br/><br />
-This is why I think that it won’t take long for an AI to understand the quality of the proofs we love and celebrate, before it too will be writing proofs. Perhaps, given its internal architecture, these may be mathematical theorems about networks – a subject that deserves its place on the shelves of the mathematical libraries we humans have been filling for centuries.
-
-<sup>1</sup>
-  </p>
- `;
- 
-   let blogcite26= `   
-   <p class="footnotes">
-   1. <a href="https://www.wired.co.uk/article/marcus-du-sautoy-maths-proofs"   target="_blank">https://www.wired.co.uk/article/marcus-du-sautoy-maths-proofs</a> 
-<br />  
-   </p>  
-     `;
-
-  
-  let blogpost25= `
-  <p class="firstparagraph">Taxes ... simultaneously the ultimate bane and archenemy of small business, yet also the easiest way to share; and sharing, whether compulsory or not, feels good. 
-  So, by extension, taxes are good. 
-  </p>   
-  <p>Yet another positive attribute of Tax is the power of attention.  
-  There is no brighter light of scrutiny and organization than tax, to de-complicate and elucidate <i>where</i> money is, where it goes, and what it does. </p>
-  <p>On the subject of complicated, changing , obscure financial landscapes ... <br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />... Deeply complicated, dynamic systems like the crypto space can do well with <i>Laissez-Faire</i>approach with regulation to permit efficiency and faireness in the cryptocurrency system; but most of all, further intuitive clarity for the wider public.
-          </p>
-  <p class="quote">
-  Crypto may have started out as a discreet decentralized economy, but now that the nearly $2 trillion sector has gone mainstream enough to occupy coveted Super Bowl ad space, the Internal Revenue Service (IRS) is well clued in.
-
-The IRS classifies cryptocurrency as intangible property for tax purposes, which means the profits you make from selling virtual currency are subject to capital gains taxes. This holds true whether you bought bitcoin or altcoins on a crypto exchange like Coinbase, or simply used an app like Venmo or PayPal to buy and use cryptocurrency.
-<br/><br />
-  However exciting crypto may be, if you gave it as a gift, you should be aware of IRS rules on gifting. There’s a $15,000 gift threshold for 2021, meaning the giver doesn’t have to pay taxes on the gift as long as it's worth $14,999 or less. 
-  If the value of the gift is over $15,000, the tax burden falls on the generous donor, who must file IRS form 709.<sup>1</sup>
-  </p>
- `;
-
-   let blogcite25= `   
-   <p class="footnotes">
-   1. <a href="https://www.coindesk.com/learn/you-may-owe-crypto-taxes-on-these-surprising-things-in-2022/"   target="_blank">https://www.coindesk.com/learn/you-may-owe-crypto-taxes-on-these-surprising-things-in-2022/</a> 
-<br />  
-   </p>  
-     `;
-
-  
-  let blogpost24= `
-  <p class="firstparagraph">  </p>   
-  
-<p class="quote"> 
-<sup>1</sup>
-</p>
-<p> </p>`;
-   let blogcite24= `   
-   <p class="footnotes">
-   1. <a href="https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976"   target="_blank">https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976</a>
- 
-  
-<br /> 
-   
-   </p>  
-     `;
-
-  let blogpost23= `
-  <p class="firstparagraph">As a cyclist, a runner, a pedestrian, and sometimes driver, my earbuds stay in. Whether ordering from my Starbucks Barista or listening to traffic, proximal noise matters! <br /><br />
-  Given the importance of hearing your surroundings crystal-clear while conversing or listening to music is a safety feature extraordinaire. Yet, Apple's 2021 AirPods don't carry this essential feature that any typical $100 earbud surely offers. So, IMHO, the only worthwhile Apple AirPod is the very pricey AirPod Pro.  
-  </p>   
-  
-<p class="quote">Once you get them seated in your ears, the new AirPods sound OK. But it's annoying how much outside sound gets in when you’re out and about, which makes everything much muddier. Again, in comparison to similarly priced models from Jabra, 
-Samsung, and other top-tier modern producers, these get left in the dust. 
-<sup>1</sup>
-</p>
-<p>Whether for safety or enhancement, AirPod Pro is the way to go ...</p>`;
-   let blogcite23= `   
-   <p class="footnotes">
-   1. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>
- 
-  
-<br />   2. <a href="https://www.wired.com/review/apple-airpods-pro/"   target="_blank">https://www.wired.com/review/apple-airpods-pro/</a>
- 
-   
-   </p>  
-     `;
-
-
-  let blogpost22= `
-  <p class="firstparagraph">I've always enjoyed the maxim that if you want to get somewhere fast, go it alone.<sup>1</sup> If you want to go far collaborate. 
-  I like to to fast. So does Apple. And since the <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank"> "End of Moore's Law"</a>, the only viable solution was multi-core processors. The only heretofore impossible other option requires separate vendors to provide separate, specialized chips ...<i>However,</i> 
-    Because Apple manufactures in-house chips, and owns the hardware, System-on-a-Chip can be realized, 
-  providing a much better solution to the crisis of the "End of Moore's Law".<sup>2</sup> 
-  </p>   
-   `;
-   let blogcite22= `   
-   <p class="footnotes">
-  
-   1. <span>Source: Ancient African Proverb
-<br />   2. <a href="https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/"   target="_blank">https://www.technologyreview.com/2020/02/24/905789/were-not-prepared-for-the-end-of-moores-law/</a>
- 
-   
-   </p>  
-     `;
-
-
-  let blogpost21= `
-  <p class="firstparagraph">Heterogenous computing. “Unified Memory Architecture” (UMA). These terms' esoteric nature shouldn't detract our attention from the paradigm shift they signal.  
+  var blogpost21= `
+  <p class="firstparagraph">Heterogenous computing. “Unified Memory Architecture” (UMA). These terms' esoteric nature shouldn't detract our attention from the the paradigm shift they signal.  
   Instead of integrating CPU and GPU functionality (this combo is exceedingly slow), the overall theme of M1 changes centers on specialization of chips, id est, a digital instance of division of labor! 
   
   </p> 
@@ -181,7 +40,7 @@ Samsung, and other top-tier modern producers, these get left in the dust.
  designs, Apple has indeed taken the lead!</p>
  
    `;
-   let blogcite21= `   
+   var blogcite21= `   
    <p class="footnotes">
   
    1. <a href="https://erik-engheim.medium.com/apple-m1-foreshadows-risc-v-dd63a62b2562"   target="_blank"> erik-engheim.medium.com/apple-m1-foreshadows-risc-v </a>
@@ -191,7 +50,7 @@ Samsung, and other top-tier modern producers, these get left in the dust.
    </p>  
      `;
 
-  let blogpost19= `
+  var blogpost19= `
   <p class="firstparagraph">
   Apple's evolution toward native API's is the logical conclusion given the trend of integrating CPU, GPU, RAM, and Neural Processing in one chip. That being said, the tech is not exactly new since
   this chip integration has been behind iPhone & iPad architecture for years....
@@ -212,14 +71,14 @@ and many more things making up a whole computer. This is what we call a system o
  designs, Apple has indeed taken the lead!</p>
  
    `;
-   let blogcite19= `   
+   var blogcite19= `   
    <p class="footnotes">
   1. <a href="https://www.toptal.com/apple/apple-m1-processor-compatibility-overview"   target="_blank"> https://www.toptal.com/apple/apple-m1-processor-compatibility-overview</a>
  
    </p>  
      `;
 
-  let blogpost18= `<p class="firstparagraph">
+  var blogpost18= `<p class="firstparagraph">
   Global computing divide between the Apple world and PC's has widened further with the expansion of Native M1 Chip to the 
   Pro and the Pro Max.  
 </p> 
@@ -234,7 +93,7 @@ When compared to the AMD Radeon Pro 5300M, which is the GPU found in the base mo
   </p>
  
    `;
-   let blogcite18= `
+   var blogcite18= `
    
    <p class="footnotes">
  . <a href="https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/"   target="_blank">https://9to5mac.com/2021/10/20/geekbench-shows-m1-max-offers-up-to-181-faster-graphics-than-previous-16-inch-macbook-pro/</a>
@@ -242,7 +101,7 @@ When compared to the AMD Radeon Pro 5300M, which is the GPU found in the base mo
    </p>  
      `;
 
-  let blogpost17= ` <p class="firstparagraph">Photoshop's woe begins with its OpenGL dependence<sup>1</sup></p>
+  var blogpost17= ` <p class="firstparagraph">Photoshop's woe begins with its OpenGL dependence<sup>1</sup></p>
 
   <p class="quote">Photoshop’s embrace of the GPU was made practical only through the 
   emergence of a common GPU software interface (called Open GL) that offered standard methods for using 
@@ -263,18 +122,18 @@ When compared to the AMD Radeon Pro 5300M, which is the GPU found in the base mo
   </p>
 
   `;
-  let blogcite17= `
+  var blogcite17= `
   
   <p class="footnotes">
   1. <a href="https://helpx.adobe.com/photoshop/kb/3d-faq.html"   target="_blank">helpx.adobe.com/photoshop/kb/3d-faq.html</a>
  
   </p>  `;
 
-//   let blogpost16= ` <p> <sup>0</sup></p>
+//   var blogpost16= ` <p> <sup>0</sup></p>
 //  <p> </p>
 
 //   `;
-//   let blogcite16= `
+//   var blogcite16= `
   
 //   <p class="footnotes">
 //   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
@@ -283,7 +142,7 @@ When compared to the AMD Radeon Pro 5300M, which is the GPU found in the base mo
 //   </p>  
 //     `;
   
-  let blogpost15= `
+  var blogpost15= `
   <p class="firstparagraph">
    Bitcoin's ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States <strong>  SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>
   </p>
@@ -305,7 +164,7 @@ var blogcite15 = `
 <p class="footnotes">1. <a href="https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval"   target="_blank">https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval</a>
   
 </p>   `;
-  let blogpost14= `
+  var blogpost14= `
   <p class="firstparagraph">
     Data, unstructured and unrefined, serves little purpose for 
     machine-learning training data: Contextual data, semi-structured, 
@@ -386,7 +245,7 @@ wired.com/story/bring-back-cargo-pants/ </a>
 </p>  
   `;
 
-  let blogpost11= `
+  var blogpost11= `
   <p class="firstparagraph">Cardano's namesake derives from the Italian Mathemetician X Cardano, while the Token symbol is ADA - a nod to computing pioneer Ada Lovelace, AKA <i>The Countess of Lovelace</i> 
   (Lord Byron's daughter and first to write a functioning algorithm!), n&eacute;e 1815!. 
  </p><p>Cardano claims to augur in the 3rd major period in Blockchain evolution. The first generation, a "dumb", but secure, chain exemplified by Bitcoin that can only record monetary, "floating point" data. Next generation, Ethereum's "smart" contracts augur limitless utility for every industry by creating an immutable--unchangeable--ledger of receipts in a distributed data table. Unfortunately, none of these scale for Visa-like, global-scale transactional throughput! <br /><br />Thus, we return to Charles Hoskinson and the 3rd generation of Blockchain technology - Scalability (through slots)</p> 
@@ -397,7 +256,7 @@ wired.com/story/bring-back-cargo-pants/ </a>
 Kudos to Charles for continuing the innovation under the watchful eye of academic peer-review -- unlike the lone-wolf community of shadowy Ethereum Developers!</p>
 
   `;
-  let blogcite11= `
+  var blogcite11= `
   
   <p class="footnotes">
   0. <a href="https://cardano-foundation.gitbook.io/stake-pool-course/lessons/introduction/about-cardano"   target="_blank">cardano-foundation.gitbook.io/stake-pool-course/lessons/introduction/about-cardano</a>
@@ -409,11 +268,11 @@ Kudos to Charles for continuing the innovation under the watchful eye of academi
     `;
 
     
-  let blogpost10= ` <p> <sup>0</sup></p>
+  var blogpost10= ` <p> <sup>0</sup></p>
  <p> </p>
 
   `;
-  let blogcite10= `
+  var blogcite10= `
   
   <p class="footnotes">
   1. <a href="https://www.britannica.com/biography/Ada-Lovelace"   target="_blank">https://www.britannica.com/biography/Ada-Lovelace
@@ -422,7 +281,7 @@ Kudos to Charles for continuing the innovation under the watchful eye of academi
   </p>  
     `;
   
-  let blogpost7 = `
+  var blogpost7 = `
   <p class="firstparagraph">
    European and Russian Crypto powers can only rejoice upon news of another regime weighing cryptocurrency over-regulation<sup>1</sup> and possible suppression. 
     Future organization of global trustless transactions is inextriably linked to distributed ledger "blockchain" technologies. Whether markets or government institutios, it is the early adopters of Crypto technologie (and assets) will hold the higher ground. <br />Never one to shy away from new Technology, the land of the pioneering explorers has of recent turned Luddite, fearing change. Same as the cliff diver that 
@@ -440,7 +299,7 @@ var blogcite7 = `
 </p>   `;
  
   
-  let blogpost6 = `
+  var blogpost6 = `
   <p class="firstparagraph">Hex<sup>0</sup> white papers<sup>3</sup> reveal a seemingly ordinary DeFi Ethereum smart contract, 
   which by design is the first Certificate of Deposit. An interesting side-effect incentivizes hodling the Hex token, 
   rather than trading it or selling it, thereby dropping price. This behavior is by definition the single most effective factor on dictating a token's Market Cap value: More buyers (and hodlers) than sellers ...</p>
@@ -464,7 +323,7 @@ var blogcite6 = `
  
 </p>   `;
  
-  let blogpost5 = `
+  var blogpost5 = `
   <p class="firstparagraph">Since October 1st I have felt very bullish on both Bitcoin and Ethereum. As it happens, their respective price values have rose from 48k to 55k, & Ethereum's 3k to 3.5k. 
   September is always a bad month for crypto. </p><p>More importantly, what drives the utility of the Ethereum Token is its irreducible requirement to run, operate, and transact any smart contracts on the Ethereum Virtual Machine, i.e., distributed, global Operating System.
   </p>
@@ -488,7 +347,7 @@ var blogcite5 = `
 </p> 
   `;
  
-  let blogpost4 =  ` 
+  var blogpost4 =  ` 
   <p class="firstparagraph">Financial Institutions' acceptance and adoption (i.e., BofA,Visa,PayPal,GrayScale,...) resembles the retail's interest and adoption resulting in the 2017 run-up. More importantly, interest in actual utility (smart contraacts and distributed ledger's utility in mediating real estate, titles, trusts, etc.) and applicability differentiates the current era.  </p>
 
   <p class="quote"><i>“In the near future, you may use blockchain technology to unlock your phone; buy a stock, house or fraction of a Ferrari; receive a dividend; borrow, loan or save money; or even pay for gas or pizza,” the report states.
@@ -501,7 +360,7 @@ var blogcite5 = `
    “Bitcoin is important with a market value of ~$900 billion, but the digital asset ecosystem is so much more.” </i><sup>1</sup> </p>
 <p>So now, we need to alter our favorite cliche, "There's a DAPP for that!</p>"
     `;
-  let blogcite4 = `
+  var blogcite4 = `
   <p class="footnotes">1. <a href="https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts"   target="_blank"> https://decrypt.co/82573/bank-of-america-bullish-bitcoin-ethereum-defi-nfts</a>
   </p>   `;
    
@@ -556,85 +415,14 @@ var blogcite1 =
 </p>
 `; 
    
-  let url =  [
-    {
-      id:'28',
-      did:'22-04-14',
-      date:'April 14, 2022',
-      author:'by Thomas Maestas, MA',
-      cat3:'Musing Blockchain',
-      title:'The Big Merge',
-      post:blogpost28,
-     blogcite:blogcite28
-     },
-    {
-      id:'27',
-      did:'22-04-13',
-      date:'April 13, 2022',
-      author:'by Thomas Maestas, MA',
-      cat3:'Musing Blockchain',
-      title:'In the Former Days of Ethereum 1.0 ...',
-      post:blogpost27,
-     blogcite:blogcite27
-     },
-    {
-      id:'26',
-      did:'22-02-18',
-      date:'February 18, 2022',
-      author:'by Thomas Maestas, MA',
-      cat3:'A.I.Now.',
-      title:'I Think Therefore I am',
-      post:blogpost26,
-     blogcite:blogcite26
-     },
-    {
-      id:'25',
-      did:'22-02-17',
-      date:'February 17, 2022',
-      author:'by Thomas Maestas, MA',
-      cat3:'Sociology Tomorrow!',
-      title:'The Clarity of Money',
-      post:blogpost25,
-     blogcite:blogcite25
-     },
-    {
-      id:'24',
-      did:'21-10-24',
-      date:'October 24, 2021',
-      author:'by Thomas Maestas, MA',
-      cat3:'Sociology Tomorrow!',
-      title:'The Beginning of the End of Passwords',
-      post:blogpost24,
-     blogcite:blogcite24
-     },
-    {
-      id:'23',
-      did:'21-10-23',
-      date:'October 23, 2021',
-      author:'by Thomas Maestas, MA',
-      cat3:'Sociology Tomorrow!',
-      title:'Salutations of Safety, and the Wonderous Era of Conxtext-Aware Noise Canceling and Amplification',
-      post:blogpost23,
-     blogcite:blogcite23
-     },
-    
-    {
-      id:'22',
-      did:'21-10-22',
-      date:'October 22, 2021',
-      author:'by Thomas Maestas, MA',
-      cat3:'Web Dev Affairs',
-      title:'Shifting Technological Super-Structures, Part V: <br />M1 Chip: The Long-awaited salve to the End of Moore\'s Law',
-      post:blogpost22,
-     blogcite:blogcite22
-     },
+  var url =  [
     {
       id:'21',
       did:'21-10-21',
       date:'October 21, 2021',
       author:'by Thomas Maestas, MA',
       cat3:'Web Dev Affairs',
-      title:'Shifting Technological Super-Structures, Part IV: <br />M1 Chip: Heterogeneous Computing',
+      title:'Shifting Technological Super-Structures, Part III: <br />M1 Chip: What, Technically, is the Advantage?',
       post:blogpost21,
      blogcite:blogcite21
      },
@@ -810,8 +598,8 @@ var blogcite1 =
    }
    ] ;
 
-   for (let i=0;i<url.length;i++){ 
-    let cat = ` 
+   for (i=0;i<url.length;i++){ 
+    var cat = ` 
     <div id="${url[i].did}" class="blogDiv"> 
     <hr />  
     <a href="#top"><button>Top</button></a>  
@@ -827,9 +615,9 @@ var blogcite1 =
 document.getElementById("paragraph-may21").innerHTML += cat; 
 } 
  
- 
-for (let i=0;i<url.length;i++){ 
-  let catMod = `
+var i;
+for (i=0;i<url.length;i++){ 
+  var catMod = `
   <div id="${url[i].did}_mod" class="blogDivMod"> 
   <hr />  
   <a href="#top-mod"><button>Top</button></a>   

@@ -1,25 +1,100 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ })
+/************************************************************************/
+/******/ ({
 
-/***/ "./client/src/index5_d3.js":
-/*!*********************************!*\
-  !*** ./client/src/index5_d3.js ***!
-  \*********************************/
-/***/ (() => {
+/***/ 22:
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError [ERR_MODULE_NOT_FOUND]: Cannot find package '@babel/preset' imported from C:\\w\\www\\_ourdailytech\\babel-virtual-resolve-base.js\n    at new NodeError (C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:2669:5)\n    at packageResolve (C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:3325:9)\n    at moduleResolve (C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:3359:18)\n    at defaultResolve (C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:3398:13)\n    at C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:3421:14\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:63:103)\n    at _next (C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:65:194)\n    at C:\\w\\www\\_ourdailytech\\node_modules\\@babel\\core\\lib\\vendor\\import-meta-resolve.js:65:364\n    at new Promise (<anonymous>)");
+"use strict";
+
+
+// modal
+var modal = document.getElementById('msimpleModal');
+var modalBtn = document.getElementById('mmodalBtn');
+var closeBtn = document.getElementsByClassName('mcloseBtn')[0];
+
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+function openModal() {
+  modal.style.display = 'block';
+  modalBtn.style.display = 'none';
+}
+function closeModal() {
+  modal.style.display = 'none';
+  modalBtn.style.display = 'block';
+}
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+    modalBtn.style.display = 'block';
+  }
+};
 
 /***/ })
 
-/******/ 	});
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./client/src/index5_d3.js"]();
-/******/ 	
-/******/ })()
-;
-//# sourceMappingURL=app5.bundle.js.map
+/******/ });

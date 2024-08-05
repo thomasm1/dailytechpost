@@ -1,0 +1,16 @@
+<div class="admin">
+
+    <h5>{{message}}</h5>
+    <hr>
+<div class="row">
+        <div class="col post-btn">
+        <button (click)="getUpdate()" class="btn btn-gray pull-left ">Update</button> <br />
+        <button (click)="getErrorUpdate()" class="btn btn-gray pull-left">Errors</button>
+    </div>
+    <div class="col post"> 
+        <p *ngIf="getPostFromService">{{getPostFromService}}</p> 
+    </div>
+</div>
+
+
+</div>

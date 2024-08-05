@@ -1,0 +1,18 @@
+import "std.sol";
+contract Mycontract is named("Tomcontract") {
+uint myBalance = 0;
+function test(bytes32 str) {
+log0(str);
+}
+function addToMyBalance(uint newBalance) returns (uint) {
+return myBalance;
+}
+function decreaseMyBalance(uint newBalance) returns uint) {
+	if(newBalance <= myBalance) {
+		myBalance -= newBalance;
+		} else {
+		myBalance = 0;
+		}
+		return myBalance;
+	}
+}
