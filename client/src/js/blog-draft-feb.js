@@ -1,7 +1,8 @@
 
 
 var bloggerFeb = function () {
-
+ 
+  
 /*
   var blogpost17 = `
   <p class="firstparagraph">First, let me describe that blockchain technologies, i.e. Government contracts, Business contracts, Bitcoin and other
