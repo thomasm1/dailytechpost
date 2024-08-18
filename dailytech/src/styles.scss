@@ -286,37 +286,37 @@ strong {
     float: left;
     line-height: 1;
   }*/
-  p.blog-post {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-p.blog-post {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-p.firstparagraph {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-p.firstparagraph {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-  p.blog-post::after {
-      content: " ... ";
+//   p.blog-post {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+// p.blog-post {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+// p.firstparagraph {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+// p.firstparagraph {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+//   p.blog-post::after {
+//       content: " ... ";
          
-  }
-  .blog-post::after { 
-    content: " ... ";
-  }
+//   }
+//   .blog-post::after { 
+//     content: " ... ";
+//   }
  
-p.firstparagraph::after {  
-    content: " ... ";
-}
+// p.firstparagraph::after {  
+//     content: " ... ";
+// }
 
 .firstparagraph::first-letter {
     font-size: 200%;
@@ -325,41 +325,41 @@ p.firstparagraph::after {
     padding: 4pt;
     margin: 5px 4px 0px 0px;
 }
-p.blog-post {
-    text-overflow: clip;
-    text-overflow: ellipsis ellipsis;
-    text-overflow: ellipsis " [..]";
+// p.blog-post {
+//     text-overflow: clip;
+//     text-overflow: ellipsis ellipsis;
+//     text-overflow: ellipsis " [..]";
     
-    /* Global values */
-    text-overflow: inherit;
-    text-overflow: initial;
-    text-overflow: revert;
-    text-overflow: unset;
-  }
-  .blog-post {
-    text-overflow: clip;
-    text-overflow: ellipsis ellipsis;
-    text-overflow: ellipsis " [..]";
+//     /* Global values */
+//     text-overflow: inherit;
+//     text-overflow: initial;
+//     text-overflow: revert;
+//     text-overflow: unset;
+//   }
+//   .blog-post {
+//     text-overflow: clip;
+//     text-overflow: ellipsis ellipsis;
+//     text-overflow: ellipsis " [..]";
     
-    /* Global values */
-    text-overflow: inherit;
-    text-overflow: initial;
-    text-overflow: revert;
-    text-overflow: unset;
-  }
+//     /* Global values */
+//     text-overflow: inherit;
+//     text-overflow: initial;
+//     text-overflow: revert;
+//     text-overflow: unset;
+//   }
  
-p.firstparagraph {
-    text-overflow: clip;
-    text-overflow: ellipsis ellipsis;
-    text-overflow: ellipsis " [..]";
+// p.firstparagraph {
+//     text-overflow: clip;
+//     text-overflow: ellipsis ellipsis;
+//     text-overflow: ellipsis " [..]";
     
-    /* Global values */
-    text-overflow: inherit;
-    text-overflow: initial;
-    text-overflow: revert;
-    text-overflow: unset;
+//     /* Global values */
+//     text-overflow: inherit;
+//     text-overflow: initial;
+//     text-overflow: revert;
+//     text-overflow: unset;
  
-}
+// }
 
 .firstp::first-letter {
     font-size: 200%;
