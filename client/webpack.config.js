@@ -29,7 +29,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
       path: path.resolve(__dirname, 'client/dist'),
-    filename: 'bundle-daily2.js'
+    filename: 'bundle-daily9.js'
   },
   module: { 
     rules: [

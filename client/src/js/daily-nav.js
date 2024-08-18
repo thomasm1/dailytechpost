@@ -20,19 +20,19 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
         <li class="nav-item  ">
             <a class="nav-link" href="/archives" data-target="#navbarResponsive" data-toggle="collapse"
                 type="button" on-click="fadeUp()">
-                <span class="subdailytech ">BLOG  ✨
-                    <br />ARCHIVES </span>
+                <span class="subdailytech ">Mission✨
+                    <br />Statement</span>
             </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="https://blog.ourdailytech.net" target="_blank" type="button">
-        <span class="subdailytech ">
-        Daily<br />Tech v2</span>
+        <a class="nav-link" href="https://ourdailytech.net" target="_blank" type="button">
+        <span class="subdailytech " style="color:yellow;">
+        Daily<br />Tech V2</span>
         <i class="fa fa-external-link"></i>
         </a></li>
 
         <li class="nav-item hidden">
-            <a class="nav-link" ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
+            <a class="nav-link" ng-href="https://ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
                 title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse" type="button">
                 <span class="caret subdailytech">FOR_CAT
                     <br />EYES_ONLY</span>
@@ -46,7 +46,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
             <ul style="z-index:0" class="menu-left">
                 <li>
                     tmm FICTION
-                    <a style="z-index:199; " ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
+                    <a style="z-index:199; " ng-href="https://ourdailytech.net/_For_Cat_Eyes_Only_/index.html"
                         title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse" type="button">For
                         Cat Eyes Only:
                         <i>Early Months of Win&#39;s Campaign</i>
@@ -55,7 +55,7 @@ document.getElementById("dailyNav").innerHTML = `<nav class="navbar navbar-toggl
                 <li style="z-index:199; ">
                     tmm FICTION
                     <a style="z-index:199; "
-                        ng-href="https://www.ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing"
+                        ng-href="https://ourdailytech.net/_For_Cat_Eyes_Only_/index.html#capturing"
                         title="tmm FICTION" data-target="#navbarResponsive" data-toggle="collapse"
                         type="button">Fiction Excerpts From:
                         <br />
