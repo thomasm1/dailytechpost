@@ -15,24 +15,31 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: [
-      // 'babel-polyfill',
-      'core-js/stable',
-      'regenerator-runtime/runtime', 
-      './client/src/index1.js',
-      './client/src/index2.js',
-      './client/src/index3.js',
-      './client/src/index4.js',
-      './client/src/index5_d3.js',
-    ],
-  },
+    // app: [
+    //   // 'babel-polyfill',
+    //   'core-js/stable',
+    //   'regenerator-runtime/runtime'],
+      app1: './src/index1.js',
+      app2: './src/index2.js',
+      app3: './src/index3.js',
+      app4: './src/index4.js',
+      app5: './src/index5_d3.js' 
+  }, 
   output: {
     path: path.resolve(__dirname, 'build'),
-      path: path.resolve(__dirname, 'client/dist'),
-    filename: 'bundle-daily9.js'
+      path: path.resolve(__dirname, 'dist'),
+    filename: '[name]-bundle-daily.js'
   },
-  module: { 
-    rules: [
+    module: {
+      // loaders: [{
+      //     test: /\.js?$/,
+      //     exclude: /node_modules/,
+      //     loader: 'babel-loader',
+      //     query: {
+      //        presets: ['env', 'stage-0']
+      //     }
+      // }] 
+          rules: [
       {
         test: /\.js?$/,
         exclude: /node_modules/,
@@ -57,6 +64,9 @@ module.exports = {
       test: /\.css$/,
       use: ['style-loader', 'css-loader']
     }
-  ]
+  ] 
+    } 
   }
-}
+ 
+
+ 
