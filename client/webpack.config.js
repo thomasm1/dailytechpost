@@ -30,6 +30,11 @@ module.exports = {
       path: path.resolve(__dirname, 'dist'),
     filename: '[name]-bundle-daily.js'
   },
+  optimization: {
+      splitChunks: {
+          chunks: 'all',
+      },
+  },
     module: {
       // loaders: [{
       //     test: /\.js?$/,
