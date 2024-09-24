@@ -1,14 +1,16 @@
 const path = require('path');
 
 const config = {
-    entry: './src/js/cats.js', 
+    entry: {cats: './cats.js', config: './config.js'}, 
   output: {
     path: path.resolve(__dirname, 'dist/js/'),
-  filename: 'cats.bundle-october.js'
+  filename: '[name].bundle-1.js'
 },
   module: {
     rules: [
-      { test: /\.txt$/, use: 'raw-loader' }
+      { test: /\.txt$/, 
+        exclude: /node_modules/,
+        use:{ loader: 'raw-loader'} }
     ]
   }
 };
