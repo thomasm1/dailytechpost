@@ -41,10 +41,21 @@ fxLayoutAlign="center center">
       <section class="writing-form">
         <form [formGroup]="writingForm" (ngSubmit)="onSubmit()">
           <mat-form-field>
-            <textarea
+            <label for="title">Title</label>
+            <input
+              id="title"
               matInput
-              formControlName="writing"
-              placeholder="Write here..."
+              formControlName="title"
+              placeholder="Title"
+            />
+          </mat-form-field>
+          <br />
+          <mat-form-field> 
+            <textarea
+              id="content"
+              matInput
+              formControlName="content"
+              placeholder="Write here, Write now..."
             ></textarea>
           </mat-form-field>
           <button

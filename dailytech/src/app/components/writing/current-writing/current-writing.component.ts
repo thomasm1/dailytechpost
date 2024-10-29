@@ -36,8 +36,8 @@ export class CurrentWritingComponent implements OnInit {
   
     private initForm() {
       this.writingForm = this.fb.group({
-        'title': ['', Validators.required],
-        'content': ['', Validators.required]
+        title: ['', Validators.required],
+        content: ['', Validators.required]
       });
     }
     
@@ -83,6 +83,7 @@ export class CurrentWritingComponent implements OnInit {
     if(this.writingForm.valid) {
       const formValues = this.writingForm.value;
       console.log("valid", formValues);
+      
     }
   }
 }
