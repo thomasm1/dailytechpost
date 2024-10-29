@@ -113,6 +113,7 @@ import { GrootService } from './service/groot.service';
     ////// WRITING MODULE //////
     // CurrentWritingComponent,
     // NewWritingComponent,
+    // GridWritingsComponent,
     // PastWritingsComponent,
     // StopWritingComponent,
     // WritingComponent

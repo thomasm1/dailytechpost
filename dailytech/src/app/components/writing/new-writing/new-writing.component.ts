@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { WritingService } from '../writing.service';
-import { WritingBlog } from '../../../models/writing-blogs.model';
+import { WritingMod } from '../../../models/writing-blogs.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { Store } from '@ngrx/store';
@@ -16,12 +16,12 @@ import { Store } from '@ngrx/store';
 })
 export class NewWritingComponent implements OnInit { //, OnDestroy {
   // @Output() writingStart = new EventEmitter<void>();
-  // writingBlogs: WritingBlog[] = [];
-  // writingBlogs: Observable<WritingBlog[]>;
+  // writingMods: WritingMod[] = [];
+  // writingMods: Observable<WritingMod[]>;
 
   // private writingSubscription: Subscription;
-  // writingBlogs: WritingBlog[];
-  writingBlogs$: Observable<WritingBlog[]>;
+  // writingMods: WritingMod[];
+  writingMods$: Observable<WritingMod[]>;
 
   isLoading = true;
   private loadingSubscription: Subscription;
@@ -40,18 +40,18 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
     // this.isLoading$ = this.store.select(fromRoot.getIsLoading);
 
     // this.writingSubscription = this.writingService.writingsChanged.subscribe(
-    //   writingBlogs => { this.writingBlogs = writingBlogs; }
+    //   writingMods => { this.writingMods = writingMods; }
     // );
-    this.writingBlogs$ = this.store.select(fromWriting.getAvailableWritingBlogs)
+    this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
   this.fetchWritings();
   }
 
   fetchWritings() {
-    this.writingService.fetchAvailableWritingBlogs();
+    this.writingService.fetchAvailableWritingMods();
   }
 
-  onStartWriting(form: NgForm) {
-    this.writingService.startWriting(form.value.writing);
+  onStartWriting(ngForm: NgForm) {
+    this.writingService.startWriting(ngForm.value.writing);  //pass in the id
   }
 
   ngOnDestroy() {

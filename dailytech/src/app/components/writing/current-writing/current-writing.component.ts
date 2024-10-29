@@ -6,6 +6,7 @@ import { take } from 'rxjs/operators';
 import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,28 +15,39 @@ import * as fromWriting from '../../../reducers/writing.reducer';
   styleUrls: ['./current-writing.component.scss']
 })
 export class CurrentWritingComponent implements OnInit {
-
+  
   progress = 0;
   timer: any;
   news: string[];
-
+  writingForm: FormGroup;
+  
   constructor(
     private writingService: WritingService,
     private dialog: MatDialog,
-    private store: Store<fromWriting.State>
-    ) { }
-
+    private store: Store<fromWriting.State>,
+    private fb: FormBuilder
+  ) { }
+  
   ngOnInit() {
     this.startOrResumeWriting();
-
+    this.initForm();
+    
   }
-
+  
+    private initForm() {
+      this.writingForm = this.fb.group({
+        'title': ['', Validators.required],
+        'content': ['', Validators.required]
+      });
+    }
+    
+  
   startOrResumeWriting() {
-    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingBlog => {
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingMod => {
       // this.news = this.writingService.getWritingExercise().news;
-      this.news = writingBlog.news;
+      this.news = writingMod.news;
       // const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
-      const step = writingBlog.durationGoal /100 * 1000;
+      const step = writingMod.durationGoal /100 * 1000;
       this.timer = setInterval(() => {
         this.progress = this.progress + 1;
         if (this.progress >= 100) {
@@ -64,5 +76,13 @@ export class CurrentWritingComponent implements OnInit {
   }
   addUrl() {
     console.log("add-url");
+  }
+
+  onSubmit() {
+    console.log(this.writingForm);
+    if(this.writingForm.valid) {
+      const formValues = this.writingForm.value;
+      console.log("valid", formValues);
+    }
   }
 }

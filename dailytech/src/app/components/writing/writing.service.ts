@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { take } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
-import { WritingBlog } from '../../models/writing-blogs.model';
+import { WritingMod } from '../../models/writing-blogs.model';
 import { UiService } from '../../service/ui.service';
 import * as UI from '../../reducers/ui.actions';
 import * as Writing from '../../reducers/writing.actions';
@@ -17,9 +17,9 @@ import * as fromWriting from '../../reducers/writing.reducer';
 })
 
 export class WritingService {
-  // writingChanged = new Subject<WritingBlog>();
-  // writingsChanged = new Subject<WritingBlog[]>();
-  // finishedWritingsChanged = new Subject<WritingBlog[]>();
+  // writingChanged = new Subject<WritingMod>();
+  // writingsChanged = new Subject<WritingMod[]>();
+  // finishedWritingsChanged = new Subject<WritingMod[]>();
 
   // urlsWebDev = ['https://www.wired.com/tag/the-web/','https://www.infoworld.com/category/web-development/'];
   // urlsBlockchain = ['https://www.wired.com/tag/blockchain/','https://cointelegraph.com/tags/blockchain'];
@@ -27,12 +27,12 @@ export class WritingService {
   // urlsSoc = ['https://www.wired.com/','https://www.sociologylens.net/article-types/opinion/digital-sociology-reinvention-social-research-noortje-marres-digital-technology-contributes-sociology/18108'];
   // urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
 
-  // private availableWritingBlogs: WritingBlog[] = [
+  // private availableWritingMods: WritingMod[] = [
     // { id: '1a', name: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
      // ....
   // ];
-  // private ongoingWriting: WritingBlog;
-  // private writingBlogs: WritingBlog[] = [];
+  // private ongoingWriting: WritingMod;
+  // private writingMods: WritingMod[] = [];
   private firebaseSubs: Subscription[] = [];
 
   constructor(
@@ -41,8 +41,8 @@ export class WritingService {
     private store: Store<fromWriting.State>
     ) { }
 
-  fetchAvailableWritingBlogs() {
-    // return this.availableWritingBlogs.slice();
+  fetchAvailableWritingMods() {
+    // return this.availableWritingMods.slice();
     this.uiService.loadingStateChanged.next(true); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
     // this.store.dispatch(new UI.StartLoading());
     this.firebaseSubs.push(
@@ -63,25 +63,25 @@ export class WritingService {
           };
         });
       })
-      ).subscribe((writingBlogsArr: WritingBlog[]) => {
-        console.log(writingBlogsArr);
+      ).subscribe((writingModsArr: WritingMod[]) => {
+        console.log(writingModsArr);
         this.uiService.loadingStateChanged.next(false);
         // this.store.dispatch(new UI.StopLoading());
 
-        // this.availableWritingBlogs = writingBlogs;
-        // this.writingsChanged.next([...this.availableWritingBlogs]);
-        this.store.dispatch(new Writing.SetAvailableWritings(writingBlogsArr));
+        // this.availableWritingMods = writingMods;
+        // this.writingsChanged.next([...this.availableWritingMods]);
+        this.store.dispatch(new Writing.SetAvailableWritings(writingModsArr));
       }, error => {
         this.uiService.loadingStateChanged.next(false);
         // this.store.dispatch(new UI.StopLoading());
 
-        this.uiService.showSnackBar('Database is down, and fetching Blogs failed, please try again later', null, 3000);
+        this.uiService.showSnackBar('Database is down, and fetching Mods failed, please try again later', null, 3000);
         // this.writingsChanged.next(null);
        }));  // END FIREBASE SUBSCRIPTION ARRAY
   }
 
   startWriting(selectedId: string) {
-    // this.ongoingWriting = this.availableWritingBlogs.find(
+    // this.ongoingWriting = this.availableWritingMods.find(
     //   ex => ex.id === selectedId
     // );
     // this.writingChanged.next({ ...this.ongoingWriting });
@@ -89,11 +89,11 @@ export class WritingService {
   }
 
   completeWriting() {
-    // this.writingBlogs.push({
-    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingBlogObj => {
+    // this.writingMods.push({
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingModObj => {
     this.addDataToDatabase({
       // ...this.ongoingWriting,
-      ...writingBlogObj,
+      ...writingModObj,
       date: new Date(),
       state: 'completed'
     });
@@ -104,14 +104,14 @@ export class WritingService {
   }
 
   cancelWriting(progress: number) {
-    // this.writingBlogs.push({
-    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingBlogObj => {
+    // this.writingMods.push({
+    this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingModObj => {
     this.addDataToDatabase({
       // ...this.ongoingWriting,
-      ...writingBlogObj,
+      ...writingModObj,
       // durationGoal: this.ongoingWriting.durationGoal * (progress / 100),
-      durationGoal: writingBlogObj.durationGoal * (progress / 100),
-      wordCount: writingBlogObj.durationGoal * (progress / 100),
+      durationGoal: writingModObj.durationGoal * (progress / 100),
+      wordCount: writingModObj.durationGoal * (progress / 100),
       date: new Date(),
       state: 'cancelled'
     });
@@ -126,14 +126,14 @@ export class WritingService {
   // }
 
   fetchCompletedOrCancelledWritings() {
-    // return this.writingBlogs.slice();
+    // return this.writingMods.slice();
     this.firebaseSubs.push(
       this.db
       .collection('finished-writing-blogs')
       .valueChanges()
-      .subscribe((writingBlogsArr: WritingBlog[]) => {
-        // this.finishedWritingsChanged.next(writingBlogs);
-        this.store.dispatch(new Writing.SetFinishedWritings(writingBlogsArr))
+      .subscribe((writingModsArr: WritingMod[]) => {
+        // this.finishedWritingsChanged.next(writingMods);
+        this.store.dispatch(new Writing.SetFinishedWritings(writingModsArr))
       })
     );  // END FIREBASE SUBSCRIPTION ARRAY
   }
@@ -142,8 +142,8 @@ export class WritingService {
     this.firebaseSubs.forEach(sub =>sub.unsubscribe());
   }
 
-  private addDataToDatabase(writingBlogObj: WritingBlog) {
-    this.db.collection('finished-writing-blogs').add(writingBlogObj);
+  private addDataToDatabase(writingModObj: WritingMod) {
+    this.db.collection('finished-writing-blogs').add(writingModObj);
   }
 
 }

@@ -8,6 +8,7 @@ import { WritingComponent } from './components/writing/writing.component';
 import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
 import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
 import { PastWritingsComponent } from './components/writing/past-writings/past-writings.component';
+import { GridWritingsComponent } from './components/writing/grid-writings/grid-writings.component';
 import { StopWritingComponent } from './components/writing/current-writing/stop-writing.component';
 import { MaterialModule } from './material.module';
 // import { WritingRoutingModule } from './writing-routing.module';
@@ -19,6 +20,7 @@ import { writingReducer } from './reducers/writing.reducer';
     CurrentWritingComponent,
     NewWritingComponent,
     PastWritingsComponent,
+    GridWritingsComponent,
     StopWritingComponent
   ],
   imports: [

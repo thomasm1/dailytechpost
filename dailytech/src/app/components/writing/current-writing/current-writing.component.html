@@ -37,8 +37,25 @@ fxLayoutAlign="center center">
       <hr />
     </section>
     <section class="right clearfix">
+      <h3 class="title">WRITING TEXT AREA FORM</h3>
       <section class="writing-form">
-        WRITING TEXT AREA FORM
+        <form [formGroup]="writingForm" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <textarea
+              matInput
+              formControlName="writing"
+              placeholder="Write here..."
+            ></textarea>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!writingForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+        
       </section>
 
 
@@ -46,4 +63,4 @@ fxLayoutAlign="center center">
     </section>
   </section>
 </section>
-
+ 

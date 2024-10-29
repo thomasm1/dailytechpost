@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { WritingBlog } from '../models/writing-blogs.model';
+import { WritingMod } from '../models/writing-blogs.model';
 
 export const SET_AVAILABLE_WRITINGS = '[Writing] Set Available Writings';
 export const SET_FINISHED_WRITINGS = '[Writing] Set Finished Writings';
@@ -8,12 +8,12 @@ export const STOP_WRITING = '[Writing] Stop Writing';
 
 export class SetAvailableWritings implements Action {
   readonly type = SET_AVAILABLE_WRITINGS;
-  constructor(public payload: WritingBlog[]) {}
+  constructor(public payload: WritingMod[]) {}
 }
 
 export class SetFinishedWritings implements Action {
   readonly type = SET_FINISHED_WRITINGS;
-  constructor(public payload: WritingBlog[]) {}
+  constructor(public payload: WritingMod[]) {}
 }
 
 export class StartWriting implements Action {

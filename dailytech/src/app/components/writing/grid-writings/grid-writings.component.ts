@@ -5,18 +5,17 @@ import { Store } from '@ngrx/store';
 import { MatTableDataSource  } from '@angular/material/table';
 import {  MatSort } from '@angular/material/sort';
 import {  MatPaginator } from '@angular/material/paginator';
-import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-blogs.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 
 @Component({
-  selector: 'app-past-writings',
-  templateUrl: './past-writings.component.html',
-  styleUrls: ['./past-writings.component.scss']
+  selector: 'app-grid-writings',
+  templateUrl: './grid-writings.component.html',
+  styleUrls: ['./grid-writings.component.scss']
 })
-export class PastWritingsComponent implements OnInit, AfterViewInit { //, OnDestroy {
+export class GridWritingsComponent implements OnInit, AfterViewInit { //, OnDestroy {
 
   displayedColumns = ['date', 'name', 'durationGoal', 'wordCount', 'state'];
   dataSource = new MatTableDataSource<WritingMod>();

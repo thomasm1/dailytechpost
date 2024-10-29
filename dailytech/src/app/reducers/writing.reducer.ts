@@ -6,22 +6,22 @@ import {
   START_WRITING,
   STOP_WRITING,
 } from './writing.actions';
-import { WritingBlog } from '../models/writing-blogs.model';
+import { WritingMod } from '../models/writing-blogs.model';
 import * as fromRoot from './app.reducer';
 
 export interface WritingState {
   /// State for this module;
-  availableWritingBlogs: WritingBlog[]; /// bc this is lazy loaded;
-  finishedWritingBlogs: WritingBlog[]; // Writing State Knows about the app state, but app state doesn't know about Writing!!
-  activeWriting: WritingBlog;
+  availableWritingMods: WritingMod[]; /// bc this is lazy loaded;
+  finishedWritingMods: WritingMod[]; // Writing State Knows about the app state, but app state doesn't know about Writing!!
+  activeWriting: WritingMod;
 }
 
 export interface State extends fromRoot.State {
   writing: WritingState;
 }
 const initialState: WritingState = {
-  availableWritingBlogs: [], // based on writing state
-  finishedWritingBlogs: [],
+  availableWritingMods: [], // based on writing state
+  finishedWritingMods: [],
   activeWriting: null,
 };
 
@@ -30,17 +30,17 @@ export function writingReducer(state = initialState, action: WritingActions) {
     case SET_AVAILABLE_WRITINGS:
       return {
         ...state, // this will pull out available and finished
-       availableWritingBlogs: action.payload
+       availableWritingMods: action.payload
       };
     case SET_FINISHED_WRITINGS:
       return {
         ...state, // this will pull out available and finished
-        finishedWritingBlogs: action.payload
+        finishedWritingMods: action.payload
       };
     case START_WRITING:
       return {
         ...state, // this will pull out available and finished
-        activeWriting: { ... state.availableWritingBlogs.find(ex => ex.id === action.payload) }
+        activeWriting: { ... state.availableWritingMods.find(ex => ex.id === action.payload) }
       };
     case STOP_WRITING:
       return {
@@ -56,10 +56,10 @@ export function writingReducer(state = initialState, action: WritingActions) {
 
 export const getWritingState = createFeatureSelector<WritingState>('writing');
 
-// export const getAvailableWritingBlogs = (state: WritingState) => state.availableWritingBlogs;
-export const getAvailableWritingBlogs = createSelector(getWritingState, (state: WritingState) => state.availableWritingBlogs);
+// export const getAvailableWritingMods = (state: WritingState) => state.availableWritingMods;
+export const getAvailableWritingMods = createSelector(getWritingState, (state: WritingState) => state.availableWritingMods);
 
-export const getFinishedWritingBlogs = createSelector(getWritingState, (state: WritingState) => state.finishedWritingBlogs);
+export const getFinishedWritingMods = createSelector(getWritingState, (state: WritingState) => state.finishedWritingMods);
 
 export const getActiveWriting = createSelector(getWritingState, (state: WritingState) => state.activeWriting);
 

@@ -7,8 +7,11 @@
     <!-- <app-new-writing (writingStart)="ongoingWriting = true"></app-new-writing> -->
     <app-new-writing ></app-new-writing>
   </mat-tab>
-  <mat-tab label="Session Stats">
+  <mat-tab label="Past Session Stats">
     <app-past-writings></app-past-writings>
+</mat-tab>
+<mat-tab label="Statistics Grid">
+  <app-grid-writings></app-grid-writings>
 </mat-tab>
 </mat-tab-group>
 <app-current-writing *ngIf="ongoingWriting$ | async" ></app-current-writing>
