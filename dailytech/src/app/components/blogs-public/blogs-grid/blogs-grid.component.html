@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Blogs by Category</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> 
+
+<div *ngIf="blogs.length > 0">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Blog </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let blog of blogs">
+                <td>{{ blog.cat3 }}</td>
+                <td>{{ blog.title }}</td>
+                <td>{{ blog.post }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    </mat-card-content>
+    <mat-card-actions>
+       
+<div>
+    <button (click)="getCategories()">Retrieve blogs by Category</button>
+    <table>
+        <thead>
+            <tr>
+            SELECT     &nbsp; CATEGORIES
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories">
+            <td>
+                <input type="checkbox" (change)="onCheckboxChange($event, category)" />
+            </td>
+            <td>{{ blog.cat3  }}</td>
+        </tr>
+    </tbody>
+    </table>
+    <button [disabled]="!fetchBlogsEnabled" (click)="fetchBlogs()">Fetch Blogs</button>
+</div>
+    </mat-card-actions>
+</mat-card>

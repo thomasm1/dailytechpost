@@ -2,11 +2,34 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false,
+    production: false,
+    
+  firebase: {
+    apiKey: process.env['FIREBASE_API_KEY'], 
+    authDomain: 'ourdailytechdata2.firebaseapp.com',
+    databaseURL: '',
+    projectId: 'ourdailytechdata2',
+    storageBucket: 'ourdailytechdata2.firebasestorage.app',
+    messagingSenderId: '53863879417',
+    appId: '1:53863879417:web:d50e122439523c3a024828',
+    measurementId: '',
+},
+gemini_api_key: process.env['GEMINI_API_KEY'], 
+  debug_token: '',
+
+//   //crypto
+rinkebyUrl: 'https://api-rinkeby.etherscan.io/api',
+local_url: 'http://localhost:9000',
+nftsURL: '//34.199.129.2:9000',
+nft_url: '//localhost:8080/api' ,
+test_env: '', 
+cle_url: 'http://34.199.129.2:8080/login',
+
+  // other
   BASE: "http://34.199.129.2:8080",
   API_URL: "http://34.199.129.2:8080/api", 
-  // nasaKey: 'mF6DQ******iJw0',  
   apiKeyNYT: '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5',
   nyt_url: "http://34.199.129.2:8080/login/getNytApi",
   apiUrlNYT: "https://api.nytimes.com/svc",
@@ -14,34 +37,9 @@ export const environment = {
   google_url: "http://34.199.129.2:8080/login/getGoogleApi",
   nasa_url: "http://34.199.129.2:8080/login/getNasaApi", 
   json_url: "http://localhost:3000/nasa",  
+    aws_url: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa", 
   
-  //crypto
-  rinkebyUrl: 'https://api-rinkeby.etherscan.io/api',
-  local_url: 'http://localhost:9000',
-  nftsURL: '//34.199.129.2:9000',
-  nft_url: '//localhost:8080/api' ,
-  test_env: '',
-  
-  cle_url: 'http://34.199.129.2:8080/login',
 
-  // AWS Lambda-DynamoDB-APIgateway
-  aws_url: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa", 
-  firebase: {  // Per Firebase - apiKey not security concern
-    apiKey: 'AIzaSyCEdt9rr--Zgm9eh5DBGHM5C_LS2wUnI8M',
-    authDomain: 'ourdailytechdata.firebaseapp.com',
-    databaseURL: 'https://ourdailytechdata.firebaseio.com',
-    projectId: 'ourdailytechdata',
-    storageBucket: 'ourdailytechdata.appspot.com',
-    messagingSenderId: '99505496502',
-    baseUrl: 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=',
-  }, 
+
 };
  
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

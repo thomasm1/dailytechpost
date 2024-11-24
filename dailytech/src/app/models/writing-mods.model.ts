@@ -7,7 +7,9 @@ export interface WritingMod {
     wordCount?: number;
     date?: Date;
     state?: 'complete' | 'completed' | 'cancelled' | null;
-     
+    
+    content?: string;
+    
     did?: string, 
     author?: string,
     monthOrder?: string,
@@ -16,4 +18,5 @@ export interface WritingMod {
     post?: string,
     blogcite?: string,
     username?: string,
+
 }

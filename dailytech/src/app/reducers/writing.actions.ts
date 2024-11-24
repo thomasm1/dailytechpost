@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { WritingMod } from '../models/writing-blogs.model';
+import { WritingMod } from '../models/writing-mods.model';
 
 export const SET_AVAILABLE_WRITINGS = '[Writing] Set Available Writings';
 export const SET_FINISHED_WRITINGS = '[Writing] Set Finished Writings';

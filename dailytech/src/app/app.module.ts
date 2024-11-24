@@ -48,6 +48,7 @@ import { AuthModule } from './auth.module';
 import { WritingModule } from './writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
+import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component';
 import { NasaComponent } from './components/nasa/nasa.component';
 
 // NEWS
@@ -84,6 +85,7 @@ import { GrootService } from './service/groot.service';
     PostCancelComponent,
     BlogModalComponent,
     BlogsComponent,
+    BlogsGridComponent,
     NasaComponent,
     //CRYPTO
     NftsComponent,

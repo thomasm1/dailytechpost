@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { WritingService } from '../writing.service';
-import { WritingMod } from '../../../models/writing-blogs.model';
+import { WritingMod } from '../../../models/writing-mods.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { Store } from '@ngrx/store';
