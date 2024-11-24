@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { take } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
-import { WritingMod } from '../../models/writing-blogs.model';
+import { WritingMod } from '../../models/writing-mods.model';
 import { UiService } from '../../service/ui.service';
 import * as UI from '../../reducers/ui.actions';
 import * as Writing from '../../reducers/writing.actions';
@@ -47,7 +47,7 @@ export class WritingService {
     // this.store.dispatch(new UI.StartLoading());
     this.firebaseSubs.push(
       this.db
-      .collection('writing-blogs')
+      .collection('writing-mods')
       .snapshotChanges()
       .pipe(map(docArray => {
         return docArray.map(doc => {
@@ -129,7 +129,7 @@ export class WritingService {
     // return this.writingMods.slice();
     this.firebaseSubs.push(
       this.db
-      .collection('finished-writing-blogs')
+      .collection('finished-writing-mods')
       .valueChanges()
       .subscribe((writingModsArr: WritingMod[]) => {
         // this.finishedWritingsChanged.next(writingMods);
@@ -143,7 +143,7 @@ export class WritingService {
   }
 
   private addDataToDatabase(writingModObj: WritingMod) {
-    this.db.collection('finished-writing-blogs').add(writingModObj);
+    this.db.collection('finished-writing-mods').add(writingModObj);
   }
 
 }

@@ -16,6 +16,7 @@ import { WritingComponent } from './components/writing/writing.component';
 import { AdminGuardService } from './service/auth/admin-guard.service';
 import { UserGuardService } from './service/auth/user-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
+import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component';
 import { NasaComponent } from './components/nasa/nasa.component';
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   
   { path: 'blogs', component: BlogsListComponent }, 
+  { path: 'stats', component: BlogsGridComponent }, 
   { path: 'blogs/:cat', component: BlogsComponent},
   { path: 'blog/:id', component: BlogComponent },
   

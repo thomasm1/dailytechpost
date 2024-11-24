@@ -6,7 +6,7 @@ import {
   START_WRITING,
   STOP_WRITING,
 } from './writing.actions';
-import { WritingMod } from '../models/writing-blogs.model';
+import { WritingMod } from '../models/writing-mods.model';
 import * as fromRoot from './app.reducer';
 
 export interface WritingState {

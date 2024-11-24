@@ -25,7 +25,12 @@
  
         <a mat-list-item routerLink="" class="nav-link daily-tech monoton"
           >BLOG</a
-        >
+        >      
+        <a mat-list-item routerLink="/stats" 
+        *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async )"
+        class="nav-link daily-tech monoton"
+        >FILTER</a
+      >
         <a mat-list-item routerLink="/news" class="nav-link daily-tech monoton"
         >NEWS</a
       >

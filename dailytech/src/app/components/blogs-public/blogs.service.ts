@@ -1,8 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { Post } from '../../models/Post';
+ 
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+ 
+export type Post = { 
+  id: number,
+  did?: string,
+  date?: string,
+  author?: string,
+  monthOrder?: string,
+  cat3?: string,
+  title: string,
+  post?: string,
+  blogcite?: string,
+  username?: string,
+}
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +57,13 @@ export class BlogsService {
     )
   }
 
+  getCategories(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.urlDev}/posts/cat3s`);
+  }
+
+  getBlogsByCategories(cat3s: string[]): Observable<any[]> {
+    return this.http.post<any[]>(`${this.urlDev}/posts/blogs`, { cat3s });
+  }
   // getBlogsArray() {
   //   console.log(this.blogs);
   //   return [...this.blogs];

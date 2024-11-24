@@ -8,7 +8,7 @@ import {  MatPaginator } from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { WritingService } from '../writing.service';
-import { WritingMod } from '../../../models/writing-blogs.model';
+import { WritingMod } from '../../../models/writing-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 
 @Component({
