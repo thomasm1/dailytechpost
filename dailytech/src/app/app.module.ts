@@ -6,9 +6,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+ 
+// import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+// import { AngularFireAuthModule, provideAuth, getAuth } from '@angular/fire/auth';
+// import { provideAuth, getAuth } from '@angular/fire/auth';
+// import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore'; 
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -131,11 +136,20 @@ import { GrootService } from './service/groot.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase), 
+    AngularFireAuthModule,       // Firebase Authentication
+    AngularFirestoreModule, 
+
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
+    // provideFirestore(() => getFirestore()), 
     // StoreModule.forRoot({ui: appReducer}),
-    StoreModule.forRoot( reducers ),
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      },
+    }),
 
 
     WritingModule,
