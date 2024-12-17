@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 // import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
@@ -52,7 +52,7 @@ export class JwtAuthService {
     // this.store.dispatch({ type: 'START_LOADING' });
     this.store.dispatch(new UI.StartLoading());
 
-    this.afAuth.auth.createUserWithEmailAndPassword(
+    this.afAuth.createUserWithEmailAndPassword(
       authData.email,
       authData.password
     )
@@ -78,7 +78,7 @@ export class JwtAuthService {
     // this.uiService.loadingStateChanged.next(true);
     // this.store.dispatch({ type: 'START_LOADING' });
     this.store.dispatch(new UI.StartLoading());
-    this.afAuth.auth
+    this.afAuth
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         // this.uiService.loadingStateChanged.next(false);
@@ -97,7 +97,7 @@ export class JwtAuthService {
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.afAuth.signOut();
     // this.writingService.cancelSubscriptions();
     // this.authChange.next(false);
     // this.router.navigate(['/login'])
