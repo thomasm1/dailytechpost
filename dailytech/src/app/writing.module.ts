@@ -16,23 +16,22 @@ import { MaterialModule } from './material.module';
 import { writingReducer } from './reducers/writing.reducer';
 
 @NgModule({
-  declarations: [
-    WritingComponent,
-    CurrentWritingComponent,
-    NewWritingComponent,
-    PastWritingsComponent,
-    GridWritingsComponent,
-    StopWritingComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule, 
-    MaterialModule,
-    FlexLayoutModule,
-    // WritingRoutingModule
-    StoreModule.forFeature('writing', writingReducer) //adding unique identifier
-  ],
-  entryComponents: [StopWritingComponent]
+    declarations: [
+        WritingComponent,
+        CurrentWritingComponent,
+        NewWritingComponent,
+        PastWritingsComponent,
+        GridWritingsComponent,
+        StopWritingComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        FlexLayoutModule,
+        // WritingRoutingModule
+        StoreModule.forFeature('writing', writingReducer) //adding unique identifier
+    ]
 })
 export class WritingModule {}

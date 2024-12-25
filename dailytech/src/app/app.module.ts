@@ -77,100 +77,91 @@ import { GrootService } from './service/groot.service';
 // import { WritingRoutingModule } from './writing-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AnimationComponent,
-    FooterComponent,
-    SidenavListComponent,
-    MenuComponent,
-    PostComponent,
-    PostsViewerComponent,
-    BlogComponent,
-    BlogsListComponent,
-    PostCancelComponent,
-    BlogModalComponent,
-    BlogsComponent,
-    BlogsGridComponent,
-    NasaComponent,
-    //CRYPTO
-    NftsComponent,
-    NftComponent,
-    NftAddComponent,
-    ChaindataComponent,
-    
-    // TECH NEWS
-    NewsPageComponent,
-    NewsArticleSearchComponent,
-    NewsArticleResultsComponent,
-    NewsToolBarComponent,
-    HomeComponent,
-    
-    PipeCapitalizeCategoryPipe,
-    SafeHtmlPipe,
-    QrcodeComponent,
-    StarwarsComponent,
-
-    /////// AUTH MODULE ///////
-    // AdminComponent,
-    // PostsListComponent,
-    // RegisterComponent,
-    // SignonComponent,
-    // TitleBarComponent,
-
-    ////// WRITING MODULE //////
-    // CurrentWritingComponent,
-    // NewWritingComponent,
-    // GridWritingsComponent,
-    // PastWritingsComponent,
-    // StopWritingComponent,
-    // WritingComponent
-  ],
-  imports: [
-    NgxQRCodeModule,
-    MatDialogModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase), 
-    AngularFireAuthModule,       // Firebase Authentication
-    AngularFirestoreModule, 
-
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideFirestore(() => getFirestore()), 
-    // StoreModule.forRoot({ui: appReducer}),
-    StoreModule.forRoot(reducers, {
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true,
-      },
-    }),
-
-
-    WritingModule,
-    AuthModule,
-    // WritingRoutingModule,
-
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
-  providers: [
-    KeysService,
-    JwtAuthService,
-    NewsService,
-    WritingService,
-    UiService,
-    TitleCasePipe,
-    SafeHtmlPipe,
-    GrootService, 
-    // LoggingService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [PostCancelComponent, MatDialogModule]
+    declarations: [
+        AppComponent,
+        AnimationComponent,
+        FooterComponent,
+        SidenavListComponent,
+        MenuComponent,
+        PostComponent,
+        PostsViewerComponent,
+        BlogComponent,
+        BlogsListComponent,
+        PostCancelComponent,
+        BlogModalComponent,
+        BlogsComponent,
+        BlogsGridComponent,
+        NasaComponent,
+        //CRYPTO
+        NftsComponent,
+        NftComponent,
+        NftAddComponent,
+        ChaindataComponent,
+        // TECH NEWS
+        NewsPageComponent,
+        NewsArticleSearchComponent,
+        NewsArticleResultsComponent,
+        NewsToolBarComponent,
+        HomeComponent,
+        PipeCapitalizeCategoryPipe,
+        SafeHtmlPipe,
+        QrcodeComponent,
+        StarwarsComponent,
+        /////// AUTH MODULE ///////
+        // AdminComponent,
+        // PostsListComponent,
+        // RegisterComponent,
+        // SignonComponent,
+        // TitleBarComponent,
+        ////// WRITING MODULE //////
+        // CurrentWritingComponent,
+        // NewWritingComponent,
+        // GridWritingsComponent,
+        // PastWritingsComponent,
+        // StopWritingComponent,
+        // WritingComponent
+    ],
+    imports: [
+        NgxQRCodeModule,
+        MatDialogModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FlexLayoutModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        // provideFirebaseApp(() => initializeApp(environment.firebase)),
+        // provideAuth(() => getAuth()),
+        // provideFirestore(() => getFirestore()), 
+        // StoreModule.forRoot({ui: appReducer}),
+        StoreModule.forRoot(reducers, {
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictActionImmutability: true,
+            },
+        }),
+        WritingModule,
+        AuthModule,
+        // WritingRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ],
+    providers: [
+        KeysService,
+        JwtAuthService,
+        NewsService,
+        WritingService,
+        UiService,
+        TitleCasePipe,
+        SafeHtmlPipe,
+        GrootService,
+        // LoggingService,
+        { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
