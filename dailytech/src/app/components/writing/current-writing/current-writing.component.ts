@@ -6,7 +6,7 @@ import { take } from 'rxjs/operators';
 import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -19,13 +19,13 @@ export class CurrentWritingComponent implements OnInit {
   progress = 0;
   timer: any;
   news: string[];
-  writingForm: FormGroup;
+  writingForm: UntypedFormGroup;
   
   constructor(
     private writingService: WritingService,
     private dialog: MatDialog,
     private store: Store<fromWriting.State>,
-    private fb: FormBuilder
+    private fb: UntypedFormBuilder
   ) { }
   
   ngOnInit() {

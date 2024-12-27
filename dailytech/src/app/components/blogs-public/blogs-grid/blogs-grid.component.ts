@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormArray } from '@angular/forms';
 import { BlogsService } from '../../blogs-public/blogs.service';
 import { MatCard, MatCardActions } from '@angular/material/card';
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -28,11 +28,11 @@ import { MatFormField } from '@angular/material/form-field';
   export class BlogsGridComponent implements OnInit {
     categories: string[] = [];
     blogs: Post[] = []; 
-    categoriesForm: FormGroup;
+    categoriesForm: UntypedFormGroup;
     fetchBlogsEnabled: boolean = false;
     
 
-    constructor(private fb: FormBuilder, private blogsService: BlogsService) { 
+    constructor(private fb: UntypedFormBuilder, private blogsService: BlogsService) { 
         this.categoriesForm = this.fb.group({
             selectedCategories: this.fb.array([])
     });
@@ -43,7 +43,7 @@ import { MatFormField } from '@angular/material/form-field';
         this.getCategories();
     }
     get selectedCategories() {
-        return this.categoriesForm.get('selectedCategories') as FormArray;
+        return this.categoriesForm.get('selectedCategories') as UntypedFormArray;
     }
     getCategories() {
         this.blogsService.getCategories().subscribe((categories: string[]) => {
@@ -52,7 +52,7 @@ import { MatFormField } from '@angular/material/form-field';
         });
     }
     onCategoryChange(event: any): void {
-        const selectedCategories = this.categoriesForm.value.selectedCategories as FormArray;
+        const selectedCategories = this.categoriesForm.value.selectedCategories as UntypedFormArray;
         if(event.target.checked) {
             selectedCategories.push(this.fb.control(event.target.value));
         } 

@@ -122,7 +122,6 @@
       }
     }
   },
-  "defaultProject": "dailytech",
   "cli": {
     "analytics": false
   }
