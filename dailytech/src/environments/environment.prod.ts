@@ -12,7 +12,8 @@ export const environment = {
     appId: "1:53863879417:web:d50e122439523c3a024828",
     measurementId: "G-Q1HCMEBC5D"
 },
-  gemini_api_key: 'AIzaSyC75wo7wv_bW4kIib0IrFlPP6fhfwSg6C0',
+// Firebase-related APIs use API keys only to identify the Firebase project or app, not for authorization to call the API (like some other APIs allow). Authorization for Firebase-related APIs is handled separately from the API key, either through Google Cloud IAM permissions, Firebase Security Rules, or Firebase App Check. This is why it's OK to include Firebase API keys in your code when you use them only with Firebase-related APIs.
+gemini_api_key: process.env['GEMINI_API_KEY'],  
   // gemini_api_key: '${{ secrets.GEMINI_API_KEY }}',
   debug_token: '',
 

@@ -19,9 +19,8 @@ export const environment = {
     appId: "1:53863879417:web:d50e122439523c3a024828",
     measurementId: "G-Q1HCMEBC5D"
 },
-// gemini_api_key: process.env['GEMINI_API_KEY'],  
-// gemini_api_key: '${{ secrets.GEMINI_API_KEY }}',
- gemini_api_key: 'AIzaSyC75wo7wv_bW4kIib0IrFlPP6fhfwSg6C0',
+gemini_api_key: process.env['GEMINI_API_KEY'],  
+// gemini_api_key: '${{ secrets.GEMINI_API_KEY }}', 
   debug_token: '',
 
 //   //crypto
