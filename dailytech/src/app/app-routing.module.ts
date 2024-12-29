@@ -20,10 +20,7 @@ import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-g
 import { NasaComponent } from './components/nasa/nasa.component';
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
-
-import { StarwarsComponent } from './components/features/starwars/starwars.component';
-import { MarvelComponent } from './components/features/marvel/marvel.component'; 
-
+ 
 const routes: Routes = [ 
   { path: '', component: BlogsListComponent },
   { path: 'home', component: HomeComponent },
@@ -34,10 +31,8 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent },
   
   { path: 'posts', component: PostsViewerComponent },
-  { path: 'writing', component: WritingComponent,  canActivate:[UserGuardService]},
-  { path: 'nasa', component: NasaComponent },
-  // { path: 'marvel', component: MarvelComponent },
-  // { path: 'marvel/:guardiansId', component: MarvelComponent },
+  { path: 'writing', component: WritingComponent}, // canActivate:[UserGuardService]},
+  { path: 'nasa', component: NasaComponent }, 
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 

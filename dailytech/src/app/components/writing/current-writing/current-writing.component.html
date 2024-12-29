@@ -34,14 +34,16 @@ fxLayoutAlign="center center">
       <button mat-raised-button color="accent" (click)="postCancel()">
         Pause writing
       </button>
-      <hr />
+ 
     </section>
     <section class="right clearfix">
-      <h3 class="title">WRITING TEXT AREA FORM</h3>
+      <h3 class="title">WRITE NOW. </h3>  
+
       <section class="writing-form">
         <form [formGroup]="writingForm" (ngSubmit)="onSubmit()">
+
           <mat-form-field>
-            <label for="title">Title</label>
+            <mat-label for="title">Title</mat-label>
             <input
               id="title"
               matInput
@@ -49,28 +51,36 @@ fxLayoutAlign="center center">
               placeholder="Title"
             />
           </mat-form-field>
-          <br />
-          <mat-form-field> 
-            <textarea
-              id="content"
-              matInput
-              formControlName="content"
-              placeholder="Write here, Write now..."
-            ></textarea>
+          <mat-form-field>
+            <mat-label for="cat3">Category</mat-label>
+            <mat-select placeholder="cat3" name="writing"  formControlName="cat3"  >
+              <mat-option *ngFor="let writing of writingMods$ | async" 
+              [value]="writing.cat3">
+                  {{ writing.cat3 }}
+              </mat-option>
+          </mat-select>
           </mat-form-field>
+          <mat-form-field> 
+            <textarea class="post"
+              id="post"
+              matInput
+              formControlName="post"
+              placeholder="POST: Write here, Write now..."
+            ></textarea> 
+          </mat-form-field>        
           <button
-            mat-raised-button
-            color="primary"
-            [disabled]="!writingForm.valid"
+          mat-raised-button
+          color="primary"
           >
-            Submit
-          </button>
+          Submit
+        </button>
+          <!-- [disabled]="!writingFo
+           
+          rm.valid" -->
         </form>
         
       </section>
-
-
-     <hr>
+ 
     </section>
   </section>
 </section>

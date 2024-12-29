@@ -1,8 +1,7 @@
 export interface WritingMod {
-    id?: string;
-    name?: string;
-    news?: string[];
-    category?: string;
+    id?: string; 
+    cat3?: string,
+    news?: string[]; 
     durationGoal?: number;
     wordCount?: number;
     date?: Date;
@@ -13,7 +12,6 @@ export interface WritingMod {
     did?: string, 
     author?: string,
     monthOrder?: string,
-    cat3?: string,
     title?: string,
     post?: string,
     blogcite?: string,

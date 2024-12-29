@@ -7,16 +7,21 @@ export const environment = {
     production: false,
     
   firebase: {
-    apiKey: process.env['FIREBASE_API_KEY'], 
-    authDomain: 'ourdailytechdata2.firebaseapp.com',
-    databaseURL: '',
-    projectId: 'ourdailytechdata2',
-    storageBucket: 'ourdailytechdata2.firebasestorage.app',
-    messagingSenderId: '53863879417',
-    appId: '1:53863879417:web:d50e122439523c3a024828',
-    measurementId: '',
+    // apiKey: process.env['FIREBASE_API_KEY'], 
+    //  apiKey: 'AIzaSyASxeRaQ346hnCcJ2AfcJ70KxFgHPahM9w',
+    // apiKey: '${{ secrets.FIREBASE_API_KEY }}',
+    apiKey: "AIzaSyASxeRaQ346hnCcJ2AfcJ70KxFgHPahM9w",
+    authDomain: "ourdailytechdata2.firebaseapp.com",
+    databaseURL: "https://ourdailytechdata2-default-rtdb.firebaseio.com",
+    projectId: "ourdailytechdata2",
+    storageBucket: "ourdailytechdata2.firebasestorage.app",
+    messagingSenderId: "53863879417",
+    appId: "1:53863879417:web:d50e122439523c3a024828",
+    measurementId: "G-Q1HCMEBC5D"
 },
-gemini_api_key: process.env['GEMINI_API_KEY'], 
+// gemini_api_key: process.env['GEMINI_API_KEY'],  
+// gemini_api_key: '${{ secrets.GEMINI_API_KEY }}',
+ gemini_api_key: 'AIzaSyC75wo7wv_bW4kIib0IrFlPP6fhfwSg6C0',
   debug_token: '',
 
 //   //crypto

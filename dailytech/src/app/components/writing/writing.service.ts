@@ -28,7 +28,7 @@ export class WritingService {
   // urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
 
   // private availableWritingMods: WritingMod[] = [
-    // { id: '1a', name: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
+    // { id: '1a', cat3: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
      // ....
   // ];
   // private ongoingWriting: WritingMod;
@@ -54,12 +54,14 @@ export class WritingService {
           return {
             id: doc.payload.doc.id,
             // spread operator pulling objects out of payload, and adding to object returned
-            name: doc.payload.doc.data()['name'],
+            cat3: doc.payload.doc.data()['cat3'],
             news: doc.payload.doc.data()['news'],
             durationGoal: doc.payload.doc.data()['durationGoal'],
             wordCount: doc.payload.doc.data()['wordCount'],
             date: doc.payload.doc.data()['date'],
-            state: doc.payload.doc.data()['state']
+            state: doc.payload.doc.data()['state'],
+            title: doc.payload.doc.data()['title'],
+            post: doc.payload.doc.data()['post'],
           };
         });
       })
@@ -142,6 +144,21 @@ export class WritingService {
     this.firebaseSubs.forEach(sub =>sub.unsubscribe());
   }
 
+  submitWriting(writingData: WritingMod):  void {
+    return this.addDataToDatabase(writingData);
+  }
+
+ 
+  addFullDataToDatabase(writingModObj: WritingMod): Promise<void> {
+    return this.db.collection('finished-writing-mods').add(writingModObj)
+      .then(() => {
+        console.log('Data added successfully');
+      })
+      .catch(error => {
+        console.error('Error adding data: ', error);
+        throw error;
+      });
+  }
   private addDataToDatabase(writingModObj: WritingMod) {
     this.db.collection('finished-writing-mods').add(writingModObj);
   }

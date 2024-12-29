@@ -18,7 +18,7 @@ import * as fromWriting from '../../../reducers/writing.reducer';
 })
 export class PastWritingsComponent implements OnInit, AfterViewInit { //, OnDestroy {
 
-  displayedColumns = ['date', 'name', 'durationGoal', 'wordCount', 'state'];
+  displayedColumns = ['did',  'post', 'cat3', 'wordCount' ];
   dataSource = new MatTableDataSource<WritingMod>();
   // private exChangedSubscription: Subscription;
 

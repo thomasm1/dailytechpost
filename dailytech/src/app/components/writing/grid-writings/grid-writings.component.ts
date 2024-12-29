@@ -17,7 +17,7 @@ import * as fromWriting from '../../../reducers/writing.reducer';
 })
 export class GridWritingsComponent implements OnInit, AfterViewInit { //, OnDestroy {
 
-  displayedColumns = ['date', 'name', 'durationGoal', 'wordCount', 'state'];
+  displayedColumns = ['date', 'title', 'durationGoal', 'wordCount', 'state'];
   dataSource = new MatTableDataSource<WritingMod>();
   // private exChangedSubscription: Subscription;
 
