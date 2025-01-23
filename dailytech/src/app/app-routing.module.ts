@@ -31,7 +31,8 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent },
   
   { path: 'posts', component: PostsViewerComponent },
-  { path: 'writing', component: WritingComponent}, // canActivate:[UserGuardService]},
+  { path: 'writing', component: WritingComponent}, 
+  { path: 'premium', component: WritingComponent, canActivate:[UserGuardService]},   // temp
   { path: 'nasa', component: NasaComponent }, 
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },

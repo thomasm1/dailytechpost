@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Subject } from 'rxjs';
-import { Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { take } from 'rxjs/operators';
+import { Subject, of, Observable, Subscription } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import { WritingMod } from '../../models/writing-mods.model';
@@ -11,6 +9,7 @@ import { UiService } from '../../service/ui.service';
 import * as UI from '../../reducers/ui.actions';
 import * as Writing from '../../reducers/writing.actions';
 import * as fromWriting from '../../reducers/writing.reducer';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +20,41 @@ export class WritingService {
   // writingsChanged = new Subject<WritingMod[]>();
   // finishedWritingsChanged = new Subject<WritingMod[]>();
 
-  // urlsWebDev = ['https://www.wired.com/tag/the-web/','https://www.infoworld.com/category/web-development/'];
-  // urlsBlockchain = ['https://www.wired.com/tag/blockchain/','https://cointelegraph.com/tags/blockchain'];
-  // urlsAI = ['https://www.wired.com/tag/artificial-intelligence/','https://www.sciencedaily.com/news/computers_math/artificial_intelligence/'];
-  // urlsSoc = ['https://www.wired.com/','https://www.sociologylens.net/article-types/opinion/digital-sociology-reinvention-social-research-noortje-marres-digital-technology-contributes-sociology/18108'];
-  // urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
+  urlsWebDev = ['https://www.wired.com/tag/the-web/','https://www.infoworld.com/category/web-development/'];
+  urlsBlockchain = ['https://www.wired.com/tag/blockchain/','https://cointelegraph.com/tags/blockchain'];
+  urlsAI = ['https://www.wired.com/tag/artificial-intelligence/','https://www.sciencedaily.com/news/computers_math/artificial_intelligence/'];
+  urlsSoc = ['https://www.wired.com/','https://www.sociologylens.net/article-types/opinion/digital-sociology-reinvention-social-research-noortje-marres-digital-technology-contributes-sociology/18108'];
+  urlsQuantum = ['https://www.wired.com/tag/quantum-computing/','https://phys.org/physics-news/quantum-physics/'];
 
-  // private availableWritingMods: WritingMod[] = [
-    // { id: '1a', cat3: 'Web Dev Affairs', news: this.urlsWebDev, category: 'web-dev-affairs', durationGoal: 120, wordCount: 4550, date: new Date(), state: null },
-     // ....
-  // ];
+  private defaultWritingMods: WritingMod[] = [  /// Functionality for non-logged-in users
+    { id: '0a', 
+      cat3: 'Web Dev Affairs', 
+      news: this.urlsWebDev, 
+      durationGoal: 120, wordCount: 0, date: new Date(), state: null
+     },
+     { id: '1a', 
+       cat3: 'Quantum Data', 
+       news: this.urlsQuantum, 
+       durationGoal: 120, wordCount: 0, date: new Date(), state: null
+      },
+      { id: '2a', 
+        cat3: 'Musing Blockchain', 
+        news: this.urlsBlockchain, 
+        durationGoal: 120, wordCount: 0, date: new Date(), state: null
+       },
+       { id: '3a', 
+         cat3: 'Sociology Tomorrow!', 
+         news: this.urlsSoc, 
+         durationGoal: 120, wordCount: 0, date: new Date(), state: null
+        },
+        { id: '4a', 
+          cat3: 'A.I.Now.', 
+          news: this.urlsAI, 
+          durationGoal: 120, wordCount: 0, date: new Date(), state: null
+         },
+         
+          
+  ];
   // private ongoingWriting: WritingMod;
   // private writingMods: WritingMod[] = [];
   private firebaseSubs: Subscription[] = [];
@@ -38,9 +62,13 @@ export class WritingService {
   constructor(
     private db: AngularFirestore,
     private uiService: UiService,
-    private store: Store<fromWriting.State>
+    private store: Store<fromWriting.State>,
+    private snackBar:MatSnackBar
     ) { }
 
+    getDefaultWritingMods():Observable<WritingMod[]> {  /// Functionality for non-logged-in users
+        return of(this.defaultWritingMods); 
+    }
   fetchAvailableWritingMods() {
     // return this.availableWritingMods.slice();
     this.uiService.loadingStateChanged.next(true); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
@@ -104,7 +132,12 @@ export class WritingService {
     this.store.dispatch(new Writing.StopWriting());
   });
   }
+  hardQuitWriting() {
+    // this.ongoingWriting = null;
+    // this.writingChanged.next(null);
+    this.store.dispatch(new Writing.StopWriting());
 
+  }
   cancelWriting(progress: number) {
     // this.writingMods.push({
     this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingModObj => {
@@ -145,6 +178,8 @@ export class WritingService {
   }
 
   submitWriting(writingData: WritingMod):  void {
+    this.snackBar.open('Submission successful', null, { duration: 3000 }); 
+
     return this.addDataToDatabase(writingData);
   }
 
@@ -155,7 +190,10 @@ export class WritingService {
         console.log('Data added successfully');
       })
       .catch(error => {
-        console.error('Error adding data: ', error);
+        console.error('OOPS! Must be logged in to Database - Error adding data: ', error);
+        this.snackBar.open('OOPS! Must be logged in to Database - Error adding data: ', null, {
+          duration: 3000
+        });
         throw error;
       });
   }

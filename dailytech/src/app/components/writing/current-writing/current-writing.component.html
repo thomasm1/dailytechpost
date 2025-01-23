@@ -1,18 +1,14 @@
-<section   fxLayout="column"
-fxLayoutAlign="center center">
-  <section
-    class="quote current-writing"
-
-  >
+<section fxLayout="column" fxLayoutAlign="center center">
+  <section class="quote current-writing">
     <pre>
-            "Be ruthless about protecting writing days, i.e., do not cave in to endless requests to have "essential" and
-            "long overdue" meetings on those days. The funny thing is that, although writing has been my actual job for
-            several years now, I still seem to have to fight for time in which to do it. Some people do not seem to grasp
-            that I still have to sit down in peace and write the books, apparently believing that they pop up like mushrooms
-            without my connivance."
-            ― J.K. Rowling
-        </pre
-    >
+
+    "Be ruthless about protecting writing days, i.e., do not cave in to endless requests to have "essential" and
+    "long overdue" meetings on those days. The funny thing is that, although writing has been my actual job for
+    several years now, I still seem to have to fight for time in which to do it. Some people do not seem to grasp
+    that I still have to sit down in peace and write the books, apparently believing that they pop up like mushrooms
+    without my connivance."
+    ― J.K. Rowling
+    </pre>
   </section>
   <section class="clearfix">
     <section class="left">
@@ -25,63 +21,52 @@ fxLayoutAlign="center center">
         </ul>
         <p>Add Research</p>
         <button (click)="addUrl()">+</button>
-      </section>
-      <mat-progress-spinner
-        mode="determinate"
-        [value]="progress"
-      ></mat-progress-spinner>
+      </section>                                                     
+      <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
       <h1>{{ progress }}%</h1>
-      <button mat-raised-button color="accent" (click)="postCancel()">
+      <button mat-raised-button (click)="postCancel()">
         Pause writing
-      </button>
+      </button> 
+      <hr>
  
+      <button mat-raised-button color="accent" (click)="quitCancel()">
+        &nbsp;Quit writing&nbsp;&nbsp;&nbsp;
+      </button>
     </section>
     <section class="right clearfix">
-      <h3 class="title">WRITE NOW. </h3>  
+      <h3 class="title"> Write here. Write now. </h3>
 
       <section class="writing-form">
         <form [formGroup]="writingForm" (ngSubmit)="onSubmit()">
 
           <mat-form-field>
             <mat-label for="title">Title</mat-label>
-            <input
-              id="title"
-              matInput
-              formControlName="title"
-              placeholder="Title"
-            />
+            <input type="text" class="title" min="100" id="title" matInput formControlName="title"
+              placeholder="Title" />
           </mat-form-field>
           <mat-form-field>
             <mat-label for="cat3">Category</mat-label>
-            <mat-select placeholder="cat3" name="writing"  formControlName="cat3"  >
-              <mat-option *ngFor="let writing of writingMods$ | async" 
-              [value]="writing.cat3">
-                  {{ writing.cat3 }}
+            <mat-select placeholder="Category" name="writing" formControlName="cat3">
+              <mat-option *ngFor="let writing of writingMods$ | async" [value]="writing.cat3">
+                {{ writing.cat3 }}
               </mat-option>
-          </mat-select>
+            </mat-select>
           </mat-form-field>
-          <mat-form-field> 
-            <textarea class="post"
-              id="post"
-              matInput
-              formControlName="post"
-              placeholder="POST: Write here, Write now..."
-            ></textarea> 
-          </mat-form-field>        
-          <button
-          mat-raised-button
-          color="primary"
-          >
-          Submit
-        </button>
+          <mat-form-field>
+            <textarea class="post" id="post" matInput formControlName="post"
+              placeholder="POST: Write here, Write now..."></textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary">
+            Submit
+          </button>
+
           <!-- [disabled]="!writingFo
            
           rm.valid" -->
         </form>
-        
+
       </section>
- 
+
     </section>
   </section>
 </section>
- 

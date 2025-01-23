@@ -36,7 +36,7 @@
   "dataGroups": [
     {
       "name": "posts+apis",
-      "urls": ["http:34.199.129.2:8887/nft","https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts"],
+      "urls": ["http:3.215.230.246:8887/nft","https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts"],
       "cacheConfig": {
         "maxSize": 5,
         "maxAge": "1d",

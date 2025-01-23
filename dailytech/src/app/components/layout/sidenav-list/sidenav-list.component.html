@@ -9,15 +9,19 @@
     </a>
   </div>
 <hr>
+ 
+
   <a
-    mat-list-item
-    routerLink="/writing"
-    (click)="onClose()"
-    *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
-  >
-    <mat-icon>edit</mat-icon>
-    <span class="nav-caption daily-tech monoton">Write!</span>
-  </a> 
+  mat-list-item
+  routerLink="/writing"
+  (click)="onClose()" 
+  *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
+>
+  <mat-icon>edit</mat-icon>
+  <span class="nav-caption daily-tech monoton">Write!</span>
+</a> 
+
+
   <a mat-list-item routerLink="" (click)="onClose()">
     <mat-icon>book</mat-icon>
     <span class="nav-caption daily-tech monoton">Blog</span>

@@ -9,8 +9,7 @@ import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { state } from '@angular/animations';
-import { getuid } from 'process';
+import { Router  } from '@angular/router';
 
 
 @Component({
@@ -30,7 +29,8 @@ export class CurrentWritingComponent implements OnInit {
     private writingService: WritingService,
     private dialog: MatDialog,
     private store: Store<fromWriting.State>,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -66,7 +66,12 @@ export class CurrentWritingComponent implements OnInit {
       }, step); // 1000);
     })
   }
-
+  quitCancel() {
+    this.writingService.hardQuitWriting();
+    this.writingForm.reset();
+    this.progress = 0;
+    this.router.navigate(['/']); 
+  }
   postCancel() {
     clearInterval(this.timer);
     const dialogRef = this.dialog.open(StopWritingComponent, {
@@ -99,6 +104,8 @@ export class CurrentWritingComponent implements OnInit {
         () => {
           console.log('Submission successful');
           this.writingForm.reset();
+          this.progress = 0;
+          this.router.navigate(['/']);
         },
         error => {
           console.error('Submission failed', error);

@@ -1,4 +1,4 @@
-import { Component, OnInit,   OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,6 +8,8 @@ import { WritingMod } from '../../../models/writing-mods.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { Store } from '@ngrx/store';
+import { JwtAuthService } from 'src/app/service/auth/jwt-auth.service';
+import * as fromRoot from '../../../reducers/app.reducer';
 
 @Component({
   selector: 'app-new-writing',
@@ -22,6 +24,8 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   // private writingSubscription: Subscription;
   // writingMods: WritingMod[];
   writingMods$: Observable<WritingMod[]>;
+ 
+  isAuth$: Observable<boolean>;
 
   isLoading = true;
   private loadingSubscription: Subscription;
@@ -31,21 +35,36 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
     private writingService: WritingService,
     private uiService: UiService,
     private store: Store<fromWriting.State>
-    ) { }
+ 
+  ) { }
 
   ngOnInit() {
-    this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
-      isLoading => { this.isLoading = isLoading;  }    // GONNA KEEP SUBSCRIPTION FOR THIS LOADING SPINNER
-    );
-    // this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+    this.isAuth$ = this.store.select(fromRoot.getIsAuth);
 
-    // this.writingSubscription = this.writingService.writingsChanged.subscribe(
-    //   writingMods => { this.writingMods = writingMods; }
-    // );
-    this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
-  this.fetchWritings();
+    if (this.isAuth$ ) {
+      console.log('isAuth$ is true');
+      this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
+        isLoading => { this.isLoading = isLoading; }    // GONNA KEEP SUBSCRIPTION FOR THIS LOADING SPINNER
+      );
+      // this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+
+      // this.writingSubscription = this.writingService.writingsChanged.subscribe(
+      //   writingMods => { this.writingMods = writingMods; }
+      // );
+      this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
+      this.fetchWritings();
+    } else {
+      console.log('isAuth$ is false');
+      this.writingMods$ = this.getDefaultWritings(); 
+
+    }
+
+   // FUNCTIONALITY FOR Non-logged-in users
   }
 
+  getDefaultWritings() {
+    return this.writingService.getDefaultWritingMods();
+  }
   fetchWritings() {
     this.writingService.fetchAvailableWritingMods();
   }

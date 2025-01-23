@@ -10,7 +10,8 @@ import { WritingService } from '../../components/writing/writing.service';
 import { UiService } from '../ui.service';
 import * as fromRoot from '../../reducers/app.reducer';
 import * as UI from '../../reducers/ui.actions';
-import * as Auth from '../../reducers/auth.actions'
+import * as Auth from '../../reducers/auth.actions';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -97,7 +98,11 @@ export class JwtAuthService {
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.afAuth.auth.signOut().then(() => {
+      this.store.dispatch(new Auth.SetUnauthenticated());
+    }).catch(error => {
+      console.log('LOGOUT FAILED', error);
+    });
     // this.writingService.cancelSubscriptions();
     // this.authChange.next(false);
     // this.router.navigate(['/login'])

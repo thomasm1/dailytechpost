@@ -11,10 +11,14 @@
     
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs id="menu-list">
       <mat-nav-list fxLayout fxLayoutGap="10px" class="navigation-items">
+ 
+        <a 
+        mat-list-item routerLink="/writing" 
+        class="nav-link daily-tech monoton" 
+        *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()"
+          >WRITE!
+          </a>
 
-        <a mat-list-item routerLink="/writing" class="nav-link daily-tech monoton" *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()"
-          >WRITE!</a
-        >
         <a
           mat-list-item
           *ngIf="adminAuthService.isAdminLoggedIn()"
