@@ -1,0 +1,51 @@
+#spring.application.name: DASHBOARD-SERVICE
+spring.profiles.active: local
+## Configuring info endpoint
+info.app.name: DASHBOARD SERVICE
+info.app.description: Daily-Tech Server Application
+info.app.version: 1.0.0
+management.info.env.enabled: true
+
+management.endpoints.web.exposure.include: health,metrics
+
+logging.level.org.springframework: error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
