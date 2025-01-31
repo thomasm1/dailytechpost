@@ -6,6 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,6 +28,7 @@ public class PostEntity {
 		String getCat3();
 		String getBlogcite();
 	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID", nullable = false)
@@ -56,12 +61,21 @@ public class PostEntity {
 	@Column(name = "USERNAME", nullable = false)
 	private String username;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "CATEGORY_ID")
+	@Column(name = "STATE")
+	private String state;
+
+	@Column(name = "WORD_COUNT")
+	private int wordCount;
+
+	@Column(name = "DURATION_GOAL")
+	private int durationGoal;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "category_id" )
 	private Category category;
 
-//	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-//	private Set<Comment> comments = new HashSet<>();
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<Comment> comments = new HashSet<>();
 
 	
 }

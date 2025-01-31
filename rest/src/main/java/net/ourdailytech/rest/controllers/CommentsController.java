@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.controllers;
 
+
 import jakarta.validation.Valid;
 import net.ourdailytech.rest.models.dto.CommentDto;
 import net.ourdailytech.rest.service.CommentsService;
@@ -25,8 +26,9 @@ public class CommentsController {
     }
 
     @GetMapping("/{postId}/comments")
-    public List<CommentDto> getCommentsByPostId(@PathVariable(value = "postId") Long postId){
-        return commentsService.getCommentsByPostId(postId);
+    public ResponseEntity<List<CommentDto>> getCommentsByPostId(@PathVariable(value = "postId") Long postId){
+        List<CommentDto> resp =  commentsService.getCommentsByPostId(postId);
+        return new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
     @GetMapping("/{postId}/comments/{id}")

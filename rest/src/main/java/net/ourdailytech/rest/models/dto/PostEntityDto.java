@@ -1,10 +1,15 @@
 package net.ourdailytech.rest.models.dto;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+import net.ourdailytech.rest.models.Category;
+import net.ourdailytech.rest.models.Comment;
 import net.ourdailytech.rest.models.PostEntity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A DTO for the {@link PostEntity} entity
@@ -32,7 +37,10 @@ public class PostEntityDto implements Serializable {
 
     private String username;
 
-    private Long categoryId;
 
-//    private Set<CommentDto> comments;
+    private String state;
+    private int wordCount;
+    private int durationGoal;
+    private Long categoryId;
+    private Set<CommentDto> comments;
 }
