@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -69,7 +70,7 @@ public class CommentsServiceImpl implements CommentsService {
         Comment comment = commentRepository.findById(commentId).orElseThrow(
                 () -> new ResourceNotFoundException("Comment", "id", Long.toString(commentId)));
 
-        if(comment.getPost().getId() != post.getId()) {
+        if(!Objects.equals(comment.getPost().getId(), post.getId())) {
             throw new PostApiException(HttpStatus.NOT_FOUND, Long.toString(commentId));
         }
         return commentMapper.toDto(comment);

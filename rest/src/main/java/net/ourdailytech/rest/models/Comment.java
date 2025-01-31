@@ -18,9 +18,11 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO) // MUST BE AUTO; IDENTITY NO-GO with ORACLE
     @Column(name = "id", nullable = false)
     private long id;
-
+    @Column
     private String name;
+    @Column
     private String email;
+    @Column
     private String body;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,9 +1,13 @@
 package net.ourdailytech.rest.util;
 
 import lombok.extern.slf4j.Slf4j;
+import net.ourdailytech.rest.mapper.CommentMapper;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
+import net.ourdailytech.rest.models.Comment;
 import net.ourdailytech.rest.models.PostEntity;
+import net.ourdailytech.rest.models.dto.CommentDto;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
+import net.ourdailytech.rest.repositories.CommentsRepository;
 import net.ourdailytech.rest.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
@@ -25,20 +29,39 @@ public class PostDataLoader {
     @Autowired
     private PostEntityMapper postEntityMapper;
 
+    @Autowired
+    private CommentsRepository commentsRepository;
+    @Autowired
+    private CommentMapper commentMapper;
+
     @Bean
-    public ApplicationRunner loadPosts() {
+    public ApplicationRunner runner() {
         return args -> {
-            List<PostEntityDto> postDtos = generateRandomPosts();
+            loadPosts();
+//            loadComments();
 
-            log.info("***** Generated Example Posts *****");
-            postDtos.forEach(post -> log.info("Title: {}, Author: {}, Date: {}", post.getTitle(), post.getAuthor(), post.getDate()));
-
-            List<PostEntity> posts =  postDtos.stream().map(post -> postEntityMapper.toEntity(post)).toList();
-            postRepository.saveAll(posts);
-            log.info("Saved {} example posts.", posts.size());
         };
     }
 
+    public void loadPosts() {
+        List<PostEntityDto> postDtos = generateRandomPosts();
+
+        log.info("***** Generated Example Posts *****");
+        postDtos.forEach(post -> log.info("Title: {}, Author: {}, Date: {}", post.getTitle(), post.getAuthor(), post.getDate()));
+        List<PostEntity> posts =  postDtos.stream().map(post -> postEntityMapper.toEntity(post)).toList();
+        postRepository.saveAll(posts);
+        log.info("Saved {} example posts.", posts.size());
+    }
+
+    public void loadComments() {
+            List<CommentDto> commentDtos = generateRandomComments();
+
+            log.info("***** Generated Example Posts *****");
+            commentDtos.forEach(cd -> log.info("Email: {}, Name: {}, Body: {}", cd.getEmail(), cd.getName(), cd.getBody()));
+            List<Comment> comments =  commentDtos.stream().map(commentDto -> commentMapper.toEntity(commentDto)).toList();
+            commentsRepository.saveAll(comments);
+            log.info("Saved {} example comments.", comments.size());
+    }
     private List<PostEntityDto> generateRandomPosts() {
         List<PostEntityDto> posts = new ArrayList<>();
 
@@ -54,11 +77,26 @@ public class PostDataLoader {
                     .post("<p class='firstparagraph'>" + faker.lorem().paragraph() + "</p>")
                     .blogcite("<p class='cite'><a href='" + faker.internet().url() + "'>Source</a></p>")
                     .username(faker.internet().emailAddress())
-                    .categoryId((long) faker.number().numberBetween(1, 5))
+                    .categoryId(1L)
                     .build());
         }
-
         return posts;
+    }
+
+    private List<CommentDto> generateRandomComments() {
+        List<CommentDto> comments = new ArrayList<>();
+
+        for (int i = 1; i < 10; i++) {
+            comments.add(CommentDto.builder()
+                    .id(i)
+                    .name(faker.name().fullName())
+                    .email(faker.internet().emailAddress())
+                    .body(faker.lorem().paragraph())
+//                    .postId(generateRandomPosts().get(i).getId())
+                    .postId(1L)
+                    .build());
+        }
+        return comments;
     }
 }
 

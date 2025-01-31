@@ -10,6 +10,14 @@ management.endpoints.web.exposure.include: health,metrics
 
 logging.level.org.springframework: error
 
+springdoc:
+  api-docs.path: /v3/api-docs
+  swagger-ui.path: /swagger-ui.html
+
+app:
+  jwt-secret: e037837c23ab0fe4f59e203ece8c0ddda2c70bfd5b5319fce2af9647be43b704
+  jwt-expiration-milliseconds: 604800000
+
 
 
 

@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,21 +17,21 @@ import java.util.Optional;
 public interface PostRepository extends CrudRepository<PostEntity, Long> {
 	List<PostEntity> findByCategoryId(Long categoryId);
 
+	PostEntity pattern = PostEntity.builder()
+			.id(0L) // Provide appropriate values
+			.did("")
+			.date("")
+			.author("")
+			.monthOrder("")
+			.cat3("")
+			.title("")
+			.post("")
+			.blogcite("")
+			.username("")
+			.category(null)
+			.comments(new HashSet<>())
+			.build();
 
-
-	PostEntity pattern = new PostEntity(
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-	);
 	Example<PostEntity> lenient = Example.of(pattern, ExampleMatcher.matchingAll().withIgnoreCase());
 //	posts.findAll(lenient, PageRequest.of(0, 10, Sort.by("id").descending()));
 

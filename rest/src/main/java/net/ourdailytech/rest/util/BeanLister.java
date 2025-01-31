@@ -1,4 +1,4 @@
-package net.ourdailytech.rest;
+package net.ourdailytech.rest.util;
 
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationContext;

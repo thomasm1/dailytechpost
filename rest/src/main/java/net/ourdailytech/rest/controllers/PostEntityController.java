@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(path = "/api/posts")
+@RequestMapping(path = Constant.API_POSTS)
 @CrossOrigin(origins = "*")
 @RestController
 public class PostEntityController {
@@ -29,24 +29,36 @@ public class PostEntityController {
     }
 
     @GetMapping("")
-    public PostEntityResponse getAllPosts(
+    public ResponseEntity<PostEntityResponse>  getAllPosts(
             @RequestParam(value = "pageNo", defaultValue = Constant.DEFAULT_PAGE_NUMBER,  required = false) int pageNo,
             @RequestParam(value = "pageSize", defaultValue = Constant.DEFAULT_PAGE_SIZE, required = false) int pageSize,
             @RequestParam(value = "sortBy", defaultValue =  Constant.DEFAULT_SORT_BY, required = false) String sortBy,
             @RequestParam(value = "sortDir", defaultValue = Constant.DEFAULT_SORT_DIRECTION, required = false) String sortDir
     ){
-        return postService.getAllPosts(pageNo, pageSize, sortBy, sortDir);
+        PostEntityResponse resp =  postService.getAllPosts(pageNo, pageSize, sortBy, sortDir);
+        if (resp.getContent().isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.noContent().build();
+        } else {
+            return new ResponseEntity<>(resp, HttpStatus.OK);
+        }
     }
 
     @GetMapping("/username/{username}")
-    public PostEntityResponse getAllPostsByUsername(
+    public  ResponseEntity<PostEntityResponse>  getAllPostsByUsername(
             @RequestParam(value = "pageNo", defaultValue = Constant.DEFAULT_PAGE_NUMBER, required = false) int pageNo,
             @RequestParam(value = "pageSize", defaultValue = Constant.DEFAULT_PAGE_SIZE, required = false) int pageSize,
             @RequestParam(value = "sortBy", defaultValue =  Constant.DEFAULT_SORT_BY, required = false) String sortBy,
             @RequestParam(value = "sortDir", defaultValue = Constant.DEFAULT_SORT_DIRECTION, required = false) String sortDir,
             @PathVariable String username
     ){
-        return postService.getAllPostsByUsername(pageNo, pageSize, sortBy, sortDir, username);
+        PostEntityResponse resp = postService.getAllPostsByUsername(pageNo, pageSize, sortBy, sortDir, username);
+        if (resp.getContent().isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.noContent().build();
+        } else {
+            return new ResponseEntity<>(resp, HttpStatus.OK);
+        }
     }
 
     @GetMapping("/{id}")
