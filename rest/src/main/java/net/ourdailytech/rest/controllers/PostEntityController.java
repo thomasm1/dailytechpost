@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(path = "/api/posts")
+@RequestMapping(path = Constant.API_POSTS)
 @CrossOrigin(origins = "*")
 @RestController
 public class PostEntityController {
