@@ -9,12 +9,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-//import static com.friendsofgroot.app.security.SpringSecurityConfiguration.getAuthenticatedUsername;
+import static net.ourdailytech.rest.util.Constant.API_KEYS;
 
 
-@RestController 
+@RestController
 @CrossOrigin(origins="*")
-@RequestMapping("/login")
+@RequestMapping(API_KEYS)
 @SessionAttributes("name")
 public class KeysController {
 
@@ -31,7 +31,6 @@ public class KeysController {
 	@GetMapping("/getMoralisApi")
 	public Map<String, Set<String>> getMoralisApi() {
 		Map<String, Set<String>> info = new HashMap<>();
-		// getting API key
 		String newkey = System.getenv("MORALIS_API_KEY");
 		info.computeIfAbsent("MORALIS_API_KEY", key -> new HashSet<>()).add(newkey);
 		return info;
@@ -39,32 +38,44 @@ public class KeysController {
 	  @GetMapping("/getNasaApi")
 	    public Map<String, Set<String>> getNasaApi() {
 	        Map<String, Set<String>> info = new HashMap<>();
-	        // getting API key
-	        String newkey = System.getenv("nasaAPIKey");
-	        info.computeIfAbsent("nasaAPIKey", key -> new HashSet<>()).add(newkey);
+	        String newkey = System.getenv("NASA_API_KEY");
+	        info.computeIfAbsent("NASA_API_KEY", key -> new HashSet<>()).add(newkey);
 	        return info;
 	    }
 	  @GetMapping("/getGoogleApi")
 		public Map<String, Set<String>> getGoogleApi() {
 			Map<String, Set<String>> info = new HashMap<>();
-			 // getting API key
-//			 String newkey = ds.getGoogleMAPKey();
-			 String newkey =  System.getenv("googleMapAPIKey");
-			 info.computeIfAbsent("googleMapAPIKey", key -> new HashSet<>()).add(newkey);
+			 String newkey =  System.getenv("GOOGLE_API_KEY");
+			 info.computeIfAbsent("GOOGLE_API_KEY", key -> new HashSet<>()).add(newkey);
 			 return info;
 		} 
 	  @GetMapping("/getFirebaseApi")
 		public Map<String, Set<String>> getFirebaseApi() {
 			Map<String, Set<String>> info = new HashMap<>(); 
-			 String newkey =  System.getenv("FIREBASE_API");
-			 info.computeIfAbsent("FIREBASE_API", key -> new HashSet<>()).add(newkey);
+			 String newkey =  System.getenv("FIREBASE_API_KEY");
+			 info.computeIfAbsent("FIREBASE_API_KEY", key -> new HashSet<>()).add(newkey);
 			 return info;
 		}
 	  @GetMapping("/getNytApi")
 		public Map<String, Set<String>> getNytApi() {
 			Map<String, Set<String>> info = new HashMap<>(); 
-			 String newkey =  System.getenv("NYT_API");
-			 info.computeIfAbsent("NYT_API", key -> new HashSet<>()).add(newkey);
+			 String newkey =  System.getenv("NYT_API_KEY");
+			 info.computeIfAbsent("NYT_API_KEY", key -> new HashSet<>()).add(newkey);
 			 return info;
 		}
+	@GetMapping("/getAnthropicApi")
+	public Map<String, Set<String>> getAnthropicApi() {
+		Map<String, Set<String>> info = new HashMap<>();
+		String newkey =  System.getenv("ANTHRO_API_KEY");
+		info.computeIfAbsent("ANTHRO_API_KEY", key -> new HashSet<>()).add(newkey);
+		return info;
+	}
+
+	@GetMapping("/getGeminiApi")
+	public Map<String, Set<String>> getGeminiApi() {
+		Map<String, Set<String>> info = new HashMap<>();
+		String newkey =  System.getenv("GEMINI_API_KEY");
+		info.computeIfAbsent("GEMINI_API_KEY", key -> new HashSet<>()).add(newkey);
+		return info;
+	}
 }
