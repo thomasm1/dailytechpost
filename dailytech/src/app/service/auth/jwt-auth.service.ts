@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 // import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
@@ -10,7 +10,7 @@ import { WritingService } from '../../components/writing/writing.service';
 import { UiService } from '../ui.service';
 import * as fromRoot from '../../reducers/app.reducer';
 import * as UI from '../../reducers/ui.actions';
-import * as Auth from '../../reducers/auth.actions';
+import * as AuthReducer from '../../reducers/auth.actions';
  
 
 @Injectable({
@@ -36,13 +36,13 @@ export class JwtAuthService {
         if (user) {
           // this.isAuthenticated = true;
           // this.authChange.next(true);
-          this.store.dispatch(new Auth.SetAuthenticated());
+          this.store.dispatch(new AuthReducer.SetAuthenticated());
           this.router.navigate(['/writing']);
         } else {
           this.writingService.cancelSubscriptions();
           // this.isAuthenticated = false;
           // this.authChange.next(false);
-          this.store.dispatch(new Auth.SetUnauthenticated());
+          this.store.dispatch(new AuthReducer.SetUnauthenticated());
           this.router.navigate(['/']);
         }
       });
@@ -53,7 +53,7 @@ export class JwtAuthService {
     // this.store.dispatch({ type: 'START_LOADING' });
     this.store.dispatch(new UI.StartLoading());
 
-    this.afAuth.auth.createUserWithEmailAndPassword(
+    this.afAuth.createUserWithEmailAndPassword(
       authData.email,
       authData.password
     )
@@ -79,7 +79,7 @@ export class JwtAuthService {
     // this.uiService.loadingStateChanged.next(true);
     // this.store.dispatch({ type: 'START_LOADING' });
     this.store.dispatch(new UI.StartLoading());
-    this.afAuth.auth
+    this.afAuth
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then(result => {
         // this.uiService.loadingStateChanged.next(false);
@@ -98,8 +98,8 @@ export class JwtAuthService {
   }
 
   logout() {
-    this.afAuth.auth.signOut().then(() => {
-      this.store.dispatch(new Auth.SetUnauthenticated());
+    this.afAuth.signOut().then(() => {
+      this.store.dispatch(new AuthReducer.SetUnauthenticated());
     }).catch(error => {
       console.log('LOGOUT FAILED', error);
     });

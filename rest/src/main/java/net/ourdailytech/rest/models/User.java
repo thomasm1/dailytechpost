@@ -61,11 +61,11 @@ public class User {
     private int contactType; // ContactType contactType
     @Transient
     private String id;
-
-    @ManyToMany(fetch = FetchType.EAGER)
+ 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "USERS_ROLES",
-            joinColumns = {@JoinColumn(name = "userid", referencedColumnName = "userid")},
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "userid")}, 
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}
     )
     private Set<Role> roles = new HashSet<>();

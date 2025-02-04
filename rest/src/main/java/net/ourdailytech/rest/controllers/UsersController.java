@@ -1,16 +1,20 @@
 package net.ourdailytech.rest.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponse; 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement; 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.ConstraintViolationException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
-import net.ourdailytech.rest.mapper.UserMapper;
+import net.ourdailytech.rest.mapper.UserMapper; 
+import net.ourdailytech.rest.models.dto.LoginDto;
+import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.service.UsersService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity; 
+import org.springframework.security.access.prepost.PreAuthorize; 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -46,8 +50,9 @@ public class UsersController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
-    )
-    @GetMapping(USER_PATH)
+    ) 
+  
+    @GetMapping({USER_PATH, USER_PATH+"/"}) 
     public ResponseEntity<List<UserDto>> getUsers() {
         List<UserDto> users = new ArrayList<>();
         try {
@@ -86,25 +91,64 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     )
     @GetMapping(value = USER_PATH + "/email/{email}")
-    public ResponseEntity<UserDto> getUserByEmail(@PathVariable("email") String email) {
-        if (usersService.getUser(email).isEmpty()) {
+    public ResponseEntity<UserDto> getUserByEmail(@PathVariable("email") String email) { 
+        if (usersService.getUserByEmail(email).isEmpty()) {
             throw new ResourceNotFoundException("User " + email + "not found");
         }
-        return new ResponseEntity<>(usersService.getUser(email).get(), HttpStatus.OK);
+        return new ResponseEntity<>(usersService.getUserByEmail(email).get(), HttpStatus.OK);
     }
 
     /// Non-Register Creation Request
-
+    @Operation(
+            summary = "NON-REGISTRATION Create User REST API",
+            description = "Create User REST API is used to create a user in the db"
+    )
+    @ApiResponse(
+            responseCode = "201",
+            description = "HTTP Status 201 SUCCESS"
+    )
     @PostMapping(USER_PATH)
-    public ResponseEntity createUser(@RequestBody UserDto user) {
-        UserDto savedUser = usersService.registerUser(user);
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
+        UserDto savedUser = usersService.createUser(user); 
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", USER_PATH + "/" + savedUser.getUserId());
-
-        return new ResponseEntity(savedUser, headers, HttpStatus.CREATED);
+ 
+        return new ResponseEntity<>(savedUser, headers, HttpStatus.CREATED);
     }
 
+    /// REGISTER Creation Request
+    @Operation(
+            summary = "Register User REST API",
+            description = "Register User REST API is used to register a user in the db"
+    )
+    @ApiResponse(
+            responseCode = "201",
+            description = "HTTP Status 201 SUCCESS"
+    )
+    @PostMapping({USER_PATH+"/auth/register", USER_PATH+"/auth/signup"})
+    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
+       usersService.register(registerDto);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", USER_PATH + "/" + registerDto.getEmail());
+
+        return new ResponseEntity<>(registerDto.getEmail()+": now Registered!", headers, HttpStatus.CREATED);
+    }
+    // Build Login REST API
+    @Operation(
+            summary = "Login User REST API",
+            description = "Login User REST API is used to login a user in the db"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "HTTP Status 200 SUCCESS"
+    )
+    @PostMapping(value = {USER_PATH+"/auth/login", USER_PATH+"/auth/signin"})
+    public ResponseEntity<String> login(@RequestBody LoginDto loginDto){
+        String response = usersService.login(loginDto);
+        return ResponseEntity.ok(response);
+    } 
 
     @Operation(
             summary = "Update User REST API",
@@ -113,9 +157,10 @@ public class UsersController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
-    )
-    @PutMapping(value = USER_PATH + "/{userId}", consumes = "application/json")  // userId in body
-    public ResponseEntity<UserDto> updateUser(@PathVariable("userId") int userId, @RequestBody UserDto userDto) {
+    ) 
+  
+    @PutMapping(value = {USER_PATH + "/{email}",USER_PATH}, consumes = "application/json")  // userId in body
+    public ResponseEntity<UserDto> updateUser(@PathVariable("email") String email, @RequestBody UserDto userDto) { 
         Optional<UserDto> updated = usersService.updateUser(userDto);
         return updated.map(dto -> new ResponseEntity<>(
                 dto,
@@ -148,7 +193,11 @@ public class UsersController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
+    ) 
+    @SecurityRequirement(
+            name = "Bear Authentication"
     )
+    @PreAuthorize("hasRole('ADMIN')")  
     @DeleteMapping(value = USER_PATH_ID)
     public ResponseEntity<Boolean> deleteUser(@PathVariable("userId") int userId) {
         Boolean boolSuccess = null;
@@ -169,12 +218,5 @@ public class UsersController {
 
             return new ResponseEntity<>(boolSuccess, HttpStatus.NO_CONTENT);
         }
-    }
-
-//    public List<String> getUsersByCoins();
-
-//    public User getUserByPassword(String username, String password) {
-//        return null;
-//    }ResponseEntity
-
+    } 
 }

@@ -1,5 +1,5 @@
 #spring.application.name: DASHBOARD-SERVICE
-spring.profiles.active: local
+spring.profiles.active: mysql
 ## Configuring info endpoint
 info.app.name: DASHBOARD SERVICE
 info.app.description: Daily-Tech Server Application
@@ -18,6 +18,12 @@ app:
   jwt-secret: e037837c23ab0fe4f59e203ece8c0ddda2c70bfd5b5319fce2af9647be43b704
   jwt-expiration-milliseconds: 604800000
 
+spring:
+  security:
+    user:
+      name: admin
+      password: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+      roles: ADMIN
 
 
 

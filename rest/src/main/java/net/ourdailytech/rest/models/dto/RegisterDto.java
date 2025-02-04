@@ -1,7 +1,7 @@
 package net.ourdailytech.rest.models.dto;
 
-import lombok.*;
-
+import lombok.*; 
+import net.ourdailytech.rest.models.Role; 
 import java.io.Serializable;
 import java.util.Set;
 
@@ -32,5 +32,7 @@ public class RegisterDto implements Serializable {
         	String[] parts = email.split("@");
         	return parts[0];
     }
-
+ 
+    public void setRoles(Set<Role> roleUser) {
+    } 
 }

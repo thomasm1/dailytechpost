@@ -3,12 +3,16 @@ package net.ourdailytech.rest.util;
 import lombok.extern.slf4j.Slf4j;
 import net.ourdailytech.rest.mapper.CommentMapper;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
+import net.ourdailytech.rest.mapper.UserMapper;
 import net.ourdailytech.rest.models.Comment;
 import net.ourdailytech.rest.models.PostEntity;
+import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.CommentDto;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
+import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.repositories.CommentsRepository;
 import net.ourdailytech.rest.repositories.PostRepository;
+import net.ourdailytech.rest.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -24,25 +28,45 @@ import java.util.stream.Collectors;
 public class PostDataLoader {
 
     private static final Faker faker = new Faker();
-    @Autowired
+    private final UsersRepository usersRepository;
+
     private PostRepository postRepository;
-    @Autowired
+
     private PostEntityMapper postEntityMapper;
 
-    @Autowired
     private CommentsRepository commentsRepository;
-    @Autowired
+
     private CommentMapper commentMapper;
+
+    private UserMapper userMapper;
+
+    public PostDataLoader(PostRepository postRepository, PostEntityMapper postEntityMapper, CommentsRepository commentsRepository, CommentMapper commentMapper, UserMapper userMapper, UsersRepository usersRepository) {
+        this.postRepository = postRepository;
+        this.postEntityMapper = postEntityMapper;
+        this.commentsRepository = commentsRepository;
+        this.commentMapper = commentMapper;
+        this.userMapper = userMapper;
+        this.usersRepository = usersRepository;
+    }
 
     @Bean
     public ApplicationRunner runner() {
         return args -> {
             loadPosts();
-//            loadComments();
-
+            loadComments();
+            loadUsers();
         };
     }
 
+    public void loadUsers() {
+        List<UserDto> userDtos = generateRandomUsers();
+
+        log.info("***** Generated Example Users *****");
+        userDtos.forEach(post -> log.info("userDtos: {}", userDtos.size()));
+        List<User> users =  userDtos.stream().map(user -> userMapper.toEntity(user)).toList();
+        usersRepository.saveAll(users);
+        log.info("Saved {} example posts.", users.size());
+    }
     public void loadPosts() {
         List<PostEntityDto> postDtos = generateRandomPosts();
 
@@ -55,12 +79,37 @@ public class PostDataLoader {
 
     public void loadComments() {
             List<CommentDto> commentDtos = generateRandomComments();
+            List<PostEntity> posts = (List<PostEntity>) postRepository.findAll();
 
             log.info("***** Generated Example Posts *****");
             commentDtos.forEach(cd -> log.info("Email: {}, Name: {}, Body: {}", cd.getEmail(), cd.getName(), cd.getBody()));
             List<Comment> comments =  commentDtos.stream().map(commentDto -> commentMapper.toEntity(commentDto)).toList();
+            for (int i = 0; i < comments.size(); i++) {
+                comments.get(i).setPost(commentDtos.get(i).getPostId() != 0 ? posts.get((int) (commentDtos.get(i).getPostId() - 1)) : null);
+            }
             commentsRepository.saveAll(comments);
             log.info("Saved {} example comments.", comments.size());
+    }
+    private List<UserDto> generateRandomUsers() {
+        List<UserDto> users = new ArrayList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            users.add(UserDto.builder()
+                    .id(String.valueOf(i))
+                    .username(faker.internet().emailAddress())
+                    .userId(i)
+                    .email(faker.internet().emailAddress())
+                    .firstName(faker.name().firstName())
+                    .lastName(faker.name().lastName())
+                    .userType(faker.number().numberBetween(1, 3))
+                    .organizationCode("CD")
+                    .cusUrl("http://www.dailytech.net/photoPath")
+                    .dashboardCode("dashboardCd")
+                    .isActive(1)
+                    .contactType(1)
+                    .build());
+        }
+        return users;
     }
     private List<PostEntityDto> generateRandomPosts() {
         List<PostEntityDto> posts = new ArrayList<>();
@@ -93,7 +142,7 @@ public class PostDataLoader {
                     .email(faker.internet().emailAddress())
                     .body(faker.lorem().paragraph())
 //                    .postId(generateRandomPosts().get(i).getId())
-                    .postId(1L)
+                    .postId(i)
                     .build());
         }
         return comments;

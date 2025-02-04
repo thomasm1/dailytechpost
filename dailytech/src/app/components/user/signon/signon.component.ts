@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import {  UntypedFormGroup, UntypedFormControl, Validators, NgForm } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -18,7 +18,7 @@ import * as fromRoot from '../../../reducers/app.reducer';
 export class SignonComponent implements OnInit { //, OnDestroy {
   maxDate;
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   username = '';
   password = '';
   errorMessage = 'Invalid Credentials';
@@ -48,12 +48,12 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     // this.isLoading$ = this.store.pipe(map(state => state.ui.isLoading));
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
 
-    this.loginForm = new FormGroup({
-      email: new FormControl('', {
+    this.loginForm = new UntypedFormGroup({
+      email: new UntypedFormControl('', {
         validators: [Validators.required, Validators.email]
 
       }),
-      password: new FormControl('', {
+      password: new UntypedFormControl('', {
         validators: [Validators.required] })
     });
   }
