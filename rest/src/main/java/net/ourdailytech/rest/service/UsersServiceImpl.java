@@ -1,24 +1,24 @@
 package net.ourdailytech.rest.service;
 
-import net.ourdailytech.rest.exception.EmailAlreadyExistsException;
-import net.ourdailytech.rest.exception.PostApiException;
+import net.ourdailytech.rest.exception.EmailAlreadyExistsException; 
+import net.ourdailytech.rest.exception.PostApiException; 
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
 import net.ourdailytech.rest.mapper.UserMapper;
 import net.ourdailytech.rest.models.Role;
-import net.ourdailytech.rest.models.User;
+import net.ourdailytech.rest.models.User; 
 import net.ourdailytech.rest.models.dto.LoginDto;
-import net.ourdailytech.rest.models.dto.RegisterDto;
+import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.repositories.RoleRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContextHolder; 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 @Service
 public class UsersServiceImpl implements UsersService {
 
-    private static final Logger log = LoggerFactory.getLogger(UsersServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(UsersServiceImpl.class); 
 
     private AuthenticationManager authenticationManager;
     private PasswordEncoder passwordEncoder;
@@ -48,20 +48,19 @@ public class UsersServiceImpl implements UsersService {
     ) {
         this.authenticationManager = authenticationManager;
         this.passwordEncoder = passwordEncoder;
-        this.roleRepository = roleRepository;
+        this.roleRepository = roleRepository; 
       this.userMapper = userMapper;
       this.usersRepository = usersRepository;
   }
 
     public UsersServiceImpl() {     }
-
-
+ 
     /**
      * @param username;
      * @param password;
      * @return UserDto
-     */
-    @Override
+     */ 
+    @Override 
     public UserDto loginUser(String username, String password){
         Optional<User> optionalUser = usersRepository.findByUsernameOrEmail(username, username);
         if(optionalUser.isPresent()) {
@@ -74,7 +73,7 @@ public class UsersServiceImpl implements UsersService {
         }
         return userMapper.toDto(optionalUser.get());
     }
-    /**
+    /** 
      * @param loginDto;
      * @return String
      */
@@ -89,12 +88,12 @@ public class UsersServiceImpl implements UsersService {
         return loginDto.getUsernameOrEmail() +  ": Login successful";
     }
 
-    /**
+    /** 
      * @param userDto;
      * @return UserDto
      */
-    @Override
-    public UserDto createUser(UserDto userDto) {
+    @Override 
+    public UserDto createUser(UserDto userDto) { 
         Optional<User> optionalUser = usersRepository.findByEmail(userDto.getEmail());
         if(optionalUser.isPresent()) {
             throw new EmailAlreadyExistsException("User already exists");
@@ -108,7 +107,7 @@ public class UsersServiceImpl implements UsersService {
         return userMapper.toDto(u);
     }
 
-    /**
+    /** 
      * @param registerDto;
      * @return String
      */
@@ -135,7 +134,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
 
-    /**
+    /** 
      * @param id
      * @return UserDto
      */
@@ -206,7 +205,7 @@ public class UsersServiceImpl implements UsersService {
      */
     public Optional<UserDto> getUserByEmail(String email) {
         User u;
-        try {
+        try { 
             u = usersRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("not found", "not found", email));
         } catch (Exception e) {
             return null;
