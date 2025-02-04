@@ -22,7 +22,7 @@ public class Comment {
     private String name;
     @Column
     private String email;
-    @Column
+    @Column(columnDefinition = "TEXT", length = 3000)
     private String body;
 
     @ManyToOne(fetch = FetchType.LAZY)

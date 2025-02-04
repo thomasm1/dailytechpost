@@ -17,6 +17,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -79,13 +81,12 @@ public class SecurityConfig {
         log.info("sec___________securityFilterChain__________________ filterChain");
 
         //All URLs are protected A login form is shown for unauthorized requests
-        http.csrf().disable() // CSRF disabled for APIs
+        http.csrf(AbstractHttpConfigurer::disable) // (csrf) ->csrf.disable()
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/v3/api-docs/**").permitAll() // Open API
-                        .requestMatchers(HttpMethod.GET, "/h2-console", "/h2-console/**").permitAll() // H2 Console
-                        .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll() // Login & register
-                        .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
+                        .requestMatchers("/h2-console/**").permitAll()                        .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
                         .requestMatchers(HttpMethod.GET, "/rest/**", "/v1/**", "/api/**").permitAll() // APIs
+                        .requestMatchers(HttpMethod.POST, "/api/users/auth/**").permitAll() // Login & register
                         .requestMatchers(HttpMethod.POST, "/api/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/**").permitAll()
@@ -99,7 +100,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .headers(headers -> headers
-                        .frameOptions().sameOrigin() // Allow H2 Console
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)  // Allow H2 Console
                 );
 
         http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);

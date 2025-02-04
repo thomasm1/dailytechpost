@@ -1,5 +1,8 @@
 package net.ourdailytech.rest.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import net.ourdailytech.rest.util.Constant;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
@@ -8,6 +11,7 @@ import net.ourdailytech.rest.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,11 +27,24 @@ public class PostEntityController {
 	@Autowired
 	private PostEntityMapper postEntityMapper;
 
-    @PostMapping("")
+    @Operation(
+            summary = "Create a new post",
+            description = "Create a new post"
+    )
+    @ApiResponse(responseCode = "201", description = "Post created")
+    @SecurityRequirement(
+            name = "Bear Authentication"
+    )
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping({"", "/"})
     public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
         return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
     }
-
+    @Operation(
+            summary = "Get all posts",
+            description = "Get all posts"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
     @GetMapping("")
     public ResponseEntity<PostEntityResponse>  getAllPosts(
             @RequestParam(value = "pageNo", defaultValue = Constant.DEFAULT_PAGE_NUMBER,  required = false) int pageNo,
@@ -43,8 +60,12 @@ public class PostEntityController {
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }
     }
-
-    @GetMapping("/username/{username}")
+    @Operation(
+            summary = "Get all posts by username",
+            description = "Get all posts by username"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
+    @GetMapping({"/username/{username}","/username/{username}/"})
     public  ResponseEntity<PostEntityResponse>  getAllPostsByUsername(
             @RequestParam(value = "pageNo", defaultValue = Constant.DEFAULT_PAGE_NUMBER, required = false) int pageNo,
             @RequestParam(value = "pageSize", defaultValue = Constant.DEFAULT_PAGE_SIZE, required = false) int pageSize,
@@ -60,8 +81,12 @@ public class PostEntityController {
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }
     }
-
-    @GetMapping("/{id}")
+    @Operation(
+            summary = "Get all posts by category",
+            description = "Get all posts by category"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
+    @GetMapping({"/{id}", "/{id}/"})
     public ResponseEntity<PostEntityDto> getPostById(@PathVariable(name = "id") long id){
         return ResponseEntity.ok(postService.getPostById(id));
     }
@@ -71,26 +96,47 @@ public class PostEntityController {
         return ResponseEntity.ok(postEntityDtoList);
     }
 
-
+    @Operation(
+            summary = "Get all posts by date",
+            description = "Get all posts by date"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
     @GetMapping("/date/{did}")
     public ResponseEntity<PostEntityDto> getPostByDid(@PathVariable(name = "did") String did){
         return ResponseEntity.ok(postService.getPostByDid(did));
     }
-
+    @Operation(
+            summary = "Get all posts by title",
+            description = "Get all posts by title"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
+    @SecurityRequirement(
+            name = "Bear Authentication"
+    )
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @PathVariable(name = "id") long id){
         PostEntityDto postResponse = postService.updatePost(postEntityDto, id);
         return new ResponseEntity<>(postResponse, HttpStatus.OK);
     }
 
-@DeleteMapping("/{id}")
-public ResponseEntity<Boolean> deletePostById(@PathVariable(name = "id") long id){
-    try {
-        postService.deletePostById(id);
-        return new ResponseEntity<>(true, HttpStatus.OK);
-    } catch (Exception e) {
-        return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    @Operation(
+            summary = "Delete a post",
+            description = "Delete a post"
+    )
+    @ApiResponse(responseCode = "200", description = "Post deleted")
+    @SecurityRequirement(
+            name = "Bear Authentication"
+    )
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deletePostById(@PathVariable(name = "id") long id){
+        try {
+            postService.deletePostById(id);
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+        }
     }
-}
 
 }
