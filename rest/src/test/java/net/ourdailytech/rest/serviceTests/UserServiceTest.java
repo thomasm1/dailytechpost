@@ -1,6 +1,6 @@
 package net.ourdailytech.rest.serviceTests;
-
-import net.ourdailytech.rest.models.dto.RegisterDto;
+ 
+import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.service.UsersService;
 import net.ourdailytech.rest.service.UsersServiceImpl;
@@ -51,7 +51,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
         .contactType(1)
         .isActive(1)
         .id("id")
-                .build();
+                .build(); 
         when(usersService.createUser(u)).thenReturn(u);
         assertEquals(usersService.createUser(u), u);
      }
@@ -63,7 +63,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                 .build();
         when(usersService.register(u)).thenReturn(u.getEmail()+ ": User registered successfully!");
         assertEquals(usersService.register(u), u.getEmail()+ ": User registered successfully!");
-    }
+    } 
     @Test
     public void get_users() {
 

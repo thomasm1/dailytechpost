@@ -1,7 +1,7 @@
 package net.ourdailytech.rest.models;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.*; 
+import lombok.*; 
 
 import jakarta.persistence.*;
 
@@ -15,22 +15,22 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Builder
+@Entity 
+@Builder 
 @Table(name = "roles")
 public class Role  implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     int id;
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER) 
 //    @JoinTable(name = "USERS_ROLES", joinColumns = @JoinColumn(name = "id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "userid", referencedColumnName = "id"))
     private List<Role> users = new ArrayList<>();
 
     public Role(int i, String name) {
         this.id = i;
         this.name = name;
-    }
+    } 
 }
