@@ -4,10 +4,12 @@ import net.ourdailytech.rest.exception.ResourceNotFoundException;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
 import net.ourdailytech.rest.models.Category;
 import net.ourdailytech.rest.models.PostEntity;
+import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
 import net.ourdailytech.rest.models.dto.PostEntityResponse;
 import net.ourdailytech.rest.repositories.CategoryRepository;
 import net.ourdailytech.rest.repositories.PostRepository;
+import net.ourdailytech.rest.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +18,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -28,6 +31,8 @@ public class PostServiceImpl implements PostService {
 	// this.catRepository = catRepository;
 //	}
 
+	@Autowired
+	UsersRepository usersRepository;
 	@Autowired
 	CategoryRepository categoryRepository;
 	@Autowired
@@ -96,14 +101,35 @@ public class PostServiceImpl implements PostService {
 
 		return postResponse;
 	}
-//	@Override
-//	public List<PostEntityDto> getAllPostsByUsername(String username) {
-//		try {
-//			return (List<PostEntityDto>) pr.findAllByUsername(username) ;
-//		} catch (Exception e) {
-//			return null;
-//		}
-//	}
+
+	@Override
+	public PostEntityResponse getAllPostsByEmail(int pageNo, int pageSize, String sortBy, String sortDir, String email) {
+
+		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+				: Sort.by(sortBy).descending();
+
+		// create Pageable instance
+		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+		Optional<User> u = Optional.ofNullable(usersRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("User", "email", email)));
+		String usernameFromEmail = u.get().getUsername();
+		Page<PostEntity> posts = pr.findAllByUsername(pageable, usernameFromEmail);
+
+		// get content for page object
+		List<PostEntity> listOfPosts = posts.getContent();
+
+		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.PostEntityToPostEntityDTO(post)).collect(Collectors.toList());
+
+		PostEntityResponse postResponse = new PostEntityResponse();
+		postResponse.setContent(content);
+		postResponse.setPageNo(posts.getNumber());
+		postResponse.setPageSize(posts.getSize());
+		postResponse.setTotalElements(posts.getTotalElements());
+		postResponse.setTotalPages(posts.getTotalPages());
+		postResponse.setLast(posts.isLast());
+
+		return postResponse;
+	}
+
 	@Override
 	public PostEntityDto getPostById(long id) {
 		PostEntity post = pr.findById(id).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "id", Long.toString(id)));

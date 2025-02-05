@@ -11,6 +11,7 @@ import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.repositories.RoleRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
+import net.ourdailytech.rest.security.JwtTokenProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired; 
@@ -30,8 +31,8 @@ import java.util.stream.Collectors;
 @Service
 public class UsersServiceImpl implements UsersService {
 
-    private static final Logger log = LoggerFactory.getLogger(UsersServiceImpl.class); 
-
+    private static final Logger log = LoggerFactory.getLogger(UsersServiceImpl.class);
+    private final JwtTokenProvider jwtTokenProvider;
     private AuthenticationManager authenticationManager;
     private PasswordEncoder passwordEncoder;
 
@@ -44,17 +45,20 @@ public class UsersServiceImpl implements UsersService {
             PasswordEncoder passwordEncoder,
             RoleRepository roleRepository,
             UsersRepository usersRepository,
-            UserMapper userMapper
-    ) {
+            UserMapper userMapper,
+            JwtTokenProvider jwtTokenProvider) {
         this.authenticationManager = authenticationManager;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository; 
       this.userMapper = userMapper;
       this.usersRepository = usersRepository;
-  }
-
-    public UsersServiceImpl() {     }
+        this.jwtTokenProvider = jwtTokenProvider;
+    }
  
+    public UsersServiceImpl(JwtTokenProvider jwtTokenProvider) {
+        this.jwtTokenProvider = jwtTokenProvider;
+    }
+
     /**
      * @param username;
      * @param password;
@@ -85,7 +89,7 @@ public class UsersServiceImpl implements UsersService {
                         loginDto.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return loginDto.getUsernameOrEmail() +  ": Login successful";
+        return jwtTokenProvider.generateToken(authentication);
     }
 
     /** 
@@ -113,24 +117,20 @@ public class UsersServiceImpl implements UsersService {
      */
     @Override
     public String register(RegisterDto registerDto) {
-        if(usersRepository.existsByUsername(registerDto.getUsername())){
-            throw new PostApiException(HttpStatus.BAD_REQUEST, "Username already exists!.");
-        }
         if(usersRepository.existsByEmail(registerDto.getEmail())){
             throw new PostApiException(HttpStatus.BAD_REQUEST, "Email  already exists!.");
         }
         User user = new User();
-        user.setUsername(registerDto.getUsername());
         user.setEmail(registerDto.getEmail());
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
 
-//        Set<Role> roles = new HashSet<>();
-//        Role userRole = roleRepository.findByName("ROLE_USER")
-//                .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER"));
-//        roles.add(userRole);
-//        user.setRoles(roles);
+        Set<Role> roles = new HashSet<>();
+        Optional<Role> userRole = Optional.ofNullable(roleRepository.findByName("ROLE_USER")
+                .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER")));
+        roles.add(userRole.get());
+        user.setRoles(roles);
         User u =  usersRepository.save(user);
-        return   u.getUsername() + ": User registered successfully!";
+        return   registerDto.getEmail() + ": User registered successfully!";
     }
 
 

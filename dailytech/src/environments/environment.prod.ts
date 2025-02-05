@@ -18,9 +18,9 @@ export const environment = {
 
   BASE: "http://3.215.230.246:8888",
   API_URL: "http://3.215.230.246:8888/api",
-  // nasaKey: 'mF6DQ******iJw0',  
+  // nasaKey: 'mF6DQ******iJw0',   
   google_url: "http://3.215.230.246:8888/api/keys/getGoogleApi",
-  nasa_url: "http://3.215.230.246:8888/api/keys/getNasaApi",
+  nasa_url: "http://3.215.230.246:8888/api/keys/getNasaApi", 
   json_url: "http://localhost:3000/nasa",
 
   //crypto
@@ -29,9 +29,14 @@ export const environment = {
   nftsURL: '//3.215.230.246:9000',
   nft_url: '//3.215.230.246:8888/api',
   cle_url: 'http://3.215.230.246:8888/api/keys',
+ 
 
   // AWS Lambda-DynamoDB-APIgateway
-  aws_url: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+  awsNasaUrl: "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+
+
+  awsUrlDevAll: 'https://z3noflrq9b.execute-api.us-east-1.amazonaws.com',
+  awsUrlDevId: 'https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com',
 
   apiKeyNYT: '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5',
   nyt_url: "http://3.215.230.246:8888/api/keys/getNytApi",

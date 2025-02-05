@@ -58,9 +58,6 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
     @Test
     public void register_new_user() {
         RegisterDto u =   RegisterDto.builder()
-                .username("user0")
-                .lastName("Smith")
-                .firstName("Tom")
                 .email("user4@cryptomaven.xyz")
                 .password("5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8")
                 .build();

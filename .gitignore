@@ -5,4 +5,5 @@ bower_components
 fullstacktech 
 config/config.env
 src/environments/
-dailytech/src/environments/
+dailytech/src/environments/ 
+dailytech/.angular 

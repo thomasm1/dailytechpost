@@ -1,12 +1,16 @@
 package net.ourdailytech.rest.controllers;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import net.ourdailytech.rest.models.dto.CommentDto;
 import net.ourdailytech.rest.service.CommentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +22,15 @@ public class CommentsController {
 
     @Autowired
     private CommentsService commentsService;
-
+    @Operation(
+            summary = "Create a new comment",
+            description = "Create a new comment"
+    )
+    @ApiResponse(responseCode = "201", description = "comment created")
+    @SecurityRequirement(
+            name = "Bearer Authentication"
+    )
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/{postId}/comments")
     public ResponseEntity<CommentDto> createComment(@PathVariable long postId,
                                                     @Valid @RequestBody CommentDto commentDto){

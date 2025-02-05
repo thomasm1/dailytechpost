@@ -25,7 +25,7 @@ export class PostsListComponent implements OnInit {
   }
 
   refreshPosts() {
-    this.postService.retrieveAllPosts(this.username).subscribe(
+    this.postService.retrieveAllPostsByUsername(this.username).subscribe(
       response => {
         console.log(response);
         this.posts = response;
@@ -33,6 +33,14 @@ export class PostsListComponent implements OnInit {
     );
   }
 
+  retrieveAllPosts() {
+    this.postService.retrieveAllPosts().subscribe(
+      response => {
+        console.log(response);
+        this.posts = response;
+      }
+    );
+  }
  addPost() { 
   this.router.navigate(['admin/post',-1])
   }

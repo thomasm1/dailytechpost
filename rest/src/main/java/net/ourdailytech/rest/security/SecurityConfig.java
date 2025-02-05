@@ -85,9 +85,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/v3/api-docs/**").permitAll() // Open API
                         .requestMatchers("/h2-console/**").permitAll()                        .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
-                        .requestMatchers(HttpMethod.GET, "/rest/**", "/v1/**", "/api/**").permitAll() // APIs
-                        .requestMatchers(HttpMethod.POST, "/api/users/auth/**").permitAll() // Login & register 
-                        .requestMatchers(HttpMethod.POST, "/api/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/rest/**", "/v1/**", "/api/**","/api/posts/**").permitAll() // APIs
+                        .requestMatchers(HttpMethod.POST, "/api/users/auth/**").permitAll() // Login & register
+                        .requestMatchers(HttpMethod.POST, "/api/**","/api/**/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/**").permitAll()
                         .anyRequest().authenticated() // All other requests require authentication

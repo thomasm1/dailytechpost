@@ -15,14 +15,14 @@ import { throwError } from 'rxjs';
 export class NasaService {
   nasaKey: string = '';
   private newId: number;
-  private aws_url;
+  private awsNasaUrl;
   private json_url;
   private listNasa: Nasa[] = [];
   object;
 
-  constructor(private http: HttpClient, private keys: KeysService) {
+  constructor(private http: HttpClient, private keyService: KeysService) {
     this.json_url = environment.json_url; //local-server
-    this.aws_url = environment.aws_url; // AWS ENDPOINT
+    this.awsNasaUrl = environment.awsNasaUrl; // AWS ENDPOINT
 
     this.getNasaStores().subscribe(
       (response) => {
@@ -35,7 +35,7 @@ export class NasaService {
   }
 
   getNasaKey() {
-    this.nasaKey = this.keys.getNasaApi();
+    this.nasaKey = this.keyService.getNasaApi();
     return this.nasaKey;
   }
   getNasa() {
@@ -53,7 +53,7 @@ export class NasaService {
 
   getNasaStores(): Observable<Nasa[]> {
     // return this.http.get<Nasa[]>(this.json_url)
-    return this.http.get<Nasa[]>(this.aws_url)
+    return this.http.get<Nasa[]>(this.awsNasaUrl)
 
     .pipe(
       catchError(err => {
@@ -68,7 +68,7 @@ export class NasaService {
     nasa.id = this.newId;
     console.log(nasa.id);
     // return this.http.post<Nasa>(`${this.json_url}/${this.newId}`,
-      return this.http.post<Nasa>(`${this.aws_url}`, nasa
+      return this.http.post<Nasa>(`${this.awsNasaUrl}`, nasa
     //   , {
     //   headers: new HttpHeaders({
     //     Accept: 'application/json',    // NO LONGER NEED WITH HTTP-INTERCEPTER ////////////

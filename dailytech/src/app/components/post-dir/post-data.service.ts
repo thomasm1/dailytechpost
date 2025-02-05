@@ -17,16 +17,34 @@ export class PostDataService {
 
    }
 
-  retrieveAllPosts(username) {
+   retrieveAllPosts() {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post[]>(`${this.baseUrl}/dailytech/${username}/posts`,
+    return this.http.get<Post[]>(`${this.baseUrl}/posts`,
+    // {headers: header}
+    )
+  }
+  retrieveAllPostsByUsername(username) {
+    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    // let header = new HttpHeaders({
+    //     Authorization: basicAuthHeaderString
+    // })
+    return this.http.get<Post[]>(`${this.baseUrl}/posts/username/${username}`,
     // {headers: header}
     )
   }
  
+  retrieveAllPostsByEmail(email) {
+    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+    // let header = new HttpHeaders({
+    //     Authorization: basicAuthHeaderString
+    // })
+    return this.http.get<Post[]>(`${this.baseUrl}/posts/email/${email}`,
+    // {headers: header}
+    )
+  }
   retrievePost(username, id) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
