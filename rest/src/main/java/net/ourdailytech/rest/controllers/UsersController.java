@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.ConstraintViolationException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
 import net.ourdailytech.rest.mapper.UserMapper;
+import net.ourdailytech.rest.models.dto.JWTAuthResponse;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
@@ -127,12 +128,12 @@ public class UsersController {
     )
     @PostMapping({USER_PATH+"/auth/register", USER_PATH+"/auth/signup"})
     public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
-       usersService.register(registerDto);
+        String response = usersService.register(registerDto);
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", USER_PATH + "/" + registerDto.getEmail());
 
-        return new ResponseEntity<>(registerDto.getEmail()+": now Registered!", headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, headers, HttpStatus.CREATED);
     }
     // Build Login REST API
     @Operation(
@@ -144,9 +145,13 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     )
     @PostMapping(value = {USER_PATH+"/auth/login", USER_PATH+"/auth/signin"})
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto){
-        String response = usersService.login(loginDto);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto){
+        String token = usersService.login(loginDto);
+
+        JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
+        jwtAuthResponse.setAccessToken(token);
+
+        return ResponseEntity.ok(jwtAuthResponse);
     }
 
     @Operation(
@@ -193,7 +198,7 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     )
     @SecurityRequirement(
-            name = "Bear Authentication"
+            name = "Bearer Authentication"
     )
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(value = USER_PATH_ID)

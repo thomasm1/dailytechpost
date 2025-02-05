@@ -33,7 +33,7 @@ public class PostEntityController {
     )
     @ApiResponse(responseCode = "201", description = "Post created")
     @SecurityRequirement(
-            name = "Bear Authentication"
+            name = "Bearer Authentication"
     )
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping({"", "/"})
@@ -81,6 +81,39 @@ public class PostEntityController {
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }
     }
+
+    @Operation(
+            summary = "Get all posts by email",
+            description = "Get all posts by email"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
+    @GetMapping({"/email/{email}","/email/{email}/"})
+    public  ResponseEntity<PostEntityResponse>  getAllPostsByEmail(
+            @RequestParam(value = "pageNo", defaultValue = Constant.DEFAULT_PAGE_NUMBER, required = false) int pageNo,
+            @RequestParam(value = "pageSize", defaultValue = Constant.DEFAULT_PAGE_SIZE, required = false) int pageSize,
+            @RequestParam(value = "sortBy", defaultValue =  Constant.DEFAULT_SORT_BY, required = false) String sortBy,
+            @RequestParam(value = "sortDir", defaultValue = Constant.DEFAULT_SORT_DIRECTION, required = false) String sortDir,
+            @PathVariable String email
+    ){
+        PostEntityResponse resp = postService.getAllPostsByEmail(pageNo, pageSize, sortBy, sortDir, email);
+        if (resp.getContent().isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.noContent().build();
+        } else {
+            return new ResponseEntity<>(resp, HttpStatus.OK);
+        }
+    }
+
+    @Operation(
+            summary = "Get all posts by date",
+            description = "Get all posts by date"
+    )
+    @ApiResponse(responseCode = "200", description = "Posts retrieved")
+    @GetMapping("/date/{did}")
+    public ResponseEntity<PostEntityDto> getPostByDid(@PathVariable(name = "did") String did){
+        return ResponseEntity.ok(postService.getPostByDid(did));
+    }
+
     @Operation(
             summary = "Get all posts by category",
             description = "Get all posts by category"
@@ -97,21 +130,12 @@ public class PostEntityController {
     }
 
     @Operation(
-            summary = "Get all posts by date",
-            description = "Get all posts by date"
-    )
-    @ApiResponse(responseCode = "200", description = "Posts retrieved")
-    @GetMapping("/date/{did}")
-    public ResponseEntity<PostEntityDto> getPostByDid(@PathVariable(name = "did") String did){
-        return ResponseEntity.ok(postService.getPostByDid(did));
-    }
-    @Operation(
             summary = "Get all posts by title",
             description = "Get all posts by title"
     )
     @ApiResponse(responseCode = "200", description = "Posts retrieved")
     @SecurityRequirement(
-            name = "Bear Authentication"
+            name = "Bearer Authentication"
     )
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
@@ -120,13 +144,14 @@ public class PostEntityController {
         return new ResponseEntity<>(postResponse, HttpStatus.OK);
     }
 
+
     @Operation(
             summary = "Delete a post",
             description = "Delete a post"
     )
     @ApiResponse(responseCode = "200", description = "Post deleted")
     @SecurityRequirement(
-            name = "Bear Authentication"
+            name = "Bearer Authentication"
     )
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")

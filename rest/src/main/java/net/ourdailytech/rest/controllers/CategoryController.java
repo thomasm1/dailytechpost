@@ -25,7 +25,7 @@ public class CategoryController {
     }
     @Operation(summary = "Add a new category")
     @ApiResponse(responseCode = "201", description = "Category created")
-    @SecurityRequirement(    name = "Bear Authentication" )
+    @SecurityRequirement(    name = "Bearer Authentication" )
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
@@ -51,7 +51,7 @@ public class CategoryController {
 
     @Operation(summary = "Update a category")
     @ApiResponse(responseCode = "200", description = "Category updated")
-    @SecurityRequirement(     name = "Bear Authentication"   )
+    @SecurityRequirement(     name = "Bearer Authentication"   )
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping
     public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto ){
@@ -60,7 +60,7 @@ public class CategoryController {
 
     @Operation(summary = "Delete a category")
     @ApiResponse(responseCode = "200", description = "Category deleted")
-    @SecurityRequirement(  name = "Bear Authentication"  )
+    @SecurityRequirement(  name = "Bearer Authentication"  )
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> deleteCategory(@PathVariable("id") Long categoryId){

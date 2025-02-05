@@ -1,5 +1,5 @@
 #spring.application.name: DASHBOARD-SERVICE
-spring.profiles.active: mysql
+spring.profiles.active: local
 ## Configuring info endpoint
 info.app.name: DASHBOARD SERVICE
 info.app.description: Daily-Tech Server Application

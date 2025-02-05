@@ -9,6 +9,8 @@ public interface PostService {
 	public PostEntityResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir);
 	public PostEntityResponse getAllPostsByUsername(int pageNo, int pageSize, String sortBy, String sortDir, String username);
 
+	PostEntityResponse getAllPostsByEmail(int pageNo, int pageSize, String sortBy, String sortDir, String email);
+
 	public PostEntityDto getPostById(long id);
 	public PostEntityDto getPostByDid(String did);
 	public PostEntityDto updatePost(PostEntityDto change, long id);
