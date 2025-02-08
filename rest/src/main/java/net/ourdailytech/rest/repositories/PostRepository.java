@@ -5,6 +5,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 
 @Repository
 //public interface PostRepository extends JpaRepository<PostEntity, Long> {
-public interface PostRepository extends CrudRepository<PostEntity, Long> {
+public interface PostRepository extends JpaRepository<PostEntity, Long> {
 	List<PostEntity> findByCategoryId(Long categoryId);
 
 	PostEntity pattern = PostEntity.builder()
@@ -27,7 +28,7 @@ public interface PostRepository extends CrudRepository<PostEntity, Long> {
 			.title("")
 			.post("")
 			.blogcite("")
-			.username("")
+			.email("")
 			.category(null)
 			.comments(new HashSet<>())
 			.build();
@@ -44,12 +45,12 @@ public interface PostRepository extends CrudRepository<PostEntity, Long> {
 	Optional<PostEntity> findFirstByCat3(String cat3);
 	Optional<PostEntity> findByDate(String date);
 
-	Page<PostEntity> findAllByUsername(Pageable pageable, String username);
+	Page<PostEntity> findAllByEmail(Pageable pageable, String email);
 
 	Page<PostEntity> findAll(Pageable pageable);
 
 	Optional<PostEntity> findByDid(String did);
-	List<PostEntity> findByUsername(String username);
+	List<PostEntity> findByEmail(String username);
 
 //	@Query("SELECT p FROM PostEntity p WHERE p.username = ?1")
 //	@Query("SELECT CONCAT(p.title, ' ', p.post) FROM PostEntity p WHERE p.username = ?1")

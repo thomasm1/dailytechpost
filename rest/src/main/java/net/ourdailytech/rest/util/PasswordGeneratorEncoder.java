@@ -11,4 +11,8 @@ public class PasswordGeneratorEncoder {
         System.out.println( passwordEncoder.encode("thomasmaestas"));
         System.out.println(passwordEncoder.encode("password"));
     }
+    public static String encode(String password) {
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder.encode(password);
+    }
 }

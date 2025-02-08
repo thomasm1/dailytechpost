@@ -29,7 +29,7 @@ public class PostServiceImplTest {      // *NOTE: change PK coinnames before sen
                 .did("did")
                 .cat3("cat3")
                 .blogcite("blogcite")
-                .username("username")
+                .email("email")
                 .categoryId(1L) // Long
                 .build();
         return postEntityDto;

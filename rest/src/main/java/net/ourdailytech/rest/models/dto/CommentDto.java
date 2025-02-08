@@ -19,4 +19,8 @@ public class CommentDto implements Serializable {
     private String email;
     private String body;
     private long postId;
+
+    public CommentDto() {
+
+    }
 }

@@ -9,9 +9,6 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-//    @Mapping(  target = "username", expression = "java(user.getEmail().truncate(10))")
-//    @Mapping(source = "id", target sss
-
 
     User toEntity(UserDto userDto);
 

@@ -2,7 +2,6 @@ package net.ourdailytech.rest;
 
  
 import net.ourdailytech.rest.models.dto.PostEntityDto;
-import net.ourdailytech.rest.models.dto.PostEntityResponse;
 import net.ourdailytech.rest.service.PostService;
 import net.ourdailytech.rest.service.PostServiceImpl;
 import org.junit.jupiter.api.*;
@@ -28,7 +27,7 @@ public class PostServiceMockTest {      // *NOTE: change PK postnames before sen
                 .did("did")
                 .cat3("cat3")
                 .blogcite("blogcite")
-                .username("username")
+                .email("email")
                 .categoryId(1L) // Long
                 .build();
         return postEntityDto;

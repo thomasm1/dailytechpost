@@ -1,6 +1,5 @@
 package net.ourdailytech.rest.security;
 
-//import com.friendsofgroot.app.dataLoader.UserDetailsCommanLineRunner;
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;

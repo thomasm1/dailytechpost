@@ -1,4 +1,4 @@
-package net.ourdailytech.rest.util;
+package net.ourdailytech.rest.util.constants;
 
 public class Constant {
     public static final String ANSI_RESET = "\u001B[0m";

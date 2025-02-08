@@ -30,10 +30,10 @@ public class UserDto implements Serializable {
     @Schema(description = "User First Name")
     private String firstName; // firstName
     private String organizationCode;
-
     private String dashboardCode; // usergroup
     private String cusUrl; // usergroup
     private int userType;
+
     @Schema(description = "Username==email")
     @NotEmpty(message = "User email should not be null or empty")
     @Email(message = "Email address should be valid")
@@ -41,7 +41,7 @@ public class UserDto implements Serializable {
     private int contactType;
     private int isActive;
 
-    private Set<Role> roles;
+    private Set<RoleDto> roles;
     private String id; // id
 
 

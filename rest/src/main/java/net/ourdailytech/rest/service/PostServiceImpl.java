@@ -43,11 +43,11 @@ public class PostServiceImpl implements PostService {
 		Category cat = categoryRepository.findById(postEntityDto.getCategoryId()).orElseThrow(
 				() -> new ResourceNotFoundException("Category", "id", Long.toString(postEntityDto.getCategoryId())));
 		System.out.println("cat: " + postEntityDto.getCategoryId());
-		PostEntity postEntity = postEntityMapper.PostEntityDTOToPostEntity(postEntityDto);
+		PostEntity postEntity = postEntityMapper.toEntity(postEntityDto);
 		postEntity.setCategory(cat);
 		PostEntity newPostEntity = pr.save(postEntity);
 
-		PostEntityDto postResponse = postEntityMapper.PostEntityToPostEntityDTO(newPostEntity);
+		PostEntityDto postResponse = postEntityMapper.toDto(newPostEntity);
 		return postResponse;
 	}
 	@Override
@@ -63,7 +63,7 @@ public class PostServiceImpl implements PostService {
 
 		// get content for page object
 		List<PostEntity> listOfPosts = posts.getContent();
-		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.PostEntityToPostEntityDTO(post)).collect(Collectors.toList());
+		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.toDto(post)).collect(Collectors.toList());
 
 		PostEntityResponse postResponse = new PostEntityResponse();
 		postResponse.setContent(content);
@@ -76,7 +76,7 @@ public class PostServiceImpl implements PostService {
 		return postResponse;
 	}
 	@Override
-	public PostEntityResponse getAllPostsByUsername(int pageNo, int pageSize, String sortBy, String sortDir, String username) {
+	public PostEntityResponse getAllPostsByUsername(int pageNo, int pageSize, String sortBy, String sortDir, String email) {
 
 		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
 				: Sort.by(sortBy).descending();
@@ -84,12 +84,12 @@ public class PostServiceImpl implements PostService {
 		// create Pageable instance
 		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 
-		Page<PostEntity> posts = pr.findAllByUsername(pageable, username);
+		Page<PostEntity> posts = pr.findAllByEmail(pageable, email);
 
 		// get content for page object
 		List<PostEntity> listOfPosts = posts.getContent();
 
-		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.PostEntityToPostEntityDTO(post)).collect(Collectors.toList());
+		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.toDto(post)).collect(Collectors.toList());
 
 		PostEntityResponse postResponse = new PostEntityResponse();
 		postResponse.setContent(content);
@@ -112,12 +112,12 @@ public class PostServiceImpl implements PostService {
 		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 		Optional<User> u = Optional.ofNullable(usersRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("User", "email", email)));
 		String usernameFromEmail = u.get().getUsername();
-		Page<PostEntity> posts = pr.findAllByUsername(pageable, usernameFromEmail);
+		Page<PostEntity> posts = pr.findAllByEmail(pageable, usernameFromEmail);
 
 		// get content for page object
 		List<PostEntity> listOfPosts = posts.getContent();
 
-		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.PostEntityToPostEntityDTO(post)).collect(Collectors.toList());
+		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.toDto(post)).collect(Collectors.toList());
 
 		PostEntityResponse postResponse = new PostEntityResponse();
 		postResponse.setContent(content);
@@ -133,13 +133,13 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public PostEntityDto getPostById(long id) {
 		PostEntity post = pr.findById(id).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "id", Long.toString(id)));
-		return postEntityMapper.PostEntityToPostEntityDTO(post);
+		return postEntityMapper.toDto(post);
  	}
 
 	@Override
 	public PostEntityDto getPostByDid(String did) {
 		PostEntity post = pr.findByDid(did).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "did", did));
-		return postEntityMapper.PostEntityToPostEntityDTO(post);
+		return postEntityMapper.toDto(post);
 	}
 
 
@@ -152,7 +152,7 @@ public class PostServiceImpl implements PostService {
 		Category category = categoryRepository.findById(categoryId).orElseThrow(
 				() -> new ResourceNotFoundException("Category", "id", Long.toString(categoryId)));
 		List<PostEntity> posts = pr.findByCategoryId(categoryId);
-		return posts.stream().map(post -> postEntityMapper.PostEntityToPostEntityDTO(post)).collect(Collectors.toList());
+		return posts.stream().map(post -> postEntityMapper.toDto(post)).collect(Collectors.toList());
 	}
 
 	@Override
@@ -176,7 +176,7 @@ public class PostServiceImpl implements PostService {
 		System.out.println("cat: " + cat.toString());
 
 		PostEntity updatedPost = pr.save(postOld);
-		return postEntityMapper.PostEntityToPostEntityDTO(updatedPost);
+		return postEntityMapper.toDto(updatedPost);
 	}
 	@Override
 	public boolean deletePostById(long id) {

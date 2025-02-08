@@ -3,7 +3,7 @@ package net.ourdailytech.rest.controllers;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import net.ourdailytech.rest.util.Constant;
+import net.ourdailytech.rest.util.constants.Constant;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
 import net.ourdailytech.rest.models.dto.PostEntityResponse;

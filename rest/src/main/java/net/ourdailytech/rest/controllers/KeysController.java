@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static net.ourdailytech.rest.util.Constant.API_KEYS;
+import static net.ourdailytech.rest.util.constants.Constant.API_KEYS;
 
 
 @RestController

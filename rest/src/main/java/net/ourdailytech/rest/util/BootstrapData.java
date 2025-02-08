@@ -3,6 +3,7 @@ package net.ourdailytech.rest.util;
 import lombok.extern.slf4j.Slf4j;
 import net.ourdailytech.rest.mapper.CommentMapper;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
+import net.ourdailytech.rest.mapper.RoleMapper;
 import net.ourdailytech.rest.mapper.UserMapper;
 import net.ourdailytech.rest.models.Comment;
 import net.ourdailytech.rest.models.PostEntity;
@@ -16,28 +17,28 @@ import net.ourdailytech.rest.repositories.CommentsRepository;
 import net.ourdailytech.rest.repositories.PostRepository;
 import net.ourdailytech.rest.repositories.RoleRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.github.javafaker.Faker;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
+
+import static net.ourdailytech.rest.util.PasswordGeneratorEncoder.encode;
 
 @Slf4j
+@Profile({"!prod"})
 @Configuration
-public class PostDataLoader {
-    private static final Logger log = LoggerFactory.getLogger(PostDataLoader.class);
+public class BootstrapData {
 
     private static final Faker faker = new Faker();
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
     private final RoleRepository rolesRepository;
     private final UsersRepository usersRepository;
     private final PostRepository postRepository;
@@ -45,14 +46,15 @@ public class PostDataLoader {
     private final CommentsRepository commentsRepository;
     private final CommentMapper commentMapper;
     private final UserMapper userMapper;
+    private final RoleMapper roleMapper;
 
     Set<Role> roles;
     List<RegisterDto> registerDtos;
     List<UserDto> userDtos;
-    List<PostEntityDto> postEntityDtos;
+    List<PostEntityDto> postEntityDtos = new ArrayList<>();
     List<CommentDto> commentDtos;
 
-    public PostDataLoader(RoleRepository rolesRepository, PostRepository postRepository, PostEntityMapper postEntityMapper, CommentsRepository commentsRepository, CommentMapper commentMapper, UserMapper userMapper, UsersRepository usersRepository) {
+    public BootstrapData(RoleRepository rolesRepository, PostRepository postRepository, PostEntityMapper postEntityMapper, CommentsRepository commentsRepository, CommentMapper commentMapper, UserMapper userMapper, UsersRepository usersRepository, RoleMapper roleMapper) {
         this.rolesRepository = rolesRepository;
         this.postRepository = postRepository;
         this.postEntityMapper = postEntityMapper;
@@ -60,15 +62,21 @@ public class PostDataLoader {
         this.commentMapper = commentMapper;
         this.userMapper = userMapper;
         this.usersRepository = usersRepository;
+        this.roleMapper = roleMapper;
     }
 
+    @Transactional
     @Bean
     public ApplicationRunner runner() {
         return args -> {
-            loadRoles();
-            loadUsers();
-            loadPosts();
-            loadComments();
+            if (rolesRepository.count() <= 2)
+                loadRoles();
+            if (usersRepository.count() <= 10)
+                loadUsers();
+            if (postRepository.count() <= 10) {
+                loadPosts();
+                loadComments();
+            }
         };
     }
 
@@ -78,58 +86,73 @@ public class PostDataLoader {
                 new Role(2, "ROLE_ADMIN")
         );
         rolesRepository.saveAll(roles);
+        rolesRepository.flush();
     }
 
     public void loadUsers() {
         registerDtos = new ArrayList<>();
-
+        String encryptedPassword = encode("password");
         List<UserDto> newUserDtos = generateRandomUsers(registerDtos);
 
         log.info("***** Generated Example Users *****");
         log.info("userDtos COUNT______________: {}", newUserDtos.size());
-        List<User> users =  newUserDtos.stream().map(user -> userMapper.toEntity(user)).toList();
+        List<User> users = newUserDtos.stream().map(userMapper::toEntity).toList();
+        Role roleUser = rolesRepository.findByName("ROLE_USER").orElseThrow(() -> new RuntimeException("Role not found"));
+        for (User user : users) {
+            user.setRoles(Set.of(roleUser));
+            user.setPassword(encryptedPassword);
+        }
         usersRepository.saveAll(users);
+        usersRepository.flush();
         log.info("Saved {} example posts.", users.size());
     }
+
     public void loadPosts() {
-        postEntityDtos = new ArrayList<>();
-        List<PostEntityDto> newPostDtos = generateRandomPosts(postEntityDtos);
+
+        generateRandomPosts(postEntityDtos);
 
         log.info("***** Generated Example Posts *****");
         postEntityDtos.forEach(post -> log.info("Title: {}, Author: {}, Date: {}", post.getTitle(), post.getAuthor(), post.getDate()));
-        List<PostEntity> posts =  newPostDtos.stream().map(post -> postEntityMapper.toEntity(post)).toList();
+        List<PostEntity> posts = postEntityDtos.stream().map(postEntityMapper::toEntity).toList();
         postRepository.saveAll(posts);
+        postRepository.flush();
         log.info("Saved {} example posts.", posts.size());
     }
 
     public void loadComments() {
-            commentDtos = new ArrayList<>();
-            List<CommentDto>  newCommentDtos = generateRandomComments(commentDtos);
+        commentDtos = new ArrayList<>();
+        List<CommentDto> newCommentDtos = generateRandomComments(commentDtos);
+        List<PostEntity> posts = (List<PostEntity>) postRepository.findAll();
 
-            List<PostEntity> posts = (List<PostEntity>) postRepository.findAll();
-
-            log.info("***** Generated Example Posts *****");
+        log.info("***** Generated Example Posts *****");
         newCommentDtos.forEach(cd -> log.info("Email: {}, Name: {}, Body: {}", cd.getEmail(), cd.getName(), cd.getBody()));
-            List<Comment> comments =  newCommentDtos.stream().map(commentDto -> commentMapper.toEntity(commentDto)).toList();
-            for (int i = 0; i < comments.size(); i++) {
-                comments.get(i).setPost(commentDtos.get(i).getPostId() != 0 ? posts.get((int) (commentDtos.get(i).getPostId() - 1)) : null);
-            }
-            commentsRepository.saveAll(comments);
-            log.info("Saved {} example comments.", comments.size());
+        List<Comment> comments = newCommentDtos.stream().map(commentMapper::toEntity).toList();
+
+//            comments.get(i).setPost(commentDtos.get(i).getPostId() != 0 ? posts.get((int) (commentDtos.get(i).getPostId() - 1)) : PostEntity.builder().build());
+        for (int i = 0; i < comments.size(); i++) {
+            PostEntity post = posts.get((int) (newCommentDtos.get(i).getPostId()));
+            comments.get(i).setPost(post);
+        }
+
+        commentsRepository.saveAll(comments);
+        commentsRepository.flush();
+        log.info("Saved {} example comments.", comments.size());
     }
+
     private List<UserDto> generateRandomUsers(List<RegisterDto> registerDtos) {
         userDtos = new ArrayList<>();
-        for (int i = 0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             registerDtos.add(RegisterDto.builder()
                     .email(faker.internet().emailAddress())
                     .password(bCryptPasswordEncoder.encode(faker.internet().password()))
                     .build());
         }
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 0; i < 10; i++) {
             userDtos.add(UserDto.builder()
                     .id(String.valueOf(i))
-                    .userId(i)
-                    .email(registerDtos.get(i-1).getEmail())
+                    .userId(i+1)
+                    .email(registerDtos.get(0).getEmail())
+                    .username(registerDtos.get(0).getEmail())
                     .firstName(faker.name().firstName())
                     .lastName(faker.name().lastName())
                     .userType(faker.number().numberBetween(1, 3))
@@ -140,15 +163,14 @@ public class PostDataLoader {
                     .contactType(1)
                     .build());
         }
-        for (int i= 0;i < 10; i++) {
-            userDtos.get(i).setUsername(userDtos.get(i).getEmail());
-        }
+
         return userDtos;
     }
+
     private List<PostEntityDto> generateRandomPosts(List<PostEntityDto> postEntityDtos) {
 
 
-        for (int i = 1; i <=10; i++) {
+        for (int i = 1; i <= 10; i++) {
             postEntityDtos.add(PostEntityDto.builder()
                     .id(i)
                     .did("10-" + (10 + i) + "-18")
@@ -159,7 +181,7 @@ public class PostDataLoader {
                     .title(faker.book().title()) // Random book title
                     .post("<p class='firstparagraph'>" + faker.lorem().paragraph() + "</p>")
                     .blogcite("<p class='cite'><a href='" + faker.internet().url() + "'>Source</a></p>")
-                    .username(userDtos.get(i-1).getUsername())
+                    .email(userDtos.get(i - 1).getEmail())
                     .categoryId(1L)
                     .build());
         }
@@ -168,14 +190,13 @@ public class PostDataLoader {
 
     private List<CommentDto> generateRandomComments(List<CommentDto> commentDtos) {
 
-        for (int i = 1; i < postEntityDtos.size() ; i++) {
+        for (int i = 1;  i < 10; i++) {
             commentDtos.add(CommentDto.builder()
                     .id(i)
                     .name(faker.name().fullName())
-                    .email(userDtos.get(i-1).getUsername())
+                    .email(userDtos.get(i - 1).getUsername())
                     .body(faker.lorem().paragraph())
-//                    .postId(generateRandomPosts().get(i).getId())
-                    .postId(i)
+                    .postId(i -1)
                     .build());
         }
         return commentDtos;

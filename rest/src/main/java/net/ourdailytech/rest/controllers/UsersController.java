@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static net.ourdailytech.rest.util.Constant.USER_PATH;
-import static net.ourdailytech.rest.util.Constant.USER_PATH_ID;
+import static net.ourdailytech.rest.util.constants.Constant.USER_PATH;
+import static net.ourdailytech.rest.util.constants.Constant.USER_PATH_ID;
 
 
 @CrossOrigin(origins = "*")

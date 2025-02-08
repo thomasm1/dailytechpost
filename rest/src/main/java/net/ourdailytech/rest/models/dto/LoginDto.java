@@ -19,4 +19,6 @@ public class LoginDto  implements Serializable {
     }
 
 
+    public void setEmail(String mail) {
+    }
 }

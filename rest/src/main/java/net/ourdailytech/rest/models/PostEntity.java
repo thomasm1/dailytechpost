@@ -30,7 +30,7 @@ public class PostEntity {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID", nullable = false)
 	private Long id;
 
@@ -58,8 +58,8 @@ public class PostEntity {
 	@Column(name = "BLOGCITE", nullable = false, length = 1000)
 	private String blogcite;	
 	
-	@Column(name = "USERNAME", nullable = false)
-	private String username;
+	@Column(name = "EMAIL" )
+	private String email;
 
 	@Column(name = "STATE")
 	private String state;
