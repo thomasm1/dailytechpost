@@ -32,7 +32,7 @@ import java.util.Set;
 import static net.ourdailytech.rest.util.PasswordGeneratorEncoder.encode;
 
 @Slf4j
-@Profile({"!prod"})
+@Profile({"test"})
 @Configuration
 public class BootstrapData {
 
@@ -130,7 +130,8 @@ public class BootstrapData {
 
 //            comments.get(i).setPost(commentDtos.get(i).getPostId() != 0 ? posts.get((int) (commentDtos.get(i).getPostId() - 1)) : PostEntity.builder().build());
         for (int i = 0; i < comments.size(); i++) {
-            PostEntity post = posts.get((int) (newCommentDtos.get(i).getPostId()));
+            PostEntity post = posts.get((int) (posts.get(i) != null ? posts.get(i) : new PostEntity.SimplePost()));
+            postEntityDtos.get(i).getPost();
             comments.get(i).setPost(post);
         }
 
@@ -196,7 +197,6 @@ public class BootstrapData {
                     .name(faker.name().fullName())
                     .email(userDtos.get(i - 1).getUsername())
                     .body(faker.lorem().paragraph())
-                    .postId(i -1)
                     .build());
         }
         return commentDtos;

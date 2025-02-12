@@ -60,6 +60,6 @@ public interface PostRepository extends JpaRepository<PostEntity, Long> {
 //			"WHERE a.name LIKE :#{#alias == null || #alias.isEmpty() ? '%' : #alias}")
 //		List<PostEntity> findByAuthor(String alias);
 
-	PostEntity.SimplePost findSimplyByTitle(String title);
+
 
 }

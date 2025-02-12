@@ -22,6 +22,7 @@ public class CommentsController {
 
     @Autowired
     private CommentsService commentsService;
+
     @Operation(
             summary = "Create a new comment",
             description = "Create a new comment"
@@ -30,7 +31,7 @@ public class CommentsController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/{postId}/comments")
     public ResponseEntity<CommentDto> createComment(@PathVariable long postId,
                                                     @Valid @RequestBody CommentDto commentDto){

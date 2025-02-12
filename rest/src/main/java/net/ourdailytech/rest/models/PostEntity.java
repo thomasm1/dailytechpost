@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -16,66 +15,69 @@ import java.util.Set;
 @Entity
 @Builder
 @Table(
-		name = "POST_ENTITY", uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})}
+		name = "post_entity",
+		uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})}
 )
 public class PostEntity {
 
-	public interface SimplePost {
-		String getTitle();
-//		@Value("#{target.author.name}")  //TODO MAKE AUTHOR OBJECT
-		String getAuthor();
-		String getPost();
-		String getCat3();
-		String getBlogcite();
+	public static class SimplePost {
+		Long id = 0L;
+		String did = "";
+		String title = "";
+		String post = "";
+		String blogcite = "";
+		String author = "";
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID", nullable = false)
+	@Column(name = "id", nullable = false)
 	private Long id;
 
-	@Column(name = "DID", nullable = false)
+	@Column(name = "did", nullable = false)
 	private String did;
 
-	@Column(name = "DATE_")
+	@Column(name = "post_date")
 	private String date;
-	
-	@Column(name = "AUTHOR")
-	private String author; //TODO MAKE AUTHOR OBJECT
-	
-	@Column(name = "MONTH_ORDER")
+
+	@Column(name = "author")
+	private String author; // Optionally convert to an Author entity
+
+	@Column(name = "month_order")
 	private String monthOrder;
-	
-	@Column(name = "CAT3")
+
+	@Column(name = "cat3")
 	private String cat3;
 
-	@Column(name = "TITLE", nullable = false)
+	@Column(name = "title", nullable = false)
 	private String title;
-	
-	@Column(name = "POST", nullable = false, length = 3000)
+
+	@Column(name = "post", nullable = false, length = 3000)
 	private String post;
-	
-	@Column(name = "BLOGCITE", nullable = false, length = 1000)
-	private String blogcite;	
-	
-	@Column(name = "EMAIL" )
+
+	@Column(name = "blogcite", nullable = false, length = 1000)
+	private String blogcite;
+
+	@Column(name = "email")
 	private String email;
 
-	@Column(name = "STATE")
+	@Column(name = "state")
 	private String state;
 
-	@Column(name = "WORD_COUNT")
+	@Column(name = "word_count")
 	private int wordCount;
 
-	@Column(name = "DURATION_GOAL")
+	@Column(name = "duration_goal")
 	private int durationGoal;
 
+	// Many posts can belong to one Category
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id" )
+	@JoinColumn(name = "category_id")
 	private Category category;
 
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	// One PostEntity can have many Comments
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true )
 	private Set<Comment> comments = new HashSet<>();
 
-	
 }
+

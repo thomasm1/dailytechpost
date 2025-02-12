@@ -35,7 +35,6 @@ public class CommentsServiceImpl implements CommentsService {
     @Override
     public CommentDto createComment(long postId, CommentDto commentDto) {
        Comment comment = commentMapper.toEntity(commentDto);
-
        PostEntity post = postRepository.findById(postId).orElseThrow(
                () -> new ResourceNotFoundException("Post", "id", Long.toString(postId)));
 

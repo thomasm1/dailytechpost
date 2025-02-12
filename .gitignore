@@ -1,5 +1,7 @@
 *.zip
 .next
+env
+/env
 node_modules
 bower_components
 fullstacktech 
