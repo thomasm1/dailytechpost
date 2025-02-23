@@ -22,15 +22,16 @@ spring:
           CharSet:  UTF-8
   sql:
     init:
-      data-locations: classpath:data-mysql.sql
       schema-locations: classpath:schema-mysql.sql
-      mode: never #always
+      data-locations: classpath:data-mysql.sql
+      continue-on-error: true
+      mode: always #  never #
 
 # DEV ONLY
 spring.jmx.enabled: false
 #because the javax.management.InstanceAlreadyExistsException occurs when there is an attempt to register an MBean (Managed Bean) that has already been registered. JMX is used for managing and monitoring Java applications, \
 #  and Spring Boot automatically registers various MBeans for management purposes.
-spring.jpa.hibernate.ddl-auto: none # update
+spring.jpa.hibernate.ddl-auto: none #update
 
 ## Public views
 # show  bind values

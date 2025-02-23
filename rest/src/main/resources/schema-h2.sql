@@ -1,3 +1,4 @@
+-- 02/16/25 12:00:00
 
 CREATE TABLE IF NOT EXISTS categories (
                                           id BIGINT AUTO_INCREMENT PRIMARY KEY,

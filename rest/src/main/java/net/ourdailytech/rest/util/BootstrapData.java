@@ -82,8 +82,8 @@ public class BootstrapData {
 
     private void loadRoles() {
         roles = Set.of(
-                new Role(1, "ROLE_USER"),
-                new Role(2, "ROLE_ADMIN")
+                new Role(1L, "ROLE_USER"),
+                new Role(2L, "ROLE_ADMIN")
         );
         rolesRepository.saveAll(roles);
         rolesRepository.flush();

@@ -1,70 +1,98 @@
+-- 02/16/25 12:00:00
 
-CREATE TABLE IF NOT EXISTS categories (
-                                          id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                                          description VARCHAR(255),
-                                          name VARCHAR(255)
+create table if not exists dailytech.categories
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) null,
+    name        varchar(255) null
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS news (
-                                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                                    title VARCHAR(255),
-                                    url VARCHAR(255),
-                                    category_id BIGINT ,
-                                    CONSTRAINT FK_news_category FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE SET NULL
+create table if not exists dailytech.news
+(
+    id          bigint auto_increment
+        primary key,
+    title       varchar(255) null,
+    url         varchar(255) null,
+    category_id bigint       null,
+    constraint FK_news_category
+        foreign key (category_id) references dailytech.categories (id)
+            on delete set null
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS post_entity (
-                                           id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                                           author VARCHAR(255),
-                                           blogcite VARCHAR(100) NOT NULL,
-                                           cat3 VARCHAR(100),
-                                           post_date VARCHAR(50), -- Renamed from "date"
-                                           did VARCHAR(50) NOT NULL,
-                                           duration_goal INT,
-                                           month_order VARCHAR(50),
-                                           post VARCHAR(3000) NOT NULL,
-                                           state VARCHAR(50),
-                                           title VARCHAR(255) NOT NULL,
-                                           email VARCHAR(100) NOT NULL,
-                                           word_count INT,
-                                           category_id BIGINT ,
-                                           CONSTRAINT FK_post_category FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE SET NULL
+create table if not exists dailytech.post_entity
+(
+    id            bigint auto_increment
+        primary key,
+    author        varchar(255)  null,
+    blogcite      va
+
+        rchar(1000) not null,
+    cat3          varchar(255)  null,
+    post_date     varchar(255)  null,
+    did           varchar(255)  not null,
+    duration_goal int           null,
+    month_order   varchar(255)  null,
+    post          varchar(3000) not null,
+    state         varchar(255)  null,
+    title         varchar(255)  not null,
+    email      varchar(255)  not null,
+    word_count    int           null,
+    category_id   bigint        null,
+    constraint FK_post_category
+        foreign key (category_id) references dailytech.categories (id)
+            on delete set null
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS comments (
-                                        id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                                        body TEXT NULL,  -- Changed from CLOB to TEXT
-                                        email VARCHAR(255),
-                                        name VARCHAR(255),
-                                        post_id BIGINT NOT NULL,
-                                        CONSTRAINT FK_comments_post FOREIGN KEY (post_id) REFERENCES post_entity (id) ON DELETE CASCADE
+create table if not exists dailytech.comments
+(
+    id      bigint auto_increment
+        primary key,
+    body    text         null,
+    email   varchar(255) null,
+    name    varchar(255) null,
+    post_id bigint       not null,
+    constraint FK_comments_post
+        foreign key (post_id) references dailytech.post_entity (id)
+            on delete cascade
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS roles (
-                                     id  BIGINT AUTO_INCREMENT PRIMARY KEY,
-                                     name VARCHAR(255) NULL
+create table if not exists dailytech.roles
+(
+    id   bigint auto_increment
+        primary key,
+    name varchar(255) null
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS users (
-                                     userid  BIGINT AUTO_INCREMENT PRIMARY KEY,
-                                     contacttype INT,
-                                     cusurl VARCHAR(255),
-                                     dashboardcode VARCHAR(255),
-                                     email VARCHAR(255) NOT NULL,
-                                     firstname VARCHAR(255),
-                                     isactive INT,
-                                     lastname VARCHAR(255),
-                                     organizationcode VARCHAR(255),
-                                     password VARCHAR(255),
-                                     usertype INT,
-                                     username VARCHAR(255),
-                                     CONSTRAINT unique_email UNIQUE (email) -- Ensuring unique emails
+create table if not exists dailytech.users
+(
+    userid           bigint auto_increment
+        primary key,
+    contacttype      int          null,
+    cusurl           varchar(255) null,
+    dashboardcode    varchar(255) null,
+    email            varchar(255) not null,
+    firstname        varchar(255) null,
+    isactive         int          null,
+    lastname         varchar(255) null,
+    organizationcode varchar(255) null,
+    password         varchar(255) null,
+    usertype         int          null,
+    username         varchar(255) null,
+    constraint unique_email
+        unique (email)
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS users_roles (
-                                           user_id  BIGINT NOT NULL,
-                                           role_id  BIGINT NOT NULL,
-                                           PRIMARY KEY (user_id, role_id),
-                                           CONSTRAINT FK_users_roles_user FOREIGN KEY (user_id) REFERENCES users (userid) ON DELETE CASCADE,
-                                           CONSTRAINT FK_users_roles_role FOREIGN KEY (role_id) REFERENCES roles (id) ON DELETE CASCADE
+create table if not exists dailytech.users_roles
+(
+    user_id bigint not null,
+    role_id bigint not null,
+    primary key (user_id, role_id),
+    constraint FK_users_roles_role
+        foreign key (role_id) references dailytech.roles (id)
+            on delete cascade,
+    constraint FK_users_roles_user
+        foreign key (user_id) references dailytech.users (userid)
+            on delete cascade
 ) ENGINE=InnoDB;
+

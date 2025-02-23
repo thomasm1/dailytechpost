@@ -60,11 +60,12 @@ public class User {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "users_roles", // Ensure lowercase
+            name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "userid"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
     private Set<Role> roles = new HashSet<>();
+
 
     // Constructor for full user creation
     public User(int userId, String username, String password, String lastName, String firstName, int userType,

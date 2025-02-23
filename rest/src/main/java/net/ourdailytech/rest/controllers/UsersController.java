@@ -128,8 +128,8 @@ public class UsersController {
             description = "HTTP Status 201 SUCCESS"
     )
     @PostMapping({USER_PATH+"/auth/register", USER_PATH+"/auth/signup"})
-    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
-        String response = usersService.register(registerDto);
+    public ResponseEntity<UserDto> register(@RequestBody RegisterDto registerDto) {
+        UserDto response = usersService.register(registerDto);
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", USER_PATH + "/" + registerDto.getEmail());

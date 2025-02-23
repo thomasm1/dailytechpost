@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
 
 import java.time.LocalDate;
@@ -15,11 +16,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RepositoryRestResource(collectionResourceRel = "user", path = "user")
+@Repository
 public interface UsersRepository extends JpaRepository<User, Integer> {
 
     // MULTIPLE
     Page<User> findAllByUserType(Integer userType, Pageable pageable);
 
+    User save(User user);
+    // MULTIPLE
     // SINGULAR
     Optional<User> findById(@NotNull Integer id);
 

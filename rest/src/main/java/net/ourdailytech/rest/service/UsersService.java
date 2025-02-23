@@ -11,10 +11,11 @@ import java.util.Optional;
 
 public interface UsersService {
 
-	UserDto loginUser(String username, String password); 
+	UserDto loginUser(String username, String password);
+
 	String login(LoginDto loginDto);
 	public UserDto createUser(UserDto user);
-	String register(RegisterDto registerDto); 
+	UserDto register(RegisterDto registerDto);
 	public Optional<UserDto> getUser(int id);
 	public Optional<UserDto> getUser(String username );
 	public List<UserDto> getUsers();

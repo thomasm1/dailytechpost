@@ -2,6 +2,8 @@ package net.ourdailytech.rest.controllerTests;
 
 
 import net.ourdailytech.rest.controllers.UsersController;
+import net.ourdailytech.rest.mapper.UserMapper;
+import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
@@ -35,6 +37,8 @@ public class UsersControllerTest {
         @Mock
         private UsersService usersService;
 
+        @Mock
+        private UserMapper userMapper;
         @InjectMocks
         private UsersController usersController;
 
@@ -109,14 +113,15 @@ public class UsersControllerTest {
         void testRegisterUser() throws Exception {
             RegisterDto registerDto = new RegisterDto();
             registerDto.setEmail("register@example.com");
+            User u = new User();
+            u.setEmail(registerDto.getEmail());
 
-            when(usersService.register(any(RegisterDto.class))).thenReturn("User registered successfully");
+            when(usersService.register(any(RegisterDto.class))).thenReturn(any(UserDto.class));
 
             mockMvc.perform(post("/api/users/auth/register")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{ \"email\": \"register@example.com\" }"))
-                    .andExpect(status().isCreated())
-                    .andExpect(content().string("User registered successfully"));
+                            .content("{ \"email\": \"register@example.com\", \"password\": \"password\" }"))
+                    .andExpect(status().isCreated());   // 201   CREATED";
         }
 
         @Test

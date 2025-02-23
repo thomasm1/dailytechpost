@@ -1,6 +1,8 @@
 package net.ourdailytech.rest.serviceTests;
  
-import net.ourdailytech.rest.models.dto.RegisterDto; 
+import net.ourdailytech.rest.mapper.UserMapper;
+import net.ourdailytech.rest.models.User;
+import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.service.UsersService;
 import net.ourdailytech.rest.service.UsersServiceImpl;
@@ -21,12 +23,15 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.any;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {      // *NOTE: change PK usernames before sending to DB
 
     @Mock
 	private UsersService usersService;
+    @Mock
+    private UserMapper userMapper;
     @InjectMocks
     private UsersServiceImpl usersServiceImpl = mock(UsersServiceImpl.class);
 
@@ -61,8 +66,9 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                 .email("user4@cryptomaven.xyz")
                 .password("5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8")
                 .build();
-        when(usersService.register(u)).thenReturn(u.getEmail()+ ": User registered successfully!");
-        assertEquals(usersService.register(u), u.getEmail()+ ": User registered successfully!");
+        User user = new User();
+        when(usersService.register(any(RegisterDto.class))).thenReturn(any(UserDto.class)); ;
+        assertEquals(usersService.register(u), userMapper.toDto(user) );
     } 
     @Test
     public void get_users() {
