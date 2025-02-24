@@ -3,7 +3,7 @@ CREATE TABLE dailytech.categories
     id            BIGINT AUTO_INCREMENT NOT NULL,
     name          VARCHAR(255)          NULL,
     `description` VARCHAR(255)          NULL,
-    CONSTRAINT pk_categories PRIMARY KEY (id) ENGINE=InnoDB
+    CONSTRAINT pk_categories PRIMARY KEY (id)
 );
 
 CREATE TABLE dailytech.comments
@@ -14,7 +14,6 @@ CREATE TABLE dailytech.comments
     body    TEXT                  NULL,
     post_id BIGINT                NOT NULL,
     CONSTRAINT pk_comments PRIMARY KEY (id)
- ENGINE=InnoDB
 );
 
 CREATE TABLE dailytech.news
@@ -24,7 +23,6 @@ CREATE TABLE dailytech.news
     url         VARCHAR(255)          NULL,
     category_id BIGINT                NULL,
     CONSTRAINT pk_news PRIMARY KEY (id)
- ENGINE=InnoDB
 );
 
 CREATE TABLE dailytech.post_entity
@@ -44,7 +42,6 @@ CREATE TABLE dailytech.post_entity
     duration_goal INT                   NULL,
     category_id   BIGINT                NULL,
     CONSTRAINT pk_post_entity PRIMARY KEY (id)
- ENGINE=InnoDB
 );
 
 CREATE TABLE dailytech.roles
@@ -52,7 +49,6 @@ CREATE TABLE dailytech.roles
     id   BIGINT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255)          NOT NULL,
     CONSTRAINT pk_roles PRIMARY KEY (id)
- ENGINE=InnoDB
 );
 
 CREATE TABLE dailytech.users
@@ -70,7 +66,6 @@ CREATE TABLE dailytech.users
     isactive         INT                NULL,
     contacttype      INT                NULL,
     CONSTRAINT pk_users PRIMARY KEY (userid)
- ENGINE=InnoDB
 );
 
 CREATE TABLE dailytech.users_roles
@@ -78,33 +73,25 @@ CREATE TABLE dailytech.users_roles
     role_id BIGINT NOT NULL,
     user_id INT    NOT NULL,
     CONSTRAINT pk_users_roles PRIMARY KEY (role_id, user_id)
- ENGINE=InnoDB
 );
 
 ALTER TABLE dailytech.post_entity
-    ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id ENGINE=InnoDB
-);
+    ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id);
 
 ALTER TABLE dailytech.roles
-    ADD CONSTRAINT uc_roles_name UNIQUE (name ENGINE=InnoDB
-);
+    ADD CONSTRAINT uc_roles_name UNIQUE (name);
 
 ALTER TABLE dailytech.comments
-    ADD CONSTRAINT FK_COMMENTS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id ENGINE=InnoDB
-);
+    ADD CONSTRAINT FK_COMMENTS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id);
 
 ALTER TABLE dailytech.news
-    ADD CONSTRAINT FK_NEWS_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id ENGINE=InnoDB
-);
+    ADD CONSTRAINT FK_NEWS_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
 
 ALTER TABLE dailytech.post_entity
-    ADD CONSTRAINT FK_POST_ENTITY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id ENGINE=InnoDB
-);
+    ADD CONSTRAINT FK_POST_ENTITY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
 
 ALTER TABLE dailytech.users_roles
-    ADD CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id ENGINE=InnoDB
-);
+    ADD CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id);
 
 ALTER TABLE dailytech.users_roles
-    ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid ENGINE=InnoDB
-);
+    ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);
