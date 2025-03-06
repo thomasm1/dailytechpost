@@ -9,7 +9,7 @@ export class Post {
     public title?: string,
     public post?: string,
     public blogcite?: string,
-    public username?: string,
+    public email?: string,
     
     public categoryId?: string,
     public comments?: Array<string>,

@@ -31,7 +31,7 @@ public class CommentsController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+//    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PostMapping("/{postId}/comments")
     public ResponseEntity<CommentDto> createComment(@PathVariable long postId,
                                                     @Valid @RequestBody CommentDto commentDto){

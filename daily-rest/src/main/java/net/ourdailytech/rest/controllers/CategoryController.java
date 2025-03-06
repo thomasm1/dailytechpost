@@ -26,7 +26,7 @@ public class CategoryController {
     @Operation(summary = "Add a new category")
     @ApiResponse(responseCode = "201", description = "Category created")
     @SecurityRequirement(    name = "Bearer Authentication" )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PostMapping
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
         CategoryDto savedCategory = categoryService.addCategory(categoryDto);
@@ -52,7 +52,7 @@ public class CategoryController {
     @Operation(summary = "Update a category")
     @ApiResponse(responseCode = "200", description = "Category updated")
     @SecurityRequirement(     name = "Bearer Authentication"   )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PutMapping
     public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto ){
         return ResponseEntity.ok(categoryService.updateCategory(categoryDto ));
@@ -61,7 +61,7 @@ public class CategoryController {
     @Operation(summary = "Delete a category")
     @ApiResponse(responseCode = "200", description = "Category deleted")
     @SecurityRequirement(  name = "Bearer Authentication"  )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> deleteCategory(@PathVariable("id") Long categoryId){
         try {

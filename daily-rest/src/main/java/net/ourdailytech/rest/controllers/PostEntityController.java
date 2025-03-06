@@ -35,7 +35,7 @@ public class PostEntityController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PostMapping({"", "/"})
     public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
         return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
@@ -137,7 +137,7 @@ public class PostEntityController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PutMapping("/{id}")
     public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @PathVariable(name = "id") long id){
         PostEntityDto postResponse = postService.updatePost(postEntityDto, id);
@@ -153,7 +153,7 @@ public class PostEntityController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deletePostById(@PathVariable(name = "id") long id){
         try {
