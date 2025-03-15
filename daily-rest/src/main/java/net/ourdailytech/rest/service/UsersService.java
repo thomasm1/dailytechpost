@@ -15,7 +15,7 @@ public interface UsersService {
 
 	String login(LoginDto loginDto);
 	public UserDto createUser(UserDto user);
-	UserDto register(RegisterDto registerDto);
+	Optional<UserDto> register(RegisterDto registerDto);
 	public Optional<UserDto> getUser(int id);
 	public Optional<UserDto> getUser(String username );
 	public List<UserDto> getUsers();

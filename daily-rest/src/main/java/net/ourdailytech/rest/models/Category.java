@@ -26,10 +26,12 @@ public class Category {
     private String description;
 
     // A category can have many News items
+    @ToString.Exclude  // ✅ Prevents infinite recursion
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<News> news;
 
     // A category can have many PostEntity items
+    @ToString.Exclude  // ✅ Prevents infinite recursion
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<PostEntity> posts;
 }

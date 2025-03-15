@@ -71,9 +71,12 @@ public class PostEntity {
 	// Many posts can belong to one Category
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
+	@ToString.Exclude
+	@JsonIgnore
 	private Category category;
 
-	// One PostEntity can have many Comments
+	// One PostEntity can have many Comment
+	@ToString.Exclude  // ✅ Prevents infinite recursion
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true )
 	private Set<Comment> comments = new HashSet<>();
 

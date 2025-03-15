@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -32,6 +33,7 @@ public class Comment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     @ToString.Exclude
+    @JsonIgnore
     private PostEntity post;
 
     // equals and hashCode methods (simplified for readability)

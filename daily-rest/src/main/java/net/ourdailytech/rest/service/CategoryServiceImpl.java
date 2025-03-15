@@ -57,7 +57,7 @@ public class CategoryServiceImpl implements CategoryService {
 
         categoryUpdate.setName(categoryDto.getName());
         categoryUpdate.setDescription(categoryDto.getDescription());
-//        categoryUpdate.setUrls(categoryDto.getUrls()); // TODO: fix this as NEWS array
+        categoryUpdate.setNews(categoryMapper.toEntity(categoryDto).getNews());
 
         Category categoryDone = categoryRepository.save(categoryUpdate);
 

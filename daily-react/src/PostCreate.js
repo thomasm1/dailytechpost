@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const PostCreate = () => {
-  const [  title, setTitle] = useState(""); 
-  const  [ post, setPost] = useState("");
-  const   [ did, setDid] = useState(null); 
+  const   [title, setTitle] = useState(""); 
+  const   [post, setPost] = useState("");
+  const   [did, setDid] = useState(null); 
   const   [date, setDate] = useState(null); 
   const   [author, setAuthor] = useState("anonymous"); 
   const   [cat3, setCat3] = useState("category unkown");   

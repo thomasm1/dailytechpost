@@ -36,7 +36,7 @@ public class PostEntityController {
             name = "Bearer Authentication"
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PostMapping({"", "/"})
+    @PostMapping({"", "/", "/create"})
     public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
         return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
     }
@@ -138,7 +138,7 @@ public class PostEntityController {
             name = "Bearer Authentication"
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PutMapping("/{id}")
+    @PutMapping({"/{id}"})
     public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @PathVariable(name = "id") long id){
         PostEntityDto postResponse = postService.updatePost(postEntityDto, id);
         return new ResponseEntity<>(postResponse, HttpStatus.OK);

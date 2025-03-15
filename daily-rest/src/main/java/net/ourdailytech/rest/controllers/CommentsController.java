@@ -32,7 +32,7 @@ public class CommentsController {
             name = "Bearer Authentication"
     )
 //    @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PostMapping("/{postId}/comments")
+    @PostMapping({"/{postId}/comments", "/{postId}/comments/create"})
     public ResponseEntity<CommentDto> createComment(@PathVariable long postId,
                                                     @Valid @RequestBody CommentDto commentDto){
         return new ResponseEntity<>(commentsService.createComment(postId, commentDto), HttpStatus.CREATED);

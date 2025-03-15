@@ -17,7 +17,6 @@ export class Post {
     public news?: string,
     public durationGoal?: number,
     public wordCount?: number,
-    public state?: string,
-
-  ) { }
-}    
+    public state?: string, 
+  ) {  }
+}   

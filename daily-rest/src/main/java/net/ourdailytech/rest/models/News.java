@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -26,6 +27,8 @@ public class News {
     private String url;
 
     // Many news items can belong to one Category
+    @JsonIgnore // ✅ Prevents infinite recursion when serializing JSON
+      @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;

@@ -4,9 +4,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+import net.ourdailytech.rest.models.PostEntity;
 import net.ourdailytech.rest.models.Role;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +26,6 @@ public class UserDto implements Serializable {
 
     private int userId; // userId
     @Schema(description = "User First Name")
-    @NotEmpty(message = "User last name should not be null or empty")
     private String username;
     private String lastName; // lastName
     @Schema(description = "User First Name")
@@ -43,7 +44,7 @@ public class UserDto implements Serializable {
 
     private Set<RoleDto> roles;
     private String id; // id
-
+    private Set<PostEntity> posts = new HashSet<>();
 
     public String getPassword() {
         return username; // for/admin

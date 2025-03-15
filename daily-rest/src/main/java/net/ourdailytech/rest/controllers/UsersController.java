@@ -129,12 +129,12 @@ public class UsersController {
     )
     @PostMapping({USER_PATH+"/auth/register", USER_PATH+"/auth/signup"})
     public ResponseEntity<UserDto> register(@RequestBody RegisterDto registerDto) {
-        UserDto response = usersService.register(registerDto);
-
+        Optional<UserDto> response = usersService.register(registerDto);
+        response.orElseThrow(() -> new ResourceNotFoundException("User not found"));
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", USER_PATH + "/" + registerDto.getEmail());
 
-        return new ResponseEntity<>(response, headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(response.get(), headers, HttpStatus.CREATED);
     }
     // Build Login REST API
     @Operation(
@@ -164,8 +164,8 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     ) 
   
-    @PutMapping(value = {USER_PATH + "/{email}",USER_PATH}, consumes = "application/json")  // userId in body
-    public ResponseEntity<UserDto> updateUser(@PathVariable("email") String email, @RequestBody UserDto userDto) { 
+    @PutMapping(value = { USER_PATH}, consumes = "application/json")  // userId in body
+    public ResponseEntity<UserDto> updateUser( @RequestBody UserDto userDto) {
         Optional<UserDto> updated = usersService.updateUser(userDto);
         return updated.map(dto -> new ResponseEntity<>(
                 dto,

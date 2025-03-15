@@ -60,6 +60,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
         when(usersService.createUser(u)).thenReturn(u);
         assertEquals(usersService.createUser(u), u);
      }
+
     @Test
     public void register_new_user() {
         RegisterDto u =   RegisterDto.builder()
@@ -67,7 +68,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                 .password("5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8")
                 .build();
         User user = new User();
-        when(usersService.register(any(RegisterDto.class))).thenReturn(any(UserDto.class)); ;
+        when(usersService.register(any(RegisterDto.class))).thenReturn(any(Optional.class)); ;
         assertEquals(usersService.register(u), userMapper.toDto(user) );
     } 
     @Test

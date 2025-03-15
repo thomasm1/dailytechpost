@@ -109,21 +109,23 @@ public class UsersControllerTest {
                     .andExpect(jsonPath("$.email").value("newuser@example.com"));
         }
 
-        @Test
-        void testRegisterUser() throws Exception {
-            RegisterDto registerDto = new RegisterDto();
-            registerDto.setEmail("register@example.com");
-            User u = new User();
-            u.setEmail(registerDto.getEmail());
 
-            when(usersService.register(any(RegisterDto.class))).thenReturn(any(UserDto.class));
+@Test
+void testRegisterUser() throws Exception {
+    RegisterDto registerDto = new RegisterDto();
+    registerDto.setEmail("register@example.com");
 
-            mockMvc.perform(post("/api/users/auth/register")
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .content("{ \"email\": \"register@example.com\", \"password\": \"password\" }"))
-                    .andExpect(status().isCreated());   // 201   CREATED";
-        }
+    UserDto mockUser = new UserDto();
+    mockUser.setEmail("register@example.com");
 
+    when(usersService.register(any(RegisterDto.class))).thenReturn(Optional.of(mockUser));
+
+    mockMvc.perform(post("/api/users/auth/register")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{ \"email\": \"register@example.com\", \"password\": \"password\" }"))
+            .andExpect(status().isCreated())   // 201 CREATED
+            .andExpect(jsonPath("$.email").value("register@example.com"));
+}
         @Test
         void testLoginUser() throws Exception {
             LoginDto loginDto = new LoginDto();
@@ -138,21 +140,22 @@ public class UsersControllerTest {
                     .andExpect(jsonPath("$.accessToken").value("mock-jwt-token"));
         }
 
-        @Test
-        @WithMockUser(roles = "ADMIN")
-        void testUpdateUser() throws Exception {
-            UserDto userDto = new UserDto();
-            userDto.setUserId(1);
-            userDto.setEmail("updated@example.com");
+    @Test
+    @WithMockUser(roles = "ADMIN")
+    void testUpdateUser() throws Exception {
+        UserDto userDto = new UserDto();
+        userDto.setUserId(1);
+        userDto.setEmail("updated@example.com");
 
-            when(usersService.updateUser(any(UserDto.class))).thenReturn(Optional.of(userDto));
+        when(usersService.updateUser(any(UserDto.class))).thenReturn(Optional.of(userDto));
 
-            mockMvc.perform(put("/api/users/updated@example.com")
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .content("{ \"email\": \"updated@example.com\" }"))
-                    .andExpect(status().isCreated())
-                    .andExpect(jsonPath("$.email").value("updated@example.com"));
-        }
+        mockMvc.perform(put("/api/users")  // ✅ Fixed path
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{ \"userId\": 1, \"email\": \"updated@example.com\" }"))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.email").value("updated@example.com"));
+    }
+
 
         @Test
         @WithMockUser(roles = "ADMIN")

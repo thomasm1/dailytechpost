@@ -51,7 +51,7 @@ public class CategoryController {
 
     @Operation(summary = "Update a category")
     @ApiResponse(responseCode = "200", description = "Category updated")
-    @SecurityRequirement(     name = "Bearer Authentication"   )
+//    @SecurityRequirement(     name = "Bearer Authentication"   )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PutMapping
     public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto ){

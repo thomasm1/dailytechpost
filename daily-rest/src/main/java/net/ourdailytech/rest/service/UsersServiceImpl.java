@@ -12,6 +12,7 @@ import net.ourdailytech.rest.models.dto.UserDto;
 import net.ourdailytech.rest.repositories.RoleRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
 import net.ourdailytech.rest.security.JwtTokenProvider;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired; 
@@ -111,12 +112,12 @@ public class UsersServiceImpl implements UsersService {
         return userMapper.toDto(u);
     }
 
-    /** 
+    /**
      * @param registerDto;
      * @return String
      */
     @Override
-    public UserDto register(RegisterDto registerDto) {
+    public Optional<UserDto> register(RegisterDto registerDto) {
         if(usersRepository.existsByEmail(registerDto.getEmail())){
             throw new PostApiException(HttpStatus.BAD_REQUEST, "Email  already exists!.");
         }
@@ -130,7 +131,7 @@ public class UsersServiceImpl implements UsersService {
         roles.add(userRole.get());
         user.setRoles(roles);
         User u =  usersRepository.save(user);
-        return  userMapper.toDto(u);
+        return Optional.ofNullable(userMapper.toDto(u));
     }
 
 
