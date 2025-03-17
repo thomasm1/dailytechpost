@@ -1,0 +1,26 @@
+version: 0.0
+os: linux
+files:
+  - source: build/dailytech/
+    destination: /var/www/html/
+hooks:
+  ApplicationStop:
+    - location: appspec/stop_server.sh
+      timeout: 300
+      runas: root
+  BeforeInstall:
+    - location: appspec/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: appspec/after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: appspec/start_server.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: appspec/validate_service.sh
+      timeout: 300
+

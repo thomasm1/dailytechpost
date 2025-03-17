@@ -3,10 +3,14 @@ import axios from "axios";
 import Form from "./Form";
 import { POSTS_BASE_URL } from "../config";
 import FormGroup from "./FormGroup";
-import { CITATION_OPTIONS } from "../config";
 
 const PostCreate = () => {
-  const citationOptions = CITATION_OPTIONS;
+  const citationOptions = [
+    "Musing Blockchain",
+    "Sociology Now!",
+    "A.I.Now.AI",
+  ];
+
   return (
     <div className="post-create-container">
       <Form
@@ -42,12 +46,13 @@ const PostCreate = () => {
             <FormGroup label="Category" id="cat3" type="select" values={values} handleChange={handleChange} required>
               <option value="Musing Blockchain">Musing Blockchain</option>
               <option value="Sociology Now!">Sociology Now!</option>
-              <option value="A.I.Now.">A.I.Now.AI</option>
-              <option value="Quantum Data">Quantum Data</option> 
+              <option value="A.I.Now.AI">A.I.Now.AI</option>
+              <option value="Quantum Data">Quantum Data</option>
+              <option value="Cybersecurity">Cybersecurity</option>
               <option value="WebDev Affairs">WebDev Affairs</option>
             </FormGroup>
             <div className="form-group">
-              <label>Pre-wrapped research & news bundle</label>
+              <label>Citation</label>
               {citationOptions.map((option) => (
                 <div key={option} className="form-check">
                   <input

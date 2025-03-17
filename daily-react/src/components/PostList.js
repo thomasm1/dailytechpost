@@ -53,7 +53,7 @@ export default PostList;
 //   const [posts, setPosts] = useState({});
 
 //   const fetchPosts = async () => {
-//     const res = await axios.get("http://localhost:8082/api/posts");
+//     const res = await axios.get("http://localhost:8888/api/posts");
 
 //     setPosts(res.data.content);
 //   };
