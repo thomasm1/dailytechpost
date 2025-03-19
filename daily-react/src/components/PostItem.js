@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { API_BASE_URL } from '../config';
+import { useParams } from 'react-router-dom'; 
+import  postService   from '../services/postsService';
 
 const PostItem = () => {
     const { id } = useParams();
@@ -10,7 +9,7 @@ const PostItem = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const response = await axios.get(`${API_BASE_URL}/posts/${id}`);
+                const response =postService.getPost(id);
                 setPost(response.data);
             } catch (error) {
                 console.error("Error fetching post:", error);

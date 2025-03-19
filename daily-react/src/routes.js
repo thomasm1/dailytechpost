@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
 import Dashboard from "./views/Dashboard"; 
-import NewsService from './components/NewsService'; 
+import NewsParent from './components/NewsParent'; 
 
 const RoutesDaily = () => ( 
   <BrowserRouter>
@@ -37,7 +37,7 @@ const RoutesDaily = () => (
       <Route path="/posts/:id" element={<PostItem />} />
       <Route path="/posts" element={<PostList />} />
       {/* <Route path="/news/:id" element={<NewsList />} /> */}
-      <Route path="/news" element={<NewsService/>} />
+      <Route path="/news" element={<NewsParent/>} />
       <Route path="/" element={<Dashboard />} />
       <Route path="*" element={<h3>Oops, page not found</h3>} />
     </Routes>

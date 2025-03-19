@@ -1,6 +1,7 @@
 import {
     POSTS_LIST,
-    USERS_LIST
+    USERS_LIST,
+    NEWS_LIST
 } from '../types';
 
 import axios from 'axios';

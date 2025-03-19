@@ -1,17 +1,15 @@
-import React from "react";
-import axios from "axios";
-import { API_BASE_URL } from "../config";
+import React from "react"; 
 import Form from "./Form";
 import FormGroup from "./FormGroup";
+import commentsService from "../services/commentsService";
 
 const CommentCreate = ({ postId }) => {
+
   const handleSubmit = async (values) => {
     try {
-        await axios.post(`${API_BASE_URL}/posts/${postId}/comments`, {
-          ...values,
-          name: "Commenter",
-          email: "anonymous@gmail.com",
-        });
+             await commentsService.addComment(values, postId); 
+      alert("Comment created successfully!");
+
       } catch (error) {
         console.error("Error creating comment:", error);
         alert("Error creating comment. Please check the console for details.");

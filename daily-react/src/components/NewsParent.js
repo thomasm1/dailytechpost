@@ -1,11 +1,10 @@
 import React, {  Component  } from "react";
 import NewsList from "./NewsList";
-import Filter from "./Filter";
-import axios from "axios";
-import { CATEGORY_BASE_URL } from "../config";
+import Filter from "./Filter"; 
+import  newsService   from "../services/newsService";
 // import {   useLocation } from 'react-router-dom';
 
-class NewsService extends Component {
+class NewsParent extends Component {
     // const location = useLocation();
     constructor() {
         super();
@@ -24,8 +23,8 @@ class NewsService extends Component {
 
     fetchNews = async () => {
         try {
-            const response = await axios.get(`${CATEGORY_BASE_URL}/categories`);
-            const categories = response.data;
+            const categories = await newsService.getCategories(); 
+            console.log("NewsParent fetchNews:", categories);
             this.setState({ news: categories, filtered: categories, loading: false });
         } catch (error) {
             console.error("Error fetching news:", error);
@@ -72,4 +71,4 @@ class NewsService extends Component {
     }
 }
 
-export default  NewsService; 
+export default  NewsParent; 
