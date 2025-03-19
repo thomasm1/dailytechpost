@@ -41,8 +41,6 @@ public class CategoryServiceImpl implements CategoryService {
     public List<CategoryDto> getAllCategories() {
 
         List<Category> categories = categoryRepository.findAll();
-//        List<CategoryDto> categoriesDto = categories.stream().map(category -> categoryMapper.toDto(category))
-//                .collect(Collectors.toList());
         List<CategoryDto> catDto = categories.stream().map(categoryMapper::toDto)
                 .collect(Collectors.toList());
         return catDto;
@@ -57,7 +55,9 @@ public class CategoryServiceImpl implements CategoryService {
 
         categoryUpdate.setName(categoryDto.getName());
         categoryUpdate.setDescription(categoryDto.getDescription());
-        categoryUpdate.setNews(categoryMapper.toEntity(categoryDto).getNews());
+
+        categoryUpdate.getNews().clear(); // Clears the existing collection
+        categoryUpdate.getNews().addAll(categoryMapper.toEntity(categoryDto).getNews()); // Adds new items
 
         Category categoryDone = categoryRepository.save(categoryUpdate);
 

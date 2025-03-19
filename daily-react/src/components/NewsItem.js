@@ -1,4 +1,5 @@
 import React from 'react';
+import { newsService } from '../services/newsService';
 // import { css } from 'glamor'
 
 // let news_item = css({
@@ -21,7 +22,7 @@ const [category, setCategory] = useState(null);
 useEffect(() => {
     const fetchCategory = async () => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/categories/${id}`);
+       const response = newsService.getCategory(id);
             setCategory(response.data);
             console.log("Category NewsItem fetched:", response.data);
         } catch (error) {

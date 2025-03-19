@@ -1,8 +1,8 @@
-import React from "react";
-import axios from "axios";
+import React from "react"; 
 import Form from "./Form";
-import { CATEGORY_BASE_URL, JWT_TOKEN } from "../config";
+import {   JWT_TOKEN } from "../config";
 import FormGroup from "./FormGroup";
+import  newsService  from "../services/newsService";
 
 const NewsAdd = ({ categorySelected }) => {
   const categoryId = categorySelected.id; // Get categoryId directly
@@ -17,12 +17,9 @@ const NewsAdd = ({ categorySelected }) => {
         }}
         onSubmit={async (values) => {
           try {
-            // GET the existing category from the server
-            const response = await axios.get(
-              `${CATEGORY_BASE_URL}/categories/${categoryId}` // Correct URL!
-            );
+            // Get the category object
+            const response = newsService.getCategory(categoryId);
             const category = response.data;
-
             // Ensure category.news exists
             if (!category.news) {
               category.news = [];
@@ -34,16 +31,8 @@ const NewsAdd = ({ categorySelected }) => {
             // Add the news object to the category
             category.news.push({ ...values, id });
 
-            // PUT request to the CORRECT endpoint with the CORRECT data
-            await axios.put(
-              `${CATEGORY_BASE_URL}/categories`, // Correct URL!
-              category, // Send only the category to update
-              {
-                headers: {
-                  Authorization: `Bearer ${bearerToken}`,
-                },
-              }
-            );
+             newsService.addNews(categoryId, values);
+
 
             alert("Research URL added successfully!");
           } catch (error) {

@@ -1,0 +1,29 @@
+import React from 'react';
+
+const DataCounter = ({likes,bookmarks,addBookmark, addLike}) => (
+    <div className="addlikes-wrapper">
+        <h3>How do you feel about this.</h3>
+        <div className="addlikes-container">
+            <div 
+                className="btn like"
+            onClick={()=> addLike('ADD_LIKE')}
+            >
+                <div className="hits">{likes}</div>
+                <div className="icon">
+                    <i className="fa fa-thumbs-up"></i>
+                </div>
+            </div>
+            <div 
+                className="btn bookmark"
+                onClick={()=> addBookmark('ADD_BOOKMARK')}
+            >
+                <div className="hits">{bookmarks}</div>
+                <div className="icon">
+                    <i className="fa fa-book"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+)
+
+export default DataCounter;

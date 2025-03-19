@@ -1,0 +1,36 @@
+{
+  "nasa": [
+    {
+      "id": 1,
+      "title": "Dark Matter in a Simulated Universe",
+      "date": "2020-10-25",
+      "copyright": "Tom AbelRalf KaehlerKIPACSLACAMNH",
+      "explanation": "Is our universe haunted? It might look that way on this dark matter map. The gravity of unseen dark matter is the leading explanation for why galaxies rotate so fast, why galaxies orbit clusters so fast, why gravitational lenses so strongly deflect light, and why visible matter is distributed as it is both in the local universe and on the cosmic microwave background. The featured image from the American Museum of Natural History's Hayden Planetarium previous Space Show Dark Universe highlights one example of how pervasive dark matter might haunt our universe. In this frame from a detailed computer simulation, complex filaments of dark matter, shown in black, are strewn about the universe like spider webs, while the relatively rare clumps of familiar baryonic matter are colored orange. These simulations are good statistical matches to astronomical observations. In what is perhaps a scarier turn of events, dark matter -- although quite strange and in an unknown form -- is no longer thought to be the strangest source of gravity in the universe. That honor now falls to dark energy, a more uniform source of repulsive gravity that seems to now dominate the expansion of the entire universe.",
+      "url": "https://apod.nasa.gov/apod/image/2010/DarkMatter_KipacAmnh_960.jpg",
+      "hdurl": "https://apod.nasa.gov/apod/image/2010/DarkMatter_KipacAmnh_1200.jpg",
+      "media_type": "image"
+    },
+    {
+      "copyright": "Charles Bracken",
+      "date": "2020-11-12",
+      "explanation": "With its closest approach to planet Earth scheduled for November 14, this Comet ATLAS (C/2020 M3) was discovered just this summer, another comet found by the NASA funded Asteroid Terrestrial-impact Last Alert System. It won't get as bright as Comet NEOWISE but it can still be spotted using binoculars, as it currently sweeps through the familiar constellation of Orion. This telephoto field from November 8, blends exposures registered on the comet with exposures registered on Orion's stars. It creates an effectively deep skyview that shows colors and details you can't quite see though, even in binoculars. The comet's telltale greenish coma is toward the upper left, above Orion's three belt stars lined-up across the frame below center. You'll also probably spot the Orion Nebula, and famous Horsehead Nebula in the stunning field of view. Of course one of Orion's belt stars is nearly 2,000 light-years away. On November 14, this comet ATLAS will fly a mere 2.9 light-minutes from Earth.",
+      "hdurl": "https://apod.nasa.gov/apod/image/2011/C2020M3Orion_CharlesBracken.jpg",
+      "media_type": "image",
+      "service_version": "v1",
+      "title": "Comet ATLAS and Orion's Belt",
+      "url": "https://apod.nasa.gov/apod/image/2011/C2020M3Orion_CharlesBracken1024.jpg",
+      "id": 2
+    },
+    {
+      "copyright": "Ignacio Diaz Bobillo",
+      "date": "2020-11-13",
+      "explanation": "The Tarantula Nebula, also known as 30 Doradus, is more than a thousand light-years in diameter, a giant star forming region within nearby satellite galaxy the Large Magellanic Cloud. About 180 thousand light-years away, it's the largest, most violent star forming region known in the whole Local Group of galaxies. The cosmic arachnid sprawls across the top of this spectacular view, composed with narrowband filter data centered on emission from ionized hydrogen and oxygen atoms. Within the Tarantula (NGC 2070), intense radiation, stellar winds and supernova shocks from the central young cluster of massive stars, cataloged as R136, energize the nebular glow and shape the spidery filaments. Around the Tarantula are other star forming regions with young star clusters, filaments, and blown-out bubble-shaped clouds. In fact, the frame includes the site of the closest supernova in modern times, SN 1987A, right of center. The rich field of view spans about 2 degrees or 4 full moons, in the southern constellation Dorado. But were the Tarantula Nebula closer, say 1,500 light-years distant like the local star forming Orion Nebula, it would take up half the sky.",
+      "hdurl": "https://apod.nasa.gov/apod/image/2011/Tarantula_HOO_final_2_2048.jpg",
+      "media_type": "image",
+      "service_version": "v1",
+      "title": "The Tarantula Zone",
+      "url": "https://apod.nasa.gov/apod/image/2011/Tarantula_HOO_final_2_1024.jpg",
+      "id": 3
+    }
+  ]
+}

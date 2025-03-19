@@ -2,52 +2,44 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
 import Dashboard from "./views/Dashboard"; 
-import NewsService from './components/NewsService'; 
+import NewsParent from './components/NewsParent'; 
+import Header from "./views/Header";
+import Footer from "./views/Footer";
+import Article from './components/Article';
+import  {styles}   from './config';
 
-const RoutesDaily = () => ( 
+class CounterState {
+  count = 0;
+}
+class UserState {
+  user = null;
+  isSignedIn = false;
+}
+const RoutesDaily = () => (
   <BrowserRouter>
-  <header className="app-header">
-    <div className="header-content">
-      <NavLink
-        to="/"
-        className="nav-link"
-        style={({ isActive }) => ({ color: isActive ? '#aaa' : '#bbb' })}
-      >
-        Write!
-      </NavLink>
-      <NavLink
-        to="/posts"
-        className="nav-link"
-        style={({ isActive }) => ({ color: isActive ? '#aaa' : '#bbb' })}
-      >
-        Posts
-      </NavLink>
-      <NavLink
-        to="/news"
-        className="nav-link"
-        style={({ isActive }) => ({ color: isActive ? '#aaa' : '#bbb' })}
-      >
-        News by Category
-      </NavLink>
-    </div> 
-  </header>
-
-  <main className="app-main">
-    <Routes>
-      <Route path="/posts/:id" element={<PostItem />} />
-      <Route path="/posts" element={<PostList />} />
-      {/* <Route path="/news/:id" element={<NewsList />} /> */}
-      <Route path="/news" element={<NewsService/>} />
-      <Route path="/" element={<Dashboard />} />
-      <Route path="*" element={<h3>Oops, page not found</h3>} />
-    </Routes>
-  </main>
-</BrowserRouter>
+  
+  <Header /> 
+     
+    <main className="app-main">
+      <Routes>
+      <Route path="/article/:id" element={Article}/>
+        <Route path="/posts/:id" element={<PostItem />} />
+        <Route path="/posts" element={<PostList />} />
+        {/* <Route path="/news/:id" element={<NewsList />} /> */}
+        <Route path="/news" element={<NewsParent/>} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="*" element={<h3>Oops, page not found</h3>} />
+      </Routes>
+    </main>
+    <Footer />
+  </BrowserRouter>
 )
+ 
 
 
 
 export default RoutesDaily;
+
 // = [
 //   {
 //     path: "/",

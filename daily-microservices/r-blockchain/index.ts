@@ -1,9 +1,10 @@
-import * as express from 'express';
+import express from 'express';
 import { Application,  Request, Response } from 'express';
 import { BLOCKCHAIN } from "./db-data";
 import {randomBytes} from 'crypto';  
 import axios  from 'axios';
 import cors from 'cors'; 
+import { BLOCKCHAIN_HOST, BLOCKCHAIN_PORT, BUS_HOST, PORT_EVENT_BUS } from './config';
  
 
 const app: Application = express();
@@ -23,11 +24,6 @@ interface Block {
 
 let blockchain: { [key: string]: Block } = {};
 
-const BLOCKCHAIN_HOST = "blockchain-clusterip-srv";
-const BLOCKCHAIN_PORT = 9009; 
-
-const BUS_HOST = "event-bus-srv"; // localhost
-const PORT_EVENT_BUS = 4005;
 
 
 // #1 //

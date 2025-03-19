@@ -53,8 +53,14 @@ public class CategoryController {
     @ApiResponse(responseCode = "200", description = "Category updated")
 //    @SecurityRequirement(     name = "Bearer Authentication"   )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PutMapping
-    public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto ){
+    @PutMapping({"/{id}", "/"}) // Allows both /api/categories/{id} and /api/categories
+    public ResponseEntity<CategoryDto> updateCategory(
+            @PathVariable(value = "id", required = false) Long categoryId,
+            @RequestBody CategoryDto categoryDto) {
+
+        if (categoryId != null) {
+            categoryDto.setId(categoryId); // Ensure ID consistency if provided in the URL
+        }
         return ResponseEntity.ok(categoryService.updateCategory(categoryDto ));
     }
 

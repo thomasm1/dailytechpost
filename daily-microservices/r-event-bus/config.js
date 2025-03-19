@@ -1,6 +1,15 @@
 
 // STRINGS
 export const API_BASE_URL = "http://localhost:8082/api";
+export const BLOCKCHAIN_BASE_URL = "http://blockchain-clusterip-srv:9009";// "http://localhost:8082/api"; //; 
+
+export const EVENT_BASE_URL = "http://event-bus-srv:4005"; // "http://localhost:4005";// "http://localhost:8082/api"; //; 
+
+export const BLOCKCHAIN_HOST = "blockchain-clusterip-srv";
+export const BLOCKCHAIN_PORT = 9009;  
+export const BUS_HOST = "event-bus-srv"; // localhost
+export const PORT_EVENT_BUS = 4005;
+
 export const CATEGORY_BASE_URL = "http://categories-clusterip-srv:4001"; //"http://localhost:8082/api"
 export const COMMENTS_BASE_URL = "http://comments-clusterip-srv:4001"; //"http://localhost:8082/api"
 export const POSTS_BASE_URL = "http://posts-clusterip-srv:4000"; //"http://localhost:8082/api"

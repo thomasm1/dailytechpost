@@ -1,9 +1,6 @@
 import React, { PureComponent, useState, useEffect } from "react";
 import PostCreate from "../components/PostCreate";
 import PostList from "../components/PostList";
-import Header from "./Header";
-import Footer from "./Footer";
-
 class Dashboard extends PureComponent {
   constructor() {
     super();
@@ -20,7 +17,6 @@ class Dashboard extends PureComponent {
   render() {
     return (
       <div>
-        <Header />
         <div className="container">
  
           <div className="row">
@@ -33,7 +29,6 @@ class Dashboard extends PureComponent {
               <PostList />
             </div>
           </div>
-          <Footer />
         </div>
       </div>
     );

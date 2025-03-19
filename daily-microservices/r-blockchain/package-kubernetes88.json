@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js", 
-    "node_1": "nodemon --watch dev -e js dev-network-node.js 9001 http://localhost:9001",
-    "node_2": "nodemon --watch dev -e js dev-network-node.js 9002 http://localhost:9002",
-    "node_3": "nodemon --watch dev -e js dev-network-node.js 9003 http://localhost:9003",
-    "node_4": "nodemon --watch dev -e js dev-network-node.js 9004 http://localhost:9004",
-    "node_5": "nodemon --watch dev -e js dev-network-node.js 9005 http://localhost:9005"
+    "start": "nodemon index.js",
+    "node_1": "nodemon --watch dev -e js block-network-node.js 9001 http://blockchain-clusterip-srv:9001",
+    "node_2": "nodemon --watch dev -e js block-network-node.js 9002 http://blockchain-clusterip-srv:9002",
+    "node_3": "nodemon --watch dev -e js block-network-node.js 9003 http://blockchain-clusterip-srv:9003",
+    "node_4": "nodemon --watch dev -e js block-network-node.js 9004 http://blockchain-clusterip-srv:9004",
+    "node_5": "nodemon --watch dev -e js block-network-node.js 9005 http://blockchain-clusterip-srv:9005"
   },
   "keywords": [],
   "author": "",
