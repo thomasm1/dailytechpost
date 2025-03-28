@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Keywords from '../views/Keywords';
+import Keywords from '../layout/Keywords';
 
 const Filter = ({ children, getKeywords }) => {
   

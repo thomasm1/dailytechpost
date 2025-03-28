@@ -1,8 +1,8 @@
 // STRINGS
-export const API_BASE_URL = "http://localhost:8082/api";
-export const CATEGORY_BASE_URL = "http://localhost:8082/api"; //"http://comments-clusterip-srv:4001"; //
-export const POSTS_BASE_URL = "http://localhost:8082/api"; // "http://posts-clusterip-srv:4000"; //
-export const JWT_TOKEN = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dEBnbWFpbC5jb20iLCJpYXQiOjE3NDIzNDQ1MTcsImV4cCI6MTc0Mjk0OTMxN30._id34kpGi0O-jWDLh7zhf4M8l69qbntZtGHjIgaW47H1GLkfHnkErlofYTyT2DKC";
+export const API_BASE_URL = "http://3.215.230.246:8082/api"; //"http://localhost:8082/api";// 
+export const CATEGORY_BASE_URL =  "http://3.215.230.246:8082/api"; // "http://localhost:8082/api";//  "http://comments-clusterip-srv:4001"; //
+export const POSTS_BASE_URL = "http://3.215.230.246:8082/api"; // "http://localhost:8082/api"; // "http://posts-clusterip-srv:4000"; //
+export const JWT_TOKEN = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJiYmJAZ21haWwuY29tIiwiaWF0IjoxNzQyOTMxNjI0LCJleHAiOjE3NDM1MzY0MjR9.rCjYbXnoclln2EznsMSMx4burPSwMWzsx9LuzF4e19786pGAJ16WKU7rxYOf2cJq";
 
 
 // OBJECTS
@@ -13,6 +13,7 @@ export const JWT_TOKEN = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dEBnbWFpbC5jb20iLCJpY
     },
     li: {   
       color: "blue",
+      display:"inline-block"
     },
     h1: {
         color: "darkblue",

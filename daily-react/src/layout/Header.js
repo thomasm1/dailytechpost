@@ -3,14 +3,23 @@ import React from 'react';
 // import {   useLocation } from 'react-router-dom';
 import { styles } from '../config';
 
+
 const Header = (  ) => {
     // const location = useLocation(); 
     return (
         <div>  
             <header className="app-header">
                 <div className="header-content">
-                    <NavLink
+                    
+                <NavLink
                         to="/"
+                        className="nav-link"
+                        style={({ isActive }) => ({ color: isActive ? 'blue' : 'darkgray' })}
+                    >
+                       Home
+                    </NavLink>
+                    <NavLink
+                        to="/write"
                         className="nav-link"
                         style={({ isActive }) => ({ color: isActive ? 'blue' : 'darkgray' })}
                     >
@@ -32,7 +41,9 @@ const Header = (  ) => {
                     </NavLink>
                 </div>
                 <div className="header-content row">
+                    <hr />
                     <h6 style={{ color: styles.h6.color }}>DAILYTECH WRITER</h6> </div>
+                    <hr />
             </header>
         </div>
     );

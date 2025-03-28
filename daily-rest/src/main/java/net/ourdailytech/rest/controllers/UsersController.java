@@ -80,7 +80,9 @@ public class UsersController {
         if (usersService.getUser(userId).isEmpty()) {
             throw new ResourceNotFoundException("User " + userId + "not found");
         }
-        return new ResponseEntity<>(usersService.getUser(userId).get(), HttpStatus.OK);
+        return usersService.getUser(userId)
+                .map(userDto -> new ResponseEntity<>(userDto, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @Operation(

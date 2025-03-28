@@ -3,6 +3,8 @@ import axios from "axios";
 import Form from "./Form";
 import { POSTS_BASE_URL } from "../config";
 import FormGroup from "./FormGroup";
+import postsService from "../services/postsService";
+
 
 const PostCreate = () => {
   const citationOptions = [
@@ -22,28 +24,40 @@ const PostCreate = () => {
           state: "published",
         }}
         onSubmit={async (values) => {
-          try {
-            await axios.post(`${POSTS_BASE_URL}/posts`, {
-              ...values,
-              did: Date.now(),
-              date: Date.now(),
-              author: "anonymous",
-              email: "anonymous@gmail.com",
-              categoryId: 12,
-              blogcite: values.blogcite.join(', '), // Join the selected citations into a comma-separated string
-            });
-            alert("Post created successfully!");
-          } catch (error) {
-            console.error("Error creating post:", error);
-            alert("Error creating post. Please check the console for details.");
-          }
+          postsService.createPost(values);
+          // try {
+          //   await axios.post(`${POSTS_BASE_URL}/posts`, {
+          //     ...values,
+          //     did: Date.now(),
+          //     date: Date.now(),
+          //     author: "anonymous",
+          //     email: "anonymous@gmail.com",
+          //     categoryId: 12,
+          //     blogcite: values.blogcite.join(', '), // Join the selected citations into a comma-separated string
+          //   });
+          //   alert("Post created successfully!");
+          // } catch (error) {
+          //   console.error("Error creating post:", error);
+          //   alert("Error creating post. Please check the console for details.");
+          // }
         }}
       >
         {({ values, handleChange }) => ( // Render prop function
           <>
-            <FormGroup label="Title" id="title" values={values} handleChange={handleChange} required />
-            <FormGroup label="Post" id="post" type="textarea" values={values} handleChange={handleChange} />
-            <FormGroup label="Category" id="cat3" type="select" values={values} handleChange={handleChange} required>
+            <FormGroup
+              label="Title" id="title"
+              values={values}
+              handleChange={handleChange} required />
+            <FormGroup
+              label="Post"
+              id="post" type="textarea"
+              values={values}
+              handleChange={handleChange} />
+            <FormGroup
+              label="Category" id="cat3" type="select"
+              values={values}
+              handleChange={handleChange}
+              required>
               <option value="Musing Blockchain">Musing Blockchain</option>
               <option value="Sociology Now!">Sociology Now!</option>
               <option value="A.I.Now.AI">A.I.Now.AI</option>
