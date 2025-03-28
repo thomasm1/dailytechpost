@@ -1,13 +1,17 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "../../Downloads/84-updating/blog"
 		},
 		{
-			"path": "../tmm"
+			"path": "env"
+		},
+		{
+			"path": "../_javaclient/mini/env"
+		},
+		{
+			"path": "."
 		}
 	],
-	"settings": {
-		"java.compile.nullAnalysis.mode": "disabled"
-	}
+	"settings": {}
 }

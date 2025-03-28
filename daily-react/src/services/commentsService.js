@@ -8,7 +8,7 @@ import { JWT_TOKEN } from '../config';
 
 class CommentsService { 
     async addComment(values, postId) {
-        const bearerToken = localStorage.getItem('accessToken') || JWT_TOKEN
+        const bearerToken = localStorage.getItem('accessToken') || JWT_TOKEN;
         const comments = await axios.get(`${POSTS_BASE_URL}/posts/${postId}/comments`, values,{
             headers: {
                 Authorization: `Bearer ${bearerToken}`

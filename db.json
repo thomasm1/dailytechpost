@@ -3,17 +3,17 @@
     {
       "id": 1,
       "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "author": "typicode",
+      "post":"post",
+      "blogcite":"blogcite",
+      "cat3":"cat3"
+      "comments": [
     {
       "id": 1,
       "body": "some comment",
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+    }
+  ] 
 }

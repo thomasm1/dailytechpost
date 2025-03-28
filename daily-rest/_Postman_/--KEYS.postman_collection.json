@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "cca78d94-5600-4969-a2e9-0dc550c88df4",
+		"name": "**KEYS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3422017"
+	},
+	"item": [
+		{
+			"name": "https://2ubevlxtsi.execute-api.us-east-1.amazonaws.com/default/keys",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"999\",\r\n    \"key\":\"newKey\",\r\n    \"value\":\"newValue\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://2ubevlxtsi.execute-api.us-east-1.amazonaws.com/default/keys",
+					"protocol": "https",
+					"host": [
+						"2ubevlxtsi",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"keys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGoogleApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://34.199.129.2:8080/login/getGoogleApi",
+					"protocol": "http",
+					"host": [
+						"34",
+						"199",
+						"129",
+						"2"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"getGoogleApi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGoogleApi_AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://534gmkavqh.execute-api.us-east-1.amazonaws.com/default/1",
+					"protocol": "https",
+					"host": [
+						"534gmkavqh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoralisApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://34.199.129.2:8080/login/getMoralisApi",
+					"protocol": "http",
+					"host": [
+						"34",
+						"199",
+						"129",
+						"2"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"getMoralisApi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoralisApi_AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://534gmkavqh.execute-api.us-east-1.amazonaws.com/default/2",
+					"protocol": "https",
+					"host": [
+						"534gmkavqh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNasaApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://34.199.129.2:8080/login/getNasaApi",
+					"protocol": "http",
+					"host": [
+						"34",
+						"199",
+						"129",
+						"2"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"getNasaApi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNasaApi_AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://534gmkavqh.execute-api.us-east-1.amazonaws.com/default/3",
+					"protocol": "https",
+					"host": [
+						"534gmkavqh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNytApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://34.199.129.2:8080/login/getNytApi",
+					"protocol": "http",
+					"host": [
+						"34",
+						"199",
+						"129",
+						"2"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						"getNytApi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNytApi_AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://534gmkavqh.execute-api.us-east-1.amazonaws.com/default/4",
+					"protocol": "https",
+					"host": [
+						"534gmkavqh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/auth/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

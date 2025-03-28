@@ -1,0 +1,15 @@
+- pipe: atlassian/aws-s3-deploy:0.4.1
+  variables:
+    AWS_ACCESS_KEY_ID: ${AWS_ACCESS} # Optional if already defined in the context.
+    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET} # Optional if already defined in the context.
+    AWS_DEFAULT_REGION: 'us-east-1' # Optional if already defined in the context.
+    S3_BUCKET: 'our-daily-tech'
+    LOCAL_PATH: 'C:\w\www\git\dailytechpost' 
+    # CONTENT_ENCODING: '<string>' # Optional.
+    # ACL: '<string>' # Optional.
+    # STORAGE_CLASS: '<string>' # Optional.
+    # CACHE_CONTROL: '<string>' # Optional.
+    # EXPIRES: '<timestamp>' # Optional.
+    # DELETE_FLAG: '<boolean>' # Optional.
+    # EXTRA_ARGS: '<string>' # Optional.
+    # DEBUG: '<boolean>' # Optional.

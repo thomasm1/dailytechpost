@@ -79,7 +79,10 @@ button:focus-visible {
   color: white;
 }
 
-
+.nav-link {
+  text-decoration: none;
+  /* text-align: inline-block; */
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -96,6 +99,22 @@ button:focus-visible {
 
 .read-the-docs {
   color: #888;
+}
+.imgContainer {
+  display: inline-block;
+  border-right: 1px dotted rgba(212, 211, 211, 0.87);
+  height: 100%;
+  width: 180px;
+  margin-right: 3%;
+}
+.imgContainer img {
+  width: 160px;
+  height:150px;
+}
+.details {
+  width: 75%;
+  float:right;
+  color:white;
 }
 
 
