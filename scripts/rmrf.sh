@@ -4,5 +4,6 @@ TRASH_DIR="$HOME/.trash"
 [ ! -d "$TRASH_DIR" ] && mkdir -p "$TRASH_DIR"
 
 mv "$@" "$TRASH_DIR"
-echo "MOVED TO TRASH: $@"
+echo "MOVED TO TRASH:$@ __________________________________________________"
+echo "$@"
 

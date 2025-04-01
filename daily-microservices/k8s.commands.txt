@@ -7,8 +7,7 @@ kubectl delete pod [pod_name]
 
 #deploy
 kubectl get deployments
-kubectl apply -f [config] # create deployment
+kubectl apply -f [config]-depl.yaml          # create deployment
 kubectl describe deployment [depl_name]
 kubectl delete deployment [depl_name]
-
 kubectl rollout restart deployment [depl_name]
