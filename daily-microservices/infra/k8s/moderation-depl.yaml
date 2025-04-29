@@ -12,9 +12,9 @@ spec:
       labels:
         app: moderation
     spec:
-      containers:
-        - name: moderation
-          image: thomasm1/r-moderation
+    containers:
+      - name: moderation
+        image: thomasm1/r-moderation
 ---
 apiVersion: v1
 kind: Service

@@ -53,7 +53,7 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     ) 
   
-    @GetMapping({USER_PATH, USER_PATH+"/"}) 
+    @GetMapping({USER_PATH, USER_PATH+"/", USER_PATH+"/list"}) 
     public ResponseEntity<List<UserDto>> getUsers() {
         List<UserDto> users = new ArrayList<>();
         try {

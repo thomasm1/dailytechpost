@@ -12,9 +12,9 @@ spec:
       labels:
         app: posts
     spec:
-      containers:
-        - name: posts
-          image: thomasm1/r-posts
+    containers:
+      - name: posts
+        image: thomasm1/r-posts
 ---
 apiVersion: v1
 kind: Service

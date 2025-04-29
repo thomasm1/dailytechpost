@@ -7,28 +7,35 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-    - host: ourdailytech.net
+    - host: cryptomaven.xyz
       http:
         paths:
-          - path: /posts
+          - path: /addresses
             pathType: Prefix
             backend:
               service:
-                name: posts-clusterip-srv
+                name: addresses-clusterip-srv
                 port:
                   number: 4000
-          - path: /events
+          - path: /coins
             pathType: Prefix
             backend:
               service:
-                name: query-srv
+                name: coins-srv
                 port:
                   number: 4004
-          - path: /posts/?(.*)/comments
+          - path: /nftCoins
             pathType: Prefix
             backend:
               service:
-                name: comments-srv
+                name: nftCoins-srv
+                port:
+                  number: 4004
+          - path: /nftCoins/?(.*)/metadata
+            pathType: Prefix
+            backend:
+              service:
+                name: metadata-srv
                 port:
                   number: 4001
           - path: /?(.*)

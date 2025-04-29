@@ -40,12 +40,13 @@ public class PostEntityController {
     public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
         return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
     }
+
     @Operation(
             summary = "Get all posts",
             description = "Get all posts"
     )
     @ApiResponse(responseCode = "200", description = "Posts retrieved")
-    @GetMapping("")
+    @GetMapping({"", "/","/list"})
     public ResponseEntity<PostEntityResponse>  getAllPosts(
             @RequestParam(value = "pageNo", defaultValue = Constant.DEFAULT_PAGE_NUMBER,  required = false) int pageNo,
             @RequestParam(value = "pageSize", defaultValue = Constant.DEFAULT_PAGE_SIZE, required = false) int pageSize,
@@ -60,6 +61,7 @@ public class PostEntityController {
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }
     }
+
     @Operation(
             summary = "Get all posts by username",
             description = "Get all posts by username"
@@ -138,7 +140,7 @@ public class PostEntityController {
             name = "Bearer Authentication"
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PutMapping({"/{id}"})
+    @PutMapping({"/{id}","/update/{id}"})
     public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @PathVariable(name = "id") long id){
         PostEntityDto postResponse = postService.updatePost(postEntityDto, id);
         return new ResponseEntity<>(postResponse, HttpStatus.OK);
@@ -154,7 +156,7 @@ public class PostEntityController {
             name = "Bearer Authentication"
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @DeleteMapping("/{id}")
+    @DeleteMapping({"/{id}", "/delete/{id}"})
     public ResponseEntity<Boolean> deletePostById(@PathVariable(name = "id") long id){
         try {
             postService.deletePostById(id);

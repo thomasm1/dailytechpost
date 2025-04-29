@@ -12,9 +12,9 @@ spec:
       labels:
         app: comments
     spec:
-      containers:
-        - name: comments
-          image: thomasm1/r-comments
+    containers:
+      - name: comments
+        image: thomasm1/r-comments
 ---
 apiVersion: v1
 kind: Service

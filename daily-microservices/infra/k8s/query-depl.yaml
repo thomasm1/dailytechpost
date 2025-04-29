@@ -12,9 +12,9 @@ spec:
       labels:
         app: query
     spec:
-      containers:
-        - name: query
-          image: thomasm1/r-event-handler
+    containers:
+      - name: query
+        image: thomasm1/r-event-handler
 ---
 apiVersion: v1
 kind: Service

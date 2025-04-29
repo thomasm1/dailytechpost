@@ -12,9 +12,9 @@ spec:
       labels:
         app: event-bus
     spec:
-      containers:
-        - name: event-bus
-          image: thomasm1/r-event-bus
+    containers:
+      - name: event-bus
+        image: thomasm1/r-event-bus
 ---
 apiVersion: v1
 kind: Service

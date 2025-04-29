@@ -12,9 +12,9 @@ spec:
       labels:
         app: client
     spec:
-      containers:
-        - name: client
-          image: thomasm1/r-client
+    containers:
+      - name: client
+        image: thomasm1/r-client
 ---
 apiVersion: v1
 kind: Service

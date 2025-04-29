@@ -12,9 +12,9 @@ spec:
       labels:
         app: users
     spec:
-      containers:
-        - name: users
-          image: thomasm1/r-users
+    containers:
+      - name: users
+        image: thomasm1/r-users
 ---
 apiVersion: v1
 kind: Service

@@ -1,9 +1,6 @@
 {
 	"folders": [
 		{
-			"path": "../../Downloads/84-updating/blog"
-		},
-		{
 			"path": "env"
 		},
 		{
@@ -11,6 +8,9 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"path": "../bitcoinBuyer1_CryptoMaven.xyz"
 		}
 	],
 	"settings": {}
