@@ -27,7 +27,10 @@
 		<url/>
 	</scm>
 	<properties>
+
 		<java.version>17</java.version>
+		<maven.compiler.release>17</maven.compiler.release>
+		<spring-cloud.version>2023.0.5</spring-cloud.version>
 		<org.projectlombok.version>1.18.30</org.projectlombok.version>
 		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 		<org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
@@ -36,58 +39,58 @@
 	<dependencies>
 
 <!--		&lt;!&ndash;        CLOUD&ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-config</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-openfeign</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
-<!--		</dependency> 		&lt;!&ndash;    RabbitMQ		&ndash;&gt;-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency> 		<!--    RabbitMQ		-->
 
-<!--		<dependency>-->
-<!--			<groupId>io.micrometer</groupId>-->
-<!--			<artifactId>micrometer-observation</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>io.micrometer</groupId>-->
-<!--			<artifactId>micrometer-tracing-bridge-brave</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>io.zipkin.reporter2</groupId>-->
-<!--			<artifactId>zipkin-reporter-brave</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>io.github.openfeign</groupId>-->
-<!--			<artifactId>feign-micrometer</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-observation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-brave</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.reporter2</groupId>
+			<artifactId>zipkin-reporter-brave</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-micrometer</artifactId>
+		</dependency>
 
 
-<!--				<dependency>-->
-<!--					<groupId>io.github.resilience4j</groupId>-->
-<!--					<artifactId>resilience4j-spring-boot2</artifactId>-->
-<!--				</dependency>-->
-<!--				<dependency>-->
-<!--					<groupId>io.github.resilience4j</groupId>-->
-<!--					<artifactId>resilience4j-circuitbreaker</artifactId>-->
-<!--				</dependency>-->
-<!--				<dependency>-->
-<!--					<groupId>io.github.resilience4j</groupId>-->
-<!--					<artifactId>resilience4j-timelimiter</artifactId>-->
-<!--				</dependency>-->
-<!--				<dependency>-->
-<!--					<groupId>org.springframework.boot</groupId>-->
-<!--					<artifactId>spring-boot-starter-aop</artifactId>-->
-<!--				</dependency>-->
+				<dependency>
+					<groupId>io.github.resilience4j</groupId>
+					<artifactId>resilience4j-spring-boot2</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>io.github.resilience4j</groupId>
+					<artifactId>resilience4j-circuitbreaker</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>io.github.resilience4j</groupId>
+					<artifactId>resilience4j-timelimiter</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-aop</artifactId>
+				</dependency>
 
 
 		<!--		END CLOUD-->
@@ -214,6 +217,17 @@
 
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 <!--	<profiles>-->
 <!--		<profile>-->
 <!--			<id>h2</id>-->

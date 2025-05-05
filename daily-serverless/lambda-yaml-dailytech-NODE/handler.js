@@ -54,7 +54,12 @@ module.exports.createPost = (event, context, callback) => {
     author: reqBody.author,
     cat3: reqBody.cat3, 
     post: reqBody.post,
-    blogcite: reqBody.blogcite
+    blogcite: reqBody.blogcite,
+    categoryId: reqBody.categoryId,
+    comments: reqBody.comments,
+    state: reqBody.state,
+    wordCount: reqBody.wordCount,
+    durationGoal: reqBody.durationGoal,
   };
 
   return db
@@ -122,7 +127,7 @@ module.exports.getPost = (event, context, callback) => {
 module.exports.updatePost = (event, context, callback) => {
   const id = event.pathParameters.id;
   const reqBody = JSON.parse(event.body);
-  const { monthOrder, title, date, author, cat3, post, blogcite } = reqBody;
+  const { monthOrder, title, date, author, cat3, post, blogcite,state  ,wordCount ,durationGoal  ,categoryId ,comments } = reqBody;
 
   const params = {
     Key: {
@@ -130,7 +135,7 @@ module.exports.updatePost = (event, context, callback) => {
     },
     TableName: postsTable,
     ConditionExpression: 'attribute_exists(id)',
-    UpdateExpression: 'SET monthOrder = :monthOrder, title = :title, date = :date, author = :author, cat3 = :cat3, post = :post, blogcite = :blogcite',
+    UpdateExpression: 'SET monthOrder = :monthOrder, title = :title, date = :date, author = :author, cat3 = :cat3, post = :post, blogcite = :blogcite, email = :email,state = :state,wordCount = :wordCount,durationGoal = :durationGoal,categoryId = :categoryId, comments = :comments',
     ExpressionAttributeValues: {  
     ':monthOrder':  monthOrder,
     ':title':  title,
@@ -138,7 +143,14 @@ module.exports.updatePost = (event, context, callback) => {
     ':author':  author,
     ':cat3':  cat3, 
     ':post':  post,
-    ':blogcite': blogcite
+    ':blogcite':  blogcite,
+    ':email': email,
+    ':state': state,
+    ':wordCount': wordCount,
+    ':durationGoal': durationGoal,
+    ':categoryId': categoryId,
+    ':comments': comments,
+    
     },
     ReturnValues: 'ALL_NEW'
   };

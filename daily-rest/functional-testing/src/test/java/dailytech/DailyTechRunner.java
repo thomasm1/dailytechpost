@@ -10,7 +10,7 @@ class DailyTechRunner {
 
     @Karate.Test
     Karate testAll() {
-        return Karate.run().relativeTo(getClass());
+        return Karate.run("dailytech").relativeTo(getClass());
     }
     
 }

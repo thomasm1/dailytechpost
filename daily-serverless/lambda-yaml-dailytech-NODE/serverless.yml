@@ -1,4 +1,4 @@
-service: lambda-dailytech
+service: node-dailytech-rest
 
 custom: 
   settings:
@@ -6,9 +6,10 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs10.x 
+  runtime: nodejs18.x 
   region: us-east-1
-  environment: ${self:custom.settings}
+  environment:
+    POSTS_TABLE: ${self:custom.settings.POSTS_TABLE}
   iamRoleStatements:
    - Effect: "Allow"
      Action:

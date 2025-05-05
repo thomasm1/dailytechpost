@@ -36,8 +36,6 @@ public class PostEntityDto implements Serializable {
     private String blogcite;
 
     private String email;
-
-
     private String state;
     private int wordCount;
     private int durationGoal;

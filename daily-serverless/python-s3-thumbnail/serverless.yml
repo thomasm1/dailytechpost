@@ -35,7 +35,7 @@ provider:
   
 custom:
   dynamotable: image-url-tables
-  bucket: paulo-gen-thumbnails
+  bucket: tmm-gen-thumbnails
   pythonRequirements:
    # pythonBin: /opt/python3.8/bin/python
     dockerizePip: true
