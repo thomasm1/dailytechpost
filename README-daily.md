@@ -1,11 +1,7 @@
 
 
-
-
-## npm run gulp
-## NEWS UPDATE 2222
-a. le premier stage - ourdailytech vanillajs -> transfer the <ul><li>'s in the loop as diagrammed: 
-b. le deuxieme stage - cryptomaven.xyz -> 
+  
+b. le premier stage - cryptomaven.xyz -> 
 ```sh
 /**
  * @param {number[]} array

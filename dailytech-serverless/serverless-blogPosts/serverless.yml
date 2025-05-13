@@ -1,0 +1,80 @@
+service: dailytech-blogpost-api
+frameworkVersion: '3'
+
+custom:
+  tableName: 'blogposts-table-${sls:stage}'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [ NftCoinsTable, Arn ]
+  environment:
+    BLOGPOST_TABLE: ${self:custom.tableName}
+
+functions:
+  create:
+    handler: handler/createNftCoin.createNftCoin
+    events:
+      - http:
+          path: blogPosts
+          method: post
+          cors: true
+
+  list:
+    handler: handler/listNftCoins.listNftCoins
+    events:
+      - http:
+          path: blogPosts/list
+          method: get
+          cors: true
+
+  get:
+    handler: handler/getNftCoin.getNftCoin
+    events:
+      - http:
+          path: blogPosts/{id}
+          method: get
+          cors: true
+
+  update:
+    handler: handler/updateNftCoin.updateNftCoin
+    events:
+      - http:
+          path: blogPosts/update/{id}
+          method: put
+          cors: true
+
+  delete:
+    handler: handler/deleteNftCoin.deleteNftCoin
+    events:
+      - http:
+          path: blogPosts/delete/{id}
+          method: delete
+          cors: true
+          
+
+resources:
+  Resources:
+    NftCoinsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.tableName}
