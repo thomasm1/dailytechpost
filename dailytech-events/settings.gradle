@@ -1,0 +1,9 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://repo.spring.io/snapshot' }
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'dailytech-events'
+include 'kafka-producer-wikimedia'
+include 'kafka-consumer-opensearch'
