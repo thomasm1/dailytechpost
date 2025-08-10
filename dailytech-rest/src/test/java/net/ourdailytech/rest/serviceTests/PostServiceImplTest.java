@@ -1,4 +1,4 @@
-package net.ourdailytech.rest;
+package net.ourdailytech.rest.serviceTests;
 
 import net.ourdailytech.rest.mapper.PostEntityMapper;
 import net.ourdailytech.rest.models.dto.PostEntityDto;

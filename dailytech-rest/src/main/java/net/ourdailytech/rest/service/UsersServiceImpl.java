@@ -142,28 +142,30 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Optional<UserDto> getUser(int id) {
         try {
-            return Optional.ofNullable(userMapper
-                    .toDto(usersRepository.findById(id).orElse(null)));
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    /**
-     * @param email;
-     * @return UserDto
-     */
-    @Override
-    public Optional<UserDto> getUser(String email) {
-        try {
-            User u = usersRepository.findByEmail(email).orElseThrow(
-                    () -> new ResourceNotFoundException("not found", "not found", email)
+          User u = usersRepository.findById(id).orElseThrow(
+                    () -> new ResourceNotFoundException("not found", "not found",String.valueOf(id) )
             );
             return Optional.ofNullable(userMapper.toDto(u));
         } catch (Exception e) {
-            return null;
+            return Optional.empty();
         }
     }
+
+//    /**
+//     * @param email;
+//     * @return UserDto
+//     */
+//    @Override
+//    public Optional<UserDto> getUser(String email) {
+//        try {
+//            User u = usersRepository.findByEmail(email).orElseThrow(
+//                    () -> new ResourceNotFoundException("not found", "not found", email)
+//            );
+//            return Optional.ofNullable(userMapper.toDto(u));
+//        } catch (Exception e) {
+//            return Optional.empty();
+//        }
+//    }
 
     /**
      * @return List<UserDto>
@@ -189,29 +191,30 @@ public class UsersServiceImpl implements UsersService {
      * @param pw;
      * @return UserDto
      */
-    @Override
-    public UserDto getUserByEmailAndPassword(String email, String pw) {
-        User u;
-        try {
-            u = usersRepository.findByEmailAndPassword(email,pw).orElseThrow(() -> new ResourceNotFoundException("not found", "not found", email));
-//                return usersRepository.findByEmailAndPassword(email, pw).get();
-        } catch (Exception e) {
-            return null;
-        }
-        return userMapper.toDto(u);
-    }
+//    @Override
+//    public UserDto getUserByEmailAndPassword(String email, String pw) {
+//        User u;
+//        try {
+//            u = usersRepository.findByEmailAndPassword(email,pw).orElseThrow(() -> new ResourceNotFoundException("not found", "not found", email));
+////                return usersRepository.findByEmailAndPassword(email, pw).get();
+//        } catch (Exception e) {
+//            return null;
+//        }
+//        return userMapper.toDto(u);
+//    }
     /**
      * @param email;
      * @return UserDto
      */
     public Optional<UserDto> getUserByEmail(String email) {
-        User u;
-        try { 
-            u = usersRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("not found", "not found", email));
+        try {
+            User u = usersRepository.findByEmail(email).orElseThrow(
+                    () -> new ResourceNotFoundException("not found", "not found", email)
+            );
+            return Optional.ofNullable(userMapper.toDto(u));
         } catch (Exception e) {
-            return null;
+            return Optional.empty();
         }
-        return Optional.ofNullable(userMapper.toDto(u));
     }
 
 //    public List<User> getUsersWithCoins() {

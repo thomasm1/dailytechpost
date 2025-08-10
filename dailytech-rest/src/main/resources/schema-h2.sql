@@ -1,11 +1,11 @@
+CREATE SCHEMA IF NOT EXISTS dailytech;
 CREATE TABLE dailytech.categories
 (
     id            BIGINT AUTO_INCREMENT NOT NULL,
     name          VARCHAR(255)          NULL,
-    `description` VARCHAR(255)          NULL,
-    CONSTRAINT pk_categories PRIMARY KEY (id) ENGINE=InnoDB
+    description VARCHAR(255)          NULL,
+    CONSTRAINT pk_categories PRIMARY KEY (id)
 );
-
 CREATE TABLE dailytech.comments
 (
     id      BIGINT AUTO_INCREMENT NOT NULL,
@@ -82,29 +82,23 @@ CREATE TABLE dailytech.users_roles
 );
 
 ALTER TABLE dailytech.post_entity
-    ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id ENGINE=InnoDB
-        );
+    ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id);
 
 ALTER TABLE dailytech.comments
-    ADD CONSTRAINT FK_COMMENTS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id ENGINE=InnoDB
-        );
+    ADD CONSTRAINT FK_COMMENTS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id);
+
 
 ALTER TABLE dailytech.news
-    ADD CONSTRAINT FK_NEWS_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id ENGINE=InnoDB
-        );
+    ADD CONSTRAINT FK_NEWS_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
 
 ALTER TABLE dailytech.post_entity
-    ADD CONSTRAINT FK_POST_ENTITY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id ENGINE=InnoDB
-        );
+    ADD CONSTRAINT FK_POST_ENTITY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
 
 ALTER TABLE dailytech.roles
-    ADD CONSTRAINT uc_roles_name UNIQUE (name ENGINE=InnoDB
-        );
+    ADD CONSTRAINT uc_roles_name UNIQUE (name);
 
 ALTER TABLE dailytech.users_roles
-    ADD CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id ENGINE=InnoDB
-        );
+    ADD CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id);
 
 ALTER TABLE dailytech.users_roles
-    ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid ENGINE=InnoDB
-        );
+    ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);

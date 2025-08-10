@@ -111,7 +111,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
     @Test
     public void get_user() {
 
-        when(usersService.getUser("user4@cryptomaven.xyz")).thenReturn(
+        when(usersService.getUserByEmail("user4@cryptomaven.xyz")).thenReturn(
                 Optional.ofNullable(UserDto.builder()
                         .username("user4@cryptomaven.xyz")
                         .lastName("Smith")
@@ -125,7 +125,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                         .isActive(1)
                         .id("id")
                         .build()));
-        Optional<UserDto> user = usersService.getUser("user4@cryptomaven.xyz");
+        Optional<UserDto> user = usersService.getUserByEmail("user4@cryptomaven.xyz");
 
         assertEquals("user4@cryptomaven.xyz", user.get().getUsername());
     }

@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import net.ourdailytech.rest.models.PostEntity;
 import net.ourdailytech.rest.models.Role;
-
+import java.util.Objects;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
@@ -48,5 +48,31 @@ public class UserDto implements Serializable {
 
     public String getPassword() {
         return username; // for/admin
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserDto userDto = (UserDto) o;
+        return userId == userDto.userId &&
+                userType == userDto.userType &&
+                isActive == userDto.isActive &&
+                contactType == userDto.contactType &&
+                Objects.equals(username, userDto.username) &&
+                Objects.equals(lastName, userDto.lastName) &&
+                Objects.equals(firstName, userDto.firstName) &&
+                Objects.equals(organizationCode, userDto.organizationCode) &&
+                Objects.equals(dashboardCode, userDto.dashboardCode) &&
+                Objects.equals(email, userDto.email) &&
+                Objects.equals(cusUrl, userDto.cusUrl) &&
+                Objects.equals(id, userDto.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, username, lastName, firstName, userType, organizationCode, dashboardCode, email, cusUrl, contactType, isActive, id);
     }
 }

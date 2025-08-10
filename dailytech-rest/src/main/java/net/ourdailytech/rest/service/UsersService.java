@@ -1,6 +1,6 @@
 package net.ourdailytech.rest.service;
 
-import net.ourdailytech.rest.models.User; 
+import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
@@ -17,12 +17,13 @@ public interface UsersService {
 	public UserDto createUser(UserDto user);
 	Optional<UserDto> register(RegisterDto registerDto);
 	public Optional<UserDto> getUser(int id);
-	public Optional<UserDto> getUser(String username );
+	Optional<UserDto> getUserByEmail(String email);
+
 	public List<UserDto> getUsers();
 
 	public Optional<UserDto> updateUser(UserDto change);
 
-	UserDto getUserByEmailAndPassword(String email, String pw);
+//	UserDto getUserByEmailAndPassword(String email, String pw);
 
 //	public List<User> getUsersWithCoins();
 
@@ -34,5 +35,4 @@ public interface UsersService {
 
 	boolean deleteUser(UserDto user);
 
-	Optional<UserDto> getUserByEmail(String email); 
 }
