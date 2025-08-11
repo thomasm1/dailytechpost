@@ -84,3 +84,51 @@ VALUES
     (43, 'Local Team Wins', 'https://news4.com', 12),        -- references categories.id=12 (Sports)
     (44, 'Finance Reforms', 'https://news5.com', 13);        -- references categories.id=13 (Finance)
 
+INSERT INTO dailytech.books
+  (title, profile_url, pubyear, publisher, authors, genre, rating)
+VALUES
+  ('Effective Java (3rd Ed.)',
+   'https://example.com/books/effective-java',
+   2018, 'Addison-Wesley', 'Joshua Bloch', 'Programming', 4.9),
+  ('Clean Code',
+   'https://example.com/books/clean-code',
+   2008, 'Prentice Hall', 'Robert C. Martin', 'Programming', 4.8),
+  ('Domain-Driven Design',
+   'https://example.com/books/ddd',
+   2003, 'Addison-Wesley', 'Eric Evans', 'Software Architecture', 4.7),
+  ('Introduction to Algorithms (CLRS)',
+   'https://example.com/books/clrs',
+   2009, 'MIT Press', 'Cormen; Leiserson; Rivest; Stein', 'Algorithms', 4.6),
+  ('Designing Data-Intensive Applications',
+   'https://example.com/books/ddia',
+   2017, 'O''Reilly Media', 'Martin Kleppmann', 'Distributed Systems', 4.9);
+
+-- Sample data for weblinks (match table: title, profile_url, url, host, htmlpage, downloadstatus)
+INSERT INTO dailytech.weblinks
+  (title, profile_url, url, host, htmlpage)
+VALUES
+  ('Spring Boot Reference',
+   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
+   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
+   'docs.spring.io',
+   NULL),
+  ('Angular Docs',
+   'https://angular.dev/',
+   'https://angular.dev/',
+   'angular.dev',
+   NULL),
+  ('OWASP Cheat Sheet Series',
+   'https://cheatsheetseries.owasp.org/',
+   'https://cheatsheetseries.owasp.org/',
+   'cheatsheetseries.owasp.org',
+   NULL),
+  ('PostgreSQL 16 Manual',
+   'https://www.postgresql.org/docs/current/',
+   'https://www.postgresql.org/docs/current/',
+   'www.postgresql.org',
+   NULL),
+  ('Kafka Documentation',
+   'https://kafka.apache.org/documentation/',
+   'https://kafka.apache.org/documentation/',
+   'kafka.apache.org',
+   NULL);

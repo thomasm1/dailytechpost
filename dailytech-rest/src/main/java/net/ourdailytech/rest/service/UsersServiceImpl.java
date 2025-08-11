@@ -151,23 +151,22 @@ public class UsersServiceImpl implements UsersService {
         }
     }
 
-//    /**
-//     * @param email;
-//     * @return UserDto
-//     */
-//    @Override
-//    public Optional<UserDto> getUser(String email) {
-//        try {
-//            User u = usersRepository.findByEmail(email).orElseThrow(
-//                    () -> new ResourceNotFoundException("not found", "not found", email)
-//            );
-//            return Optional.ofNullable(userMapper.toDto(u));
-//        } catch (Exception e) {
-//            return Optional.empty();
-//        }
-//    }
-
     /**
+     * @param email;
+     * @return UserDto
+     */
+    public Optional<UserDto> getUserByEmail(String email) {
+        try {
+            User u = usersRepository.findByEmail(email).orElseThrow(
+                    () -> new ResourceNotFoundException("not found", "not found", email)
+            );
+            return Optional.ofNullable(userMapper.toDto(u));
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
+     /**
      * @return List<UserDto>
      */
     @Override
@@ -186,47 +185,6 @@ public class UsersServiceImpl implements UsersService {
        }
 
     }
-    /**
-     * @param email;
-     * @param pw;
-     * @return UserDto
-     */
-//    @Override
-//    public UserDto getUserByEmailAndPassword(String email, String pw) {
-//        User u;
-//        try {
-//            u = usersRepository.findByEmailAndPassword(email,pw).orElseThrow(() -> new ResourceNotFoundException("not found", "not found", email));
-////                return usersRepository.findByEmailAndPassword(email, pw).get();
-//        } catch (Exception e) {
-//            return null;
-//        }
-//        return userMapper.toDto(u);
-//    }
-    /**
-     * @param email;
-     * @return UserDto
-     */
-    public Optional<UserDto> getUserByEmail(String email) {
-        try {
-            User u = usersRepository.findByEmail(email).orElseThrow(
-                    () -> new ResourceNotFoundException("not found", "not found", email)
-            );
-            return Optional.ofNullable(userMapper.toDto(u));
-        } catch (Exception e) {
-            return Optional.empty();
-        }
-    }
-
-//    public List<User> getUsersWithCoins() {
-//        if (usersRepository.findAll().size() == 0) return null;
-//        return usersRepository.findAll()
-//                .stream()
-//                .filter(u ->
-//                        u.getAddresses().size() > 0 && u.getIsActive() != 0
-//                )
-//                .collect(Collectors.toList());
-//    }
-
 
     /**
      * @param change;

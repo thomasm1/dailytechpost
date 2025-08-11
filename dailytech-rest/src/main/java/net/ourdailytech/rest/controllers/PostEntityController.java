@@ -15,6 +15,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping(path = Constant.API_POSTS)
 @CrossOrigin(origins = "*")
@@ -99,7 +100,6 @@ public class PostEntityController {
     ){
         PostEntityResponse resp = postService.getAllPostsByEmail(pageNo, pageSize, sortBy, sortDir, email);
         if (resp.getContent().isEmpty()) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             return ResponseEntity.noContent().build();
         } else {
             return new ResponseEntity<>(resp, HttpStatus.OK);
@@ -113,7 +113,7 @@ public class PostEntityController {
     @ApiResponse(responseCode = "200", description = "Posts retrieved")
     @GetMapping("/date/{did}")
     public ResponseEntity<PostEntityDto> getPostByDid(@PathVariable(name = "did") String did){
-        return ResponseEntity.ok(postService.getPostByDid(did));
+        return ResponseEntity.ok(postService.getPostByDid(did).get());
     }
 
     @Operation(
@@ -123,8 +123,9 @@ public class PostEntityController {
     @ApiResponse(responseCode = "200", description = "Posts retrieved")
     @GetMapping({"/{id}", "/{id}/"})
     public ResponseEntity<PostEntityDto> getPostById(@PathVariable(name = "id") long id){
-        return ResponseEntity.ok(postService.getPostById(id));
+        return ResponseEntity.ok(postService.getPostById(id).get());
     }
+
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<List<PostEntityDto>> getPostsByCategoryId(@PathVariable( "categoryId") long categoryId){
         List<PostEntityDto> postEntityDtoList = (List<PostEntityDto>) postService.getPostsByCategoryId(categoryId);

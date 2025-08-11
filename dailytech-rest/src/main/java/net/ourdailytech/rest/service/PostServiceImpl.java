@@ -131,15 +131,29 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public PostEntityDto getPostById(long id) {
-		PostEntity post = pr.findById(id).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "id", Long.toString(id)));
-		return postEntityMapper.toDto(post);
+	public Optional<PostEntityDto> getPostById(long id) {
+		try {
+			PostEntity post = pr.findById(id).orElseThrow(
+					() -> new ResourceNotFoundException("not found", "not found",String.valueOf(id) )
+			);
+			return Optional.ofNullable(postEntityMapper.toDto(post));
+		} catch (Exception e) {
+			return Optional.empty();
+		}
  	}
 
 	@Override
-	public PostEntityDto getPostByDid(String did) {
-		PostEntity post = pr.findByDid(did).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "did", did));
-		return postEntityMapper.toDto(post);
+	public Optional<PostEntityDto> getPostByDid(String did) {
+//		PostEntity post = pr.findByDid(did).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "did", did));
+//		return postEntityMapper.toDto(post);
+		try {
+			PostEntity post = pr.findByDid(did).orElseThrow(
+					() -> new ResourceNotFoundException("not found", "not found",did )
+			);
+			return Optional.ofNullable(postEntityMapper.toDto(post));
+		} catch (Exception e) {
+			return Optional.empty();
+		}
 	}
 
 

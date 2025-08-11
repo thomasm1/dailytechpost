@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import java.util.Collections;
-
+import java.util.Optional;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -73,7 +73,7 @@ public class PostEntityControllerTest {
         postEntityDto.setId(1L);
         postEntityDto.setTitle("Test Post");
 
-        when(postService.getPostById(anyLong())).thenReturn(postEntityDto);
+        when(postService.getPostById(anyLong())).thenReturn(Optional.of(postEntityDto));
 
         mockMvc.perform(get("/api/posts/1")
                         .contentType(MediaType.APPLICATION_JSON))

@@ -1,6 +1,6 @@
 package net.ourdailytech.rest.repositories;
 
-import net.ourdailytech.rest.models.PostEntity;
+ import net.ourdailytech.rest.models.PostEntity;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.stereotype.Repository;
+ import org.springframework.stereotype.Repository;
 
 import java.util.HashSet;
 import java.util.List;
@@ -50,6 +50,7 @@ public interface PostRepository extends JpaRepository<PostEntity, Long> {
 
 	Page<PostEntity> findAll(Pageable pageable);
 
+	Optional<PostEntity> findById(Long id);
 	Optional<PostEntity> findByDid(String did);
 	List<PostEntity> findByEmail(String username);
 

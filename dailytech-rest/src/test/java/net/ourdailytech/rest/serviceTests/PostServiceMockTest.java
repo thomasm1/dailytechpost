@@ -10,7 +10,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -73,9 +76,8 @@ public class PostServiceMockTest {      // *NOTE: change PK postnames before sen
     @Test
     public void get_post() {
         PostEntityDto post = getPostEntityDto();
-        when(postServiceMockTest.getPostById(post.getId())).thenReturn(assertInstanceOf(PostEntityDto.class, post));
-        postServiceMockTest.createPost(post) ;
-        assertNotNull(postServiceMockTest.getPostById(post.getId())); // Check not null bc dynamic int ID
+        when(postServiceMockTest.getPostById(post.getId())).thenReturn(Optional.of(post));
+        assertNotNull(postServiceMockTest.getPostById(post.getId()).get()); // Check not null bc dynamic int ID
 
     }
 

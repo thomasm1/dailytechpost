@@ -7,6 +7,8 @@ import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Optional;
+
 import static org.mockito.Mockito.when;
 
 
@@ -68,7 +70,7 @@ public class PostServiceImplTest {      // *NOTE: change PK coinnames before sen
     public void get_post() {
         PostEntityDto post = getPostEntityDto();
         when(postServiceTester.createPost(post)).thenReturn(post);
-        when(postServiceTester.getPostById(post.getId())).thenReturn(post); // Check not null bc dynamic int ID
+        when(postServiceTester.getPostById(post.getId())).thenReturn(Optional.of(post)); // Check not null bc dynamic int ID
         Assertions.assertEquals(post.getId(), 1);
     }
 
