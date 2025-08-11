@@ -6,8 +6,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.ConstraintViolationException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException; 
-import net.ourdailytech.rest.mapper.UserMapper;
-import net.ourdailytech.rest.models.dto.JWTAuthResponse; 
+import net.ourdailytech.rest.models.dto.JWTAuthResponse;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
@@ -34,12 +33,10 @@ import static net.ourdailytech.rest.util.constants.Constant.USER_PATH_ID;
         description = "CRUD REST APIs - Create User, Update User, Get User, Get All Users, Delete User"
 )
 public class UsersController {
-     private final UserMapper userMapper;
 
     private final UsersService usersService;
 
-    public UsersController(UserMapper userMapper, UsersService usersService) {
-        this.userMapper = userMapper;
+    public UsersController( UsersService usersService) {
         this.usersService = usersService;
     }
 

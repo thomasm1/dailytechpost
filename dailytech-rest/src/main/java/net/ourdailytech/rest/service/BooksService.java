@@ -1,19 +1,14 @@
 package net.ourdailytech.rest.service;
 
-import net.ourdailytech.rest.models.Book;
+import net.ourdailytech.rest.models.dto.BookDto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BooksService {
-    public Book createBooks(Book bkmk);
-
-    public Book getBooks(long id);
-
-
-    public List<Book> getAllBooks();
-
-    public Book updateBooks(Book change);
-
-    public boolean deleteBooks(long id);
-
+    BookDto createBook(BookDto bookDto);
+    Optional<BookDto> getBook(long id);
+    List<BookDto> getAllBooks();
+    Optional<BookDto> updateBook(BookDto bookDto);
+    boolean deleteBook(long id);
 }

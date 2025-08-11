@@ -20,6 +20,12 @@ public class Constant {
     public static final String USER_PATH = "/api/users";
     public static final String USER_PATH_ID = USER_PATH + "/{userId}";
 
+
+    public static final String API = "/api";
+    public static final String BOOKS = "/books";
+    public static final String BOOKS_ID = "/books/{id}";
+    public static final String BOOKS_BOOK_ID = "/books/{bookId}";
+
     public static final String API_KEYS = "/api/keys";
     // FILES
     public static final String LOCAL_SCANNER_TXT = "src/data/scannertext.txt" ;

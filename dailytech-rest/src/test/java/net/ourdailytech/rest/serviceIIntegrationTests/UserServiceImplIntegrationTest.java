@@ -1,4 +1,4 @@
-package net.ourdailytech.rest.integrationTests;
+package net.ourdailytech.rest.serviceIIntegrationTests;
 
 
 import net.ourdailytech.rest.models.dto.UserDto;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootTest
 @ComponentScan(basePackages = {  "net.ourdailytech.rest.util.TestDataLoader"})
 @TestMethodOrder(OrderAnnotation.class)
-public class UserIntegrationTest {
+public class UserServiceImplIntegrationTest {
 	static UserDto u  ;
 	static String dynamicUsername;
 	static String dynamicString;

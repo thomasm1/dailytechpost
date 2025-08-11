@@ -144,8 +144,6 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Optional<PostEntityDto> getPostByDid(String did) {
-//		PostEntity post = pr.findByDid(did).orElseThrow(() -> new ResourceNotFoundException("PostEntity", "did", did));
-//		return postEntityMapper.toDto(post);
 		try {
 			PostEntity post = pr.findByDid(did).orElseThrow(
 					() -> new ResourceNotFoundException("not found", "not found",did )
