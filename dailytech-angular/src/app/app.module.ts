@@ -11,14 +11,13 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 // import { AngularFireAuthModule, provideAuth, getAuth } from '@angular/fire/auth';
 // import { provideAuth, getAuth } from '@angular/fire/auth';
 // import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore'; 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; 
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 
 // PIPES
@@ -127,7 +126,6 @@ import { GrootService } from './service/groot.service';
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
-        FlexLayoutModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,

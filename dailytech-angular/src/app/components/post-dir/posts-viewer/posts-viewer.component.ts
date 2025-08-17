@@ -25,7 +25,7 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
 
     // this.blogs = this.postDataService.retrieveAllPosts();
     // this.postsSubscription =
-    this.postDataService.retrieveAllPosts(this.username).subscribe((response) => {
+    this.postDataService.retrieveAllPostsByUsername(this.username).subscribe((response) => {
       console.log(response);
       this.posts = response;
     });
@@ -35,7 +35,7 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
   }
 
   refreshPosts() {
-    this.postDataService.retrieveAllPosts(this.username).subscribe(
+    this.postDataService.retrieveAllPostsByUsername(this.username).subscribe(
       response => {
         console.log(response);
         this.posts = response;
