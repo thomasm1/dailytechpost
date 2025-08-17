@@ -26,7 +26,7 @@ public class PostEntityController {
     private PostService postService;
 
 	@Autowired
-	private PostEntityMapper postEntityMapper;
+	private PostEntityMapper postMapper;
 
     @Operation(
             summary = "Create a new post",

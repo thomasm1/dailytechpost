@@ -6,16 +6,6 @@ CREATE TABLE dailytech.categories
     description VARCHAR(255)          NULL,
     CONSTRAINT pk_categories PRIMARY KEY (id)
 );
-CREATE TABLE dailytech.comments
-(
-    id      BIGINT AUTO_INCREMENT NOT NULL,
-    name    VARCHAR(255)          NULL,
-    email   VARCHAR(255)          NULL,
-    body    TEXT                  NULL,
-    post_id BIGINT                NOT NULL,
-    CONSTRAINT pk_comments PRIMARY KEY (id)
-
-);
 
 CREATE TABLE dailytech.news
 (
@@ -45,6 +35,30 @@ CREATE TABLE dailytech.post_entity
     category_id   BIGINT                NULL,
     CONSTRAINT pk_post_entity PRIMARY KEY (id)
 
+);
+
+CREATE TABLE dailytech.comments
+(
+    id      BIGINT AUTO_INCREMENT NOT NULL,
+    name    VARCHAR(255)          NULL,
+    email   VARCHAR(255)          NULL,
+    body    TEXT                  NULL,
+    post_id BIGINT                NOT NULL,
+    CONSTRAINT pk_comments PRIMARY KEY (id)
+
+);
+
+CREATE TABLE dailytech.weblinks
+(
+    id BIGINT AUTO_INCREMENT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    profile_url VARCHAR(1000) NULL,
+    url VARCHAR(1000) NOT NULL,
+    host VARCHAR(255) NULL,
+    htmlpage CLOB NULL,
+    downloadstatus VARCHAR(32) NOT NULL DEFAULT 'NOT_ATTEMPTED',
+    post_id BIGINT NULL,
+    CONSTRAINT pk_weblinks PRIMARY KEY (id)
 );
 
 CREATE TABLE dailytech.roles
@@ -102,3 +116,6 @@ ALTER TABLE dailytech.users_roles
 
 ALTER TABLE dailytech.users_roles
     ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);
+
+ALTER TABLE dailytech.weblinks
+    ADD CONSTRAINT FK_WEBLINKS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id);

@@ -62,17 +62,6 @@ VALUES
      'Analyzing latest stock market trends...', 'https://blogsite5.com', 'thomas.maestas@example.com',
      'Published', 2000, 14, 13);  -- references categories.id=13 (Finance)
 
--- COMMENTS: 5 entries
-INSERT INTO dailytech.comments (
-    id, name, email, body, post_id
-)
-VALUES
-    (30, 'Sam Reader', 'sam@example.com', 'Great insights, thanks for sharing!', 20),  -- references post_entity.id=20
-    (31, 'HealthGuru', 'guru@example.com', 'Loved the tips!', 21),                     -- references post_entity.id=21
-    (32, 'SportFanatic', 'fan@example.com', 'Fantastic recap! Keep it up.', 22),       -- references post_entity.id=22
-    (33, 'TechLover', 'techie@example.com', 'Excited about AI updates!', 23),          -- references post_entity.id=23
-    (34, 'InvestorJoe', 'joe@example.com', 'Any more stock tips?', 24);                -- references post_entity.id=24
-
 -- NEWS: 5 entries
 INSERT INTO dailytech.news (
     id, title, url, category_id
@@ -103,32 +92,49 @@ VALUES
    'https://example.com/books/ddia',
    2017, 'O''Reilly Media', 'Martin Kleppmann', 'Distributed Systems', 4.9);
 
+
+-- COMMENTS: 5 entries
+INSERT INTO dailytech.comments (
+    id, name, email, body, post_id
+)
+VALUES
+    (30, 'Sam Reader', 'sam@example.com', 'Great insights, thanks for sharing!', 20),  -- references post_entity.id=20
+    (31, 'HealthGuru', 'guru@example.com', 'Loved the tips!', 21),                     -- references post_entity.id=21
+    (32, 'SportFanatic', 'fan@example.com', 'Fantastic recap! Keep it up.', 22),       -- references post_entity.id=22
+    (33, 'TechLover', 'techie@example.com', 'Excited about AI updates!', 23),          -- references post_entity.id=23
+    (34, 'InvestorJoe', 'joe@example.com', 'Any more stock tips?', 24);                -- references post_entity.id=24
+
 -- Sample data for weblinks (match table: title, profile_url, url, host, htmlpage, downloadstatus)
 INSERT INTO dailytech.weblinks
-  (title, profile_url, url, host, htmlpage)
+  (title, profile_url, url, host, htmlpage, post_id)
 VALUES
   ('Spring Boot Reference',
    'https://docs.spring.io/spring-boot/docs/current/reference/html/',
    'https://docs.spring.io/spring-boot/docs/current/reference/html/',
    'docs.spring.io',
-   NULL),
+   'htmlpage',
+    20),
   ('Angular Docs',
    'https://angular.dev/',
    'https://angular.dev/',
    'angular.dev',
-   NULL),
+   'htmlpage',
+   21),
   ('OWASP Cheat Sheet Series',
    'https://cheatsheetseries.owasp.org/',
    'https://cheatsheetseries.owasp.org/',
    'cheatsheetseries.owasp.org',
-   NULL),
+   'htmlpage',
+   22),
   ('PostgreSQL 16 Manual',
    'https://www.postgresql.org/docs/current/',
    'https://www.postgresql.org/docs/current/',
    'www.postgresql.org',
-   NULL),
+   'htmlpage',
+  23),
   ('Kafka Documentation',
    'https://kafka.apache.org/documentation/',
    'https://kafka.apache.org/documentation/',
    'kafka.apache.org',
-   NULL);
+   'htmlpage',
+   24);

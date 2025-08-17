@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,7 +17,7 @@ public class Weblink extends Bookmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "url", length = 1000, nullable = false)
     private String url;
@@ -31,6 +32,13 @@ public class Weblink extends Bookmark {
     @Enumerated(EnumType.STRING)
     @Column(name = "downloadstatus", length = 32, nullable = false)
     private DownloadStatus downloadStatus = DownloadStatus.NOT_ATTEMPTED;
+
+    // Many comments can belong to one PostEntity
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id", nullable = false)
+    @ToString.Exclude
+    @JsonIgnore
+    private PostEntity postEntity;
 
     public Weblink(long id, String url, String htmlPage) {
         this.id = id;

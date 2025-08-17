@@ -41,6 +41,14 @@ public class WeblinksController {
         return new ResponseEntity<>(weblinksService.createWeblinks(c), HttpStatus.CREATED);
     }
 
+    // src/main/java/net/ourdailytech/rest/controllers/WeblinksController.java
+    @PostMapping("/posts/{postId}")
+    public ResponseEntity<WeblinkDto> addWeblinkToPost(
+        @PathVariable("postId") Long postId,
+        @RequestBody WeblinkDto weblinkDto) {
+        WeblinkDto created = weblinksService.addWeblinkToPost(postId, weblinkDto);
+        return new ResponseEntity<>(created, HttpStatus.CREATED);
+    }
 
     @Operation(
             summary = "GetMapping Weblink By ID REST API ",
@@ -51,15 +59,15 @@ public class WeblinksController {
             description = "HTTP Status 200 SUCCESS"
     )
     @GetMapping(value = "/{id}")
-    public  ResponseEntity<WeblinkDto>  getWeblinks(@PathVariable("id") long id) {
+    public  ResponseEntity<WeblinkDto>  getWeblinkById(@PathVariable("id") long id) {
 
-        return new ResponseEntity<>(weblinksService.getWeblinks(id), HttpStatus.OK);
+        return new ResponseEntity<>(weblinksService.getWeblink(id), HttpStatus.OK);
     }
 
 
     @Operation(
-            summary = "GetMapping Weblink By ID REST API ",
-            description = "GetMapping Weblink By ID REST API is used to get a single Weblink from the database"
+            summary = "GetMapping ALL Weblink ",
+            description = "GetMapping ALL Weblink from the database"
     )
     @ApiResponse(
             responseCode = "200",
@@ -79,9 +87,10 @@ public class WeblinksController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
-    @PutMapping(value = "", consumes = "application/json")
-    public  ResponseEntity<WeblinkDto>  updateWeblinks(@RequestBody WeblinkDto change) {
-        return new ResponseEntity<>(weblinksService.updateWeblinks(change), HttpStatus.OK);
+    @PutMapping(value = "/{id}", consumes = "application/json")
+    public  ResponseEntity<WeblinkDto>  updateWeblink(@PathVariable("id") long id, @RequestBody WeblinkDto change) {
+
+        return new ResponseEntity<>(weblinksService.updateWeblink(id, change), HttpStatus.CREATED);
     }
 
 

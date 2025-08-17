@@ -1,5 +1,9 @@
+DROP SCHEMA dailytech;
 
-CREATE TABLE dailytech.roles
+-- Ensure schema exists (no-op if already created by your app)
+CREATE SCHEMA IF NOT EXISTS dailytech DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+
+CREATE TABLE  IF NOT EXISTS  dailytech.roles
 (
     id   BIGINT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255)          NOT NULL,
@@ -7,7 +11,7 @@ CREATE TABLE dailytech.roles
     CONSTRAINT uc_roles_name UNIQUE (name)
 );
 
-CREATE TABLE dailytech.users
+CREATE TABLE  IF NOT EXISTS  dailytech.users
 (
     userid           BIGINT AUTO_INCREMENT NOT NULL,
     username         VARCHAR(255)       NULL,
@@ -24,7 +28,7 @@ CREATE TABLE dailytech.users
     CONSTRAINT pk_users PRIMARY KEY (userid)
 );
 
-CREATE TABLE dailytech.users_roles
+CREATE TABLE  IF NOT EXISTS  dailytech.users_roles
 (
     role_id BIGINT NOT NULL,
     user_id BIGINT    NOT NULL,
@@ -34,7 +38,7 @@ CREATE TABLE dailytech.users_roles
 );
 
 
-CREATE TABLE dailytech.categories
+CREATE TABLE  IF NOT EXISTS  dailytech.categories
 (
     id            BIGINT AUTO_INCREMENT NOT NULL,
     name          VARCHAR(255)          NULL,
@@ -42,7 +46,7 @@ CREATE TABLE dailytech.categories
     CONSTRAINT pk_categories PRIMARY KEY (id)
 );
 
-CREATE TABLE dailytech.post_entity
+CREATE TABLE  IF NOT EXISTS  dailytech.post_entity
 (
     id            BIGINT AUTO_INCREMENT NOT NULL,
     did           VARCHAR(255)          NOT NULL,
@@ -65,7 +69,7 @@ CREATE TABLE dailytech.post_entity
     CONSTRAINT fk_post_entity_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
 
-CREATE TABLE dailytech.comments
+CREATE TABLE  IF NOT EXISTS  dailytech.comments
 (
     id      BIGINT AUTO_INCREMENT NOT NULL,
     name    VARCHAR(255)          NULL,
@@ -76,7 +80,7 @@ CREATE TABLE dailytech.comments
     CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
 );
 
-CREATE TABLE dailytech.news
+CREATE TABLE  IF NOT EXISTS  dailytech.news
 (
     id          BIGINT AUTO_INCREMENT NOT NULL,
     title       VARCHAR(255)          NULL,
@@ -86,6 +90,66 @@ CREATE TABLE dailytech.news
     CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
 
+
+-- BOOKS
+-- persist  as `title` and `profile_url` here.
+-- CREATE TABLE IF NOT EXISTS dailytech.books (
+--   id           BIGINT NOT NULL AUTO_INCREMENT,
+--   title        VARCHAR(255)  NOT NULL,
+--   profile_url  VARCHAR(1000),
+--   pubyear      INT,
+--   publisher    VARCHAR(255),
+--   authors      VARCHAR(500),
+--   genre        VARCHAR(255),
+--   rating       DOUBLE,
+--   CONSTRAINT pk_books PRIMARY KEY (id)
+-- ) ;
+DROP TABLE dailytech.weblinks;
+-- WEBLINKS
+-- Minimal table for bookmarking arbitrary links that inherit from Bookmark.
+CREATE TABLE IF NOT EXISTS dailytech.weblinks (
+  id     BIGINT AUTO_INCREMENT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  profile_url VARCHAR(1000) NULL,
+  url VARCHAR(1000) NOT NULL,
+  host VARCHAR(255) NULL,
+  htmlpage LONGTEXT NULL,
+  downloadstatus VARCHAR(32) NOT NULL DEFAULT 'NOT_ATTEMPTED',
+  post_id BIGINT NULL,
+  CONSTRAINT pk_weblinks PRIMARY KEY (id),
+  CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
+) ;
+
+
+CREATE INDEX idx_post_entity_category_id ON dailytech.post_entity (category_id);
+CREATE INDEX idx_post_entity_user_userid ON dailytech.post_entity (user_userid);
+CREATE INDEX idx_comments_post_id ON dailytech.comments (post_id);
+CREATE INDEX idx_news_category_id ON dailytech.news (category_id);
+CREATE INDEX idx_users_roles_role_id ON dailytech.users_roles (role_id);
+CREATE INDEX idx_users_roles_user_id ON dailytech.users_roles (user_id);
+
+
+
+
+-- COMMANDS 1----------------------------------
+SELECT * FROM dailytech.post_entity;
+SELECT * FROM dailytech.users;
+SELECT * FROM dailytech.users_roles;
+SELECT * FROM dailytech.categories;
+SELECT * FROM dailytech.comments;
+SELECT * FROM dailytech.weblinks;
+SELECT * FROM dailytech.news;
+
+-- END COMMANDS ----------------------------------
+
+
+
+
+
+
+
+
+-- ROLES: 2 entries
 INSERT INTO dailytech.roles (id, name)
 VALUES
     (1, 'ROLE_ADMIN'),
@@ -112,16 +176,15 @@ VALUES
     (2, 103),  -- bobUser => ROLE_USER
     (2, 104),  -- aliceUser => ROLE_USER
     (1, 105);  -- thomasMaestas => ROLE_ADMIN
--- USERS_ROLES: 5 entries
 
 -- CATEGORIES: 5 entries
 INSERT INTO dailytech.categories (id, name, description)
 VALUES
-    (10, 'A.I.Now.', 'AI Technology news'),
-    (11, 'Web Dev Affairs', 'Web-Dev & Coding updates'),
-    (12, 'Sociology Tomorrow!', 'Sociology Apps & updates'),
-    (13, 'Quantum Data', 'Quantum news & tips'),
-    (14, 'Musing Blockchain', ' Blockchain Cryptocurrency insights');
+    (10, 'Tech', 'Technology news'),
+    (11, 'Health', 'Health & Wellness'),
+    (12, 'Sports', 'Sports updates'),
+    (13, 'Finance', 'Financial news & tips'),
+    (14, 'Crypto', 'Cryptocurrency insights');
 
 -- POST_ENTITY: 5 entries
 INSERT INTO dailytech.post_entity (
@@ -160,6 +223,41 @@ VALUES
     (33, 'TechLover', 'techie@example.com', 'Excited about AI updates!', 23),          -- references post_entity.id=23
     (34, 'InvestorJoe', 'joe@example.com', 'Any more stock tips?', 24);                -- references post_entity.id=24
 
+-- Sample data for weblinks (match table: title, profile_url, url, host, htmlpage, downloadstatus)
+INSERT INTO dailytech.weblinks
+  (title, profile_url, url, host, htmlpage, post_id)
+VALUES
+  ('Spring Boot Reference',
+   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
+   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
+   'docs.spring.io',
+   'htmlpage',
+    20),
+  ('Angular Docs',
+   'https://angular.dev/',
+   'https://angular.dev/',
+   'angular.dev',
+   'htmlpage',
+   21),
+  ('OWASP Cheat Sheet Series',
+   'https://cheatsheetseries.owasp.org/',
+   'https://cheatsheetseries.owasp.org/',
+   'cheatsheetseries.owasp.org',
+   'htmlpage',
+   22),
+  ('PostgreSQL 16 Manual',
+   'https://www.postgresql.org/docs/current/',
+   'https://www.postgresql.org/docs/current/',
+   'www.postgresql.org',
+   'htmlpage',
+  23),
+  ('Kafka Documentation',
+   'https://kafka.apache.org/documentation/',
+   'https://kafka.apache.org/documentation/',
+   'kafka.apache.org',
+   'htmlpage',
+   24);
+
 -- NEWS: 5 entries
 INSERT INTO dailytech.news (
     id, title, url, category_id
@@ -172,3 +270,14 @@ VALUES
     (44, 'Finance Reforms', 'https://news5.com', 13);        -- references categories.id=13 (Finance)
 
 
+
+-- COMMANDS 2----------------------------------
+SELECT * FROM dailytech.post_entity;
+SELECT * FROM dailytech.users;
+SELECT * FROM dailytech.users_roles;
+SELECT * FROM dailytech.categories;
+SELECT * FROM dailytech.comments;
+SELECT * FROM dailytech.weblinks;
+SELECT * FROM dailytech.news;
+
+-- END COMMANDS ----------------------------------

@@ -80,6 +80,11 @@ public class PostEntity {
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true )
 	private Set<Comment> comments = new HashSet<>();
 
+	// One PostEntity can have many Weblinks
+	@ToString.Exclude
+	@OneToMany(mappedBy = "postEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<Weblink> weblinks = new HashSet<>();
+
 	@JsonIgnore // ✅ Prevents infinite recursion when serializing JSON
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_userid") // ✅ Fixed JoinColumn to match `users.userid`

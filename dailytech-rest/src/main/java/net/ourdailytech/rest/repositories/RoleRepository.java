@@ -11,8 +11,8 @@ import java.util.Set;
 
 @RepositoryRestResource(collectionResourceRel = "role", path = "role") 
 @Repository 
-public interface RoleRepository extends JpaRepository<Role, Integer> {
-    Optional<Role> findById(@NotNull Integer id);
+public interface RoleRepository extends JpaRepository<Role, Long> {
+    Optional<Role> findById(@NotNull Long id);
 
     Optional<Role> findByName(String name);
 
