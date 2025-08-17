@@ -93,7 +93,7 @@ public class UsersController {
     @GetMapping(value = USER_PATH + "/email/{email}")
     public ResponseEntity<UserDto> getUserByEmail(@PathVariable("email") String email) { 
         if (usersService.getUserByEmail(email).isEmpty()) {
-            throw new ResourceNotFoundException("User " + email + "not found");
+            throw new ResourceNotFoundException("MESSAGE: User " + email + "...not found");
         }
         return new ResponseEntity<>(usersService.getUserByEmail(email).get(), HttpStatus.OK);
     }

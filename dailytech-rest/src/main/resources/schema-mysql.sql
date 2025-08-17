@@ -78,6 +78,22 @@ CREATE TABLE  IF NOT EXISTS  dailytech.comments
     CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
 );
 
+-- WEBLINKS
+-- Minimal table for bookmarking arbitrary links that inherit from Bookmark.
+CREATE TABLE IF NOT EXISTS dailytech.weblinks (
+  id     BIGINT AUTO_INCREMENT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  profile_url VARCHAR(1000) NULL,
+  url VARCHAR(1000) NOT NULL,
+  host VARCHAR(255) NULL,
+  htmlpage LONGTEXT NULL,
+  downloadstatus VARCHAR(32) NOT NULL DEFAULT 'NOT_ATTEMPTED',
+  post_id BIGINT NULL,
+  CONSTRAINT pk_weblinks PRIMARY KEY (id),
+  CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
+) ;
+
+
 CREATE TABLE  IF NOT EXISTS  dailytech.news
 (
     id          BIGINT AUTO_INCREMENT NOT NULL,
@@ -87,35 +103,6 @@ CREATE TABLE  IF NOT EXISTS  dailytech.news
     CONSTRAINT pk_news PRIMARY KEY (id),
     CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
-
-
--- BOOKS
--- Note: Bookmark(@MappedSuperclass) contributes `title` and `profileUrl`.
--- persist  as `title` and `profile_url` here.
-CREATE TABLE IF NOT EXISTS dailytech.books (
-  id           BIGINT NOT NULL AUTO_INCREMENT,
-  title        VARCHAR(255)  NOT NULL,
-  profile_url  VARCHAR(1000),
-  pubyear      INT,
-  publisher    VARCHAR(255),
-  authors      VARCHAR(500),
-  genre        VARCHAR(255),
-  rating       DOUBLE,
-  CONSTRAINT pk_books PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- WEBLINKS
--- Minimal table for bookmarking arbitrary links that inherit from Bookmark.
-CREATE TABLE IF NOT EXISTS dailytech.weblinks (
-  id BIGINT NOT NULL AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  profile_url VARCHAR(1000) NULL,
-  url VARCHAR(1000) NOT NULL,
-  host VARCHAR(255) NULL,
-  htmlpage LONGTEXT NULL,
-  downloadstatus VARCHAR(32) NOT NULL DEFAULT 'NOT_ATTEMPTED',
-  CONSTRAINT pk_weblinks PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE INDEX idx_post_entity_category_id ON dailytech.post_entity (category_id);
 CREATE INDEX idx_post_entity_user_userid ON dailytech.post_entity (user_userid);

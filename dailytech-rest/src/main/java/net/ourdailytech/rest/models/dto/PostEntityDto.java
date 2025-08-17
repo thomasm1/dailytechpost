@@ -41,4 +41,5 @@ public class PostEntityDto implements Serializable {
     private int durationGoal;
     private Long categoryId;
     private Set<CommentDto> comments;
+    private Set<WeblinkDto> weblinks;
 }

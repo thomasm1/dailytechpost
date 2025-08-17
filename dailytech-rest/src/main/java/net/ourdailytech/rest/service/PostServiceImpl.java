@@ -129,31 +129,20 @@ public class PostServiceImpl implements PostService {
 
 		return postResponse;
 	}
-
-	@Override
-	public Optional<PostEntityDto> getPostById(long id) {
-		try {
-			PostEntity post = pr.findById(id).orElseThrow(
-					() -> new ResourceNotFoundException("not found", "not found",String.valueOf(id) )
-			);
-			return Optional.ofNullable(postEntityMapper.toDto(post));
-		} catch (Exception e) {
-			return Optional.empty();
-		}
- 	}
+// src/main/java/net/ourdailytech/rest/service/PostServiceImpl.java
+@Override
+public Optional<PostEntityDto> getPostById(long id) {
+	return pr.findById(id)
+			.map(postEntityMapper::toDto)
+			.filter(dto -> dto != null);
+}
 
 	@Override
 	public Optional<PostEntityDto> getPostByDid(String did) {
-		try {
-			PostEntity post = pr.findByDid(did).orElseThrow(
-					() -> new ResourceNotFoundException("not found", "not found",did )
-			);
-			return Optional.ofNullable(postEntityMapper.toDto(post));
-		} catch (Exception e) {
-			return Optional.empty();
-		}
+		return pr.findByDid(did)
+				.map(postEntityMapper::toDto)
+				.filter(dto -> dto != null);
 	}
-
 
 	/**
 	 * @param categoryId

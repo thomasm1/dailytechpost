@@ -92,7 +92,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "----------USERS----------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -148,7 +148,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " { \r\n        \"email\": \"tt@gmail.com\", \r\n        \"password\": \"password\",\r\n        \"username\":\"tt@gmail.com\",\r\n        \"lastName\":\"last\",\r\n        \"firstName\":\"first\"\r\n    }"
+					"raw": " { \r\n        \"email\": \"333@gmail.com\", \r\n        \"password\": \"password\",\r\n        \"username\":\"tt@gmail.com\",\r\n        \"lastName\":\"last\",\r\n        \"firstName\":\"first\"\r\n    }"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users/auth/register",
@@ -181,7 +181,7 @@
 							"  \r",
 							"  // 2) Store token as a collection variable, environment variable, or global\r",
 							"  pm.collectionVariables.set(\"jwtToken\", token);\r",
-							"  // or pm.environment.set(\"jwtToken\", token);\r",
+							"  pm.environment.set(\"jwtToken\", token);\r",
 							"}\r",
 							"\r",
 							"\r",
@@ -223,7 +223,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " {  \r\n    \"usernameOrEmail\": \"tt@gmail.com\",\r\n    \"password\": \"password\"\r\n}"
+					"raw": " {  \r\n    \"usernameOrEmail\": \"ttt@gmail.com\",\r\n    \"password\": \"password\"\r\n}"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users/auth/login",
@@ -328,7 +328,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"userId\": 16,\r\n        \"email\": \"thomas1maestas@gmail.com\",\r\n        \"username\": \"thomas1.maestas@gmail.com\",\r\n        \"lastName\": \"maestas\",\r\n        \"firstName\": \"thomas1\",\r\n        \"organizationCode\": \"ORG001\",\r\n        \"dashboardCode\": \"DASH001\",\r\n        \"cusUrl\": \"https://example.com/user1\",\r\n        \"userType\": 1,\r\n        \"contactType\": 1,\r\n        \"isActive\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ],\r\n        \"id\": null,\r\n        \"password\": \"password\"\r\n    }"
+					"raw": "    {\r\n        \"email\": \"thomas1maestas@gmail.com\",\r\n        \"username\": \"thomas1.maestas@gmail.com\",\r\n        \"lastName\": \"maestas\",\r\n        \"firstName\": \"thomas1\",\r\n        \"organizationCode\": \"ORG001\",\r\n        \"dashboardCode\": \"DASH001\",\r\n        \"cusUrl\": \"https://example.com/user1\",\r\n        \"userType\": 1,\r\n        \"contactType\": 1,\r\n        \"isActive\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ],\r\n        \"id\": null,\r\n        \"password\": \"password\"\r\n    }"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users",
@@ -438,7 +438,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "-----------POSTS--------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -632,7 +632,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "-----------COMMENTS---------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -726,7 +726,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "------------CATEGORIES--------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -1010,7 +1010,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "----------BOOKS----------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -1169,7 +1169,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "------------MOVIES-------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -1227,7 +1227,7 @@
 			"response": []
 		},
 		{
-			"name": "--------------------------",
+			"name": "-----------WEBLINKS---------------",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -1480,7 +1480,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJiYmJAZ21haWwuY29tIiwiaWF0IjoxNzQyOTMxNjI0LCJleHAiOjE3NDM1MzY0MjR9.rCjYbXnoclln2EznsMSMx4burPSwMWzsx9LuzF4e19786pGAJ16WKU7rxYOf2cJq",
+				"value": "{{jwtToken}}",
 				"type": "string"
 			}
 		]
@@ -1505,6 +1505,12 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwtToken",
+			"value": ""
 		}
 	]
 }
