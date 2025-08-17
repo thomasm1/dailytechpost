@@ -9,8 +9,26 @@ import {
     POSTS_LIST, 
 } from '../types';
 
+    // ADD WEBLINK TO POST specifiied by post ID:   /api/weblinks/posts/24
 
-export async function  addPost(postId, news) {
+    // { 
+//     UPDATEABLE---->  "title": "https://www.thomasmaestas.com/cc",
+//     "profileUrl": "thomasmaestas.net/ccccccprofileUrl.html",
+//    "ownerEmail":   "thomasm1.BB@gmail.com",
+//   UPDATEABLE----> "url": "thomasmaestas.net/ccccindex.html",
+//    UPDATEABLE---->   "host": "thomasmaestas.netcc",
+//     "htmlPage": "<html><head></head><body>hey thomasmaestas!!!!!</body></html>",
+//     "downloadStatus": "SUCCESS",
+//     "itemData": "<item><type>WebLink</type><title>https://www.thomasmaestas.com</title><url>thomasmaestas.net/index.html</url><host>thomasmaestas.net</host></item>",
+//     "web3Link": true 
+// } 
+
+// UPDATE WEBLINK by weblink ID:  /api/weblinks/13
+//     UPDATEABLE---->  "title": "https://www.thomasmaestas.com/cc",
+//   UPDATEABLE----> "url": "thomasmaestas.net/ccccindex.html",
+//    UPDATEABLE---->   "host": "thomasmaestas.netcc",
+
+export async function  addWeblink(postId, weblink) {
     const bearerToken = localStorage.getItem('accessToken') || JWT_TOKEN
 
     const request  = await axios.get(`${POSTS_BASE_URL}/posts/${postId}`, {
@@ -20,14 +38,13 @@ export async function  addPost(postId, news) {
     }).then(response => response.data);
     
     const post = request;
-    if (!post.news) {
-        post.news = [];
+    if (!post.weblinks) {
+        post.weblinks = [];
     }
-    post.news.push(news);   
-    console.log("postsService :", post);
+    post.weblinks.push(weblink);   
+    console.log("postsAction addWeblink:", post);
 
-    await axios.put(`${POSTS_BASE_URL}/posts/${postId}`, post
-    , {
+    await axios.put(`${POSTS_BASE_URL}/posts/${postId}`, post, {
         headers: {
             Authorization: `Bearer ${bearerToken}`
         }

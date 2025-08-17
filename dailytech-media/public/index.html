@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Thomas1 - Live HLS Stream Player</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
+</head>
+<body>
+    <div class="radio-container">
+        <h1 class="radio-title">Radio Thomas1</h1>
+        <p class="radio-subtitle">French-Style Lossless HLS Stream</p>
+        
+        <div class="player-section">
+            <div class="now-playing">
+                <div class="track-title" id="track-title">Connecting to Stream...</div>
+                <div class="track-info" id="track-info">HLS Lossless • Live Stream</div>
+            </div>
+            
+            <audio 
+                id="audio-player" 
+                class="audio-player" 
+                controls 
+                preload="none">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <div class="player-controls">
+                <button id="play-button" class="play-button" onclick="togglePlayPause()">▶️</button>
+                <div class="volume-control">
+                    <span>🔊</span>
+                    <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="50">
+                </div>
+            </div>
+            
+            <div class="stream-info">
+                <div class="info-item">
+                    <div class="info-label">Stream Status</div>
+                    <div class="info-value">
+                        <span id="status-indicator" class="status-indicator status-loading"></span>
+                        <span id="stream-status">Connecting...</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Stream Quality</div>
+                    <div class="info-value" id="stream-quality">HLS Lossless</div>
+                </div>
+            </div>
+            
+            <div class="codec-info">
+                <div class="codec-title">🎵 Stream Technical Info</div>
+                <div class="codec-details">
+                    <div class="codec-row">
+                        <span class="codec-label">Codec:</span>
+                        <span id="current-codec" class="codec-value">AAC Hi-Fi</span>
+                        <span id="codec-badge" class="codec-badge aac">✓ Universal Support</span>
+                    </div>
+                    <div class="codec-row">
+                        <span class="codec-label">Bitrate:</span>
+                        <span id="current-bitrate" class="codec-value">~211 kbps</span>
+                    </div>
+                    <div class="codec-row">
+                        <span class="codec-label">Buffer Health:</span>
+                        <span id="buffer-health" class="codec-value">Loading...</span>
+                    </div>
+                    <div class="codec-row">
+                        <span class="codec-label">Network:</span>
+                        <span id="network-speed" class="codec-value">Measuring...</span>
+                    </div>
+                </div>
+                <div id="codec-explanation" class="codec-explanation">
+                    Using AAC codec for maximum browser compatibility. FLAC would provide lossless quality but isn't supported in most web browsers for HLS streaming.
+                </div>
+            </div>
+            
+            <div class="stream-info">
+                <div class="info-item">
+                    <div class="info-label">Album</div>
+                    <div class="info-value" id="track-album">Loading...</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Year</div>
+                    <div class="info-value" id="track-year">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="rating-buttons">
+                <button id="thumbs-up-btn" class="rating-btn" onclick="rateTrack('up')">
+                    👍 Love It <span id="thumbs-up-count">(0)</span>
+                </button>
+                <button id="thumbs-down-btn" class="rating-btn thumbs-down" onclick="rateTrack('down')">
+                    👎 Not My Style <span id="thumbs-down-count">(0)</span>
+                </button>
+            </div>
+            <div id="rating-status" class="rating-status"></div>
+        </div>
+        
+        <!-- User Authentication Section -->
+        <div id="auth-section" class="auth-section">
+            <div id="login-form" class="auth-form">
+                <h3>Join Radio Thomas1</h3>
+                <input type="text" id="username" placeholder="Username or Email">
+                <input type="password" id="password" placeholder="Password (for email usernames)">
+                <div>
+                    <button onclick="login()" class="auth-button">Login</button>
+                    <button onclick="register()" class="auth-button">Register</button>
+                </div>
+            </div>
+            <div id="user-info" class="user-info" style="display: none;">
+                <h3>Welcome back, <span id="current-username"></span>! 🎵</h3>
+                <button onclick="logout()" class="auth-button">Logout</button>
+            </div>
+        </div>
+        
+        <!-- Track History Section -->
+        <div class="track-history">
+            <div class="history-title">Recently Played</div>
+            <div id="track-history-list">
+                <div class="history-item">Loading track history...</div>
+            </div>
+        </div>
+        
+        <div id="error-container"></div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

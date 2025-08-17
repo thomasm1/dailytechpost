@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Test Suite
+
+This project includes a comprehensive test suite with **54 passing tests** covering:
+
+- **Services**: API integration, CRUD operations, weblinks functionality
+- **Components**: Form handling, validation, user interactions  
+- **Redux**: State management, actions, reducers
+- **Integration**: End-to-end workflows
+
+See [README-TESTS.md](./README-TESTS.md) for detailed test documentation.
+
+### Running Tests
+```bash
+npm test                    # Interactive watch mode
+npm test -- --watchAll=false  # Single run
+```
+
+## Architecture
+
+### Features
+- Posts with weblink citations and string blogcite
+- Comments with name/email/body fields
+- News categories with article management
+- Redux state management with RTK
+- Bootstrap 5 styling with Reactstrap
+
+### API Integration
+- REST API at localhost:8082
+- JWT authentication
+- Error handling and response processing

@@ -1,0 +1,1050 @@
+{
+	"info": {
+		"_postman_id": "9b60d880-7e7a-49ef-b60d-99b0fc4402f2",
+		"name": "**dailytech-thomasm1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3422017"
+	},
+	"item": [
+		{
+			"name": "GET_ALL_emfm9dp ... /dev/posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts?Content-Type=Application/JSON",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "Application/JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET:id  emfm9dp ... /dev/post/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/ca2cdb9d-ac1f-4d8c-8ad5-e57215d86190",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post",
+						"ca2cdb9d-ac1f-4d8c-8ad5-e57215d86190"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET:id  emfm9dp ... /dev/post/{id} Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev2/post/ca2cdb9d-ac1f-4d8c-8ad5-e57215d86190?Content-Type=Application/JSON",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev2",
+						"post",
+						"ca2cdb9d-ac1f-4d8c-8ad5-e57215d86190"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "Application/JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET:id  emfm9dp ... /dev/posts Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev2/posts?Content-Type=Application/JSON",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev2",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "Application/JSON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET[arr]   z3noflrq9b .../dev/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts",
+					"protocol": "https",
+					"host": [
+						"z3noflrq9b",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"date\": \"May 27th, 2025\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">At first glance, I acquiesced to the notion that developer jobs, along with many others, are headed for the garbage can, thanks to A.I.</p><p> As a Java Engineer, my opinion could not be further from that notion. Here's why: <br /> First, and foremost, General Audience, i.e., production-worthy, product releases depend on absolute reliability, without room for a sliver of hallucination in functionality. Augmenting productivity, e.g., transforming a junior developer into a 10X Developer with the aid of A.I., is the nuanced viewpoint. The wholesale replacement of a 129 I.Q. college grad--skilled in automation, math and computer science--with a chatbot is the simplistic, know-nothing journalism viewpoint. </p> <p>Now, I assert that all things being equal, the <strong> <i>increase</i></strong> in new job demand is not obvious because future definitions have no merit until they are applied. For example,  </p> <p class=\\\"quote\\\"> The entry-level job may transition from being a data gatherer to being a data checker, ensuring the AI didn’t miss anything or digging deeper into nuggets uncovered.<sup>1</sup></p> <p>The problem with enterprise-grade production-level software engineering challeges lies in the details and the edge cases--edge cases that humans recognize and solve in our own lives.</p>  \",\r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"A.I. Noise Pollution\",\r\n        \"did\": \"25-05-27\",\r\n \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://fortune.com/2024/04/16/ai-could-eliminate-junior-level-wall-street-banking-jobs\\\" target=\\\"_blank\\\">https://www.cio.com/article/3511493/microsoft-makes-quantum-breakthrough-plans-commercial-offering.html</a>\\n</p>      \\n  \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE:id  emfm9dp ... /dev/post/{id} Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/8d4aafda-b2c3-4a8e-b874-2a6bfedfb21e",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post",
+						"8d4aafda-b2c3-4a8e-b874-2a6bfedfb21e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE_PUT_https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 6, 2024\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">The Ghosts of the Past have come again to steer my thoughts.  H&eacute;las! I cannot but acquiesce to them. After all, it was a dreary night, in the immediate aftermath(s) of the infamous <i>CloudStrike</i> bug that the misdirected accusations and misplaced assumptions abounded across the land. It was the voice of my ex-girlfriend, with whom I debated, that resoundedly defended Windows, after all, CloudStrike (CS) <i>isn't a dependency</i>. Blame it on the team, she said, blame it on the decision to install the software! Blame it on Delta. To this notion I inserted my 2 cents that it was indeed a dependency of Windows. So it was both the fault of CS and how much more of Microsoft for allowing it. To resolve this enigmatic question, the reader and I must dive deep: </p>  <p > What really is the difference between the stomach-curling <span style=\\\"color:white;background-color:blue;\\\" >Blue Screen and Linux's black screen of death, or rarer yet, Mac's Pink Screen of demise? Nothing, it just so happens the former happens. And happens alot more frequently.</span> But why you ask? Because of the irascible and unscrupulous bi-modal architecture of Windows itself</p> <p> My story cannot complete itself without touching upon these details --that the strict line between kernel-mode (i.e. external apps, users, etc are forbidden, being relegated to user-mode.) So what takes place in kernel mode? Well those delicate activities and configurations that only Windows will certify with ample testing, like the thread scheduler (bear with this tangent, dear reader), heap manager, and perhaps a graphical functionality, for example, to access driver, which would talk to the GPU across the PCI Bus. So, where does CloudStrike's <i><span style=\\\"color:green\\\">FALCON</span></i> fit into this picture? [Returning now to the point of whether or not the antimalware software Falcon is a dependency.]</p> <p>Earlier antimalware not only looks at files, but also the behavior of the operating itself; hence the need access the kernel ... thus passing beyond the line of kernel mode -- a necessary evil you say? yes, a necessary risk. However, it used to be that modifcations of the this device driver (i.e. not hardware, just CloudStrike's Falcon software; any software alterations MUST therefore pass any tests, proffered by Windows Hardware Quality Labs (WHQL), which at the end of such battery of tests, is <i>signed &amp; certified by Windows.</i>) Thus, the necessary evil-risk is indeed mitigated; and all remain happy. <br /> Sadly, though, times change and standards stoop ever lower -- because it is 2024, and the once-lofty WHQL no longer requires alterations to such drivers as Falcon to pass the battery of tests, if only the \\\"dynamic definition files\\\" (which re-program the driver itself! thereby circumventing the once-strict standards that guarded the sacred line separarting Kernel Mode from harm.</p> <p>And thus, the short tangent completed, now that we know that this dangerous software can enter and exit kernel mode access at will -- The case STILL justifies Windows and CloudStrike because the User/Enterprise is still at fault for using this so-called non-dependency, correct? Wrong. Windows has allowed CloudStrike (in a bid to embed its software into the OS) to mark their driver as a \\\"Boot-Start Driver\\\"--id est, a driver for a device that <strong>must</strong> be installed to start the MS Windows Operating System.  Huh?!? Yep. Whereas most boot-start drivers are included in driver packages that are \\\"in-the-box\\\" with Windows, Windows automatically installs these boot-start drivers during first boot of the system. If a boot-start driver for a device is not included in a driver package that is \\\"in-the-box\\\" with Windows, a user can install an additional vendor-supplied driver package for the device; And in these instances, let's say on a Saturday afternoon when cleaning out the home computer, refreshing, and reinstalling software, these driver packages <i>should</i> be added to the image <u>offline</u> before the image is deployed to a system. Simple. And Safe. Right? <br /> Wrong. CrowdStrike did not want you booting Windows without their precious software! So instead you must reboot Windows in Safe Mode, to remove or uninstall this surreptitious piece of software.  And so, there you have it, in 1,000 words or less, this Spectre of the Past has been exposed, and the public can now act as Judge and Jury to lay all the blame on both Windows and CloudStrike, while justifying and restoring innocence to the many clients, user or enterprise, who were left powerless to the impending doom that CloudStrike Falcon would shrowd the world--if only for a a weekend. So next time there is a Ghost in the Shell, may the best of learn to undermine the Perils that lay beneath!\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Haunted by the Ghosts of the Past\",\r\n        \"did\": \"24-08-06\",\r\n \"blogcite\": \"\\n  \\n  \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/889ee82e-f467-4384-b345-65b6d6454fb1",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post",
+						"889ee82e-f467-4384-b345-65b6d6454fb1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts/c208bd6d-fcdb-4a69-aa07-a90ea54f1c47 Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"7a569027-5561-4217-beb7-1dc574eb9b35\",\n    \"did\": \"23-12-30\",\n    \"title\": \"On the Accelerating Pace of Software BoilerPlate and the Advent of AI\",\n    \"date\": \"December 30, 2023\",\n    \"author\": \"by Thomas Maestas, MA\",\n    \"cat3\": \"Web Dev Affairs\",\n    \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">Due in March 2023, the next version of standard Java will have 12 features including previews of scoped values, structured concurrency, stream gatherers, and the ability to execute multi-file programs.<sup>1</sup></p>\\n<p> Doubtless the accelerating pace of Angular and Spring Frameworks, coupled with the syntactic evolutions of Python 2 to 3 upheaval, and the once-per-18 months language versioning of Java and EcmaSript-JavaScript.Why must languages and frameworks expand at an accelerating rate? The expansion of digital nature of <i>every</i> business arrives because every business, from every sector, and any size, <i>is</i> de facto a tech business.</p><br /><p> The great philsophers throughout the ages have always argued that any philosophy's ability to traverse from the banal observation to the novel and enlightened lines of reasoning are limited in their breadth by the limitations of the philophy's inherent language, i.e., the syntax. Thus, the predominant languages of philosophy depended on ever-growing syntax in order to continually describe, and traverse, new conceptual phenomena.</p> <br /><p> --And the same rings true with technological code: The once linear expansion of language has been replaced by a exponential growth of syntax to power the expanding wish-list of 21st business and market demands. And so at a time of peril for all developers buried beneath ever more and more homework learning new syntactic 'techniques', there has arrived a help from Above the code stack: From language model itsel, the Large Language Model and its derivate syntax-oriented A.I. arrives not moment too soon to break developers free from the growing onslaught of boilerplate code!\",\n    \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html\\\"   target=\\\"_blank\\\">\\nhttps://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html </a>\\n</p>  \\n  \"\n}"
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts/7a569027-5561-4217-beb7-1dc574eb9b35",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"posts",
+						"7a569027-5561-4217-beb7-1dc574eb9b35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 7, 2024\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">In my last post, all was <span style=\"color:red;\">revealed</span> with regard to the mechanics of failure surrounding the CloudStrike disaster, which effectuated perturbations to the entire global community, save for those not inextricably tied to technology.</p><p> To summarize in a nutshell, <br /> Microsoft begain to allow 3rd party vendor code, like CloudStrike's,to use dynamic definition files to update the driver <i>not just properties, but programs written in P-Code</p>, so the driver is running differently than when it was originally certified. Therefore, the worst possible scenario plays out in Kernel mode -- Unsigned code, of unknown provenance, running untrusted P-Code--again, <i>programming</i> code embedded waithin configuration files, unapproved by Windows Hardware Quality Labs.  </p> <p>I think we are all left aghast, scratching our heads. It is what it is, so why do I bring up the subject again? Why raise up the spectre?<br />I feel there are invaluable lessons to be drawn from the incident, so let us take an even closer look at the train-wreck in slow motion, in all its minutiae.</p>     <p>What <i>exactly</i> occurred within the anti-virus program that went wrong? <br />To find out, let us look at the publicly accessible crash dump information, found on every Windows machine; alas, the offending instruction from the logs: <p style=\\\"color:orange;\\\">  <code>   \\n\\n |LINE 1|   fffff802 <br />|LINE 2|  1df335a1 458b08        mov    r9d,dword ptr [r8] ds:002b:000000`0000009c=????<br />|LINE 3|\\nResetting default scope<br />|LINE 4|\\n    BLACKBOXBSD: 1 (!blackboxbsd) <br />|LINE 5|\\n  BLACKBOXNTFS: 1 (!blackboxntfs) <br />|LINE 6| \\nBLACKBOXPNP: 1 (!blackboxpnp)<br />|LINE 7|\\n  BLACKBOXWINLOGON: 1   </code>   </p> <p> So, without belabouring the point, the line 2 reveals an Attempt to move data to register 9 from a memory pointer in register 8. Pointer 8 is unintelligable, i.e. it is not a integer, but something else, which then attempts the next in line <span style=\\\"color:green;\\\">9c</span>, which then dereferences, <strong>and causes a null pointer exception</strong>. <br /><br /> Of course, a testing team, any test would have caught this simple error, however CrowdStrike's driver didn't have null-pointer protection (CloudStrike takes full blame here) <i>nor</i> parameter validation into a kernel function (Windows shares in the blame here). The list of woes sort of piles up from here, implicating teams upon teams and different levels of management on both Windows and CloudStrike sides, so the point is moot. </p> <p>Further details are moot, but is there really a broader lesson to be learned here?  You get what you pay for! When cost-saving and unrealistic expectations hit the hard facts on the ground --not a reference to the software glitches in the Boeing 737, whose body count exceeds 1,000 souls, the consequences can be deadly; and final. Yet there was no finality with this glitch; most have moved on and most already forgot all about the CloudStrike disaster .... Are these lessons lost forever? It appears so, and even the once-immortal ghost in the shell is eviscerated from the collective memory of the global community! </p>\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Haunted by the Ghosts of the Past, Part II\",\r\n        \"did\": \"24-08-07\",\r\n \"blogcite\": \"\\n   \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"January 3, 2025\",\r\n        \"cat3\": \"A.I.Now.\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">There is a scene in the second Terminator movie in which the protagonist, John Connor, remarks, \\\"Hasta la Vista Baby\\\" as he fires a single bullet from his pistol against the nitro-glycerin soaked robot from the future, and soon shattered bot. Needless to say, the future hadn't accounted for the basic physics regarding this point-of-pain, which ultimately leads to the triumph of humanity.</p><p>And thus, so are we at the crossroads -- quite a distance between 1984 and 2025. </p> <p>I bring up this Hollywood scene in reference to Sam Altman's latest pronouncements about ASI, i.e., Artificial Super Intelligence. Let's not get of ourselves, Sam. Artificial, yes, Super, no, Intelligence, yes, albeit mildly. </p><p>Sadly, though, one rain-soaked night of a drip or yet one lonely star-speckled night with one sun pulse renders the singular silver bullet that Hollywood shall not need to invent to provide a fantastic storyline. ;-)</p>\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Hasta la Vista, Baby\",\r\n        \"did\": \"25-01-03\",\r\n \"blogcite\": \"\\n https://indianexpress.com/article/technology/artificial-intelligence/sam-altman-on-artificial-superintelligence-there-is-a-lot-of-compounding-left-to-do-9661302/  \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 7, 2024\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">In my last post, all was <span style=\"color:red;\">revealed</span> with regard to the mechanics of failure surrounding the CloudStrike disaster, which effectuated perturbations to the entire global community, save for those not inextricably tied to technology.</p><p> To summarize in a nutshell, <br /> Microsoft begain to allow 3rd party vendor code, like CloudStrike's,to use dynamic definition files to update the driver <i>not just properties, but programs written in P-Code</p>, so the driver is running differently than when it was originally certified. Therefore, the worst possible scenario plays out in Kernel mode -- Unsigned code, of unknown provenance, running untrusted P-Code--again, <i>programming</i> code embedded waithin configuration files, unapproved by Windows Hardware Quality Labs.  </p> <p>I think we are all left aghast, scratching our heads. It is what it is, so why do I bring up the subject again? Why raise up the spectre?<br />I feel there are invaluable lessons to be drawn from the incident, so let us take an even closer look at the train-wreck in slow motion, in all its minutiae.</p>     <p>What <i>exactly</i> occurred within the anti-virus program that went wrong? <br />To find out, let us look at the publicly accessible crash dump information, found on every Windows machine; alas, the offending instruction from the logs: <p style=\\\"color:orange;\\\">  <code>   \\n\\n |LINE 1|   fffff802 <br />|LINE 2|  1df335a1 458b08        mov    r9d,dword ptr [r8] ds:002b:000000`0000009c=????<br />|LINE 3|\\nResetting default scope<br />|LINE 4|\\n    BLACKBOXBSD: 1 (!blackboxbsd) <br />|LINE 5|\\n  BLACKBOXNTFS: 1 (!blackboxntfs) <br />|LINE 6| \\nBLACKBOXPNP: 1 (!blackboxpnp)<br />|LINE 7|\\n  BLACKBOXWINLOGON: 1   </code>   </p> <p> So, without belabouring the point, the line 2 reveals an Attempt to move data to register 9 from a memory pointer in register 8. Pointer 8 is unintelligable, i.e. it is not a integer, but something else, which then attempts the next in line <span style=\\\"color:green;\\\">9c</span>, which then dereferences, <strong>and causes a null pointer exception</strong>. <br /><br /> Of course, a testing team, any test would have caught this simple error, however CrowdStrike's driver didn't have null-pointer protection (CloudStrike takes full blame here) <i>nor</i> parameter validation into a kernel function (Windows shares in the blame here). The list of woes sort of piles up from here, implicating teams upon teams and different levels of management on both Windows and CloudStrike sides, so the point is moot. </p> <p>Further details are moot, but is there really a broader lesson to be learned here?  You get what you pay for! When cost-saving and unrealistic expectations hit the hard facts on the ground --not a reference to the software glitches in the Boeing 737, whose body count exceeds 1,000 souls, the consequences can be deadly; and final. Yet there was no finality with this glitch; most have moved on and most already forgot all about the CloudStrike disaster .... Are these lessons lost forever? It appears so, and even the once-immortal ghost in the shell is eviscerated from the collective memory of the global community! </p>\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Haunted by the Ghosts of the Past, Part II\",\r\n        \"did\": \"24-08-07\",\r\n \"blogcite\": \"\\n   \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 7, 2024\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">In my last post, all was <span style=\"color:red;\">revealed</span> with regard to the mechanics of failure surrounding the CloudStrike disaster, which effectuated perturbations to the entire global community, save for those not inextricably tied to technology.</p><p> To summarize in a nutshell, <br /> Microsoft begain to allow 3rd party vendor code, like CloudStrike's,to use dynamic definition files to update the driver <i>not just properties, but programs written in P-Code</p>, so the driver is running differently than when it was originally certified. Therefore, the worst possible scenario plays out in Kernel mode -- Unsigned code, of unknown provenance, running untrusted P-Code--again, <i>programming</i> code embedded waithin configuration files, unapproved by Windows Hardware Quality Labs.  </p> <p>I think we are all left aghast, scratching our heads. It is what it is, so why do I bring up the subject again? Why raise up the spectre?<br />I feel there are invaluable lessons to be drawn from the incident, so let us take an even closer look at the train-wreck in slow motion, in all its minutiae.</p>     <p>What <i>exactly</i> occurred within the anti-virus program that went wrong? <br />To find out, let us look at the publicly accessible crash dump information, found on every Windows machine; alas, the offending instruction from the logs: <p style=\\\"color:orange;\\\">  <code>   \\n\\n |LINE 1|   fffff802 <br />|LINE 2|  1df335a1 458b08        mov    r9d,dword ptr [r8] ds:002b:000000`0000009c=????<br />|LINE 3|\\nResetting default scope<br />|LINE 4|\\n    BLACKBOXBSD: 1 (!blackboxbsd) <br />|LINE 5|\\n  BLACKBOXNTFS: 1 (!blackboxntfs) <br />|LINE 6| \\nBLACKBOXPNP: 1 (!blackboxpnp)<br />|LINE 7|\\n  BLACKBOXWINLOGON: 1   </code>   </p> <p> So, without belabouring the point, the line 2 reveals an Attempt to move data to register 9 from a memory pointer in register 8. Pointer 8 is unintelligable, i.e. it is not a integer, but something else, which then attempts the next in line <span style=\\\"color:green;\\\">9c</span>, which then dereferences, <strong>and causes a null pointer exception</strong>. <br /><br /> Of course, a testing team, any test would have caught this simple error, however CrowdStrike's driver didn't have null-pointer protection (CloudStrike takes full blame here) <i>nor</i> parameter validation into a kernel function (Windows shares in the blame here). The list of woes sort of piles up from here, implicating teams upon teams and different levels of management on both Windows and CloudStrike sides, so the point is moot. </p> <p>Further details are moot, but is there really a broader lesson to be learned here?  You get what you pay for! When cost-saving and unrealistic expectations hit the hard facts on the ground --not a reference to the software glitches in the Boeing 737, whose body count exceeds 1,000 souls, the consequences can be deadly; and final. Yet there was no finality with this glitch; most have moved on and most already forgot all about the CloudStrike disaster .... Are these lessons lost forever? It appears so, and even the once-immortal ghost in the shell is eviscerated from the collective memory of the global community! </p>\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Haunted by the Ghosts of the Past, Part II\",\r\n        \"did\": \"24-08-07\",\r\n \"blogcite\": \"\\n   \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 3, 2024\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">The Ghosts of the Past have come again to steer my thoughts.  H&eacute;las! I cannot but acquiesce to them. After all, it was a dreary night, in the immediate aftermath(s) of the infamous <i>CloudStrike</i> bug that the misdirected accusations and misplaced assumptions abounded. It was the shrill voice of my Ex- that resounds the most--blame it on Windows, after all, CloudStrike (CS) <i>isn't a dependency</i> after all. Blame it on the team, she said, blame it on the decision to install the software! To this notion I inserted my 2 cents that it was indeed a dependency of Windows. So it was both the fault of CS and how much more of Microsoft for allowing it.  </p> <p class=\\\"quote\\\">...experts say that the openness and accuracy of the Llama 3.1 family of models pose an existential threat to providers of closed proprietary large language models. <sup>1</sup></p>  <p style=\\\"color:white;background-color:blue;\\\"> What really is the difference between the stomach-curling Blue Screen and Linux's black screen of death, or rarer yet, Mac's Pink Screen of demise? Nothing, it just so happens the former happens. And happens alot more frequently. But why you ask? Because of the irascible and unscrupulous bi-modal architecture of Windows itself</p> <p> My story cannot complete itself without touching upon the facts that \", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Haunted by the Ghosts of the Past\",\r\n        \"did\": \"24-08-06\",\r\n \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3477234/why-metas-llama-3-1-is-a-boon-for-enterprises-and-a-bane-for-other-llm-vendors.html\\\"   target=\\\"_blank\\\">infoworld.com/article/3477234/why-metas-llama-3-1-is-a-boon-for-enterprises-and-a-bane-for-other-llm-vendors.html</a>\\n</p> <p class=\\\"footnotes\\\">1. <a href=\\\"https://ai.meta.com/blog/meta-llama-3-1/\\\"   target=\\\"_blank\\\">ai.meta.com/blog/meta-llama-3-1/</a>\\n</p>  \\n  \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 1, 2024\",\r\n        \"cat3\": \"A.I.Now!\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">What is the true cost of A.I. Supremacy? </p> <p class=\\\"quote\\\">...experts say that the openness and accuracy of the Llama 3.1 family of models pose an existential threat to providers of closed proprietary large language models. <sup>1</sup></p>  <p style=\\\"color:black;\\\">The forces of profiteers have converged upon the (apparent) novelties of A.I. to find a niche from which to extract wealth. Not unlike the dot-com bubble, Virtual/Augmented Reality, quantum-era, and even the short-lived NFT bubbles, the research to demarcate technical boundaries and timelines for sustainable return-on-investment in A.I. remains murky.  And yet, 1.5 years since the arrival of ChatGPT 1.0, the one thing is clear: depth-wise development of the tech is banal (unless you count the hot debates between byte-sized versus multi-word tokenization), it is the breadth-wise implementation, security, and enterprise-ready accuracy of the tool into existing technologies that counts. <br /><br />So what about the unfathomable data-training resources necessary for competitive LLM models? With Meta's July open-sourcing of its mega- 400 billion parameterized model, i.e. Llama 3.1, the world is at the fingers of any typical middle-schooler or A.I. hobbyist to create monumental feats. But not-so-fast say you! Okay, it is true that the computing power needed for this model is a mere 700 Watts of power, which rivals small countries.  Renting of the item is another cost rounding out at $300,000/year... So who can afford to run this model? And worse yet, will the world become even more dependent on cloud-computing?  </p><p>The time has arrived for developers to fine-tune their apps to quickly access certain problems with a diverse range of LLMs, reserving the big questions for the big models, if only briefly. This architectural pattern, or at least paradigm, already exists -- It was with Quantum technologies that the world was first introduced to short bursts of brilliance (Given that the super-imposed quantum state needed for computation is a matter of seconds still.) So now that we have identified the next big Wall for innovation --electricity and hardware cost--should one fear a downturn in innovation? Ever emphatically, I say no, because after all Necessity is the Mother of Invention!</p>\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Democraticized Technology: On the Growing Costs of A.I. Computing\",\r\n        \"did\": \"24-06-01\",\r\n \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3477234/why-metas-llama-3-1-is-a-boon-for-enterprises-and-a-bane-for-other-llm-vendors.html\\\"   target=\\\"_blank\\\">infoworld.com/article/3477234/why-metas-llama-3-1-is-a-boon-for-enterprises-and-a-bane-for-other-llm-vendors.html</a>\\n</p> <p class=\\\"footnotes\\\">1. <a href=\\\"https://ai.meta.com/blog/meta-llama-3-1/\\\"   target=\\\"_blank\\\">ai.meta.com/blog/meta-llama-3-1/</a>\\n</p>  \\n  \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"December 30, 2023\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">Due in March, the next version of standard Java will have 12 features including previews of scoped values, structured concurrency, stream gatherers, and the ability to execute multi-file programs.<sup>1</sup></p>\\n<p> Doubtless the accelerating pace of Angular and Spring Frameworks, coupled with the syntactic evolutions of Python 2 to 3 upheaval, and the once-per-18 months language versioning of Java and EcmaSript-JavaScript. Why? why must languages and frameworks expand and multiply. The expansion of digital nature of <i>every</i> business arrives because every business, from every sector, and any size, <i>is</i> de facto a tech business.</p><br /><p> The great philsophers throughout the ages have always argued that civilization and enlightenment are limited in their breadth by the limitations of the philophy's inherent language, i.e., syntax. Thus, the predominant languages of philosophy depended on ever-growing syntax to describe new conceptual phenomena. --And the same rings true with technological code: The once linear expansion of language has been replaced by an exponential expansion of syntax to power the expanding wish-list of 21st business and markets demands. And so at a time of peril for all developers buried beneath ever more and more homework, there has arrived a help from Above the code stack: From language model itsel, the Large Language Model and its derivate syntax-oriented A.I. arrives not moment too soon to break developers free from the growing onslaught of boilerplate code!\",\r\n        \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html\\\"   target=\\\"_blank\\\">\\nhttps://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html </a>\\n</p>  \\n  \",\r\n        \"id\": \"7e8a7261-eee7-4fe3-806c-8026cca89d27\",\r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"On the Accelerating Pace of Software BoilerPlate and the Advent of AI\",\r\n        \"did\": \"23-12-30\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE-https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"January 1, 2023\",\r\n        \"cat3\": \"Web Dev Affairs\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">Happy New Year's 202<strike>3</strike>4! Oops, I literally just typed 3. Well, it's a new year. different day, different dollar. Due in March, the next version of standard Java will have 12 features including previews of scoped values, structured concurrency, stream gatherers, and the ability to execute multi-file programs.<sup>1</sup></p>\\n<p> Doubtless the accelerating pace of Angular and Spring Frameworks, coupled with the syntactic evolutions of Python 2 to 3 upheaval, and the once-per-18 months language versioning of Java and EcmaSript-JavaScript. Why? why must languages and frameworks expand and multiply. The expansion of digital nature of <i>every</i> business arrives because every business, from every sector, and any size, <i>is</i> de facto a tech business.</p><br /><p> The great philsophers throughout the ages have always argued that civilization and enlightenment are limited in their breadth by the limitations of the philophy's inherent language, i.e., syntax. Thus, the predominant languages of philosophy depended on ever-growing syntax to describe new conceptual phenomena. --And the same rings true with technological code: The once linear expansion of language has been replaced by an exponential expansion of syntax to power the expanding wish-list of 21st business and markets demands. And so at a time of peril for all developers buried beneath ever more and more homework, there has arrived a help from Above the code stack: From language model itsel, the Large Language Model and its derivate syntax-oriented A.I. arrives not moment too soon to break developers free from the growing onslaught of boiclerplate code!\",\r\n        \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html\\\"   target=\\\"_blank\\\">\\nhttps://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html </a>\\n</p>  \\n  \",\r\n        \"id\": \"7e8a7261-eee7-4fe3-806c-8026cca89d27\",\r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"On the Accelerating Pace of Software BoilerPlate and the Advent of AI\",\r\n        \"did\": \"23-12-30\"\r\n    }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE_PUT_https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"7a569027-5561-4217-beb7-1dc574eb9b35\",\r\n    \"did\": \"23-12-30\",\r\n    \"title\": \"On the Accelerating Pace of Software BoilerPlate and the Advent of AI\",\r\n    \"date\": \"December 30, 2023\",\r\n    \"author\": \"by Thomas Maestas, MA\",\r\n    \"cat3\": \"Web Dev Affairs\",\r\n    \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">Due in March 2023, the next version of standard Java will have 12 features including previews of scoped values, structured concurrency, stream gatherers, and the ability to execute multi-file programs.<sup>1</sup></p>\\n<p> Doubtless the accelerating pace of Angular and Spring Frameworks, coupled with the syntactic evolutions of Python 2 to 3 upheaval, and the once-per-18 months language versioning of Java and EcmaSript-JavaScript.Why must languages and frameworks expand at an accelerating rate? The expansion of digital nature of <i>every</i> business arrives because every business, from every sector, and any size, <i>is</i> de facto a tech business.</p><br /><p> The great philsophers throughout the ages have always argued that any philosophy's ability to traverse from the banal observation to the novel and enlightened lines of reasoning are limited in their breadth by the limitations of the philophy's inherent language, i.e., the syntax. Thus, the predominant languages of philosophy depended on ever-growing syntax in order to continually describe, and traverse, new conceptual phenomena.</p> <br />< --And the same rings true with technological code: The once linear expansion of language has been replaced by an exponential expansion of syntax to power the expanding wish-list of 21st business and markets demands. And so at a time of peril for all developers buried beneath ever more and more homework, there has arrived a help from Above the code stack: From language model itself, the Large Language Model and its derivate syntax-oriented A.I. arrives not moment too soon to break developers free from the growing onslaught of boilerplate code!\",\r\n    \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html\\\"   target=\\\"_blank\\\">\\nhttps://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html </a>\\n</p>  \\n  \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/7a569027-5561-4217-beb7-1dc574eb9b35",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post",
+						"7a569027-5561-4217-beb7-1dc574eb9b35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SINGLE_PUT_https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"August 1, 2024\",\r\n        \"cat3\": \"A.I.Now!\",\r\n        \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">What is the true cost of A.I. Supremacy? </p> <p class=\\\"quote\\\">...experts say that the openness and accuracy of the Llama 3.1 family of models pose an existential threat to providers of closed proprietary large language models. <sup>1</sup></p>  <p style=\\\"color:black;\\\">The forces of profiteers have converged upon the (apparent) novelties of A.I. to find a niche from which to extract wealth. Not unlike the dot-com bubble, Virtual/Augmented Reality, quantum-era, and even the short-lived NFT bubbles, the research to demarcate technical boundaries and timelines for sustainable return-on-investment in A.I. remains murky.  And yet, 1.5 years since the arrival of ChatGPT 1.0, the one thing is clear: depth-wise development of the tech is banal (unless you count the hot debates between byte-sized versus multi-word tokenization), it is the breadth-wise implementation, security, and enterprise-ready accuracy of the tool into existing technologies that counts. <br /><br />So what about the unfathomable data-training resources necessary for competitive LLM models? With Meta's July open-sourcing of its mega- 400 billion parameterized model, i.e. Llama 3.1, the world is at the fingers of any typical middle-schooler or A.I. hobbyist to create monumental feats. But not-so-fast say you! Okay, it is true that the computing power needed for this model is a mere 700 Watts of power, which rivals small countries.  Renting of the item is another cost rounding out at $300,000/year... So who can afford to run this model? And worse yet, will the world become even more dependent on cloud-computing?  </p><p>The time has arrived for developers to fine-tune their apps to quickly access certain problems with a diverse range of LLMs, reserving the big questions for the big models, if only briefly. This architectural pattern, or at least paradigm, already exists -- It was with Quantum technologies that the world was first introduced to short bursts of brilliance (Given that the super-imposed quantum state needed for computation is a matter of seconds still.) So now that we have identified the next big Wall for innovation --electricity and hardware cost--should one fear a downturn in innovation? Ever emphatically, I say no, because after all Necessity is the Mother of Invention!</p>\", \r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"title\": \"Democraticized Technology: On the Growing Costs of A.I. Computing\",\r\n        \"did\": \"24-06-01\",\r\n \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3477234/why-metas-llama-3-1-is-a-boon-for-enterprises-and-a-bane-for-other-llm-vendors.html\\\"   target=\\\"_blank\\\">infoworld.com/article/3477234/why-metas-llama-3-1-is-a-boon-for-enterprises-and-a-bane-for-other-llm-vendors.html</a>\\n</p> <p class=\\\"footnotes\\\">1. <a href=\\\"https://ai.meta.com/blog/meta-llama-3-1/\\\"   target=\\\"_blank\\\">ai.meta.com/blog/meta-llama-3-1/</a>\\n</p>  \\n  \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/ec2c659d-93c6-448b-8a63-056a1ae9f6c5",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post",
+						"ec2c659d-93c6-448b-8a63-056a1ae9f6c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": \"15\",\r\n        \"did\": \"21-10-15\",\r\n        \"date\": \"October 15, 2021\",\r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"cat3\": \"Musing Blockchain\",\r\n        \"title\": \"The Knighting of Bitcoin ETF's by the Sword of the SEC\",\r\n        \"post\": \"\\n  <p class=\\\"firstparagraph\\\">\\n   Bitcoin's ETF (Exchange Traded Fund, i.e. futures trading) Approval by the United States <strong>  SEC</strong> (Security and Exchange Commission) completes a <i><strong>milestone event in CryptoCurrency</i>. Legitimacy remains the last hurdle to wide-spread adoption of Crypto Currencies, and true to form, Bitcoin leads the way. <br /><br /></p>\\n  </p>\\n  <p>The U.S. joins other nations like France and Canada<sup>1</sup> to approve the only mildly speculative art of trading in futures. Predicting The Future would require a real A.I. Oracle!</p>\\n\\n  <p class=\\\"quote\\\">Though dozens of companies like VanEck and Fidelity have submitted applications to the Securities and Exchange Commission to create the first Bitcoin ETF, none have received approval thus far. \\n\\n\\n  Instead, the SEC has given the green light to the Volt Crypto Industry Revolution and Tech ETF, which offers investors access to companies with significant exposure to the world's \\n  largest cryptocurrency, rather than the ability to trade it directly. <sup>2</sup></p>\\n  <p>All in all, this is a mild development because the underlying asset of these ETF's are future contracts --<i>not actual bitcoin</i>. So, Bitcoin-backed ETF's may be next on the horizon!\\n\",\r\n        \"blogcite\": \"\\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/\\\"\\n   target=\\\"_blank\\\">https://www.coindesk.com/policy/2021/10/15/sec-approves-bitcoin-etf-opening-crypto-to-wider-investor-base/</a>\\n  \\n</p> \\n\\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval\\\"   target=\\\"_blank\\\">https://www.foxbusiness.com/markets/volt-equity-bitcoin-etf-sec-approval</a>\\n  \\n</p>   \"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts/c208bd6d-fcdb-4a69-aa07-a90ea54f1c47",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"7a569027-5561-4217-beb7-1dc574eb9b35\",\n    \"did\": \"23-12-30\",\n    \"title\": \"On the Accelerating Pace of Software BoilerPlate and the Advent of AI\",\n    \"date\": \"December 30, 2023\",\n    \"author\": \"by Thomas Maestas, MA\",\n    \"cat3\": \"Web Dev Affairs\",\n    \"post\": \"\\n<p class=\\\"firstparagraph quote\\\">Due in March 2023, the next version of standard Java will have 12 features including previews of scoped values, structured concurrency, stream gatherers, and the ability to execute multi-file programs.<sup>1</sup></p>\\n<p> Doubtless the accelerating pace of Angular and Spring Frameworks, coupled with the syntactic evolutions of Python 2 to 3 upheaval, and the once-per-18 months language versioning of Java and EcmaSript-JavaScript.Why must languages and frameworks expand at an accelerating rate? The expansion of digital nature of <i>every</i> business arrives because every business, from every sector, and any size, <i>is</i> de facto a tech business.</p><br /><p> The great philsophers throughout the ages have always argued that any philosophy's ability to traverse from the banal observation to the novel and enlightened lines of reasoning are limited in their breadth by the limitations of the philophy's inherent language, i.e., the syntax. Thus, the predominant languages of philosophy depended on ever-growing syntax in order to continually describe, and traverse, new conceptual phenomena.</p> <br /><p> --And the same rings true with technological code: The once linear expansion of language has been replaced by a exponential growth of syntax to power the expanding wish-list of 21st business and market demands. And so at a time of peril for all developers buried beneath ever more and more homework learning new syntactic 'techniques', there has arrived a help from Above the code stack: From language model itsel, the Large Language Model and its derivate syntax-oriented A.I. arrives not moment too soon to break developers free from the growing onslaught of boilerplate code!\",\n    \"blogcite\": \"\\n \\n<p class=\\\"footnotes\\\">1. <a href=\\\"https://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html\\\"   target=\\\"_blank\\\">\\nhttps://www.infoworld.com/article/3708329/jdk-22-the-new-features-in-java-22.html </a>\\n</p>  \\n  \"\n}"
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/posts/7a569027-5561-4217-beb7-1dc574eb9b35",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"posts",
+						"7a569027-5561-4217-beb7-1dc574eb9b35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE:id  emfm9dp ... /dev/post/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post/8d4aafda-b2c3-4a8e-b874-2a6bfedfb21e",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post",
+						"8d4aafda-b2c3-4a8e-b874-2a6bfedfb21e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET:id      emfm9dpoeh.../dev2/post/{id}",
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev2/post/c208bd6d-fcdb-4a69-aa07-a90ea54f1c47",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev2",
+						"post",
+						"c208bd6d-fcdb-4a69-aa07-a90ea54f1c47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/nasa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/nasa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"nasa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/nasa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"44\",\r\n    \"title\": \"Dark \",\r\n    \"date\": \"2020-10-25\",\r\n    \"copyright\":  \"Tom  \",\r\n    \"explanation\": \"Is our universe haunted?  \",\r\n    \"url\": \"https://apod.nasa.gov/apod/image/2010/DarkMatter_KipacAmnh_960.jpg\",\r\n    \"hdurl\": \"https://apod.nasa.gov/apod/image/2010/DarkMatter_KipacAmnh_1200.jpg\",\r\n    \"media_type\": \"image\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/nasa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"nasa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+					"protocol": "https",
+					"host": [
+						"cxk6wy94h3",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"nasa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n      \"copyright\": \"Ignacio Diaz Bobillo\",\r\n      \"date\": \"2020-11-13\",\r\n      \"explanation\": \"The Tarantula Nebula, also known as 30 Doradus, is more than a thousand light-years in diameter, a giant star forming region within nearby satellite galaxy the Large Magellanic Cloud. About 180 thousand light-years away, it's the largest, most violent star forming region known in the whole Local Group of galaxies. The cosmic arachnid sprawls across the top of this spectacular view, composed with narrowband filter data centered on emission from ionized hydrogen and oxygen atoms. Within the Tarantula (NGC 2070), intense radiation, stellar winds and supernova shocks from the central young cluster of massive stars, cataloged as R136, energize the nebular glow and shape the spidery filaments. Around the Tarantula are other star forming regions with young star clusters, filaments, and blown-out bubble-shaped clouds. In fact, the frame includes the site of the closest supernova in modern times, SN 1987A, right of center. The rich field of view spans about 2 degrees or 4 full moons, in the southern constellation Dorado. But were the Tarantula Nebula closer, say 1,500 light-years distant like the local star forming Orion Nebula, it would take up half the sky.\",\r\n      \"hdurl\": \"https://apod.nasa.gov/apod/image/2011/Tarantula_HOO_final_2_2048.jpg\",\r\n      \"media_type\": \"image\",\r\n      \"service_version\": \"v1\",\r\n      \"title\": \"The Tarantula Zone\",\r\n      \"url\": \"https://apod.nasa.gov/apod/image/2011/Tarantula_HOO_final_2_1024.jpg\",\r\n      \"id\": 3\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cxk6wy94h3.execute-api.us-east-1.amazonaws.com/dev/nasa",
+					"protocol": "https",
+					"host": [
+						"cxk6wy94h3",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"nasa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTHENTICATE-",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"abc@abc.abc\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.199.129.2:8080/api/authenticate",
+					"protocol": "http",
+					"host": [
+						"34",
+						"199",
+						"129",
+						"2"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n    {\r\n        \"id\": \"2\",\r\n        \"did\": \"20-03-03\",\r\n        \"date\": \"March 3, 2020 \",\r\n        \"author\": \"by Thomas Maestas, MA\",\r\n        \"cat3\": \"Sociology Today\",\r\n        \"title\": \"Moving your Quantum Dreams into Today, Part I: <br /> The Timing of Quantum Data and Privacy\",\r\n        \"post\": \"\\n\\n<p class=\\\"firstparagraph\\\">Gone are the days when the best and the brightest took home the honors and laurels. Today, an obsucre darkness rules over visibility into the advances that don't arise from obvious luck. Instead, networks of tech advances, some stolen, some spilled and some surmised from nothing form the new space race: The rocket head forms the algorithm and the expendible data form the solid rocket boosters. Period. \\n</p>\\n\\n<p class=\\\"quote\\\"> We need quantum-resistant algorithms as soon as possible,” Grobman said. \\nCloud computing is sweeping through the industry, and it will enable the use of quantum computing. And that’s a problem, as quantum computers may be able to break encryption techniques such as RSA encryption much faster than traditional computers can. Typically, encryption techniques make it easy to encode data but hugely difficult to decode it without the use of a special key. The security is possible only because of the huge amount of time it takes for a classical computer to do the computations. <sup>1</sup></p>  \\n\\n  \",\r\n        \"cite\": \"\\n<p>1. <a  target=\\\"_blank\\\" href=\\\"https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/\\\">https://venturebeat.com/2020/02/25/mcafee-start-protecting-against-quantum-computing-hacks-now/</a> \\n</p>  \\n\"\r\n    } ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/dev/post",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aws.com/PROD/posts (status & body)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://emfm9dpoeh.execute-api.us-east-1.amazonaws.com/PROD/posts",
+					"protocol": "https",
+					"host": [
+						"emfm9dpoeh",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"PROD",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
