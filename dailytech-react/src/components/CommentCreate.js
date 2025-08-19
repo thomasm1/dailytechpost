@@ -28,9 +28,9 @@ const CommentCreate = ({ postId }) => {
       >
         {({ values, handleChange }) => ( // <--- Render prop function
           <>
+            <FormGroup label="Comment" id="body" type="textarea" values={values} handleChange={handleChange} required />
             <FormGroup label="Name" id="name" values={values} handleChange={handleChange} required />
             <FormGroup label="Email" id="email" type="email" values={values} handleChange={handleChange} required />
-            <FormGroup label="Comment" id="body" type="textarea" values={values} handleChange={handleChange} required />
           </>
         )}
       </Form>

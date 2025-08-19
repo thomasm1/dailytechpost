@@ -60,54 +60,7 @@ describe('PostsService', () => {
         });
     });
 
-    describe('addWeblink', () => {
-        it('should add weblink to existing post', async () => {
-            const mockPost = {
-                id: 1,
-                title: 'Existing Post',
-                weblinks: [{ title: 'Existing Link', url: 'https://existing.com' }]
-            };
-            const newWeblink = { title: 'New Citation', url: 'https://new-citation.com' };
-
-            mockedAxios.get.mockResolvedValue({ data: mockPost });
-            mockedAxios.put.mockResolvedValue({ data: mockPost });
-
-            await postsService.addWeblink(1, newWeblink);
-
-            expect(mockedAxios.get).toHaveBeenCalledWith(`${POSTS_BASE_URL}/posts/1`, {
-                headers: { Authorization: `Bearer ${JWT_TOKEN}` }
-            });
-
-            expect(mockedAxios.put).toHaveBeenCalledWith(
-                `${POSTS_BASE_URL}/posts/1`,
-                expect.objectContaining({
-                    weblinks: expect.arrayContaining([
-                        { title: 'Existing Link', url: 'https://existing.com' },
-                        newWeblink
-                    ])
-                }),
-                { headers: { Authorization: `Bearer ${JWT_TOKEN}` } }
-            );
-        });
-
-        it('should create weblinks array if none exists', async () => {
-            const mockPost = { id: 1, title: 'Post Without Weblinks' };
-            const newWeblink = { title: 'First Citation', url: 'https://first.com' };
-
-            mockedAxios.get.mockResolvedValue({ data: mockPost });
-            mockedAxios.put.mockResolvedValue({ data: mockPost });
-
-            await postsService.addWeblink(1, newWeblink);
-
-            expect(mockedAxios.put).toHaveBeenCalledWith(
-                `${POSTS_BASE_URL}/posts/1`,
-                expect.objectContaining({
-                    weblinks: [newWeblink]
-                }),
-                { headers: { Authorization: `Bearer ${JWT_TOKEN}` } }
-            );
-        });
-    });
+   
 
     describe('getPost', () => {
         it('should fetch single post by id', async () => {

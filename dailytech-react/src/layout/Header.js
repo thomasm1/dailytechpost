@@ -11,13 +11,13 @@ const Header = (  ) => {
             <header className="app-header">
                 <div className="header-content">
                     
-                <NavLink
+                {/* <NavLink
                         to="/"
                         className="nav-link"
                         style={({ isActive }) => ({ color: isActive ? 'blue' : 'darkgray' })}
                     >
                        Home
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink
                         to="/write"
                         className="nav-link"
@@ -26,7 +26,7 @@ const Header = (  ) => {
                         Write!
                     </NavLink>
                     <NavLink
-                        to="/posts"
+                        to="/"
                         className="nav-link"
                         style={({ isActive }) => ({ color: isActive ? 'darkblue' : 'darkgray' })}
                     >

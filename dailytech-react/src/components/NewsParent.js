@@ -9,7 +9,7 @@ class NewsParent extends Component {
     constructor() {
         super();
         this.state = {
-            news: [],
+            categories: [],
             footerText:
                 "&copy; 2021 All Rights Reserved | thomasmaestas.net | The News Room",
             filtered: [],
@@ -25,30 +25,39 @@ class NewsParent extends Component {
         try {
             const categories = await newsService.getCategories(); 
             console.log("NewsParent fetchNews:", categories);
-            this.setState({ news: categories, filtered: categories, loading: false });
+            this.setState({ categories: categories, filtered: categories, loading: false });
         } catch (error) {
             console.error("Error fetching news:", error);
             this.setState({ loading: false });
         }
     };
 
-    getKeywords = (keywords) => {
-        if (keywords === "") {
-            this.setState({ filtered: this.state.news });
-            return;
-        }
-        const filteredCategories = this.state.news
-            .map((category) => ({
-                ...category,
-                news: category.news.filter((item) =>
-                (item.title.toLowerCase().includes(keywords.toLowerCase()) ||
-                    item.url.toLowerCase().includes(keywords.toLowerCase()))
-                ),
-            }))
-            .filter((category) => category.news.length > 0);
+getKeywords = (keywords) => {
+    if (!keywords || keywords.trim() === "") {
+        this.setState({ filtered: this.state.categories });
+        return;
+    }
+    const lowerKeywords = keywords.toLowerCase();
+    const filteredCategories = this.state.categories.filter((category) => {
+        // Check category name/description
+        const categoryMatch =
+            (category.name && category.name.toLowerCase().includes(lowerKeywords)) ||
+            (category.description && category.description.toLowerCase().includes(lowerKeywords));
 
-        this.setState({ filtered: filteredCategories });
-    };
+        // Check any news item property
+        const newsMatch = Array.isArray(category.news) && category.news.some((item) =>
+            (item.title && item.title.toLowerCase().includes(lowerKeywords)) ||
+            (item.url && item.url.toLowerCase().includes(lowerKeywords)) ||
+            (item.description && item.description.toLowerCase().includes(lowerKeywords)) ||
+            (item.name && item.name.toLowerCase().includes(lowerKeywords))
+        );
+
+        // Show category if ANY match
+        return categoryMatch || newsMatch;
+    });
+
+    this.setState({ filtered: filteredCategories });
+};
     render() {
         return (
             <div>

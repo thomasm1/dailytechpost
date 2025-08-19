@@ -42,20 +42,20 @@ class PostsService {
 //   UPDATEABLE----> "url": "thomasmaestas.net/ccccindex.html",
 //    UPDATEABLE---->   "host": "thomasmaestas.netcc",
 
-    async addWeblink(id, weblink) {
+    async addWeblink(postId, weblink) {
         const bearerToken = localStorage.getItem('accessToken') || JWT_TOKEN
-        const response = await axios.get(`${POSTS_BASE_URL}/posts/${id}`, {
+         
+        await axios.post(`${POSTS_BASE_URL}/weblinks/posts/${postId}`, weblink, {
             headers: {
                 Authorization: `Bearer ${bearerToken}`
             }
         });
-        const post = response.data;
-        if (!post.weblinks) {
-            post.weblinks = [];
-        }
-        post.weblinks.push(weblink);
-        console.log("postsService addWeblink:", post);
-        await axios.put(`${POSTS_BASE_URL}/posts/${id}`, post, {
+    }
+    
+    async editWeblink(weblinkId, weblink) {
+        const bearerToken = localStorage.getItem('accessToken') || JWT_TOKEN
+         
+        await axios.put(`${POSTS_BASE_URL}/weblinks/${weblinkId}`, weblink, {
             headers: {
                 Authorization: `Bearer ${bearerToken}`
             }
