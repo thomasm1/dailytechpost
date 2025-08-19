@@ -21,11 +21,17 @@ const CommentCreate = ({ postId }) => {
       <Form
         initialValues={{
           body: "",
+          name: "",
+          email: "",
         }}
         onSubmit={handleSubmit}
       >
         {({ values, handleChange }) => ( // <--- Render prop function
-            <FormGroup label="New Comment" id="body" values={values} handleChange={handleChange} />
+          <>
+            <FormGroup label="Comment" id="body" type="textarea" values={values} handleChange={handleChange} required />
+            <FormGroup label="Name" id="name" values={values} handleChange={handleChange} required />
+            <FormGroup label="Email" id="email" type="email" values={values} handleChange={handleChange} required />
+          </>
         )}
       </Form>
     </div>

@@ -23,9 +23,7 @@ const CategoryCreate = () => {
         }}
         onSubmit={async (values) => {
           try { 
-             newsService.createCategory(values);
-         
-         
+             await newsService.createCategory(values);
             alert("Research URL added successfully!");
           } catch (error) {
             console.error("Error adding URL:", error);

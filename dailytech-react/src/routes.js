@@ -16,9 +16,9 @@ const RoutesDaily = () => (
      
     <main className="app-main">
       <Routes>
+        <Route path="/:id" element={<PostItem />} />
+        <Route path="/" element={<PostList />} />
       <Route path="/article/:id" element={Article}/>
-        <Route path="/posts/:id" element={<PostItem />} />
-        <Route path="/posts" element={<PostList />} />
         <Route path="/write" element={<Write />} />
         {/* <Route path="/news/:id" element={<NewsList />} /> */}
         <Route path="/news" element={<NewsParent/>} />

@@ -8,18 +8,19 @@ const NewsList = ({ newsProp }) => {
   const newsProbe = newsProp.map((category) => (
     <div key={category.id} className="post-item-container">
       <div className="post-header">
-        <h6 className="post-title">_name_{category.name}</h6>
+        <h6 className="post-title">{category.name}</h6>
       </div>
 
       <div className="post-body">
         <ul>
-        <li className="news-item-li">category.description: {category.description}</li>
+        <li className="news-item-li"> {category.description}</li>
           {Array.isArray(category.news) &&
             category.news.map((item) => (
               <li key={item.id} className="news-item-li">
-                <span><small>{item.id}</small></span><br />
-                <span>{"title:__"}{item.title}</span><br />
-                <span>{"category.news.url:___"}</span>
+                {/* <span><small>{item.id}</small></span> */}
+                <br />
+                <span> {item.title}</span><br />
+                <span> </span>
                 <a
                   href={item.url}
                   target="_blank"

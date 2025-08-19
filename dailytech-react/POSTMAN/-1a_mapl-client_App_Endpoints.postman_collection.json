@@ -1,0 +1,1516 @@
+{
+	"info": {
+		"_postman_id": "e3ff763a-3a93-42b2-9a4e-860381ea8545",
+		"name": "*1a_mapl-client_App_Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3422017"
+	},
+	"item": [
+		{
+			"name": "{{baseUrl}}/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/actuator/health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/actuator/metrics",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/actuator/metrics",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"actuator",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/keys/getGoogleApi",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/keys/getGoogleApi",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"keys",
+						"getGoogleApi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "----------USERS----------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users[REGISTER]",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " { \r\n        \"email\": \"333@gmail.com\", \r\n        \"password\": \"password\",\r\n        \"username\":\"tt@gmail.com\",\r\n        \"lastName\":\"last\",\r\n        \"firstName\":\"first\"\r\n    }"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users/auth/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users[LOGIN]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Tests tab in Postman for the login request\r",
+							"if (pm.response.code === 200) {\r",
+							"  const jsonData = pm.response.json();\r",
+							"  \r",
+							"  // 1) Grab the token from response\r",
+							"  const token = jsonData.accessToken;\r",
+							"  \r",
+							"  // 2) Store token as a collection variable, environment variable, or global\r",
+							"  pm.collectionVariables.set(\"jwtToken\", token);\r",
+							"  pm.environment.set(\"jwtToken\", token);\r",
+							"}\r",
+							"\r",
+							"\r",
+							"pm.test(\"JWT Token returned; and assigned as global auth variable\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"    const variable_key = pm.response.body;\r",
+							"    console.log(variable_key)\r",
+							"    pm.variables.get(\"variable_key\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "thomasMaestas",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "thomas.maestas@example.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {  \r\n    \"usernameOrEmail\": \"ttt@gmail.com\",\r\n    \"password\": \"password\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users?pageNo=1&pageSize=3&sortBy=did&sortDir=DESC",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwNjAyMTczMCwiaWF0IjoxNjA1NDE2OTMwfQ.BXBIdkfNHtjO6IODvmMN2_rW3jYnKWh9X_Z2UklG9bcZKdmrCBAHmqkuuAtd3H3wXk7G8Hxsyi0v5bO03U7Y_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/users?pageNo=1&pageSize=3&sortBy=userId&sortDir=DESC",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "3"
+						},
+						{
+							"key": "sortBy",
+							"value": "userId"
+						},
+						{
+							"key": "sortDir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users[Create]",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"email\": \"thomas1maestas@gmail.com\",\r\n        \"username\": \"thomas1.maestas@gmail.com\",\r\n        \"lastName\": \"maestas\",\r\n        \"firstName\": \"thomas1\",\r\n        \"organizationCode\": \"ORG001\",\r\n        \"dashboardCode\": \"DASH001\",\r\n        \"cusUrl\": \"https://example.com/user1\",\r\n        \"userType\": 1,\r\n        \"contactType\": 1,\r\n        \"isActive\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ],\r\n        \"id\": null,\r\n        \"password\": \"password\"\r\n    }"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/102",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/102",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/email/guest2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/email/thomas1.maestas@gmail.com",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"email",
+						"thomas1.maestas@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 102,\r\n    \"username\": \"janeUser\",\r\n    \"lastName\": \"Doe\",\r\n    \"firstName\": \"Jane\",\r\n    \"organizationCode\": \"ORG-cccc\",\r\n    \"dashboardCode\": \"DASH-cccccc\",\r\n    \"cusUrl\": \"https://example.com/jane\",\r\n    \"userType\": 1,\r\n    \"email\": \"jane.user@example.com\",\r\n    \"contactType\": 222,\r\n    \"isActive\": 1,\r\n    \"roles\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ROLE_USER\",\r\n            \"user\": null\r\n        }\r\n    ],\r\n    \"id\": null,\r\n    \"password\": \"janeUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/users/515",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users/21",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "-----------POSTS--------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\":0,\r\n            \"did\": \"D1001\",\r\n            \"date\": \"2025-05-01\",\r\n            \"author\": \"TomA\",\r\n            \"monthOrder\": \"May\",\r\n            \"cat3\": \"Blockchain\",\r\n            \"title\": \"Ethereum Merge\",\r\n            \"post\": \"Discussion on Ethereum merge details...\",\r\n            \"blogcite\": \"https://blogsite1.com\",\r\n            \"email\": \"tom.admin@example.com\",\r\n            \"state\": \"Published\",\r\n            \"wordCount\": 1500,\r\n            \"durationGoal\": 10,\r\n            \"categoryId\": 123,\r\n            \"comments\": null\r\n \r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/posts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/username/username2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/username/jane.user@example.com",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"username",
+						"jane.user@example.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/posts/20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwNjAyMTczMCwiaWF0IjoxNjA1NDE2OTMwfQ.BXBIdkfNHtjO6IODvmMN2_rW3jYnKWh9X_Z2UklG9bcZKdmrCBAHmqkuuAtd3H3wXk7G8Hxsyi0v5bO03U7Y_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/20",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts/20/comments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwNjAyMTczMCwiaWF0IjoxNjA1NDE2OTMwfQ.BXBIdkfNHtjO6IODvmMN2_rW3jYnKWh9X_Z2UklG9bcZKdmrCBAHmqkuuAtd3H3wXk7G8Hxsyi0v5bO03U7Y_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/20/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"20",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/posts/20",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n            \"id\": 20,\r\n            \"did\": \"22-02-20\",\r\n            \"date\": \"February 20, 2022\",\r\n            \"author\": \"by Thomas Maestas, MAAAAAAAAAAAAAAAAAA\",\r\n            \"monthOrder\": null,\r\n            \"cat3\": \"Sociology Tomorrow!\",\r\n            \"title\": \"A year for Math and Science: Embracing our Bots\",\r\n            \"post\": \"\\n  <p class=\\\"firstparagraph\\\">\\nLike Starsky &amp; Hutch, detectives in the abstract, symbolic world often work best together in pairs, given \\nFred Brooks' Maxim that adding minds to a project commensurably delays project completion.\\n<br /> This concept illustrates how an intellectual partnership with computers will shape professionalism and the workplace. </p>\\n  ... and, scholarly professions benefit from computing symbiosis ... <p class=\\\"quote\\\">\\n  Similarly, computers are becoming increasingly indispensable tools for mathematicians, who use them not just to carry out calculations but to solve otherwise impossible problems and even verify complicated proofs. And as machines become better at solving problems, \\n  this year has also seen new progress in understanding just how they got so good at it. <sup>1</sup>\\n  </p>\\n \",\r\n            \"blogcite\": \"   \\n   <p class=\\\"footnotes\\\">\\n   1. <a href=\\\"https://www.quantamagazine.org/the-year-in-math-and-computer-science-20211223/\\\"   target=\\\"_blank\\\">https://www.quantamagazine.org/the-year-in-math-and-computer-science-20211223/</a> \\n<br />  \\n   </p>  \\n     \",\r\n            \"username\": \"username2\",\r\n            \"categoryId\": 12\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/20",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/posts/280",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts/131",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"131"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "-----------COMMENTS---------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/posts/301/comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MzY5NTA5MywiaWF0IjoxNjczMDkwMjkzfQ.5KyxSuHmOzePhWSdkbfPpRmXBIWI2J69eJpswV8xLxE-f52j-bZqSz_R0KDK_6Y8FK-2iA-RJBYkIaGwO3xNUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwNjAyMTczMCwiaWF0IjoxNjA1NDE2OTMwfQ.BXBIdkfNHtjO6IODvmMN2_rW3jYnKWh9X_Z2UklG9bcZKdmrCBAHmqkuuAtd3H3wXk7G8Hxsyi0v5bO03U7Y_w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/1/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eUrl}}/api/posts/11/comments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"body\": \"wwwdddd\", \"name\": \"Commenter\", \"email\": \"anonymous@gmail.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/20/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"20",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "------------CATEGORIES--------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>User ID</th>",
+							"        <th>Username</th>",
+							"        <th>Last Name</th>",
+							"        <th>First Name</th>",
+							"        <th>User Type</th>",
+							"        <th>Email</th>",
+							"        <th>Active</th>",
+							"    </tr>",
+							"    ",
+							"    {{#each response}}",
+							"        <tr>",
+							"            <td>{{userId}}</td>",
+							"            <td>{{username}}</td>",
+							"            <td>{{lastName}}</td>",
+							"            <td>{{firstName}}</td>",
+							"            <td>{{userType}}</td>",
+							"            <td>{{email}}</td>",
+							"            <td>{{isActive}}</td>",
+							"        </tr>",
+							"    {{/each}}",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return { response: pm.response.json() }",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Roles array is present and has expected number of elements\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('array');",
+							"    responseData.forEach(function(user) {",
+							"        pm.expect(user.roles).to.exist;",
+							"        pm.expect(user.roles).to.be.an('array');",
+							"        pm.expect(user.roles).to.have.lengthOf(1); // Replace 1 with the expected number of elements",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Username is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  responseData.forEach(function(user) {",
+							"    pm.expect(user.username).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Username should not be empty\");",
+							"  });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Email is in a valid format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('array');",
+							"    responseData.forEach(function(user) {",
+							"        pm.expect(user.email).to.match(/^[\\w-]+@([\\w-]+\\.)+[\\w-]+$/, \"Email is not in a valid format\");",
+							"    });",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/posts/category/14",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/category/14",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"category",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts/category/12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/posts/category/12",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"category",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/categories/12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/categories/12",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/categories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\"name\":\"category name\",\r\n\"description\":\"description category\",\r\n\"news\":[\r\n    {\r\n    \"title\":\"first news item\",\r\n    \"url\": \"http://thomasmaestas.net\"}\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/categories/367",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 11,\r\n        \"name\": \"Web Dev Affairs2\",\r\n        \"description\": \"Web-Dev & Coding updates2\",\r\n        \"news\": [\r\n        {\r\n            \"id\": 41,\r\n            \"title\": \"Health App Innovations\",\r\n            \"url\": \"https://news2.com\"\r\n        },\r\n        {\r\n            \"id\": 42,\r\n            \"title\": \"Health App Innovations\",\r\n            \"url\": \"https://news2.com\"\r\n        },\r\n        {\r\n            \"id\": 52,\r\n            \"title\": \"Health App Innovations\",\r\n            \"url\": \"https://news2.com\"\r\n        },\r\n        {\r\n            \"id\": 43,\r\n            \"title\": \"Health App Innovations\",\r\n            \"url\": \"https://news2.com\"\r\n        },\r\n        {\r\n            \"id\": 43,\r\n            \"title\": \"Health App Innovations\",\r\n            \"url\": \"https://news2.com\"\r\n        }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/categories/11",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/categories/367",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/categories/367",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"367"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "----------BOOKS----------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}//api/books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"title\": \"Neuromancer (Sprawl Trilogy Book 1)\",\r\n    \"profileUrl\": null,\r\n    \"sharedBy\": null,\r\n    \"publicationYear\": 0,\r\n    \"publisher\": null,\r\n    \"authors\": \"William Gibson\",\r\n    \"genre\": null,\r\n    \"rating\": 0.0,\r\n    \"itemData\": \"<item><type>Book</type><title>null</title><authors>null</authors><publisher>null</publisher><publicationYear>0</publicationYear><genrenull</genre></item>\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}//api/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"",
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/books",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/books/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/books/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/books",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"80 Algorithms Every Programmer Should Know: Hone your problem-solving skills by learning different algorithms and their implementation in Python 1st Edition, Kindle Edition\",\r\n    \"profileUrl\": null,\r\n    \"sharedBy\": null,\r\n    \"publicationYear\": 0,\r\n    \"publisher\": null,\r\n    \"authors\": \"Imran Ahmad\",\r\n    \"genre\": null,\r\n    \"rating\": 0.0,\r\n    \"itemData\": \"<item><type>Book</type><title>null</title><authors>null</authors><publisher>null</publisher><publicationYear>0</publicationYear><genrenull</genre></item>\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/books/0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/books/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "------------MOVIES-------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/movies",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n    \"releaseYear\":  2022,\r\n    \"cast\": \"cast\",\r\n    \"directors\":  \"directors\",\r\n    \"genre\":  \"genre\",\r\n    \"imdbRating\": 3.0 ,\r\n    \"title\": \"title\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/movies",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "-----------WEBLINKS---------------",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "------------",
+					"host": [
+						"------------"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/weblinks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/weblinks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"weblinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/weblinks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n{ \r\n    \"title\": \"https://www.thomasmaestas.com/title\",\r\n    \"profileUrl\": \"thomasmaestas.net/profileUrl.html\",\r\n   \"ownerEmail\":   \"thomasm1.maestas@gmail.com\",\r\n    \"url\": \"thomasmaestas.net/index.html\",\r\n    \"host\": \"thomasmaestas.net\",\r\n    \"htmlPage\": \"<html><head></head><body>hey thomasmaestas!!!!!</body></html>\",\r\n    \"downloadStatus\": \"SUCCESS\",\r\n    \"itemData\": \"<item><type>WebLink</type><title>https://www.thomasmaestas.com</title><url>thomasmaestas.net/index.html</url><host>thomasmaestas.net</host></item>\",\r\n    \"web3Link\": true\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/weblinks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"weblinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/weblinks",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n{ \r\n    \"title\": \"https://www.thomasmaestas.com/title\",\r\n    \"profileUrl\": \"thomasmaestas.net/profileUrl.html\",\r\n   \"ownerEmail\":   \"thomasm1.maestas@gmail.com\",\r\n    \"url\": \"thomasmaestas.net/index.html\",\r\n    \"host\": \"thomasmaestas.net\",\r\n    \"htmlPage\": \"<html><head></head><body>hey thomasmaestas!!!!!</body></html>\",\r\n    \"downloadStatus\": \"SUCCESS\",\r\n    \"itemData\": \"<item><type>WebLink</type><title>https://www.thomasmaestas.com</title><url>thomasmaestas.net/index.html</url><host>thomasmaestas.net</host></item>\",\r\n    \"web3Link\": true\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/weblinks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"weblinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/weblinks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/weblinks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"weblinks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/weblinks/0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/weblinks/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"weblinks",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/api/categories Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>User ID</th>",
+							"        <th>Username</th>",
+							"        <th>Last Name</th>",
+							"        <th>First Name</th>",
+							"        <th>User Type</th>",
+							"        <th>Email</th>",
+							"        <th>Active</th>",
+							"    </tr>",
+							"    ",
+							"    {{#each response}}",
+							"        <tr>",
+							"            <td>{{userId}}</td>",
+							"            <td>{{username}}</td>",
+							"            <td>{{lastName}}</td>",
+							"            <td>{{firstName}}</td>",
+							"            <td>{{userType}}</td>",
+							"            <td>{{email}}</td>",
+							"            <td>{{isActive}}</td>",
+							"        </tr>",
+							"    {{/each}}",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return { response: pm.response.json() }",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Roles array is present and has expected number of elements\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('array');",
+							"    responseData.forEach(function(user) {",
+							"        pm.expect(user.roles).to.exist;",
+							"        pm.expect(user.roles).to.be.an('array');",
+							"        pm.expect(user.roles).to.have.lengthOf(1); // Replace 1 with the expected number of elements",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Username is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  responseData.forEach(function(user) {",
+							"    pm.expect(user.username).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Username should not be empty\");",
+							"  });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Email is in a valid format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('array');",
+							"    responseData.forEach(function(user) {",
+							"        pm.expect(user.email).to.match(/^[\\w-]+@([\\w-]+\\.)+[\\w-]+$/, \"Email is not in a valid format\");",
+							"    });",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{jwtToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwtToken",
+			"value": ""
+		}
+	]
+}

@@ -4,7 +4,7 @@ class Keywords extends Component {
     render() {
         return (
             <header>
-                <div className="logo">Search Keywords in Title & URL</div>
+                <div className="logo">Search Keywords</div>
                 <input
                     onChange={this.props.getKeywords}
                     placeholder="Search News..."

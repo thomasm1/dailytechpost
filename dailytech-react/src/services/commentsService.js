@@ -9,18 +9,8 @@ import { JWT_TOKEN } from '../config';
 class CommentsService { 
     async addComment(values, postId) {
         const bearerToken = localStorage.getItem('accessToken') || JWT_TOKEN;
-        const comments = await axios.get(`${POSTS_BASE_URL}/posts/${postId}/comments`, values,{
-            headers: {
-                Authorization: `Bearer ${bearerToken}`
-            }
-        });
-        if (!comments) {
-            comments = [];
-        }
-        comments.push(values);   
-        console.log("commentsService :", comments);
-        await axios.post(`${POSTS_BASE_URL}/posts/${postId}/comments`, comments
-        , {
+        console.log("commentsService adding comment:", values);
+        await axios.post(`${POSTS_BASE_URL}/posts/${postId}/comments`, values, {
             headers: {
                 Authorization: `Bearer ${bearerToken}`
             }

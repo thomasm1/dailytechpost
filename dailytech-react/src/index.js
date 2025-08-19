@@ -4,7 +4,7 @@ import App from './routes';
 
 import store from './state/reducers/store'; 
 import { Provider } from 'react-redux'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/bootstrap.min.css';
 import './assets/css/style.css';
  
 // const createStoreWithMiddleware = applyMiddleware(promiseMiddleware) ;
