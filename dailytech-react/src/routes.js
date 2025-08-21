@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList"; 
+import PublicBlogItem from "./components/PublicBlogItem";
+import PublicBlogsList from "./components/PublicBlogsList"; 
 import NewsParent from './components/NewsParent'; 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
@@ -16,8 +18,12 @@ const RoutesDaily = () => (
      
     <main className="app-main">
       <Routes>
-        <Route path="/:id" element={<PostItem />} />
-        <Route path="/" element={<PostList />} />
+        <Route path="/" element={<PublicBlogsList />} />
+        <Route path="/:id" element={<PublicBlogItem />} />
+
+        <Route path="/posts" element={<PostList />} />
+        <Route path="/posts/:id" element={<PostItem />} />
+        
       <Route path="/article/:id" element={Article}/>
         <Route path="/write" element={<Write />} />
         {/* <Route path="/news/:id" element={<NewsList />} /> */}

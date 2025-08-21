@@ -11,40 +11,39 @@ const Header = (  ) => {
             <header className="app-header">
                 <div className="header-content">
                     
-                {/* <NavLink
+                  <NavLink
                         to="/"
                         className="nav-link"
-                        style={({ isActive }) => ({ color: isActive ? 'blue' : 'darkgray' })}
+                        style={({ isActive }) => ({ color: isActive ? 'white' : 'darkgray' })}
                     >
                        Home
-                    </NavLink> */}
+                    </NavLink>  
                     <NavLink
                         to="/write"
                         className="nav-link"
-                        style={({ isActive }) => ({ color: isActive ? 'blue' : 'darkgray' })}
+                        style={({ isActive }) => ({ color: isActive ? 'white' : 'darkgray' })}
                     >
                         Write!
                     </NavLink>
                     <NavLink
-                        to="/"
+                        to="/posts"
                         className="nav-link"
-                        style={({ isActive }) => ({ color: isActive ? 'darkblue' : 'darkgray' })}
+                        style={({ isActive }) => ({ color: isActive ? 'white' : 'darkgray' })}
                     >
                         Posts
                     </NavLink>
                     <NavLink
                         to="/news"
                         className="nav-link"
-                        style={({ isActive }) => ({ color: isActive ? 'blue' : 'darkgray' })}
+                        style={({ isActive }) => ({ color: isActive ? 'white' : 'darkgray' })}
                     >
-                        News by Category
+                        News 
                     </NavLink>
                 </div>
-                <div className="header-content row">
+                {/* <div className="header-content row">
                     <hr />
-                    <h6 style={{ color: styles.h6.color }}>DAILYTECH WRITER</h6> </div>
-                    <hr />
-            </header>
+                    <h6 style={{ color: styles.h6.color }}>DAILYTECH WRITER</h6> </div> */}
+             </header>
         </div>
     );
 }

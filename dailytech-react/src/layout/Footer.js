@@ -5,7 +5,7 @@ class Footer extends Component {
   constructor(props) {  
     super(props);  
     this.state = {  
-        footerText: "© 2021 made with <3 by Thomas for a better web."  
+        footerText: " "  
     };
   } 
 
@@ -15,8 +15,8 @@ class Footer extends Component {
         <Container fluid={true}>
           <ul className="nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Thomas
+              <a className="nav-link" href="https://thomasmaestas.net">
+                https://thomasmaestas.net
               </a>
             </li>{" "}
             <li className="nav-item">
@@ -24,14 +24,15 @@ class Footer extends Component {
                 className="nav-link"
                 href="#"
               >
-                About us
+                 _
               </a>
             </li>{" "}
           </ul>
+          <hr />
           <div className="copyright">
             © {new Date().getFullYear()} made with{" "}
             <i className="tim-icons icon-heart-2" /> by{" "}
-            <a href="#">
+            <a href="#" color="lightblue">
               Thomas
             </a>{" "}
             for a better web.
