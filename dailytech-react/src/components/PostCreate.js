@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Form from "./Form";
 import { POSTS_BASE_URL } from "../config";
 import FormGroup from "./FormGroup";
 import postsService from "../services/postsService";
+import WebLinkForm from "./WebLinkForm";
 
 
 const PostCreate = () => {
+  const [createdPostId, setCreatedPostId] = useState(null);
+  const [showWeblinks, setShowWeblinks] = useState(false);
+
   const citationOptions = [
     "Musing Blockchain",
     "Sociology Now!",
@@ -24,22 +28,26 @@ const PostCreate = () => {
           state: "published",
         }}
         onSubmit={async (values) => {
-          postsService.createPost(values);
-          // try {
-          //   await axios.post(`${POSTS_BASE_URL}/posts`, {
-          //     ...values,
-          //     did: Date.now(),
-          //     date: Date.now(),
-          //     author: "anonymous",
-          //     email: "anonymous@gmail.com",
-          //     categoryId: 12,
-          //     blogcite: values.blogcite.join(', '), // Join the selected citations into a comma-separated string
-          //   });
-          //   alert("Post created successfully!");
-          // } catch (error) {
-          //   console.error("Error creating post:", error);
-          //   alert("Error creating post. Please check the console for details.");
-          // }
+          try {
+            const response = await axios.post(`${POSTS_BASE_URL}/posts`, {
+              ...values,
+              did: Date.now(),
+              date: Date.now(),
+              author: "anonymous",
+              email: "anonymous@gmail.com",
+              categoryId: 12,
+              blogcite: values.blogcite.join(', '),
+            });
+            
+            // Assuming the API returns the created post with an ID
+            const postId = response.data.id || response.data.pid;
+            setCreatedPostId(postId);
+            setShowWeblinks(true);
+            alert("Post created successfully! Now you can add weblinks.");
+          } catch (error) {
+            console.error("Error creating post:", error);
+            alert("Error creating post. Please check the console for details.");
+          }
         }}
       >
         {({ values, handleChange }) => ( // Render prop function
@@ -107,6 +115,28 @@ const PostCreate = () => {
           </>
         )}
       </Form>
+
+      {showWeblinks && createdPostId && (
+        <div className="mt-4">
+          <hr />
+          <WebLinkForm 
+            postId={createdPostId}
+            onWeblinkAdd={postsService.addWeblink}
+          />
+          <div className="mt-3">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => {
+                setShowWeblinks(false);
+                setCreatedPostId(null);
+              }}
+            >
+              Skip Weblinks & Finish
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
