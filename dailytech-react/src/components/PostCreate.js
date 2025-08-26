@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Form from "./Form";
-import { POSTS_BASE_URL } from "../config";
 import FormGroup from "./FormGroup";
 import postsService from "../services/postsService";
 import WebLinkForm from "./WebLinkForm";
@@ -24,19 +22,19 @@ const PostCreate = () => {
           title: "",
           post: "",
           cat3: "",
-          blogcite: [],
+          blogcite: "",
           state: "published",
         }}
         onSubmit={async (values) => {
           try {
-            const response = await axios.post(`${POSTS_BASE_URL}/posts`, {
+            const response = await postsService.createPost({
               ...values,
               did: Date.now(),
               date: Date.now(),
               author: "anonymous",
               email: "anonymous@gmail.com",
               categoryId: 12,
-              blogcite: values.blogcite.join(', '),
+              blogcite: values.blogcite,
             });
             
             // Assuming the API returns the created post with an ID
@@ -85,18 +83,22 @@ const PostCreate = () => {
                     className="form-check-input"
                     checked={values.blogcite.includes(option)}
                     onChange={(e) => {
+                      const currentCitations = values.blogcite ? values.blogcite.split(', ').filter(Boolean) : [];
+                      
                       if (e.target.checked) {
+                        const newCitations = [...currentCitations, option];
                         handleChange({
                           target: {
                             name: 'blogcite',
-                            value: [...values.blogcite, option],
+                            value: newCitations.join(', '),
                           }
                         });
                       } else {
+                        const newCitations = currentCitations.filter(item => item !== option);
                         handleChange({
                           target: {
                             name: 'blogcite',
-                            value: values.blogcite.filter(item => item !== option),
+                            value: newCitations.join(', '),
                           }
                         });
                       }

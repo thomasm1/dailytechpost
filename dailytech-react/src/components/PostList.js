@@ -23,77 +23,79 @@ const PostList = () => {
     fetchPosts();
   }, []);
 
-  const renderedPosts = Object.values(posts).map((post) => {
-   return (
-   <> 
-    <NavLink
-      context={post}
-      className="text-decoration-none d-block"
-      to={`/posts/${post.id}`}
-      style={{ 
-        color: "inherit",
-        width: "100%"
-      }}
-      key={post.id}
-    >
-      <div
-        className="card border-0"
-        style={{ 
-          width: "100%", 
-          maxWidth: "700px",
-          background: "rgba(255, 255, 255, 0.15)",
-          backdropFilter: "blur(10px)",
-          borderRadius: "15px",
-          border: "1px solid rgba(255, 255, 255, 0.2)",
-          transition: "all 0.3s ease",
-          boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)"
+const renderedPosts = Object.values(posts).map((post) => {
+  return (
+    <>
+      <NavLink
+        context={post}
+        className="text-decoration-none d-block"
+        to={`/posts/${post.id}`}
+        style={{
+          color: "inherit",
+          width: "100%"
         }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "translateY(-5px)";
-          e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
-          e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "translateY(0)";
-          e.currentTarget.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.2)";
-          e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
-        }}
+        key={post.id}
       >
-        <div className="card-body p-4">
-          <h5 className="card-title fw-bold mb-3" style={{ 
-            fontSize: "1.3rem",
-            color: "#212121",
-            textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)"
-          }}>
-            {post.title}
-          </h5>
-          <p className="card-text mb-4" style={{ 
-            fontSize: "0.95rem",
-            lineHeight: "1.6",
-            maxHeight: "120px",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            color: "rgba(255, 255, 255, 0.9)",
-            whiteSpace: 'pre-wrap'
-          }}>
-            {post.post}
-          </p>
-          <div className="mt-3" style={{
-            background: "rgba(0, 0, 0, 0.1)",
-            borderRadius: "10px",
-            padding: "15px",
-            border: "1px solid rgba(255, 255, 255, 0.1)"
-          }}>
-            <CommentList comments={post.comments || []} />
-            <CommentCreate postId={post.id} />
+        <div
+          className="card border-0"
+          style={{
+            width: "100%",
+            maxWidth: "700px",
+            background: "rgba(255, 255, 255, 0.15)",
+            backdropFilter: "blur(10px)",
+            borderRadius: "15px",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            transition: "all 0.3s ease",
+            boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-5px)";
+            e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
+            e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.2)";
+            e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
+          }}
+        >
+          <div className="card-body p-4">
+            <h5 className="card-title fw-bold mb-3" style={{
+              fontSize: "1.3rem",
+              color: "#212121",
+              textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)"
+            }}>
+              {post.title}
+            </h5>
+            <p className="card-text mb-4" style={{
+              fontSize: "0.95rem",
+              lineHeight: "1.6",
+              maxHeight: "120px",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              color: "rgba(255, 255, 255, 0.9)",
+              whiteSpace: 'pre-wrap'
+            }}>
+              {post.post}
+            </p>
+            <div className="mt-3" style={{
+              background: "rgba(0, 0, 0, 0.1)",
+              borderRadius: "10px",
+              padding: "15px",
+              border: "1px solid rgba(255, 255, 255, 0.1)"
+            }}>
+              <CommentList comments={post.comments || []} />
+            </div>
           </div>
         </div>
+      </NavLink>
+      <div style={{ width:"80%",margin: "5px" }}>
+        <CommentCreate postId={post.id} />
       </div>
-    </NavLink>
     </>
-   )
-  });
-  
+  );
+});
+
   return (
     <div className="posts-page" style={{
       minHeight: '100vh',

@@ -70,6 +70,7 @@ const PublicBlogsList = () => {
                 color: "#212121",
                 textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)"
               }}>
+                
                 {blog.title}
               </h5>
            <div
@@ -84,18 +85,20 @@ const PublicBlogsList = () => {
   }}
   dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.post || "") }}
 />
-              <div className="mt-3" style={{
+ 
+              {/* <div className="mt-3" style={{
                 background: "rgba(0, 0, 0, 0.1)",
                 borderRadius: "10px",
                 padding: "15px",
                 border: "1px solid rgba(255, 255, 255, 0.1)"
               }}>
-                {/* <CommentList comments={blog.comments || []} />
-                <CommentCreate blogId={blog.did} /> */}
-              </div>
+               <CommentList comments={blog.comments || []} />
+                <CommentCreate blogId={blog.did} /> 
+              </div> */}
             </div>
           </div>
         </NavLink>
+        <br />
       </>
     )
   });
