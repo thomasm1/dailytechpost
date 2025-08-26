@@ -51,7 +51,7 @@ describe('PostCreate', () => {
     });
 
     it('should call postsService.createPost on form submission', async () => {
-        postsService.createPost.mockResolvedValue({});
+        postsService.createPost.mockResolvedValue({ data: { id: 123 } });
 
         render(<PostCreate />);
 
@@ -71,15 +71,18 @@ describe('PostCreate', () => {
                     title: 'Test Post Title',
                     post: 'Test post content',
                     cat3: '',
-                    blogcite: [],
-                    state: 'published'
+                    blogcite: '',
+                    state: 'published',
+                    author: 'anonymous',
+                    email: 'anonymous@gmail.com',
+                    categoryId: 12
                 })
             );
         });
     });
 
     it('should include selected citations in form submission', async () => {
-        postsService.createPost.mockResolvedValue({});
+        postsService.createPost.mockResolvedValue({ data: { id: 123 } });
 
         render(<PostCreate />);
 
@@ -99,7 +102,7 @@ describe('PostCreate', () => {
         await waitFor(() => {
             expect(postsService.createPost).toHaveBeenCalledWith(
                 expect.objectContaining({
-                    blogcite: ['Musing Blockchain', 'A.I.Now.AI']
+                    blogcite: 'Musing Blockchain, A.I.Now.AI'
                 })
             );
         });

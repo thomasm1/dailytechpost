@@ -14,12 +14,12 @@ class PostsService {
                 author: "anonymous",
                 email: "anonymous@gmail.com",
                 categoryId: 12,
-                blogcite: values.blogcite.join(', '), // Join the selected citations into a comma-separated string
+                blogcite: values.blogcite, // blogcite is already a string
             });
             alert("Post created successfully!");
         } catch (error) {
             console.error("Error creating post:", error);
-            alert("Error creating post. Please check the console for details.");
+            // alert("Error creating post. Please check the console for details.");
         }
     }
 
