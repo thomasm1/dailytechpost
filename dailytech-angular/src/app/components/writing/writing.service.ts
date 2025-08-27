@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CollectionReference, DocumentData, Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Subject, of, Observable, Subscription } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
@@ -60,7 +60,7 @@ export class WritingService {
   private firebaseSubs: Subscription[] = [];
 
   constructor(
-    private db: Firestore,
+    private db: AngularFirestore,
     private uiService: UiService,
     private store: Store<fromWriting.State>,
     private snackBar:MatSnackBar
@@ -74,20 +74,20 @@ export class WritingService {
     this.uiService.loadingStateChanged.next(true); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
     // this.store.dispatch(new UI.StartLoading());
     this.firebaseSubs.push(
-      collectionData(collection(this.db, 'writing-mods'))
+      this.db.collection('writing-mods').snapshotChanges()
       .pipe(map(docArray => {
         return docArray.map(doc => {
           return {
-            id: doc['payload'].doc.id,
+            id: doc.payload.doc.id,
             // spread operator pulling objects out of payload, and adding to object returned
-            cat3: doc['payload'].doc.data()['cat3'],
-            news: doc['payload'].doc.data()['news'],
-            durationGoal: doc['payload'].doc.data()['durationGoal'],
-            wordCount: doc['payload'].doc.data()['wordCount'],
-            date: doc['payload'].doc.data()['date'],
-            state: doc['payload'].doc.data()['state'],
-            title: doc['payload'].doc.data()['title'],
-            post: doc['payload'].doc.data()['post'],
+            cat3: doc.payload.doc.data()['cat3'],
+            news: doc.payload.doc.data()['news'],
+            durationGoal: doc.payload.doc.data()['durationGoal'],
+            wordCount: doc.payload.doc.data()['wordCount'],
+            date: doc.payload.doc.data()['date'],
+            state: doc.payload.doc.data()['state'],
+            title: doc.payload.doc.data()['title'],
+            post: doc.payload.doc.data()['post'],
           };
         });
       })
@@ -161,7 +161,7 @@ export class WritingService {
   fetchCompletedOrCancelledWritings() {
     // return this.writingMods.slice();
     this.firebaseSubs.push(
-      collectionData(collection(this.db, 'finished-writing-mods'))
+      this.db.collection('finished-writing-mods').valueChanges()
       .subscribe((writingModsArr: WritingMod[]) => {
         // this.finishedWritingsChanged.next(writingMods);
         this.store.dispatch(new Writing.SetFinishedWritings(writingModsArr))
@@ -181,8 +181,7 @@ export class WritingService {
 
  
   addFullDataToDatabase(writingModObj: WritingMod): Promise<void> {
-    const finishedWritingModsRef = collection(this.db, 'finished-writing-mods');
-    return addDoc(finishedWritingModsRef, writingModObj)
+    return this.db.collection('finished-writing-mods').add(writingModObj)
       .then(() => {
         console.log('Data added successfully');
       })
@@ -195,8 +194,7 @@ export class WritingService {
       });
   }
   private addDataToDatabase(writingModObj: WritingMod): Promise<void> {
-    const finishedWritingModsRef = collection(this.db, 'finished-writing-mods');
-    return addDoc(finishedWritingModsRef, writingModObj)
+    return this.db.collection('finished-writing-mods').add(writingModObj)
       .then(() => {
         console.log('Data added successfully');
       })
@@ -209,10 +207,5 @@ export class WritingService {
       });
   }
 
-}
-import { addDoc as firestoreAddDoc } from '@angular/fire/firestore';
-
-function addDoc(finishedWritingModsRef: CollectionReference<DocumentData>, writingModObj: WritingMod): Promise<void> {
-  return firestoreAddDoc(finishedWritingModsRef, writingModObj).then(() => {});
 }
 

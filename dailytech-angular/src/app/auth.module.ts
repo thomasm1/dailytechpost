@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { TitleBarComponent } from './components/layout/title-bar/title-bar.component';
 import { MaterialModule } from './material.module';
@@ -26,7 +25,6 @@ import { SignonComponent } from './components/user/signon/signon.component';
     CommonModule,
     FormsModule,
     MaterialModule,
-    FlexLayoutModule,
     ReactiveFormsModule,
     AngularFireAuthModule, 
     // AuthRoutingModule
@@ -35,7 +33,6 @@ import { SignonComponent } from './components/user/signon/signon.component';
     CommonModule, 
     FormsModule,
     MaterialModule,
-    FlexLayoutModule,
     ReactiveFormsModule,
     AngularFireAuthModule, 
   ]

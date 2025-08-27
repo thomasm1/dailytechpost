@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { StoreModule } from '@ngrx/store';
 
 import { WritingComponent } from './components/writing/writing.component';
@@ -29,7 +28,6 @@ import { writingReducer } from './reducers/writing.reducer';
         FormsModule,
         ReactiveFormsModule,
         MaterialModule,
-        FlexLayoutModule,
         // WritingRoutingModule
         StoreModule.forFeature('writing', writingReducer) //adding unique identifier
     ]

@@ -6,10 +6,10 @@
   <div
     gdAreas="header header | side content"
     gdColumns="150px calc(90vw - 150px)"
-    gdGap="16px"
+    gdGap="8px"
     gdAreas.lt-md="header | menu | content"
     gdRows.lt-md="auto auto auto auto"
-    gdColumns.lt-md="90vw"
+    
   >
     <!-- <div gdArea="header">
         <div >
@@ -17,7 +17,8 @@
         </div>
     </div> -->
     <div gdArea="menu">
-      <button mat-raised-button color="primary" class="mat-elevation-z10" [matMenuTriggerFor]="appMenu">Sections</button>
+      <button mat-raised-button color="primary" class="mat-elevation-z10 view-sections" 
+      [matMenuTriggerFor]="appMenu">View All News Sections</button>
       <mat-menu #appMenu="matMenu">
         <button
           mat-menu-item
@@ -28,7 +29,7 @@
         </button>
       </mat-menu>
     </div>
-    <div gdArea="side">
+    <div class = "sideside" gdArea="side">
       <mat-list role="list">
         <mat-list-item role="listitem" *ngFor="let s of sections">
           <a

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { throwMatDialogContentAlreadyAttachedError } from '@angular/material/dialog';
+// import { throwMatDialogContentAlreadyAttachedError } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 // import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';

@@ -25,7 +25,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
-              "src/manifest.json"
+              "src/manifest.json",
+  "src/.env"
             ],
             "styles": [
               "src/daily-theme.scss",
