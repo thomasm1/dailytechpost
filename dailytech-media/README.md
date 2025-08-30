@@ -77,7 +77,7 @@ Radio Thomas1 is a modern web-based radio streaming platform inspired by "Radio 
 4. **Create environment file**
    ```bash
    # Create .env file with:
-   PORT=3000
+   PORT=3009
    DB_HOST=localhost
    DB_PORT=5432
    DB_NAME=radio_db
@@ -93,7 +93,7 @@ Radio Thomas1 is a modern web-based radio streaming platform inspired by "Radio 
 
 6. **Open in browser**
    ```
-   http://localhost:3000
+   http://localhost:3009
    ```
 
 ## 🛠️ Development
@@ -108,7 +108,7 @@ npm run dev
 npm run db:init
 
 # Test database connection
-curl http://localhost:3000/health
+curl http://localhost:3009/health
 
 # Connect to database directly
 PGPASSWORD=radio_pass psql -h localhost -U radio_user -d radio_db

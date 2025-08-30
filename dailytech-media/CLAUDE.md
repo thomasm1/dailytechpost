@@ -37,7 +37,7 @@ French-style online radio station inspired by "Radio NrG" with integrated fronte
 **Start Development Server**:
 ```bash
 npm run dev
-# Server runs on http://localhost:3000
+# Server runs on http://localhost:3009
 ```
 
 **Database Operations**:
@@ -52,7 +52,7 @@ PGPASSWORD=radio_pass psql -h localhost -U radio_user -d radio_db
 sudo systemctl start postgresql
 
 # Test database connection
-curl http://localhost:3000/health
+curl http://localhost:3009/health
 ```
 
 **Testing**:

@@ -30,6 +30,8 @@ body::after {
     opacity: 0.6;
     clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
     animation: hexRotateSlow 12s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
     z-index: 999;
     pointer-events: none;
     transform-origin: center;
@@ -48,6 +50,8 @@ body::before {
     opacity: 0.6;
     clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
     animation: hexRotateReverse 15s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
     z-index: 999;
     pointer-events: none;
     transform-origin: center;

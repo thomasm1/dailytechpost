@@ -183,9 +183,11 @@ const PublicBlogsList = () => {
           backgroundImage: 'url(/the_time_machine.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.3,
+          opacity: 0.15,
           clipPath: 'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
-          animation: 'hexRotate 20s linear infinite',
+          animation: 'hexRotate 45s linear infinite',
+  willChange: 'transform',
+  transform: 'translateZ(0)',
           zIndex: 1,
           pointerEvents: 'none'
         }} />
@@ -199,9 +201,11 @@ const PublicBlogsList = () => {
           backgroundImage: 'url(/the_time_machine.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.25,
+          opacity: 0.15,
           clipPath: 'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
-          animation: 'hexRotateReverse 25s linear infinite',
+          animation: 'hexRotateReverse 60s linear infinite',
+  willChange: 'transform',
+  transform: 'translateZ(0)',
           zIndex: 1,
           pointerEvents: 'none'
         }} />

@@ -7,7 +7,7 @@ const { Pool } = require('pg');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3009;
 
 // Database connection
 const pool = new Pool({
@@ -20,7 +20,7 @@ const pool = new Pool({
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+  origin: ['http://localhost:3009', 'http://127.0.0.1:3009'],
   credentials: true
 }));
 app.use(express.json());

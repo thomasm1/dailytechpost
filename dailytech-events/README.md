@@ -1,24 +1,57 @@
 
-## Project: OurDailyTech Blog app: Event Management System
-## Descxription: Consumes subject matter from Wikimedia, filtering by users' interests, and stores it in OpenSearch.
-## Technologies: Java, Spring Boot, Kafka, OpenSearch
-## How to run
-## 1. Clone the repository
-## 2. Build the project using Maven: `gradlew build`
-## 3. Run the application: `gradlew bootRun`
-## 4. Ensure Kafka and OpenSearch are running locally or configured in `application.properties`
-## 5. The application will start consuming events from the Wikimedia topic and indexing them into OpenSearch.
-## # 6. Access the OpenSearch information at `http://localhost:9200` to view indexed documents.
-## # 6. Access the OpenSearch Dashboard at `http://localhost:5601/app/dashboards` to view indexed documents.
-## # 6c. Setup Conducktor-- admin: # Define the local admin for the initial setup (mandatory)
-```
-email: admin@conduktor.io
-password: adminP4ss!
+# DailyTech Events - Kafka Event Processing System
 
-auth: # Define a local user (optional)
-local-users:
-- email: user@conduktor.io
-password: userP4ss!
+**Description:** Consumes Wikimedia changes, processes events, and stores in OpenSearch for analysis.
+
+**Technologies:** Java 17, Spring Boot 3.3.11, Kafka, OpenSearch, Gradle
+
+## Quick Start
+
+### 1. Start Infrastructure (2 terminals)
+
+**Terminal 1:**
+```bash
+cd conduktor-platform
+docker-compose up -d zookeeper kafka postgresql
 ```
 
-Access the application at `http://localhost:8080`
+**Terminal 2:** 
+```bash
+cd kafka-consumer-opensearch  
+docker-compose up -d opensearch opensearch-dashboards
+```
+
+### 2. Start Applications (2 terminals)
+
+**Terminal 3 - Producer:**
+```bash
+cd kafka-producer-wikimedia
+./gradlew bootRun
+```
+
+**Terminal 4 - Consumer:**
+```bash
+cd kafka-consumer-opensearch
+./gradlew bootRun  
+```
+
+### 3. Access Services
+
+- **OpenSearch:** http://localhost:9200
+- **OpenSearch Dashboards:** http://localhost:5601/app/dev_tools#/console
+- **Conduktor Console:** http://localhost:8080 (if started)
+  - Login: `admin@conduktor.io` / `adminP4ss!`
+
+### 4. Verify Data Flow
+
+Check OpenSearch for Wikimedia events:
+```bash
+curl "http://localhost:9200/wikimedia/_search?pretty"
+```
+
+## Build & Test
+
+```bash
+./gradlew build     # Build all modules
+./gradlew test      # Run tests
+```

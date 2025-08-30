@@ -1,7 +1,8 @@
 # Daily Tech React - Test Suite Documentation
+### Hosted at: 
+#### https://blog.cryptomaven.xyz
 
 ## Overview
-
 Comprehensive test suite with **54 passing tests** across 11 test suites covering services, components, Redux state management, and form handling.
 
 ## Test Structure
