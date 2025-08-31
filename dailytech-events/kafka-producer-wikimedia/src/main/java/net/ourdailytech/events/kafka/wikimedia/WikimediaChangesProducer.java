@@ -1,5 +1,5 @@
 package net.ourdailytech.events.kafka.wikimedia;
-
+import okhttp3.Headers;
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -7,6 +7,8 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.net.URI;
+import java.util.Map;
+
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +29,8 @@ public class WikimediaChangesProducer {
 
         EventHandler eventHandler = new WikimediaChangeHandler(producer, topic);
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";
-        EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url));
+        EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url))
+            .headers(Headers.of("User-Agent", "OurDailyTech Kafka Wikimedia Changes Producer"));
         EventSource eventSource = builder.build();
 
 
