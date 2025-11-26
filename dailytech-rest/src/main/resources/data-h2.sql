@@ -74,34 +74,15 @@ VALUES
     (34, 'InvestorJoe', 'joe@example.com', 'Any more stock tips?', 24);                -- references post_entity.id=24
 
 -- Sample data for weblinks (match table: title, profile_url, url, host, htmlpage, downloadstatus)
-INSERT INTO dailytech.weblinks
-  (title, profile_url, url, host, htmlpage, post_id)
-VALUES
-  ('Spring Boot Reference',
-   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
-   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
-   'docs.spring.io',
-    20),
-  ('Angular Docs',
-   'https://angular.dev/',
-   'https://angular.dev/',
-   'angular.dev',
-   21),
-  ('OWASP Cheat Sheet Series',
-   'https://cheatsheetseries.owasp.org/',
-   'https://cheatsheetseries.owasp.org/',
-   'cheatsheetseries.owasp.org',
-   22),
-  ('PostgreSQL 16 Manual',
-   'https://www.postgresql.org/docs/current/',
-   'https://www.postgresql.org/docs/current/',
-   'www.postgresql.org',
-  23),
-  ('Kafka Documentation',
-   'https://kafka.apache.org/documentation/',
-   'https://kafka.apache.org/documentation/',
-   'kafka.apache.org',
-   24);
+
+
+INSERT INTO dailytech.weblinks (title, profile_url, url, host, htmlpage, post_id) VALUES
+('Spring Boot Reference', 'https://docs.spring.io/spring-boot/docs/current/reference/html/', 'https://docs.spring.io/spring-boot/docs/current/reference/html/', 'docs.spring.io', NULL, 20),
+('Angular Docs', 'https://angular.dev/', 'https://angular.dev/', 'angular.dev', NULL, 21),
+('OWASP Cheat Sheet Series', 'https://cheatsheetseries.owasp.org/', 'https://cheatsheetseries.owasp.org/', 'cheatsheetseries.owasp.org', NULL, 22),
+('PostgreSQL 16 Manual', 'https://www.postgresql.org/docs/current/', 'https://www.postgresql.org/docs/current/', 'www.postgresql.org', NULL, 23),
+('Kafka Documentation', 'https://kafka.apache.org/documentation/', 'https://kafka.apache.org/documentation/', 'kafka.apache.org', NULL, 24);
+
 
 -- NEWS: 5 entries
 INSERT INTO dailytech.news (

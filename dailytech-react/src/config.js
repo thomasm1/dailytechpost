@@ -31,6 +31,14 @@ export const awsUrlDevId =    "https://emfm9dpoeh.execute-api.us-east-1.amazonaw
       listStyleType: "none",
       padding: 0, 
       margin: 0,
+    },
+    blogCard: {
+      transition: "all 0.3s ease" 
+    },
+    blogCardHover: {
+      transform: "translateY(-5px)",
+      boxShadow: "0 15px 40px rgba(0,0,0,0.3)",
+      background: "rgba(255, 255, 255, 0.2)"
     }
   };
   
@@ -41,4 +49,6 @@ export const CITATION_OPTIONS = [
     "Quantum Data", 
     "WebDev Affairs",
   ];
+
+  
  
