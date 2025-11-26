@@ -14,6 +14,7 @@ import java.util.Set;
 @Builder
 @Table(
 		name = "post_entity",
+		schema = "dailytech",
 		uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})}
 )
 public class PostEntity {
@@ -50,7 +51,7 @@ public class PostEntity {
 	@Column(name = "title", nullable = false)
 	private String title;
 
-	@Column(name = "post", nullable = false, length = 3000)
+	@Column(name = "post", nullable = false, length = 65535)
 	private String post;
 
 	@Column(name = "blogcite", nullable = false, length = 1000)
@@ -91,5 +92,17 @@ public class PostEntity {
 	@ToString.Exclude // ✅ Prevents infinite recursion in @ToString
 	private User user;
 
+
+	public void addWeblink(Weblink wl) {
+		if (wl == null) return;
+		weblinks.add(wl);
+		wl.setPostEntity(this);
+	}
+
+	public void removeWeblink(Weblink wl) {
+		if (wl == null) return;
+		weblinks.remove(wl);
+		wl.setPostEntity(null);
+	}
 }
 

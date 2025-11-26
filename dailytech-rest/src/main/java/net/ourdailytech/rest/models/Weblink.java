@@ -34,7 +34,7 @@ public class Weblink extends Bookmark {
     private DownloadStatus downloadStatus = DownloadStatus.NOT_ATTEMPTED;
 
     // Many comments can belong to one PostEntity
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "post_id", nullable = false)
     @ToString.Exclude
     @JsonIgnore
@@ -64,4 +64,18 @@ public class Weblink extends Bookmark {
 
     @Override
     public boolean isWeb3Link() { return true; }
+
+    public void setPostEntity(PostEntity post) {
+        if (this.postEntity == post) return;
+
+        if (this.postEntity != null) {
+            this.postEntity.getWeblinks().remove(this);
+        }
+
+        this.postEntity = post;
+
+        if (post != null && !post.getWeblinks().contains(this)) {
+            post.getWeblinks().add(this);
+        }
+    }
 }

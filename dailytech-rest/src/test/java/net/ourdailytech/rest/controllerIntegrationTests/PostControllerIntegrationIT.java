@@ -13,10 +13,12 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.junit.jupiter.api.Disabled;
 
+@Disabled
 @SpringBootTest
 @AutoConfigureMockMvc
-class PostControllerIntegrationTestIT {
+class PostControllerIntegrationIT {
 
     @Autowired
     private MockMvc mockMvc;

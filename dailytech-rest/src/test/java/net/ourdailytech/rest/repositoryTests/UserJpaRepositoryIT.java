@@ -11,12 +11,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Disabled;
+
 
 @ActiveProfiles("h2")
 @DataJpaTest
 @ComponentScan(basePackages = {"net.ourdailytech.rest.util"})
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-class UserJpaSliceTestR {
+class UserJpaRepositoryIT {
 
     @Autowired
     UsersRepository userRepository;

@@ -42,23 +42,23 @@ INSERT INTO dailytech.post_entity (
     post, blogcite, email, state, word_count, duration_goal, category_id
 )
 VALUES
-    (20, 'D1001', '2025-05-01', 'TomA', 'May', 'Blockchain', 'Ethereum Merge',
+    (20, '2025-05-01', 'D1001', 'TomA', 'May', 'Blockchain', 'Ethereum Merge',
      'Discussion on Ethereum merge details...', 'https://blogsite1.com', 'tom.admin@example.com',
      'Published', 1500, 10, 14),  -- references categories.id=14 (Crypto)
 
-    (21, 'D1002', '2025-05-02', 'Jane', 'May', 'Wellness', 'Nutrition Tips',
+    (21, '2025-05-02','D1002',  'Jane', 'May', 'Wellness', 'Nutrition Tips',
      'Top 10 tips for daily health...', 'https://blogsite2.com', 'jane.user@example.com',
      'Draft', 800, 5, 11),        -- references categories.id=11 (Health)
 
-    (22, 'D1003', '2025-05-03', 'Bob', 'June', 'Sports', 'Championship Recap',
+    (22, '2025-05-03', 'D1003',  'Bob', 'June', 'Sports', 'Championship Recap',
      'Recap of the championship match...', 'https://blogsite3.com', 'bob.user@example.com',
      'Published', 1200, 7, 12),   -- references categories.id=12 (Sports)
 
-    (23, 'D1004', '2025-05-04', 'Alice', 'June', 'Tech', 'AI Breakthrough',
+    (23, '2025-05-04','D1004',  'Alice', 'June', 'Tech', 'AI Breakthrough',
      'New AI breakthrough discovered...', 'https://blogsite4.com', 'alice.user@example.com',
      'Published', 1600, 8, 10),   -- references categories.id=10 (Tech)
 
-    (24, 'D1005', '2025-05-05', 'ThomasM', 'July', 'Finance', 'Stock Market Trends',
+    (24, '2025-05-05','D1005',  'ThomasM', 'July', 'Finance', 'Stock Market Trends',
      'Analyzing latest stock market trends...', 'https://blogsite5.com', 'thomas.maestas@example.com',
      'Published', 2000, 14, 13);  -- references categories.id=13 (Finance)
 

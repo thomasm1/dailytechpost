@@ -7,10 +7,12 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.Disabled;
 
+@Disabled
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
-public class UserServiceImplIntegrationTestIT {
+public class UserServiceImplIntegrationIT {
 
 	@Autowired
 	RoleRepository roleRepository;

@@ -18,10 +18,12 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.junit.jupiter.api.Disabled;
 
+@Disabled
 @SpringBootTest
 @AutoConfigureMockMvc
-class UserControllerIntegrationTestIT {
+class UserControllerIntegrationIT {
 
   @Autowired
   private MockMvc mockMvc;

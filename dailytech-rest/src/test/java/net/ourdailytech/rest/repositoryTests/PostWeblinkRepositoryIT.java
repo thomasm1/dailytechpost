@@ -1,4 +1,4 @@
-// src/test/java/net/ourdailytech/rest/repositoryTests/PostWeblinkRelationshipTestR.java
+// src/test/java/net/ourdailytech/rest/repositoryTests/PostWeblinkRepositoryIT.java
 package net.ourdailytech.rest.repositoryTests;
 
 import net.ourdailytech.rest.models.PostEntity;
@@ -7,15 +7,20 @@ import net.ourdailytech.rest.repositories.PostRepository;
 import net.ourdailytech.rest.repositories.WeblinksRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Disabled;
 
 @DataJpaTest
 @ActiveProfiles("h2")
-public class PostWeblinkRelationshipTestR {
+@ComponentScan(basePackages = {"net.ourdailytech.rest.util"})
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+public class PostWeblinkRepositoryIT {
 
     @Autowired
     private TestEntityManager entityManager;

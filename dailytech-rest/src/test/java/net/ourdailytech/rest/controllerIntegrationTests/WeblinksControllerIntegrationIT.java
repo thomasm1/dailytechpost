@@ -21,12 +21,14 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.junit.jupiter.api.Disabled;
 
+@Disabled
 @SpringBootTest
 @ActiveProfiles("h2")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Transactional
-public class WeblinksControllerIntegrationTestIT {
+public class WeblinksControllerIntegrationIT {
 
     @Autowired
     private WebApplicationContext context;

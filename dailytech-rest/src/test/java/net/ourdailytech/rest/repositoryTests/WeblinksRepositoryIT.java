@@ -1,4 +1,4 @@
-// src/test/java/net/ourdailytech/rest/repositoryTests/WeblinksRepositoryTestR.java
+// src/test/java/net/ourdailytech/rest/repositoryTests/WeblinksRepositoryIT.java
 package net.ourdailytech.rest.repositoryTests;
 
 import net.ourdailytech.rest.models.PostEntity;
@@ -16,10 +16,11 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Disabled;
 
 @DataJpaTest
 @ActiveProfiles("h2")
-public class WeblinksRepositoryTestR {
+public class WeblinksRepositoryIT {
 
     @Autowired
     private TestEntityManager entityManager;
@@ -47,6 +48,8 @@ public class WeblinksRepositoryTestR {
         testWeblink.setUrl("https://example.com/article");
         testWeblink.setHost("example.com");
         testWeblink.setPostEntity(testPost);
+
+        testPost.addWeblink(testWeblink); //  keep both sides in sync
     }
 
     @Test
@@ -84,6 +87,11 @@ public class WeblinksRepositoryTestR {
     void testDeleteWeblink() {
         Weblink savedWeblink = entityManager.persistAndFlush(testWeblink);
         Long weblinkId = savedWeblink.getId();
+
+        if (savedWeblink.getPostEntity() != null) {
+            savedWeblink.getPostEntity().removeWeblink(savedWeblink);
+            entityManager.flush();
+        } //remove association from parent first so as to avoid parent re-persisting child
 
         weblinksRepository.delete(savedWeblink);
         entityManager.flush();
