@@ -139,7 +139,7 @@ const PublicBlogsList = () => {
           }}>Loading Daily Tech Posts</div>
           <div style={{
             color: 'rgba(33, 33, 33, 0.7)',
-            fontSize: '0.9rem',
+            fontSize: '1.1rem',
             textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)'
           }}>Fetching latest content...</div>
         </div>
@@ -181,7 +181,7 @@ const PublicBlogsList = () => {
             color: '#212121',
             textAlign: 'center',
             fontSize: '2.2em',
-            fontWeight: '300',
+            fontWeight: '400',
             marginBottom: '30px',
             textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)'
           }}>Daily Tech Posts</h2>

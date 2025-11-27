@@ -48,16 +48,16 @@ const renderedPosts = Object.values(posts).map((post) => {
             transition: "all 0.3s ease",
             boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)"
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-5px)";
-            e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
-            e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.2)";
-            e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
-          }}
+        //   onMouseEnter={(e) => {
+        //     e.currentTarget.style.transform = "translateY(-5px)";
+        //     e.currentTarget.style.boxShadow = "0 15px 40px rgba(0,0,0,0.3)";
+        //     e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+        //   }}
+        //   onMouseLeave={(e) => {
+        //     e.currentTarget.style.transform = "translateY(0)";
+        //     e.currentTarget.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.2)";
+        //     e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
+        //   }}
         >
           <div className="card-body p-4">
             <h5 className="card-title fw-bold mb-3" style={{

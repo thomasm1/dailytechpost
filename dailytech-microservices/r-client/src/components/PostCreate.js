@@ -42,9 +42,9 @@ const PostCreate = () => {
             <FormGroup label="Category" id="cat3" type="select" values={values} handleChange={handleChange} required>
               <option value="Musing Blockchain">Musing Blockchain</option>
               <option value="Sociology Now!">Sociology Now!</option>
-              <option value="A.I.Now.">A.I.Now.AI</option>
+              <option value="A.I.Now.">A.I.Now</option>
               <option value="Quantum Data">Quantum Data</option> 
-              <option value="WebDev Affairs">WebDev Affairs</option>
+              <option value="Web Dev Affairs">Web Dev Affairs</option>
             </FormGroup>
             <div className="form-group">
               <label>Pre-wrapped research & news bundle</label>

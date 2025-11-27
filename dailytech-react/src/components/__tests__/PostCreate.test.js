@@ -29,8 +29,8 @@ describe('PostCreate', () => {
         expect(categorySelect).toBeInTheDocument();
         
         expect(screen.getByRole('option', { name: 'Musing Blockchain' })).toBeInTheDocument();
-        expect(screen.getByRole('option', { name: 'A.I.Now.AI' })).toBeInTheDocument();
-        expect(screen.getByRole('option', { name: 'WebDev Affairs' })).toBeInTheDocument();
+        expect(screen.getByRole('option', { name: 'A.I.Now' })).toBeInTheDocument();
+        expect(screen.getByRole('option', { name: 'Web Dev Affairs' })).toBeInTheDocument();
     });
 
     it('should have citation checkboxes', () => {
@@ -38,7 +38,7 @@ describe('PostCreate', () => {
 
         expect(screen.getByLabelText('Musing Blockchain')).toBeInTheDocument();
         expect(screen.getByLabelText('Sociology Now!')).toBeInTheDocument();
-        expect(screen.getByLabelText('A.I.Now.AI')).toBeInTheDocument();
+        expect(screen.getByLabelText('A.I.Now')).toBeInTheDocument();
     });
 
     it('should handle citation checkbox selection', () => {
@@ -91,7 +91,7 @@ describe('PostCreate', () => {
         });
 
         const checkbox1 = screen.getByLabelText('Musing Blockchain');
-        const checkbox2 = screen.getByLabelText('A.I.Now.AI');
+        const checkbox2 = screen.getByLabelText('A.I.Now');
         
         fireEvent.click(checkbox1);
         fireEvent.click(checkbox2);
@@ -102,7 +102,7 @@ describe('PostCreate', () => {
         await waitFor(() => {
             expect(postsService.createPost).toHaveBeenCalledWith(
                 expect.objectContaining({
-                    blogcite: 'Musing Blockchain, A.I.Now.AI'
+                    blogcite: 'Musing Blockchain, A.I.Now'
                 })
             );
         });

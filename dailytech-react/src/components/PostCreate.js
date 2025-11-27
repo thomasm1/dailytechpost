@@ -9,14 +9,17 @@ const PostCreate = () => {
   const [createdPostId, setCreatedPostId] = useState(null);
   const [showWeblinks, setShowWeblinks] = useState(false);
 
-  const citationOptions = [
+  const newsOptions = [
     "Musing Blockchain",
     "Sociology Now!",
-    "A.I.Now.AI",
+    "A.I.Now",
+    "Quantum Data", 
+    "Web Dev Affairs"
   ];
-
+            
   return (
     <div className="post-create-container">
+      
       <Form
         initialValues={{
           title: "",
@@ -55,7 +58,8 @@ const PostCreate = () => {
               values={values}
               handleChange={handleChange} required />
             <FormGroup
-              label="Post"
+              label="Post" 
+              rows={20}
               id="post" type="textarea"
               values={values}
               handleChange={handleChange} />
@@ -66,14 +70,13 @@ const PostCreate = () => {
               required>
               <option value="Musing Blockchain">Musing Blockchain</option>
               <option value="Sociology Now!">Sociology Now!</option>
-              <option value="A.I.Now.AI">A.I.Now.AI</option>
-              <option value="Quantum Data">Quantum Data</option>
-              <option value="Cybersecurity">Cybersecurity</option>
-              <option value="WebDev Affairs">WebDev Affairs</option>
+              <option value="A.I.Now">A.I.Now</option>
+              <option value="Quantum Data">Quantum Data</option> 
+              <option value="Web Dev Affairs">Web Dev Affairs</option>
             </FormGroup>
             <div className="form-group">
-              <label>Citation</label>
-              {citationOptions.map((option) => (
+              <label>News Articles</label>
+              {newsOptions.map((option) => (
                 <div key={option} className="form-check">
                   <input
                     type="checkbox"
@@ -83,22 +86,22 @@ const PostCreate = () => {
                     className="form-check-input"
                     checked={values.blogcite.includes(option)}
                     onChange={(e) => {
-                      const currentCitations = values.blogcite ? values.blogcite.split(', ').filter(Boolean) : [];
+                      const currentNews = values.blogcite ? values.blogcite.split(', ').filter(Boolean) : [];
                       
                       if (e.target.checked) {
-                        const newCitations = [...currentCitations, option];
+                        const newNews = [...currentNews, option];
                         handleChange({
                           target: {
                             name: 'blogcite',
-                            value: newCitations.join(', '),
+                            value: newNews.join(', '),
                           }
                         });
                       } else {
-                        const newCitations = currentCitations.filter(item => item !== option);
+                        const newNews = currentNews.filter(item => item !== option);
                         handleChange({
                           target: {
                             name: 'blogcite',
-                            value: newCitations.join(', '),
+                            value: newNews.join(', '),
                           }
                         });
                       }
@@ -110,10 +113,10 @@ const PostCreate = () => {
                 </div>
               ))}
             </div>
-            <FormGroup label="State" id="state" type="select" values={values} handleChange={handleChange}>
+            {/* <FormGroup label="State" id="state" type="select" values={values} handleChange={handleChange}>
               <option value="published">Publish</option>
               <option value="draft">Draft</option>
-            </FormGroup>
+            </FormGroup> */}
           </>
         )}
       </Form>

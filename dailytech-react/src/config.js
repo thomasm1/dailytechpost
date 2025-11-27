@@ -40,14 +40,15 @@ export const awsUrlDevId =    "https://emfm9dpoeh.execute-api.us-east-1.amazonaw
       boxShadow: "0 15px 40px rgba(0,0,0,0.3)",
       background: "rgba(255, 255, 255, 0.2)"
     }
+    
   };
   
 export const CITATION_OPTIONS = [
     "Musing Blockchain",
     "Sociology Now!",
-    "A.I.Now.AI", 
+    "A.I.Now", 
     "Quantum Data", 
-    "WebDev Affairs",
+    "Web Dev Affairs",
   ];
 
   

@@ -34,7 +34,7 @@ export const styles = {
 export const CITATION_OPTIONS = [
     "Musing Blockchain",
     "Sociology Now!",
-    "A.I.Now.AI", 
+    "A.I.Now", 
     "Quantum Data", 
-    "WebDev Affairs",
+    "Web Dev Affairs",
   ];
