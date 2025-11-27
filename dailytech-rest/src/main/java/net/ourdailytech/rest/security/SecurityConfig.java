@@ -83,14 +83,19 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable) // (csrf) ->csrf.disable()
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Open API
-                        .requestMatchers("/h2-console/**").permitAll()                        .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
+                        .requestMatchers("/h2-console/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
                         .requestMatchers(HttpMethod.GET, "/rest/**", "/v1/**", "/api/**" ).permitAll() // APIs
                         .requestMatchers(HttpMethod.POST, "/api/users/auth/**").permitAll() // Login & register
-                        .requestMatchers(HttpMethod.POST, "/api/**" ).permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/**" ).permitAll()  // authenticated()
                         .requestMatchers(HttpMethod.OPTIONS, "/api/**" ).permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/api/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/api/**").permitAll() // authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/api/**").permitAll()
-                        .anyRequest().authenticated() // All other requests require authentication
+                    .requestMatchers(HttpMethod.GET, "/api/posts/*/comments").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/api/posts/*/comments").permitAll() // authenticated()
+                    .requestMatchers(HttpMethod.PUT, "/api/posts/*/comments/*").permitAll() // .hasRole("USER")
+                    .requestMatchers(HttpMethod.DELETE, "/api/posts/*/comments/*").permitAll() // hasAnyRole("MODERATOR", "ADMIN")
+                    .anyRequest().authenticated() // All other requests require authentication
                 )
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint)
