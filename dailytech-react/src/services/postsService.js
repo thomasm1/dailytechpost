@@ -16,10 +16,10 @@ class PostsService {
                 categoryId: 12,
                 blogcite: values.blogcite, // blogcite is already a string
             });
-            alert("Post created successfully!");
+            console.log("Post created successfully!");
         } catch (error) {
             console.error("Error creating post:", error);
-            // alert("Error creating post. Please check the console for details.");
+            alert("Error creating post. Please check the console for details.");
         }
     }
 

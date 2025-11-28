@@ -87,14 +87,17 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
                         .requestMatchers(HttpMethod.GET, "/rest/**", "/v1/**", "/api/**" ).permitAll() // APIs
                         .requestMatchers(HttpMethod.POST, "/api/users/auth/**").permitAll() // Login & register
-                        .requestMatchers(HttpMethod.POST, "/api/**" ).permitAll()  // authenticated()
+
+                        .requestMatchers(HttpMethod.POST, "/api/**" ).authenticated() //.permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/api/**" ).permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/api/**").permitAll() // authenticated()
-                        .requestMatchers(HttpMethod.DELETE, "/api/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("USER", "ADMIN") //.permitAll() //
+                        .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole( "ADMIN") //permitAll() //
+
                     .requestMatchers(HttpMethod.GET, "/api/posts/*/comments").permitAll()
-                    .requestMatchers(HttpMethod.POST, "/api/posts/*/comments").permitAll() // authenticated()
-                    .requestMatchers(HttpMethod.PUT, "/api/posts/*/comments/*").permitAll() // .hasRole("USER")
-                    .requestMatchers(HttpMethod.DELETE, "/api/posts/*/comments/*").permitAll() // hasAnyRole("MODERATOR", "ADMIN")
+                    .requestMatchers(HttpMethod.POST, "/api/posts/*/comments").authenticated()  //permitAll() //
+                    .requestMatchers(HttpMethod.OPTIONS, "/api/posts/*/comments").permitAll()
+                    .requestMatchers(HttpMethod.PUT, "/api/posts/*/comments/*").hasAnyRole("USER", "ADMIN") //.permitAll() //
+                    .requestMatchers(HttpMethod.DELETE, "/api/posts/*/comments/*").hasRole( "ADMIN") //permitAll() //
                     .anyRequest().authenticated() // All other requests require authentication
                 )
                 .exceptionHandling(exception -> exception

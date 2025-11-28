@@ -8,6 +8,7 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Article from './components/Article';
 import Write from "./layout/Write";
+import AuthPage from "./layout/AuthPage";
 import  {styles}   from './config';
 
  
@@ -28,6 +29,7 @@ const RoutesDaily = () => (
         <Route path="/write" element={<Write />} />
         {/* <Route path="/news/:id" element={<NewsList />} /> */}
         <Route path="/news" element={<NewsParent/>} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route path="*" element={<h3>Ooops, page not found</h3>} />
       </Routes>
     </main>

@@ -19,7 +19,6 @@ const PostCreate = () => {
             
   return (
     <div className="post-create-container">
-      
       <Form
         initialValues={{
           title: "",

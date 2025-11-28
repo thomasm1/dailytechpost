@@ -39,6 +39,13 @@ const Header = (  ) => {
                     >
                         News 
                     </NavLink>
+                        <NavLink
+                        to="/auth"
+                        className="nav-link"
+                        style={({ isActive }) => ({ color: isActive ? 'white' : 'darkgray' })}
+                    >
+                        Login/Register 
+                    </NavLink>
                 </div>
                 {/* <div className="header-content row">
                     <hr />

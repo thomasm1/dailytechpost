@@ -129,13 +129,13 @@ void testRegisterUser() throws Exception {
         @Test
         void testLoginUser() throws Exception {
             LoginDto loginDto = new LoginDto();
-            loginDto.setEmail("login@example.com");
+            loginDto.setUsernameOrEmail("login@example.com");
 
             when(usersService.login(any(LoginDto.class))).thenReturn("mock-jwt-token");
 
             mockMvc.perform(post("/api/users/auth/login")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{ \"email\": \"login@example.com\", \"password\": \"password123\" }"))
+                            .content("{ \"usernameOrEmail\": \"login@example.com\", \"password\": \"password123\" }"))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.accessToken").value("mock-jwt-token"));
         }

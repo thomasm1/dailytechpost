@@ -2,6 +2,7 @@
 export const API_BASE_URL =       "http://52.3.58.191:8082/api"; // "http://localhost:8082/api";       // 
 export const CATEGORY_BASE_URL =  "http://52.3.58.191:8082/api"; // "http://localhost:8082/api"; //  "http://comments-clusterip-srv:4001"; //
 export const POSTS_BASE_URL =     "http://52.3.58.191:8082/api"; // "http://localhost:8082/api";       // "http://posts-clusterip-srv:4000"; //
+export const AUTH_BASE_URL =     "http://52.3.58.191:8082/api"; // "http://localhost:8082/api";       // "http://auth-clusterip-srv:4002"; //
 export const JWT_TOKEN =  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJiYmJAZ21haWwuY29tIiwiaWF0IjoxNzQyOTMxNjI0LCJleHAiOjE3NDM1MzY0MjR9.rCjYbXnoclln2EznsMSMx4burPSwMWzsx9LuzF4e19786pGAJ16WKU7rxYOf2cJq";
 
 export const awsUrlDevAll =    "https://z3noflrq9b.execute-api.us-east-1.amazonaws.com";

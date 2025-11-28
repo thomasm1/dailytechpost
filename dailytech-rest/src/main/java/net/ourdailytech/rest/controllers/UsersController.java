@@ -21,12 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static net.ourdailytech.rest.util.constants.Constant.USER_PATH;
-import static net.ourdailytech.rest.util.constants.Constant.USER_PATH_ID;
+import static net.ourdailytech.rest.util.constants.Constant.*;
 
 
 @CrossOrigin(origins = "*")
-//@RequestMapping("/rest")
+@RequestMapping(API)
 @RestController
 @Tag(
         name = "CRUD REST APIs for User Resource",
@@ -70,8 +69,7 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
-    // build get user by id REST API
-    // http://localhost:8080/api/users/1
+
     @GetMapping(value = USER_PATH_ID)
     public ResponseEntity<UserDto> getUser(@PathVariable("userId") int userId) {
         if (usersService.getUser(userId).isEmpty()) {

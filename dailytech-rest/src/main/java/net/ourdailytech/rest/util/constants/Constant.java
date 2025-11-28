@@ -17,7 +17,7 @@ public class Constant {
     public static final String DEFAULT_SORT_BY = "id";
     public static final String DEFAULT_SORT_DIRECTION = "asc";
 
-    public static final String USER_PATH = "/api/users";
+    public static final String USER_PATH = "/users";
     public static final String USER_PATH_ID = USER_PATH + "/{userId}";
 
 
