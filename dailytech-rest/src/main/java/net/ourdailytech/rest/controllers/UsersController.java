@@ -24,7 +24,6 @@ import java.util.Optional;
 import static net.ourdailytech.rest.util.constants.Constant.*;
 
 
-@CrossOrigin(origins = "*")
 @RequestMapping(API)
 @RestController
 @Tag(
@@ -69,7 +68,6 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
-
     @GetMapping(value = USER_PATH_ID)
     public ResponseEntity<UserDto> getUser(@PathVariable("userId") int userId) {
         if (usersService.getUser(userId).isEmpty()) {
@@ -166,8 +164,9 @@ public class UsersController {
         Optional<UserDto> updated = usersService.updateUser(userDto);
         return updated.map(dto -> new ResponseEntity<>(
                 dto,
-                HttpStatus.CREATED)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NO_CONTENT));
+                HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
 
 
     @Operation(

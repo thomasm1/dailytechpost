@@ -13,10 +13,10 @@ const PostCreate = () => {
     "Musing Blockchain",
     "Sociology Now!",
     "A.I.Now",
-    "Quantum Data", 
+    "Quantum Data",
     "Web Dev Affairs"
   ];
-            
+
   return (
     <div className="post-create-container">
       <Form
@@ -38,15 +38,14 @@ const PostCreate = () => {
               categoryId: 12,
               blogcite: values.blogcite,
             });
-            
-            // Assuming the API returns the created post with an ID
-            const postId = response.data.id || response.data.pid;
+
+            const postId = response.id;
             setCreatedPostId(postId);
+            console.log(`Post ${postId} created successfully! Now you can add citations for your post.`);
+       
             setShowWeblinks(true);
-            alert("Post created successfully! Now you can add weblinks.");
           } catch (error) {
             console.error("Error creating post:", error);
-            alert("Error creating post. Please check the console for details.");
           }
         }}
       >
@@ -57,7 +56,7 @@ const PostCreate = () => {
               values={values}
               handleChange={handleChange} required />
             <FormGroup
-              label="Post" 
+              label="Post"
               rows={20}
               id="post" type="textarea"
               values={values}
@@ -70,9 +69,10 @@ const PostCreate = () => {
               <option value="Musing Blockchain">Musing Blockchain</option>
               <option value="Sociology Now!">Sociology Now!</option>
               <option value="A.I.Now">A.I.Now</option>
-              <option value="Quantum Data">Quantum Data</option> 
+              <option value="Quantum Data">Quantum Data</option>
               <option value="Web Dev Affairs">Web Dev Affairs</option>
             </FormGroup>
+          
             <div className="form-group">
               <label>News Articles</label>
               {newsOptions.map((option) => (
@@ -86,7 +86,7 @@ const PostCreate = () => {
                     checked={values.blogcite.includes(option)}
                     onChange={(e) => {
                       const currentNews = values.blogcite ? values.blogcite.split(', ').filter(Boolean) : [];
-                      
+
                       if (e.target.checked) {
                         const newNews = [...currentNews, option];
                         handleChange({
@@ -123,7 +123,7 @@ const PostCreate = () => {
       {showWeblinks && createdPostId && (
         <div className="mt-4">
           <hr />
-          <WebLinkForm 
+          <WebLinkForm
             postId={createdPostId}
             onWeblinkAdd={postsService.addWeblink}
           />

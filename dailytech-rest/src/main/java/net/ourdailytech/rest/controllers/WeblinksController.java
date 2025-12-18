@@ -17,7 +17,6 @@ import java.util.List;
         name = "CRUD REST APIs for Weblink Resource",
         description = "CRUD REST APIs - Create Weblink, Update Weblink, Get Weblink, Get All Weblinks, Delete Weblink"
 )
-@CrossOrigin(origins = "*")
 @RequestMapping(WeblinksController.API_WEBLINKS)
 @RestController
 public class WeblinksController {
