@@ -18,30 +18,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RequestMapping(path = Constant.API_POSTS)
-@CrossOrigin(origins = "*")
 @RestController
 public class PostEntityController {
 
     @Autowired
     private PostService postService;
 
-	@Autowired
-	private PostEntityMapper postMapper;
-
-    @Operation(
-            summary = "Create a new post",
-            description = "Create a new post"
-    )
-    @ApiResponse(responseCode = "201", description = "Post created")
-    @SecurityRequirement(
-            name = "Bearer Authentication"
-    )
-   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PostMapping({"", "/", "/create"})
-    public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
-        return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
-    }
-
+  
     @Operation(
             summary = "Get all posts",
             description = "Get all posts"
@@ -131,6 +114,21 @@ public class PostEntityController {
         List<PostEntityDto> postEntityDtoList = (List<PostEntityDto>) postService.getPostsByCategoryId(categoryId);
         return ResponseEntity.ok(postEntityDtoList);
     }
+
+  @Operation(
+            summary = "Create a new post",
+            description = "Create a new post"
+    )
+    @ApiResponse(responseCode = "201", description = "Post created")
+    @SecurityRequirement(
+            name = "Bearer Authentication"
+    )
+   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+    @PostMapping({"", "/", "/create"})
+    public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
+        return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
+    }
+
 
     @Operation(
             summary = "Get all posts by title",

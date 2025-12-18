@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dailytech
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    networks:
+      dailytech-mysql-net:
+
+  dailytech-rest:
+    container_name: dailytech-rest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysqldb
+    networks:
+      dailytech-mysql-net:
+        aliases:
+          - mapl-data
+
+networks:
+  dailytech-mysql-net:

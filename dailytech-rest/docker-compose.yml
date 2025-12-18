@@ -1,32 +1,69 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  mysqldb:
-    container_name: mysqldb
-    image: mysql
-    restart: on-failure
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: dailytech
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+  registry:
+    image: thomasm1/cryptomaven-registry:0.4.0
+    container_name: cryptomaven-registry
+    ports:
+      - "8761:8761"
     networks:
-      dailytech-mysql-net:
+      - cryptomaven-net
+
+  config:
+    image: thomasm1/cryptomaven-config:0.4.0
+    container_name: cryptomaven-config
+    ports:
+      - "8888:8888"
+    depends_on:
+      - registry
+    networks:
+      - cryptomaven-net
+
+  gateway:
+    image: thomasm1/cryptomaven-gateway:0.4.0
+    container_name: cryptomaven-gateway
+    ports:
+      - "9191:9191"
+    depends_on:
+      - registry
+      - config
+    networks:
+      - cryptomaven-net
+
+  auth:
+    image: thomasm1/cryptomaven-auth:0.4.0
+    container_name: cryptomaven-auth
+    ports:
+      - "8081:8081"
+    depends_on:
+      - registry
+      - config
+      - gateway
+    networks:
+      - cryptomaven-net
+
 
   dailytech-rest:
+    image: thomasm1/dailytech-rest:0.4.0
     container_name: dailytech-rest
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    restart: on-failure
     ports:
       - "8082:8082"
     depends_on:
-      - mysqldb
+      - registry
+      - config
     networks:
-      dailytech-mysql-net:
-        aliases:
-          - mapl-data
+      - cryptomaven-net
 
+  cryptomaven-rest:
+    image: thomasm1/cryptomaven-rest:0.4.0
+    container_name: cryptomaven-rest
+    ports:
+      - "8083:8083"
+    depends_on:
+      - registry
+      - config
+    networks:
+      - cryptomaven-net
 networks:
-  dailytech-mysql-net:
+  cryptomaven-net:
+    driver: bridge

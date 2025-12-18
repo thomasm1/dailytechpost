@@ -1,6 +1,9 @@
 package net.ourdailytech.rest.util.constants;
 
 public class Constant {
+
+    public static final String UI_ORIGIN = "http://3.217.82.219";
+
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";

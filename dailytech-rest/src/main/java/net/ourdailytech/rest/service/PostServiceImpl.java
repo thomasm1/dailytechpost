@@ -50,6 +50,7 @@ public class PostServiceImpl implements PostService {
 		PostEntityDto postResponse = postEntityMapper.toDto(newPostEntity);
 		return postResponse;
 	}
+
 	@Override
 	public PostEntityResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir) {
 

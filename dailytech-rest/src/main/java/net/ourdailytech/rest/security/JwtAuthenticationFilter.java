@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import java.io.IOException;
 
 @Component
@@ -31,6 +30,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         this.userDetailsService = userDetailsService;
     }
 
+    /**
+     * Skip filtering for GET and OPTIONS requests
+     * @param request current HTTP request
+     * @return
+     */
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String method = request.getMethod();
+        return "GET".equalsIgnoreCase(method) || "OPTIONS".equalsIgnoreCase(method);
+    }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -40,6 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String token = getTokenFromRequest(request);
 
         // validate token
+        try {
         if(StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)){
 
             // get username from token
@@ -57,6 +68,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
+        }  else {
+        // no token OR validateToken() returned false → anonymous user
+        SecurityContextHolder.clearContext();
+    }
+} catch (Exception ex) {
+    // Any exception (expired / malformed token etc.) → treat as NOT logged in
+    log.info("Invalid or expired token, continuing as anonymous", ex);
+            SecurityContextHolder.clearContext();
         }
 
         filterChain.doFilter(request, response);
@@ -67,7 +86,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String bearerToken = request.getHeader("Authorization");
 
         if(StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")){
-            return bearerToken.substring(7, bearerToken.length());
+            return bearerToken.substring(7);
         }
 
         return null;

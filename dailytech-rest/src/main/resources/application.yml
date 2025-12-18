@@ -1,5 +1,5 @@
 build:
-  version: "1.3.0"
+  version: "1.4.0"
 cryptomaven:
   message: "Welcome to DAILYTECH-REST APIs "
   contactDetails:
@@ -12,47 +12,65 @@ cryptomaven:
     - none
 
 ###################################################
+server.address: 0.0.0.0
 spring.application.name: DAILYTECH-REST
-spring.application.version: 1.3.0
+spring.application.version: 1.4.0
 server.port: 8082
-spring.profiles.active:  mysql # mysql-slim  # h2
+spring.profiles.active: mysql # mysql-slim  # h2
 
-spring.config.import: optional:configserver:http://localhost:8888
-eureka.instance.client.serverUrl.defaultZone: http://localhost:8761/eureka/
-spring.cloud.config.enabled: true # false
-spring.cloud.discovery.enabled: true # false
-spring.cloud.bootstrap.enabled: true # false
-eureka.client.register-with-eureka: true
-eureka.client.fetch-registry: true
-eureka.client.enabled: true
-cloud.config:
-  enabled: true
-  import-check:
-    enabled: true
+# Cloud-enabled configuration
+spring:
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    config:
+      enabled: false # SLIM Standalone
+      discovery:
+        enabled: ${spring.cloud.config.enabled}
+      import-check:
+        enabled: ${spring.cloud.config.enabled}
+      bootstrap.enabled: false
+      fail-fast: false 
+    bus:
+      enabled: false
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: ${spring.cloud.config.enabled}
+    fetch-registry: ${spring.cloud.config.enabled}
+    enabled: ${spring.cloud.config.enabled}
+  instance:
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+
+# INFO + ACTUATOR + DATA-REST + ZIPKIN-TRACING + SWAGGER
 info.app.name: ${spring.application.name}
 info.app.description: ${spring.application.name} CryptoCurrency Server Application
 info.app.version: ${spring.application.version}
 info.app.is-cloud: ${spring.cloud.config.enabled:false}
 spring.data.rest.base-path: /rest/
-
-# Spring AMQP + Actuator
-management.health.rabbit.enabled:  false
-management.health.binders.enabled: false
-spring.rabbitmq.host: localhost
-spring.rabbitmq.port: 5672
-spring.rabbitmq.username: guest
-spring.rabbitmq.password: guest
-
-##  info + actuator + data-rest + zipkin-tracing + swagger endpoints
-
-management.info.env.enabled: true
-management.endpoint.health.show-details: always #health,metrics
-management.endpoints.web.exposure.include: "*"
-#  zipkin-tracing
+#   actuator
 management:
-  tracing:
-    enabled: false
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #health,metrics
+  health:
+    binders:
+      enabled: false # disable actuator reporting MQ/Kafka indicators
+    rabbit:
+      enabled: false # disable actuator reporting rabbit indicators
+  tracing: #  zipkin-tracing
+    enabled: true
 spring.zipkin.base-url: http://127.0.0.1:9411/
 spring.sleuth.sampler.probability: 1.0
 #  swagger
@@ -63,15 +81,22 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
-  # Optional: limit scanning to controller package (helps avoid repo scan issues)
-  packages-to-scan: net.ourdailytech.rest.controller
-  # packages-to-exclude: net.ourdailytech.rest.repository
+  packages-to-scan: net.ourdailytech.rest.controller #
+  packages-to-exclude: net.ourdailytech.rest.repository
 # Log
 logging.level.org.springdoc: DEBUG
 logging.level.org.springframework.web: DEBUG
 logging.level.org.springframework: INFO
 
 spring.jmx.enabled: false
+# Spring AMQP + Actuator
+management.health.rabbit.enabled:  false
+spring.rabbitmq.listener.simple.auto-startup: false
+spring.rabbitmq.listener.simple.missing-queues-fatal: false
+spring.rabbitmq.host: localhost
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: guest
+spring.rabbitmq.password: guest
 #because the javax.management.InstanceAlreadyExistsException occurs when there is an attempt to register an MBean (Managed Bean) that has already been registered. JMX is used for managing and monitoring Java applications, \
 #  and Spring Boot automatically registers various MBeans for management purposes.
 

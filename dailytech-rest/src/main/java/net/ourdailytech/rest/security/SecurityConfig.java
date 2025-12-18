@@ -25,7 +25,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-//import org.springframework.security.authentication.AnonymousAuthenticationToken;
+//import org.springframework.securityOLD.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 import org.springframework.security.core.userdetails.User;
@@ -33,6 +33,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig;
+
 
 import java.util.function.Function;
 
@@ -65,7 +68,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public static PasswordEncoder passwordMaplEncoder() {
+    public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -79,9 +82,10 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         log.info("sec___________securityFilterChain__________________ filterChain");
 
-        //All URLs are protected A login form is shown for unauthorized requests 
-        http.csrf(AbstractHttpConfigurer::disable) // (csrf) ->csrf.disable()
-                .authorizeHttpRequests(auth -> auth
+
+        http.cors(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable) // disable CSRF for stateless APIs
+            .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Open API
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator

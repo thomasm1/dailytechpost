@@ -152,7 +152,7 @@ void testRegisterUser() throws Exception {
         mockMvc.perform(put("/api/users")  // ✅ Fixed path
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{ \"userId\": 1, \"email\": \"updated@example.com\" }"))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andExpect(jsonPath("$.email").value("updated@example.com"));
     }
 

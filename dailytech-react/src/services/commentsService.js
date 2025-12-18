@@ -1,6 +1,3 @@
- 
-
-
 
 import axios from 'axios';
 import { POSTS_BASE_URL } from '../config';

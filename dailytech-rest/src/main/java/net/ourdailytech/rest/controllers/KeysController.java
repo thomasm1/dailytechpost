@@ -13,7 +13,6 @@ import static net.ourdailytech.rest.util.constants.Constant.API_KEYS;
 
 
 @RestController
-@CrossOrigin(origins="*")
 @RequestMapping(API_KEYS)
 @SessionAttributes("name")
 public class KeysController {
