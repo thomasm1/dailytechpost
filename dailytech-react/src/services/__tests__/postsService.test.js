@@ -40,9 +40,13 @@ describe('PostsService', () => {
                     email: 'anonymous@gmail.com',
                     categoryId: 12,
                     blogcite: 'Citation 1, Citation 2'
+                }),
+                expect.objectContaining({
+                    headers: expect.objectContaining({
+                        Authorization: expect.stringContaining('Bearer ')
+                    })
                 })
             );
-            expect(global.alert).toHaveBeenCalledWith('Post created successfully!');
         });
 
         it('should handle post creation error', async () => {

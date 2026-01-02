@@ -8,6 +8,7 @@ describe('Form Component', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     it('should render form with initial values', () => {

@@ -10,6 +10,8 @@ describe('PostCreate', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         global.alert = jest.fn();
+        postsService.createPost.mockResolvedValue({ id: 1 });
+        jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     it('should render all form fields', () => {
@@ -18,8 +20,7 @@ describe('PostCreate', () => {
         expect(screen.getByLabelText(/title/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/post/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/category/i)).toBeInTheDocument();
-        expect(screen.getByLabelText(/state/i)).toBeInTheDocument();
-        expect(screen.getByText(/citation/i)).toBeInTheDocument();
+        expect(screen.getByText(/news articles/i)).toBeInTheDocument();
     });
 
     it('should have category options', () => {

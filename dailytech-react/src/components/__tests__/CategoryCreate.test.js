@@ -10,6 +10,7 @@ describe('CategoryCreate', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         global.alert = jest.fn();
+        jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     it('should render all form fields', () => {

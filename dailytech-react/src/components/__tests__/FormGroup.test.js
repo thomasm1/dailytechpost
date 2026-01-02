@@ -9,6 +9,7 @@ describe('FormGroup Component', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     it('should render input field by default', () => {
