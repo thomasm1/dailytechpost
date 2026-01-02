@@ -13,7 +13,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Disabled;
 
-
+@Disabled("Ignored except when specifically running integration tests")
 @ActiveProfiles("h2")
 @DataJpaTest
 @ComponentScan(basePackages = {"net.ourdailytech.rest.util"})

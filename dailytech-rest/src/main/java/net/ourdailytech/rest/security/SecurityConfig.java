@@ -4,9 +4,12 @@ package net.ourdailytech.rest.security;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -38,6 +41,9 @@ import org.springframework.security.config.annotation.web.configurers.HeadersCon
 
 
 import java.util.function.Function;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
 @Configuration
@@ -67,16 +73,28 @@ public class SecurityConfig {
         this.authenticationFilter = authenticationFilter;
     }
 
-    @Bean
-    public static PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+  @Value("${app.cors.allowed-origins:http://localhost:4200,http://localhost:3000,http://localhost:5000,http://18.219.100.84,https://blog.cryptomaven.xyz}")
+  private String allowedOriginsString;
+ 
+  private List<String> getAllowedOrigins() {
+    return Arrays.asList(allowedOriginsString.split(","));
+  }
+    // IMPORTANT: with allowCredentials(true), do NOT use "*" here.
+  @Bean
+  public CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration config = new CorsConfiguration();
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-        log.info("authenticationManager");
-        return configuration.getAuthenticationManager();
-    }
+    // IMPORTANT: with allowCredentials(true), do NOT use "*" here.
+    config.setAllowedOrigins(getAllowedOrigins());
+    config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    config.setAllowedHeaders(List.of("*"));
+    config.setExposedHeaders(List.of("*"));
+    config.setAllowCredentials(true);
+
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/api/**", config);
+    return source;
+  }
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -118,6 +136,17 @@ public class SecurityConfig {
         http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    public static PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+        log.info("authenticationManager");
+        return configuration.getAuthenticationManager();
     }
 
     // FORM

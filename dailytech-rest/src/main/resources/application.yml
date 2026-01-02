@@ -48,9 +48,10 @@ eureka:
 
 # INFO + ACTUATOR + DATA-REST + ZIPKIN-TRACING + SWAGGER
 info.app.name: ${spring.application.name}
-info.app.description: ${spring.application.name} CryptoCurrency Server Application
+info.app.description: ${spring.application.name} CryptoCurrency Blog Server Application
 info.app.version: ${spring.application.version}
 info.app.is-cloud: ${spring.cloud.config.enabled:false}
+info.app.message: "Welcome to DAILYTECH-REST APIs "
 spring.data.rest.base-path: /rest/
 #   actuator
 management:
@@ -121,6 +122,10 @@ spring.rabbitmq.password: guest
 app:
   jwt-secret: e037837c23ab0fe4f59e203ece8c0ddda2c70bfd5b5319fce2af9647be43b704
   jwt-expiration-milliseconds: 604800000
+  cors:
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:4200,http://localhost:3000,http://localhost:5000,http://18.219.100.84,https://blog.cryptomaven.xyz}
+  dailytech:
+    message: ${info.app.message}
 
 
 #spring.mvc.view.prefix=/WEB-INF/jsp
