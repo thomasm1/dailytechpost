@@ -8,7 +8,7 @@
 
       <section class="signup-form">
   <!-- <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleJwtLogin(f)" #f="ngForm"> -->
-    <form *ngIf="!adminFlag" fxLayout="column" fxLayoutAlign="center center"  [formGroup]="loginForm" (ngSubmit)="handleJwtLogin()" >
+    <form *ngIf="!adminFlag" class="centered-form" [formGroup]="loginForm" (ngSubmit)="handleJwtLogin()" >
 
       <mat-card-title>Login</mat-card-title>
           <!---->
@@ -39,7 +39,7 @@
           <h6  class="admin-flag" ><a *ngIf="!adminFlag" class="admin-flag" (click)="adminOpen()">  <hr>
             ADMIN LOGIN</a></h6>
 
-          <form *ngIf="adminFlag"  fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
+          <form *ngIf="adminFlag" class="centered-form" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
 
             <h6>ADMIN LOGIN</h6>
           <mat-form-field appearance="outline" >
@@ -51,7 +51,7 @@
           </mat-form-field>
 
 
-          <div class="row">
+          <div class="row buttons">
             <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
             <button  *ngIf="!(isLoading$ | async)" mat-raised-button color="basic">CANCEL</button>
             <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
@@ -69,7 +69,7 @@
     <div class="temp">
 
       <section class="register-form">
-        <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onRegister(f)" #f="ngForm">
+        <form class="centered-form" (ngSubmit)="onRegister(f)" #f="ngForm">
           <h6>REGISTER</h6>
           <!-- email (Used for User Auth) -->
           <mat-form-field appearance="outline">

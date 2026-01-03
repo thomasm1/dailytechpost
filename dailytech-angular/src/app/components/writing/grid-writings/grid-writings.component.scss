@@ -1,3 +1,13 @@
+.centered-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-40 {
+  width: 40%;
+}
+
 mat-table {
   min-height:500px;
 }

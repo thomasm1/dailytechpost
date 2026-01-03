@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment'
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -33,13 +33,12 @@ export class KeysService {
       .get(`${this.googleUrl}`)
       .subscribe((response) => {
         //console.log(response);
-        if (response["googleMapAPIKey"] != undefined) {
+        if (response["GOOGLE_API_KEY"] != undefined) {
           new Promise<void>((resolve) => {
             let script: HTMLScriptElement = document.createElement("script");
             script.addEventListener("load", (r) => resolve());
 
-            script.src = `http://maps.googleapis.com/maps/api/js?key=${response["googleMapAPIKey"][0]}`;
-            // script.src = `http://maps.googleapis.com/maps/api/js?key=${environment.googleMapAPIKey}`;
+            script.src = `http://maps.googleapis.com/maps/api/js?key=${response["GOOGLE_API_KEY"][0]}`; 
 
             document.head.appendChild(script);
           });
@@ -51,8 +50,7 @@ export class KeysService {
     this.http
       .get(`${this.nasaUrl}`)
       .subscribe((response) => {
-            // console.log(response["nasaAPIKey"][0]);
-            this.nasaApi = response["nasaAPIKey"][0];
+            this.nasaApi = response["NASA_API_KEY"][0];
       });
       return this.nasaApi;
   }
@@ -60,8 +58,7 @@ export class KeysService {
     this.http
       .get(`${this.nytUrl}`)
       .subscribe((response) => {
-            // console.log(response["NYT_API"][0]);
-            this.nytApi = response["NYT_API"][0];
+            this.nytApi = response["NYT_API_KEY"][0];
       });
       return this.nytApi;
   }

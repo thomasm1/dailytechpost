@@ -1,3 +1,11 @@
+.centered-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .blog-box {
   margin: 10 0;
     max-height:500px;

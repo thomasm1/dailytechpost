@@ -4,6 +4,26 @@ div.menu {
   // background-color: rgba(229, 229, 250, 0.575)
 }
 
+.centered-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.flex-500 {
+  width: 500px;
+}
+
+@media (max-width: 599px) {
+  .flex-500 {
+    width: 100%;
+  }
+}
+
 mat-card {
   border-radius:5px;
   min-height: 600px;

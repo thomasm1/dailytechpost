@@ -4,6 +4,38 @@
    cursor: pointer;
  }
 
+ .menu-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .navigation-items {
+   display: flex;
+   flex-direction: row;
+ }
+
+ .nav-gap-10 {
+   gap: 40px;
+ }
+
+ .hide-xs {
+   display: flex;
+ }
+
+ .hide-gt-xs {
+   display: none;
+ }
+
+ @media (max-width: 599px) {
+   .hide-xs {
+     display: none !important;
+   }
+   .hide-gt-xs {
+     display: block;
+   }
+ }
+
  h1,
  h2,
  h3,
@@ -22,6 +54,7 @@
  }
 mat-toolbar {
     height:80px;
+    position: relative;
 }
 mat-toolbar.mat-primary {
     background: #673ab75c;
@@ -30,6 +63,16 @@ mat-toolbar.mat-primary {
 div.menu {
   background-image: url("../../../assets/bluechipTile.jpg");
 }
+
+ .menu-center {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
 #menu-list a {
 
   color:rgba(255, 255, 255, 0.497);

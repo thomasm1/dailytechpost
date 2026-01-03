@@ -1,3 +1,14 @@
+.centered-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-1 {
+  gap: 1px;
+}
+
 .nfts {
     min-height:1600px;
 

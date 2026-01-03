@@ -1,3 +1,28 @@
+.centered-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.gap-25 {
+  gap: 25px;
+}
+
 .server-button {
     min-width:220px;
 }

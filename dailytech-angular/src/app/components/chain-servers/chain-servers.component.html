@@ -1,11 +1,11 @@
 <div class="container">
-  <section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+  <section class="centered-row gap-25">
 
     <div class="row">
-      <div fxLayout="column" fxLayoutAlign="center end">
+      <div class="centered-column align-end">
         <app-console (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-console>  
        </div>
-       <div fxLayout="column" fxLayoutAlign="center start">
+       <div class="centered-column align-start">
         <app-server *ngFor="let server of servers" [srvElement]="server" [name]="server.name">
           <p #contentParagraph>
             <strong *ngIf="server.type === 'polygon'"

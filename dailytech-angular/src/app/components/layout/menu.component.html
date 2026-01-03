@@ -1,16 +1,19 @@
 <div class="menu">
   <mat-toolbar color="primary">
-    <mat-toolbar class="logo-box" routerLink="/">
+    <div class="logo-box" routerLink="/">
       <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
-    </mat-toolbar>
-    <div fxHide.gt-xs>
+    </div>
+    
+    <span class="spacer"></span>
+    
+    <div class="hide-gt-xs">
       <button mat-icon-button (click)="onToggleSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
     
-    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs id="menu-list">
-      <!-- <mat-nav-list fxLayout fxLayoutGap="10px" class="navigation-items">
+    <div class="menu-center hide-xs" id="menu-list">
+      <mat-nav-list class="navigation-items nav-gap-10">
  
         <a 
         mat-list-item routerLink="/writing" 
@@ -57,7 +60,7 @@
           class="nav-link daily-tech monoton"
           >SIGN OUT</a
         >
-      </mat-nav-list> -->
+      </mat-nav-list>
     </div>
   </mat-toolbar>
 </div>

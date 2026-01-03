@@ -16,10 +16,10 @@
                         <h6 *ngIf="getPostFromService">{{getPostFromService}}</h6>
                     </div>
                 </div>
-                <section class="new-writing" fxLayout fxLayoutAlign="center">
-                    <mat-card fxFlex.xs="100%" fxFlex="100%">
-                        <mat-card-title fxLayoutAlign="center">Time to Write!</mat-card-title>
-                        <mat-card-content fxLayoutAlign="center">
+                <section class="new-writing centered-row">
+                    <mat-card class="flex-100">
+                        <mat-card-title class="centered-text">Time to Write!</mat-card-title>
+                        <mat-card-content class="centered-text">
                             <mat-form-field>
                                 <mat-select placeholder="Category">
                              <!--        <mat-option *ngFor="let cat of cat3" [value]="cat.value">
@@ -45,7 +45,7 @@
                                 </mat-select>
                             </mat-form-field>
                         </mat-card-content>
-                        <mat-card-actions fxLayoutAlign="center">
+                        <mat-card-actions class="centered-text">
                             <button type="submit" mat-button (click)="onStartWriting()">Start</button>
                         </mat-card-actions>
                     </mat-card>

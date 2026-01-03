@@ -15,6 +15,21 @@
     /* display: grid;
     place-items: center; */
 }
+
+.centered-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.flex-100 {
+  width: 100%;
+}
+
 .new-writing {
   padding: 30px;
 }

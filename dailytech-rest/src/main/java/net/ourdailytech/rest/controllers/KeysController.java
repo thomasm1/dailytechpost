@@ -77,4 +77,12 @@ public class KeysController {
 		info.computeIfAbsent("GEMINI_API_KEY", key -> new HashSet<>()).add(newkey);
 		return info;
 	}
+
+	@GetMapping("/getOpenAIApi")
+	public Map<String, Set<String>> getOpenAIApi() {
+		Map<String, Set<String>> info = new HashMap<>();
+		String newkey =  System.getenv("OPENAI_API_KEY");
+		info.computeIfAbsent("OPENAI_API_KEY", key -> new HashSet<>()).add(newkey);
+		return info;
+	}
 }

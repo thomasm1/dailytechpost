@@ -1,9 +1,9 @@
-<section class="new-writing" fxLayout fxLayoutAlign="center">
+<section class="new-writing centered-row">
     <form   (ngSubmit)="onStartWriting(f)" #f="ngForm">
        <div class="menu">
-        <mat-card fxFlex.xs="100%" fxFlex="500px">
-          <mat-card-title fxLayoutAlign="center">Time to Write!</mat-card-title>
-          <mat-card-content fxLayoutAlign="center">
+        <mat-card class="flex-500">
+          <mat-card-title class="centered-text">Time to Write!</mat-card-title>
+          <mat-card-content class="centered-text">
               <mat-form-field  class="white" *ngIf="!isLoading && writingMods$ | async">
 
                   <mat-select placeholder="Category" ngModel name="writing" required>
@@ -15,7 +15,7 @@
               </mat-form-field>
               <mat-spinner *ngIf="isLoading"></mat-spinner>
           </mat-card-content>
-          <mat-card-actions fxLayoutAlign="center" *ngIf="!isLoading">
+          <mat-card-actions class="centered-text" *ngIf="!isLoading">
               <button  *ngIf="writingMods$ | async" type="submit" mat-raised-button  [disabled]="f.invalid">Start</button>
               <button  *ngIf="!(writingMods$ | async)" type="button" mat-raised-button  (click)="fetchWritings()">Fetch Again</button>
           </mat-card-actions>

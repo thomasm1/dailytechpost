@@ -1,7 +1,7 @@
-<div fxLayoutAlign="center center">
-  <mat-form-field fxFlex="40%">
+<div class="centered-row">
+  <mat-form-field class="flex-40">
     <!-- <input type="text" (keyup)="blogFilter($event.target.value)" placeholder="Mod Filter"> -->
-    <input matInput type="text" (keyup)="blogFilter($event.target.value)" placeholder="Mod Filter">
+    <input matInput type="text" (keyup)="blogFilter($any($event.target).value)" placeholder="Mod Filter">
   </mat-form-field>
 </div>
 

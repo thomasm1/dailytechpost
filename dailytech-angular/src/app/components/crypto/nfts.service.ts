@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { KeysService } from '../../service/keys.service';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from "src/environments/environment";
+import { environment } from "../../../environments/environment";
 import { Observable, throwError } from "rxjs";
 // import Moralis from 'moralis'.default();
 // import { EvmChain } from '@moralisweb3/evm-utils'

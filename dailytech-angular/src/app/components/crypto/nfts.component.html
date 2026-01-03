@@ -6,13 +6,13 @@
   </section>
 
   <section>
-    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="nftData">
+    <div class="centered-row" *ngIf="nftData">
       <app-chaindata [nftData]="nftData"></app-chaindata>
     </div>
   </section>
 
   <section>
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1px" *ngIf="nfts">
+    <div class="centered-row gap-1" *ngIf="nfts">
       <app-nft *ngFor="let nft of nftData.nfts" [inputNft]="nft" [nftData]="nftData"></app-nft>
 
     </div>

@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { KeysService } from 'src/app/service/keys.service';
 import { Nasa } from '../../models/nasa.model';
 import { Observable } from 'rxjs';
@@ -22,7 +22,7 @@ export class NasaService {
 
   constructor(private http: HttpClient, private keyService: KeysService) {
     this.json_url = environment.json_url; //local-server
-    this.awsNasaUrl = environment.awsNasaUrl; // AWS ENDPOINT
+    this.awsNasaUrl = environment.nasa_url; // AWS ENDPOINT
 
     this.getNasaStores().subscribe(
       (response) => {
