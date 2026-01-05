@@ -3,7 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { BlogsService } from '../blogs.service';
-import { Post } from 'src/app/models/Post';
+import { Blog } from 'src/app/models/blog.model';
 import { MatDialog } from '@angular/material/dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
@@ -18,7 +18,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
 
   username: string;
   // blogsUpdated = new Subject();
-  blog: Post;
+  blog: Blog;
   blogs = [];
 
   blogsWeb = [];

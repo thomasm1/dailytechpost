@@ -1,62 +1,81 @@
 <div class="menu">
   <mat-toolbar color="primary">
     <div class="logo-box" routerLink="/">
-      <img class="logo" alt="DailyTech Logo" src="assets/blueColorTriomphe.png" />
+      <img
+        class="logo"
+        alt="DailyTech Logo"
+        src="assets/blueColorTriomphe.png"
+      />
     </div>
-    
+
     <span class="spacer"></span>
-    
+
     <div class="hide-gt-xs">
       <button mat-icon-button (click)="onToggleSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-    
+
     <div class="menu-center hide-xs" id="menu-list">
       <mat-nav-list class="navigation-items nav-gap-10">
- 
-        <a 
-        mat-list-item routerLink="/writing" 
-        class="nav-link daily-tech monoton" 
-        *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()"
+        <a
+          mat-list-item
+          routerLink="/writing"
+   routerLinkActive="active-link"
+          class="nav-link daily-tech monoton"
+          *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
           >WRITE!
-          </a>
+        </a>
 
         <a
           mat-list-item
           *ngIf="adminAuthService.isAdminLoggedIn()"
           routerLink="/admin/user"
+   routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >ADMIN CONSOLE</a
         >
- 
-        <a mat-list-item routerLink="" class="nav-link daily-tech monoton"
-          >BLOG</a
-        >      
-        <a mat-list-item routerLink="/stats" 
-        *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async )"
+
+        <a mat-list-item 
+        routerLink="" 
+   routerLinkActive="active-link"
+   [routerLinkActiveOptions]="{exact: true}"
         class="nav-link daily-tech monoton"
-        >FILTER</a
-      >
-        <a mat-list-item routerLink="/news" class="nav-link daily-tech monoton"
-        >NEWS</a
-      >
-      <a mat-list-item routerLink="/nasa" class="nav-link daily-tech monoton"
-        >NASA</a
-      >
+          >BLOG</a
+        >
         <a
           mat-list-item
-          *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async )"
+          routerLink="/stats"
+   routerLinkActive="active-link"
+          *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
+          class="nav-link daily-tech monoton"
+          >STATS</a
+        >
+        <a mat-list-item routerLink="/news" 
+   routerLinkActive="active-link"
+   class="nav-link daily-tech monoton"
+          >NEWS</a
+        >
+        <!-- <a mat-list-item routerLink="/nasa" 
+   routerLinkActive="active-link"
+   class="nav-link daily-tech monoton"
+          >NASA</a
+        > -->
+        <a
+          mat-list-item
+          *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
           routerLink="/login"
+          routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >LOGIN</a
         >
         <a
           mat-list-item
           class="pointer"
-          *ngIf="(isAuth$ | async ) || adminAuthService.isAdminLoggedIn()"
+          *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
           (click)="onLogout(); adminAuthService.logout()"
           routerLink="/login"
+          routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >SIGN OUT</a
         >
@@ -64,4 +83,3 @@
     </div>
   </mat-toolbar>
 </div>
-

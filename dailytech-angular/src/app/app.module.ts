@@ -19,7 +19,7 @@ import { reducers } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { BlogsPublicModule } from './blogs-public.module';
 // PIPES
 import { TitleCasePipe } from '@angular/common';
 import { PipeCapitalizeCategoryPipe } from './utility/pipe-capitalize-category.pipe';
@@ -37,9 +37,9 @@ import { NewsService } from './components/news/news.service';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { PostComponent } from './components/post-dir/post/post.component';
 import { AnimationComponent } from './components/util/animation/animation.component';
-import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
+import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
+import { PostEntityComponent } from './components/post-dir/post/post-entity.component';
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-list.component';
 
@@ -52,7 +52,6 @@ import { AuthModule } from './auth.module';
 import { WritingModule } from './writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
-import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component';
 import { NasaComponent } from './components/nasa/nasa.component';
 
 // NEWS
@@ -82,14 +81,13 @@ import { GrootService } from './service/groot.service';
         FooterComponent,
         SidenavListComponent,
         MenuComponent,
-        PostComponent,
-        PostsViewerComponent,
+         PostEntityComponent,
+         PostEntityViewerComponent,
         BlogComponent,
         BlogsListComponent,
         PostCancelComponent,
         BlogModalComponent,
-        BlogsComponent,
-        BlogsGridComponent,
+        BlogsComponent, 
         NasaComponent,
         //CRYPTO
         NftsComponent,
@@ -133,6 +131,7 @@ import { GrootService } from './service/groot.service';
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
         AngularFirestoreModule,
+           BlogsPublicModule,
         // provideFirebaseApp(() => initializeApp(environment.firebase)),
         // provideAuth(() => getAuth()),
         // provideFirestore(() => getFirestore()), 

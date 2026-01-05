@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Post } from '../../models/Post';
+import { PostEntity } from '../../models/PostEntity.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostDataService {
+export class PostEntityService {
 
   baseUrl:string;
 
@@ -16,14 +16,17 @@ export class PostDataService {
     this.baseUrl = environment.API_URL;
 
    }
-
+createBasicAuthenticationHttpHeader() {
+  let bearerAuthHeaderString = 'Bearer ' + sessionStorage.getItem('token');
+     bearerAuthHeaderString;
+return new HttpHeaders({
+          Authorization: bearerAuthHeaderString
+      }) 
+  }
    retrieveAllPosts() {
-    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    // let header = new HttpHeaders({
-    //     Authorization: basicAuthHeaderString
-    // })
-    return this.http.get<Post[]>(`${this.baseUrl}/posts`,
-    // {headers: header}
+     let header = this.createBasicAuthenticationHttpHeader();
+    return this.http.get<PostEntity[]>(`${this.baseUrl}/posts`,
+    {headers: header}
     )
   }
   retrieveAllPostsByUsername(username) {
@@ -31,7 +34,7 @@ export class PostDataService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post[]>(`${this.baseUrl}/posts/username/${username}`,
+    return this.http.get<PostEntity[]>(`${this.baseUrl}/posts/username/${username}`,
     // {headers: header}
     )
   }
@@ -41,7 +44,7 @@ export class PostDataService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post[]>(`${this.baseUrl}/posts/email/${email}`,
+    return this.http.get<PostEntity[]>(`${this.baseUrl}/posts/email/${email}`,
     // {headers: header}
     )
   }
@@ -50,7 +53,7 @@ export class PostDataService {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<Post>(`${this.baseUrl}/dailytech/${username}/posts/${id}`,
+    return this.http.get<PostEntity>(`${this.baseUrl}/dailytech/${username}/posts/${id}`,
     // {headers: header}
     )
   }

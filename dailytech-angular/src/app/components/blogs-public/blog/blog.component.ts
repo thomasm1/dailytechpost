@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../blogs.service';
-import { Post } from 'src/app/models/Post';
+import { Blog } from 'src/app/models/blog.model';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   @Input() blogName: string;
   @Output() blogClicked = new EventEmitter();
   private id: string;
-  public blog: Post;
+  public blog: Blog;
   blogsLoading = true;
   constructor(
     private route: ActivatedRoute,

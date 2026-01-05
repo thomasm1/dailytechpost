@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AnimationComponent } from '../../util/animation/animation.component';
 import { Subscription } from 'rxjs'; 
-import { PostDataService } from '../post-data.service';
+import { PostEntityService } from '../post-entity.service';
 
 @Component({
   selector: 'app-posts-viewer',
   templateUrl: './posts-viewer.component.html',
   styleUrls: ['./posts-viewer.component.scss']
 })
-export class PostsViewerComponent implements OnInit, OnDestroy {
+export class PostEntityViewerComponent implements OnInit, OnDestroy {
 
   toState = 'state1';
   username: string;
@@ -17,7 +17,7 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
   blogs = ['a','b','c'];
   posts = [];
 
-  constructor(private postDataService: PostDataService) { }
+  constructor(private postEntityService: PostEntityService) { }
 
   ngOnInit() {
      this.username = sessionStorage.getItem('AuthenticatedUser');
@@ -25,7 +25,7 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
 
     // this.blogs = this.postDataService.retrieveAllPosts();
     // this.postsSubscription =
-    this.postDataService.retrieveAllPostsByUsername(this.username).subscribe((response) => {
+    this.postEntityService.retrieveAllPostsByUsername(this.username).subscribe((response) => {
       console.log(response);
       this.posts = response;
     });
@@ -35,7 +35,7 @@ export class PostsViewerComponent implements OnInit, OnDestroy {
   }
 
   refreshPosts() {
-    this.postDataService.retrieveAllPostsByUsername(this.username).subscribe(
+    this.postEntityService.retrieveAllPostsByUsername(this.username).subscribe(
       response => {
         console.log(response);
         this.posts = response;

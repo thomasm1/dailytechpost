@@ -1,68 +1,82 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject } from 'rxjs';
- 
-import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
-import { Post } from 'src/app/models/Post';
-
+import { tap } from 'rxjs/operators';
+import { Blog } from '../../models/blog.model';
+import { environment } from '../../../environments/environment';
+import { Subject } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogsService {
 
-  baseAwsUrl:string;
+  baseAwsUrl: string;
+  private allBlogsCache: Blog[] = null;
 
   constructor(private http: HttpClient) { }
 
-
- private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
- protected urlDevAll: string = `${environment.awsUrlDevAll}`;
-
-  protected urlDevId: string = `${environment.awsUrlDevId}`; // ByID   (or dev)
- 
-
-  // private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  protected urlDevAll: string = `${environment.awsUrlDevAll}`;
+  protected urlDevId: string = `${environment.awsUrlDevId}`; // ByID (or dev)
 
   blogsUpdated = new Subject();
   private blogs;
 
-  getAllBlogs() {
-    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    // let header = new HttpHeaders({
-    //     Authorization: basicAuthHeaderString
-    // })
-    return this.http.get<Post[]>(`${this.urlDevAll}/dev/posts`  // ,
-    )
+  getAllBlogs(): Observable<Blog[]> {
+    if (this.allBlogsCache) {
+      console.log('Returning cached blogs:', this.allBlogsCache.length);
+      return of(this.allBlogsCache);
+    }
+    
+    const url = `${this.urlDevAll}/dev/posts`;
+    console.log('Fetching all blogs from AWS Lambda:', url);
+    
+    return this.http.get<Blog[]>(url).pipe(
+      tap(blogs => {
+        console.log('Received blogs from AWS:', blogs.length);
+        this.allBlogsCache = blogs;
+      })
+    );
   }
 
-  getBlog(id) {
-    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    // let header = new HttpHeaders({
-    //     Authorization: basicAuthHeaderString
-    // })
-    console.log(id)
-    return this.http.get<Post>(`${this.urlDevId}/dev/post/${id}`,
-      // {headers: header}
-    )
+  getBlog(id): Observable<Blog> {
+    if (this.allBlogsCache){
+      const cachedBlog = this.allBlogsCache.find(blog => blog.id === id);
+      if (cachedBlog) {
+        console.log('Returning cached blog with id:', id);
+        return of(cachedBlog);
+      }
+    }
+    const url = `${this.urlDevId}/dev/posts/${id}`;
+    console.log('Fetching blog by id from AWS Lambda:', url);
+    return this.http.get<Blog>(url);
   }
 
   getCategories(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.urlDevAll}/dev/posts/cat3s`);
+  if (this.allBlogsCache){
+    const categories = Array.from(new Set(this.allBlogsCache.map(blog => blog.cat3).filter(cat => cat)));
+    console.log('Returning cached categories:', categories);
+    return of(categories);
+    }
+    return of([]);
+ 
   }
 
-  getBlogsByCategories(cat3s: string[]): Observable<any[]> {
-    return this.http.post<any[]>(`${this.urlDevAll}/dev/posts/blogs`, { cat3s });
+  getBlogsByCategories(category: string): Observable<Blog[]> {
+     if (this.allBlogsCache){
+      const filteredBlogs = this.allBlogsCache.filter(blog => blog.cat3 === category);
+      if (filteredBlogs.length > 0) {
+        console.log('Returning cached blogs with category:', category);
+        return of(filteredBlogs);
+      }
+    }
+    return of([]);
   }
-  // getBlogsArray() {
-  //   console.log(this.blogs);
-  //   return [...this.blogs];
-  // }
 
   hideBlog(blogName: string) {
     this.blogs = this.blogs.filter(b => b !== blogName);
-    this.blogsUpdated.next({value: this.blogs});
+    this.blogsUpdated.next({ value: this.blogs });
   }
-
 }

@@ -1,47 +1,160 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Blogs by Category</mat-card-title>
-    </mat-card-header>
-    <mat-card-content> 
+<div class="blogs-grid-container">
+  <!-- Loading State -->
+  <mat-card *ngIf="loading" class="loading-card">
+    <mat-progress-spinner
+      mode="indeterminate"
+      diameter="50"
+    ></mat-progress-spinner>
+    <p>Loading blog statistics...</p>
+  </mat-card>
 
-<div *ngIf="blogs.length > 0">
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Blog </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let blog of blogs">
-                <td>{{ blog.cat3 }}</td>
-                <td>{{ blog.title }}</td>
-                <td>{{ blog.post }}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-    </mat-card-content>
-    <mat-card-actions>
-       
-<div>
-    <button (click)="getCategories()">Retrieve blogs by Category</button>
-    <table>
-        <thead>
-            <tr>
-            SELECT     &nbsp; CATEGORIES
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let category of categories">
-            <td>
-                <input type="checkbox" (change)="onCheckboxChange($event, category)" />
+  <!-- Main Content -->
+  <div *ngIf="!loading">
+    <!-- Overall Statistics Cards -->
+    <div class="stats-overview" *ngIf="statistics">
+      <mat-card class="stat-card">
+        <mat-card-header>
+          <mat-icon>article</mat-icon>
+          <mat-card-title>Descriptive Stats</mat-card-title>
+        </mat-card-header >
+        <mat-card-content>
+          <div class="descriptive-stats">
+            <div class="descriptive-column">
+              <p>Component Loaded: Yes</p>
+              <!-- <p>Loading: {{ loading }}</p> -->
+              <p>Total Blogs: {{ statistics.totalBlogs | number }}</p>
+              <p>Total Words: {{ statistics.totalWordCount | number }}</p>
+              <p>Avg: {{ statistics.averageWordCount | number }}</p>
+            </div>
+            <div class="descriptive-column">
+              <!-- <p>Total Comments: {{ statistics.totalComments | number }}</p> -->
+              <p>All Blogs Count: {{ allBlogs.length }}</p>
+              <p>Filtered Blogs Count: {{ blogs.length }}</p>
+              <p>Categories Count: {{ categories.length }}</p>
+              <p>Selected Categories: {{ selectedCategories.length }}</p>
+            </div>
+          </div>
+ 
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Category Filter Section -->
+    <mat-card class="filter-section">
+      <mat-card-header>
+        <div  class="centered-header-flex" style="display: flex; align-items: baseline; gap: 12px">
+          <mat-card-title  class="centered-header ">Category Statistics Filter </mat-card-title>
+          <mat-card-subtitle
+            >{{ categories.length }} categories available</mat-card-subtitle
+          >
+        </div>
+      </mat-card-header>
+          <hr />
+      <mat-card-content>
+        <div *ngIf="categories.length === 0" class="no-categories">
+          <p>No categories found. Loading {{ allBlogs.length }} blogs...</p>
+        </div>
+        <form [formGroup]="categoriesForm" *ngIf="categories.length > 0">
+          <div class="categories-grid-two-column">
+            <mat-checkbox
+              *ngFor="let category of categories"
+              (change)="onCheckboxChange($event, category)"
+              color="primary"
+            >
+              {{ category }}&nbsp;
+            </mat-checkbox>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!fetchBlogsEnabled"
+          (click)="fetchBlogs()"
+        >Calculate Stats ({{ selectedCategories.length }} selected)
+        </button>
+        <button mat-raised-button (click)="resetFilters()">
+          Reset Filters
+        </button>
+      </mat-card-actions>
+    
+      <mat-card-header>        
+        <mat-card-subtitle>{{ blogs.length }} blogs selected</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="categoryStats" class="stats-table">
+          <!-- Category Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let stat">{{ stat.category }}</td>
+          </ng-container>
+
+          <!-- Count Column -->
+          <ng-container matColumnDef="count">
+            <th mat-header-cell *matHeaderCellDef>Blog Count</th>
+            <td mat-cell *matCellDef="let stat">{{ stat.count }}</td>
+          </ng-container>
+
+          <!-- Avg Word Count Column -->
+          <ng-container matColumnDef="avgWordCount">
+            <th mat-header-cell *matHeaderCellDef>Avg Word Count</th>
+            <td mat-cell *matCellDef="let stat">
+              {{ stat.avgWordCount | number }}
             </td>
-            <td>{{ blog.cat3  }}</td>
-        </tr>
-    </tbody>
-    </table>
-    <button [disabled]="!fetchBlogsEnabled" (click)="fetchBlogs()">Fetch Blogs</button>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="categoryColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: categoryColumns"></tr>
+        </table>
+      </mat-card-content>
+    <!-- </mat-card>
+ 
+    <mat-card *ngIf="blogs.length > 0" class="posts-table-section"> -->
+      <mat-card-header class="centered-header-flex">
+        <mat-card-title class="centered-header "> {{ blogs.length }} Blog Posts</mat-card-title>
+ 
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="blogs" class="full-width">
+
+             <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let blog">{{ blog.did }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef class="title-column">Title</th>
+            <td mat-cell *matCellDef="let blog">{{ stripHtml(blog.title)  }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef class="cat3-column">Category</th>
+            <td mat-cell *matCellDef="let blog">{{ blog.cat3 }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="wordCount">
+            <th mat-header-cell *matHeaderCellDef>Words</th>
+            <td mat-cell *matCellDef="let blog">
+              {{ (blog.wordCount || calculateWordCount(blog.post || '')) | number }}
+            </td>
+          </ng-container>
+       
+          <ng-container matColumnDef="preview">
+            <th mat-header-cell *matHeaderCellDef class="preview-column">&nbsp; &nbsp; Preview</th>
+            <td mat-cell *matCellDef="let blog">
+              {{ stripHtml(blog.post) | slice : 0 : 100 }}...
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="blogColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: blogColumns" 
+            class="clickable-row"
+            
+            (click)="navigateToBlog(row)"
+            ></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
-    </mat-card-actions>
-</mat-card>

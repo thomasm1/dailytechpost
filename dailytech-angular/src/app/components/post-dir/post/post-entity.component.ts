@@ -1,13 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { PostDataService } from '../post-data.service';
-import { Post } from '../../../models/Post';
+import { PostEntityService } from '../post-entity.service';
+import {  PostEntity } from '../../../models/PostEntity.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PostCancelComponent } from '../post-cancel/post-cancel.component';
 
 @Component({
   selector: 'app-post',
-  templateUrl: './post.component.html',
+  templateUrl: './post-entity.component.html',
   styles: [
     `
     .ng-invalid:not(form) {
@@ -16,7 +16,7 @@ import { PostCancelComponent } from '../post-cancel/post-cancel.component';
     `
   ]
 })
-export class PostComponent implements OnInit {
+export class PostEntityComponent implements OnInit {
   @Output() writingExit = new EventEmitter();
 
   progress = 0;
@@ -24,11 +24,11 @@ export class PostComponent implements OnInit {
 
   id: number;
   username: string;
-  post: Post;
+  post: PostEntity;
 
   constructor(
     private dialog: MatDialog,
-    private postService: PostDataService,
+    private postEntityService: PostEntityService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -36,11 +36,11 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.startOrResumeWriting();
     this.id = this.route.snapshot.params['id'];
-    this.post = new Post(this.id, '', '', '', '', '', '', '', '');
+    this.post = new PostEntity(this.id, '', '', '', '', '', '', '', '');
 
     if (this.id != -1) {
       this.username = sessionStorage.getItem('AuthenticatedUser');
-      this.postService.retrievePost(this.username, this.id).subscribe(
+      this.postEntityService.retrievePost(this.username, this.id).subscribe(
         data => this.post = data
       )
     }
@@ -56,7 +56,7 @@ export class PostComponent implements OnInit {
 
   savePost() {
     if (this.id === -1) {
-      this.postService.createPost(this.username, this.post)
+      this.postEntityService.createPost(this.username, this.post)
         .subscribe(
           data => {
             console.log(data)
@@ -64,7 +64,7 @@ export class PostComponent implements OnInit {
           }
         )
     } else {
-      this.postService.updatePost(this.username, this.id, this.post)
+      this.postEntityService.updatePost(this.username, this.id, this.post)
         .subscribe(
           data => {
             console.log(data)

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Post } from '../../models/Post';
+import { Blog } from '../../models/blog.model';
 import { environment } from '../../../environments/environment';
 
 import { catchError, shareReplay } from 'rxjs/operators';
@@ -10,9 +10,9 @@ import { BehaviorSubject, throwError,  Observable, Subject } from 'rxjs'; //catc
   providedIn: 'root'
 })
 export class BlogsStore  {
-  private subjectBlogsUpdated = new BehaviorSubject<Post[]>([]);
+  private subjectBlogsUpdated = new BehaviorSubject<Blog[]>([]);
 
-  blogsUpdated$: Observable<Post[]> = this.subjectBlogsUpdated.asObservable();
+  blogsUpdated$: Observable<Blog[]> = this.subjectBlogsUpdated.asObservable();
 
   constructor(
     private httpClient: HttpClient
@@ -51,12 +51,12 @@ export class BlogsStore  {
      const posts = this.subjectBlogsUpdated.getValue();
 
      const postIndex = posts.findIndex(post => +post.id == id); 
-     const newPost: Post = {
+     const newPost: Blog = {
          ...posts[postIndex],
          ...changes
      };
 
-     const newPosts: Post[] = posts.slice(0);
+     const newPosts: Blog[] = posts.slice(0);
      newPosts[postIndex] = newPost;
 
      this.subjectBlogsUpdated.next(newPosts);  
@@ -76,7 +76,7 @@ export class BlogsStore  {
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.httpClient.get<Post[]>(`${this.urlDev}/posts`  // ,
+    return this.httpClient.get<Blog[]>(`${this.urlDev}/posts`  // ,
     )
   }
 
@@ -86,7 +86,7 @@ export class BlogsStore  {
     //     Authorization: basicAuthHeaderString
     // })
     console.log(id)
-    return this.httpClient.get<Post>(`${this.urlDev2}/post/${id}`,
+    return this.httpClient.get<Blog>(`${this.urlDev2}/post/${id}`,
       // {headers: header}
     )
   }

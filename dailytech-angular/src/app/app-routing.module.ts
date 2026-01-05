@@ -7,8 +7,8 @@ import { SignonComponent } from './components/user/signon/signon.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { AdminComponent } from './components/user/admin.component';
 import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
-import { PostComponent } from './components/post-dir/post/post.component';
-import { PostsViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
+import { PostEntityComponent } from './components/post-dir/post/post-entity.component';
+import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-list.component';
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { WritingComponent } from './components/writing/writing.component';
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'blogs/:cat', component: BlogsComponent},
   { path: 'blog/:id', component: BlogComponent },
   
-  { path: 'posts', component: PostsViewerComponent },
+  { path: 'posts', component: PostEntityViewerComponent },
   { path: 'writing', component: WritingComponent}, 
   { path: 'premium', component: WritingComponent, canActivate:[UserGuardService]},   // temp
   { path: 'nasa', component: NasaComponent }, 
@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'search', component: NewsArticleSearchComponent },
 
   { path: 'admin/posts', component: PostsListComponent},
-  { path: 'admin/post/:id', component: PostComponent, canActivate:[AdminGuardService]},
+  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AdminGuardService]},
   { path: 'admin/:name', component: AdminComponent, canActivate:[AdminGuardService]},
 
 

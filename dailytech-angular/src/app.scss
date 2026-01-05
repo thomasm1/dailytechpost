@@ -19,6 +19,26 @@ $background-color: rgb(46, 73, 152);
 $msg-color: white;
 $color: #fff;
 
+@import '~@angular/material/theming';
+
+// Include the core styles for Angular Material
+@include mat-core();
+
+// Define a custom theme (optional, but recommended)
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for Angular Material components
+@include angular-material-theme($theme);
+
+// Custom global styles
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 body {
     font-family: $font-roboto;
     color: rgb(61, 58, 151);

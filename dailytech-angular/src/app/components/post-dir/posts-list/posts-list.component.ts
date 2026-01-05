@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostDataService } from '../post-data.service';
+import { PostEntityService } from '../post-entity.service';
 import { Router } from '@angular/router';
-import { Post } from '../../../models/Post'
+import { PostEntity } from '../../../models/PostEntity.model'
 
 
 @Component({
@@ -12,10 +12,10 @@ import { Post } from '../../../models/Post'
 export class PostsListComponent implements OnInit {
   message: string;
   username: string;
-  posts: Post[];
+  posts: PostEntity[];
 
   constructor(
-    private postService: PostDataService,
+    private postEntityService: PostEntityService,
     private router: Router
     ) { }
 
@@ -25,7 +25,7 @@ export class PostsListComponent implements OnInit {
   }
 
   refreshPosts() {
-    this.postService.retrieveAllPostsByUsername(this.username).subscribe(
+    this.postEntityService.retrieveAllPostsByUsername(this.username).subscribe(
       response => {
         console.log(response);
         this.posts = response;
@@ -34,7 +34,7 @@ export class PostsListComponent implements OnInit {
   }
 
   retrieveAllPosts() {
-    this.postService.retrieveAllPosts().subscribe(
+    this.postEntityService.retrieveAllPosts().subscribe(
       response => {
         console.log(response);
         this.posts = response;
@@ -50,7 +50,7 @@ export class PostsListComponent implements OnInit {
   }
 
   deletePost(id) { 
-    this.postService.deletePost(this.username, id).subscribe(
+    this.postEntityService.deletePost(this.username, id).subscribe(
       response => {
         console.log(response);
         this.message = `Deletion of post ${id} successful`;
