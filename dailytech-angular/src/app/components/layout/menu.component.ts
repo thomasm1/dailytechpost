@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { AdminAuthenticationService } from '../../service/auth/admin-authentication.service';
-import { JwtAuthService } from '../../service/auth/jwt-auth.service';
+import { AwsAuthenticationService } from '../../service/auth/aws-authentication.service';
+import { FirebaseAuthService } from '../../service/auth/firebase-auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
@@ -23,15 +23,15 @@ export class MenuComponent implements OnInit { //}, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    public adminAuthService: AdminAuthenticationService,
-    private jwtAuthService: JwtAuthService,
+    public awsAuthService: AwsAuthenticationService,
+    private firebaseAuthService: FirebaseAuthService,
     private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit() {
     this.variable = this.route.snapshot.params['name'];
     // this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
-    // this.authSubscription = this.jwtAuthService.authChange.subscribe(authStatus => {
+    // this.authSubscription = this.firebaseAuthService.authChange.subscribe(authStatus => {
     //   this.isAuth = authStatus;
     //   return this.isAuth;
     // })
@@ -44,8 +44,8 @@ export class MenuComponent implements OnInit { //}, OnDestroy {
   }
 
   onLogout() {
-    this.jwtAuthService.logout();
-    this.adminAuthService.logout();
+    this.firebaseAuthService.logout();
+    this.awsAuthService.logout();
 
   }
 

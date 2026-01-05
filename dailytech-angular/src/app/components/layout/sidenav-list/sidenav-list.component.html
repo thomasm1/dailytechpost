@@ -15,7 +15,7 @@
   mat-list-item
   routerLink="/writing"
   (click)="onClose()" 
-  *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
+  *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
 >
   <mat-icon>edit</mat-icon>
   <span class="nav-caption daily-tech monoton">Write!</span>
@@ -39,7 +39,7 @@
   <hr />
   <a
     mat-list-item
-    *ngIf="!(isAuth$ | async) && !adminAuthService.isAdminLoggedIn()"
+    *ngIf="!(isAuth$ | async) && !awsAuthService.isAdminLoggedIn()"
     routerLink="/register"
     (click)="onClose()"
   >
@@ -49,7 +49,7 @@
 
   <a
     mat-list-item
-    *ngIf="!(isAuth$ | async) && !adminAuthService.isAdminLoggedIn()"
+    *ngIf="!(isAuth$ | async) && !awsAuthService.isAdminLoggedIn()"
     routerLink="/login"
     (click)="onClose()"
   >
@@ -59,7 +59,7 @@
 
   <a
     mat-list-item
-    *ngIf="adminAuthService.isAdminLoggedIn()"
+    *ngIf="awsAuthService.isAdminLoggedIn()"
     routerLink="/admin/posts"
     (click)="onClose()"
   >
@@ -70,8 +70,8 @@
   <mat-list-item>
     <button
       mat-icon-button
-      *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
-      (click)="onLogout(); adminAuthService.logout()"
+      *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
+      (click)="onLogout(); awsAuthService.logout()"
       routerLink="/login"
     >
       <mat-icon>eject</mat-icon>

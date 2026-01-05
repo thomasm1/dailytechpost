@@ -2,6 +2,7 @@ export interface WritingMod {
     id?: string; 
     cat3?: string,
     news?: string[]; 
+    duration?: number;
     durationGoal?: number;
     wordCount?: number;
     date?: Date;
@@ -15,6 +16,5 @@ export interface WritingMod {
     title?: string,
     post?: string,
     blogcite?: string,
-    username?: string,
-
+    username?: string, 
 }

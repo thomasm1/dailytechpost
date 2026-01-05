@@ -1,16 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AdminGuardService } from './admin-guard.service';
+import { FirebaseGuardService } from './firebase-guard.service';
 
-describe('AdminGuardService', () => {
-  let service: AdminGuardService;
+describe('FirebaseGuardService', () => {
+  let service: FirebaseGuardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AdminGuardService);
+    service = TestBed.inject(FirebaseGuardService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 });
+ 

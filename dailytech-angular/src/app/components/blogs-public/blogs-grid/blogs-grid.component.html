@@ -145,7 +145,7 @@
             <td mat-cell *matCellDef="let blog">
               {{ stripHtml(blog.post) | slice : 0 : 100 }}...
             </td>
-          </ng-container>
+          </ng-container> 
 
           <tr mat-header-row *matHeaderRowDef="blogColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: blogColumns" 

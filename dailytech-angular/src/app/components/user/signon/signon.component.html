@@ -8,7 +8,7 @@
 
       <section class="signup-form">
   <!-- <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="handleJwtLogin(f)" #f="ngForm"> -->
-    <form *ngIf="!adminFlag" class="centered-form" [formGroup]="loginForm" (ngSubmit)="handleJwtLogin()" >
+    <form *ngIf="!adminFlag" class="centered-form" [formGroup]="loginForm" (ngSubmit)="handleFirebaseLogin()" >
 
       <mat-card-title>Login</mat-card-title>
           <!---->
@@ -39,7 +39,7 @@
           <h6  class="admin-flag" ><a *ngIf="!adminFlag" class="admin-flag" (click)="adminOpen()">  <hr>
             ADMIN LOGIN</a></h6>
 
-          <form *ngIf="adminFlag" class="centered-form" (ngSubmit)="handleAdminAuthLogin(fAdmin)" #fAdmin="ngForm">
+          <form *ngIf="adminFlag" class="centered-form" (ngSubmit)="handleAwsAuthLogin(fAdmin)" #fAdmin="ngForm">
 
             <h6>ADMIN LOGIN</h6>
           <mat-form-field appearance="outline" >
@@ -78,14 +78,8 @@
             <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
             <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
           </mat-form-field>
-<br />
-          <!-- username [Used for Admin Auth; And, used as username] -->
-          <mat-form-field appearance="outline">
-            <input type="text" matInput placeholder="username" ngModel name="username" required
-              #usernameInput="ngModel">
-            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
-          </mat-form-field>
-          <br />
+ 
+ 
           <mat-form-field appearance="outline">
             <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
               #pwInput="ngModel">

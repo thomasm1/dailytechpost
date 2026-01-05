@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import {  NgForm } from '@angular/forms';
 
-import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
+import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
 import { UiService } from '../../../service/ui.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   private loadingSubs: Subscription;
 
   constructor(
-    private jwtAuthService: JwtAuthService,
+    private firebaseAuthService: FirebaseAuthService,
     private uiService: UiService,
     // private store: Store<{ ui: fromApp.State }>,
     private store: Store< fromRoot.State > ) {
@@ -40,12 +40,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   };
 
-  onRegister(form:NgForm) {
+  onFirebaseRegister(form:NgForm) {
     console.log(form);
 
     // USER REGISTER (SIDENAV --temporary)
-    this.jwtAuthService.registerUser({
-      username: form.value.username,
+    this.firebaseAuthService.registerUser({
+      username: form.value.email,
       email: form.value.email,
       password: form.value.password
     });

@@ -10,16 +10,16 @@ import {
 import { pipe } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { JwtAuthService } from './jwt-auth.service';
-import { AdminAuthenticationService } from './admin-authentication.service';
+import { FirebaseAuthService } from './firebase-auth.service';
+import { AwsAuthenticationService } from './aws-authentication.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/app.reducer';
 
 @Injectable()
-export class UserGuardService implements CanActivate, CanLoad {
+export class FirebaseGuardService implements CanActivate, CanLoad {
   constructor(
-    private adminAuthService: AdminAuthenticationService,
-    // private authService: JwtAuthService,
+    private awsAuthService: AwsAuthenticationService,
+    // private authService: FirebaseAuthService,
     private store: Store<fromRoot.State>,
     private router: Router
   ) {}
@@ -30,7 +30,7 @@ export class UserGuardService implements CanActivate, CanLoad {
 
     if (
       this.store.select(fromRoot.getIsAuth).pipe(take(1)) ||
-      this.adminAuthService.isAdminLoggedIn()
+      this.awsAuthService.isAdminLoggedIn()
     ) {
       return true;
     } else {

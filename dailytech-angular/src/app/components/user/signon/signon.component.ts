@@ -4,8 +4,8 @@ import {  UntypedFormGroup, UntypedFormControl, Validators, NgForm } from '@angu
 import { Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
-import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
+import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
+import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
 import { UiService } from 'src/app/service/ui.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
@@ -32,8 +32,8 @@ export class SignonComponent implements OnInit { //, OnDestroy {
 
   constructor(
     private router: Router,
-    private adminAuthService: AdminAuthenticationService,
-    private jwtAuthService: JwtAuthService,
+    private awsAuthService: AwsAuthenticationService,
+    private firebaseAuthService: FirebaseAuthService,
     private uiService: UiService,
     // private store: Store<{ ui: fromApp.State }>,
     private store: Store< fromRoot.State >
@@ -58,10 +58,10 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     });
   }
    // USER AUTHENTICATION
-   handleJwtLogin( ){
+   handleFirebaseLogin( ){
     console.log(this.loginForm);
 
-    this.jwtAuthService.login({
+    this.firebaseAuthService.login({
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     });
@@ -73,8 +73,8 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     console.log(form);
 
     // USER REGISTER (SIDENAV --temporary)
-    this.jwtAuthService.registerUser({
-      username: form.value.username,
+    this.firebaseAuthService.registerUser({
+      username: form.value.email,
       email: form.value.email,
       password: form.value.password
     });
@@ -87,11 +87,10 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     this.adminFlag = (this.adminFlag===true)?false:true;
   }
 
-  handleAdminAuthLogin(form:NgForm) {
-    console.log(form);
-
+  handleAwsAuthLogin(form:NgForm) {
+    console.log(form); 
     // this.adminAuthService.executeAuthenticationService(form.value.username, form.value.password)
-      this.adminAuthService.executeAuthJwtService(form.value.username, form.value.password)
+      this.awsAuthService.executeAuthAwsService(form.value.username, form.value.password)
     .subscribe(
         data => {
           console.log(data)

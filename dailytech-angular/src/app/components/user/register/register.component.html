@@ -2,7 +2,7 @@
 <div class="temp">
 <h6>REGISTER</h6>
       <section class="register-form">
-        <form class="centered-form"  (ngSubmit)="onRegister(f)"   #f="ngForm">
+        <form class="centered-form"  (ngSubmit)="onFirebaseRegister(f)"   #f="ngForm">
 
           <div class="welcome alert  ">
           </div>
@@ -14,13 +14,7 @@
             <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
           </mat-form-field>
 
-          <!-- username [Used for Admin Auth; And, used as username] -->
-          <mat-form-field  appearance="outline">
-            <input type="text" matInput placeholder="username" ngModel name="username" required
-              #usernameInput="ngModel">
-            <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
-          </mat-form-field>
-
+ 
           <!-- password (USERS) -->
           <mat-form-field appearance="outline">
             <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"

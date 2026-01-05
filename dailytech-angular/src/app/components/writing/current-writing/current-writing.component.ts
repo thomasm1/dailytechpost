@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { WritingMod } from '../../../models/writing-mods.model';
 import { Store } from '@ngrx/store';
@@ -10,6 +10,8 @@ import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router  } from '@angular/router';
+import * as fromRoot from '../../../reducers/app.reducer';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ import { Router  } from '@angular/router';
   templateUrl: './current-writing.component.html',
   styleUrls: ['./current-writing.component.scss']
 })
-export class CurrentWritingComponent implements OnInit {
+export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   progress = 0;
   timer: any;
@@ -123,5 +125,9 @@ export class CurrentWritingComponent implements OnInit {
     return `${yy}-${mm}-${dd}`;
   }
 
-
+  ngOnDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    } 
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter , Output, OnDestroy} from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { AdminAuthenticationService } from '../../../service/auth/admin-authentication.service';
-import { JwtAuthService } from '../../../service/auth/jwt-auth.service';
+import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
+import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
@@ -22,8 +22,8 @@ export class SidenavListComponent implements OnInit { // }, OnDestroy {
   // authSubscription: Subscription;
 
   constructor(private route: ActivatedRoute,
-    public adminAuthService: AdminAuthenticationService,
-    private jwtAuthService: JwtAuthService,
+    public awsAuthService: AwsAuthenticationService,
+    private firebaseAuthService: FirebaseAuthService,
     private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
@@ -42,8 +42,8 @@ export class SidenavListComponent implements OnInit { // }, OnDestroy {
 
   onLogout() {
     this.onClose();
-    this.jwtAuthService.logout();
-    this.adminAuthService.logout();
+    this.firebaseAuthService.logout();
+    this.awsAuthService.logout();
 
   }
 

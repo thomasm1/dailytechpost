@@ -8,7 +8,7 @@ import { WritingMod } from '../../../models/writing-mods.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { Store } from '@ngrx/store';
-import { JwtAuthService } from 'src/app/service/auth/jwt-auth.service';
+import {FirebaseAuthService  } from 'src/app/service/auth/firebase-auth.service';
 import * as fromRoot from '../../../reducers/app.reducer';
 
 @Component({

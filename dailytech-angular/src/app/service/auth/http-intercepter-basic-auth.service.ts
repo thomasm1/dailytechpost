@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
-import { AdminAuthenticationService } from './admin-authentication.service';
+import { AwsAuthenticationService } from './aws-authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +9,12 @@ import { AdminAuthenticationService } from './admin-authentication.service';
 export class HttpIntercepterBasicAuthService implements HttpInterceptor {
 
   constructor(
-    private adminAuthenticationService: AdminAuthenticationService
+    private awsAuthenticationService: AwsAuthenticationService
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
-    let adminAuthHeaderString = this.adminAuthenticationService.getAuthenticatedToken();
-    let username = this.adminAuthenticationService.getAuthenticatedUser()
+    let adminAuthHeaderString = this.awsAuthenticationService.getAuthenticatedToken();
+    let username = this.awsAuthenticationService.getAuthenticatedUser()
 
     if (adminAuthHeaderString && username) {
       request = request.clone({

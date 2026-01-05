@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { PostsViewerComponent } from './posts-viewer.component';
+import { PostEntityViewerComponent } from './posts-viewer.component';
 
 describe('PostsViewerComponent', () => {
-  let component: PostsViewerComponent;
-  let fixture: ComponentFixture<PostsViewerComponent>;
+  let component: PostEntityViewerComponent;
+  let fixture: ComponentFixture<PostEntityViewerComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostsViewerComponent ]
+      declarations: [ PostEntityViewerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostsViewerComponent);
+    fixture = TestBed.createComponent(PostEntityViewerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

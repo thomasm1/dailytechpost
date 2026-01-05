@@ -12,15 +12,13 @@ export const AUTHENTICATED_USER = 'AuthenticatedUser'
 })
 
 
-export class AdminAuthenticationService {
+export class AwsAuthenticationService {
 
-  base:string;
-  baseUrl:string;
+   baseUrl:string;
 
   constructor(private http: HttpClient) {
 
-    this.base = environment.BASE;
-    this.baseUrl = environment.API_URL;
+     this.baseUrl = environment.API_URL;
 
    }
 
@@ -42,10 +40,10 @@ export class AdminAuthenticationService {
     //     )
     //   );
 
-  executeAuthJwtService(username, password) {
+  executeAuthAwsService(username, password) {
     return this.http.post<any>(
-        `${this.base}/authenticate`,{
-          username,
+        `${this.baseUrl}/auth/login`,{
+          usernameOrEmail: username,
           password
         }).pipe(
           map(

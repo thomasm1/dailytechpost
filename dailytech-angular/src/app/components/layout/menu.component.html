@@ -23,13 +23,13 @@
           routerLink="/writing"
    routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
-          *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
+          *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
           >WRITE!
         </a>
 
         <a
           mat-list-item
-          *ngIf="adminAuthService.isAdminLoggedIn()"
+          *ngIf="awsAuthService.isAdminLoggedIn()"
           routerLink="/admin/user"
    routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
@@ -47,7 +47,7 @@
           mat-list-item
           routerLink="/stats"
    routerLinkActive="active-link"
-          *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
+          *ngIf="!awsAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
           class="nav-link daily-tech monoton"
           >STATS</a
         >
@@ -63,7 +63,7 @@
         > -->
         <a
           mat-list-item
-          *ngIf="!adminAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
+          *ngIf="!awsAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
           routerLink="/login"
           routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
@@ -72,8 +72,8 @@
         <a
           mat-list-item
           class="pointer"
-          *ngIf="(isAuth$ | async) || adminAuthService.isAdminLoggedIn()"
-          (click)="onLogout(); adminAuthService.logout()"
+          *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
+          (click)="onLogout(); awsAuthService.logout()"
           routerLink="/login"
           routerLinkActive="active-link"
           class="nav-link daily-tech monoton"

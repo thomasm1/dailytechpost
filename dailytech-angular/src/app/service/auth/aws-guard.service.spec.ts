@@ -1,17 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserGuardService } from './user-guard.service';
+import { AwsGuardService } from './aws-guard.service';
 
-describe('UserGuardService', () => {
-  let service: UserGuardService;
+describe('AwsGuardService', () => {
+  let service: AwsGuardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UserGuardService);
+    service = TestBed.inject(AwsGuardService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 });
- 

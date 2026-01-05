@@ -6,24 +6,24 @@ import {
   Router
 } from '@angular/router';
 
-import { AdminAuthenticationService } from './admin-authentication.service';
+import { AwsAuthenticationService } from './aws-authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 // ADMIN GUARD SERVICE
-export class AdminGuardService implements CanActivate {
+export class AwsGuardService implements CanActivate {
 
   constructor(
-    private adminAuthService: AdminAuthenticationService,
+    private awsAuthService: AwsAuthenticationService,
     private router: Router
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
       //  ADMIN AUTH
-    if (this.adminAuthService.isAdminLoggedIn()) {
+    if (this.awsAuthService.isAdminLoggedIn()) {
       return true;
     }
     this.router.navigate(['/login']);

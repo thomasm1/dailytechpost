@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'; 
-import { GrootService } from '../../services/groot.service';
+import { GrootService } from '../../../service/groot.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 @Component({

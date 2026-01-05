@@ -13,8 +13,8 @@ import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-l
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { WritingComponent } from './components/writing/writing.component';
 
-import { AdminGuardService } from './service/auth/admin-guard.service';
-import { UserGuardService } from './service/auth/user-guard.service';
+import { AwsGuardService } from './service/auth/aws-guard.service';
+import { FirebaseGuardService } from './service/auth/firebase-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component';
 import { NasaComponent } from './components/nasa/nasa.component';
@@ -22,7 +22,7 @@ import { NewsPageComponent } from './components/news/news-page/news-page.compone
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
  
 const routes: Routes = [ 
-  { path: '', component: BlogsListComponent },
+  { path: '', component: BlogsListComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   
   { path: 'blogs', component: BlogsListComponent }, 
@@ -31,21 +31,21 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogComponent },
   
   { path: 'posts', component: PostEntityViewerComponent },
+  // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [FirebaseGuardService] },
   { path: 'writing', component: WritingComponent}, 
-  { path: 'premium', component: WritingComponent, canActivate:[UserGuardService]},   // temp
+  { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService]},  
   { path: 'nasa', component: NasaComponent }, 
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 
   { path: 'admin/posts', component: PostsListComponent},
-  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AdminGuardService]},
-  { path: 'admin/:name', component: AdminComponent, canActivate:[AdminGuardService]},
+  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AwsGuardService]},
+  { path: 'admin/:name', component: AdminComponent, canActivate:[AwsGuardService]},
 
 
   { path: 'login', component: SignonComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [UserGuardService] },
-  { path: '**', component: HomeComponent },
+  { path: '**', component: HomeComponent }  // wildcard route last},
 ];
 
 @NgModule({
@@ -56,7 +56,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [UserGuardService],
+  providers: [FirebaseGuardService, AwsGuardService],
   declarations: []
 })
 export class AppRoutingModule { }

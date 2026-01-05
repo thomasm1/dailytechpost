@@ -28,7 +28,7 @@ import { SafeHtmlPipe } from './utility/safe-html.pipe';
 // SERVICES
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
-import { JwtAuthService } from './service/auth/jwt-auth.service';
+import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { WritingService } from './components/writing/writing.service';
 import { KeysService } from './service/keys.service';
 import { UiService } from './service/ui.service';
@@ -149,7 +149,7 @@ import { GrootService } from './service/groot.service';
     ],
     providers: [
         KeysService,
-        JwtAuthService,
+        FirebaseAuthService,
         NewsService,
         WritingService,
         UiService,

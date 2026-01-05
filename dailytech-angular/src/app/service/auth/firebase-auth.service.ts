@@ -11,12 +11,13 @@ import { UiService } from '../ui.service';
 import * as fromRoot from '../../reducers/app.reducer';
 import * as UI from '../../reducers/ui.actions';
 import * as AuthReducer from '../../reducers/auth.actions';
+import { map } from 'rxjs/internal/operators/map';
  
 
 @Injectable({
   providedIn: 'root'
 })
-export class JwtAuthService {
+export class FirebaseAuthService {
   // private user: User;
   // authChange = new Subject<boolean>();
   // private isAuthenticated = false;
@@ -47,6 +48,8 @@ export class JwtAuthService {
         }
       });
     }
+ 
+
   registerUser(authData: AuthData) {
     // this.uiService.loadingStateChanged.next(true);
                 // DISPATCHING THE ACTION WHEN START LOADING
