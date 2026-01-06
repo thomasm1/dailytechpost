@@ -52,7 +52,7 @@ info.app.description: ${spring.application.name} CryptoCurrency Blog Server Appl
 info.app.version: ${spring.application.version}
 info.app.is-cloud: ${spring.cloud.config.enabled:false}
 info.app.message: "Welcome to DAILYTECH-REST APIs "
-spring.data.rest.base-path: /rest/
+spring.data.rest.base-path: /api/rest/
 #   actuator
 management:
   info:

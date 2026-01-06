@@ -1,13 +1,13 @@
 {
 	"info": {
 		"_postman_id": "84afb76a-e5cd-42a4-ae5c-4cbb59bc931f",
-		"name": "*1b_mapl-client_Actuator",
+		"name": "*-1b_dailytech-api_REST_ACTUATOR_OPENAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3422017"
 	},
 	"item": [
 		{
-			"name": "{{baseUrl}}/rest/user",
+			"name": "{{baseUrl}}/api/rest/users",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -15,12 +15,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/user",
+					"raw": "{{baseUrl}}/api/rest/users",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"user"
+						"/api/rest/users"
 					]
 				}
 			},
@@ -158,7 +158,7 @@
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/post",
+			"name": "{{baseUrl}}/api/rest/posts",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -178,20 +178,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/post",
+					"raw": "{{baseUrl}}/api/rest/posts",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+					"api",
 						"rest",
-						"post"
+						"posts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/comment",
+			"name": "{{baseUrl}}/api/rest/comments",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -211,20 +212,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/comment",
+					"raw": "{{baseUrl}}/api/rest/comments",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
-						"comment"
+						"comments"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/coin",
+			"name": "{{baseUrl}}/api/rest/coins",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -244,20 +246,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/coin",
+					"raw": "{{baseUrl}}/api/rest/coins",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
-						"coin"
+						"coins"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/offer",
+			"name": "{{baseUrl}}/api/rest/offers",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -277,20 +280,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/offer",
+					"raw": "{{baseUrl}}/api/rest/offers",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
-						"offer"
+						"offers"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/offer_logic",
+			"name": "{{baseUrl}}/api/rest/offer_logic",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -310,11 +314,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/offer_logic",
+					"raw": "{{baseUrl}}/api/rest/offer_logic",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
 						"offer_logic"
 					]
@@ -323,7 +328,7 @@
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/book",
+			"name": "{{baseUrl}}/api/rest/books",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -343,11 +348,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/book",
+					"raw": "{{baseUrl}}/api/rest/books",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
 						"book"
 					]
@@ -356,16 +362,17 @@
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/media",
+			"name": "{{baseUrl}}/api/rest/media",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/media",
+					"raw": "{{baseUrl}}/api/rest/media",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
 						"media"
 					]
@@ -374,7 +381,7 @@
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/weblink",
+			"name": "{{baseUrl}}/api/rest/weblinks",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -394,20 +401,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/weblink",
+					"raw": "{{baseUrl}}/api/rest/weblinks",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
-						"weblink"
+						"weblinks"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/rest/category",
+			"name": "{{baseUrl}}/api/rest/categories",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -427,13 +435,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/category",
+					"raw": "{{baseUrl}}/api/rest/categories",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"rest",
-						"category"
+						"categories"
 					]
 				}
 			},
@@ -600,7 +609,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/rest/address",
+					"raw": "{{baseUrl}}/api/rest/address",
 					"host": [
 						"{{baseUrl}}"
 					],

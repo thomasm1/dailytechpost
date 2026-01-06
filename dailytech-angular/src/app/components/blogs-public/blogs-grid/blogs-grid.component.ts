@@ -5,7 +5,7 @@ import { StatisticsService } from '../Statistics.service';
 import { Blog, CategoryStat, BlogStatistics } from '../../../models/blog.model';
 import { Router } from '@angular/router';
 
-@Component({ 
+@Component({
   selector: 'app-blogs-grid',
   templateUrl: './blogs-grid.component.html',
   styleUrls: ['./blogs-grid.component.scss']
@@ -17,10 +17,10 @@ export class BlogsGridComponent implements OnInit {
   categoriesForm: UntypedFormGroup;
   fetchBlogsEnabled: boolean = false;
   loading: boolean = true;
-  
+
   statistics: BlogStatistics | null = null;
   categoryStats: CategoryStat[] = [];
-  
+
   // Material Table columns
   categoryColumns: string[] = ['category', 'count', 'avgWordCount'];
   authorColumns: string[] = ['author', 'count'];
@@ -28,13 +28,34 @@ export class BlogsGridComponent implements OnInit {
   stateColumns: string[] = ['state', 'count'];
   blogColumns: string[] = ['date','title', 'category', 'preview', 'wordCount'];
 
+  // charting options
+  options = {};
+
+  // Create Chart
+  chart = agCharts.AgCharts.create(options);
+
+  options = {
+      // Container: HTML Element to hold the chart
+      container: document.getElementById('myChart'),
+      // Data: Data to be displayed in the chart
+      data: [
+          { month: 'Jan', avgTemp: 2.3, iceCreamSales: 162000 },
+          { month: 'Mar', avgTemp: 6.3, iceCreamSales: 302000 },
+          { month: 'May', avgTemp: 16.2, iceCreamSales: 800000 },
+          { month: 'Jul', avgTemp: 22.8, iceCreamSales: 1254000 },
+          { month: 'Sep', avgTemp: 14.5, iceCreamSales: 950000 },
+          { month: 'Nov', avgTemp: 8.9, iceCreamSales: 200000 },
+      ],
+      // Series: Defines which chart type and data to use
+      series: [{ type: 'bar', xKey: 'month', yKey: 'iceCreamSales' }],
+  };
   constructor(
     private router: Router,
-    private fb: UntypedFormBuilder, 
+    private fb: UntypedFormBuilder,
     private blogsService: BlogsService,
     private statisticsService: StatisticsService,
     private cdr: ChangeDetectorRef // Added ChangeDetectorRef injection
-  ) { 
+  ) {
     this.categoriesForm = this.fb.group({
       selectedCategories: this.fb.array([])
     });
@@ -57,10 +78,10 @@ stripHtml(html: string): string {
         console.log('SUCCESS: Received blogs:', blogs.length);
         this.allBlogs = blogs;
         this.blogs = blogs;
-        
+
         // Update statistics service
         this.statisticsService.setBlogs(blogs);
-        
+
         // Subscribe to statistics
         this.statisticsService.getBlogStatistics().subscribe(stats => {
           console.log('Statistics calculated:', stats);
@@ -69,7 +90,7 @@ stripHtml(html: string): string {
           this.loading = false;
           this.cdr.detectChanges(); // Added: Force change detection to update view
         });
-        
+
         // Extract categories from blogs
         this.extractCategoriesFromBlogs();
       },
@@ -98,27 +119,27 @@ stripHtml(html: string): string {
 
   onCheckboxChange(event: any, category: string): void {
     const selectedCategories = this.categoriesForm.get('selectedCategories') as UntypedFormArray;
-    
+
     if (event.checked) {
       selectedCategories.push(this.fb.control(category));
     } else {
       const index = selectedCategories.controls.findIndex(x => x.value === category);
       selectedCategories.removeAt(index);
     }
-    
+
     this.fetchBlogsEnabled = selectedCategories.length > 0;
   }
 
   fetchBlogs(): void {
     const selectedCategories = this.categoriesForm.value.selectedCategories;
     console.log('Filtering blogs by categories:', selectedCategories);
-    
+
     if (selectedCategories.length > 0) {
       this.blogs = this.allBlogs.filter(blog => selectedCategories.includes(blog.cat3));
     } else {
       this.blogs = this.allBlogs;
     }
-    
+
     this.calculateLocalStats();
   }
 
@@ -128,11 +149,11 @@ stripHtml(html: string): string {
     this.blogs.forEach(blog => {
       const wordCount = blog.wordCount ||  this.calculateWordCount(blog.post || '');
       const category = blog.cat3 || 'Uncategorized';
-      
+
       if (!statsMap.has(category)) {
         statsMap.set(category, { count: 0, totalWords: 0 });
       }
-      
+
       const stat = statsMap.get(category)!;
       stat.count++;
       stat.totalWords += wordCount;
@@ -146,7 +167,7 @@ stripHtml(html: string): string {
         avgWordCount: value.count > 0 ? Math.round(value.totalWords / value.count) : 0
       });
     });
-    
+
     this.categoryStats.sort((a, b) => b.count - a.count);
     console.log('Category stats calculated:', this.categoryStats);
   }
@@ -164,7 +185,7 @@ stripHtml(html: string): string {
     this.fetchBlogsEnabled = false;
   }
 
-  
+
 public navigateToBlog(blog: any): void {
   // Adjust the route path based on your routing configuration
   this.router.navigate(['/blog', blog.id]);

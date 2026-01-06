@@ -26,7 +26,7 @@ public class CategoryController {
     @ApiResponse(responseCode = "201", description = "Category created")
     @SecurityRequirement(    name = "Bearer Authentication" )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PostMapping
+    @PostMapping({"", "/"})
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
         CategoryDto savedCategory = categoryService.addCategory(categoryDto);
         return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
@@ -34,7 +34,7 @@ public class CategoryController {
 
     @Operation(summary = "Get a category by id")
     @ApiResponse(responseCode = "200", description = "Category found")
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<CategoryDto> getCategory(@PathVariable("id") Long categoryId){
          CategoryDto categoryDto = categoryService.getCategory(categoryId);
          return ResponseEntity.ok(categoryDto);
@@ -50,23 +50,23 @@ public class CategoryController {
 
     @Operation(summary = "Update a category")
     @ApiResponse(responseCode = "200", description = "Category updated")
-//    @SecurityRequirement(     name = "Bearer Authentication"   )
-   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PutMapping({"/{id}", "/"}) // Allows both /api/categories/{id} and /api/categories
+    @SecurityRequirement(     name = "Bearer Authentication"   )
+     @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+    @PutMapping({"", "/"}) // Allows both /api/categories/{id} and /api/categories
     public ResponseEntity<CategoryDto> updateCategory(
-            @PathVariable(value = "id", required = false) Long categoryId,
+            @RequestParam(value = "id", required = false) Long categoryId,
             @RequestBody CategoryDto categoryDto) {
 
         if (categoryId != null) {
             categoryDto.setId(categoryId); // Ensure ID consistency if provided in the URL
         }
-        return ResponseEntity.ok(categoryService.updateCategory(categoryDto ));
+        return ResponseEntity.ok(categoryService.updateCategory(categoryDto));
     }
 
     @Operation(summary = "Delete a category")
     @ApiResponse(responseCode = "200", description = "Category deleted")
     @SecurityRequirement(  name = "Bearer Authentication"  )
-   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("{id}")
     public ResponseEntity<Boolean> deleteCategory(@PathVariable("id") Long categoryId){
         try {

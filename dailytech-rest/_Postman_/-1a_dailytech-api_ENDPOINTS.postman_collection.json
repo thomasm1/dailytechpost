@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e3ff763a-3a93-42b2-9a4e-860381ea8545",
-		"name": "*1a_mapl-client_App_Endpoints",
+		"name": "*-1a_dailytech-api_ENDPOINTS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3422017"
 	},
@@ -19,6 +19,39 @@
 					"path": [
 						"actuator",
 						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/actuator/mappings",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "thomas",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/actuator/mappings",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"actuator",
+						"mappings"
 					]
 				}
 			},
@@ -94,27 +127,16 @@
 		{
 			"name": "----------USERS----------------",
 			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "thomas",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "------------",
+					"raw": "{{baseUrl}}/api/users",
 					"host": [
-						"------------"
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
 					]
 				}
 			},
@@ -122,6 +144,19 @@
 		},
 		{
 			"name": "{{baseUrl}}/api/users[REGISTER]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -148,7 +183,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " { \r\n        \"email\": \"333@gmail.com\", \r\n        \"password\": \"password\",\r\n        \"username\":\"tt@gmail.com\",\r\n        \"lastName\":\"last\",\r\n        \"firstName\":\"first\"\r\n    }"
+					"raw": " { \r\n        \"email\": \"aa333t@gmail.com\", \r\n        \"password\": \"password\",\r\n        \"username\":\"aa333t@gmail.com\",\r\n        \"lastName\":\"last\",\r\n        \"firstName\":\"first\"\r\n    }"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users/auth/register",
@@ -193,7 +228,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -223,7 +259,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " {  \r\n    \"usernameOrEmail\": \"ttt@gmail.com\",\r\n    \"password\": \"password\"\r\n}"
+					"raw": " {  \r\n    \"usernameOrEmail\": \"aa333t@gmail.com\",\r\n    \"password\": \"password\"\r\n}"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users/auth/login",
@@ -235,24 +271,6 @@
 						"users",
 						"auth",
 						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{baseUrl}}/api/users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/api/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"api",
-						"users"
 					]
 				}
 			},
@@ -303,21 +321,6 @@
 		{
 			"name": "{{baseUrl}}/api/users[Create]",
 			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "thomas",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -328,7 +331,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"email\": \"thomas1maestas@gmail.com\",\r\n        \"username\": \"thomas1.maestas@gmail.com\",\r\n        \"lastName\": \"maestas\",\r\n        \"firstName\": \"thomas1\",\r\n        \"organizationCode\": \"ORG001\",\r\n        \"dashboardCode\": \"DASH001\",\r\n        \"cusUrl\": \"https://example.com/user1\",\r\n        \"userType\": 1,\r\n        \"contactType\": 1,\r\n        \"isActive\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ],\r\n        \"id\": null,\r\n        \"password\": \"password\"\r\n    }"
+					"raw": "    {\r\n        \"email\": \"thomas1maestas@gmail.com\",\r\n        \"username\": \"thomas1.maestas@gmail.com\",\r\n        \"lastName\": \"maestas\",\r\n        \"firstName\": \"thomas1\",\r\n        \"organizationCode\": \"ORG001\",\r\n        \"dashboardCode\": \"DASH001\",\r\n        \"cusUrl\": \"https://example.com/user1\",\r\n        \"userType\": 1,\r\n        \"contactType\": 1,\r\n        \"isActive\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ],\r\n        \"id\": null \r\n    }"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users",
@@ -389,7 +392,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 102,\r\n    \"username\": \"janeUser\",\r\n    \"lastName\": \"Doe\",\r\n    \"firstName\": \"Jane\",\r\n    \"organizationCode\": \"ORG-cccc\",\r\n    \"dashboardCode\": \"DASH-cccccc\",\r\n    \"cusUrl\": \"https://example.com/jane\",\r\n    \"userType\": 1,\r\n    \"email\": \"jane.user@example.com\",\r\n    \"contactType\": 222,\r\n    \"isActive\": 1,\r\n    \"roles\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ROLE_USER\",\r\n            \"user\": null\r\n        }\r\n    ],\r\n    \"id\": null,\r\n    \"password\": \"janeUser\"\r\n}",
+					"raw": "{\r\n    \"userId\": 102,\r\n    \"username\": \"janeUser\",\r\n    \"lastName\": \"Doe\",\r\n    \"firstName\": \"Jane\",\r\n    \"organizationCode\": \"ORG-cccc\",\r\n    \"dashboardCode\": \"DASH-cccccc\",\r\n    \"cusUrl\": \"https://example.com/jane\",\r\n    \"userType\": 1,\r\n    \"email\": \"jane.user@example.com\",\r\n    \"contactType\": 222,\r\n    \"isActive\": 1,\r\n    \"roles\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ROLE_USER\" \r\n        }\r\n    ],\r\n    \"id\": null \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -439,62 +442,6 @@
 		},
 		{
 			"name": "-----------POSTS--------------",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "thomas",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "------------",
-					"host": [
-						"------------"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/posts",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": " {\r\n            \"id\":0,\r\n            \"did\": \"D1001\",\r\n            \"date\": \"2025-05-01\",\r\n            \"author\": \"TomA\",\r\n            \"monthOrder\": \"May\",\r\n            \"cat3\": \"Blockchain\",\r\n            \"title\": \"Ethereum Merge\",\r\n            \"post\": \"Discussion on Ethereum merge details...\",\r\n            \"blogcite\": \"https://blogsite1.com\",\r\n            \"email\": \"tom.admin@example.com\",\r\n            \"state\": \"Published\",\r\n            \"wordCount\": 1500,\r\n            \"durationGoal\": 10,\r\n            \"categoryId\": 123,\r\n            \"comments\": null\r\n \r\n        }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/api/posts",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"api",
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{baseUrl}}/api/posts",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -583,6 +530,33 @@
 			"response": []
 		},
 		{
+			"name": "/api/posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\":0,\r\n            \"did\": \"D1001\",\r\n            \"date\": \"2025-05-01\",\r\n            \"author\": \"TomA\",\r\n            \"monthOrder\": \"May\",\r\n            \"cat3\": \"Blockchain\",\r\n            \"title\": \"Ethereum Merge\",\r\n            \"post\": \"Discussion on Ethereum merge details...\",\r\n            \"blogcite\": \"https://blogsite1.com\",\r\n            \"email\": \"tom.admin@example.com\",\r\n            \"state\": \"Published\",\r\n            \"wordCount\": 1500,\r\n            \"durationGoal\": 10,\r\n            \"categoryId\": 123,\r\n            \"comments\": null\r\n \r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/posts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "api/posts/20",
 			"request": {
 				"method": "PUT",
@@ -611,17 +585,16 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/posts/280",
+			"name": "{{baseUrl}}/api/posts/280",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/posts/131",
+					"raw": "{{baseUrl}}/api/posts/131",
 					"protocol": "http",
 					"host": [
-						"localhost"
-					],
-					"port": "8080",
+						"{{baseUrl}}"
+					], 
 					"path": [
 						"api",
 						"posts",
@@ -661,7 +634,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/posts/301/comments",
+			"name": "{{baseUrl}}/api/posts/301/comments",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -682,14 +655,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/posts/1/comments",
+					"raw": "{{baseUrl}}/api/posts/25/comments",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
 						"posts",
-						"1",
+						"25",
 						"comments"
 					]
 				}
@@ -697,7 +670,7 @@
 			"response": []
 		},
 		{
-			"name": "eUrl}}/api/posts/11/comments",
+			"name": "{{baseUrl}}/api/posts/11/comments",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -727,35 +700,6 @@
 		},
 		{
 			"name": "------------CATEGORIES--------------",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "thomas",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "------------",
-					"host": [
-						"------------"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{baseUrl}}/api/categories",
 			"event": [
 				{
 					"listen": "test",
@@ -838,7 +782,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -877,19 +822,19 @@
 			"response": []
 		},
 		{
-			"name": "api/posts/category/14",
+			"name": "api/posts/categories/14",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/api/posts/category/14",
+					"raw": "{{baseUrl}}/api/posts/categories/14",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
 						"posts",
-						"category",
+						"categories",
 						"14"
 					]
 				}
@@ -897,19 +842,19 @@
 			"response": []
 		},
 		{
-			"name": "/api/posts/category/12",
+			"name": "/api/posts/categories/12",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/api/posts/category/12",
+					"raw": "{{baseUrl}}/api/posts/categories/12",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
 						"posts",
-						"category",
+						"categories",
 						"12"
 					]
 				}
@@ -960,7 +905,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "{{baseUrl}}/api/categories",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\"name\":\"category name\",\r\n\"description\":\"description category\",\r\n\"news\":[\r\n    {\r\n    \"title\":\"first news item\",\r\n    \"url\": \"http://thomasmaestas.net\"}\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "{{baseUrl}}/api/categories/367",

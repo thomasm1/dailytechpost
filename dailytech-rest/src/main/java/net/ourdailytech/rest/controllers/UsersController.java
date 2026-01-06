@@ -160,7 +160,7 @@ public class UsersController {
     ) 
   
     @PutMapping(value = { USER_PATH}, consumes = "application/json")  // userId in body
-    public ResponseEntity<UserDto> updateUser( @RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> updateUser( @RequestParam(value="userId", required = false) long userId, @RequestBody UserDto userDto) {
         Optional<UserDto> updated = usersService.updateUser(userDto);
         return updated.map(dto -> new ResponseEntity<>(
                 dto,

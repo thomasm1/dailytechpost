@@ -34,10 +34,13 @@
               <p>Selected Categories: {{ selectedCategories.length }}</p>
             </div>
           </div>
- 
+
         </mat-card-content>
       </mat-card>
     </div>
+
+    <ag-charts [options]="chartOptions" style="height: 300px; width: 100%;">
+    </ag-charts>
 
     <!-- Category Filter Section -->
     <mat-card class="filter-section">
@@ -78,8 +81,8 @@
           Reset Filters
         </button>
       </mat-card-actions>
-    
-      <mat-card-header>        
+
+      <mat-card-header>
         <mat-card-subtitle>{{ blogs.length }} blogs selected</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
@@ -109,11 +112,11 @@
         </table>
       </mat-card-content>
     <!-- </mat-card>
- 
+
     <mat-card *ngIf="blogs.length > 0" class="posts-table-section"> -->
       <mat-card-header class="centered-header-flex">
         <mat-card-title class="centered-header "> {{ blogs.length }} Blog Posts</mat-card-title>
- 
+
       </mat-card-header>
       <mat-card-content>
         <table mat-table [dataSource]="blogs" class="full-width">
@@ -138,7 +141,7 @@
             <td mat-cell *matCellDef="let blog">
               {{ stripHtml(blog.post) | slice : 0 : 100 }}...
             </td>
-          </ng-container> 
+          </ng-container>
 
           <ng-container matColumnDef="wordCount">
             <th mat-header-cell *matHeaderCellDef>Words</th>
@@ -146,11 +149,11 @@
               {{ (blog.wordCount || calculateWordCount(blog.post || '')) | number }}
             </td>
           </ng-container>
-       
+
           <tr mat-header-row *matHeaderRowDef="blogColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: blogColumns" 
+          <tr mat-row *matRowDef="let row; columns: blogColumns"
             class="clickable-row"
-            
+
             (click)="navigateToBlog(row)"
             ></tr>
         </table>

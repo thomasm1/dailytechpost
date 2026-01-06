@@ -86,8 +86,8 @@ public class WeblinksController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
-    @PutMapping(value = "/{id}", consumes = "application/json")
-    public  ResponseEntity<WeblinkDto>  updateWeblink(@PathVariable("id") long id, @RequestBody WeblinkDto change) {
+    @PutMapping(value = "", consumes = "application/json")
+    public  ResponseEntity<WeblinkDto>  updateWeblink(@RequestParam(value="id", required = false) long id, @RequestBody WeblinkDto change) {
 
         return new ResponseEntity<>(weblinksService.updateWeblink(id, change), HttpStatus.CREATED);
     }

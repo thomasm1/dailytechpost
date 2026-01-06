@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import net.ourdailytech.rest.models.PostEntity;
 
 
-@RepositoryRestResource(collectionResourceRel="weblink", path="weblink")
+@RepositoryRestResource(collectionResourceRel = "weblinks", path = "weblinks", itemResourceRel = "weblink")
 public interface WeblinksRepository extends JpaRepository<Weblink, Long> {
   Optional<Weblink> findById(Long id);
 

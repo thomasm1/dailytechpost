@@ -15,8 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@RepositoryRestResource(collectionResourceRel = "user", path = "user")
-@Repository
+@RepositoryRestResource(collectionResourceRel = "users", path = "users", itemResourceRel = "user")
 public interface UsersRepository extends JpaRepository<User, Integer> {
 
     // MULTIPLE

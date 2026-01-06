@@ -139,8 +139,8 @@ public class PostEntityController {
             name = "Bearer Authentication"
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PutMapping({"/{id}","/update/{id}"})
-    public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @PathVariable(name = "id") long id){
+    @PutMapping({"/","", "/update"})
+    public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @RequestParam(value="id", required = false) long id){
         PostEntityDto postResponse = postService.updatePost(postEntityDto, id);
         return new ResponseEntity<>(postResponse, HttpStatus.OK);
     }
