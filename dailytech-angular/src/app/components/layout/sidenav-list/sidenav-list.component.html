@@ -11,18 +11,20 @@
 <hr>
  
 
-<!-- *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" -->
-  <a
-  mat-list-item
-  routerLink="/writing"
-  (click)="onClose()" 
+<a
+mat-list-item
+routerLink="/writing"
+*ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
+(click)="onClose()" 
 >
   <mat-icon>edit</mat-icon>
   <span class="nav-caption daily-tech monoton">Write!</span>
 </a> 
 
 
-  <a mat-list-item routerLink="" (click)="onClose()">
+  <a mat-list-item routerLink=""
+    pathMatch="full"
+  (click)="onClose()">
     <mat-icon>book</mat-icon>
     <span class="nav-caption daily-tech monoton">Blog</span>
   </a>

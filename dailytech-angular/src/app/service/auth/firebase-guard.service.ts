@@ -15,7 +15,9 @@ import { AwsAuthenticationService } from './aws-authentication.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/app.reducer';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class FirebaseGuardService implements CanActivate, CanLoad {
   constructor(
     private awsAuthService: AwsAuthenticationService,

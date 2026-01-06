@@ -40,18 +40,18 @@
         <form [formGroup]="writingForm" (ngSubmit)="onSubmit()">
 
           <mat-form-field>
-            <mat-label for="title">Title</mat-label>
+  
             <input type="text" class="title" min="100" id="title" matInput formControlName="title"
               placeholder="Title" />
           </mat-form-field>
-          <mat-form-field>
+          <!-- <mat-form-field>
             <mat-label for="cat3">Category</mat-label>
             <mat-select placeholder="Category" name="writing" formControlName="cat3">
               <mat-option *ngFor="let writing of writingMods$ | async" [value]="writing.cat3">
                 {{ writing.cat3 }}
               </mat-option>
             </mat-select>
-          </mat-form-field>
+          </mat-form-field> -->
           <mat-form-field>
             <textarea class="post" id="post" matInput formControlName="post"
               placeholder="POST: Write here, Write now..."></textarea>

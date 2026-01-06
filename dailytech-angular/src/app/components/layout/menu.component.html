@@ -18,42 +18,45 @@
 
     <div class="menu-center hide-xs" id="menu-list">
       <mat-nav-list class="navigation-items nav-gap-10">
-
-        <!-- *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" -->
         <a
           mat-list-item
           routerLink="/writing"
-   routerLinkActive="active-link"
+          *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
+          routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >WRITE!
         </a>
-        
+
         <a
           mat-list-item
           *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
           routerLink="/admin/user"
-   routerLinkActive="active-link"
+          routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >ADMIN CONSOLE</a
         >
 
-        <a mat-list-item 
-        routerLink="" 
-   routerLinkActive="active-link"
-   [routerLinkActiveOptions]="{exact: true}"
-        class="nav-link daily-tech monoton"
+        <a
+          mat-list-item
+          routerLink=""
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link daily-tech monoton"
           >BLOG</a
         >
 
-        <a   mat-list-item
+        <a
+          mat-list-item
           routerLink="/stats"
-   routerLinkActive="active-link" 
+          routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >STATS</a
         >
-        <a mat-list-item routerLink="/news" 
-   routerLinkActive="active-link"
-   class="nav-link daily-tech monoton"
+        <a
+          mat-list-item
+          routerLink="/news"
+          routerLinkActive="active-link"
+          class="nav-link daily-tech monoton"
           >NEWS</a
         >
         <!-- <a mat-list-item routerLink="/nasa" 

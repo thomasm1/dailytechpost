@@ -4,6 +4,16 @@ div.menu {
   // background-color: rgba(229, 229, 250, 0.575)
 }
 
+mat-select {
+  width: 200px;
+  background-color: white;
+}
+ .mat-option {
+    background-color: white;
+  }
+//  span  .mat-option-text {
+//     background-color: white;
+//   }
 .centered-row {
   display: flex;
   justify-content: center;
@@ -27,7 +37,7 @@ div.menu {
 mat-card {
   border-radius:5px;
   min-height: 600px;
-  background-color: rgba(96, 79, 245, 0.526);
+  background-color: rgba(103, 95, 172, 0.638);
 }
 
 

@@ -4,6 +4,39 @@
   font-weight: bold;
 }
 
+
+/* Fix for horizontal mat-nav-list menu items */
+.navigation-items.mat-mdc-nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+
+  a.mat-mdc-list-item {
+    width: auto !important;
+    min-width: fit-content !important;
+    padding: 0 16px !important;
+    white-space: nowrap !important;
+
+    .mdc-list-item__content {
+      overflow: visible !important;
+      text-overflow: clip !important;
+      white-space: nowrap !important;
+    }
+
+    .mat-mdc-list-item-unscoped-content {
+      overflow: visible !important;
+      text-overflow: clip !important;
+    }
+  }
+}
+
+/* Gap between navigation items */
+.nav-gap-10 a.mat-mdc-list-item {
+  margin-right: 10px;
+}
+
+
  li.pointer  {
    cursor: pointer;
  }
@@ -56,6 +89,7 @@
  .spacer {
      flex: 1;
  }
+ 
 mat-toolbar {
     height:80px;
     position: relative;

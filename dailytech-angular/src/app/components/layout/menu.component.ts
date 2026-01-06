@@ -3,8 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { AwsAuthenticationService } from '../../service/auth/aws-authentication.service';
 import { FirebaseAuthService } from '../../service/auth/firebase-auth.service';
 import { ActivatedRoute } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { Store } from '@ngrx/store';
+ import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/app.reducer';
 
 @Component({

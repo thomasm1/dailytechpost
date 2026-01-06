@@ -39,7 +39,7 @@ import { NewsService } from './components/news/news.service';
 import { AppComponent } from './app.component';
 import { AnimationComponent } from './components/util/animation/animation.component';
 import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
-import { PostEntityComponent } from './components/post-dir/post/post-entity.component';
+import { PostEntityComponent } from './components/post-dir/post-entity/post-entity.component';
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-list.component';
 
@@ -81,8 +81,8 @@ import { GrootService } from './service/groot.service';
         FooterComponent,
         SidenavListComponent,
         MenuComponent,
-         PostEntityComponent,
-         PostEntityViewerComponent,
+        PostEntityComponent,
+        PostEntityViewerComponent,
         BlogComponent,
         BlogsListComponent,
         PostCancelComponent,

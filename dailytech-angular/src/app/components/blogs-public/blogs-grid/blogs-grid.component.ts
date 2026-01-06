@@ -26,7 +26,7 @@ export class BlogsGridComponent implements OnInit {
   authorColumns: string[] = ['author', 'count'];
   monthColumns: string[] = ['month', 'count'];
   stateColumns: string[] = ['state', 'count'];
-  blogColumns: string[] = ['date','title', 'category',  'wordCount', 'preview'];
+  blogColumns: string[] = ['date','title', 'category', 'preview', 'wordCount'];
 
   constructor(
     private router: Router,

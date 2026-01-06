@@ -7,7 +7,7 @@ import { SignonComponent } from './components/user/signon/signon.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { AdminComponent } from './components/user/admin.component';
 import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
-import { PostEntityComponent } from './components/post-dir/post/post-entity.component';
+import { PostEntityComponent } from './components/post-dir/post-entity/post-entity.component';
 import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-list.component';
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
