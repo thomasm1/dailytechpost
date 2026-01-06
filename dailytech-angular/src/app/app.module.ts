@@ -18,7 +18,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { BlogsPublicModule } from './blogs-public.module';
 // PIPES
 import { TitleCasePipe } from '@angular/common';

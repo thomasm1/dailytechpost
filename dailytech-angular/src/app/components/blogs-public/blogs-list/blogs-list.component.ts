@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { BlogsService } from '../blogs.service';
 import { Blog } from 'src/app/models/blog.model';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
 

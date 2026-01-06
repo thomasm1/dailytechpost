@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { of, throwError } from 'rxjs';
 import { BlogsListComponent } from './blogs-list.component';
 import { BlogsService } from '../blogs.service';

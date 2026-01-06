@@ -9,7 +9,7 @@ import { UiService } from '../../service/ui.service';
 import * as UI from '../../reducers/ui.actions';
 import * as Writing from '../../reducers/writing.actions';
 import * as fromWriting from '../../reducers/writing.reducer';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 
 @Injectable({
   providedIn: 'root'

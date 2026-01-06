@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular
 // import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { MatTableDataSource  } from '@angular/material/table';
+import { MatLegacyTableDataSource as MatTableDataSource  } from '@angular/material/legacy-table';
 import {  MatSort } from '@angular/material/sort';
-import {  MatPaginator } from '@angular/material/paginator';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import {  MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
+import {MatLegacyTooltipModule as MatTooltipModule} from '@angular/material/legacy-tooltip';
 
 import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-mods.model';
