@@ -33,14 +33,14 @@ const routes: Routes = [
   { path: 'posts', component: PostEntityViewerComponent },
   // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [FirebaseGuardService] },
   { path: 'writing', component: WritingComponent}, 
-  { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService]},  
+  { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService,AwsGuardService]},  
   { path: 'nasa', component: NasaComponent }, 
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 
   { path: 'admin/posts', component: PostsListComponent},
-  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AwsGuardService]},
-  { path: 'admin/:name', component: AdminComponent, canActivate:[AwsGuardService]},
+  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[FirebaseGuardService,AwsGuardService]},
+  { path: 'admin/:name', component: AdminComponent, canActivate:[FirebaseGuardService,AwsGuardService]},
 
 
   { path: 'login', component: SignonComponent },
