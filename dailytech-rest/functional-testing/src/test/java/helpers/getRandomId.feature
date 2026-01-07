@@ -1,7 +1,7 @@
-Feature: *
+Feature: feature to get random id from list of ids
 
   Background:
-      * def js = call read('classpath:utils/JSMethods.js')
+      * def js = call read('classpath:helpers/JSMethods.js')
     * url  baseUrl
 
     @getRandomId

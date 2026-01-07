@@ -2,11 +2,11 @@
 Feature: Articles
 
   Background: Define URL
-    * url apiUrl
-    * def articleRequestBody = read('classpath:dailytech/json/newBlogRequest.json')
+    * url baseUrl
+    * def articleRequestBody = read('classpath:data/newBlogRequest.json')
     * def dataGenerator = Java.type('helpers.DataGenerator')
     * set articleRequestBody.article.title = __gatling.Title
-    * set articleRequestBody.article.description = __gatling.Description
+    * set articleRequestBody.article.post = __gatling.Post
     * set articleRequestBody.article.body = dataGenerator.getRandomArticleValues().body
 
     * def sleep = function(ms){ java.lang.Thread.sleep(ms) }
@@ -14,7 +14,7 @@ Feature: Articles
 
 
   Scenario: Create and delete article
-    * configure headers = {"Authorization": #('Token ' + __gatling.token)}
+    * configure headers = {"Authorization": '#("Bearer " + __gatling.token)'}
     Given path 'articles'
     And request articleRequestBody
     And header karate-name = 'Create Article'

@@ -1,4 +1,4 @@
-package dailytech.comments;
+package karate.comments;
 
 import com.intuit.karate.junit5.Karate;
 

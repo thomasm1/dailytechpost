@@ -1,14 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- 
     <groupId>net.ourdailytech.testing-karate</groupId>
     <artifactId>dailytech-testing-karate</artifactId>
     <version>1.4.0</version>
     <packaging>jar</packaging>
  
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
@@ -18,12 +16,6 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.intuit.karate</groupId>-->
-<!--            <artifactId>karate-apache</artifactId>-->
-<!--            <version>${karate.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>            -->
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit5</artifactId>
@@ -81,8 +73,6 @@
         <!--            <artifactId>mssql-jdbc</artifactId>-->
         <!--            <version>8.4.1.jre11</version>-->
         <!--        </dependency>-->
-
-
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
@@ -90,11 +80,10 @@
         </dependency>
 
     </dependencies>
-
     <build>
         <testResources>
             <testResource>
-                <directory>src/test/java.dailytech</directory>
+                <directory>src/test/java</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -116,6 +105,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                </configuration>
 <!--                <configuration>-->
 <!--                    <argLine>-Dfile.encoding=UTF-8</argLine>-->
 <!--                    <systemPropertyVariables>-->

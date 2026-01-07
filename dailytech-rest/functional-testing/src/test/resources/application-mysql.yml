@@ -1,7 +1,7 @@
 
 system.environment: mysql
 
-server.port: 8083
+server.port: 8082
 #spring.config.import: optional:configserver:http://localhost:8071
 ### Security
 security.basic.enable: false

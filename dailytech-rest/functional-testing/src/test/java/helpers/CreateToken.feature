@@ -1,9 +1,10 @@
 
 Feature: Create Token
+    Background:
+        * url baseUrl + '/api/'
 
   Scenario: Create Token
-    Given url apiUrl
-    Given path 'users/login'
+    Given path 'users/auth/login'
     And request {"user": {"email": "#(userEmail)","password": "#(userPassword)"}}
     When method Post
     Then status 200

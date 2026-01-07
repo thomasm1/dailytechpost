@@ -19,13 +19,13 @@ public class DataGenerator {
 
     public static JSONObject getRandomArticleValues(){
         Faker faker = new Faker();
-        String title = faker.gameOfThrones().character();
-        String description = faker.gameOfThrones().city();
+        String author = faker.gameOfThrones().character();
+        String title = faker.gameOfThrones().city();
         String body = faker.gameOfThrones().quote();
         JSONObject json = new JSONObject();
+        json.put("author", author);
         json.put("title", title);
-        json.put("description", description);
-        json.put("body", body);
+        json.put("post", body);
         return json;
     }
 
