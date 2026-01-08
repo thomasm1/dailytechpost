@@ -1,0 +1,66 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dailytech
+    networks:
+      - dailytech-mysql-net
+    restart: on-failure
+ 
+  dailytech-rest:
+    image: thomasm1/dailytech-rest:1.4.0
+    container_name: dailytech-rest
+    build:
+      context: ./dailytech-rest
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - registry
+      - config
+      - mysqldb
+    networks:
+      - dailytech-mysql-net
+    restart: on-failure
+ 
+
+  dailytech-registry:
+    container_name: thomasm1/dailytech-registry
+    build:
+      context: ./dailytech-registry
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761" 
+    networks:
+      - dailytech-mysql-net
+    restart: on-failure
+  
+  dailytech-gateway:
+    container_name: thomasm1/dailytech-gateway
+    build:
+      context: ./dailytech-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "9091:9091"
+    networks:
+      - dailytech-mysql-net
+    restart: on-failure
+   
+  dailytech-config:
+    container_name: thomasm1/dailytech-config
+    build:
+      context: ./dailytech-config
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    networks:
+      - dailytech-mysql-net 
+    restart: on-failure
+    
+networks:
+  dailytech-mysql-net:
+    driver: bridge

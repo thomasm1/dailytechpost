@@ -1,0 +1,126 @@
+build:
+  version: "1.4.0"
+dailytech:
+  message: "Welcome to DAILYTECH-API GATEWAY"
+  contactDetails:
+    name: "Thomas Maesatas - Developer"
+    email: "thomas1.maestas@gmail.com"
+  dependsOn:
+    - CONFIG-SERVER
+  depenedencies:
+    - DAILYTECH-AUTH
+    - DAILYTECH-REST
+    - DAILYTECH-REST
+    - ORGANIZATION-SERVICE
+####################################################
+server.address: 0.0.0.0
+spring.application.name: DAILYTECH-GATEWAY
+application.version: 1.4.0
+server.port: 9191
+
+# Cloud-enabled configuration
+spring:
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    config:
+      enabled: true         # false # SLIM Standalone
+      discovery:
+        enabled: ${spring.cloud.config.enabled}
+        service-id: DAILYTECH-CONFIG
+      import-check:
+        enabled: ${spring.cloud.config.enabled}
+      bootstrap.enabled: false
+      fail-fast: false
+    bus:
+      enabled: false
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: ${spring.cloud.config.enabled}
+    fetch-registry: ${spring.cloud.config.enabled}
+    enabled: ${spring.cloud.config.enabled}
+  instance:
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+
+# INFO + ACTUATOR + DATA-REST + ZIPKIN-TRACING + SWAGGER
+info.app.name: ${spring.application.name}
+info.app.description: ${spring.application.name} CryptoCurrency Server Application
+info.app.version: ${spring.application.version}
+info.app.is-cloud: ${spring.cloud.config.enabled:false}
+spring.data.rest.base-path: /rest/
+#   actuator
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #health,metrics
+  health:
+    binders:
+      enabled: false # disable actuator reporting MQ/Kafka indicators
+    rabbit:
+      enabled: false # disable actuator reporting rabbit indicators
+  tracing: #  zipkin-tracing
+    enabled: true
+spring.zipkin.base-url: http://127.0.0.1:9411/
+spring.sleuth.sampler.probability: 1.0
+#  swagger
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+# Log
+logging.level.org.springdoc: DEBUG
+logging.level.org.springframework.web: DEBUG
+logging.level.org.springframework: INFO
+#trace, debug, info, warn, error, fatal, off,error #nothing but error
+
+##1.) AUTO-UPDATED ROUTING, with
+#spring.cloud.gateway.discovery.locator.enabled: true
+#spring.cloud.gateway.discovery.locator.lowerCaseServiceId: true
+##2.) MANUAL ROUTING
+## Routes for User Service
+spring.cloud.gateway.routes[0].id: DAILYTECH-AUTH
+spring.cloud.gateway.routes[0].uri: lb://DAILYTECH-AUTH
+spring.cloud.gateway.routes[0].predicates[0]: Path=/api/auth/**
+
+## Routes for Dashboard Service
+spring.cloud.gateway.routes[1].id: DAILYTECH-DASHBOARD
+spring.cloud.gateway.routes[1].uri: lb://DASHBOARD-SERVICE
+spring.cloud.gateway.routes[1].predicates[0]: Path=/api/dashboard/**
+
+## Routes for DAILYTECH Service
+spring.cloud.gateway.routes[2].id: DAILYTECH-REST
+spring.cloud.gateway.routes[2].uri: lb://DAILYTECH-REST
+spring.cloud.gateway.routes[2].predicates[0]: Path=/api/dailytech/**
+
+## Routes for DAILYTECH Service
+spring.cloud.gateway.routes[3].id: DAILYTECH-REST
+spring.cloud.gateway.routes[3].uri: lb://DAILYTECH-REST
+spring.cloud.gateway.routes[3].predicates[0]: Path=/api/dailytech/**
+
+## Routes for AI Service
+spring.cloud.gateway.routes[4].id: DAILYTECH-INTELLIGENCE-ARTIFICIELLE
+spring.cloud.gateway.routes[4].uri: lb://DAILYTECH-INTELLIGENCE-ARTIFICIELLE
+spring.cloud.gateway.routes[4].predicates[0]: Path=/api/ia/**
+
+## Routes for Organization Service
+spring.cloud.gateway.routes[5].id: ORGANIZATION-SERVICE
+spring.cloud.gateway.routes[5].uri: lb://ORGANIZATION-SERVICE
+spring.cloud.gateway.routes[5].predicates[0]: Path=/api/organizations/**
+
+spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedOrigins: "*"
+spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedMethods: GET,POST,PUT,DELETE,OPTIONS
