@@ -3,7 +3,6 @@ package net.ourdailytech.rest.controllerTests;
 
 import net.ourdailytech.rest.controllers.UsersController;
 import net.ourdailytech.rest.mapper.UserMapper;
-import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
@@ -59,10 +58,10 @@ public class UsersControllerTest {
         @Test
         void testGetUserById_Found() throws Exception {
             UserDto userDto = new UserDto();
-            userDto.setUserId(1);
+            userDto.setUserId(1L);
             userDto.setEmail("test@example.com");
 
-            when(usersService.getUser(anyInt())).thenReturn(Optional.of(userDto));
+            when(usersService.getUser(anyLong())).thenReturn(Optional.of(userDto));
 
             mockMvc.perform(get("/api/users/1")
                             .contentType(MediaType.APPLICATION_JSON))
@@ -73,7 +72,7 @@ public class UsersControllerTest {
 
         @Test
         void testGetUserById_NotFound() throws Exception {
-            when(usersService.getUser(anyInt())).thenReturn(Optional.empty());
+            when(usersService.getUser(anyLong())).thenReturn(Optional.empty());
 
             mockMvc.perform(get("/api/users/1")
                             .contentType(MediaType.APPLICATION_JSON))
@@ -83,7 +82,7 @@ public class UsersControllerTest {
         @Test
         void testGetUserByEmail_Found() throws Exception {
             UserDto userDto = new UserDto();
-            userDto.setUserId(1);
+            userDto.setUserId(1L);
             userDto.setEmail("test@example.com");
 
             when(usersService.getUserByEmail(anyString())).thenReturn(Optional.of(userDto));
@@ -97,7 +96,7 @@ public class UsersControllerTest {
         @Test
         void testCreateUser() throws Exception {
             UserDto userDto = new UserDto();
-            userDto.setUserId(1);
+            userDto.setUserId(1L);
             userDto.setEmail("newuser@example.com");
 
             when(usersService.createUser(any(UserDto.class))).thenReturn(userDto);
@@ -144,14 +143,16 @@ void testRegisterUser() throws Exception {
     @WithMockUser(roles = "ADMIN")
     void testUpdateUser() throws Exception {
         UserDto userDto = new UserDto();
-        userDto.setUserId(1);
+        userDto.setUserId(1l);
         userDto.setEmail("updated@example.com");
 
-        when(usersService.updateUser(any(UserDto.class))).thenReturn(Optional.of(userDto));
+        when(usersService.updateUser(any(UserDto.class), anyLong())).thenReturn(Optional.of(userDto));
 
         mockMvc.perform(put("/api/users")  // ✅ Fixed path
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"userId\": 1, \"email\": \"updated@example.com\" }"))
+                        .content("{ \"userId\": 1, \"email\": \"updated@example.com\" }")
+//            .param("userId", "1")
+        )
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.email").value("updated@example.com"));
     }
@@ -161,9 +162,9 @@ void testRegisterUser() throws Exception {
         @WithMockUser(roles = "ADMIN")
         void testDeleteUser_Success() throws Exception {
             UserDto userDto = new UserDto();
-            userDto.setUserId(1);
-            when(usersService.getUser(anyInt())).thenReturn(Optional.of(userDto));
-            when(usersService.deleteUser(anyString())).thenReturn(true);
+            userDto.setUserId(1L);
+            when(usersService.getUser(anyLong())).thenReturn(Optional.of(userDto));
+            when(usersService.deleteUser(anyLong())).thenReturn(true);
 
             mockMvc.perform(delete("/api/users/1"))
                     .andExpect(status().isOk());

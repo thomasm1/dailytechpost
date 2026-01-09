@@ -29,7 +29,7 @@ public class UserServiceImplIntegrationIT {
 		dynamicUsername = Integer.toString((int) Math.floor((Math.random() * 31)));
 		dynamicString = "user" + dynamicUsername + "@cryptomaven.xyz";
 		u = UserDto.builder()
-				.userId(Integer.parseInt(dynamicUsername))
+				.userId(Long.parseLong(dynamicUsername))
 				.username(dynamicString)
 				.lastName("Smith")
 				.firstName("Tom")
@@ -57,7 +57,7 @@ public class UserServiceImplIntegrationIT {
 	public void delete_user() throws InterruptedException {
 		System.out.println(dynamicUsername + " now deleting ; . . . .");
 		Thread.sleep(2000);
-		Assertions.assertTrue(usersService.deleteUser(u.getEmail()));
+		Assertions.assertTrue(usersService.deleteUser(u.getUserId()));
 		System.out.println("deleted: " + dynamicUsername);
 	}
 }

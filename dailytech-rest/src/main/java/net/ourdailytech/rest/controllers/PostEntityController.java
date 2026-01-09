@@ -140,8 +140,12 @@ public class PostEntityController {
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
     @PutMapping({"/","", "/update"})
-    public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @RequestParam(value="id", required = false) long id){
-        PostEntityDto postResponse = postService.updatePost(postEntityDto, id);
+    public ResponseEntity<PostEntityDto> updatePost(@RequestBody PostEntityDto postEntityDto, @RequestParam(value="id",   required = false) Long id){
+      Long effectiveId = (id != null) ? id : postEntityDto.getId();
+      if (effectiveId == null) {
+        return ResponseEntity.badRequest().build();
+      }
+        PostEntityDto postResponse = postService.updatePost(postEntityDto,  effectiveId.longValue());
         return new ResponseEntity<>(postResponse, HttpStatus.OK);
     }
 

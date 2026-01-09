@@ -102,14 +102,16 @@ public class PostEntityControllerTest {
     @WithMockUser(roles = "ADMIN")
     void testUpdatePost() throws Exception {
         PostEntityDto postEntityDto = new PostEntityDto();
-        postEntityDto.setId(1L);
+        postEntityDto.setId(1);
         postEntityDto.setTitle("Updated Post");
 
         when(postService.updatePost(any(PostEntityDto.class), anyLong())).thenReturn(postEntityDto);
 
-        mockMvc.perform(put("/api/posts/1")
+        mockMvc.perform(put("/api/posts")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"title\": \"Updated Post\" }"))
+                        .content("{ \"title\": \"Updated Post\"  }")
+//                        .param("id", "1")   // OPTIONAL parameter
+            )
                 .andExpect(status().isOk())
                 .andExpect( jsonPath("$.title").value("Updated Post"));
     }

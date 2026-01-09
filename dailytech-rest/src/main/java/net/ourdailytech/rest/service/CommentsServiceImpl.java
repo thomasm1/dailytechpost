@@ -90,9 +90,7 @@ public class CommentsServiceImpl implements CommentsService {
        if(!comment.getPost().getId().equals(post.getId())) {
            throw new PostApiException(HttpStatus.NOT_FOUND,  Long.toString(commentId));
        }
-        comment.setName(commentRequest.getName());
-        comment.setBody(commentRequest.getBody());
-        comment.setEmail(commentRequest.getEmail());
+       commentMapper.partialUpdate(commentRequest, comment);
 
         Comment updatedComment = commentRepository.save(comment);
         return commentMapper.toDto(updatedComment);

@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -51,6 +52,7 @@ public class PostServiceImpl implements PostService {
 		return postResponse;
 	}
 
+	@Transactional(readOnly=true)
 	@Override
 	public PostEntityResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir) {
 
@@ -64,7 +66,7 @@ public class PostServiceImpl implements PostService {
 
 		// get content for page object
 		List<PostEntity> listOfPosts = posts.getContent();
-		List<PostEntityDto> content= listOfPosts.stream().map(post -> postEntityMapper.toDto(post)).collect(Collectors.toList());
+		List<PostEntityDto> content= listOfPosts.stream().map( postEntityMapper::toDto ).collect(Collectors.toList());
 
 		PostEntityResponse postResponse = new PostEntityResponse();
 		postResponse.setContent(content);
@@ -167,15 +169,7 @@ public Optional<PostEntityDto> getPostById(long id) {
 		// get post by id from the database
 		PostEntity postOld = pr.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", Long.toString(id)));
 
-		postOld.setDid(postDto.getDid());
-		postOld.setPost(postDto.getPost());
-		postOld.setTitle(postDto.getTitle());
-		postOld.setAuthor(postDto.getAuthor());
-		postOld.setCat3(postDto.getCat3());
-		postOld.setMonthOrder(postDto.getMonthOrder());
-		postOld.setBlogcite(postDto.getBlogcite());
-		postOld.setCategory(cat);
-		System.out.println("cat: " + cat.toString());
+		postEntityMapper.partialUpdate(postDto, postOld);
 
 		PostEntity updatedPost = pr.save(postOld);
 		return postEntityMapper.toDto(updatedPost);

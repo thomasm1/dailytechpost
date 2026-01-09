@@ -22,9 +22,10 @@ public interface UsersRepository extends JpaRepository<User, Integer> {
     Page<User> findAllByUserType(Integer userType, Pageable pageable);
 
     User save(User user);
-    // MULTIPLE
+
     // SINGULAR
-    Optional<User> findById(@NotNull Integer id);
+    Optional<User> findByUserId(@NotNull Long userId);
+
 
     boolean existsByUsername(String username);
 

@@ -53,11 +53,7 @@ public class CategoryServiceImpl implements CategoryService {
         Category categoryUpdate = categoryRepository.findById(category.getId()).orElseThrow(
                 () -> new ResourceNotFoundException("Category", "id", Long.toString(category.getId())));
 
-        categoryUpdate.setName(categoryDto.getName());
-        categoryUpdate.setDescription(categoryDto.getDescription());
-
-        categoryUpdate.getNews().clear(); // Clears the existing collection
-        categoryUpdate.getNews().addAll(categoryMapper.toEntity(categoryDto).getNews()); // Adds new items
+        categoryMapper.partialUpdate(categoryDto, categoryUpdate);
 
         Category categoryDone = categoryRepository.save(categoryUpdate);
 

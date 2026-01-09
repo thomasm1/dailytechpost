@@ -10,6 +10,7 @@ public interface CategoryMapper {
 
     CategoryDto toDto(Category category);
 
+    @Mapping(target = "news", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Category partialUpdate(CategoryDto categoryDto, @MappingTarget Category category);
 }

@@ -20,9 +20,15 @@ public class Constant {
     public static final String DEFAULT_SORT_BY = "id";
     public static final String DEFAULT_SORT_DIRECTION = "asc";
 
-    public static final String USER_PATH = "/users";
+    public static final String USER_PATH = "/api/users";
     public static final String USER_PATH_ID = USER_PATH + "/{userId}";
-
+     public static final String LIST_USER_PATH = "/api/users/list";
+    public static final String REGISTER_USER_PATH = "/api/users/auth/register";
+    public static final String CREATE_USER_PATH = "/api/users/create";
+    public static final String UPDATE_USER_PATH = "/api/users/update";
+    public static final String PATCH_USER_PATH = "/api/users/patch";
+    public static final String DELETE_USER_PATH = "/api/users/delete";
+    public static final String USER_ID =  "/{userId}";
 
     public static final String API = "/api";
     public static final String BOOKS = "/books";

@@ -20,7 +20,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid", nullable = false, unique = true)
-    private int userId;
+    private Long userId;
 
     @Column(name = "username")
     private String username;
@@ -74,7 +74,7 @@ public class User {
 
 
     // Constructor for full user creation
-    public User(int userId, String username, String password, String lastName, String firstName, int userType,
+    public User(long userId, String username, String password, String lastName, String firstName, int userType,
                 String organizationCode, String email, String cusUrl, String dashboardCode, int isActive, int contactType, String id) {
         this.userId = userId;
         this.username = username;
@@ -92,7 +92,7 @@ public class User {
     }
 
     // Constructor for minimal user data
-    public User(int userId, String username) {
+    public User(long userId, String username) {
         this.userId = userId;
         this.username = username;
     }

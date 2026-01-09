@@ -24,7 +24,6 @@ import java.util.Optional;
 import static net.ourdailytech.rest.util.constants.Constant.*;
 
 
-@RequestMapping(API)
 @RestController
 @Tag(
         name = "CRUD REST APIs for User Resource",
@@ -69,7 +68,7 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     )
     @GetMapping(value = USER_PATH_ID)
-    public ResponseEntity<UserDto> getUser(@PathVariable("userId") int userId) {
+    public ResponseEntity<UserDto> getUser(@PathVariable("userId") long userId) {
         if (usersService.getUser(userId).isEmpty()) {
             throw new ResourceNotFoundException("User " + userId + "not found");
         }
@@ -150,6 +149,7 @@ public class UsersController {
         return ResponseEntity.ok(jwtAuthResponse);
     } 
 
+
     @Operation(
             summary = "Update User REST API",
             description = "Update User REST API is used to update a particular user in the database"
@@ -157,16 +157,18 @@ public class UsersController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
-    ) 
-  
+    )
     @PutMapping(value = { USER_PATH}, consumes = "application/json")  // userId in body
-    public ResponseEntity<UserDto> updateUser( @RequestParam(value="userId", required = false) long userId, @RequestBody UserDto userDto) {
-        Optional<UserDto> updated = usersService.updateUser(userDto);
+    public ResponseEntity<UserDto> updateUser( @RequestParam(value="userId", required = false) Long userId, @RequestBody UserDto userDto) {
+        Long effectiveId = (userId != null) ? userId : userDto.getUserId();
+        if (effectiveId == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        Optional<UserDto> updated = usersService.updateUser(userDto,  effectiveId.longValue());
         return updated.map(dto -> new ResponseEntity<>(
                 dto,
                 HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-
 
 
     @Operation(
@@ -177,14 +179,15 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
-    @PatchMapping(USER_PATH_ID)
-    public ResponseEntity<UserDto> patchUserById(@PathVariable("userId") Integer userId,
-                                                 @RequestBody UserDto user) {
+    @PatchMapping(value = {USER_PATH,PATCH_USER_PATH })
+    public ResponseEntity<UserDto> patchUserById(@RequestParam(value="userId", required = false) Long userId,
+        @RequestBody UserDto user) {
 
-        usersService.patchUserById(userId, user);
+        usersService.patchUser(user, userId);
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 
 
     @Operation(
@@ -199,14 +202,14 @@ public class UsersController {
             name = "Bearer Authentication"
     )
    //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @DeleteMapping(value = USER_PATH_ID)
-    public ResponseEntity<Boolean> deleteUser(@PathVariable("userId") int userId) {
+    @DeleteMapping(value = {USER_PATH+USER_ID,  DELETE_USER_PATH+USER_ID})
+    public ResponseEntity<Boolean> deleteUser(@PathVariable("userId") long userId) {
         Boolean boolSuccess = null;
 
         Optional<UserDto> tempUser = usersService.getUser(userId);
-        if (tempUser == null) throw new ResourceNotFoundException("User " + userId + "not found to delete");
+        if (tempUser.isEmpty()) throw new ResourceNotFoundException("User " + userId + "not found to delete");
         try {
-            boolSuccess = usersService.deleteUser(String.valueOf(tempUser));
+            boolSuccess = usersService.deleteUser( userId);
             if (boolSuccess) {
                 return new ResponseEntity<>(boolSuccess, HttpStatus.OK);
             }

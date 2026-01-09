@@ -60,10 +60,8 @@ public class WeblinksServiceImpl implements WeblinksService {
     public WeblinkDto updateWeblink(Long weblinkId, WeblinkDto change) {
         Weblink existingWeblink = weblinksRepository.findById(weblinkId)
             .orElseThrow(() -> new ResourceNotFoundException("Weblink", "id: ", String.valueOf(weblinkId)));
-        // Update fields
-        existingWeblink.setTitle(change.getTitle());
-        existingWeblink.setUrl(change.getUrl());
-        existingWeblink.setHost(change.getHost());
+
+        weblinkMapper.partialUpdate(change, existingWeblink);
 
         Weblink weblink = weblinksRepository.save(existingWeblink);
         return weblinkMapper.toDto(weblink);

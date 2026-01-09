@@ -6,22 +6,24 @@ import org.mapstruct.*;
 
 import java.util.List;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
+@Mapper(
+    unmappedTargetPolicy = ReportingPolicy.IGNORE,
+    componentModel = "spring",
+    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE
+)
 public interface PostEntityMapper {
-    PostEntity toEntity(PostEntityDto postEntityDto);
+
+    @Mapping(target = "category", ignore = true) // handle separately if needed
+    @Mapping(target = "user", ignore = true)     // handle separately
+    @Mapping(target = "comments", ignore = true) // managed separately
+    @Mapping(target = "weblinks", ignore = true) // managed separately
+    PostEntity toEntity(PostEntityDto dto);
 
     PostEntityDto toDto(PostEntity postEntity);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    PostEntity partialUpdate(PostEntityDto postEntityDto, @MappingTarget PostEntity postEntity);
-//
-//    PostEntityDto PostEntityToPostEntityDTO(PostEntity postByUsernameAndId);
-//
-//    List<PostEntity> PostEntitysToPostEntityDTOs(List<PostEntity> allPostsByUsername);
-//
-//    PostEntity PostEntityDTOToPostEntity(PostEntityDto postEntityDto);
-//
-//
-////    List<PostEntity> PostEntityDTOsToPostEntitys(List<PostEntityDto> postEntityDtos);
-
+    @Mapping(target = "category", ignore = true) // PATCH does not change category
+    @Mapping(target = "user", ignore = true)     // PATCH does not change user
+    @Mapping(target = "comments", ignore = true) // PATCH does not change child comments
+    @Mapping(target = "weblinks", ignore = true) // PATCH does not change child weblinks
+    void partialUpdate(PostEntityDto dto, @MappingTarget PostEntity entity);
 }

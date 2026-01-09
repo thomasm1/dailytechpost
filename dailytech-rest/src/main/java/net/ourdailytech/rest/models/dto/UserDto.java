@@ -24,7 +24,7 @@ import java.util.Set;
 public class UserDto implements Serializable {
 
 
-    private int userId; // userId
+    private Long userId; // userId
     @Schema(description = "User First Name")
     private String username;
     private String lastName; // lastName

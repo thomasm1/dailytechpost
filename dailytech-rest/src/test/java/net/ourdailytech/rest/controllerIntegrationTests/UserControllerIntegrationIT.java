@@ -50,7 +50,7 @@ class UserControllerIntegrationIT {
 
   @Test
   void testGetUserById() throws Exception {
-    Mockito.when(userService.getUser(1)).thenReturn(Optional.of(
+    Mockito.when(userService.getUser(1l)).thenReturn(Optional.of(
         UserDto.builder().id("1").username("user1").email("user1@example.com").build()
     ));
 
@@ -77,9 +77,9 @@ class UserControllerIntegrationIT {
 
   @Test
   void testUpdateUser() throws Exception {
-    UserDto userDto = UserDto.builder().id("1").username("updateduser").email("updated@example.com").build();
+    UserDto userDto = UserDto.builder().userId(1l).username("updateduser").email("updated@example.com").build();
 
-    Mockito.when(userService.updateUserById(eq(1), any(UserDto.class))).thenReturn(Optional.of(userDto));
+    Mockito.when(userService.updateUser(any(UserDto.class),eq(1l))).thenReturn(Optional.of(userDto));
 
     mockMvc.perform(put("/api/users/1")
             .contentType(MediaType.APPLICATION_JSON)
@@ -91,7 +91,7 @@ class UserControllerIntegrationIT {
 
   @Test
   void testDeleteUser() throws Exception {
-    Mockito.when(userService.deleteUser("user1")).thenReturn(true);
+    Mockito.when(userService.deleteUser(1l)).thenReturn(true);
 
     mockMvc.perform(delete("/api/users/user1"))
         .andExpect(status().isOk())

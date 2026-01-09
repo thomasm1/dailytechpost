@@ -151,7 +151,7 @@ public class BootstrapData {
         for (int i = 0; i < 10; i++) {
             userDtos.add(UserDto.builder()
                     .id(String.valueOf(i))
-                    .userId(i+1)
+                    .userId(i+1l)
                     .email(registerDtos.get(0).getEmail())
                     .username(registerDtos.get(0).getEmail())
                     .firstName(faker.name().firstName())
