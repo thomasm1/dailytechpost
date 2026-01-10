@@ -26,7 +26,7 @@ public class NewsController {
   @Operation(summary = "Add a new news item")
   @ApiResponse(responseCode = "201", description = "News created")
   @SecurityRequirement(name = "Bearer Authentication")
-  // @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+  // @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
   @PostMapping({"", "/"})
   public ResponseEntity<NewsDto> addNews(@RequestBody NewsDto newsDto) {
     NewsDto saved = newsServiceImpl.createNews(newsDto);
@@ -51,7 +51,8 @@ public class NewsController {
   @Operation(summary = "Update a news item")
   @ApiResponse(responseCode = "200", description = "News updated")
   @SecurityRequirement(name = "Bearer Authentication")
-  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+//  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
   @PutMapping({"", "/"})
   public ResponseEntity<NewsDto> updateNews(
       @RequestParam(value = "id", required = false) Long newsId,

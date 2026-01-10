@@ -43,10 +43,9 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   private initForm() {
     this.writingForm = this.fb.group({
-
       title: ['', Validators.required],
       post: ['', Validators.required],
-      cat3: ['', Validators.required],
+      cat3: [''],
       did: [''],
       state: [''],
     });

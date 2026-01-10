@@ -10,8 +10,8 @@
     ― J.K. Rowling
     </pre>
   </section>
-  <section class="clearfix">
-    <section class="left">
+  <section class="clearfix" style="display: flex; flex-wrap: wrap; gap: 20px; width: 100%;">
+    <section class="left" style="flex: 0 0 200px; min-width: 200px; order: 2;">
       <section class="cat-news">
         <h4>Resources</h4>
         <ul *ngFor="let new of news">
@@ -33,36 +33,46 @@
         &nbsp;Quit writing&nbsp;&nbsp;&nbsp;
       </button>
     </section>
-    <section class="right clearfix">
-      <h3 class="title"> Write here. Write now. </h3>
+    <section class="right clearfix" style="flex: 1; min-width: 300px; max-width: 100%; overflow: hidden; order: 1;">
+      <br />
+      <h3 class="title">     Write here. Write now. </h3>
 
-      <section class="writing-form">
-        <form [formGroup]="writingForm" (ngSubmit)="onSubmit()">
+      <section class="writing-form" style="width: 100%; max-width: 100%;">
+        <form [formGroup]="writingForm" (ngSubmit)="onSubmit()" style="width: 100%;">
 
-          <mat-form-field>
-  
-            <input type="text" class="title" min="100" id="title" matInput formControlName="title"
-              placeholder="Title" />
+          <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
+            <!-- <mat-label>Title</mat-label> -->
+            <input 
+              type="text" 
+              matInput 
+              formControlName="title"
+              placeholder="Enter your blog title here..." 
+              style="font-family: 'Courier New', Courier, monospace; font-weight: 300; width: 100%;"
+            />
           </mat-form-field>
-          <!-- <mat-form-field>
-            <mat-label for="cat3">Category</mat-label>
-            <mat-select placeholder="Category" name="writing" formControlName="cat3">
-              <mat-option *ngFor="let writing of writingMods$ | async" [value]="writing.cat3">
-                {{ writing.cat3 }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field> -->
-          <mat-form-field>
-            <textarea class="post" id="post" matInput formControlName="post"
-              placeholder="POST: Write here, Write now..."></textarea>
-          </mat-form-field>
-          <button mat-raised-button color="primary">
-            Submit
-          </button>
 
-          <!-- [disabled]="!writingFo
-           
-          rm.valid" -->
+          <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
+            <!-- <mat-label>Content</mat-label> -->
+            <textarea 
+              matInput 
+              formControlName="post"
+              placeholder="Write here, Write now..."
+              rows="20"
+              style="font-family:'Courier New', Courier, monospace; font-size: 12px; 
+              line-height: 1.6; resize: vertical; min-height: 400px; font-weight: 300; width: 100%; box-sizing: border-box;"
+            ></textarea>
+            <mat-hint align="end"  style="font-family:'Courier New', Courier, monospace; font-size: 12px;"
+              >{{ writingForm.get('post')?.value?.length || 0 }} characters</mat-hint>
+          </mat-form-field>
+
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!writingForm.valid">
+              Submit
+            </button>
+            <span *ngIf="!writingForm.valid" style="color: #666; font-size: 14px;">
+              Please fill in title and content
+            </span>
+          </div>
         </form>
 
       </section>

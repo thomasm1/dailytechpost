@@ -8,6 +8,7 @@ import org.mapstruct.*;
 public interface NewsMapper {
     News toEntity(NewsDto newsDto);
 
+    @Mapping(target = "categoryId", expression = "java(news.getCategory() != null ? news.getCategory().getId() : null)")
     NewsDto toDto(News news);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

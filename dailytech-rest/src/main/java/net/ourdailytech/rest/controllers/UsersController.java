@@ -201,7 +201,7 @@ public class UsersController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @DeleteMapping(value = {USER_PATH+USER_ID,  DELETE_USER_PATH+USER_ID})
     public ResponseEntity<Boolean> deleteUser(@PathVariable("userId") long userId) {
         Boolean boolSuccess = null;

@@ -25,7 +25,7 @@ public class CategoryController {
     @Operation(summary = "Add a new category")
     @ApiResponse(responseCode = "201", description = "Category created")
     @SecurityRequirement(    name = "Bearer Authentication" )
-   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+   //  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @PostMapping({"", "/"})
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
         CategoryDto savedCategory = categoryService.addCategory(categoryDto);
@@ -51,7 +51,7 @@ public class CategoryController {
     @Operation(summary = "Update a category")
     @ApiResponse(responseCode = "200", description = "Category updated")
     @SecurityRequirement(     name = "Bearer Authentication"   )
-     @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+     @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @PutMapping({"", "/"}) // Allows both /api/categories/{id} and /api/categories
     public ResponseEntity<CategoryDto> updateCategory(
             @RequestParam(value = "id", required = false) Long categoryId,
