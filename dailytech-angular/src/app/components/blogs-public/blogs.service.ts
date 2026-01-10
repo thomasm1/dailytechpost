@@ -14,6 +14,8 @@ export class BlogsService {
 
   baseAwsUrl: string;
   private allBlogsCache: Blog[] = null;
+  private cacheTimestamp: number = null;
+  private readonly CACHE_DURATION_MS = 120 * 60 * 1000;  // 2hours
 
   constructor(private http: HttpClient) { }
 
@@ -24,9 +26,26 @@ export class BlogsService {
   blogsUpdated = new Subject();
   private blogs;
 
-  getAllBlogs(): Observable<Blog[]> {
-    if (this.allBlogsCache) {
-      console.log('Returning cached blogs:', this.allBlogsCache.length);
+  /**
+   * Check if cache is still valid based on timestamp
+   */
+  private isCacheValid(): boolean {
+    if (!this.allBlogsCache || !this.cacheTimestamp) {
+      return false;
+    }
+    const now = Date.now();
+    const cacheAge = now - this.cacheTimestamp;
+    return cacheAge < this.CACHE_DURATION_MS;
+  }
+
+  /**
+   * Get all blogs with caching support
+   * @param forceRefresh - if true, bypass cache and fetch fresh data
+   */
+  getAllBlogs(forceRefresh: boolean = false): Observable<Blog[]> {
+    if (!forceRefresh && this.isCacheValid()) {
+      console.log('Returning cached blogs:', this.allBlogsCache.length, 
+        `(age: ${Math.round((Date.now() - this.cacheTimestamp) / 1000)}s)`);
       return of(this.allBlogsCache);
     }
     
@@ -37,8 +56,18 @@ export class BlogsService {
       tap(blogs => {
         console.log('Received blogs from AWS:', blogs.length);
         this.allBlogsCache = blogs;
+        this.cacheTimestamp = Date.now();
       })
     );
+  }
+
+  /**
+   * Clear the cache manually
+   */
+  clearCache(): void {
+    console.log('Cache cleared');
+    this.allBlogsCache = null;
+    this.cacheTimestamp = null;
   }
 
   getBlog(id): Observable<Blog> {

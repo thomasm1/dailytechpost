@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Setter
 public class WeblinkDto implements Serializable {
     private static long serialVersionUID = 1L;
-    private long id;
+    private Long id;
 
     private String title;
     private String profileUrl;

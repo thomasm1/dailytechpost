@@ -4,10 +4,11 @@ import net.ourdailytech.rest.models.dto.PostEntityDto;
 import net.ourdailytech.rest.models.dto.PostEntityResponse;
 
 import java.util.Optional;
+import net.ourdailytech.rest.models.dto.PostRequestDto;
 
 public interface PostService {
 	public PostEntityDto createPost(PostEntityDto postEntityDto);
-
+	public PostEntityDto createPostFromRequestDto(PostRequestDto postRequestDto);
 	public PostEntityResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir);
 	public PostEntityResponse getAllPostsByUsername(int pageNo, int pageSize, String sortBy, String sortDir, String username);
 

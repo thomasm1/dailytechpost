@@ -17,6 +17,7 @@ function fn() {
         userEmail: 'thomas1@gmail.com',
         userPassword: 'password',
         baseUrl:  'http://localhost:8082',
+        jwtToken: 'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYTMzM3RAZ21haWwuY29tIiwiaWF0IjoxNzY4MDI2MzA4LCJleHAiOjE3Njg2MzExMDh9.xjybYwSAEdc_5WyThNjcUcsn2aSREB1jXQjXK5RHrH60kV3MawmmO8pMQISNpBzm',
         spring_datasource_url: '',
         spring_datasource_username: '',
         spring_datasource_password: pw

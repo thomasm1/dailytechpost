@@ -7,6 +7,7 @@ import net.ourdailytech.rest.models.PostEntity;
 import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
 import net.ourdailytech.rest.models.dto.PostEntityResponse;
+import net.ourdailytech.rest.models.dto.PostRequestDto;
 import net.ourdailytech.rest.repositories.CategoryRepository;
 import net.ourdailytech.rest.repositories.PostRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
@@ -40,6 +41,19 @@ public class PostServiceImpl implements PostService {
 	private PostEntityMapper postEntityMapper;
 
 	@Override
+	public PostEntityDto createPostFromRequestDto(PostRequestDto postEntityDto) {
+		Category cat = categoryRepository.findById(postEntityDto.getCategoryId()).orElseThrow(
+				() -> new ResourceNotFoundException("Category", "id", Long.toString(postEntityDto.getCategoryId())));
+		System.out.println("category id & name: " + postEntityDto.getCategoryId() + " - " + cat.getName());
+		PostEntity postEntity = postEntityMapper.requestToEntity(postEntityDto);
+		postEntity.setCategory(cat);
+		PostEntity newPostEntity = pr.save(postEntity);
+
+		PostEntityDto postResponse = postEntityMapper.toDto(newPostEntity);
+		return postResponse;
+	}
+
+	@Override
 	public PostEntityDto createPost(PostEntityDto postEntityDto) {
 		Category cat = categoryRepository.findById(postEntityDto.getCategoryId()).orElseThrow(
 				() -> new ResourceNotFoundException("Category", "id", Long.toString(postEntityDto.getCategoryId())));
@@ -51,7 +65,6 @@ public class PostServiceImpl implements PostService {
 		PostEntityDto postResponse = postEntityMapper.toDto(newPostEntity);
 		return postResponse;
 	}
-
 	@Transactional(readOnly=true)
 	@Override
 	public PostEntityResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir) {

@@ -37,7 +37,7 @@
     "@ngrx/router-store": "^15.4.0",
     "@ngrx/store": "^15.4.0",
     "@techiediaries/ngx-qrcode": "^9.1.0",
-    "ag-charts-angular": "^13.0.0",
+    "ag-charts-angular": "9.3.2",
     "bootstrap": "^3.4.1",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",

@@ -3,6 +3,8 @@ package net.ourdailytech.rest.controllers;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import java.net.URI;
+import net.ourdailytech.rest.models.dto.PostRequestDto;
 import net.ourdailytech.rest.util.constants.Constant;
 import net.ourdailytech.rest.mapper.PostEntityMapper;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RequestMapping(path = Constant.API_POSTS)
 @RestController
@@ -115,20 +118,23 @@ public class PostEntityController {
         return ResponseEntity.ok(postEntityDtoList);
     }
 
-  @Operation(
-            summary = "Create a new post",
-            description = "Create a new post"
-    )
-    @ApiResponse(responseCode = "201", description = "Post created")
-    @SecurityRequirement(
-            name = "Bearer Authentication"
-    )
-   //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
-    @PostMapping({"", "/", "/create"})
-    public ResponseEntity<PostEntityDto> createPost(@RequestBody PostEntityDto postEntityDto){
-        return new ResponseEntity<>(postService.createPost(postEntityDto), HttpStatus.CREATED);
-    }
 
+  @Operation(
+      summary = "Create a new post",
+      description = "Create a new post"
+  )
+  @ApiResponse(responseCode = "201", description = "Post created")
+  @SecurityRequirement(
+      name = "Bearer Authentication"
+  )
+  //  @PreAuthorize("hasRole({'ADMIN', 'USER'})")
+  @PostMapping({"", "/", "/create"})
+  public ResponseEntity<PostEntityDto> createPost(@RequestBody PostRequestDto postRequestDto){
+    PostEntityDto dtoReturned = postService.createPostFromRequestDto(postRequestDto) ;
+
+    return new ResponseEntity<>(dtoReturned,  HttpStatus.CREATED);
+
+  }
 
     @Operation(
             summary = "Get all posts by title",
@@ -145,6 +151,7 @@ public class PostEntityController {
       if (effectiveId == null) {
         return ResponseEntity.badRequest().build();
       }
+      postEntityDto.setId(effectiveId);
         PostEntityDto postResponse = postService.updatePost(postEntityDto,  effectiveId.longValue());
         return new ResponseEntity<>(postResponse, HttpStatus.OK);
     }

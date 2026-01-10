@@ -11,7 +11,7 @@ import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-g
 import { StatisticsService } from './components/blogs-public/Statistics.service';
 import { BlogsService } from './components/blogs-public/blogs.service';
 import { A11yModule } from "@angular/cdk/a11y";
-import { AgCharts } from 'ag-charts-angular';
+import { AgChartsAngularModule } from 'ag-charts-angular';
 
 @NgModule({
   declarations: [
@@ -27,9 +27,8 @@ import { AgCharts } from 'ag-charts-angular';
     MatButtonModule,
     MatTableModule,
     A11yModule,
-    AgCharts
-
-],
+    AgChartsAngularModule
+  ],
   providers: [
     StatisticsService,
     BlogsService

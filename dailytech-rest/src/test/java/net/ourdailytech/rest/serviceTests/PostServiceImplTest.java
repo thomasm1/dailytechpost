@@ -25,7 +25,7 @@ public class PostServiceImplTest {      // *NOTE: change PK coinnames before sen
 
     private PostEntityDto getPostEntityDto() {
         PostEntityDto postEntityDto = PostEntityDto.builder()
-                .id(1)
+                .id(1L)
                 .author("thomas")
                 .post("post")
                 .did("did")

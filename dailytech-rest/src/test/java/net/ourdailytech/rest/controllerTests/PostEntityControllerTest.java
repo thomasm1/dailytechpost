@@ -3,6 +3,7 @@ package net.ourdailytech.rest.controllerTests;
 import net.ourdailytech.rest.controllers.PostEntityController;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
 import net.ourdailytech.rest.models.dto.PostEntityResponse;
+import net.ourdailytech.rest.models.dto.PostRequestDto;
 import net.ourdailytech.rest.service.PostService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -85,31 +86,33 @@ public class PostEntityControllerTest {
     @Test
     @WithMockUser(roles = "ADMIN")
     void testCreatePost() throws Exception {
+        PostRequestDto postRequest = new PostRequestDto();
+        postRequest.setTitle("New Post");
         PostEntityDto postEntityDto = new PostEntityDto();
         postEntityDto.setId(1L);
         postEntityDto.setTitle("New Post");
-
-        when(postService.createPost(any(PostEntityDto.class))).thenReturn(postEntityDto);
+        postEntityDto.setPost("Some content");
+        when(postService.createPostFromRequestDto(any(PostRequestDto.class))).thenReturn(postEntityDto);
 
         mockMvc.perform(post("/api/posts")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"title\": \"New Post\" }"))
+                        .content("{  \"title\": \"New Post\", \"post\": \"Some content\"  }"))
                 .andExpect(status().isCreated())
-                .andExpect((ResultMatcher) jsonPath("$.title").value("New Post"));
+                .andExpect(jsonPath("$.title").value("New Post"));
     }
 
     @Test
     @WithMockUser(roles = "ADMIN")
     void testUpdatePost() throws Exception {
         PostEntityDto postEntityDto = new PostEntityDto();
-        postEntityDto.setId(1);
+        postEntityDto.setId(1L);
         postEntityDto.setTitle("Updated Post");
 
         when(postService.updatePost(any(PostEntityDto.class), anyLong())).thenReturn(postEntityDto);
 
         mockMvc.perform(put("/api/posts")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"title\": \"Updated Post\"  }")
+                        .content("{\"id\": \"1\", \"title\": \"New Post\", \"post\": \"Some content\"  }")
 //                        .param("id", "1")   // OPTIONAL parameter
             )
                 .andExpect(status().isOk())

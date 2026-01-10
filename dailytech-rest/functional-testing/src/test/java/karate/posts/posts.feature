@@ -1,56 +1,82 @@
 Feature: Posts API karate test script
 
   Background:
-    Given url baseUrl + '/'
-  #/dev/posts?Content-Type=Application/JSON'
+    Given url baseUrl + '/api/'
+    * def token = jwtToken
 
+  @getCycle
+  @Order(1)
   Scenario: get all AWS posts and then get the first post by id
-    Given path 'api/posts'
+    Given path 'posts'
     When method GET
     Then status 200
 
-    * def first = response.body[0]
+    * def first = response.content[0]
     * print first
-       Given path 'dev/post', first.id
-     #'ca2cdb9d-ac1f-4d8c-8ad5-e57215d86190'
-       When method GET
-       Then status 200
-       * print response
-     #first.id
 
+     Given path 'posts', first.id
+     When method GET
+     Then status 200
+#     * print response
+    Then match response.id == first.id
 
+  @postCycle
+  @Order(2)
      Scenario: create a post and then get it by id
        * def post =
          """
   {
-          "date": "September 20, 2024",
-          "cat3": "Quantum Data",
-          "post": "\n  Finally. ",
-          "author": "by Thomas Maestas, MA",
-          "title": "Noise Pollution",
-          "did": "24-09-20",
-          "blogcite": "\n blogcite  "
-      }
+    "did": "2025-05-05",
+    "date": "D1005",
+    "author": "ThomasM",
+    "monthOrder": "July",
+    "cat3": "crypto Finance",
+    "title": "Stock Market Trends",
+    "post": "Analyzing latest crypto market trends...",
+    "blogcite": "https://blogsite5.com",
+    "email": "thomas.maestas@example.com",
+    "state": "Published",
+    "wordCount": 2000,
+    "durationGoal": 14,
+    "categoryId": 11
+
+  }
          """
 
-       Given url
-       And path '/dev/post'
+       Given path 'posts'
        And request post
-       When method post
+       And header Authorization = 'Bearer ' + token
+       When method POST
        Then status 201
+       * def localId = response.id
 
-       * def id = response.id
-       * print 'created id is: ', id
-
-       Given path 'dev/post', first.id
-       When method delete
+       #3 PUT
+       Given path 'posts'
+       * print 'created id  is: ', localId
+       * post['id'] = localId
+       And header Authorization = 'Bearer ' + token
+       And param id = localId
+       And request post
+       When method PUT
        Then status 200
-        * match response ==
-     """
-     {
-      "body": "Post deleted successfully"
-  }
-     """
+
+       Given path 'posts', localId
+       And header Authorization = 'Bearer ' + token
+       When method delete
+
+       Then status 401
+                # Unauthorized for delete without admin role
+
+#       Then status 200
+                  # And print 'deleted id is: ', localId
+#        * match response ==
+#     """
+#     {
+#      "body": "Post deleted successfully"
+#  }
+#     """
+
+
        # Given path id
        # When method GET
        # Then status 200

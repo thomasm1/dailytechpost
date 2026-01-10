@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class BookmarkDto implements Serializable {
 
     static final long serialVersionUID = 1L;
-    private long id;
+  private Long id;
     private String title;
     private String profileUrl;
     private UserDto sharedBy;

@@ -1,57 +1,45 @@
 Feature: Posts API karate test script
 
   Background:
-    * url baseUrl + '/'
-
+    * url baseUrl + '/api/'
+    * def token = jwtToken
+  @getCycle
+  @Order(1)
   Scenario: get all comments and then get the first comment by id
-    Given path 'api/comments'
+    Given path 'posts'
     When method get
     Then status 200
 
-    * def first = response[0]
+    * def firstPostId = response.content[0].id
+    * def firstCommentIdOfFirstPost = response.content[0].comments[0].id
+    Given path 'posts/' + firstPostId + '/comments/' + firstCommentIdOfFirstPost
 
-    Given path 'api/posts' + first.id + '/comments
     When method get
     Then status 200
+    * json resp = response
+    * match resp contains {   body: '#string',   name: '#string', email: '#string', id: '#number' }
 
-  Scenario: create a product and then get it by id
+  @postCycle
+  @Order(2)
+  Scenario: create a comment and then get it by id
+    * def firstPostId = 20
     * def comment =
       """  {
-    "id": 99,
-    "version": "null",
-    "dateCreated": "null",
-    "lastUpdated": "null",
-    "author": "test",
-      "post": {
-      "id": 20,
-      "version": "null",
-      "dateCreated": "null",
-      "lastUpdated": "null",
-      "title": "test",
-      "content": "test"
-      },
-    "content": "test",
-    "rating": 5,
-        "status": {
-        "id": 1,
-        "version": 0,
-        "dateCreated": null,
-        "lastUpdated": null,
-        "name": null
-        }
-    }
+        "body": "body#3", "name": "Commenter#3", "email": "anonymous#3@gmail.com"}
       """
+    Given path 'posts/' + firstPostId + '/comments'
 
-    Given path 'api/posts/20/comments'
     And request comment
+    And header Authorization = 'Bearer ' + token
     When method POST
     Then status 201
 
-    * def id = response.id
-    * print 'created id is: ', id
+    * def nextCommentId = response.id
+    * def commentNext = {  "body": "body#3edit",  "name": "Commenter#3-edit",  "email": "anonymous#3-edited@gmail.com"}
 
-    Given path id
-    When method GET
+    Given path 'posts/' + firstPostId + '/comments/' + nextCommentId
+    And request commentNext
+    And header Authorization = 'Bearer ' + token
+    When method PUT
     Then status 200
-    And match response contains content
   

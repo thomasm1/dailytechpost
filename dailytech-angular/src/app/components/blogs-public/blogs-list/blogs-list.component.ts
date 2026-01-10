@@ -59,6 +59,20 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
       });
   }
 
+  /**
+   * Force refresh blogs from API (bypass cache)
+   */
+  forceRefreshBlogs() {
+    this.blogsLoading = true;
+    this.blogsSubscription = this.blogsService
+      .getAllBlogs(true)  
+      .subscribe((response) => {
+        this.blogs = response;
+        this.categoryUpdater(this.blogs);
+        this.blogsLoading = false;
+      });
+  }
+
   categoryUpdater(blogs) {
         // console.log(blogs);
         this.blogsWeb = blogs.filter((x) => x.cat3 == 'Web Dev Affairs');

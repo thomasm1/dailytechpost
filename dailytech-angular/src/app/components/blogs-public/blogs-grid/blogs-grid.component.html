@@ -22,7 +22,7 @@
             <div class="descriptive-column">
               <p>Component Loaded: Yes</p>
               <!-- <p>Loading: {{ loading }}</p> -->
-              <p>Total Blogs: {{ statistics.totalBlogs | number }}</p>
+              <p>Total Blogs: {{ statistics.totalBlogs | number  }}</p>
               <p>Total Words: {{ statistics.totalWordCount | number }}</p>
               <p>Avg: {{ statistics.averageWordCount | number }}</p>
             </div>
@@ -39,9 +39,23 @@
       </mat-card>
     </div>
 
-    <ag-charts [options]="chartOptions" style="height: 300px; width: 100%;">
-    </ag-charts>
-
+    <!-- Chart Section -->
+    <mat-card class="chart-section">
+      
+      <mat-card-header>
+        <div  class="centered-header-flex" style="display: flex; align-items: baseline; gap: 12px">
+        <mat-icon>bar_chart</mat-icon>
+        <mat-card-title class="centered-header ">Blog Statistics Chart</mat-card-title>
+      </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div style="height: 400px; width: 100%;">
+          <ag-charts-angular [options]="options"></ag-charts-angular>
+        </div>
+      </mat-card-content>
+    
+   </mat-card> 
+<br />
     <!-- Category Filter Section -->
     <mat-card class="filter-section">
       <mat-card-header>
@@ -116,8 +130,8 @@
     <mat-card *ngIf="blogs.length > 0" class="posts-table-section"> -->
       <mat-card-header class="centered-header-flex">
         <mat-card-title class="centered-header "> {{ blogs.length }} Blog Posts</mat-card-title>
-
       </mat-card-header>
+      <hr />
       <mat-card-content>
         <table mat-table [dataSource]="blogs" class="full-width">
 

@@ -22,7 +22,7 @@ public class PostServiceMockTest {      // *NOTE: change PK postnames before sen
 
     private PostEntityDto getPostEntityDto() {
         PostEntityDto postEntityDto = PostEntityDto.builder()
-                .id(1)
+                .id(1L)
                 .author("thomas")
                 .post("post")
                 .did("did")

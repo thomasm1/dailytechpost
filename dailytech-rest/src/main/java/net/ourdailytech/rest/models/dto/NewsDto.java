@@ -18,5 +18,8 @@ public class NewsDto implements Serializable {
     Long id;
     String title;
     String url;
+
+    public void setId(Long effectiveId) {
+    }
 //    CategoryDto category;
 }

@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 public class CommentDto implements Serializable {
-    private long id;
+    private Long id;
     private String name;
     private String email;
     private String body;

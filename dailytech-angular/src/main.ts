@@ -6,12 +6,10 @@ import { AppModule } from './app/app.module';
 // import { AppComponent } from './app/app.component';
 
 import { environment } from './environments/environment';
-import { AllCommunityModule, ModuleRegistry } from 'ag-charts-community';
 
 if (environment.production) {
   enableProdMode();
 }
-ModuleRegistry.registerModules([AllCommunityModule]);
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

@@ -173,7 +173,6 @@ public class BootstrapData {
 
         for (int i = 1; i <= 10; i++) {
             postEntityDtos.add(PostEntityDto.builder()
-                    .id(i)
                     .did("10-" + (10 + i) + "-18")
                     .date("October " + (10 + i) + ", 2018")
                     .author("by Thomas Maestas")
@@ -193,7 +192,7 @@ public class BootstrapData {
 
         for (int i = 1;  i < 10; i++) {
             commentDtos.add(CommentDto.builder()
-                    .id(i)
+                    .id(Long.valueOf(i))
                     .name(faker.name().fullName())
                     .email(userDtos.get(i - 1).getUsername())
                     .body(faker.lorem().paragraph())

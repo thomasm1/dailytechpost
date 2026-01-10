@@ -2,6 +2,7 @@ package net.ourdailytech.rest.mapper;
 
 import net.ourdailytech.rest.models.PostEntity;
 import net.ourdailytech.rest.models.dto.PostEntityDto;
+import net.ourdailytech.rest.models.dto.PostRequestDto;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -18,6 +19,11 @@ public interface PostEntityMapper {
     @Mapping(target = "comments", ignore = true) // managed separately
     @Mapping(target = "weblinks", ignore = true) // managed separately
     PostEntity toEntity(PostEntityDto dto);
+
+    @Mapping(target = "user", ignore = true)     // handle separately
+    @Mapping(target = "comments", ignore = true) // managed separately
+    @Mapping(target = "weblinks", ignore = true) // managed separately
+    PostEntity requestToEntity(PostRequestDto dto);
 
     PostEntityDto toDto(PostEntity postEntity);
 

@@ -2,7 +2,9 @@ Feature: Users API karate test script
 
   Background:
     * url baseUrl + '/api/'
+    * def token = jwtToken
 
+  @getCycle
   @Order(1)
   Scenario: get all users and then get the first user by id
     Given path 'users'
@@ -15,8 +17,9 @@ Feature: Users API karate test script
     When method GET
     Then status 200
 
+  @postCycle
   @Order(2)
-  Scenario Outline: update a user and then get it by id
+  Scenario Outline: create a user and then get it by id
 
     * def rando = Math.floor(Math.random() * 1031)
     * def usernameEmail = "user" + rando + "@gmail.com"
@@ -43,12 +46,11 @@ Feature: Users API karate test script
         "id": null
       }
       """
-
-    #    * def token = 'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0dEBnbWFpbC5jb20iLCJpYXQiOjE3NDEyNzcyMjcsImV4cCI6MTc0MTg4MjAyN30.PTCjg9RTEew23yr49hXdkK3KIQGWcxFTtxtuqEG3ZKPtM3g69-1YMkByOHQnJeJU'
     #call read('classpath:auth.feature') { username: '   ', password: '    ' }
 
     # 1 CREATE
     Given path 'users'
+    And header Authorization = 'Bearer ' + token
     And request user
     When method POST
     Then status 201
@@ -64,9 +66,11 @@ Feature: Users API karate test script
     Then status 200
     #    And match response contains user
     #3 PUT
-    Given path 'users' + "&userId=" + localId
+    Given path 'users'
     * print 'user is: ', localId
     * user['userId'] = localId
+    And header Authorization = 'Bearer ' + token
+    And param userId = localId
     And request user
     When method PUT
     Then status 200
@@ -75,8 +79,10 @@ Feature: Users API karate test script
     Given path 'users/' + localId
     * print 'user is: ', localId
     When method DELETE
-    Then status 200
-
+    And header Authorization = 'Bearer ' + token
+#    Then status 200
+    Then status 401
+                  # because delete is not allowed for this user role
     Examples:
       | _path  | _meth | _stat | newid      | _meth2 | _stat2 |
       | users/ | PUT   | 200   | '#(newid)' | GET    | 200    |

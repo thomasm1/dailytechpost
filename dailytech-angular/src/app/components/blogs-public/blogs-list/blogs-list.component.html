@@ -242,4 +242,11 @@
         </table>
     </mat-tab> -->
 </mat-tab-group>
+
+
+<div style="text-align: right; margin-bottom: 100px;">
+  <button mat-stroked-button (click)="forceRefreshBlogs()" [disabled]="blogsLoading">
+    <mat-icon>refresh</mat-icon> Refresh
+  </button>
+</div>
  
