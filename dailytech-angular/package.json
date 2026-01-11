@@ -8,10 +8,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "update": "ng update @angular/core@15 @angular/cli@15",
-    "update1": "ng update @angular/material@15",
-    "update2": "ng update @ngrx/store@15 @ngrx/effects@15",
-    "update3": "ng update @angular/service-worker@15 @angular/pwa@15",
+    "update": "ng update @angular/cli@16 @angular/core@16",
+    "update1": "ng update @angular/material@16",
+    "update2": "ng update @ngrx/store@16 @ngrx/effects@16 @ngrx/entity@16 @ngrx/router-store@16",
     "e2e": "ng e2e"
   },
   "private": true,

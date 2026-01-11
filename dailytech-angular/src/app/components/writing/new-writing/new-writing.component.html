@@ -17,6 +17,7 @@
           </mat-card-content>
           <mat-card-actions class="centered-text" *ngIf="!isLoading">
               <button  *ngIf="writingMods$ | async" type="submit" mat-raised-button  [disabled]="f.invalid">Start</button>
+              <button  type="button" mat-raised-button (click)="fetchCategories()" >Preview Env</button>
               <button  *ngIf="!(writingMods$ | async)" type="button" mat-raised-button  (click)="fetchWritings()">Fetch Again</button>
           </mat-card-actions>
       </mat-card>
