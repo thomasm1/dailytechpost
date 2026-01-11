@@ -33,9 +33,13 @@
 
 /* Gap between navigation items */
 .nav-gap-10 a.mat-mdc-list-item {
-  margin-right: 10px;
+  margin-right:1px;
 }
 
+.li {
+  list-style-type: none;
+  color:white;
+}
 
  li.pointer  {
    cursor: pointer;
@@ -53,7 +57,7 @@
  }
 
  .nav-gap-10 {
-   gap: 40px;
+   gap: 20px;
  }
 
  .hide-xs {
@@ -94,21 +98,23 @@ mat-toolbar {
     height:80px;
     position: relative;
 }
-mat-toolbar.mat-primary {
-    background: #673ab75c;
-}
+// mat-toolbar.mat-primary {
+//     background: #673ab75c;
+// }
 
 div.menu {
   background-image: url("../../../assets/bluechipTile.jpg");
 }
+mat-toolbar.mat-primary {
+    background: #673ab75c;  // Restore the background color
+}
 
- .menu-center {
-   position: absolute;
-   left: 50%;
-   transform: translateX(-50%);
+.menu-center {
+   margin-left:10px;  // Start after the logo
    display: flex;
    justify-content: center;
    align-items: center;
+   position: static;  // Remove absolute positioning
  }
 
 #menu-list a {

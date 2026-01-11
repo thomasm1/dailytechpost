@@ -1,6 +1,7 @@
 export interface WritingMod {
     id?: string; 
-    cat3?: string,
+    cat3?: 'Web Dev Affairs' | 'Musing Blockchain' | 'A.I.Now.' | 'Sociology Tomorrow!' | 'Quantum Data' ,
+    category?: 'Web Dev Affairs' | 'Musing Blockchain' | 'A.I.Now.' | 'Sociology Tomorrow!' | 'Quantum Data' ,
     news?: string[]; 
     duration?: number;
     durationGoal?: number;

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { WritingMod } from '../../../models/writing-mods.model';
+import { NewsMod } from '../../../models/news-mods.model';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -23,9 +24,13 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   progress = 0;
   timer: any;
-  news: string[];
+  news: string [];
   writingForm: FormGroup;
   writingMods$: Observable<WritingMod[]>;
+  newsMods$: Observable<NewsMod[]>;
+  category: string;
+  newsAdd: boolean= false;
+
 
   constructor(
     private writingService: WritingService,
@@ -56,6 +61,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingMod => {
       // this.news = this.writingService.getWritingExercise().news;
       this.news = writingMod.news;
+      this.category = writingMod.cat3;
       // const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
       const step = writingMod.durationGoal / 100 * 1000;
       this.timer = setInterval(() => {
@@ -90,12 +96,35 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     });
   }
   addUrl() {
-    console.log("add-url");
+        console.log("add-url");
+        this.newsAdd = true;
+        
   }
+  onAddUrl(urlInput: HTMLInputElement) {
+        const url = urlInput.value;
+        if (url && url.trim() !== '') {
+          this.news.push(url.trim());
+               this.writingService.updateNewsUrls(url.trim()).then(
+        () => {
+          console.log('aupdateNewsUrls Submission to writing-mods successful');
+          this.writingForm.reset();
+          this.progress = 0;
+          this.router.navigate(['/']);
+        },
+        error => {
+          console.error('updateNewsUrls Submission to writing-mods failed', error);
+        }
+      );
+          urlInput.value = '';
+        }
+        this.newsAdd = false;
+  } 
+
   onSubmit(): void {
     if (this.writingForm.valid) {
       // this.writingForm.value.id = getuid();
       this.writingForm.value.did = this.formatDate(new Date());
+      this.writingForm.value.cat3 = this.category;
       this.writingForm.value.state = 'completed';
       this.writingForm.value.date = new Date();
       this.writingForm.value.wordCount = this.writingForm.value.post.length;
@@ -103,13 +132,13 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
       console.log("Form is valid", formValues);
       this.writingService.addFullDataToDatabase(formValues).then(
         () => {
-          console.log('Submission successful');
+          console.log('addFullDataToDatabase Submission to finished-writing-mods successful');
           this.writingForm.reset();
           this.progress = 0;
           this.router.navigate(['/']);
         },
         error => {
-          console.error('Submission failed', error);
+          console.error('addFullDataToDatabase Submission to finished-writing-mods failed', error);
         }
       );
     } else {

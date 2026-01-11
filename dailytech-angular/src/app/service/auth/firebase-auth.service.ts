@@ -37,10 +37,12 @@ export class FirebaseAuthService {
         if (user) {
           // this.isAuthenticated = true;
           // this.authChange.next(true);
+          console.log('USER LOGGED IN    initAuthListener');
           this.store.dispatch(new AuthReducer.SetAuthenticated());
           this.router.navigate(['/writing']);
         } else {
           this.writingService.cancelSubscriptions();
+          console.log('USER NOT LOGGED IN    initAuthListener');
           // this.isAuthenticated = false;
           // this.authChange.next(false);
           this.store.dispatch(new AuthReducer.SetUnauthenticated());
@@ -61,6 +63,7 @@ export class FirebaseAuthService {
       authData.password
     )
     .then(result => {
+      console.log("registered user");
       console.log(result);
       // this.authSuccessful();
       // this.uiService.loadingStateChanged.next(false);
@@ -88,7 +91,9 @@ export class FirebaseAuthService {
         // this.uiService.loadingStateChanged.next(false);
         // this.store.dispatch({ type: 'STOP_LOADING' });
         this.store.dispatch(new UI.StopLoading());
-        console.log("logged in" + result);
+        console.log("logged in" );
+        console.dir(result);
+        console.log("hey")
         // this.authSuccessful();
       })
       .catch(error => {

@@ -40,7 +40,7 @@ export function writingReducer(state = initialState, action: WritingActions) {
     case START_WRITING:
       return {
         ...state, // this will pull out available and finished
-        activeWriting: { ... state.availableWritingMods.find(ex => ex.id === action.payload) }
+        activeWriting: { ... state.availableWritingMods.find(ex => ex.category === action.payload) }
       };
     case STOP_WRITING:
       return {

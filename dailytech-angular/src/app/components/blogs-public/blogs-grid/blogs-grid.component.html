@@ -1,3 +1,7 @@
+ <hr class="bar-white" />
+<h2><span class="daily-tech monoton text-box">Blog Filter</span></h2>
+<hr class="bar-white" />
+
 <div class="blogs-grid-container">
   <!-- Loading State -->
   <mat-card *ngIf="loading" class="loading-card">
@@ -13,18 +17,61 @@
     <!-- Overall Statistics Cards -->
     <div class="stats-overview" *ngIf="statistics">
       <mat-card class="stat-card"> 
+
+  <!-- <mat-card-header>
+        <div  class="centered-header-flex" style="display: flex; align-items: baseline; gap: 12px">
+          <mat-card-title  class="centered-header ">Category Statistics Filter </mat-card-title>
+ 
+          <mat-card-subtitle
+            >{{ selectedCategories.length }} of {{ categories.length }} categories selected</mat-card-subtitle
+          >
+        </div>
+      </mat-card-header>  -->
+
+      <mat-card-content>
+        <div *ngIf="categories.length === 0" class="no-categories">
+          <p>No categories found. Loading {{ allBlogs.length }} blogs...</p>
+        </div>
+        <form [formGroup]="categoriesForm" *ngIf="categories.length > 0">
+          <div class="categories-grid-two-column">
+            <mat-checkbox
+              *ngFor="let category of categories"
+              (change)="onCheckboxChange($event, category)"
+              color="primary"
+            >
+              {{ category }}&nbsp;
+            </mat-checkbox> &nbsp;&nbsp;
+            <button mat-raised-button (click)="resetFilters()">
+          Reset Filters
+        </button>
+          </div>
+        </form>
+      </mat-card-content>
+      <!-- <mat-card-actions> -->
+        <!-- <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!fetchBlogsEnabled"
+          (click)="fetchBlogs()"
+        >Calculate Stats ({{ selectedCategories.length }} selected)
+        </button> -->
+        <!-- <button mat-raised-button (click)="resetFilters()">
+          Reset Filters
+        </button> -->
+      <!-- </mat-card-actions> -->
+
         <mat-card-content>
           <div class="descriptive-stats">
             <div class="descriptive-column"> 
-              <p>Total Blogs: {{ statistics.totalBlogs | number  }}</p>
-              <p>Total Words: {{ statistics.totalWordCount | number }}</p>
-              <p>Avg: {{ statistics.averageWordCount | number }}</p>
+              <!-- <p>Total Blogs: {{ statistics.totalBlogs | number  }}</p> -->
+              <p>Total Words: <strong>{{ statistics.totalWordCount | number }}</strong></p>
+              <p>Avg words per blog: <strong>{{ statistics.averageWordCount | number }}</strong></p>
             </div>
             <div class="descriptive-column">
               <!-- <p>Total Comments: {{ statistics.totalComments | number }}</p> -->
-              <p>All Blogs Count: {{ allBlogs.length }}</p>
-              <p>Filtered Blogs Count: {{ blogs.length }}</p> 
-              <p>Selected Categories: {{ selectedCategories.length }} of {{ categories.length }}</p>
+              <!-- <p>All Blogs Count: {{ allBlogs.length }}</p> -->
+              <p>Blogs Count: <strong>{{ blogs.length }} of {{ allBlogs.length }} </strong> selected </p> 
+              <p>Categories: <strong>{{ selectedCategories.length }} of {{ categories.length }}</strong> selected</p>
             </div>
           </div>
 
@@ -44,43 +91,7 @@
 <br />
     <!-- Category Filter Section -->
     <mat-card class="filter-section">
-      <mat-card-header>
-        <div  class="centered-header-flex" style="display: flex; align-items: baseline; gap: 12px">
-          <mat-card-title  class="centered-header ">Category Statistics Filter </mat-card-title>
-          <mat-card-subtitle
-            >{{ categories.length }} categories available</mat-card-subtitle
-          >
-        </div>
-      </mat-card-header>
-          <hr />
-      <mat-card-content>
-        <div *ngIf="categories.length === 0" class="no-categories">
-          <p>No categories found. Loading {{ allBlogs.length }} blogs...</p>
-        </div>
-        <form [formGroup]="categoriesForm" *ngIf="categories.length > 0">
-          <div class="categories-grid-two-column">
-            <mat-checkbox
-              *ngFor="let category of categories"
-              (change)="onCheckboxChange($event, category)"
-              color="primary"
-            >
-              {{ category }}&nbsp;
-            </mat-checkbox>
-          </div>
-        </form>
-      </mat-card-content>
-      <mat-card-actions>
-        <button
-          mat-raised-button
-          color="primary"
-          [disabled]="!fetchBlogsEnabled"
-          (click)="fetchBlogs()"
-        >Calculate Stats ({{ selectedCategories.length }} selected)
-        </button>
-        <button mat-raised-button (click)="resetFilters()">
-          Reset Filters
-        </button>
-      </mat-card-actions>
+    
 
       <mat-card-header>
         <mat-card-subtitle>{{ blogs.length }} blogs selected</mat-card-subtitle>

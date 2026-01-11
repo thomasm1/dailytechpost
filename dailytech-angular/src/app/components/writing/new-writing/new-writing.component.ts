@@ -8,8 +8,10 @@ import { WritingMod } from '../../../models/writing-mods.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { Store } from '@ngrx/store';
-import {FirebaseAuthService  } from 'src/app/service/auth/firebase-auth.service';
+import { FirebaseAuthService } from 'src/app/service/auth/firebase-auth.service';
 import * as fromRoot from '../../../reducers/app.reducer';
+import { CategoryMod } from 'src/app/models/category-mods.model';
+import * as fromCategories from '../../../reducers/category.reducer';
 
 @Component({
   selector: 'app-new-writing',
@@ -24,7 +26,8 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   // private writingSubscription: Subscription;
   // writingMods: WritingMod[];
   writingMods$: Observable<WritingMod[]>;
- 
+  categoryMods$: Observable<CategoryMod[]>;
+
   isAuth$: Observable<boolean>;
 
   isLoading = true;
@@ -35,13 +38,13 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
     private writingService: WritingService,
     private uiService: UiService,
     private store: Store<fromWriting.State>
- 
+
   ) { }
 
   ngOnInit() {
     this.isAuth$ = this.store.select(fromRoot.getIsAuth);
 
-    if (this.isAuth$ ) {
+    if (this.isAuth$) {
       console.log('isAuth$ is true');
       this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
         isLoading => { this.isLoading = isLoading; }    // GONNA KEEP SUBSCRIPTION FOR THIS LOADING SPINNER
@@ -51,26 +54,31 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
       // this.writingSubscription = this.writingService.writingsChanged.subscribe(
       //   writingMods => { this.writingMods = writingMods; }
       // );
-      this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
+      this.store.select(fromCategories.getCurrentCategoryMods).subscribe();
+      this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods);
+      this.categoryMods$ = this.store.select(fromCategories.getCurrentCategoryMods);
+      this.fetchCategories();
       this.fetchWritings();
     } else {
       console.log('isAuth$ is false');
-      this.writingMods$ = this.getDefaultWritings(); 
 
     }
 
-   // FUNCTIONALITY FOR Non-logged-in users
+    // FUNCTIONALITY FOR Non-logged-in users
   }
 
-  getDefaultWritings() {
-    return this.writingService.getDefaultWritingMods();
-  }
+  // getDefaultWritings() {
+  //   return this.writingService.getDefaultWritingMods();
+  // }
   fetchWritings() {
     this.writingService.fetchAvailableWritingMods();
   }
-
+  fetchCategories() {
+    this.writingService.getCategories();
+  }
   onStartWriting(ngForm: NgForm) {
-    this.writingService.startWriting(ngForm.value.writing);  //pass in the id
+    console.log('NewWritingComponent onStartWriting cat3: ', ngForm.value.category_five);
+    this.writingService.startWriting(ngForm.value.category_five);  //pass in the id
   }
 
   ngOnDestroy() {

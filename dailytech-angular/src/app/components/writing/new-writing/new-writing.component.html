@@ -6,19 +6,22 @@
           <mat-card-content class="centered-text">
               <mat-form-field  class="white" *ngIf="!isLoading && writingMods$ | async">
 
-                  <mat-select placeholder="Category" ngModel name="writing" required>
-                      <mat-option *ngFor="let writing of writingMods$ | async" [value]="writing.id">
-                          {{ writing.cat3 }}
+                  <mat-select placeholder="Choose topic" ngModel name="category_five" required>
+                      <mat-option *ngFor="let cat of writingMods$ | async" [value]="cat.cat3">
+                                &nbsp;{{ cat.cat3 }}  
                       </mat-option>
                   </mat-select>
 
-              </mat-form-field>
-              <mat-spinner *ngIf="isLoading"></mat-spinner>
+                </mat-form-field>
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+                <br />
+                <br />
+                <hr />
           </mat-card-content>
           <mat-card-actions class="centered-text" *ngIf="!isLoading">
               <button  *ngIf="writingMods$ | async" type="submit" mat-raised-button  [disabled]="f.invalid">Start</button>
-              <button  type="button" mat-raised-button (click)="fetchCategories()" >Preview Env</button>
-              <button  *ngIf="!(writingMods$ | async)" type="button" mat-raised-button  (click)="fetchWritings()">Fetch Again</button>
+              <!-- <button  type="button" mat-raised-button (click)="fetchCategories()" >Preview Env</button> -->
+              <button  *ngIf="!(writingMods$ | async)" type="button" mat-raised-button  (click)="fetchCategories()">Fetch Again</button>
           </mat-card-actions>
       </mat-card>
        </div>

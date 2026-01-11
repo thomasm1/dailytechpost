@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LayoutModule } from '@angular/cdk/layout';  // For BreakpointObserver
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
@@ -10,7 +11,8 @@ import { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@ang
 import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
 import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatDialogModule } from '@angular/material/dialog';  // Standard MatDialog
+import { MatLegacyDialogModule } from '@angular/material/legacy-dialog';  // Legacy MatDialog
 import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -41,6 +43,7 @@ import { MatTreeModule } from '@angular/material/tree';
   declarations: [],
   imports: [
     CommonModule,
+    LayoutModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -50,7 +53,8 @@ import { MatTreeModule } from '@angular/material/tree';
     MatProgressSpinnerModule, 
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule,
+    MatDialogModule,  // Standard MatDialog
+    MatLegacyDialogModule,  // Legacy MatDialog
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -87,7 +91,8 @@ import { MatTreeModule } from '@angular/material/tree';
     MatProgressSpinnerModule, 
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule,
+    MatDialogModule,  // Standard MatDialog
+    MatLegacyDialogModule,  // Legacy MatDialog
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,

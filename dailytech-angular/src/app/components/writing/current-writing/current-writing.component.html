@@ -1,82 +1,117 @@
-<section class="centered-column">
-  <section class="quote current-writing">
-    <pre>
+<mat-card class="writing-container">
+  <mat-card-content>
+    <!-- Debug: Show if component is loading -->
+    <p *ngIf="!writingForm">Loading component...</p>
 
-    "Be ruthless about protecting writing days, i.e., do not cave in to endless requests to have "essential" and
-    "long overdue" meetings on those days. The funny thing is that, although writing has been my actual job for
-    several years now, I still seem to have to fight for time in which to do it. Some people do not seem to grasp
-    that I still have to sit down in peace and write the books, apparently believing that they pop up like mushrooms
-    without my connivance."
-    ― J.K. Rowling
-    </pre>
-  </section>
-  <section class="clearfix" style="display: flex; flex-wrap: wrap; gap: 20px; width: 100%;">
-    <section class="left" style="flex: 0 0 200px; min-width: 200px; order: 2;">
-      <section class="cat-news">
-        <h4>Resources</h4>
-        <ul *ngFor="let new of news">
-          <li>
-            <a href="{{ new }} " target="_blank">{{ new }}</a>
-          </li>
-        </ul>
-        <p>Add Research</p>
-        <button (click)="addUrl()">+</button>
-      </section>                                                     
-      <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
-      <h1>{{ progress }}%</h1>
-      <button mat-raised-button (click)="postCancel()">
-        Pause writing
-      </button> 
-      <hr>
- 
-      <button mat-raised-button color="accent" (click)="quitCancel()">
-        &nbsp;Quit writing&nbsp;&nbsp;&nbsp;
-      </button>
-    </section>
-    <section class="right clearfix" style="flex: 1; min-width: 300px; max-width: 100%; overflow: hidden; order: 1;">
-      <hr /> 
-      <h3 class="title"> Write here. Write now. </h3>
+    <!-- Quote Section -->
+    <div class="quote-section">
+      <blockquote class="quote-text">
+        "Be ruthless about protecting writing days, i.e., do not cave in to endless requests to have 'essential' and 'long overdue' meetings on those days. The funny thing is that, although writing has been my actual job for several years now, I still seem to have to fight for time in which to do it. Some people do not seem to grasp that I still have to sit down in peace and write the books, apparently believing that they pop up like mushrooms without my connivance."
+        <cite>― J.K. Rowling</cite>
+      </blockquote>
+    </div>
 
-      <section class="writing-form" style="width: 100%; max-width: 100%;">
-        <form [formGroup]="writingForm" (ngSubmit)="onSubmit()" style="width: 100%;">
-
-          <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
-            <!-- <mat-label>Title</mat-label> -->
-            <input 
-              type="text" 
-              matInput 
-              formControlName="title"
-              placeholder="Enter your blog title here..." 
-              style="font-family: 'Courier New', Courier, monospace; font-weight: 300; width: 100%;"
-            />
-          </mat-form-field>
-
-          <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
-            <!-- <mat-label>Content</mat-label> -->
-            <textarea 
-              matInput 
-              formControlName="post"
-              placeholder="Write here, Write now..."
-              rows="20"
-              style="font-family:'Courier New', Courier, monospace; font-size: 12px; 
-              line-height: 1.6; resize: vertical; min-height: 400px; font-weight: 300; width: 100%; box-sizing: border-box;"
-            ></textarea>
-            <mat-hint align="end"  style="font-family:'Courier New', Courier, monospace; font-size: 12px;"
-              >{{ writingForm.get('post')?.value?.length || 0 }} characters</mat-hint>
-          </mat-form-field>
-
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <button mat-raised-button color="primary" type="submit" [disabled]="!writingForm.valid">
-              Submit
+    <!-- Main Content Layout -->
+    <div class="content-layout">
+      <!-- Left Panel -->
+      <div class="left-panel">
+        <mat-card class="resources-card">
+          <mat-card-header>
+            <mat-card-title>Resources</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item *ngFor="let item of news">
+                <a mat-line href="{{ item }}" target="_blank">{{ item }}</a>
+              </mat-list-item>
+            </mat-list>
+            <button mat-stroked-button color="primary" (click)="addUrl()">
+              <mat-icon>add</mat-icon> Add Research
             </button>
-            <span *ngIf="!writingForm.valid" style="color: #666; font-size: 14px;">
-              Please fill in title and content
-            </span>
+          <div *ngIf="newsAdd">
+              <form (ngSubmit)="onAddUrl(urlForm.value.url)" #urlForm="ngForm" class="add-url-form">
+              <mat-form-field appearance="outline" class="full-width">
+                <input
+                  matInput
+                  placeholder="Enter URL"
+                  name="url"
+                  ngModel
+                  required>
+              </mat-form-field>
+              <button mat-raised-button color="accent" type="submit" [disabled]="urlForm.invalid">
+                Submit URL
+              </button>
+            </form>
           </div>
-        </form>
+          </mat-card-content>
+        </mat-card>
 
-      </section>
+        <mat-card class="progress-card">
+          <mat-card-content>
+            <mat-progress-spinner
+              mode="determinate"
+              [value]="progress"
+              diameter="80">
+            </mat-progress-spinner>
+            <h2 class="progress-text">{{ progress }}%</h2>
+          </mat-card-content>
+        </mat-card>
+      </div>
 
-    </section>
-  </section>
-</section>
+      <!-- Right Panel -->
+      <div class="right-panel">
+        <mat-card class="form-card">
+          <mat-card-header>
+            <mat-card-title class="form-title">Write Here. Write Now. ...on the topic: {{this.category }}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form [formGroup]="writingForm" (ngSubmit)="onSubmit()" class="writing-form">
+              <mat-form-field appearance="outline" class="full-width"> 
+                <input
+                  matInput
+                  formControlName="title"
+                  placeholder="Enter your blog title here..."
+                  required>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="full-width"> 
+                <textarea
+                  matInput
+                  formControlName="post"
+                  placeholder="Write here, write now..."
+                  rows="15"
+                  required>
+                </textarea>
+                <mat-hint  >
+                  {{ writingForm.get('post')?.value?.length || 0 }} characters
+                </mat-hint>
+              </mat-form-field>
+   <div class="form-actions">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                  [disabled]="!writingForm.valid">
+                  Submit
+                </button>
+                <div class="right-buttons">
+                  <button mat-raised-button color="warn" (click)="postCancel()">
+                    Pause Writing
+                  </button>
+                  <button mat-raised-button color="accent" (click)="quitCancel()">
+                    Quit Writing
+                  </button>
+                </div>
+                <span *ngIf="!writingForm.valid" class="error-text">
+                  Please fill in title and content.
+                </span>
+              </div>
+
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

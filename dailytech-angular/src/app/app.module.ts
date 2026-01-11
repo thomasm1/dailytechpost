@@ -1,24 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+// import { QRCodeComponent } from 'angularx-qrcode';  // Removed library import
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
- 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { MatSidenavModule } from '@angular/material/sidenav';  // Removed redundant import
 // import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 // import { AngularFireAuthModule, provideAuth, getAuth } from '@angular/fire/auth';
 // import { provideAuth, getAuth } from '@angular/fire/auth';
 // import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; 
+// import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+// import { provideAuth, getAuth } from '@angular/fire/auth';
+// import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+// import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';  // Removed redundant import
 import { BlogsPublicModule } from './blogs-public.module';
 // PIPES
 import { TitleCasePipe } from '@angular/common';
@@ -33,7 +38,7 @@ import { WritingService } from './components/writing/writing.service';
 import { KeysService } from './service/keys.service';
 import { UiService } from './service/ui.service';
 import { NewsService } from './components/news/news.service';
-// import { LoggingService } from './service/logging.service';
+import { LoggingService } from './service/logging.service';  // Uncommented import
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -66,13 +71,15 @@ import { NftsComponent } from './components/crypto/nfts.component';
 import { NftComponent } from './components/crypto/nft/nft.component';
 import { NftAddComponent } from './components/crypto/nft-add/nft-add.component';
 import { ChaindataComponent } from './components/crypto/chaindata/chaindata.component';
-import { QrcodeComponent } from './utility/qrcode/qrcode.component';
 
 // FEATURES 
 import { StarwarsComponent } from './components/features/starwars/starwars.component';
-import { MarvelComponent } from './components/features/marvel/marvel.component';
+import { MarvelComponent } from './components/features/marvel/marvel.component';  // Already imported
 import { GrootService } from './service/groot.service';
 // import { WritingRoutingModule } from './writing-routing.module';
+
+// CUSTOM COMPONENTS
+import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added custom QR code component
 
 @NgModule({
     declarations: [
@@ -87,7 +94,7 @@ import { GrootService } from './service/groot.service';
         BlogsListComponent,
         PostCancelComponent,
         BlogModalComponent,
-        BlogsComponent, 
+        BlogsComponent,
         NasaComponent,
         //CRYPTO
         NftsComponent,
@@ -102,15 +109,16 @@ import { GrootService } from './service/groot.service';
         HomeComponent,
         PipeCapitalizeCategoryPipe,
         SafeHtmlPipe,
-        QrcodeComponent,
         StarwarsComponent,
+        MarvelComponent,  // Added to declarations
+        QrcodeComponent,  // Added custom QR code component
         /////// AUTH MODULE ///////
         // AdminComponent,
         // PostsListComponent,
         // RegisterComponent,
         // SignonComponent,
         // TitleBarComponent,
-        ////// WRITING MODULE //////
+        ////// WRITING MODULE ///////
         // CurrentWritingComponent,
         // NewWritingComponent,
         // GridWritingsComponent,
@@ -119,11 +127,12 @@ import { GrootService } from './service/groot.service';
         // WritingComponent
     ],
     imports: [
-        NgxQRCodeModule,
-        MatDialogModule,
+        // QRCodeModule,  // Removed
+        // MatDialogModule,  // Removed redundant import
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
+        // MatSidenavModule,  // Removed redundant import
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
@@ -131,10 +140,9 @@ import { GrootService } from './service/groot.service';
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
         AngularFirestoreModule,
-           BlogsPublicModule,
-        // provideFirebaseApp(() => initializeApp(environment.firebase)),
-        // provideAuth(() => getAuth()),
-        // provideFirestore(() => getFirestore()), 
+        // provideFirebaseApp(() => initializeApp(environment.firebase)),  // Moved to providers
+        // provideAuth(() => getAuth()),  // Moved to providers
+        // provideFirestore(() => getFirestore()),  // Moved to providers
         // StoreModule.forRoot({ui: appReducer}),
         StoreModule.forRoot(reducers, {
             runtimeChecks: {
@@ -156,7 +164,10 @@ import { GrootService } from './service/groot.service';
         TitleCasePipe,
         SafeHtmlPipe,
         GrootService,
-        // LoggingService,
+        LoggingService,  // Uncommented provider
+        // provideFirebaseApp(() => initializeApp(environment.firebase)),  // Moved from imports
+        // provideAuth(() => getAuth()),  // Moved to imports
+        // provideFirestore(() => getFirestore()),  // Moved from imports
         { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
     ],
     bootstrap: [AppComponent]

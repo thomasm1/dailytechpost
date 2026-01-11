@@ -7,7 +7,7 @@ import { LoggingService } from './service/logging.service';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
