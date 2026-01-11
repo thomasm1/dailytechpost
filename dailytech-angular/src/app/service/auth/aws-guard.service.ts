@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  Router
-} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 import { AwsAuthenticationService } from './aws-authentication.service';
 
@@ -13,7 +8,7 @@ import { AwsAuthenticationService } from './aws-authentication.service';
 })
 
 // ADMIN GUARD SERVICE
-export class AwsGuardService implements CanActivate {
+export class AwsGuardService  {
 
   constructor(
     private awsAuthService: AwsAuthenticationService,

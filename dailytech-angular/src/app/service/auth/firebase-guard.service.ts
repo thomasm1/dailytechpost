@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  Router,
-  CanLoad,
-  Route,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
 import { pipe } from 'rxjs';
 import { take } from 'rxjs/operators';
 
@@ -18,7 +11,7 @@ import * as fromRoot from '../../reducers/app.reducer';
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseGuardService implements CanActivate, CanLoad {
+export class FirebaseGuardService  {
   constructor(
     private awsAuthService: AwsAuthenticationService,
     // private authService: FirebaseAuthService,

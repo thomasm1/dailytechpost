@@ -12,16 +12,10 @@
   <div *ngIf="!loading">
     <!-- Overall Statistics Cards -->
     <div class="stats-overview" *ngIf="statistics">
-      <mat-card class="stat-card">
-        <mat-card-header>
-          <mat-icon>article</mat-icon>
-          <mat-card-title>Descriptive Stats</mat-card-title>
-        </mat-card-header >
+      <mat-card class="stat-card"> 
         <mat-card-content>
           <div class="descriptive-stats">
-            <div class="descriptive-column">
-              <p>Component Loaded: Yes</p>
-              <!-- <p>Loading: {{ loading }}</p> -->
+            <div class="descriptive-column"> 
               <p>Total Blogs: {{ statistics.totalBlogs | number  }}</p>
               <p>Total Words: {{ statistics.totalWordCount | number }}</p>
               <p>Avg: {{ statistics.averageWordCount | number }}</p>
@@ -29,9 +23,8 @@
             <div class="descriptive-column">
               <!-- <p>Total Comments: {{ statistics.totalComments | number }}</p> -->
               <p>All Blogs Count: {{ allBlogs.length }}</p>
-              <p>Filtered Blogs Count: {{ blogs.length }}</p>
-              <p>Categories Count: {{ categories.length }}</p>
-              <p>Selected Categories: {{ selectedCategories.length }}</p>
+              <p>Filtered Blogs Count: {{ blogs.length }}</p> 
+              <p>Selected Categories: {{ selectedCategories.length }} of {{ categories.length }}</p>
             </div>
           </div>
 
@@ -40,14 +33,7 @@
     </div>
 
     <!-- Chart Section -->
-    <mat-card class="chart-section">
-      
-      <mat-card-header>
-        <div  class="centered-header-flex" style="display: flex; align-items: baseline; gap: 12px">
-        <mat-icon>bar_chart</mat-icon>
-        <mat-card-title class="centered-header ">Blog Statistics Chart</mat-card-title>
-      </div>
-      </mat-card-header>
+    <mat-card class="chart-section"> 
       <mat-card-content>
         <div style="height: 400px; width: 100%;">
           <ag-charts-angular [options]="options"></ag-charts-angular>
