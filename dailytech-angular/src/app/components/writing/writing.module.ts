@@ -10,8 +10,7 @@ import { NewWritingComponent } from './new-writing/new-writing.component';
 import { PastWritingsComponent } from './past-writings/past-writings.component';
 import { GridWritingsComponent } from './grid-writings/grid-writings.component';
 import { StopWritingComponent } from './current-writing/stop-writing.component';
-import { MaterialModule } from '../../material.module';
-// import { WritingRoutingModule } from './writing-routing.module';
+import { MaterialModule } from '../../material.module'; 
 import { writingReducer } from '../../reducers/writing.reducer';
 
 @NgModule({
@@ -27,8 +26,7 @@ import { writingReducer } from '../../reducers/writing.reducer';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MaterialModule,
-        // WritingRoutingModule
+        MaterialModule, 
         StoreModule.forFeature('writing', writingReducer) //adding unique identifier
     ]
 })

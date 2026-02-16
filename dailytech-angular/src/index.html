@@ -12,8 +12,7 @@
  
 	<meta name ="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="msapplication-starturl" content="/"> 
-  <!-- <link rel="manifest" href="manifest.json"> -->
+	<meta name="msapplication-starturl" content="/">  
   <link rel="manifest" href="./assets/manifest.json">
   <!-- <meta name="theme-color" content="#1976d2"> -->
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
@@ -26,15 +25,15 @@
 </head>
 <body>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <noscript>Please enable Javascript to continue using this application.</noscript>
 </body>
-<SCRIPT>
+<script>
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('./service-worker.js')
 		.then((registration) => {
 			console.log('SW registered');
 			})
 		.catch((err) => {
-			console.log('SW error', err); }); } </SCRIPT>
-
+			console.log('SW error', err); }); } 
+</script>
 </html>
