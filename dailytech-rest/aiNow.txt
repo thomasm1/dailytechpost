@@ -1,0 +1,30 @@
+https://ourdailytech.net/ | Dailytech
+https://onlinelibrary.wiley.com/doi/full/10.1111/insr.12016 | Just a moment...
+https://www.taylorfrancis.com/books/mono/10.1201/9781315139470/classification-regression-trees-leo-breiman-jerome-friedman-olshen-charles-stone | Classification and Regression Trees | Leo Breiman, Jerome Friedman, R.
+https://developers.google.com/ml-kit/ | ML Kit  |  Google for Developers
+https://www.gutenberg.org/files/84/84-h/84-h.htm | Frankenstein | Project Gutenberg
+https://developer.nvidia.com/cuda | CUDA Platform for Accelerated Computing | NVIDIA Developer
+https://www.wired.com/story/computex-2018-new-chips-qualcomm-amd-intel/ | New Chips From AMD, Intel, and Qualcomm Make PCs Exciting Again | WIRED
+https://www.nature.com/articles/nature14539 | Deep learning | Nature
+https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html | ImageNet Classification with Deep Convolutional Neural Networks
+chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.nvidia.cn/content/tesla/pdf/machine-learning/imagenet-classification-with-deep-convolutional-nn.pdf | imagenet-classification-with-deep-convolutional-nn.pdf
+https://www.wsj.com/articles/call-center-agents-get-a-human-touch-1528984801?mod=foesummaries | How Computers Could Make Your Customer-Service Calls More Human - WSJ
+https://www.jstor.org/stable/2678029?seq=1#page_scan_tab_contents | The "Iron Cage" and the "Shell as Hard as Steel": Parsons, Weber, and the Stahlhartes Gehäuse Metaphor in the Protestant Ethic and the Spirit of Capitalism on JSTOR
+https://www.nytimes.com/2018/06/26/opinion/political-parties-climate.html | Opinion | Why Are So Many Political Parties Blowing Up? (Part 1) - The New York Times
+https://www.washingtonpost.com/news/wonk/wp/2018/06/06/in-the-future-college-never-really-ends/?noredirect=on&utm_term=.4d7810952eb7 | One college prepares for automation with free classes forever - The Washington Post
+https://www.bloomberg.com/news/articles/2018-07-04/new-ai-tips-off-regulators-to-possible-eu-data-privacy-faults | AI Tips Off Regulators to Possible EU Data Privacy Faults - Bloomberg
+https://fortune.com/longform/element-ai-startup-tech/ | Can This Startup Break Big Tech’s Hold on A.I.? | Fortune
+https://www.benzinga.com/pressreleases/18/06/p11846924/join-ai-pioneer-geoffrey-hinton-in-toronto-and-learn-from-global-leade | Join AI Pioneer Geoffrey Hinton in Toronto, and Learn from Global Leaders in Deep Learning - Benzinga
+https://www.tensorflow.org/js | TensorFlow.js | Machine Learning for JavaScript Developers
+https://arstechnica.com/gadgets/2018/07/the-ai-revolution-has-spawned-a-new-chips-arms-race/ | The AI revolution has spawned a new chips arms race - Ars Technica
+https://www.standard.co.uk/news/tech/google-move-mirror-dancing-gif-a3892471.html | Turn your dancing into an AI-powered GIF with Google’s fun Move Mirror experiment | London Evening Standard | The Standard
+https://healthcare-digital.com/technology-and-ai/ai-seen-less-threat-and-welcomed-health-professionals-research-reveals | AI is seen less of a threat and is welcomed by health professionals, research reveals | Healthcare Digital
+https://www.annualreviews.org/content/journals/10.1146/annurev.soc.012809.102702 | Causal Inference in Sociological Research | Annual Reviews
+https://pmc.ncbi.nlm.nih.gov/articles/PMC1448214/ | A review of the application of propensity score methods yielded increasing use, advantages in specific settings, but not substantially different estimates compared with conventional multivariable methods - PMC
+https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h | Bots vs. Trolls: How AI Could Clean Up Social Media - WSJ
+https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts/ | Apple's Latest iPhones Are Packed With AI Smarts | WIRED
+https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc | Machine learning — Is the emperor wearing clothes? | HackerNoon
+https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef | Page not found | Towards Data Science
+https://www.wsj.com/articles/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data-1542138443 | JPMorgan Invests in Startup Tech That Analyzes Encrypted Data - WSJ
+https://www.technologyreview.com/2018/11/16/139055/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/ | The rare form of machine learning that can spot hackers who have already broken in | MIT Technology Review
+https://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html | iPhone Suppliers’ Poor Forecasts Make Everyone Very Nervous

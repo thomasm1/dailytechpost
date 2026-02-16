@@ -3,6 +3,7 @@ Feature: Users API karate test script
   Background:
     * url baseUrl + '/api/'
     * def token = jwtToken
+    * def token = jwtTokenAdmin
 
   @getCycle
   @Order(1)
@@ -16,6 +17,24 @@ Feature: Users API karate test script
     Given path 'users', first.userId
     When method GET
     Then status 200
+    And match response ==
+      """
+      {"userId":'#number',
+        "username":'#string',
+        "password":'#string',
+        "lastName":'##string',
+        "firstName":'##string',
+        "userType":'##number',
+        "email":'##string',
+        "cusUrl":'##string',
+        "isActive":'#number',
+        "contactType":'##number',
+        "organizationCode":'##string',
+        "dashboardCode":'##string',
+        "id":'##present',
+        "roles": '#array'
+      }
+      """
 
   @postCycle
   @Order(2)
@@ -90,3 +109,32 @@ Feature: Users API karate test script
 
   #      | users | POST   | 201   |       | GET    |  200   |
 
+  ############################1
+  @Order(3)
+  @ignore
+  Scenario Outline: Update a user, get it by id, verify changes
+    * def rando = Math.floor(Math.random() * 100)
+    * def usernameEmail = "user"+rando+"@gmail.com"
+    * print "_______________________ID____" + usernameEmail
+    * def user =
+      """
+      {
+        "username": '#(usernameEmail)',
+        "lastName": "Wonderland",
+        "firstName": "Alice",
+        "organizationCode": "ORG001",
+        "dashboardCode": "DASH-A",
+        "cusUrl": "https://example.com/alice",
+        "userType": 1,
+        "email": '#(usernameEmail)',
+        "contactType": 101,
+        "isActive": 1,
+        "roles": [
+          {
+            "id": 1,
+            "name": "ROLE_ADMIN"
+          }
+        ],
+        "id": 4
+      }
+      """

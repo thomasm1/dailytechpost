@@ -31,39 +31,38 @@ Feature: Thorough Testing of Spring Data REST APIs
 
   # Test - Create New User (POST)
   Scenario: Create New User
-#    Given path '/api/rest/users'
-#    And request
-#      """
-#      {
-#        "username": "newuser@gmail.com",
-#        "password": "newpassword",
-#        "firstName": "New",
-#        "lastName": "User",
-#        "userType": 1,
-#        "email": "newuser@gmail.com",
-#        "isActive": 1
-#      }
-#      """
-#    When method POST
-#    And header Authorization = 'Bearer ' + token
-#    Then status 201
+    Given path '/api/rest/users'
+    And request
+      """
+      {
+        "username": "newuser@gmail.com",
+        "password": "newpassword",
+        "firstName": "New",
+        "lastName": "User",
+        "userType": 1,
+        "email": "newuser@gmail.com",
+        "isActive": 1
+      }
+      """
+    When method POST
+    Then status 401
     #    * def newUser = response.data
     #    * match newUser.username == 'newuser@gmail.com'
     #    * print newUser
 
     # Test - Update Existing User (PUT)
-#    * path '/api/rest/users/' + id
-#    And request
-#      """
-#      {
-#        "userId":101,
-#        "firstName": "Updated",
-#        "lastName": "User"
-#      }
-#      """
-#    When method PUT
-#    And header Authorization = 'Bearer ' + token
-#    Then status 200
+
+    * path '/api/rest/users'
+    And request
+      """
+      {
+        "userId": id,
+        "firstName": "Updated",
+        "lastName": "User"
+      }
+      """
+    When method PUT
+    Then status 401
     #    * def updatedUser = response
     #    * match updatedUser.firstName == 'Updated'
     #    * match updatedUser.lastName == 'User'

@@ -18,6 +18,7 @@ function fn() {
         userPassword: 'password',
         baseUrl:  'http://localhost:8082',
         jwtToken: 'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhYTMzM3RAZ21haWwuY29tIiwiaWF0IjoxNzY4MDI2MzA4LCJleHAiOjE3Njg2MzExMDh9.xjybYwSAEdc_5WyThNjcUcsn2aSREB1jXQjXK5RHrH60kV3MawmmO8pMQISNpBzm',
+        jwtTokenAdmin: 'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0aG9tYXMxQGdtYWlsLmNvbSIsImlhdCI6MTc2ODI2NzAzOCwiZXhwIjoxNzY4ODcxODM4fQ.MO86Vp3KM_UnlbDiDuYp682cjO7ofy3jhWmGtkwWbQYfzmjk-vqJ5sslCj-Xrslk',
         spring_datasource_url: '',
         spring_datasource_username: '',
         spring_datasource_password: pw

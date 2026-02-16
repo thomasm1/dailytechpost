@@ -13,5 +13,5 @@ public interface WeblinksRepository extends JpaRepository<Weblink, Long> {
   Optional<Weblink> findById(Long id);
 
   List<Weblink> findByPostEntity(PostEntity postEntity);
-  // Additional query methods can be defined here if needed
+
 }
