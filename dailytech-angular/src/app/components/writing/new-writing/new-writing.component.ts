@@ -55,9 +55,11 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
       //   writingMods => { this.writingMods = writingMods; }
       // );
       this.store.select(fromCategories.getCurrentCategoryMods).subscribe();
-      this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods);
+      
       this.categoryMods$ = this.store.select(fromCategories.getCurrentCategoryMods);
       this.fetchCategories();
+
+      this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods);
       this.fetchWritings();
     } else {
       console.log('isAuth$ is false');

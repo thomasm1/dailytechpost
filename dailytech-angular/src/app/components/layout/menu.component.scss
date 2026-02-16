@@ -4,6 +4,14 @@
   font-weight: bold;
 }
 
+.nav-link {
+  color: white !important;
+}
+
+::ng-deep .nav-link {
+  color: white !important;
+}
+
 
 /* Fix for horizontal mat-nav-list menu items */
 .navigation-items.mat-mdc-nav-list {

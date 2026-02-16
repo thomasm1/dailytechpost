@@ -16,25 +16,25 @@
       </button>
     </div>
 
+    <!-- *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" -->
     <div class="menu-center hide-xs" id="menu-list">
       <mat-nav-list class="navigation-items nav-gap-10">
         <a
           mat-list-item
           routerLink="/writing"
-          *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
           routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >WRITE!
         </a>
 
-        <a
+        <!-- <a
           mat-list-item
           *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
           routerLink="/admin/user"
           routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >ADMIN CONSOLE</a
-        >
+        > -->
 
         <a
           mat-list-item

@@ -11,10 +11,10 @@
 <hr>
  
 
+<!-- *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" -->
 <a
 mat-list-item
 routerLink="/writing"
-*ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
 (click)="onClose()" 
 >
   <mat-icon>edit</mat-icon>
@@ -60,7 +60,7 @@ routerLink="/writing"
     <span class="nav-caption daily-tech monoton">Login</span>
   </a>
 
-  <a
+  <!-- <a
     mat-list-item
     *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
     routerLink="/admin/posts"
@@ -68,7 +68,7 @@ routerLink="/writing"
   >
     <mat-icon>computer</mat-icon>
     <span class="nav-caption daily-tech monoton">Admin Console</span>
-  </a>
+  </a> -->
 
   <mat-list-item>
     <button

@@ -57,12 +57,13 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   }
 
 
-  startOrResumeWriting() {
+    startOrResumeWriting() {
     this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingMod => {
       // this.news = this.writingService.getWritingExercise().news;
       this.news = writingMod.news;
       this.category = writingMod.cat3;
-      // const step = this.writingService.getWritingExercise().durationGoal / 100 * 1000;
+      // const step = this.writingService.getWritingExercise().durationGoal / 100;
+      console.log("writingMod durationGoal:", writingMod.durationGoal);
       const step = writingMod.durationGoal / 100 * 1000;
       this.timer = setInterval(() => {
         this.progress = this.progress + 1;

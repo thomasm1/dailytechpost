@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from './material.module';
-import { ChainServersComponent } from './components/chain-servers/chain-servers.component';
-import { ConsoleComponent } from './components/chain-servers/console/console.component';
-import { ServerComponent } from './components/chain-servers/server/server.component';
+import { MaterialModule } from '../../material.module';
+import { ChainServersComponent } from './chain-servers.component';
+import { ConsoleComponent } from './console/console.component';
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
   declarations: [

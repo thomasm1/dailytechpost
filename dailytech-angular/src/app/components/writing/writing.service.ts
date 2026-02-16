@@ -13,6 +13,7 @@ import * as fromWriting from '../../reducers/writing.reducer';
 import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import * as Categories from '../../reducers/category.actions';
 import * as fromCategories from '../../reducers/category.reducer';
+import { duration } from 'moment';
 @Injectable({
   providedIn: 'root'
 })
@@ -90,11 +91,13 @@ export class WritingService {
               news: doc.payload.doc.data()['news'], 
               description: doc.payload.doc.data()['description'],
               name: doc.payload.doc.data()['name'],
+              durationGoal: doc.payload.doc.data()['durationGoal'],
               categoryId: doc.payload.doc.data()['categoryId'],
             };  
           });
         })).subscribe((categoryModsArr: CategoryMod[]) => {
-          console.log(categoryModsArr);
+          console.log('categoryModsArr');
+          console.dir(categoryModsArr);
           this.uiService.loadingStateChanged.next(false);
           // this.availableWritingMods = writingMods;
           // this.writingsChanged.next([...this.availableWritingMods]);
@@ -128,7 +131,8 @@ export class WritingService {
           });
         })
         ).subscribe((writingModsArr: WritingMod[]) => {
-          console.log(writingModsArr);
+          console.dir("writingModsArr");
+          console.dir(writingModsArr);
           this.uiService.loadingStateChanged.next(false);
           // this.store.dispatch(new UI.StopLoading());
 

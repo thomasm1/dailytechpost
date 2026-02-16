@@ -11,107 +11,96 @@
       </blockquote>
     </div>
 
-    <!-- Main Content Layout -->
-    <div class="content-layout">
-      <!-- Left Panel -->
-      <div class="left-panel">
-        <mat-card class="resources-card">
-          <mat-card-header>
-            <mat-card-title>Resources</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <mat-list>
-              <mat-list-item *ngFor="let item of news">
-                <a mat-line href="{{ item }}" target="_blank">{{ item }}</a>
-              </mat-list-item>
-            </mat-list>
-            <button mat-stroked-button color="primary" (click)="addUrl()">
-              <mat-icon>add</mat-icon> Add Research
+    <!-- Form Section -->
+    <mat-card class="form-card">
+      <mat-card-header>
+        <mat-card-title class="form-title">Write Here. Write Now. ...on the topic: {{this.category }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="writingForm" (ngSubmit)="onSubmit()" class="writing-form">
+          <mat-form-field appearance="outline" class="full-width"> 
+            <input
+              matInput
+              formControlName="title"
+              placeholder="Enter your blog title here..."
+              required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width"> 
+            <textarea
+              matInput
+              formControlName="post"
+              placeholder="Write here, write now..."
+              rows="15"
+              required>
+            </textarea>
+            <mat-hint  >
+              {{ writingForm.get('post')?.value?.length || 0 }} characters
+            </mat-hint>
+          </mat-form-field>
+          <div class="form-actions">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="!writingForm.valid">
+              Submit
             </button>
-          <div *ngIf="newsAdd">
-              <form (ngSubmit)="onAddUrl(urlForm.value.url)" #urlForm="ngForm" class="add-url-form">
-              <mat-form-field appearance="outline" class="full-width">
-                <input
-                  matInput
-                  placeholder="Enter URL"
-                  name="url"
-                  ngModel
-                  required>
-              </mat-form-field>
-              <button mat-raised-button color="accent" type="submit" [disabled]="urlForm.invalid">
-                Submit URL
-              </button>
-            </form>
-          </div>
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card class="progress-card">
-          <mat-card-content>
-            <mat-progress-spinner
-              mode="determinate"
-              [value]="progress"
-              diameter="80">
-            </mat-progress-spinner>
-            <h2 class="progress-text">{{ progress }}%</h2>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-      <!-- Right Panel -->
-      <div class="right-panel">
-        <mat-card class="form-card">
-          <mat-card-header>
-            <mat-card-title class="form-title">Write Here. Write Now. ...on the topic: {{this.category }}
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <form [formGroup]="writingForm" (ngSubmit)="onSubmit()" class="writing-form">
-              <mat-form-field appearance="outline" class="full-width"> 
-                <input
-                  matInput
-                  formControlName="title"
-                  placeholder="Enter your blog title here..."
-                  required>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" class="full-width"> 
-                <textarea
-                  matInput
-                  formControlName="post"
-                  placeholder="Write here, write now..."
-                  rows="15"
-                  required>
-                </textarea>
-                <mat-hint  >
-                  {{ writingForm.get('post')?.value?.length || 0 }} characters
-                </mat-hint>
-              </mat-form-field>
-   <div class="form-actions">
-                <button
-                  mat-raised-button
-                  color="primary"
-                  type="submit"
-                  [disabled]="!writingForm.valid">
-                  Submit
-                </button>
-                <div class="right-buttons">
-                  <button mat-raised-button color="warn" (click)="postCancel()">
-                    Pause Writing
-                  </button>
-                  <button mat-raised-button color="accent" (click)="quitCancel()">
-                    Quit Writing
-                  </button>
-                </div>
-                <span *ngIf="!writingForm.valid" class="error-text">
-                  Please fill in title and content.
-                </span>
+            <div class="right-buttons">
+              <div class="progress-small">
+                <mat-progress-spinner
+                  mode="determinate"
+                  [value]="progress"
+                  diameter="80">
+                </mat-progress-spinner>
+                <span class="progress-text-small">{{ progress }}%</span>
               </div>
+              <button mat-raised-button color="warn" (click)="postCancel()">
+                Pause Writing
+              </button>
+              <button mat-raised-button color="accent" (click)="quitCancel()">
+                Quit Writing
+              </button>
+            </div>
+            <span *ngIf="!writingForm.valid" class="error-text">
+              Please fill in title and content.
+            </span>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
 
-            </form>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
+    <!-- Resources Section -->
+    <mat-card class="resources-card">
+      <mat-card-header>
+        <mat-card-title>Resources</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let item of news">
+            <a mat-line href="{{ item }}" target="_blank">{{ item }}</a>
+          </mat-list-item>
+        </mat-list>
+        <button mat-stroked-button color="primary" (click)="addUrl()">
+          <mat-icon>add</mat-icon> Add Research
+        </button>
+        <div *ngIf="newsAdd">
+          <form (ngSubmit)="onAddUrl(urlForm.value.url)" #urlForm="ngForm" class="add-url-form">
+            <mat-form-field appearance="outline" class="full-width">
+              <input
+                matInput
+                placeholder="Enter URL"
+                name="url"
+                ngModel
+                required>
+            </mat-form-field>
+            <button mat-raised-button color="accent" type="submit" [disabled]="urlForm.invalid">
+              Submit URL
+            </button>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </mat-card-content>
 </mat-card>

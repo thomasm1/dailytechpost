@@ -24,11 +24,10 @@ import { reducers } from './reducers/app.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 // import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';  // Removed redundant import
-import { BlogsPublicModule } from './blogs-public.module';
+import { BlogsModule } from './components/blogs-public/blogs.module';
 // PIPES
 import { TitleCasePipe } from '@angular/common';
 import { PipeCapitalizeCategoryPipe } from './utility/pipe-capitalize-category.pipe';
-import { SafeHtmlPipe } from './utility/safe-html.pipe';
 
 // SERVICES
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -53,8 +52,8 @@ import { FooterComponent } from './components/layout/footer.component';
 import { MenuComponent } from './components/layout/menu.component';
 import { PostCancelComponent } from './components/post-dir/post-cancel/post-cancel.component';
 
-import { AuthModule } from './auth.module';
-import { WritingModule } from './writing.module';
+import { AuthModule } from './components/user/auth.module';
+import { WritingModule } from './components/writing/writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 import { NasaComponent } from './components/nasa/nasa.component';
@@ -90,8 +89,8 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         MenuComponent,
         PostEntityComponent,
         PostEntityViewerComponent,
-        BlogComponent,
-        BlogsListComponent,
+        // BlogComponent,
+        // BlogsListComponent,
         PostCancelComponent,
         BlogModalComponent,
         BlogsComponent,
@@ -108,7 +107,6 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         NewsToolBarComponent,
         HomeComponent,
         PipeCapitalizeCategoryPipe,
-        SafeHtmlPipe,
         StarwarsComponent,
         MarvelComponent,  // Added to declarations
         QrcodeComponent,  // Added custom QR code component
@@ -127,6 +125,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         // WritingComponent
     ],
     imports: [
+        BlogsModule,
         // QRCodeModule,  // Removed
         // MatDialogModule,  // Removed redundant import
         BrowserModule,
@@ -162,7 +161,6 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         WritingService,
         UiService,
         TitleCasePipe,
-        SafeHtmlPipe,
         GrootService,
         LoggingService,  // Uncommented provider
         // provideFirebaseApp(() => initializeApp(environment.firebase)),  // Moved from imports

@@ -22,32 +22,12 @@
   margin: 0;
 }
 
-.content-layout {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.left-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex: 1;
-  max-width:25%;
-  background-color:#f5f5f5;
-}
-
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex: 3;
-  background-color:white;
-}
-
 .resources-card, .progress-card, .form-card {
+  margin-bottom: 20px;
   height: fit-content;
+  background-color: #f9f9f9;
+  border-left: 4px solid #3f51b5;
+  border-radius: 4px;
 }
 
 .progress-text {
@@ -85,6 +65,23 @@
   gap: 12px;
 }
 
+.progress-small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #3f51b5;
+}
+
+.progress-text-small {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 4px;
+}
+
 // Custom button colors for visibility on white background
 .form-actions button[color="primary"] {
   background-color: #2bac69b3 !important;
@@ -112,15 +109,4 @@
 .error-text {
   color: #f44336;
   font-size: 14px;
-}
-
-// Responsive: Stack vertically on small screens
-@media (max-width: 768px) {
-  .content-layout {
-    flex-direction: column;
-  }
-
-  .left-panel, .right-panel {
-    flex: 1 1 auto;
-  }
 }
