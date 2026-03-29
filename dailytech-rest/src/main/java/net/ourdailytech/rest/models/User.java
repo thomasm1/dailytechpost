@@ -30,7 +30,6 @@ import org.hibernate.proxy.HibernateProxy;
 
 @ToString
 @RequiredArgsConstructor
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter

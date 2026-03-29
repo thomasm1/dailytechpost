@@ -1,0 +1,59 @@
+
+# Cloud-enabled configuration
+spring:
+  config:
+    import: "optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: CRYPTOMAVEN-CONFIG
+      import-check:
+        enabled: true
+      bootstrap.enabled: false
+      fail-fast: false
+    bus:
+      enabled: false
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: true
+    enabled: true
+  instance:
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+
+# INFO + ACTUATOR + DATA-REST + ZIPKIN-TRACING + SWAGGER
+info.app.name: ${spring.application.name}
+info.app.description: ${spring.application.name} Dailytech Blog Server Application
+info.app.version: ${spring.application.version}
+info.app.is-cloud: ${spring.cloud.config.enabled:false}
+info.app.message: "Welcome to DAILYTECH-REST APIs "
+spring.data.rest.base-path: /api/rest/
+#   actuator
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #health,metrics
+  health:
+    binders:
+      enabled: false # disable actuator reporting MQ/Kafka indicators
+    rabbit:
+      enabled: false # disable actuator reporting rabbit indicators
+  tracing: #  zipkin-tracing
+    enabled: true
+spring.zipkin.enabled: true
+spring.zipkin.base-url: http://127.0.0.1:9411/
+spring.sleuth.sampler.probability: 1.0

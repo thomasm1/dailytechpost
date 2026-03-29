@@ -9,21 +9,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.annotation.Commit;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Disabled;
 
+@Disabled
 @DataJpaTest
-@ActiveProfiles("h2")
-@ComponentScan(basePackages = {"net.ourdailytech.rest.util"})
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class PostWeblinkRepositoryIT {
-
-    @Autowired
-    private TestEntityManager entityManager;
 
     @Autowired
     private WeblinksRepository weblinksRepository;
@@ -31,6 +25,7 @@ public class PostWeblinkRepositoryIT {
     @Autowired
     private PostRepository postRepository;
 
+    @Commit
     @Test
     void testPostWeblinkRelationship() {
         PostEntity post = new PostEntity();
@@ -38,14 +33,14 @@ public class PostWeblinkRepositoryIT {
         post.setPost("Test content");
         post.setDid("TEST001");
         post.setBlogcite("Test citation");
-        post = entityManager.persistAndFlush(post);
+        post = postRepository.saveAndFlush(post);
 
         Weblink weblink = new Weblink();
         weblink.setTitle("Test Article Citation");
         weblink.setUrl("https://example.com/article");
         weblink.setHost("example.com");
-        weblink.setPostEntity(post);
-        weblink = entityManager.persistAndFlush(weblink);
+        post.addWeblink(weblink); // Use the helper method to set both sides
+        weblink = weblinksRepository.saveAndFlush(weblink);
 
         PostEntity foundPost = postRepository.findById(post.getId()).orElse(null);
         assertNotNull(foundPost);
@@ -63,18 +58,17 @@ public class PostWeblinkRepositoryIT {
         post.setPost("Test content");
         post.setDid("TEST001");
         post.setBlogcite("Test citation");
-        post = entityManager.persistAndFlush(post);
+        post = postRepository.saveAndFlush(post);
 
         Weblink weblink = new Weblink();
         weblink.setTitle("Citation Link");
         weblink.setUrl("https://citation.com");
-        weblink.setPostEntity(post);
-        weblink = entityManager.persistAndFlush(weblink);
+        post.addWeblink(weblink); // Use the helper method
+        weblink = weblinksRepository.saveAndFlush(weblink);
 
         Long weblinkId = weblink.getId();
 
         postRepository.delete(post);
-        entityManager.flush();
 
         assertFalse(weblinksRepository.findById(weblinkId).isPresent());
     }

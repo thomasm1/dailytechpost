@@ -26,7 +26,7 @@ services:
     networks:
       dailytech-mysql-net:
         aliases:
-          - mapl-data
+          - crypto-net
 
 networks:
   dailytech-mysql-net:

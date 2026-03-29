@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   registry:
-    image: thomasm1/cryptomaven-registry:0.4.0
+    image: thomasm1/cryptomaven-registry:2.0.0
     container_name: cryptomaven-registry
     ports:
       - "8761:8761"
@@ -10,7 +10,7 @@ services:
       - cryptomaven-net
 
   config:
-    image: thomasm1/cryptomaven-config:0.4.0
+    image: thomasm1/cryptomaven-config:2.0.0
     container_name: cryptomaven-config
     ports:
       - "8888:8888"
@@ -20,7 +20,7 @@ services:
       - cryptomaven-net
 
   gateway:
-    image: thomasm1/cryptomaven-gateway:0.4.0
+    image: thomasm1/cryptomaven-gateway:2.0.0
     container_name: cryptomaven-gateway
     ports:
       - "9191:9191"
@@ -31,7 +31,7 @@ services:
       - cryptomaven-net
 
   auth:
-    image: thomasm1/cryptomaven-auth:0.4.0
+    image: thomasm1/cryptomaven-auth:2.0.0
     container_name: cryptomaven-auth
     ports:
       - "8081:8081"
@@ -44,7 +44,7 @@ services:
 
 
   dailytech-rest:
-    image: thomasm1/dailytech-rest:0.4.0
+    image: thomasm1/dailytech-rest:2.0.0
     container_name: dailytech-rest
     ports:
       - "8082:8082"
@@ -55,7 +55,7 @@ services:
       - cryptomaven-net
 
   cryptomaven-rest:
-    image: thomasm1/cryptomaven-rest:0.4.0
+    image: thomasm1/cryptomaven-rest:2.0.0
     container_name: cryptomaven-rest
     ports:
       - "8083:8083"

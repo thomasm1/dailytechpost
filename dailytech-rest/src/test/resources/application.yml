@@ -16,7 +16,7 @@ cryptomaven:
 spring.application.name: DAILYTECH-REST
 spring.application.version: 1.4.0
 server.port: 8082
-spring.profiles.active: h2 # mysql  #
+spring.profiles.active: mysql # h2 # mysql  #
 
 spring.config.import: optional:configserver:http://localhost:8888
 eureka.instance.client.serverUrl.defaultZone: http://localhost:8761/eureka/
@@ -26,7 +26,7 @@ eureka.client.fetch-registry: true
 ##  info + actuator + data-rest + zipkin-tracing + swagger endpoints
 spring.data.rest.base-path: /rest/
 info.app.name: ${spring.application.name}
-info.app.description: ${spring.application.name} CryptoCurrency Server Application
+info.app.description: ${spring.application.name} Daily Tech Blog Server Application
 info.app.version: ${spring.application.version}
 #   actuator
 management.info.env.enabled: true

@@ -1,0 +1,21 @@
+FROM eclipse-temurin:21-jdk-alpine
+
+MAINTAINER Thomas Maestas "thomas.maestas@hotmail.com"
+
+ENV version=mysql
+
+
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=dailytech
+ENV MYSQL_USER=admin
+ENV MYSQL_PASSWORD=${MYSQL_AWS_DB_PASSWORD}
+ENV jdbcurl=jdbc:mysql://cryptomav3n.ce1qqymm6i27.us-east-1.rds.amazonaws.com:3306/dailytech?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+
+WORKDIR /app
+COPY target/dailytech-rest-*.0.jar /app/dailytech.jar
+
+EXPOSE 8082
+ENTRYPOINT ["java", "-jar", "dailytech.jar"]
+
+#docker build -t cryptomaven-rest:latest -f Dockerfile-mysql .
+#docker run -d -p 8083:8083 --name cryptomaven-rest-slim --env-file .env cryptomaven-rest-slim

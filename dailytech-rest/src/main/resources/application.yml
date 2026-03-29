@@ -16,7 +16,7 @@ server.address: 0.0.0.0
 spring.application.name: DAILYTECH-REST
 spring.application.version: 1.4.0
 server.port: 8082
-spring.profiles.active: mysql # mysql-slim  # h2
+spring.profiles.active: mysql #, cloud # mysql-slim  # h2
 
 # Cloud-enabled configuration
 spring:

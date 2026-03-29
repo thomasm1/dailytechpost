@@ -1,9 +1,9 @@
-
-FROM eclipse-temurin:17.0.14_7-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 LABEL maintainer=thomas1.maestas@gmail.com
 
-COPY target/dailytech-rest-*.0.jar dailytech.jar
+WORKDIR /app
+COPY target/dailytech-rest-*.0.jar /app/dailytech.jar
 
+EXPOSE 8082
 ENTRYPOINT ["java", "-jar", "dailytech.jar"]
-
