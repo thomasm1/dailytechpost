@@ -8,14 +8,14 @@ VALUES
 INSERT INTO dailytech.users (
     userid, username, password, lastname, firstname,
     usertype, email, organizationcode, cusurl,
-    dashboardcode, isactive, contacttype
+    dashboardcode, isactive, contacttype, authprovider, authsubject
 )
 VALUES
-    (101, 'tomAdmin', 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111),
-    (102, 'janeUser', 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222),
-    (103, 'bobUser', 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333),
-    (104, 'aliceUser', 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444),
-    (105, 'thomasMaestas', 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555);
+    (101, 'tomAdmin', 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111 , 'INTERNAL', '123'  ),
+    (102, 'janeUser', 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222 , 'INTERNAL', '123'  ),
+    (103, 'bobUser', 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333 , 'INTERNAL', '123'  ),
+    (104, 'aliceUser', 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444 , 'FIREBASE', '123'  ),
+    (105, 'thomasMaestas', 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', '123'   );
 
 -- USERS_ROLES: 5 entries
 INSERT INTO dailytech.users_roles (role_id, user_id)
@@ -138,3 +138,26 @@ VALUES
    'kafka.apache.org',
    'htmlpage',
    24);
+
+
+INSERT INTO dailytech.user_plan (
+  userid, plan, status, effective_from, effective_to, cancel_at_period_end,
+  billing_provider, provider_customer_id, provider_subscription_id, provider_price_id,
+  last_event_at, trial_end, grace_end, version,  time_created,  time_updated
+)
+VALUES
+  (10, 'PRO', 'ACTIVE', '2025-01-01 00:00:00', '2025-12-31 23:59:59', 0,
+   'STRIPE', 'cus_1234567890', 'sub_1234567890', 'price_1234567890',
+   '2025-04-01 12:00:00', '2025-01-15 00:00:00', '2025-02-01 00:00:00', 1, '2025-01-01',  '2025-04-01'),
+  (11, 'FREE', 'ACTIVE', '2025-01-01 00:00:00', NULL, 0,
+   NULL, NULL, NULL, NULL,
+   NULL, NULL, NULL, 1, '2025-01-01',  '2025-04-01'),
+  (12, 'PRO_PLUS', 'TRIALING', '2025-03-01 00:00:00', '2025-06-01 00:00:00', 1,
+   'PAYPAL', 'cus_paypal_123', 'sub_paypal_123', 'price_paypal_123',
+   '2025-04-01 12:00:00', '2025-05-01 00:00:00', '2025-05-15 00:00:00', 1, '2025-03-01',   '2025-04-01'),
+  (13, 'WHALE_WATCHER', 'PAST_DUE', '2025-02-01 00:00:00', '2025-08-01 00:00:00', 0,
+   'STRIPE', 'cus_0987654321', 'sub_0987654321', 'price_0987654321',
+   '2025-04-01 12:00:00', NULL, '2025-04-15 00:00:00', 1, '2025-02-01',   '2025-04-01'),
+  (14, 'TOKEN_STALKER', 'CANCELED', '2025-01-15 00:00:00', '2025-04-15 00:00:00', 1,
+   'APPLE', 'cus_apple_456', 'sub_apple_456', 'price_apple_456',
+   '2025-04-01 12:00:00', NULL, NULL, 1, '2025-01-15',   '2025-04-01');

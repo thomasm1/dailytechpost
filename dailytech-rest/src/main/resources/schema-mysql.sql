@@ -23,6 +23,8 @@ CREATE TABLE  IF NOT EXISTS  dailytech.users
     dashboardcode    VARCHAR(255)       NULL,
     isactive         INT                NULL,
     contacttype      INT                NULL,
+     authprovider VARCHAR(100) NULL,
+     authsubject VARCHAR(255) NULL,
     CONSTRAINT pk_users PRIMARY KEY (userid)
 );
 
@@ -35,6 +37,22 @@ CREATE TABLE  IF NOT EXISTS  dailytech.users_roles
     CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid)
 );
 
+CREATE TABLE IF NOT EXISTS dailytech.user_plan (
+  userid BIGINT NOT NULL,
+  plan VARCHAR(50) NULL,
+  status VARCHAR(50) NULL,
+  effective_from DATETIME NULL,
+  effective_to DATETIME NULL,
+  cancel_at_period_end BIT NULL,
+  billing_provider VARCHAR(100) NULL,
+  provider_customer_id VARCHAR(255) NULL,
+  provider_subscription_id VARCHAR(255) NULL,
+  provider_price_id VARCHAR(255) NULL,
+  last_event_at DATETIME NULL,
+  trial_end DATETIME NULL,
+  grace_end DATETIME NULL,
+  CONSTRAINT pk_user_plan PRIMARY KEY (userid)
+);
 
 CREATE TABLE  IF NOT EXISTS  dailytech.categories
 (
@@ -103,6 +121,34 @@ CREATE TABLE  IF NOT EXISTS  dailytech.news
     CONSTRAINT pk_news PRIMARY KEY (id),
     CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
+
+
+ALTER TABLE dailytech.post_entity
+    ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id);
+
+ALTER TABLE dailytech.roles
+    ADD CONSTRAINT uc_roles_name UNIQUE (name);
+
+ALTER TABLE dailytech.comments
+    ADD CONSTRAINT FK_COMMENTS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id);
+
+ALTER TABLE dailytech.news
+    ADD CONSTRAINT FK_NEWS_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
+
+ALTER TABLE dailytech.post_entity
+    ADD CONSTRAINT FK_POST_ENTITY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
+
+ALTER TABLE dailytech.user_plan
+  ADD CONSTRAINT fk_user_plan_user FOREIGN KEY (userid) REFERENCES users (userid);
+
+ALTER TABLE dailytech.users_roles
+    ADD CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id);
+
+ALTER TABLE dailytech.users_roles
+    ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);
+
+
+
 
 CREATE INDEX idx_post_entity_category_id ON dailytech.post_entity (category_id);
 CREATE INDEX idx_post_entity_user_userid ON dailytech.post_entity (user_userid);

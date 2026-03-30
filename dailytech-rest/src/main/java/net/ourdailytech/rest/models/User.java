@@ -3,6 +3,8 @@ package net.ourdailytech.rest.models;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import java.util.HashSet;
@@ -26,14 +29,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.ToString.Exclude;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.proxy.HibernateProxy;
+import xyz.cryptomaven.rest.models.UserPlan;
+import xyz.cryptomaven.rest.util.enums.AuthProvider;
+import xyz.cryptomaven.rest.validators.UniqueEmail;
 
 @ToString
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@Builder
+@SuperBuilder  // ✅ Changed from @Builder to @SuperBuilder for JPA compatibility
 @Entity
 @Table(name = "users")
 public class User {
@@ -58,6 +65,7 @@ public class User {
     @Column(name = "usertype")
     private int userType;
 
+    @UniqueEmail
     @Column(name = "email", nullable = false)
     private String email;
 
@@ -79,6 +87,21 @@ public class User {
     @Transient
     private String id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "authprovider") // enum COGNITO, GOOGLE, INTERNAL
+    private AuthProvider authProvider;
+
+    @Column(name = "authsubject")
+    private String authSubject; // jwt sub/uid from auth provider
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval=true, optional = true)
+    private UserPlan userPlan;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Exclude
+    private Set<PostEntity> posts = new HashSet<>();
+
+    @Builder.Default
     @ToString.Exclude  // ✅ Prevents infinite recursion
     @EqualsAndHashCode.Exclude // ✅ Avoids issues with hashCode()
     @ManyToMany(fetch = FetchType.LAZY)
@@ -88,12 +111,6 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
     private Set<Role> roles = new HashSet<>();
-
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @Exclude
-    private Set<PostEntity> posts = new HashSet<>();
-
 
     // Constructor for full user creation
     public User(long userId, String username, String password, String lastName, String firstName, int userType,
