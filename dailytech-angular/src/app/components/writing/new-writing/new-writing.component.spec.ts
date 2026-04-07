@@ -1,633 +1,179 @@
-import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
-import { ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { of, BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, of, Subject } from 'rxjs';
+
 import { NewWritingComponent } from './new-writing.component';
 import { WritingService } from '../writing.service';
 import { UiService } from '../../../service/ui.service';
 import { WritingMod } from '../../../models/writing-mods.model';
+import { CategoryMod } from 'src/app/models/category-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as fromRoot from '../../../reducers/app.reducer';
+import * as fromCategories from '../../../reducers/category.reducer';
 
 describe('NewWritingComponent', () => {
   let component: NewWritingComponent;
   let fixture: ComponentFixture<NewWritingComponent>;
   let mockWritingService: jasmine.SpyObj<WritingService>;
-  let mockUiService: jasmine.SpyObj<UiService>;
   let mockStore: jasmine.SpyObj<Store>;
-  let loadingStateSubject: Subject<boolean>;
+  let loadingStateChanged: Subject<boolean>;
   let isAuthSubject: BehaviorSubject<boolean>;
   let writingModsSubject: BehaviorSubject<WritingMod[]>;
+  let categoryModsSubject: BehaviorSubject<CategoryMod[]>;
 
-  // Sample test data following DRY principle and coding instructions
   const mockWritingMods: WritingMod[] = [
     {
       id: '1',
+      cat3: 'Web Dev Affairs',
       title: 'Tech Article',
-      duration: 30,
+      durationGoal: 12000,
       wordCount: 100,
       date: new Date('2026-01-01')
-    } as WritingMod,
+    },
     {
       id: '2',
-      title: 'Blog Post',
-      duration: 45,
+      cat3: 'A.I.Now.',
+      title: 'AI Post',
+      durationGoal: 12000,
       wordCount: 150,
       date: new Date('2026-01-02')
-    } as WritingMod,
-    {
-      id: '3',
-      title: 'Tutorial',
-      duration: 60,
-      wordCount: 200,
-      date: new Date('2026-01-03')
-    } as WritingMod
+    }
   ];
 
-  const mockDefaultWritings: WritingMod[] = [
+  const mockCategoryMods: CategoryMod[] = [
     {
-      id: 'default-1',
-      title: 'Quick Note',
-      duration: 15,
-      wordCount: 50,
-      date: new Date('2026-01-05')
-    } as WritingMod
+      id: 'cat-1',
+      cat3: 'Web Dev Affairs',
+      durationGoal: 12000,
+      news: ['https://example.com/web-dev']
+    },
+    {
+      id: 'cat-2',
+      cat3: 'A.I.Now.',
+      durationGoal: 12000,
+      news: ['https://example.com/ai']
+    }
   ];
 
-  beforeEach(waitForAsync(() => {
-    // Create test doubles following Michael Feathers' seam extraction pattern
+  beforeEach(async () => {
     mockWritingService = jasmine.createSpyObj('WritingService', [
       'fetchAvailableWritingMods',
-      'getDefaultWritingMods',
+      'getCategories',
       'startWriting'
     ]);
-    
-    mockUiService = jasmine.createSpyObj('UiService', ['showLoadingIndicator']);
-    loadingStateSubject = new Subject<boolean>();
-    mockUiService.loadingStateChanged = loadingStateSubject;
+
+    loadingStateChanged = new Subject<boolean>();
+    const mockUiService = {
+      loadingStateChanged
+    };
 
     mockStore = jasmine.createSpyObj('Store', ['select', 'dispatch']);
-    
-    // Setup observables for store selectors
     isAuthSubject = new BehaviorSubject<boolean>(true);
     writingModsSubject = new BehaviorSubject<WritingMod[]>(mockWritingMods);
+    categoryModsSubject = new BehaviorSubject<CategoryMod[]>(mockCategoryMods);
 
-    TestBed.configureTestingModule({
-      declarations: [NewWritingComponent],
-      imports: [ReactiveFormsModule, FormsModule],
-      providers: [
-        { provide: WritingService, useValue: mockWritingService },
-        { provide: UiService, useValue: mockUiService },
-        { provide: Store, useValue: mockStore }
-      ]
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    // Setup default store selector responses
-    mockStore.select.and.callFake((selector: any) => {
+    mockStore.select.and.callFake((selector: unknown) => {
       if (selector === fromRoot.getIsAuth) {
         return isAuthSubject.asObservable();
       }
       if (selector === fromWriting.getAvailableWritingMods) {
         return writingModsSubject.asObservable();
       }
+      if (selector === fromCategories.getCurrentCategoryMods) {
+        return categoryModsSubject.asObservable();
+      }
       return of(null);
     });
 
-    mockWritingService.getDefaultWritingMods.and.returnValue(of(mockDefaultWritings));
+    await TestBed.configureTestingModule({
+      declarations: [NewWritingComponent],
+      imports: [FormsModule],
+      providers: [
+        { provide: WritingService, useValue: mockWritingService },
+        { provide: UiService, useValue: mockUiService },
+        { provide: Store, useValue: mockStore }
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NewWritingComponent);
     component = fixture.componentInstance;
   });
 
-  // Unit of work: component initialization
-  // Scenario: authenticated user
-  // Expected behavior: component created and writings fetched
-  describe('component_initialization_when_authenticated', () => {
-    it('should_create_component_when_valid_dependencies_provided', () => {
-      // Arrange
-      isAuthSubject.next(true);
+  it('should create', () => {
+    fixture.detectChanges();
 
-      // Act
-      fixture.detectChanges();
+    expect(component).toBeTruthy();
+  });
 
-      // Assert
-      expect(component).toBeTruthy();
-      expect(component).toBeInstanceOf(NewWritingComponent);
-    });
+  it('should initialize auth, categories, and writings on init', () => {
+    fixture.detectChanges();
 
-    it('should_select_isAuth_state_from_root_store_on_init', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
+    const selectedArgs: any[] = mockStore.select.calls.allArgs().map(args => args[0] as any);
 
-      // Act
-      component.ngOnInit();
-      tick();
+    expect(selectedArgs.includes(fromRoot.getIsAuth)).toBe(true);
+    expect(selectedArgs.includes(fromCategories.getCurrentCategoryMods)).toBe(true);
+    expect(selectedArgs.includes(fromWriting.getAvailableWritingMods)).toBe(true);
+    expect(mockWritingService.getCategories).toHaveBeenCalled();
+    expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
+  });
 
-      // Assert
-      expect(mockStore.select).toHaveBeenCalled();
-      const selectCalls = mockStore.select.calls.all();
-      const authCall = selectCalls.find(call => call.args[0] === fromRoot.getIsAuth);
-      expect(authCall).toBeDefined();
-      component.isAuth$.subscribe(isAuth => {
-        expect(isAuth).toBe(true);
+  it('should expose category and writing streams from the store', done => {
+    fixture.detectChanges();
+
+    component.categoryMods$.subscribe(categories => {
+      expect(categories).toEqual(mockCategoryMods);
+      component.writingMods$.subscribe(writings => {
+        expect(writings).toEqual(mockWritingMods);
+        done();
       });
-    }));
-
-    it('should_subscribe_to_loading_state_when_user_authenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-      component.isLoading = true;
-
-      // Act
-      component.ngOnInit();
-      loadingStateSubject.next(false);
-      tick();
-
-      // Assert
-      expect(component.isLoading).toBe(false);
-    }));
-
-    it('should_fetch_writings_from_service_when_authenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
-    }));
-
-    it('should_select_available_writing_mods_from_store_when_authenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(mockStore.select).toHaveBeenCalled();
-      const selectCalls = mockStore.select.calls.all();
-      const writingModsCall = selectCalls.find(call => call.args[0] === fromWriting.getAvailableWritingMods);
-      expect(writingModsCall).toBeDefined();
-      component.writingMods$.subscribe(mods => {
-        expect(mods).toEqual(mockWritingMods);
-        expect(mods.length).toBe(3);
-      });
-    }));
-
-    it('should_log_authentication_status_to_console', fakeAsync(() => {
-      // Arrange
-      spyOn(console, 'log');
-      isAuthSubject.next(true);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(console.log).toHaveBeenCalledWith('isAuth$ is true');
-    }));
-  });
-
-  // Unit of work: component initialization
-  // Scenario: unauthenticated user
-  // Expected behavior: default writings loaded, no service fetch
-  describe('component_initialization_when_unauthenticated', () => {
-    it('should_load_default_writings_when_user_not_authenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(false);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(mockWritingService.getDefaultWritingMods).toHaveBeenCalled();
-      component.writingMods$.subscribe(mods => {
-        expect(mods).toEqual(mockDefaultWritings);
-        expect(mods[0].title).toBe('Quick Note');
-      });
-    }));
-
-    it('should_not_fetch_writings_from_service_when_unauthenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(false);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(mockWritingService.fetchAvailableWritingMods).not.toHaveBeenCalled();
-    }));
-
-    it('should_not_subscribe_to_loading_state_when_unauthenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(false);
-      component.isLoading = true;
-
-      // Act
-      component.ngOnInit();
-      loadingStateSubject.next(false);
-      tick();
-
-      // Assert - loading state should remain unchanged
-      expect(component.isLoading).toBe(true);
-    }));
-
-    it('should_log_unauthenticated_status_to_console', fakeAsync(() => {
-      // Arrange
-      spyOn(console, 'log');
-      isAuthSubject.next(false);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(console.log).toHaveBeenCalledWith('isAuth$ is false');
-    }));
-
-    it('should_still_select_isAuth_state_when_unauthenticated', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(false);
-
-      // Act
-      component.ngOnInit();
-      tick();
-
-      // Assert
-      expect(mockStore.select).toHaveBeenCalled();
-      const selectCalls = mockStore.select.calls.all();
-      const authCall = selectCalls.find(call => call.args[0] === fromRoot.getIsAuth);
-      expect(authCall).toBeDefined();
-    }));
-  });
-
-  // Unit of work: loading state management
-  // Scenario: UI service emits loading changes
-  // Expected behavior: component loading state updated
-  describe('loading_state_management', () => {
-    it('should_update_isLoading_when_loading_state_changes_to_true', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-      component.ngOnInit();
-      component.isLoading = false;
-
-      // Act
-      loadingStateSubject.next(true);
-      tick();
-
-      // Assert
-      expect(component.isLoading).toBe(true);
-    }));
-
-    it('should_update_isLoading_when_loading_state_changes_to_false', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-      component.ngOnInit();
-      component.isLoading = true;
-
-      // Act
-      loadingStateSubject.next(false);
-      tick();
-
-      // Assert
-      expect(component.isLoading).toBe(false);
-    }));
-
-    it('should_handle_multiple_loading_state_changes', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-      component.ngOnInit();
-
-      // Act - rapid state changes
-      loadingStateSubject.next(true);
-      tick();
-      expect(component.isLoading).toBe(true);
-
-      loadingStateSubject.next(false);
-      tick();
-      expect(component.isLoading).toBe(false);
-
-      loadingStateSubject.next(true);
-      tick();
-      
-      // Assert
-      expect(component.isLoading).toBe(true);
-    }));
-  });
-
-  // Unit of work: getDefaultWritings method
-  // Scenario: user requests default writing templates
-  // Expected behavior: returns observable with default writings
-  describe('getDefaultWritings', () => {
-    it('should_return_default_writings_observable_from_service', fakeAsync(() => {
-      // Arrange
-      mockWritingService.getDefaultWritingMods.and.returnValue(of(mockDefaultWritings));
-
-      // Act
-      const result$ = component.getDefaultWritings();
-      tick();
-
-      // Assert
-      result$.subscribe(writings => {
-        expect(writings).toEqual(mockDefaultWritings);
-        expect(writings.length).toBe(1);
-        expect(writings[0].title).toBe('Quick Note');
-      });
-    }));
-
-    it('should_call_service_method_when_invoked', () => {
-      // Act
-      component.getDefaultWritings();
-
-      // Assert
-      expect(mockWritingService.getDefaultWritingMods).toHaveBeenCalled();
-    });
-
-    it('should_handle_empty_default_writings_gracefully', fakeAsync(() => {
-      // Arrange
-      mockWritingService.getDefaultWritingMods.and.returnValue(of([]));
-
-      // Act
-      const result$ = component.getDefaultWritings();
-      tick();
-
-      // Assert
-      result$.subscribe(writings => {
-        expect(writings).toEqual([]);
-        expect(writings.length).toBe(0);
-      });
-    }));
-  });
-
-  // Unit of work: fetchWritings method
-  // Scenario: authenticated user triggers writing fetch
-  // Expected behavior: service called to fetch available writings
-  describe('fetchWritings', () => {
-    it('should_call_service_fetchAvailableWritingMods_when_invoked', () => {
-      // Act
-      component.fetchWritings();
-
-      // Assert
-      expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
-    });
-
-    it('should_trigger_store_update_via_service_call', () => {
-      // Arrange
-      mockWritingService.fetchAvailableWritingMods.and.stub();
-
-      // Act
-      component.fetchWritings();
-
-      // Assert - service method triggers store dispatch internally
-      expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalledTimes(1);
     });
   });
 
-  // Unit of work: onStartWriting method
-  // Scenario: user starts writing with selected template
-  // Expected behavior: writing service called with form value
-  describe('onStartWriting', () => {
-    it('should_call_startWriting_with_selected_writing_id', () => {
-      // Arrange
-      const mockForm = {
-        value: { writing: '2' }
-      } as NgForm;
+  it('should update isLoading from the UI service stream', () => {
+    fixture.detectChanges();
 
-      // Act
-      component.onStartWriting(mockForm);
+    loadingStateChanged.next(false);
+    expect(component.isLoading).toBe(false);
 
-      // Assert
-      expect(mockWritingService.startWriting).toHaveBeenCalledWith('2');
-    });
-
-    it('should_pass_writing_id_from_form_value_to_service', () => {
-      // Arrange
-      const mockForm = {
-        value: { writing: 'tech-article-123' }
-      } as NgForm;
-
-      // Act
-      component.onStartWriting(mockForm);
-
-      // Assert
-      expect(mockWritingService.startWriting).toHaveBeenCalledWith('tech-article-123');
-    });
-
-    it('should_handle_numeric_writing_id_from_form', fakeAsync(() => {
-      // Arrange
-      const mockForm = {
-        value: { writing: '999' }
-      } as NgForm;
-
-      // Act
-      component.onStartWriting(mockForm);
-
-      // Assert
-      expect(mockWritingService.startWriting).toHaveBeenCalledWith('999'); 
-    }));
+    loadingStateChanged.next(true);
+    expect(component.isLoading).toBe(true);
   });
 
-  // Unit of work: ngOnDestroy lifecycle
-  // Scenario: component destroyed while subscription active
-  // Expected behavior: loading subscription cleaned up
-  describe('ngOnDestroy', () => {
-    it('should_unsubscribe_from_loadingSubscription_when_component_destroyed', fakeAsync(() => {
-      // Arrange
-      isAuthSubject.next(true);
-      component.ngOnInit();
-      tick();
-      spyOn(component['loadingSubscription'], 'unsubscribe');
+  it('should call fetchAvailableWritingMods when fetchWritings is invoked', () => {
+    component.fetchWritings();
 
-      // Act
-      component.ngOnDestroy();
-
-      // Assert
-      expect(component['loadingSubscription'].unsubscribe).toHaveBeenCalled();
-    }));
-
-    it('should_handle_destroy_gracefully_when_no_subscription_exists', () => {
-      // Arrange
-      component['loadingSubscription'] = undefined;
-
-      // Act & Assert - should not throw
-      expect(() => component.ngOnDestroy()).not.toThrow();
-    });
-
-    it('should_handle_destroy_when_user_was_unauthenticated', () => {
-      // Arrange
-      isAuthSubject.next(false);
-      component.ngOnInit();
-      component['loadingSubscription'] = undefined;
-
-      // Act & Assert
-      expect(() => component.ngOnDestroy()).not.toThrow();
-    });
+    expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
   });
 
-  // Unit of work: authentication state changes
-  // Scenario: user logs in/out during component lifecycle
-  // Expected behavior: component reacts to auth state changes
-  // describe('authentication_state_changes', () => {
-  //   it('should_react_to_authentication_state_becoming_true', fakeAsync(() => {
-  //     // Arrange
-  //     isAuthSubject.next(false);
-  //     component.ngOnInit();
-  //     tick();
+  it('should call getCategories when fetchCategories is invoked', () => {
+    component.fetchCategories();
 
-  //     // Verify initial unauthenticated state
-  //     expect(mockWritingService.getDefaultWritingMods).toHaveBeenCalled();
+    expect(mockWritingService.getCategories).toHaveBeenCalled();
+  });
 
-  //     // Act - user logs in
-  //     isAuthSubject.next(true);
-  //     tick();
+  it('should start writing with the selected category from the form', () => {
+    const form = {
+      value: { category_five: 'A.I.Now.' }
+    } as NgForm;
 
-  //     // Assert - isAuth$ observable reflects change
-  //     component.isAuth$.subscribe(isAuth => {
-  //       expect(isAuth).toBe(true);
-  //     });
-  //   }));
+    component.onStartWriting(form);
 
-  //   it('should_have_isAuth_observable_available_regardless_of_initial_state', fakeAsync(() => {
-  //     // Arrange
-  //     isAuthSubject.next(false);
+    expect(mockWritingService.startWriting).toHaveBeenCalledWith('A.I.Now.');
+  });
 
-  //     // Act
-  //     component.ngOnInit();
-  //     tick();
+  it('should unsubscribe from loadingStateChanged on destroy', () => {
+    fixture.detectChanges();
+    const unsubscribeSpy = spyOn(component['loadingSubscription'], 'unsubscribe');
 
-  //     // Assert
-  //     expect(component.isAuth$).toBeDefined();
-  //     component.isAuth$.subscribe(isAuth => {
-  //       expect(isAuth).toBe(false);
-  //     });
-  //   }));
-  // });
+    component.ngOnDestroy();
 
-  // // Unit of work: complete user workflow
-  // // Scenario: authenticated user opens component, selects writing, starts
-  // // Expected behavior: seamless flow from init to writing start
-  // describe('complete_authenticated_user_workflow', () => {
-  //   it('should_support_full_authenticated_user_writing_workflow', fakeAsync(() => {
-  //     // Arrange - User is authenticated
-  //     isAuthSubject.next(true);
+    expect(unsubscribeSpy).toHaveBeenCalled();
+  });
 
-  //     // Act - Component initializes
-  //     component.ngOnInit();
-  //     tick();
+  it('should handle destroy when no loading subscription exists', () => {
+    component['loadingSubscription'] = undefined as any;
 
-  //     // Assert - Writings fetched from store
-  //     expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
-  //     component.writingMods$.subscribe(mods => {
-  //       expect(mods.length).toBe(3);
-  //     });
-
-  //     // Act - Loading state changes
-  //     loadingStateSubject.next(false);
-  //     tick();
-  //     expect(component.isLoading).toBe(false);
-
-  //     // Act - User selects and starts writing
-  //     const mockForm = { value: { writing: '2' } } as NgForm;
-  //     component.onStartWriting(mockForm);
-
-  //     // Assert - Writing started with correct ID
-  //     expect(mockWritingService.startWriting).toHaveBeenCalledWith('2');
-
-  //     // Act - Component destroyed
-  //     component.ngOnDestroy();
-
-  //     // Assert - Cleanup performed
-  //     expect(component['loadingSubscription'].closed).toBe(true);
-  //   }));
-  // });
-
-  // // Unit of work: complete user workflow
-  // // Scenario: unauthenticated user opens component, views defaults
-  // // Expected behavior: default writings shown, limited functionality
-  // describe('complete_unauthenticated_user_workflow', () => {
-  //   it('should_support_unauthenticated_user_viewing_default_writings', fakeAsync(() => {
-  //     // Arrange - User not authenticated
-  //     isAuthSubject.next(false);
-
-  //     // Act - Component initializes
-  //     component.ngOnInit();
-  //     tick();
-
-  //     // Assert - Default writings loaded
-  //     expect(mockWritingService.getDefaultWritingMods).toHaveBeenCalled();
-  //     expect(mockWritingService.fetchAvailableWritingMods).not.toHaveBeenCalled();
-      
-  //     component.writingMods$.subscribe(mods => {
-  //       expect(mods).toEqual(mockDefaultWritings);
-  //       expect(mods[0].title).toBe('Quick Note');
-  //     });
-
-  //     // Act - User can still start writing (guest mode)
-  //     const mockForm = { value: { writing: 'default-1' } } as NgForm;
-  //     component.onStartWriting(mockForm);
-
-  //     // Assert - Writing service called even for guest
-  //     expect(mockWritingService.startWriting).toHaveBeenCalledWith('default-1');
-
-  //     // Act - Component destroyed
-  //     component.ngOnDestroy();
-
-  //     // Assert - No subscription cleanup needed for unauthenticated flow
-  //     expect(component['loadingSubscription']).toBeUndefined();
-  //   }));
-  // });
-
-  // // Unit of work: NgRx store integration
-  // // Scenario: component uses store selectors per architecture
-  // // Expected behavior: proper store selector usage for state management
-  // describe('ngrx_store_integration', () => {
-  //   it('should_select_authentication_state_from_root_reducer', fakeAsync(() => {
-  //     // Act
-  //     component.ngOnInit();
-  //     tick();
-
-  //     // Assert - per architecture overview using NgRx store
-  //     expect(mockStore.select).toHaveBeenCalled();
-  //     const selectCalls = mockStore.select.calls.all();
-  //     const authCall = selectCalls.find(call => call.args[0] === fromRoot.getIsAuth);
-  //     expect(authCall).toBeDefined();
-  //   }));
-
-  //   it('should_select_writing_mods_from_writing_reducer_when_authenticated', fakeAsync(() => {
-  //     // Arrange
-  //     isAuthSubject.next(true);
-
-  //     // Act
-  //     component.ngOnInit();
-  //     tick();
-
-  //     // Assert - per architecture using feature store
-  //     expect(mockStore.select).toHaveBeenCalled();
-  //     const selectCalls = mockStore.select.calls.all();
-  //     const writingModsCall = selectCalls.find(call => call.args[0] === fromWriting.getAvailableWritingMods);
-  //     expect(writingModsCall).toBeDefined();
-  //   }));
-
-  //   it('should_use_observables_for_reactive_state_management', fakeAsync(() => {
-  //     // Arrange
-  //     isAuthSubject.next(true);
-
-  //     // Act
-  //     component.ngOnInit();
-  //     tick();
-
-  //     // Assert - reactive programming with RxJS
-  //     expect(component.isAuth$).toBeDefined();
-  //     expect(component.writingMods$).toBeDefined();
-  //   }));
-  // });
-    
+    expect(() => component.ngOnDestroy()).not.toThrow();
+  });
 });

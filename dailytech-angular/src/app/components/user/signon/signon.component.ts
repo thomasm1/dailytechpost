@@ -19,7 +19,7 @@ export class SignonComponent implements OnInit { //, OnDestroy {
   maxDate;
 
   loginForm: UntypedFormGroup;
-  username = '';
+  email = '';
   password = '';
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
@@ -73,8 +73,7 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     console.log(form);
 
     // USER REGISTER (SIDENAV --temporary)
-    this.firebaseAuthService.registerUser({
-      username: form.value.email,
+    this.firebaseAuthService.registerUser({ 
       email: form.value.email,
       password: form.value.password
     });
@@ -89,12 +88,12 @@ export class SignonComponent implements OnInit { //, OnDestroy {
 
   handleAwsAuthLogin(form:NgForm) {
     console.log(form); 
-    // this.adminAuthService.executeAuthenticationService(form.value.username, form.value.password)
-      this.awsAuthService.executeAuthAwsService(form.value.username, form.value.password)
+    // this.adminAuthService.executeAuthenticationService(form.value.email, form.value.password)
+      this.awsAuthService.executeAuthAwsService(form.value.email, form.value.password)
     .subscribe(
         data => {
           console.log(data)
-          this.router.navigate(['admin', form.value.username])
+          this.router.navigate(['admin', form.value.email])
           this.invalidLogin = false
           this.authLogin = true
         },

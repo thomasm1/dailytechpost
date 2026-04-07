@@ -40,15 +40,15 @@ export class AwsAuthenticationService {
     //     )
     //   );
 
-  executeAuthAwsService(username, password) {
+  executeAuthAwsService(email, password) {
     return this.http.post<any>(
         `${this.baseUrl}/auth/login`,{
-          usernameOrEmail: username,
+          emailOrEmail: email,
           password
         }).pipe(
           map(
             data => {
-              sessionStorage.setItem(AUTHENTICATED_USER, username);
+              sessionStorage.setItem(AUTHENTICATED_USER, email);
               sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
               return data;
             }

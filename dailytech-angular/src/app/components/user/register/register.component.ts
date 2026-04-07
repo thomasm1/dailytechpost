@@ -44,8 +44,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     console.log(form);
 
     // USER REGISTER (SIDENAV --temporary)
-    this.firebaseAuthService.registerUser({
-      username: form.value.email,
+    this.firebaseAuthService.registerUser({ 
       email: form.value.email,
       password: form.value.password
     });
