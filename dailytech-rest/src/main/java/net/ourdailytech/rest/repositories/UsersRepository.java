@@ -25,7 +25,6 @@ public interface UsersRepository extends JpaRepository<User, Integer> {
     Optional<User> findByUserId(@NotNull Long userId);
 
 
-    boolean existsByUsername(String username);
 
     boolean existsByEmail(String email);
 
@@ -33,10 +32,8 @@ public interface UsersRepository extends JpaRepository<User, Integer> {
 
     Optional<User> findByEmailAndPassword(String email, String password);
 
-    Optional<User> findByUsernameOrEmail(String usernameOrEmail, String usernameOrEmail1);
-
     //    // SQL /////////////////////
-    @Query(nativeQuery = true, value = "SELECT * FROM USERS where FIRSTNAME = :firstName")
+    @Query(nativeQuery = true, value = "SELECT * FROM users where firstname = :firstName")
     List<User> findUsersByFirstName(@Param("firstName") String firstName);
 
     // JPQL  ///////////////////

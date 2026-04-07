@@ -3,11 +3,16 @@ package net.ourdailytech.rest.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AccessLevel;
+import lombok.experimental.SuperBuilder;
 
 @Setter
 @Getter
+@SuperBuilder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @MappedSuperclass
-public class Bookmark implements Shareable {
+public class Bookmark  extends AbstractDomainClass  implements Shareable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

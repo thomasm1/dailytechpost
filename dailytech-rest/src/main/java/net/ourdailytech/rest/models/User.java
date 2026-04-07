@@ -31,9 +31,9 @@ import lombok.ToString;
 import lombok.ToString.Exclude;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.proxy.HibernateProxy;
-import xyz.cryptomaven.rest.models.UserPlan;
-import xyz.cryptomaven.rest.util.enums.AuthProvider;
-import xyz.cryptomaven.rest.validators.UniqueEmail;
+import net.ourdailytech.rest.models.UserPlan;
+import net.ourdailytech.rest.util.enums.AuthProvider;
+ 
 
 @ToString
 @RequiredArgsConstructor
@@ -43,15 +43,12 @@ import xyz.cryptomaven.rest.validators.UniqueEmail;
 @SuperBuilder  // ✅ Changed from @Builder to @SuperBuilder for JPA compatibility
 @Entity
 @Table(name = "users")
-public class User {
+public class User extends AbstractDomainClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid", nullable = false, unique = true)
     private Long userId;
-
-    @Column(name = "username")
-    private String username;
 
     @Column(name = "password")
     private String password;
@@ -65,7 +62,7 @@ public class User {
     @Column(name = "usertype")
     private int userType;
 
-    @UniqueEmail
+//    @UniqueEmail
     @Column(name = "email", nullable = false)
     private String email;
 
@@ -113,10 +110,9 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     // Constructor for full user creation
-    public User(long userId, String username, String password, String lastName, String firstName, int userType,
+    public User(long userId,  String password, String lastName, String firstName, int userType,
                 String organizationCode, String email, String cusUrl, String dashboardCode, int isActive, int contactType, String id) {
         this.userId = userId;
-        this.username = username;
         this.password = password;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -131,14 +127,14 @@ public class User {
     }
 
     // Constructor for minimal user data
-    public User(long userId, String username) {
+    public User(long userId, String email) {
         this.userId = userId;
-        this.username = username;
+        this.email = email;
     }
 
     // Constructor for authentication
-    public User(String username, String password) {
-        this.username = username;
+    public User(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 

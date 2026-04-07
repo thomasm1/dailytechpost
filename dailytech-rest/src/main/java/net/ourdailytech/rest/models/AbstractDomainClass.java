@@ -1,23 +1,41 @@
 package net.ourdailytech.rest.models;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+ 
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Version;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 
-@Data
-public class AbstractDomainClass  {
+@RequiredArgsConstructor
+@MappedSuperclass
+@SuperBuilder
+public class AbstractDomainClass {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        Long id;
+  @Version
+  @Builder.Default
+  private Integer version = 1;
 
-        @Version
-        private Integer version;
-        private Date dateCreated;
-        private Date lastUpdated;
+  @CreationTimestamp
+  @Column(updatable = false, nullable = false)
+  private LocalDateTime timeCreated;
+
+  @UpdateTimestamp
+  @Column(nullable = false)
+  private LocalDateTime timeUpdated;
+
+  @PreUpdate
+  @PrePersist
+  public void updateTimeStamps() {
+    timeUpdated = LocalDateTime.now();
+  }
 
 }

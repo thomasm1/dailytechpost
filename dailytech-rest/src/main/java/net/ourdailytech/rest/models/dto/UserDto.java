@@ -25,8 +25,7 @@ public class UserDto implements Serializable {
 
 
     private Long userId; // userId
-    @Schema(description = "User First Name")
-    private String username;
+    @Schema(description = "User Last Name")
     private String lastName; // lastName
     @Schema(description = "User First Name")
     private String firstName; // firstName
@@ -47,7 +46,7 @@ public class UserDto implements Serializable {
     private Set<PostEntity> posts = new HashSet<>();
 
     public String getPassword() {
-        return username; // for/admin
+        return email; // for/admin
     }
 
 
@@ -61,7 +60,6 @@ public class UserDto implements Serializable {
                 userType == userDto.userType &&
                 isActive == userDto.isActive &&
                 contactType == userDto.contactType &&
-                Objects.equals(username, userDto.username) &&
                 Objects.equals(lastName, userDto.lastName) &&
                 Objects.equals(firstName, userDto.firstName) &&
                 Objects.equals(organizationCode, userDto.organizationCode) &&
@@ -73,6 +71,6 @@ public class UserDto implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, username, lastName, firstName, userType, organizationCode, dashboardCode, email, cusUrl, contactType, isActive, id);
+        return Objects.hash(userId,   lastName, firstName, userType, organizationCode, dashboardCode, email, cusUrl, contactType, isActive, id);
     }
 }

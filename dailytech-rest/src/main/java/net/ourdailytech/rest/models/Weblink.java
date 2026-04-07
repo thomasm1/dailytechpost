@@ -3,7 +3,9 @@ package net.ourdailytech.rest.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter @Getter
@@ -13,11 +15,8 @@ import lombok.*;
         @AttributeOverride(name = "title",      column = @Column(name = "title",      length = 255, nullable = false)),
         @AttributeOverride(name = "profileUrl", column = @Column(name = "profile_url", length = 1000))
 })
-public class Weblink extends Bookmark {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+public class Weblink extends Bookmark  {
+    // id removed — use id defined in Bookmark (MappedSuperclass)
 
     @Column(name = "url", length = 1000, nullable = false)
     private String url;
@@ -41,8 +40,10 @@ public class Weblink extends Bookmark {
     private PostEntity postEntity;
 
     public Weblink(long id, String url, String htmlPage) {
-        this.id = id;
-        this.url = url;
+      super();
+      // id parameter is stored in the mapped superclass Bookmark
+      setId(id);
+      this.url = url;
         this.host = "https://localhost:8080";
         this.htmlPage = htmlPage;
         this.downloadStatus = DownloadStatus.NOT_ATTEMPTED;
@@ -52,14 +53,12 @@ public class Weblink extends Bookmark {
 
     @Override
     public String getItemData() {
-        return new StringBuilder()
-                .append("<item>")
-                .append("<type>WebLink</type>")
-                .append("<title>").append(getTitle()).append("</title>")
-                .append("<url>").append(url).append("</url>")
-                .append("<host>").append(host).append("</host>")
-                .append("</item>")
-                .toString();
+        return "<item>" +
+                "<type>WebLink</type>" +
+                "<title>" + getTitle() + "</title>" +
+                "<url>" + url + "</url>" +
+                "<host>" + host + "</host>" +
+                "</item>";
     }
 
     @Override

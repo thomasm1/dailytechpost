@@ -127,7 +127,7 @@ public class PostServiceImpl implements PostService {
 		// create Pageable instance
 		Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 		Optional<User> u = Optional.ofNullable(usersRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("User", "email", email)));
-		String usernameFromEmail = u.get().getUsername();
+		String usernameFromEmail = u.get().getEmail();
 		Page<PostEntity> posts = pr.findAllByEmail(pageable, usernameFromEmail);
 
 		// get content for page object

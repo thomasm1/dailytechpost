@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,6 +31,7 @@ public class Role implements Serializable {
 
     @ToString.Exclude  // ✅ Prevents infinite recursion
     @EqualsAndHashCode.Exclude // ✅ Avoids issues with hashCode()
+    @JsonIgnore // ✅ Prevents infinite recursion in JSON serialization
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
     private Set<User> users = new HashSet<>();
 

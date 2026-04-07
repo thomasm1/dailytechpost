@@ -72,7 +72,6 @@ CREATE TABLE dailytech.roles
 CREATE TABLE dailytech.users
 (
     userid           INT AUTO_INCREMENT NOT NULL,
-    username         VARCHAR(255)       NULL,
     password         VARCHAR(255)       NULL,
     lastname         VARCHAR(255)       NULL,
     firstname        VARCHAR(255)       NULL,

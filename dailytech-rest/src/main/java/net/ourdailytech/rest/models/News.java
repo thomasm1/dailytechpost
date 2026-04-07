@@ -3,6 +3,7 @@ package net.ourdailytech.rest.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.proxy.HibernateProxy;
 
 @Getter
@@ -10,10 +11,10 @@ import org.hibernate.proxy.HibernateProxy;
 @ToString
 @RequiredArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 @Table(name = "news")
-public class News {
+public class News extends AbstractDomainClass  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -45,7 +45,6 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
     @Test
     public void add_new_user() {
         UserDto u =   UserDto.builder()
-        .username("user0")
         .lastName("Smith")
         .firstName("Tom")
         .userType(3)
@@ -77,7 +76,6 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
         UserDto uDto;
         when(usersService.getUsers()).thenReturn(Arrays.asList(
                   uDto = UserDto.builder()
-                        .username("user0")
                         .lastName("Smith")
                         .firstName("Tom")
                         .userType(3)
@@ -90,7 +88,6 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                         .id("id")
                         .build(),
         uDto = UserDto.builder()
-                .username("user0")
                 .lastName("Smith")
                 .firstName("Tom")
                 .userType(3)
@@ -104,7 +101,6 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                 .build()
         ));
         List<UserDto> users = usersService.getUsers();
-        assertEquals("user0", users.get(0).getUsername());
         assertEquals("Smith", users.get(1).getLastName());
     }
 
@@ -113,7 +109,6 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
 
         when(usersService.getUserByEmail("user4@cryptomaven.xyz")).thenReturn(
                 Optional.ofNullable(UserDto.builder()
-                        .username("user4@cryptomaven.xyz")
                         .lastName("Smith")
                         .firstName("Tom")
                         .userType(3)
@@ -127,7 +122,7 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
                         .build()));
         Optional<UserDto> user = usersService.getUserByEmail("user4@cryptomaven.xyz");
 
-        assertEquals("user4@cryptomaven.xyz", user.get().getUsername());
+        assertEquals("user4@cryptomaven.xyz", user.get().getEmail());
     }
 
     @Test

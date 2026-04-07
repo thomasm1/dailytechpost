@@ -13,13 +13,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.jspecify.annotations.Nullable;
-import xyz.cryptomaven.rest.util.enums.Plan;
-import xyz.cryptomaven.rest.util.enums.BillingProvider;
+import net.ourdailytech.rest.util.enums.Plan;
+import net.ourdailytech.rest.util.enums.PlanStatus;
+import net.ourdailytech.rest.util.enums.BillingProvider;
 
 import jakarta.persistence.JoinColumn; 
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.MapsId;
-import xyz.cryptomaven.rest.util.enums.PlanStatus;
+import jakarta.persistence.MapsId; 
+ 
+
 
 @Entity
 @Getter

@@ -4,15 +4,16 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Builder
+@SuperBuilder
 @Table(name = "categories")
-public class Category {
+public class Category extends AbstractDomainClass  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

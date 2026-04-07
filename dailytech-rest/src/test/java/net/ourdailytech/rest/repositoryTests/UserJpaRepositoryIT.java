@@ -30,7 +30,6 @@ class UserJpaRepositoryIT {
         long countBefore = userRepository.count();
         assertThat(countBefore).isEqualTo(0);
         User user = userRepository.save(User.builder()
-                        .username("New Name")
                         .email("user@user.com")
                         .password("password")
                 .build());
@@ -47,7 +46,6 @@ class UserJpaRepositoryIT {
         assertThat(countBefore).isEqualTo(1);
 
         User user = userRepository.save(User.builder()
-                .username("New Name")
                 .email("user@user.com")
                 .password("password")
                 .build());

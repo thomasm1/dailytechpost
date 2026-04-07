@@ -71,15 +71,15 @@ public class UsersServiceImpl implements UsersService {
    * @return UserDto
    */
   @Override
-  public UserDto loginUser(String username, String password) {
-    Optional<User> optionalUser = usersRepository.findByUsernameOrEmail(username, username);
+  public UserDto loginUser(String email, String password) {
+    Optional<User> optionalUser = usersRepository.findByEmail(email );
     if (optionalUser.isPresent()) {
       User u = optionalUser.get();
       if (passwordEncoder.matches(password, u.getPassword())) {
         return userMapper.toDto(u);
       }
     } else {
-      throw new ResourceNotFoundException("User", "username", username);
+      throw new ResourceNotFoundException("User", "email", email);
     }
     return userMapper.toDto(optionalUser.get());
   }

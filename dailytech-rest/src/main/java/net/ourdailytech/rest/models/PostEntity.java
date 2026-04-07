@@ -6,18 +6,19 @@ import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Builder
+@SuperBuilder
 @Table(
 		name = "post_entity",
 		schema = "dailytech",
 		uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})}
 )
-public class PostEntity {
+public class PostEntity extends AbstractDomainClass  {
 
 	public static class SimplePost {
 		Long id = 0L;

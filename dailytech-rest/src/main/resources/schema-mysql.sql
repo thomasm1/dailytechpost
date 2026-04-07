@@ -12,7 +12,6 @@ CREATE TABLE  IF NOT EXISTS  dailytech.roles
 CREATE TABLE  IF NOT EXISTS  dailytech.users
 (
     userid           BIGINT AUTO_INCREMENT NOT NULL,
-    username         VARCHAR(255)       NULL,
     password         VARCHAR(255)       NULL,
     lastname         VARCHAR(255)       NULL,
     firstname        VARCHAR(255)       NULL,
@@ -59,6 +58,9 @@ CREATE TABLE  IF NOT EXISTS  dailytech.categories
     id            BIGINT AUTO_INCREMENT NOT NULL,
     name          VARCHAR(255)          NULL,
     `description` VARCHAR(255)          NULL,
+    version       INT                   DEFAULT 1,
+    time_created  DATETIME              NOT NULL,
+    time_updated  DATETIME              NOT NULL,
     CONSTRAINT pk_categories PRIMARY KEY (id)
 );
 
@@ -79,6 +81,9 @@ CREATE TABLE  IF NOT EXISTS  dailytech.post_entity
     duration_goal INT                   NULL,
     category_id   BIGINT                NULL,
     user_userid   BIGINT				NULL,
+    version       INT                   DEFAULT 1,
+    time_created  DATETIME              NOT NULL,
+    time_updated  DATETIME              NOT NULL,
     CONSTRAINT pk_post_entity PRIMARY KEY (id),
     CONSTRAINT unique_id UNIQUE (id),
     CONSTRAINT fk_post_entity_on_user FOREIGN KEY (user_userid) REFERENCES dailytech.users(userid),
@@ -92,6 +97,9 @@ CREATE TABLE  IF NOT EXISTS  dailytech.comments
     email   VARCHAR(255)          NULL,
     body    TEXT                  NULL,
     post_id BIGINT                NOT NULL,
+    version INT                   DEFAULT 1,
+    time_created  DATETIME        NOT NULL,
+    time_updated  DATETIME        NOT NULL,
     CONSTRAINT pk_comments PRIMARY KEY (id),
     CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
 );
@@ -107,6 +115,9 @@ CREATE TABLE IF NOT EXISTS dailytech.weblinks (
   htmlpage LONGTEXT NULL,
   downloadstatus VARCHAR(32) NOT NULL DEFAULT 'NOT_ATTEMPTED',
   post_id BIGINT NULL,
+  version INT DEFAULT 1,
+  time_created DATETIME NOT NULL,
+  time_updated DATETIME NOT NULL,
   CONSTRAINT pk_weblinks PRIMARY KEY (id),
   CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
 ) ;
@@ -118,6 +129,9 @@ CREATE TABLE  IF NOT EXISTS  dailytech.news
     title       VARCHAR(255)          NULL,
     url         VARCHAR(255)          NULL,
     category_id BIGINT                NULL,
+    version     INT                   DEFAULT 1,
+    time_created  DATETIME            NOT NULL,
+    time_updated  DATETIME            NOT NULL,
     CONSTRAINT pk_news PRIMARY KEY (id),
     CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
@@ -147,7 +161,26 @@ ALTER TABLE dailytech.users_roles
 ALTER TABLE dailytech.users_roles
     ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);
 
+-- Add missing columns for AbstractDomainClass inheritance
+ALTER TABLE dailytech.categories ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
+ALTER TABLE dailytech.categories ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE dailytech.categories ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
+ALTER TABLE dailytech.post_entity ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
+ALTER TABLE dailytech.post_entity ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE dailytech.post_entity ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE dailytech.comments ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
+ALTER TABLE dailytech.comments ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE dailytech.comments ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE dailytech.weblinks ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
+ALTER TABLE dailytech.weblinks ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE dailytech.weblinks ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE dailytech.news ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
+ALTER TABLE dailytech.news ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE dailytech.news ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
 
 CREATE INDEX idx_post_entity_category_id ON dailytech.post_entity (category_id);

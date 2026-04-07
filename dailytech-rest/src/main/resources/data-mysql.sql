@@ -1,4 +1,3 @@
-
 INSERT INTO dailytech.roles (id, name)
 VALUES
     (1, 'ROLE_ADMIN'),
@@ -6,16 +5,16 @@ VALUES
 
 -- USERS: 5 entries
 INSERT INTO dailytech.users (
-    userid, username, password, lastname, firstname,
+    userid, password, lastname, firstname,
     usertype, email, organizationcode, cusurl,
     dashboardcode, isactive, contacttype, authprovider, authsubject
 )
 VALUES
-    (101, 'tomAdmin', 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111 , 'INTERNAL', '123'  ),
-    (102, 'janeUser', 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222 , 'INTERNAL', '123'  ),
-    (103, 'bobUser', 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333 , 'INTERNAL', '123'  ),
-    (104, 'aliceUser', 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444 , 'FIREBASE', '123'  ),
-    (105, 'thomasMaestas', 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', '123'   );
+    (101, 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111 , 'INTERNAL', '123'  ),
+    (102, 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222 , 'INTERNAL', '123'  ),
+    (103, 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333 , 'INTERNAL', '123'  ),
+    (104, 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444 , 'FIREBASE', '123'  ),
+    (105, 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', '123'   );
 
 -- USERS_ROLES: 5 entries
 INSERT INTO dailytech.users_roles (role_id, user_id)

@@ -30,7 +30,6 @@ public class UserServiceImplIntegrationIT {
 		dynamicString = "user" + dynamicUsername + "@cryptomaven.xyz";
 		u = UserDto.builder()
 				.userId(Long.parseLong(dynamicUsername))
-				.username(dynamicString)
 				.lastName("Smith")
 				.firstName("Tom")
 				.userType(3)

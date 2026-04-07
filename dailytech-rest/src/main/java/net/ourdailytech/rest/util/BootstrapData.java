@@ -153,7 +153,6 @@ public class BootstrapData {
                     .id(String.valueOf(i))
                     .userId(i+1l)
                     .email(registerDtos.get(0).getEmail())
-                    .username(registerDtos.get(0).getEmail())
                     .firstName(faker.name().firstName())
                     .lastName(faker.name().lastName())
                     .userType(faker.number().numberBetween(1, 3))
@@ -194,7 +193,7 @@ public class BootstrapData {
             commentDtos.add(CommentDto.builder()
                     .id(Long.valueOf(i))
                     .name(faker.name().fullName())
-                    .email(userDtos.get(i - 1).getUsername())
+                    .email(userDtos.get(i - 1).getEmail())
                     .body(faker.lorem().paragraph())
                     .build());
         }
