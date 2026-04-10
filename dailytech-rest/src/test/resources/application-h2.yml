@@ -36,6 +36,8 @@ spring:
           characterEncoding: UTF-8
           CharSet: UTF-8
     defer-datasource-initialization: false
+  liquibase:
+    enabled: false
   sql:
     init:
       schema-locations: classpath:schema-h2.sql

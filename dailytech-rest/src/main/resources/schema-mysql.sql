@@ -1,4 +1,8 @@
 -- Ensure schema exists (no-op if already created by your app)
+
+-- HISTORICAL ONLY – Liquibase owns schema changesets in src/main/resources/db/changelog/changes/*.sql
+-- This file is for reference and manual use only; it is not automatically applied by Liquibase
+
 CREATE SCHEMA IF NOT EXISTS dailytech DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 
 CREATE TABLE  IF NOT EXISTS  dailytech.roles

@@ -19,6 +19,9 @@ spring:
         connection:
           characterEncoding:  UTF-8
           CharSet:  UTF-8
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
   sql:
     init:
       schema-locations: classpath:schema-mysql.sql

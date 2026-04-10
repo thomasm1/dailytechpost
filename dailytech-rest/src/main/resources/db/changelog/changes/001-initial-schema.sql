@@ -1,9 +1,14 @@
--- H2 test schema aligned with Liquibase changesets 001 + 002.
--- Note: ON UPDATE CURRENT_TIMESTAMP is not used for H2.
+--liquibase formatted sql
 
-CREATE SCHEMA IF NOT EXISTS dailytech;
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Changeset 001 – Baseline snapshot of the existing AWS schema.
+-- DO NOT run this against the live AWS database directly.
+-- Instead, mark it as already-applied with:
+--   mvn liquibase:changelogSync
+-- ─────────────────────────────────────────────────────────────────────────────
+--changeset thomasm1:001 labels:baseline runOnChange:false comment:Initial schema baseline – matches current AWS state
 
-CREATE TABLE dailytech.roles
+CREATE TABLE IF NOT EXISTS roles
 (
     id   BIGINT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255)          NOT NULL,
@@ -11,7 +16,7 @@ CREATE TABLE dailytech.roles
     CONSTRAINT uc_roles_name UNIQUE (name)
 );
 
-CREATE TABLE dailytech.users
+CREATE TABLE IF NOT EXISTS users
 (
     userid           BIGINT AUTO_INCREMENT NOT NULL,
     password         VARCHAR(255) NULL,
@@ -26,29 +31,27 @@ CREATE TABLE dailytech.users
     contacttype      INT          NULL,
     authprovider     VARCHAR(100) NULL,
     authsubject      VARCHAR(255) NULL,
-    version          INT          NOT NULL DEFAULT 1,
-    time_created     DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated     DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT pk_users PRIMARY KEY (userid)
 );
 
-CREATE TABLE dailytech.users_roles
+CREATE TABLE IF NOT EXISTS users_roles
 (
     role_id BIGINT NOT NULL,
     user_id BIGINT NOT NULL,
     CONSTRAINT pk_users_roles PRIMARY KEY (role_id, user_id),
-    CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id),
-    CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid)
+    CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES roles (id),
+    CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES users (userid)
 );
 
-CREATE TABLE dailytech.user_plan
+-- user_plan shares the PK with users (@MapsId / shared-PK pattern)
+CREATE TABLE IF NOT EXISTS user_plan
 (
     userid                   BIGINT       NOT NULL,
     plan                     VARCHAR(50)  NULL,
     status                   VARCHAR(50)  NULL,
     effective_from           DATETIME     NULL,
     effective_to             DATETIME     NULL,
-    cancel_at_period_end     BOOLEAN      NULL,
+    cancel_at_period_end     BIT          NULL,
     billing_provider         VARCHAR(100) NULL,
     provider_customer_id     VARCHAR(255) NULL,
     provider_subscription_id VARCHAR(255) NULL,
@@ -56,25 +59,24 @@ CREATE TABLE dailytech.user_plan
     last_event_at            DATETIME     NULL,
     trial_end                DATETIME     NULL,
     grace_end                DATETIME     NULL,
-    version                  INT          NOT NULL DEFAULT 1,
-    time_created             DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated             DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT pk_user_plan PRIMARY KEY (userid),
-    CONSTRAINT fk_user_plan_user FOREIGN KEY (userid) REFERENCES dailytech.users (userid)
+    CONSTRAINT fk_user_plan_user FOREIGN KEY (userid) REFERENCES users (userid)
 );
 
-CREATE TABLE dailytech.categories
+CREATE TABLE IF NOT EXISTS categories
 (
     id           BIGINT AUTO_INCREMENT NOT NULL,
     name         VARCHAR(255) NULL,
     description  VARCHAR(255) NULL,
     version      INT          DEFAULT 1,
     time_created DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    time_updated DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT pk_categories PRIMARY KEY (id)
 );
 
-CREATE TABLE dailytech.post_entity
+-- Note: title/post/blogcite were NOT NULL in the original design;
+--       original schema-mysql.sql had a typo (NOT ,) – corrected here.
+CREATE TABLE IF NOT EXISTS post_entity
 (
     id            BIGINT AUTO_INCREMENT NOT NULL,
     did           VARCHAR(255)  NOT NULL,
@@ -93,14 +95,14 @@ CREATE TABLE dailytech.post_entity
     user_userid   BIGINT        NULL,
     version       INT           DEFAULT 1,
     time_created  DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated  DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    time_updated  DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT pk_post_entity PRIMARY KEY (id),
     CONSTRAINT unique_post_did UNIQUE (did),
-    CONSTRAINT fk_post_entity_on_user FOREIGN KEY (user_userid) REFERENCES dailytech.users (userid),
-    CONSTRAINT fk_post_entity_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
+    CONSTRAINT fk_post_entity_on_user FOREIGN KEY (user_userid) REFERENCES users (userid),
+    CONSTRAINT fk_post_entity_on_category FOREIGN KEY (category_id) REFERENCES categories (id)
 );
 
-CREATE TABLE dailytech.comments
+CREATE TABLE IF NOT EXISTS comments
 (
     id           BIGINT AUTO_INCREMENT NOT NULL,
     name         VARCHAR(255) NULL,
@@ -109,29 +111,29 @@ CREATE TABLE dailytech.comments
     post_id      BIGINT       NOT NULL,
     version      INT          DEFAULT 1,
     time_created DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    time_updated DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT pk_comments PRIMARY KEY (id),
-    CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
+    CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES post_entity (id)
 );
 
-CREATE TABLE dailytech.weblinks
+CREATE TABLE IF NOT EXISTS weblinks
 (
     id             BIGINT AUTO_INCREMENT NOT NULL,
     title          VARCHAR(255)  NOT NULL,
     profile_url    VARCHAR(1000) NULL,
     url            VARCHAR(1000) NOT NULL,
     host           VARCHAR(255)  NULL,
-    htmlpage       CLOB          NULL,
+    htmlpage       LONGTEXT      NULL,
     downloadstatus VARCHAR(32)   NOT NULL DEFAULT 'NOT_ATTEMPTED',
     post_id        BIGINT        NULL,
     version        INT           DEFAULT 1,
     time_created   DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated   DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    time_updated   DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT pk_weblinks PRIMARY KEY (id),
-    CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
+    CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES post_entity (id)
 );
 
-CREATE TABLE dailytech.news
+CREATE TABLE IF NOT EXISTS news
 (
     id           BIGINT AUTO_INCREMENT NOT NULL,
     title        VARCHAR(255) NULL,
@@ -139,7 +141,25 @@ CREATE TABLE dailytech.news
     category_id  BIGINT       NULL,
     version      INT          DEFAULT 1,
     time_created DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    time_updated DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    time_updated DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT pk_news PRIMARY KEY (id),
-    CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
+    CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES categories (id)
 );
+
+CREATE INDEX IF NOT EXISTS idx_post_entity_category_id ON post_entity (category_id);
+CREATE INDEX IF NOT EXISTS idx_post_entity_user_userid ON post_entity (user_userid);
+CREATE INDEX IF NOT EXISTS idx_comments_post_id        ON comments (post_id);
+CREATE INDEX IF NOT EXISTS idx_news_category_id        ON news (category_id);
+CREATE INDEX IF NOT EXISTS idx_users_roles_role_id     ON users_roles (role_id);
+CREATE INDEX IF NOT EXISTS idx_users_roles_user_id     ON users_roles (user_id);
+
+--rollback DROP TABLE IF EXISTS news;
+--rollback DROP TABLE IF EXISTS weblinks;
+--rollback DROP TABLE IF EXISTS comments;
+--rollback DROP TABLE IF EXISTS post_entity;
+--rollback DROP TABLE IF EXISTS user_plan;
+--rollback DROP TABLE IF EXISTS categories;
+--rollback DROP TABLE IF EXISTS users_roles;
+--rollback DROP TABLE IF EXISTS users;
+--rollback DROP TABLE IF EXISTS roles;
+

@@ -1,0 +1,29 @@
+databaseChangeLog:
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # WITH AN EXISTING AWS DATABASE  !!
+  # ─────────────────────────────────────────────────────────────────────────────
+  # The database on AWS already contains the baseline tables.
+  # Run the following command ONCE to register changeset 001 as already applied
+  # WITHOUT executing any SQL:
+  #
+  #   mvn liquibase:changelogSync
+  #
+  # Then apply pending migrations:
+  #
+  #   mvn liquibase:update
+  #
+  # Going forward, add each new schema change as a numbered file below and
+  # Spring Boot will auto-apply it on the next startup.
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  # Baseline: full schema as it exists today on AWS
+  - include:
+      file: db/changelog/changes/001-initial-schema.sql
+      relativeToChangelogFile: false
+
+  # Migration: add AbstractDomainClass audit columns to users & user_plan
+  - include:
+      file: db/changelog/changes/002-add-audit-columns-users-userplan.sql
+      relativeToChangelogFile: false
+

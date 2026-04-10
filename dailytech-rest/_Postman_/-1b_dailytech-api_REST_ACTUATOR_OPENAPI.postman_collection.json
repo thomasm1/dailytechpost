@@ -83,7 +83,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \r\n        \"username\": \"Tom1234@gmail.com\",\r\n        \"password\": \"password\",\r\n        \"lastName\": \"Smith\",\r\n        \"firstName\": \"Tom123\",\r\n        \"userType\": 3,\r\n        \"organizationCode\": \"organizationCode\",\r\n        \"email\": \"Tom1234@gmail.com\",\r\n        \"cusUrl\": \"https://doggywood-veterinary.s3.amazonaws.com/assets/Animals/random_a1.jpg\",\r\n        \"dashboardCode\": \"123-4121-23421\",\r\n        \"isActive\": 1,\r\n        \"contactType\": 1\r\n    }"
+					"raw": "{\r\n \r\n        \"password\": \"password\",\r\n        \"lastName\": \"Smith\",\r\n        \"firstName\": \"Tom123\",\r\n        \"userType\": 3,\r\n        \"organizationCode\": \"organizationCode\",\r\n        \"email\": \"Tom1234@gmail.com\",\r\n        \"cusUrl\": \"https://doggywood-veterinary.s3.amazonaws.com/assets/Animals/random_a1.jpg\",\r\n        \"dashboardCode\": \"123-4121-23421\",\r\n        \"isActive\": 1,\r\n        \"contactType\": 1\r\n    }"
 				},
 				"url": {
 					"raw": "{{baseUrl}}/api/users",
@@ -105,7 +105,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"userId\": 211,\r\n        \"username\": \"Tom1222222@gmail.com\",\r\n        \"password\": \"password\",\r\n        \"lastName\": \"Smith\",\r\n        \"firstName\": \"Tom1\",\r\n        \"userType\": 3,\r\n        \"phone\": \"123412123421\",\r\n        \"email\": \"Tom1@gmail.com\",\r\n        \"cusUrl\": \"https://doggywood-veterinary.s3.amazonaws.com/assets/Animals/random_a1.jpg\",\r\n        \"photoPath\": \"photoPath\",\r\n        \"isActive\": 0,\r\n        \"contactType\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 2,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ]\r\n    }",
+					"raw": "{\r\n        \"userId\": 211,\r\n        \"password\": \"password\",\r\n        \"lastName\": \"Smith\",\r\n        \"firstName\": \"Tom1\",\r\n        \"userType\": 3,\r\n        \"phone\": \"123412123421\",\r\n        \"email\": \"Tom1@gmail.com\",\r\n        \"cusUrl\": \"https://doggywood-veterinary.s3.amazonaws.com/assets/Animals/random_a1.jpg\",\r\n        \"photoPath\": \"photoPath\",\r\n        \"isActive\": 0,\r\n        \"contactType\": 1,\r\n        \"roles\": [\r\n            {\r\n                \"id\": 2,\r\n                \"name\": \"ROLE_ADMIN\"\r\n            }\r\n        ]\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"

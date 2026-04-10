@@ -36,18 +36,19 @@ spring:
           characterEncoding: UTF-8
           CharSet: UTF-8
     defer-datasource-initialization: false
+  liquibase:
+    enabled: false
   sql:
     init:
-      schema-locations: classpath:schema-h2.sql
-      data-locations: classpath:data-h2.sql
-      mode:  always
+      # Test-owned H2 scripts are in src/test/resources; do not auto-run main scripts.
+      mode: never
   security:
     user:
       name: admin
       password: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
       roles: ADMIN
 ## Public views
-# show  bind values
+# show bind values
 logging.level.org.hibernate.type.descriptor.sql: trace
 management.endpoints.web.exposure.include: "*"
 management.info.env.enabled: true

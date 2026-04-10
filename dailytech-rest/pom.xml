@@ -150,15 +150,6 @@
 			<version>${springdoc-openapi-ui.version}</version>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.flywaydb</groupId>-->
-<!--			<artifactId>flyway-database-oracle</artifactId>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.flywaydb</groupId>-->
-<!--			<artifactId>flyway-core</artifactId>-->
-<!--		</dependency>-->
-
 <!--		TESTS-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -187,11 +178,24 @@
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
+			<exclusions>
+				<!-- Keep Spring Boot's managed SnakeYAML (2.x); javafaker pulls 1.23-android -->
+				<exclusion>
+					<groupId>org.yaml</groupId>
+					<artifactId>snakeyaml</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- Liquibase – version managed by Spring Boot BOM -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
 		</dependency>
 
 <!--		SECURITY-->
@@ -357,6 +361,26 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>4.27.0</version>
+				<configuration>
+					<!-- All settings (changeLogFile, url, username) come from liquibase.properties;
+					     that file's values override anything else because of propertyFileWillOverride -->
+					<propertyFileWillOverride>true</propertyFileWillOverride>
+					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
+					<password>${MYSQL_AWS_DB_PASSWORD}</password>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.mysql</groupId>
+						<artifactId>mysql-connector-j</artifactId>
+						<version>8.3.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 
 		</plugins>
