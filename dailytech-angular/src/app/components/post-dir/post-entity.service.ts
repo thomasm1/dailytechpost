@@ -29,17 +29,9 @@ return new HttpHeaders({
     {headers: header}
     )
   }
-  retrieveAllPostsByUsername(username) {
-    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    // let header = new HttpHeaders({
-    //     Authorization: basicAuthHeaderString
-    // })
-    return this.http.get<PostEntity[]>(`${this.baseUrl}/posts/username/${username}`,
-    // {headers: header}
-    )
-  }
  
-  retrieveAllPostsByEmail(email) {
+ 
+  retrieveAllPostsByEmail(email: string) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
@@ -48,52 +40,52 @@ return new HttpHeaders({
     // {headers: header}
     )
   }
-  retrievePost(username, id) {
+  retrievePost(email: string, id: number) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.get<PostEntity>(`${this.baseUrl}/dailytech/${username}/posts/${id}`,
+    return this.http.get<PostEntity>(`${this.baseUrl}/dailytech/${email}/posts/${id}`,
     // {headers: header}
     )
   }
 
-  createPost(username, post) {
+  createPost(email: string, post: PostEntity) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.post(`${this.baseUrl}/dailytech/${username}/posts`, post,
+    return this.http.post(`${this.baseUrl}/dailytech/${email}/posts`, post,
     // {headers: header}
     )
   }
   
-  updatePost(username, id, post) {
+  updatePost(email: string, id: number, post: PostEntity) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // }
     // )
-    return this.http.put(`${this.baseUrl}/dailytech/${username}/posts/${id}`, post,
+    return this.http.put(`${this.baseUrl}/dailytech/${email}/posts/${id}`, post,
     // {headers: header}
     )
   }
 
-  deletePost(username, id) {
+  deletePost(email: string, id: number) {
     //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
     // let header = new HttpHeaders({
     //     Authorization: basicAuthHeaderString
     // })
-    return this.http.delete(`${this.baseUrl}/dailytech/${username}/posts/${id}`,
+    return this.http.delete(`${this.baseUrl}/dailytech/${email}/posts/${id}`,
     // {headers: header}
     )
   }
 
   
   // createBasicAuthenticationHttpHeader() {
-  //   let username = 'user'
+  //   let email = 'user'
   //   let password = 'pass'
-  //   let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+  //   let basicAuthHeaderString = 'Basic ' + window.btoa(email + ':' + password);
   //   return basicAuthHeaderString;
   // }
 

@@ -25,6 +25,7 @@ describe('CurrentWritingComponent', () => {
   const mockActiveWriting: WritingMod = {
     id: '123',
     title: 'Tech Article in Progress',
+    cat3: 'Web Dev Affairs',
     duration: 45,
     durationGoal: 1800000, // 30 minutes in milliseconds
     wordCount: 150,
@@ -58,7 +59,8 @@ describe('CurrentWritingComponent', () => {
       'completeWriting',
       'cancelWriting',
       'hardQuitWriting',
-      'addFullDataToDatabase'
+      'addFullDataToDatabase',
+      'updateNewsUrls'
     ]);
 
     mockDialog = jasmine.createSpyObj('MatDialog', ['open']);
@@ -97,6 +99,7 @@ describe('CurrentWritingComponent', () => {
 
     // Setup default service responses
     mockWritingService.addFullDataToDatabase.and.returnValue(Promise.resolve());
+    mockWritingService.updateNewsUrls.and.returnValue(Promise.resolve());
 
     fixture = TestBed.createComponent(CurrentWritingComponent);
     component = fixture.componentInstance;
@@ -180,7 +183,7 @@ describe('CurrentWritingComponent', () => {
       }
     });
 
-    it('should_set_cat3_field_as_required_validator', () => {
+    it('should_keep_cat3_optional_and populate category from the active writing', () => {
       // Arrange - initialize form
       component.ngOnInit();
 
@@ -189,8 +192,9 @@ describe('CurrentWritingComponent', () => {
       component.writingForm.get('cat3')?.markAsTouched();
 
       // Assert
-      expect(component.writingForm.get('cat3')?.hasError('required')).toBe(true);
-      expect(component.writingForm.get('cat3')?.valid).toBe(false);
+      expect(component.writingForm.get('cat3')?.hasError('required')).toBe(false);
+      expect(component.writingForm.get('cat3')?.valid).toBe(true);
+      expect(component.category).toBe('Web Dev Affairs');
 
       // Cleanup
       if (component.timer) {
@@ -206,7 +210,7 @@ describe('CurrentWritingComponent', () => {
     it('should_start_writing_timer_on_initialization', fakeAsync(() => {
       // Act
       component.ngOnInit();
-      tick(1000);
+      tick(mockActiveWriting.durationGoal / 100);
 
       // Assert - timer should be running
       expect(component.timer).toBeDefined();
@@ -281,8 +285,13 @@ describe('CurrentWritingComponent', () => {
   // Expected behavior: progress increments until 100% reached
   describe('startOrResumeWriting', () => {
     it('should_calculate_step_based_on_duration_goal', fakeAsync(() => {
-      // Arrange - 1800000ms / 100 = 18000ms per percent
-      const expectedStep = mockActiveWriting.durationGoal / 100 * 1000;
+      // Arrange - use a short duration so one timer step is easy to observe
+      const shortDurationWriting: WritingMod = {
+        ...mockActiveWriting,
+        durationGoal: 1000
+      } as WritingMod;
+      activeWritingSubject.next(shortDurationWriting);
+      const expectedStep = shortDurationWriting.durationGoal / 100;
 
       // Act
       component.startOrResumeWriting();
@@ -298,7 +307,12 @@ describe('CurrentWritingComponent', () => {
 
     it('should_increment_progress_on_each_timer_tick', fakeAsync(() => {
       // Arrange
-      const step = mockActiveWriting.durationGoal / 100 * 1000;
+      const shortDurationWriting: WritingMod = {
+        ...mockActiveWriting,
+        durationGoal: 1000
+      } as WritingMod;
+      activeWritingSubject.next(shortDurationWriting);
+      const step = shortDurationWriting.durationGoal / 100;
 
       // Act
       component.startOrResumeWriting();
@@ -699,7 +713,10 @@ describe('postCancel', () => {
       tick();
 
       // Assert
-      expect(console.error).toHaveBeenCalledWith('Submission failed', dbError);
+      expect(console.error).toHaveBeenCalledWith(
+        'addFullDataToDatabase Submission to finished-writing-mods failed',
+        dbError
+      );
 
       // Cleanup
       flush();

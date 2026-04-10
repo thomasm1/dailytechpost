@@ -26,11 +26,17 @@ export class BlogModalComponent implements OnInit {
       this.idFromBlogList = data.idValue;
       console.log("this.fromBlogList string-" + this.idFromBlogList);
 
-        this.blogsService.getBlog(this.idFromBlogList).subscribe((response) =>{
-          this.modalLoading = false;
-          this.blog = response;
-          console.log(this.blog);
-        })
+        this.blogsService.getBlog(this.idFromBlogList).subscribe({
+          next: (response) => {
+            this.modalLoading = false;
+            this.blog = response;
+            console.log(this.blog);
+          },
+          error: (error) => {
+            this.modalLoading = false;
+            console.error('Failed to load blog', error);
+          }
+        });
    }
 
   ngOnInit(): void {

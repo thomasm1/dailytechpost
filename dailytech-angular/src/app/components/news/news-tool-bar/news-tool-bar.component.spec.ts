@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { of } from 'rxjs';
 
 import { NewsToolBarComponent } from './news-tool-bar.component';
+import { Store } from '@ngrx/store';
 
 describe('NewsToolBarComponent', () => {
   let component: NewsToolBarComponent;
@@ -8,9 +11,18 @@ describe('NewsToolBarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsToolBarComponent ]
-    })
-    .compileComponents();
+      declarations: [NewsToolBarComponent],
+      providers: [
+        {
+          provide: Store,
+          useValue: {
+            pipe: () => of(false),
+            dispatch: jasmine.createSpy('dispatch'),
+          },
+        },
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

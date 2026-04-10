@@ -10,9 +10,9 @@ import { PostEntity } from '../../../models/PostEntity.model'
   styleUrls: ['./posts-list.component.scss']
 })
 export class PostsListComponent implements OnInit {
-  message: string;
-  username: string;
-  posts: PostEntity[];
+  message: string = '';
+  email: string | null = '';
+  posts: PostEntity[] = [];
 
   constructor(
     private postEntityService: PostEntityService,
@@ -20,12 +20,12 @@ export class PostsListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.username = sessionStorage.getItem('AuthenticatedUser');
+    this.email = sessionStorage.getItem('AuthenticatedUser');
     this.refreshPosts();
   }
 
   refreshPosts() {
-    this.postEntityService.retrieveAllPostsByUsername(this.username).subscribe(
+    this.postEntityService.retrieveAllPostsByEmail(this.email!).subscribe(
       response => {
         console.log(response);
         this.posts = response;
@@ -45,12 +45,12 @@ export class PostsListComponent implements OnInit {
   this.router.navigate(['admin/post',-1])
   }
   
- updatePost(id) { 
+ updatePost(id: number) { 
   this.router.navigate(['admin/post',id]);
   }
 
-  deletePost(id) { 
-    this.postEntityService.deletePost(this.username, id).subscribe(
+  deletePost(id: number) { 
+    this.postEntityService.deletePost(this.email!, id).subscribe(
       response => {
         console.log(response);
         this.message = `Deletion of post ${id} successful`;

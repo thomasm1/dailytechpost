@@ -59,12 +59,15 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
     startOrResumeWriting() {
     this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingMod => {
+      if (!writingMod) {
+        return;
+      }
       // this.news = this.writingService.getWritingExercise().news;
       this.news = writingMod.news;
       this.category = writingMod.cat3;
       // const step = this.writingService.getWritingExercise().durationGoal / 100;
       console.log("writingMod durationGoal:", writingMod.durationGoal);
-      const step = writingMod.durationGoal / 100 * 1000;
+      const step = writingMod.durationGoal / 100;
       this.timer = setInterval(() => {
         this.progress = this.progress + 1;
         if (this.progress >= 100) {
@@ -101,8 +104,8 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
         this.newsAdd = true;
         
   }
-  onAddUrl(urlInput: HTMLInputElement) {
-        const url = urlInput.value;
+  onAddUrl(urlOrInput: string | HTMLInputElement) {
+        const url = typeof urlOrInput === 'string' ? urlOrInput : urlOrInput?.value;
         if (url && url.trim() !== '') {
           this.news.push(url.trim());
                this.writingService.updateNewsUrls(url.trim()).then(
@@ -116,7 +119,6 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
           console.error('updateNewsUrls Submission to writing-mods failed', error);
         }
       );
-          urlInput.value = '';
         }
         this.newsAdd = false;
   } 

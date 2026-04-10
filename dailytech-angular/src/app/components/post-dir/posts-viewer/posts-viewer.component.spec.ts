@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { of } from 'rxjs';
 
 import { PostEntityViewerComponent } from './posts-viewer.component';
+import { PostEntityService } from '../post-entity.service';
 
 describe('PostsViewerComponent', () => {
   let component: PostEntityViewerComponent;
@@ -8,9 +11,17 @@ describe('PostsViewerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostEntityViewerComponent ]
-    })
-    .compileComponents();
+      declarations: [PostEntityViewerComponent],
+      providers: [
+        {
+          provide: PostEntityService,
+          useValue: jasmine.createSpyObj<PostEntityService>('PostEntityService', {
+            retrieveAllPostsByUsername: of([]),
+          }),
+        },
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

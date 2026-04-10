@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatLegacyDialogContent as MatDialogContent } from '@angular/material/legacy-dialog';
+ 
 import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 
 @Component({
@@ -17,7 +17,7 @@ import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/leg
     `
   ]
 })
-export class PostCancelComponent   {
+export class PostCancelComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public passedData: any) {}
 

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of, throwError } from 'rxjs';
 import { BlogsListComponent } from './blogs-list.component';
 import { BlogsService } from '../blogs.service';
@@ -35,7 +36,8 @@ describe('BlogsListComponent', () => {
         { provide: BlogsService, useValue: mockBlogsService },
         { provide: Router, useValue: mockRouter },
         { provide: MatDialog, useValue: mockDialog }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -122,6 +124,7 @@ describe('BlogsListComponent', () => {
 
     it('should_handle_service_error_gracefully', fakeAsync(() => {
       // Arrange
+      spyOn(console, 'error');
       const error = new Error('Network error');
       mockBlogsService.getAllBlogs.and.returnValue(throwError(() => error));
 
@@ -130,7 +133,8 @@ describe('BlogsListComponent', () => {
       tick();
 
       // Assert
-      expect(component.blogsLoading).toBe(true); // Loading state preserved on error
+      expect(component.blogsLoading).toBe(false);
+      expect(console.error).toHaveBeenCalledWith('Failed to load blogs', error);
     }));
   });
 
@@ -282,7 +286,7 @@ describe('BlogsListComponent', () => {
         maxWidth: '600px',
         backdropClass: 'custom-dialog-backdrop-class',
         panelClass: 'custom-dialog-panel-class',
-        data: { id: blogId }
+        data: { idValue: blogId }
       };
 
       // Act
@@ -301,7 +305,7 @@ describe('BlogsListComponent', () => {
 
       // Assert
       const callArgs = mockDialog.open.calls.mostRecent().args;
-      expect((callArgs[1].data as { id: number }).id).toBe(blogId);
+      expect((callArgs[1].data as { idValue: number }).idValue).toBe(blogId);
     });
   });
 

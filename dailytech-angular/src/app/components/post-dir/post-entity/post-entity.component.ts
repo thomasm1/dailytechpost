@@ -22,9 +22,9 @@ export class PostEntityComponent implements OnInit {
   progress = 0;
   timer: any;
 
-  id: number;
-  username: string;
-  post: PostEntity;
+  id: number = -1;
+  email: string = '';
+  post: PostEntity = new PostEntity(0, '', '', '', '', '', '', '', '');
 
   constructor(
     private dialog: MatDialog,
@@ -39,8 +39,8 @@ export class PostEntityComponent implements OnInit {
     this.post = new PostEntity(this.id, '', '', '', '', '', '', '', '');
 
     if (this.id != -1) {
-      this.username = sessionStorage.getItem('AuthenticatedUser');
-      this.postEntityService.retrievePost(this.username, this.id).subscribe(
+      this.email = sessionStorage.getItem('AuthenticatedUser') || '';
+      this.postEntityService.retrievePost(this.email, this.id).subscribe(
         data => this.post = data
       )
     }
@@ -56,7 +56,7 @@ export class PostEntityComponent implements OnInit {
 
   savePost() {
     if (this.id === -1) {
-      this.postEntityService.createPost(this.username, this.post)
+      this.postEntityService.createPost(this.email, this.post)
         .subscribe(
           data => {
             console.log(data)
@@ -64,7 +64,7 @@ export class PostEntityComponent implements OnInit {
           }
         )
     } else {
-      this.postEntityService.updatePost(this.username, this.id, this.post)
+      this.postEntityService.updatePost(this.email, this.id, this.post)
         .subscribe(
           data => {
             console.log(data)

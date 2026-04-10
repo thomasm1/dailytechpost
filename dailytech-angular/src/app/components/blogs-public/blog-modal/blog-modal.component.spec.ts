@@ -1,10 +1,18 @@
 import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
+import { Pipe, PipeTransform, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
-import { of, throwError } from 'rxjs';
+import { of, Subject, throwError } from 'rxjs';
 import { BlogModalComponent } from './blog-modal.component';
 import { BlogsStore } from '../blogs-store.service';
 import { BlogsService } from '../blogs.service';
 import { Blog } from 'src/app/models/blog.model';
+
+@Pipe({ name: 'safeHtml' })
+class MockSafeHtmlPipe implements PipeTransform {
+  transform(value: unknown): unknown {
+    return value;
+  }
+}
 
 describe('BlogModalComponent', () => {
   let component: BlogModalComponent;
@@ -34,13 +42,14 @@ describe('BlogModalComponent', () => {
     mockDialogData = { idValue: '42' };
 
     TestBed.configureTestingModule({
-      declarations: [BlogModalComponent],
+      declarations: [BlogModalComponent, MockSafeHtmlPipe],
       providers: [
         { provide: BlogsStore, useValue: mockBlogsStore },
         { provide: BlogsService, useValue: mockBlogsService },
         { provide: MatDialogRef, useValue: mockDialogRef },
         { provide: MAT_DIALOG_DATA, useValue: mockDialogData }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -76,11 +85,9 @@ describe('BlogModalComponent', () => {
     });
 
     it('should_initialize_with_loading_state_true_before_data_arrives', () => {
-      // Arrange - create new component with delayed response
-      const delayedObservable = new Promise(resolve => {
-        setTimeout(() => resolve(of(mockBlog)), 100);
-      });
-      mockBlogsService.getBlog.and.returnValue(of(mockBlog));
+      // Arrange - keep the observable pending until the test pushes a value
+      const blogSubject = new Subject<Blog>();
+      mockBlogsService.getBlog.and.returnValue(blogSubject.asObservable());
       
       // Create new instance
       const newFixture = TestBed.createComponent(BlogModalComponent);
@@ -164,12 +171,12 @@ describe('BlogModalComponent', () => {
     it('should_call_getBlog_with_string_id_from_dialog_data', () => {
       // Arrange
       const stringId = '456';
-      const dataWithStringId = { idValue: stringId };
-      TestBed.overrideProvider(MAT_DIALOG_DATA, { useValue: dataWithStringId });
+      mockDialogData.idValue = stringId;
+      mockBlogsService.getBlog.calls.reset();
       mockBlogsService.getBlog.and.returnValue(of(mockBlog));
 
       // Act
-      const newFixture = TestBed.createComponent(BlogModalComponent);
+      TestBed.createComponent(BlogModalComponent);
 
       // Assert
       expect(mockBlogsService.getBlog).toHaveBeenCalledWith(stringId); 
@@ -182,6 +189,7 @@ describe('BlogModalComponent', () => {
   describe('blog_data_loading_errors', () => {
     it('should_keep_loading_true_when_service_returns_error', fakeAsync(() => {
       // Arrange
+      spyOn(console, 'error');
       const error = new Error('Blog not found - 404');
       mockBlogsService.getBlog.and.returnValue(throwError(() => error));
 
@@ -190,21 +198,24 @@ describe('BlogModalComponent', () => {
       const newComponent = newFixture.componentInstance;
       tick();
 
-      // Assert - modalLoading never set to false
-      expect(newComponent.modalLoading).toBe(true);
+      // Assert - error is handled and blog remains unset
+      expect(newComponent.modalLoading).toBe(false);
       expect(newComponent.blog).toBeUndefined();
+      expect(console.error).toHaveBeenCalledWith('Failed to load blog', error);
     }));
 
     it('should_not_crash_when_network_error_occurs', fakeAsync(() => {
       // Arrange
+      spyOn(console, 'error');
       const networkError = new Error('Network timeout');
       mockBlogsService.getBlog.and.returnValue(throwError(() => networkError));
 
       // Act & Assert - should not throw
       expect(() => {
-        const newFixture = TestBed.createComponent(BlogModalComponent);
+        TestBed.createComponent(BlogModalComponent);
         tick();
       }).not.toThrow();
+      expect(console.error).toHaveBeenCalledWith('Failed to load blog', networkError);
     }));
   });
 

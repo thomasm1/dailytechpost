@@ -51,11 +51,17 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
   refreshBlogs() {
     this.blogsSubscription = this.blogsService
       .getAllBlogs()
-      .subscribe((response) => {
-        // console.log(response);
-        this.blogs = response;
-        this.categoryUpdater(this.blogs)
-        this.blogsLoading = false;
+      .subscribe({
+        next: (response) => {
+          // console.log(response);
+          this.blogs = response;
+          this.categoryUpdater(this.blogs);
+          this.blogsLoading = false;
+        },
+        error: (error) => {
+          console.error('Failed to load blogs', error);
+          this.blogsLoading = false;
+        }
       });
   }
 
@@ -66,10 +72,16 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
     this.blogsLoading = true;
     this.blogsSubscription = this.blogsService
       .getAllBlogs(true)  
-      .subscribe((response) => {
-        this.blogs = response;
-        this.categoryUpdater(this.blogs);
-        this.blogsLoading = false;
+      .subscribe({
+        next: (response) => {
+          this.blogs = response;
+          this.categoryUpdater(this.blogs);
+          this.blogsLoading = false;
+        },
+        error: (error) => {
+          console.error('Failed to force refresh blogs', error);
+          this.blogsLoading = false;
+        }
       });
   }
 

@@ -1,12 +1,19 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { MarvelService } from './marvel.service';
 
 describe('MarvelService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: MarvelService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    });
+    service = TestBed.inject(MarvelService);
+  });
 
   it('should be created', () => {
-    const service: MarvelService = TestBed.get(MarvelService);
     expect(service).toBeTruthy();
   });
 });

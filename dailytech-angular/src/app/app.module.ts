@@ -63,17 +63,9 @@ import { NewsPageComponent } from './components/news/news-page/news-page.compone
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 import { NewsArticleResultsComponent } from './components/news/news-article-results/news-article-results.component';
 import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-bar.component';
-import { HomeComponent } from './components/home/home.component';
+ 
 
-// CRYPTO
-import { NftsComponent } from './components/crypto/nfts.component';
-import { NftComponent } from './components/crypto/nft/nft.component';
-import { NftAddComponent } from './components/crypto/nft-add/nft-add.component';
-import { ChaindataComponent } from './components/crypto/chaindata/chaindata.component';
-
-// FEATURES 
-import { StarwarsComponent } from './components/features/starwars/starwars.component';
-import { MarvelComponent } from './components/features/marvel/marvel.component';  // Already imported
+// FEATURES  
 import { GrootService } from './service/groot.service';
 // import { WritingRoutingModule } from './writing-routing.module';
 
@@ -95,20 +87,13 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         BlogModalComponent,
         BlogsComponent,
         NasaComponent,
-        //CRYPTO
-        NftsComponent,
-        NftComponent,
-        NftAddComponent,
-        ChaindataComponent,
+   
         // TECH NEWS
         NewsPageComponent,
         NewsArticleSearchComponent,
         NewsArticleResultsComponent,
-        NewsToolBarComponent,
-        HomeComponent,
-        PipeCapitalizeCategoryPipe,
-        StarwarsComponent,
-        MarvelComponent,  // Added to declarations
+        NewsToolBarComponent, 
+        PipeCapitalizeCategoryPipe, 
         QrcodeComponent,  // Added custom QR code component
         /////// AUTH MODULE ///////
         // AdminComponent,
