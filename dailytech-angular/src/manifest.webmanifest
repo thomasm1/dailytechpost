@@ -1,11 +1,14 @@
 {
-  "name": "dailytech",
-  "short_name": "dailytech",
-    "theme_color": "#83afe6",
-    "background_color": "#0f3d6b",
+  "id": "/",
+  "name": "DailyTech",
+  "short_name": "DailyTech",
+  "description": "DailyTech news and market insights in an installable web app.",
+  "theme_color": "#0f3d6b",
+  "background_color": "#0f3d6b",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
@@ -55,5 +58,10 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
+  ],
+  "categories": [
+    "news",
+    "finance",
+    "productivity"
   ]
 }

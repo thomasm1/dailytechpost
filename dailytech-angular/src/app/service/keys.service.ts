@@ -31,7 +31,7 @@ export class KeysService {
   getGoogleApi() {
     this.http
       .get(`${this.googleUrl}`)
-      .subscribe((response) => {
+      .subscribe((response: any) => {
         //console.log(response);
         if (response["GOOGLE_API_KEY"] != undefined) {
           new Promise<void>((resolve) => {
@@ -49,7 +49,7 @@ export class KeysService {
   getNasaApi() {
     this.http
       .get(`${this.nasaUrl}`)
-      .subscribe((response) => {
+      .subscribe((response: any) => {
             this.nasaApi = response["NASA_API_KEY"][0];
       });
       return this.nasaApi;
@@ -57,7 +57,7 @@ export class KeysService {
   getNytApi() {
     this.http
       .get(`${this.nytUrl}`)
-      .subscribe((response) => {
+      .subscribe((response: any) => {
             this.nytApi = response["NYT_API_KEY"][0];
       });
       return this.nytApi;

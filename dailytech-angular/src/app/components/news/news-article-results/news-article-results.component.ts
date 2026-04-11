@@ -4,7 +4,7 @@ import { Store, select } from '@ngrx/store';
 @Component({
   selector: 'app-news-article-results',
   templateUrl: './news-article-results.component.html',
-  styleUrls: ['./news-article-results.component.css']
+  styleUrls: ['./news-article-results.component.scss']
 })
 export class NewsArticleResultsComponent implements OnInit {
   searchResults: any[] = [];

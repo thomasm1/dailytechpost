@@ -1,6 +1,6 @@
 {
     "apps":[{
-        "name":"friendsofg",
+        "name":"dailytech",
         "assets": [ "assets", "favicon.ico", "manifest.json"],
         "env":{
             "NODE_ENV":"development"

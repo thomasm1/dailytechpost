@@ -8,16 +8,30 @@ import { PostEntityService } from '../post-entity.service';
 describe('PostsViewerComponent', () => {
   let component: PostEntityViewerComponent;
   let fixture: ComponentFixture<PostEntityViewerComponent>;
+  let mockPostEntityService: jasmine.SpyObj<PostEntityService>;
 
   beforeEach(waitForAsync(() => {
+    mockPostEntityService = jasmine.createSpyObj<PostEntityService>('PostEntityService', [
+      'retrieveAllPosts',
+      'retrieveAllPostsByEmail',
+      'retrievePost',
+      'createPost',
+      'updatePost',
+      'deletePost'
+    ]);
+    mockPostEntityService.retrieveAllPosts.and.returnValue(of([]));
+    mockPostEntityService.retrieveAllPostsByEmail.and.returnValue(of([]));
+    mockPostEntityService.retrievePost.and.returnValue(of({} as any));
+    mockPostEntityService.createPost.and.returnValue(of({} as any));
+    mockPostEntityService.updatePost.and.returnValue(of({} as any));
+    mockPostEntityService.deletePost.and.returnValue(of({} as any));
+
     TestBed.configureTestingModule({
       declarations: [PostEntityViewerComponent],
       providers: [
         {
           provide: PostEntityService,
-          useValue: jasmine.createSpyObj<PostEntityService>('PostEntityService', {
-            retrieveAllPostsByUsername: of([]),
-          }),
+          useValue: mockPostEntityService,
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

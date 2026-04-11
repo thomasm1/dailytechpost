@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "pwa": "ng build --configuration production && sw-precache --root=dist --configuration=precache-config.js",
+    "prod": "ng build --configuration production", 
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "pwa": "ng add @angular/pwa",
     "update": "ng update @angular/cli@16 @angular/core@16",
     "update1": "ng update @angular/material@16",
     "update2": "ng update @ngrx/store@16 @ngrx/effects@16 @ngrx/entity@16 @ngrx/router-store@16",

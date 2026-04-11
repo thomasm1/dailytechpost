@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
-import { pipe } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { take, map } from 'rxjs/operators';
 
-import { FirebaseAuthService } from './firebase-auth.service';
 import { AwsAuthenticationService } from './aws-authentication.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/app.reducer';
@@ -20,28 +18,25 @@ export class FirebaseGuardService  {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    // USER AUTH  ----------------------   ADMIN AUTH
-    // if (this.authService.isAuth() || this.adminAuthService.isAdminLoggedIn()) {
-
-    if (
-      this.store.select(fromRoot.getIsAuth).pipe(take(1)) ||
-      this.awsAuthService.isAdminLoggedIn()
-    ) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);
-    }
+    return this.store.select(fromRoot.getIsAuth).pipe(
+      take(1),
+      map((isAuth) => {
+        if (isAuth || this.awsAuthService.isAdminLoggedIn()) {
+          return true;
+        }
+        return this.router.createUrlTree(['/login']);
+      })
+    );
   }
   canLoad(route: Route) {
-    // if (this.authService.isAuth()) {
-    //   return true;
-    // } else {
-    //   this.router.navigate(['/login']);
-    // }
-    if (this.store.select(fromRoot.getIsAuth).pipe(take(1))) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);
-    }
+    return this.store.select(fromRoot.getIsAuth).pipe(
+      take(1),
+      map((isAuth) => {
+        if (isAuth || this.awsAuthService.isAdminLoggedIn()) {
+          return true;
+        }
+        return this.router.createUrlTree(['/login']);
+      })
+    );
   }
 }

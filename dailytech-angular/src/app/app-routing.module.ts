@@ -11,12 +11,15 @@ import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/po
 import { BlogsListComponent } from './components/blogs-public/blogs-list/blogs-list.component';
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { WritingComponent } from './components/writing/writing.component';
+import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
+import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
+import { PastWritingsComponent } from './components/writing/past-writings/past-writings.component';
+import { GridWritingsComponent } from './components/writing/grid-writings/grid-writings.component';
 
 import { AwsGuardService } from './service/auth/aws-guard.service';
 import { FirebaseGuardService } from './service/auth/firebase-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
-import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component';
-import { NasaComponent } from './components/nasa/nasa.component';
+import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component'; 
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
  
@@ -30,9 +33,19 @@ const routes: Routes = [
   
   { path: 'posts', component: PostEntityViewerComponent },
   // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [FirebaseGuardService] },
-  { path: 'writing', component: WritingComponent}, 
-  { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService,AwsGuardService]},  
-  { path: 'nasa', component: NasaComponent }, 
+  {
+    path: 'writing',
+    component: WritingComponent,
+    canActivate:[FirebaseGuardService],
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'new' },
+      { path: 'new', component: NewWritingComponent },
+      { path: 'current', component: CurrentWritingComponent },
+      { path: 'past', component: PastWritingsComponent },
+      { path: 'stats', component: GridWritingsComponent },
+    ]
+  }, 
+  { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService,AwsGuardService]},   
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 

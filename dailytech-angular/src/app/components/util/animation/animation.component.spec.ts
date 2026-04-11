@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AnimationComponent } from './animation.component';
 
@@ -8,7 +9,8 @@ describe('AnimationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimationComponent ]
+      declarations: [ AnimationComponent ],
+      imports: [NoopAnimationsModule]
     })
     .compileComponents();
   }));

@@ -9,11 +9,12 @@
         "files": [
           "/favicon.ico",
           "/index.html",
-          "/manifest.json",
+          "/manifest.webmanifest",
           "/*.css",
           "/*.js"
         ],
         "urls": [
+          "https://fonts.googleapis.com/css?family=Monoton:300,400,500,600",
           "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
           "https://fonts.googleapis.com/icon?family=Material+Icons",
           "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2",
@@ -36,8 +37,14 @@
   "dataGroups": [
     {
       "name": "posts+apis",
-      "urls": ["http:3.215.230.246:8887/nft","https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts"],
+      "urls": [
+        "http://3.215.230.246:8887/nft",
+        "http://3.215.230.246:8887/nft/**",
+        "https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts",
+        "https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts/**"
+      ],
       "cacheConfig": {
+        "strategy": "freshness",
         "maxSize": 5,
         "maxAge": "1d",
         "timeout": "10s"

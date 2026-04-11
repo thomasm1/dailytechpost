@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
@@ -21,7 +22,8 @@ describe('BlogsGridComponent', () => {
       providers: [
         { provide: BlogsService, useValue: mockBlogService },
         { provide: Router, useValue: mockRouter }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BlogsGridComponent);
@@ -95,10 +97,16 @@ describe('BlogsGridComponent', () => {
         { id: 1, cat3: 'Tech', post: '<p>Post 1</p>' },
         { id: 2, cat3: 'Health', post: '<p>Post 2</p>' },
         { id: 3, cat3: 'Tech', post: '<p>Post 3</p>' }
-      ];
-      component.categoriesForm.setValue({ selectedCategories: ['Tech'] });
+      ] as any;
+      component.selectedCategories.push((component as any).fb.control('Tech'));
 
-});
+      // Act
+      component.fetchBlogs();
+
+      // Assert
+      expect(component.blogs.length).toBe(2);
+      expect(component.blogs.every((b: any) => b.cat3 === 'Tech')).toBeTrue();
+    });
 
   });
 });

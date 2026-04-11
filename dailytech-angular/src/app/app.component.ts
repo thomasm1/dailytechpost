@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NasaService } from './components/nasa/nasa.service';
-
+ 
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { KeysService } from './service/keys.service';
 import { LoggingService } from './service/logging.service';
+import { PwaUpdateService } from './service/pwa-update.service';
 
 
 @Component({
@@ -16,15 +16,15 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: FirebaseAuthService,
-    private keysService: KeysService,
-    private nasaKey:NasaService,
+    private keysService: KeysService, 
     private loggingService: LoggingService,
+    private pwaUpdateService: PwaUpdateService,
     ) {}
 
   ngOnInit() {
     this.authService.initAuthListener();
-    this.keysService.getGoogleApi();
-    this.nasaKey.getNasaKey();
+    this.keysService.getGoogleApi(); 
+    this.pwaUpdateService.initialize();
     this.loggingService.printLog('AppComponent ngOnInit'); 
   }
 }

@@ -56,7 +56,7 @@ import { AuthModule } from './components/user/auth.module';
 import { WritingModule } from './components/writing/writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
-import { NasaComponent } from './components/nasa/nasa.component';
+ 
 
 // NEWS
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
@@ -85,8 +85,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         // BlogsListComponent,
         PostCancelComponent,
         BlogModalComponent,
-        BlogsComponent,
-        NasaComponent,
+        BlogsComponent, 
    
         // TECH NEWS
         NewsPageComponent,
@@ -137,7 +136,10 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         WritingModule,
         AuthModule,
         // WritingRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     providers: [
         KeysService,

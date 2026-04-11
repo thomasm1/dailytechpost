@@ -4,8 +4,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { KeysService } from './service/keys.service';
-import { NasaService } from './components/nasa/nasa.service';
 import { LoggingService } from './service/logging.service';
+import { PwaUpdateService } from './service/pwa-update.service';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
@@ -21,12 +21,12 @@ describe('AppComponent', () => {
           useValue: jasmine.createSpyObj<KeysService>('KeysService', ['getGoogleApi']),
         },
         {
-          provide: NasaService,
-          useValue: jasmine.createSpyObj<NasaService>('NasaService', ['getNasaKey']),
-        },
-        {
           provide: LoggingService,
           useValue: jasmine.createSpyObj<LoggingService>('LoggingService', ['printLog']),
+        },
+        {
+          provide: PwaUpdateService,
+          useValue: jasmine.createSpyObj<PwaUpdateService>('PwaUpdateService', ['initialize']),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],
