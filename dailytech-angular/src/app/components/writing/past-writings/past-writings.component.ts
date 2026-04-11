@@ -22,8 +22,8 @@ export class PastWritingsComponent implements OnInit, AfterViewInit { //, OnDest
   dataSource = new MatTableDataSource<WritingMod>();
   // private exChangedSubscription: Subscription;
 
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort!: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
 
   constructor(
     private writingService: WritingService,

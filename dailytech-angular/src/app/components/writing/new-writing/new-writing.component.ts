@@ -1,17 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-mods.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import { Store } from '@ngrx/store';
-import { FirebaseAuthService } from 'src/app/service/auth/firebase-auth.service';
 import * as fromRoot from '../../../reducers/app.reducer';
-import { CategoryMod } from 'src/app/models/category-mods.model';
+import { CategoryMod } from '../../../models/category-mods.model';
 import * as fromCategories from '../../../reducers/category.reducer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-writing',
@@ -25,48 +24,60 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
 
   // private writingSubscription: Subscription;
   // writingMods: WritingMod[];
-  writingMods$: Observable<WritingMod[]>;
-  categoryMods$: Observable<CategoryMod[]>;
+  writingMods$!: Observable<WritingMod[]>;
+  categoryMods$!: Observable<CategoryMod[]>;
 
-  isAuth$: Observable<boolean>;
+  isAuth$!: Observable<boolean>;
+  hasSavedDraft = false;
+  savedDraftCategory = '';
+  selectedCategory = '';
 
   isLoading = true;
-  private loadingSubscription: Subscription;
+  private loadingSubscription!: Subscription;
   // isLoading$: Observable<boolean>;
 
   constructor(
     private writingService: WritingService,
     private uiService: UiService,
-    private store: Store<fromWriting.State>
+    private store: Store<fromWriting.State>,
+    private router: Router
 
   ) { }
 
   ngOnInit() {
     this.isAuth$ = this.store.select(fromRoot.getIsAuth);
+    this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
+      (isLoading) => { this.isLoading = isLoading; }
+    );
+    this.categoryMods$ = this.store.select(fromCategories.getCurrentCategoryMods);
+    this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods);
+    this.fetchCategories();
+    this.fetchWritings();
+    this.checkForSavedDraft();
+  }
 
-    if (this.isAuth$) {
-      console.log('isAuth$ is true');
-      this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
-        isLoading => { this.isLoading = isLoading; }    // GONNA KEEP SUBSCRIPTION FOR THIS LOADING SPINNER
-      );
-      // this.isLoading$ = this.store.select(fromRoot.getIsLoading);
-
-      // this.writingSubscription = this.writingService.writingsChanged.subscribe(
-      //   writingMods => { this.writingMods = writingMods; }
-      // );
-      this.store.select(fromCategories.getCurrentCategoryMods).subscribe();
-      
-      this.categoryMods$ = this.store.select(fromCategories.getCurrentCategoryMods);
-      this.fetchCategories();
-
-      this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods);
-      this.fetchWritings();
-    } else {
-      console.log('isAuth$ is false');
-
+  private checkForSavedDraft() {
+    const draftRaw = localStorage.getItem('writingDraft');
+    if (!draftRaw) {
+      this.hasSavedDraft = false;
+      this.savedDraftCategory = '';
+      return;
     }
 
-    // FUNCTIONALITY FOR Non-logged-in users
+    try {
+      const draft = JSON.parse(draftRaw);
+      const title = (draft?.title || '').toString().trim();
+      const post = (draft?.post || '').toString().trim();
+      const cat3 = (draft?.cat3 || '').toString().trim();
+      this.hasSavedDraft = !!(title || post);
+      this.savedDraftCategory = cat3;
+      if (cat3) {
+        this.selectedCategory = cat3;
+      }
+    } catch {
+      this.hasSavedDraft = false;
+      this.savedDraftCategory = '';
+    }
   }
 
   // getDefaultWritings() {
@@ -79,8 +90,16 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
     this.writingService.getCategories();
   }
   onStartWriting(ngForm: NgForm) {
-    console.log('NewWritingComponent onStartWriting cat3: ', ngForm.value.category_five);
-    this.writingService.startWriting(ngForm.value.category_five);  //pass in the id
+    const chosenCategory = this.selectedCategory || ngForm.value.category_five;
+    console.log('NewWritingComponent onStartWriting cat3: ', chosenCategory);
+    this.writingService.startWriting(chosenCategory);  //pass in the id
+    this.router.navigate(['/writing/current']);
+  }
+
+  onContinueDraft() {
+    const draftCategory = this.savedDraftCategory || this.selectedCategory;
+    this.writingService.startWriting(draftCategory);
+    this.router.navigate(['/writing/current']);
   }
 
   ngOnDestroy() {

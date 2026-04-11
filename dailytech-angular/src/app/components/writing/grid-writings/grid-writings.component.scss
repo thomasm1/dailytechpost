@@ -11,3 +11,13 @@
 mat-table {
   min-height:500px;
 }
+
+.paginator-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.paginator-wrap mat-paginator {
+  background: transparent;
+}

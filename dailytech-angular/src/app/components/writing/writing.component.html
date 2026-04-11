@@ -1,17 +1,13 @@
 <hr>
 <h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
 <hr>
-<mat-tab-group *ngIf="!(ongoingWriting$ | async)" center>
+<nav class="writing-nav">
+  <a routerLink="/writing/new" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">New Session</a>
+  <a *ngIf="ongoingWriting$ | async" routerLink="/writing/current" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">Writing</a>
+  <a routerLink="/writing/past" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">Past Writing</a>
+  <a routerLink="/writing/stats" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">Statistics</a>
+</nav>
 
-  <mat-tab label="New Session">
-    <!-- <app-new-writing (writingStart)="ongoingWriting = true"></app-new-writing> -->
-    <app-new-writing ></app-new-writing>
-  </mat-tab>
-  <mat-tab label="Past Session Stats">
-    <app-past-writings></app-past-writings>
-</mat-tab>
-<mat-tab label="Statistics Grid">
-  <app-grid-writings></app-grid-writings>
-</mat-tab>
-</mat-tab-group>
-<app-current-writing *ngIf="ongoingWriting$ | async" ></app-current-writing>
+<section class="writing-panel">
+  <router-outlet></router-outlet>
+</section>

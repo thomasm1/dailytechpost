@@ -48,20 +48,17 @@
               Submit
             </button>
             <div class="right-buttons">
-              <div class="progress-small">
-                <mat-progress-spinner
-                  mode="determinate"
-                  [value]="progress"
-                  diameter="80">
-                </mat-progress-spinner>
-                <span class="progress-text-small">{{ progress }}%</span>
-              </div>
-              <button mat-raised-button color="warn" (click)="postCancel()">
-                Pause Writing
+              <button mat-stroked-button type="button" (click)="toggleClock()">
+                {{ showClock ? 'Hide Time' : 'Show Time' }}
               </button>
-              <button mat-raised-button color="accent" (click)="quitCancel()">
+              <div class="progress-small" *ngIf="showClock">
+                <div class="progress-ring" [style.--p]="progress"></div>
+                <span class="progress-text-small" >{{ getElapsedDisplay() }} / {{ getGoalDisplay() }}</span>
+              </div>
+              <button mat-raised-button color="warn" type="button" (click)="postCancel()">
                 Quit Writing
               </button>
+         
             </div>
             <span *ngIf="!writingForm.valid" class="error-text">
               Please fill in title and content.

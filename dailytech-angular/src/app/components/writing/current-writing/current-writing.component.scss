@@ -82,6 +82,23 @@
   margin-top: 4px;
 }
 
+.progress-ring {
+  --p: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(#3f51b5 calc(var(--p) * 1%), #d7ddff 0);
+  position: relative;
+}
+
+.progress-ring::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #f9f9f9;
+}
+
 // Custom button colors for visibility on white background
 .form-actions button[color="primary"] {
   background-color: #2bac69b3 !important;

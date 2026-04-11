@@ -24,11 +24,14 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   progress = 0;
   timer: any;
-  news: string [];
-  writingForm: FormGroup;
-  writingMods$: Observable<WritingMod[]>;
-  newsMods$: Observable<NewsMod[]>;
-  category: string;
+  elapsedSeconds = 0;
+  goalMinutes = 15;
+  showClock = true;
+  news!: string [];
+  writingForm!: FormGroup;
+  writingMods$!: Observable<WritingMod[]>;
+  newsMods$!: Observable<NewsMod[]>;
+  category!: string;
   newsAdd: boolean= false;
 
 
@@ -41,8 +44,9 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.startOrResumeWriting();
     this.initForm();
+    this.loadDraftFromLocalStorage();
+    this.startOrResumeWriting();
     this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
   }
 
@@ -56,35 +60,96 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     });
   }
 
+  private loadDraftFromLocalStorage(): void {
+    const draftRaw = localStorage.getItem('writingDraft');
+    if (!draftRaw) {
+      return;
+    }
+
+    try {
+      const draft = JSON.parse(draftRaw);
+      this.writingForm.patchValue({
+        title: draft?.title || '',
+        post: draft?.post || ''
+      });
+    } catch {
+      // ignore malformed draft payload
+    }
+  }
+
 
     startOrResumeWriting() {
     this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingMod => {
       if (!writingMod) {
+        this.router.navigate(['/writing/new']);
         return;
       }
       // this.news = this.writingService.getWritingExercise().news;
-      this.news = writingMod.news;
-      this.category = writingMod.cat3;
-      // const step = this.writingService.getWritingExercise().durationGoal / 100;
-      console.log("writingMod durationGoal:", writingMod.durationGoal);
-      const step = writingMod.durationGoal / 100;
-      this.timer = setInterval(() => {
-        this.progress = this.progress + 1;
-        if (this.progress >= 100) {
-          this.writingService.completeWriting();
-          clearInterval(this.timer);
-        }
-      }, step); // 1000);
+      this.news = writingMod.news || [];
+      this.category = writingMod.cat3 || '';
+      this.goalMinutes = this.resolveGoalMinutes(writingMod.durationGoal);
+      this.startStopwatch();
     })
   }
-  quitCancel() {
-    this.writingService.hardQuitWriting();
-    this.writingForm.reset();
-    this.progress = 0;
-    this.router.navigate(['/']); 
+
+  private resolveGoalMinutes(durationGoal?: number): number {
+    if (!durationGoal || durationGoal <= 0) {
+      return 15;
+    }
+    // Normalize oversized legacy-like values to minute goals for display.
+    if (durationGoal >= 1000) {
+      return Math.max(1, Math.round(durationGoal / 400));
+    }
+    return Math.max(1, Math.round(durationGoal));
   }
+
+  private startStopwatch() {
+    const startMs = Date.now() - (this.elapsedSeconds * 1000);
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+    this.timer = setInterval(() => {
+      this.elapsedSeconds = Math.floor((Date.now() - startMs) / 1000);
+      const goalSeconds = this.goalMinutes * 60;
+      this.progress = Math.min(100, Math.floor((this.elapsedSeconds / goalSeconds) * 100));
+    }, 1000);
+  }
+
+  getElapsedDisplay(): string {
+    const mm = Math.floor(this.elapsedSeconds / 60).toString().padStart(2, '0');
+    const ss = (this.elapsedSeconds % 60).toString().padStart(2, '0');
+    return `${mm}:${ss}`;
+  }
+
+  getGoalDisplay(): string {
+    return `${this.goalMinutes.toString().padStart(2, '0')}:00`;
+  }
+
+  toggleClock(): void {
+    this.showClock = !this.showClock;
+  }
+
+  private saveDraftToLocalStorage(): void {
+    const draft = {
+      title: this.writingForm.get('title')?.value || '',
+      post: this.writingForm.get('post')?.value || '',
+      cat3: this.category || ''
+    };
+    localStorage.setItem('writingDraft', JSON.stringify(draft));
+  }
+
+  private clearDraftFromLocalStorage(): void {
+    localStorage.removeItem('writingDraft');
+  }
+
+  private exitWritingSession(): void {
+    this.writingService.hardQuitWriting();
+    this.progress = 0;
+    this.elapsedSeconds = 0;
+    this.router.navigate(['/writing/new']);
+  }
+ 
   postCancel() {
-    clearInterval(this.timer);
     const dialogRef = this.dialog.open(StopWritingComponent, {
       data: {
         progress: this.progress
@@ -92,8 +157,12 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.writingService.cancelWriting(this.progress);
+      if (result === 'discard') {
+        this.clearDraftFromLocalStorage();
+        this.exitWritingSession();
+      } else if (result === 'draft') {
+        this.saveDraftToLocalStorage();
+        this.exitWritingSession();
       } else {
         this.startOrResumeWriting();
       }
@@ -113,7 +182,8 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
           console.log('aupdateNewsUrls Submission to writing-mods successful');
           this.writingForm.reset();
           this.progress = 0;
-          this.router.navigate(['/']);
+          this.elapsedSeconds = 0;
+          this.router.navigate(['/writing/current']);
         },
         error => {
           console.error('updateNewsUrls Submission to writing-mods failed', error);
@@ -138,10 +208,11 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
           console.log('addFullDataToDatabase Submission to finished-writing-mods successful');
           this.writingForm.reset();
           this.progress = 0;
-          this.router.navigate(['/']);
+          this.elapsedSeconds = 0;
+          this.router.navigate(['/writing/new']);
         },
         error => {
-          console.error('addFullDataToDatabase Submission to finished-writing-mods failed', error);
+          console.error('FAILES: addFullDataToDatabase Submission to finished-writing-mods failed', error);
         }
       );
     } else {
@@ -159,6 +230,6 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.timer) {
       clearInterval(this.timer);
-    } 
+    }
   }
 }

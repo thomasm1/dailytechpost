@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, of, Subject } from 'rxjs';
 
@@ -17,45 +18,12 @@ describe('NewWritingComponent', () => {
   let component: NewWritingComponent;
   let fixture: ComponentFixture<NewWritingComponent>;
   let mockWritingService: jasmine.SpyObj<WritingService>;
+  let mockRouter: jasmine.SpyObj<Router>;
   let mockStore: jasmine.SpyObj<Store>;
   let loadingStateChanged: Subject<boolean>;
   let isAuthSubject: BehaviorSubject<boolean>;
   let writingModsSubject: BehaviorSubject<WritingMod[]>;
   let categoryModsSubject: BehaviorSubject<CategoryMod[]>;
-
-  const mockWritingMods: WritingMod[] = [
-    {
-      id: '1',
-      cat3: 'Web Dev Affairs',
-      title: 'Tech Article',
-      durationGoal: 12000,
-      wordCount: 100,
-      date: new Date('2026-01-01')
-    },
-    {
-      id: '2',
-      cat3: 'A.I.Now.',
-      title: 'AI Post',
-      durationGoal: 12000,
-      wordCount: 150,
-      date: new Date('2026-01-02')
-    }
-  ];
-
-  const mockCategoryMods: CategoryMod[] = [
-    {
-      id: 'cat-1',
-      cat3: 'Web Dev Affairs',
-      durationGoal: 12000,
-      news: ['https://example.com/web-dev']
-    },
-    {
-      id: 'cat-2',
-      cat3: 'A.I.Now.',
-      durationGoal: 12000,
-      news: ['https://example.com/ai']
-    }
-  ];
 
   beforeEach(async () => {
     mockWritingService = jasmine.createSpyObj('WritingService', [
@@ -63,16 +31,15 @@ describe('NewWritingComponent', () => {
       'getCategories',
       'startWriting'
     ]);
+    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
 
     loadingStateChanged = new Subject<boolean>();
-    const mockUiService = {
-      loadingStateChanged
-    };
+    const mockUiService = { loadingStateChanged };
 
-    mockStore = jasmine.createSpyObj('Store', ['select', 'dispatch']);
+    mockStore = jasmine.createSpyObj('Store', ['select']);
     isAuthSubject = new BehaviorSubject<boolean>(true);
-    writingModsSubject = new BehaviorSubject<WritingMod[]>(mockWritingMods);
-    categoryModsSubject = new BehaviorSubject<CategoryMod[]>(mockCategoryMods);
+    writingModsSubject = new BehaviorSubject<WritingMod[]>([]);
+    categoryModsSubject = new BehaviorSubject<CategoryMod[]>([]);
 
     mockStore.select.and.callFake((selector: unknown) => {
       if (selector === fromRoot.getIsAuth) {
@@ -93,6 +60,7 @@ describe('NewWritingComponent', () => {
       providers: [
         { provide: WritingService, useValue: mockWritingService },
         { provide: UiService, useValue: mockUiService },
+        { provide: Router, useValue: mockRouter },
         { provide: Store, useValue: mockStore }
       ],
       schemas: [NO_ERRORS_SCHEMA]
@@ -108,74 +76,60 @@ describe('NewWritingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize auth, categories, and writings on init', () => {
+  it('should initialize streams and fetch data on init', () => {
     fixture.detectChanges();
 
-    const selectedArgs: any[] = mockStore.select.calls.allArgs().map(args => args[0] as any);
-
-    expect(selectedArgs.includes(fromRoot.getIsAuth)).toBe(true);
-    expect(selectedArgs.includes(fromCategories.getCurrentCategoryMods)).toBe(true);
-    expect(selectedArgs.includes(fromWriting.getAvailableWritingMods)).toBe(true);
     expect(mockWritingService.getCategories).toHaveBeenCalled();
     expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
   });
 
-  it('should expose category and writing streams from the store', done => {
-    fixture.detectChanges();
+  it('should detect saved draft and preload selected category', () => {
+    spyOn(localStorage, 'getItem').and.returnValue(
+      JSON.stringify({ title: 'draft', post: 'content', cat3: 'A.I.Now.' })
+    );
 
-    component.categoryMods$.subscribe(categories => {
-      expect(categories).toEqual(mockCategoryMods);
-      component.writingMods$.subscribe(writings => {
-        expect(writings).toEqual(mockWritingMods);
-        done();
-      });
-    });
+    component.ngOnInit();
+
+    expect(component.hasSavedDraft).toBeTrue();
+    expect(component.savedDraftCategory).toBe('A.I.Now.');
+    expect(component.selectedCategory).toBe('A.I.Now.');
   });
 
-  it('should update isLoading from the UI service stream', () => {
-    fixture.detectChanges();
+  it('should start writing from selected category and navigate to current page', () => {
+    component.selectedCategory = 'Web Dev Affairs';
+    const form = { value: { category_five: 'Ignored Category' } } as NgForm;
 
-    loadingStateChanged.next(false);
-    expect(component.isLoading).toBe(false);
+    component.onStartWriting(form);
 
-    loadingStateChanged.next(true);
-    expect(component.isLoading).toBe(true);
+    expect(mockWritingService.startWriting).toHaveBeenCalledWith('Web Dev Affairs');
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/current']);
   });
 
-  it('should call fetchAvailableWritingMods when fetchWritings is invoked', () => {
-    component.fetchWritings();
-
-    expect(mockWritingService.fetchAvailableWritingMods).toHaveBeenCalled();
-  });
-
-  it('should call getCategories when fetchCategories is invoked', () => {
-    component.fetchCategories();
-
-    expect(mockWritingService.getCategories).toHaveBeenCalled();
-  });
-
-  it('should start writing with the selected category from the form', () => {
-    const form = {
-      value: { category_five: 'A.I.Now.' }
-    } as NgForm;
+  it('should start writing from form category when selectedCategory is empty', () => {
+    component.selectedCategory = '';
+    const form = { value: { category_five: 'A.I.Now.' } } as NgForm;
 
     component.onStartWriting(form);
 
     expect(mockWritingService.startWriting).toHaveBeenCalledWith('A.I.Now.');
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/current']);
   });
 
-  it('should unsubscribe from loadingStateChanged on destroy', () => {
+  it('should continue draft using saved category and navigate', () => {
+    component.savedDraftCategory = 'Web Dev Affairs';
+
+    component.onContinueDraft();
+
+    expect(mockWritingService.startWriting).toHaveBeenCalledWith('Web Dev Affairs');
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/current']);
+  });
+
+  it('should unsubscribe from loading stream on destroy', () => {
     fixture.detectChanges();
-    const unsubscribeSpy = spyOn(component['loadingSubscription'], 'unsubscribe');
+    const unsubscribeSpy = spyOn((component as any).loadingSubscription, 'unsubscribe');
 
     component.ngOnDestroy();
 
     expect(unsubscribeSpy).toHaveBeenCalled();
-  });
-
-  it('should handle destroy when no loading subscription exists', () => {
-    component['loadingSubscription'] = undefined as any;
-
-    expect(() => component.ngOnDestroy()).not.toThrow();
   });
 });

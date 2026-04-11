@@ -6,3 +6,48 @@ hr {
   max-width: 60%;
   margin: 30px auto;
 }
+
+.writing-nav {
+  max-width: 980px;
+  margin: 0 auto 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.writing-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 64px;
+  padding: 0 20px;
+  border-radius: 8px;
+  background: rgba(103, 58, 183, 0.36);
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.writing-nav-link:hover {
+  background: rgba(103, 58, 183, 0.52);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.writing-nav-link.active-link {
+  background: rgba(255, 255, 255, 0.14);
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  font-weight: 700;
+}
+
+.writing-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+}

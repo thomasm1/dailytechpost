@@ -1,23 +1,34 @@
-import { Component,  Inject } from '@angular/core';
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { Component, Injector } from '@angular/core';
+import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 
 @Component({
   selector: 'app-stop-writing',
-  template: `<h1 mat-dialog-title>Are you sure?</h1>
-            <mat-dialog-content>
-              <p>You already got {{ passedData.progress }}% left of writing ...</p>
-            </mat-dialog-content>
-            <mat-dialog-actions>
-              <button mat-button [mat-dialog-close]="true">Yes</button>
-              <button mat-button [mat-dialog-close]="false">No</button>
-            </mat-dialog-actions>
+  template: `<h1>Are you sure?</h1>
+            <div>
+              <p>Your current session can be kept as a local draft.</p>
+            </div>
+            <div>
+              <button mat-button type="button" (click)="closeDialog('discard')">Yes, don't save</button>
+              <button mat-button type="button" (click)="closeDialog('draft')">Yes, keep session draft</button>
+              <button mat-button type="button" (click)="closeDialog('resume')">No</button>
+            </div>
   `,
   styles: [
   ]
 })
 export class StopWritingComponent   {
+  passedData: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public passedData: any) {}
+  constructor(
+    private injector: Injector,
+    private dialogRef: MatDialogRef<StopWritingComponent>
+  ) {
+    this.passedData = this.injector.get(MAT_DIALOG_DATA, {});
+  }
+
+  closeDialog(result: 'discard' | 'draft' | 'resume'): void {
+    this.dialogRef.close(result);
+  }
 
  
 } 

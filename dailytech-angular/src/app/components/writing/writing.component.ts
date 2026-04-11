@@ -18,7 +18,9 @@ export class WritingComponent implements OnInit { //, OnDestroy {
   constructor(
     private writingService: WritingService,
     private store: Store<fromWriting.State>
-    ) { }
+    ) {
+    this.ongoingWriting$ = this.store.select(fromWriting.getIsWriting);
+  }
 
   ngOnInit() {
     // this.writingSubscription = this.writingService.writingChanged.subscribe(
@@ -30,7 +32,6 @@ export class WritingComponent implements OnInit { //, OnDestroy {
     //     }
     //   }
     // );
-    this.ongoingWriting$ = this.store.select(fromWriting.getIsWriting);
   }
 
   // ngOnDestroy() {
