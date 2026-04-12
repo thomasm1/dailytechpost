@@ -1,3 +1,221 @@
+-- COMMANDS 
+SHOW databases;
+-- SELECT * FROM users;
+-- select * from weblinks;
+
+USE dailytech;
+SELECT * FROM dailytech.post_entity;
+SELECT * FROM dailytech.users;
+
+-- DROP SCHEMA dailytech;
+
+-- Ensure schema exists (no-op if already created by your app)
+
+CREATE SCHEMA IF NOT EXISTS dailytech DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+
+CREATE TABLE  IF NOT EXISTS  dailytech.roles
+(
+    id   BIGINT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255)          NOT NULL,
+    CONSTRAINT pk_roles PRIMARY KEY (id),
+    CONSTRAINT uc_roles_name UNIQUE (name)
+);
+
+CREATE TABLE  IF NOT EXISTS  dailytech.users
+(
+    userid           BIGINT AUTO_INCREMENT NOT NULL,
+    password         VARCHAR(255)       NULL,
+    lastname         VARCHAR(255)       NULL,
+    firstname        VARCHAR(255)       NULL,
+    usertype         INT                NULL,
+    email            VARCHAR(255)       NOT NULL,
+    organizationcode VARCHAR(255)       NULL,
+    cusurl           VARCHAR(255)       NULL,
+    dashboardcode    VARCHAR(255)       NULL,
+    isactive         INT                NULL,
+    contacttype      INT                NULL,
+     authprovider   VARCHAR(100)        NULL,
+     authsubject    VARCHAR(255)        NULL,
+     version       INT                   DEFAULT 1,
+     time_created  DATETIME              NOT NULL,
+     time_updated  DATETIME              NOT NULL,
+    CONSTRAINT pk_users PRIMARY KEY (userid)
+);
+
+CREATE TABLE  IF NOT EXISTS  dailytech.users_roles
+(
+    role_id BIGINT NOT NULL,
+    user_id BIGINT    NOT NULL,
+    CONSTRAINT pk_users_roles PRIMARY KEY (role_id, user_id),
+    CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id),
+    CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid)
+);
+
+CREATE TABLE IF NOT EXISTS dailytech.user_plan (
+  userid BIGINT NOT NULL,
+  plan VARCHAR(50) NULL,
+  status VARCHAR(50) NULL,
+  effective_from DATETIME NULL,
+  effective_to DATETIME NULL,
+  cancel_at_period_end BIT NULL,
+  billing_provider VARCHAR(100) NULL,
+  provider_customer_id VARCHAR(255) NULL,
+  provider_subscription_id VARCHAR(255) NULL,
+  provider_price_id VARCHAR(255) NULL,
+  last_event_at DATETIME NULL,
+  trial_end DATETIME NULL,
+  grace_end DATETIME NULL,
+  version       INT                   DEFAULT 1,
+  time_created  DATETIME              NOT NULL,
+  time_updated  DATETIME              NOT NULL,
+  CONSTRAINT pk_user_plan PRIMARY KEY (userid)
+);
+
+CREATE TABLE  IF NOT EXISTS  dailytech.categories
+(
+    id            BIGINT AUTO_INCREMENT NOT NULL,
+    name          VARCHAR(255)          NULL,
+    `description` VARCHAR(255)          NULL,
+    version       INT                   DEFAULT 1,
+    time_created  DATETIME              NOT NULL,
+    time_updated  DATETIME              NOT NULL,
+    CONSTRAINT pk_categories PRIMARY KEY (id)
+);
+
+CREATE TABLE  IF NOT EXISTS  dailytech.post_entity
+(
+    id            BIGINT AUTO_INCREMENT NOT NULL,
+    did           VARCHAR(255)          NOT NULL,
+    post_date     VARCHAR(255)          NULL,
+    author        VARCHAR(255)          NULL,
+    month_order   VARCHAR(255)          NULL,
+    cat3          VARCHAR(255)          NULL,
+    title         VARCHAR(255)          NOT NULL  ,
+    post          VARCHAR(3000)         NOT NULL  ,
+    blogcite      VARCHAR(1000)         NULL  ,
+    email         VARCHAR(255)          NULL,
+    state         VARCHAR(255)          NULL,
+    word_count    INT                   NULL,
+    duration_goal INT                   NULL,
+    category_id   BIGINT                NULL,
+    user_userid   BIGINT				NULL,
+    version       INT                   DEFAULT 1,
+    time_created  DATETIME              NOT NULL,
+    time_updated  DATETIME              NOT NULL,
+    CONSTRAINT pk_post_entity PRIMARY KEY (id),
+    CONSTRAINT unique_id UNIQUE (id),
+    CONSTRAINT fk_post_entity_on_user FOREIGN KEY (user_userid) REFERENCES dailytech.users(userid),
+    CONSTRAINT fk_post_entity_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
+);
+
+CREATE TABLE  IF NOT EXISTS  dailytech.comments
+(
+    id      BIGINT AUTO_INCREMENT NOT NULL,
+    name    VARCHAR(255)          NULL,
+    email   VARCHAR(255)          NULL,
+    body    TEXT                  NULL,
+    post_id BIGINT                NOT NULL,
+    version INT                   DEFAULT 1,
+    time_created  DATETIME        NOT NULL,
+    time_updated  DATETIME        NOT NULL,
+    CONSTRAINT pk_comments PRIMARY KEY (id),
+    CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
+);
+
+-- WEBLINKS
+-- Minimal table for bookmarking arbitrary links that inherit from Bookmark.
+CREATE TABLE IF NOT EXISTS dailytech.weblinks (
+  id     BIGINT AUTO_INCREMENT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  profile_url VARCHAR(1000) NULL,
+  url VARCHAR(1000) NOT NULL,
+  host VARCHAR(255) NULL,
+  htmlpage LONGTEXT NULL,
+  downloadstatus VARCHAR(32) NOT NULL DEFAULT 'NOT_ATTEMPTED',
+  post_id BIGINT NULL,
+  version INT DEFAULT 1,
+  time_created DATETIME NOT NULL,
+  time_updated DATETIME NOT NULL,
+  CONSTRAINT pk_weblinks PRIMARY KEY (id),
+  CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
+) ;
+
+
+CREATE TABLE  IF NOT EXISTS  dailytech.news
+(
+    id          BIGINT AUTO_INCREMENT NOT NULL,
+    title       VARCHAR(255)          NULL,
+    url         VARCHAR(255)          NULL,
+    category_id BIGINT                NULL,
+    version     INT                   DEFAULT 1,
+    time_created  DATETIME            NOT NULL,
+    time_updated  DATETIME            NOT NULL,
+    CONSTRAINT pk_news PRIMARY KEY (id),
+    CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
+);
+
+ALTER TABLE dailytech.post_entity
+    ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id);
+
+ALTER TABLE dailytech.roles
+    ADD CONSTRAINT uc_roles_name UNIQUE (name);
+
+ALTER TABLE dailytech.comments
+    ADD CONSTRAINT FK_COMMENTS_ON_POST FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id);
+
+ALTER TABLE dailytech.news
+    ADD CONSTRAINT FK_NEWS_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
+
+ALTER TABLE dailytech.post_entity
+    ADD CONSTRAINT FK_POST_ENTITY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES dailytech.categories (id);
+
+ALTER TABLE dailytech.user_plan
+  ADD CONSTRAINT fk_user_plan_user FOREIGN KEY (userid) REFERENCES users (userid);
+
+ALTER TABLE dailytech.users_roles
+    ADD CONSTRAINT fk_userol_on_role FOREIGN KEY (role_id) REFERENCES dailytech.roles (id);
+
+ALTER TABLE dailytech.users_roles
+    ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);
+
+CREATE INDEX idx_post_entity_category_id ON dailytech.post_entity (category_id);
+CREATE INDEX idx_post_entity_user_userid ON dailytech.post_entity (user_userid);
+CREATE INDEX idx_comments_post_id ON dailytech.comments (post_id);
+CREATE INDEX idx_news_category_id ON dailytech.news (category_id);
+CREATE INDEX idx_users_roles_role_id ON dailytech.users_roles (role_id);
+CREATE INDEX idx_users_roles_user_id ON dailytech.users_roles (user_id);
+
+-- Indexes for lookups and status queries
+CREATE INDEX  idx_user_plan_status ON dailytech.user_plan (status);
+CREATE INDEX  idx_user_plan_provider_customer_id ON dailytech.user_plan (provider_customer_id);
+CREATE INDEX  idx_user_plan_provider_subscription_id ON dailytech.user_plan (provider_subscription_id);
+
+--rollback DROP TABLE IF EXISTS news;
+--rollback DROP TABLE IF EXISTS weblinks;
+--rollback DROP TABLE IF EXISTS comments;
+--rollback DROP TABLE IF EXISTS post_entity;
+--rollback DROP TABLE IF EXISTS user_plan;
+--rollback DROP TABLE IF EXISTS categories;
+--rollback DROP TABLE IF EXISTS users_roles;
+--rollback DROP TABLE IF EXISTS users;
+--rollback DROP TABLE IF EXISTS roles;
+
+
+
+-- COMMANDS 1----------------------------------
+SELECT * FROM dailytech.post_entity;
+SELECT * FROM dailytech.users;
+SELECT * FROM dailytech.users_roles;
+SELECT * FROM dailytech.categories;
+SELECT * FROM dailytech.comments;
+SELECT * FROM dailytech.weblinks;
+SELECT * FROM dailytech.news;
+
+-- END COMMANDS ----------------------------------
+
+
+
+
 INSERT INTO dailytech.roles (id, name)
 VALUES
     (1, 'ROLE_ADMIN'),
@@ -62,25 +280,25 @@ VALUES
      'Published', 2000, 14, 13, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');  -- references categories.id=13 (Finance)
 
 
---INSERT INTO dailytech.books
---  (title, profile_url, pubyear, publisher, authors, genre, rating, version,  time_created,  time_updated)
---VALUES
---  ('Effective Java (3rd Ed.)',
---   'https://example.com/books/effective-java',
---   2018, 'Addison-Wesley', 'Joshua Bloch', 'Programming', 4.9, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
---  ('Clean Code',
---   'https://example.com/books/clean-code',
---   2008, 'Prentice Hall', 'Robert C. Martin', 'Programming', 4.8, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
---  ('Domain-Driven Design',
---   'https://example.com/books/ddd',
---   2003, 'Addison-Wesley', 'Eric Evans', 'Software Architecture', 4.7, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
---  ('Introduction to Algorithms (CLRS)',
---   'https://example.com/books/clrs',
---   2009, 'MIT Press', 'Cormen; Leiserson; Rivest; Stein', 'Algorithms', 4.6, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
---  ('Designing Data-Intensive Applications',
---   'https://example.com/books/ddia',
---   2017, 'O''Reilly Media', 'Martin Kleppmann', 'Distributed Systems', 4.9, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
---
+-- INSERT INTO dailytech.books
+--   (title, profile_url, pubyear, publisher, authors, genre, rating, version,  time_created,  time_updated)
+-- VALUES
+--   ('Effective Java (3rd Ed.)',
+--    'https://example.com/books/effective-java',
+--    2018, 'Addison-Wesley', 'Joshua Bloch', 'Programming', 4.9, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Clean Code',
+--    'https://example.com/books/clean-code',
+--    2008, 'Prentice Hall', 'Robert C. Martin', 'Programming', 4.8, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Domain-Driven Design',
+--    'https://example.com/books/ddd',
+--    2003, 'Addison-Wesley', 'Eric Evans', 'Software Architecture', 4.7, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Introduction to Algorithms (CLRS)',
+--    'https://example.com/books/clrs',
+--    2009, 'MIT Press', 'Cormen; Leiserson; Rivest; Stein', 'Algorithms', 4.6, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Designing Data-Intensive Applications',
+--    'https://example.com/books/ddia',
+--    2017, 'O''Reilly Media', 'Martin Kleppmann', 'Distributed Systems', 4.9, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
+
 
 -- COMMENTS: 5 entries
 INSERT INTO dailytech.comments (
@@ -309,3 +527,16 @@ VALUES
     (190, 'Exclusive: Android P is Google''s most ambitious update in years | The Verge', 'https://www.theverge.com/2018/5/8/17327302/android-p-update-new-features-changes-video-google-io-2018', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
     (191, 'Supreme Court rules that internet businesses must collect all state and local sales taxes - Los Angeles Times', 'https://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
     (192, 'California Net Neutrality Bill Was ''Hijacked,'' Lawmaker Says | WIRED', 'https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00');
+
+
+-- COMMANDS 2----------------------------------
+SELECT * FROM dailytech.post_entity;
+SELECT * FROM dailytech.users;
+SELECT * FROM dailytech.users_roles;
+SELECT * FROM dailytech.roles;
+SELECT * FROM dailytech.categories;
+SELECT * FROM dailytech.comments;
+SELECT * FROM dailytech.weblinks;
+SELECT * FROM dailytech.news;
+
+-- END COMMANDS ----------------------------------

@@ -14,4 +14,6 @@ public interface NewsService {
   NewsDto updateNews(NewsDto newsDto);
 
   boolean deleteNews(Long newsId);
+
+  List<NewsDto> getAllNewsByCategory(Long categoryId);
 }

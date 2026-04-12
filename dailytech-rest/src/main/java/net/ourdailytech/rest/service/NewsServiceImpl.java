@@ -61,6 +61,18 @@ public class NewsServiceImpl implements NewsService {
         .collect(Collectors.toList());
   }
 
+  /**
+   * @param categoryId
+   * @return
+   */
+  @Override
+  public List<NewsDto> getAllNewsByCategory(Long categoryId) {
+    return newsRepository.findByCategoryId(categoryId)
+        .stream()
+        .map(newsMapper::toDto)
+        .collect(Collectors.toList()); 
+  }
+
   @Override
   public NewsDto updateNews(NewsDto newsDto) {
     if (newsDto.getId() == null) {
@@ -87,4 +99,5 @@ public class NewsServiceImpl implements NewsService {
     newsRepository.delete(existing);
     return true;
   }
+
 }

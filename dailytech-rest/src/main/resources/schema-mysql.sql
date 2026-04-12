@@ -26,8 +26,11 @@ CREATE TABLE  IF NOT EXISTS  dailytech.users
     dashboardcode    VARCHAR(255)       NULL,
     isactive         INT                NULL,
     contacttype      INT                NULL,
-     authprovider VARCHAR(100) NULL,
-     authsubject VARCHAR(255) NULL,
+     authprovider   VARCHAR(100)        NULL,
+     authsubject    VARCHAR(255)        NULL,
+     version       INT                   DEFAULT 1,
+     time_created  DATETIME              NOT NULL,
+     time_updated  DATETIME              NOT NULL,
     CONSTRAINT pk_users PRIMARY KEY (userid)
 );
 
@@ -54,6 +57,9 @@ CREATE TABLE IF NOT EXISTS dailytech.user_plan (
   last_event_at DATETIME NULL,
   trial_end DATETIME NULL,
   grace_end DATETIME NULL,
+  version       INT                   DEFAULT 1,
+  time_created  DATETIME              NOT NULL,
+  time_updated  DATETIME              NOT NULL,
   CONSTRAINT pk_user_plan PRIMARY KEY (userid)
 );
 
@@ -76,9 +82,9 @@ CREATE TABLE  IF NOT EXISTS  dailytech.post_entity
     author        VARCHAR(255)          NULL,
     month_order   VARCHAR(255)          NULL,
     cat3          VARCHAR(255)          NULL,
-    title         VARCHAR(255)          NOT  ,
-    post          VARCHAR(3000)         NOT  ,
-    blogcite      VARCHAR(1000)         NOT  ,
+    title         VARCHAR(255)          NOT NULL ,
+    post          VARCHAR(3000)         NOT NULL ,
+    blogcite      VARCHAR(1000)         NULL  ,
     email         VARCHAR(255)          NULL,
     state         VARCHAR(255)          NULL,
     word_count    INT                   NULL,
@@ -140,7 +146,6 @@ CREATE TABLE  IF NOT EXISTS  dailytech.news
     CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
 
-
 ALTER TABLE dailytech.post_entity
     ADD CONSTRAINT uc_8d90691f1af937cce1e76c802 UNIQUE (id);
 
@@ -164,28 +169,6 @@ ALTER TABLE dailytech.users_roles
 
 ALTER TABLE dailytech.users_roles
     ADD CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid);
-
--- Add missing columns for AbstractDomainClass inheritance
-ALTER TABLE dailytech.categories ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
-ALTER TABLE dailytech.categories ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE dailytech.categories ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
-
-ALTER TABLE dailytech.post_entity ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
-ALTER TABLE dailytech.post_entity ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE dailytech.post_entity ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
-
-ALTER TABLE dailytech.comments ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
-ALTER TABLE dailytech.comments ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE dailytech.comments ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
-
-ALTER TABLE dailytech.weblinks ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
-ALTER TABLE dailytech.weblinks ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE dailytech.weblinks ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
-
-ALTER TABLE dailytech.news ADD COLUMN IF NOT EXISTS version INT DEFAULT 1;
-ALTER TABLE dailytech.news ADD COLUMN IF NOT EXISTS time_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE dailytech.news ADD COLUMN IF NOT EXISTS time_updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
-
 
 CREATE INDEX idx_post_entity_category_id ON dailytech.post_entity (category_id);
 CREATE INDEX idx_post_entity_user_userid ON dailytech.post_entity (user_userid);

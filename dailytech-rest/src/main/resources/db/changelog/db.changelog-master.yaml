@@ -19,11 +19,11 @@ databaseChangeLog:
 
   # Baseline: full schema as it exists today on AWS
   - include:
-      file: db/changelog/changes/001-initial-schema.sql
-      relativeToChangelogFile: false
+      file: changes/001-initial-schema.sql
+      relativeToChangelogFile: true
 
   # Migration: add AbstractDomainClass audit columns to users & user_plan
   - include:
-      file: db/changelog/changes/002-add-audit-columns-users-userplan.sql
-      relativeToChangelogFile: false
+      file: changes/002-add-audit-columns-users-userplan.sql
+      relativeToChangelogFile: true
 

@@ -1,4 +1,4 @@
-server.port: 8888
+server.port: 8082
 
 currency-service:
   url: http://cryptomaven.xyz

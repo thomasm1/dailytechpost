@@ -1,12 +1,7 @@
 --liquibase formatted sql
-
--- ─────────────────────────────────────────────────────────────────────────────
--- Changeset 001 – Baseline snapshot of the existing AWS schema.
--- DO NOT run this against the live AWS database directly.
--- Instead, mark it as already-applied with:
---   mvn liquibase:changelogSync
--- ─────────────────────────────────────────────────────────────────────────────
 --changeset thomasm1:001 labels:baseline runOnChange:false comment:Initial schema baseline – matches current AWS state
+--preconditions onFail:MARK_RAN onError:HALT
+--precondition-sql-check expectedResult:0 SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = 'users'
 
 CREATE TABLE IF NOT EXISTS roles
 (
@@ -146,12 +141,12 @@ CREATE TABLE IF NOT EXISTS news
     CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES categories (id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_post_entity_category_id ON post_entity (category_id);
-CREATE INDEX IF NOT EXISTS idx_post_entity_user_userid ON post_entity (user_userid);
-CREATE INDEX IF NOT EXISTS idx_comments_post_id        ON comments (post_id);
-CREATE INDEX IF NOT EXISTS idx_news_category_id        ON news (category_id);
-CREATE INDEX IF NOT EXISTS idx_users_roles_role_id     ON users_roles (role_id);
-CREATE INDEX IF NOT EXISTS idx_users_roles_user_id     ON users_roles (user_id);
+CREATE INDEX idx_post_entity_category_id ON post_entity (category_id);
+CREATE INDEX idx_post_entity_user_userid ON post_entity (user_userid);
+CREATE INDEX idx_comments_post_id        ON comments (post_id);
+CREATE INDEX idx_news_category_id        ON news (category_id);
+CREATE INDEX idx_users_roles_role_id     ON users_roles (role_id);
+CREATE INDEX idx_users_roles_user_id     ON users_roles (user_id);
 
 --rollback DROP TABLE IF EXISTS news;
 --rollback DROP TABLE IF EXISTS weblinks;

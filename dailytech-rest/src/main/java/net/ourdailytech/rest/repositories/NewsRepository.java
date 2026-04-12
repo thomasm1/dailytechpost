@@ -1,5 +1,7 @@
 package net.ourdailytech.rest.repositories;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Optional;
 import net.ourdailytech.rest.models.News;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,4 +12,6 @@ public interface NewsRepository extends JpaRepository<News, Long> {
 
   @Override
   Optional<News> findById(Long aLong);
+
+  ArrayList<News> findByCategoryId(Long categoryId);
 }

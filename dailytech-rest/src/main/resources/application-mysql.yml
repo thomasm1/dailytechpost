@@ -22,13 +22,16 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
     enabled: true
+    database-change-log-table: DATABASECHANGELOG
+    database-change-log-lock-table: DATABASECHANGELOGLOCK
   sql:
     init:
       schema-locations: classpath:schema-mysql.sql
       data-locations: classpath:data-mysql.sql
       continue-on-error: true
-      mode: never
-# always #  never #
+#   do not auto-run main scripts.
+#  Liquibase will manage schema and data changes: Spring's default SQL init disabled
+      mode: never # always #
 
 # DEV ONLY
 spring.jmx.enabled: false

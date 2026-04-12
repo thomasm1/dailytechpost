@@ -1,96 +1,313 @@
 
--- ROLES
+
 INSERT INTO dailytech.roles (id, name)
 VALUES
     (1, 'ROLE_ADMIN'),
     (2, 'ROLE_USER');
 
--- USERS
+-- USERS: 5 entries
 INSERT INTO dailytech.users (
     userid, password, lastname, firstname,
     usertype, email, organizationcode, cusurl,
-    dashboardcode, isactive, contacttype, authprovider, authsubject
+    dashboardcode, isactive, contacttype, authprovider, authsubject, version,  time_created,  time_updated
 )
 VALUES
-    (101, 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111, 'INTERNAL', 'sub-101'),
-    (102, 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222, 'INTERNAL', 'sub-102'),
-    (103, 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333, 'INTERNAL', 'sub-103'),
-    (104, 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444, 'FIREBASE', 'sub-104'),
-    (105, 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', 'sub-105');
+    (10, 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111 , 'INTERNAL', '123', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
+    (11, 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222 , 'INTERNAL', '123' , 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00' ),
+    (12, 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333 , 'INTERNAL', '123', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
+    (13, 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444 , 'FIREBASE', '123', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
+    (14, 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', '123' , 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  );
 
--- USERS_ROLES
+-- USERS_ROLES: 5 entries
 INSERT INTO dailytech.users_roles (role_id, user_id)
 VALUES
-    (1, 101),
-    (2, 102),
-    (2, 103),
-    (2, 104),
-    (1, 105);
+    (1, 10),  -- tomAdmin => ROLE_ADMIN
+    (2, 11),  -- janeUser => ROLE_USER
+    (1, 12),  -- bobUser => ROLE_ADMIN
+    (2, 13),  -- aliceUser => ROLE_USER
+    (1, 14);  -- thomasMaestas => ROLE_ADMIN
+-- USERS_ROLES: 5 entries
 
--- USER_PLAN
-INSERT INTO dailytech.user_plan (
-    userid, plan, status, effective_from, effective_to, cancel_at_period_end,
-    billing_provider, provider_customer_id, provider_subscription_id, provider_price_id,
-    last_event_at, trial_end, grace_end
-)
+-- CATEGORIES: 5 entries
+INSERT INTO dailytech.categories (id, name, description, version,  time_created,  time_updated)
 VALUES
-    (101, 'PRO', 'ACTIVE', '2025-01-01 00:00:00', '2025-12-31 23:59:59', FALSE,
-     'STRIPE', 'cus_101', 'sub_101', 'price_101',
-     '2025-04-01 12:00:00', '2025-01-15 00:00:00', '2025-02-01 00:00:00'),
-    (102, 'FREE', 'ACTIVE', '2025-01-01 00:00:00', NULL, FALSE,
-     NULL, NULL, NULL, NULL,
-     NULL, NULL, NULL);
+    (10, 'A.I.Now.', 'AI Technology news', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+    (11, 'Web Dev Affairs', 'Web-Dev & Coding updates', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+    (12, 'Sociology Tomorrow!', 'Sociology Apps & updates', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+    (13, 'Quantum Data', 'Quantum news & tips', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+    (14, 'Musing Blockchain', ' Blockchain Cryptocurrency insights', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
 
--- CATEGORIES
-INSERT INTO dailytech.categories (id, name, description)
-VALUES
-    (10, 'A.I.Now.', 'AI Technology news'),
-    (11, 'Web Dev Affairs', 'Web-Dev & Coding updates'),
-    (12, 'Sociology Tomorrow!', 'Sociology Apps & updates'),
-    (13, 'Quantum Data', 'Quantum news & tips'),
-    (14, 'Musing Blockchain', 'Blockchain Cryptocurrency insights');
-
--- POST_ENTITY
+-- POST_ENTITY: 5 entries
 INSERT INTO dailytech.post_entity (
     id, did, post_date, author, month_order, cat3, title,
-    post, blogcite, email, state, word_count, duration_goal, category_id, user_userid
+    post, blogcite, email, state, word_count, duration_goal, category_id, version,  time_created,  time_updated
 )
 VALUES
-    (20, 'D1001', '2025-05-01', 'TomA', 'May', 'Blockchain', 'Ethereum Merge',
+    (20, '2025-05-01', 'D1001', 'TomA', 'May', 'Blockchain', 'Ethereum Merge',
      'Discussion on Ethereum merge details...', 'https://blogsite1.com', 'tom.admin@example.com',
-     'Published', 1500, 10, 14, 101),
-    (21, 'D1002', '2025-05-02', 'Jane', 'May', 'Wellness', 'Nutrition Tips',
+     'Published', 1500, 10, 14, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),  -- references categories.id=14 (Crypto)
+
+    (21, '2025-05-02','D1002',  'Jane', 'May', 'Wellness', 'Nutrition Tips',
      'Top 10 tips for daily health...', 'https://blogsite2.com', 'jane.user@example.com',
-     'Draft', 800, 5, 11, 102),
-    (22, 'D1003', '2025-05-03', 'Bob', 'June', 'Sports', 'Championship Recap',
+     'Draft', 800, 5, 11, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),        -- references categories.id=11 (Health)
+
+    (22, '2025-05-03', 'D1003',  'Bob', 'June', 'Sports', 'Championship Recap',
      'Recap of the championship match...', 'https://blogsite3.com', 'bob.user@example.com',
-     'Published', 1200, 7, 12, 103);
+     'Published', 1200, 7, 12, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),   -- references categories.id=12 (Sports)
 
--- COMMENTS
-INSERT INTO dailytech.comments (id, name, email, body, post_id)
-VALUES
-    (30, 'Sam Reader', 'sam@example.com', 'Great insights, thanks for sharing!', 20),
-    (31, 'HealthGuru', 'guru@example.com', 'Loved the tips!', 21),
-    (32, 'SportFanatic', 'fan@example.com', 'Fantastic recap! Keep it up.', 22);
+    (23, '2025-05-04','D1004',  'Alice', 'June', 'Tech', 'AI Breakthrough',
+     'New AI breakthrough discovered...', 'https://blogsite4.com', 'alice.user@example.com',
+     'Published', 1600, 8, 10, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),   -- references categories.id=10 (Tech)
 
--- WEBLINKS
-INSERT INTO dailytech.weblinks (title, profile_url, url, host, htmlpage, post_id)
-VALUES
-    ('Spring Boot Reference',
-     'https://docs.spring.io/spring-boot/docs/current/reference/html/',
-     'https://docs.spring.io/spring-boot/docs/current/reference/html/',
-     'docs.spring.io',
-     'htmlpage',
-     20),
-    ('Angular Docs',
-     'https://angular.dev/',
-     'https://angular.dev/',
-     'angular.dev',
-     'htmlpage',
-     21);
+    (24, '2025-05-05','D1005',  'ThomasM', 'July', 'Finance', 'Stock Market Trends',
+     'Analyzing latest stock market trends...', 'https://blogsite5.com', 'thomas.maestas@example.com',
+     'Published', 2000, 14, 13, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');  -- references categories.id=13 (Finance)
 
--- NEWS
-INSERT INTO dailytech.news (id, title, url, category_id)
+
+-- INSERT INTO dailytech.books
+--   (title, profile_url, pubyear, publisher, authors, genre, rating, version,  time_created,  time_updated)
+-- VALUES
+--   ('Effective Java (3rd Ed.)',
+--    'https://example.com/books/effective-java',
+--    2018, 'Addison-Wesley', 'Joshua Bloch', 'Programming', 4.9, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Clean Code',
+--    'https://example.com/books/clean-code',
+--    2008, 'Prentice Hall', 'Robert C. Martin', 'Programming', 4.8, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Domain-Driven Design',
+--    'https://example.com/books/ddd',
+--    2003, 'Addison-Wesley', 'Eric Evans', 'Software Architecture', 4.7, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Introduction to Algorithms (CLRS)',
+--    'https://example.com/books/clrs',
+--    2009, 'MIT Press', 'Cormen; Leiserson; Rivest; Stein', 'Algorithms', 4.6, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+--   ('Designing Data-Intensive Applications',
+--    'https://example.com/books/ddia',
+--    2017, 'O''Reilly Media', 'Martin Kleppmann', 'Distributed Systems', 4.9, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
+
+
+-- COMMENTS: 5 entries
+INSERT INTO dailytech.comments (
+    id, name, email, body, post_id, version,  time_created,  time_updated
+)
 VALUES
-    (40, 'Crypto Market Surges', 'https://news1.com', 14),
-    (41, 'Health App Innovations', 'https://news2.com', 11);
+    (30, 'Sam Reader', 'sam@example.com', 'Great insights, thanks for sharing!', 20, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),  -- references post_entity.id=20
+    (31, 'HealthGuru', 'guru@example.com', 'Loved the tips!', 21, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),                     -- references post_entity.id=21
+    (32, 'SportFanatic', 'fan@example.com', 'Fantastic recap! Keep it up.', 22, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),       -- references post_entity.id=22
+    (33, 'TechLover', 'techie@example.com', 'Excited about AI updates!', 23, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),          -- references post_entity.id=23
+    (34, 'InvestorJoe', 'joe@example.com', 'Any more stock tips?', 24, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');                -- references post_entity.id=24
+
+-- Sample data for weblinks (match table: title, profile_url, url, host, htmlpage, downloadstatus)
+INSERT INTO dailytech.weblinks
+  (title, profile_url, url, host, htmlpage, post_id, version,  time_created,  time_updated)
+VALUES
+  ('Spring Boot Reference',
+   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
+   'https://docs.spring.io/spring-boot/docs/current/reference/html/',
+   'docs.spring.io',
+   'htmlpage',
+    20, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+  ('Angular Docs',
+   'https://angular.dev/',
+   'https://angular.dev/',
+   'angular.dev',
+   'htmlpage',
+   21, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+  ('OWASP Cheat Sheet Series',
+   'https://cheatsheetseries.owasp.org/',
+   'https://cheatsheetseries.owasp.org/',
+   'cheatsheetseries.owasp.org',
+   'htmlpage',
+   22, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+  ('PostgreSQL 16 Manual',
+   'https://www.postgresql.org/docs/current/',
+   'https://www.postgresql.org/docs/current/',
+   'www.postgresql.org',
+   'htmlpage',
+  23, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+  ('Kafka Documentation',
+   'https://kafka.apache.org/documentation/',
+   'https://kafka.apache.org/documentation/',
+   'kafka.apache.org',
+   'htmlpage',
+   24, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
+
+
+
+INSERT INTO dailytech.user_plan (
+  userid, plan, status, effective_from, effective_to, cancel_at_period_end,
+  billing_provider, provider_customer_id, provider_subscription_id, provider_price_id,
+  last_event_at, trial_end, grace_end, version,  time_created,  time_updated
+)
+VALUES
+  (10, 'PRO', 'ACTIVE', '2025-01-01 00:00:00', '2025-12-31 23:59:59', 0,
+   'STRIPE', 'cus_1234567890', 'sub_1234567890', 'price_1234567890',
+   '2026-04-10 12:00:00', '2026-01-15 00:00:00', '2025-02-01 00:00:00', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
+  (11, 'FREE', 'ACTIVE', '2025-01-01 00:00:00', NULL, 0,
+   NULL, NULL, NULL, NULL,
+   NULL, NULL, NULL, 1, '2026-01-15 00:00:00',  '2026-04-10 00:00:00'),
+  (12, 'PRO_PLUS', 'TRIALING', '2025-03-01 00:00:00', '2025-06-01 00:00:00', 1,
+   'PAYPAL', 'cus_paypal_123', 'sub_paypal_123', 'price_paypal_123',
+   '2026-04-10 12:00:00', '2025-05-01 00:00:00', '2025-05-15 00:00:00', 1,  '2026-01-15 00:00:00',    '2026-04-10 00:00:00'),
+  (13, 'WHALE_WATCHER', 'PAST_DUE', '2025-02-01 00:00:00', '2025-08-01 00:00:00', 0,
+   'STRIPE', 'cus_0987654321', 'sub_0987654321', 'price_0987654321',
+   '2026-04-10 12:00:00', NULL, '2025-04-15 00:00:00', 1, '2026-01-15 00:00:00',    '2026-04-10 00:00:00'),
+  (14, 'TOKEN_STALKER', 'CANCELED', '2026-01-15 00:00:00', '2025-04-15 00:00:00', 1,
+   'APPLE', 'cus_apple_456', 'sub_apple_456', 'price_apple_456',
+   '2026-04-10 12:00:00', NULL, NULL, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
+
+INSERT INTO dailytech.news (
+    id, title, url, category_id, version,  time_created,  time_updated
+)
+VALUES
+    (40, 'Dailytech', 'https://ourdailytech.net/', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (41, 'What Is Quantum Computing? The Complete WIRED Guide | WIRED', 'https://www.wired.com/story/wired-guide-to-quantum-computing/', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (42, 'Engineering and Applied Science News | Yale Engineering', 'https://engineering.yale.edu/news-and-events/news', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (43, '18-qubit entanglement sets new record', 'https://phys.org/news/2018-07-qubit-entanglement.html', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (44, 'Famous Experiment Dooms Alternative to Quantum Weirdness | Quanta Magazine', 'https://www.quantamagazine.org/famous-experiment-dooms-pilot-wave-alternative-to-quantum-weirdness-20181011/', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (45, 'You''re not irrational, you''re just quantum probabilistic: Researchers explain human decision-making with physics theory', 'https://phys.org/news/2015-09-youre-irrational-quantum-probabilistic-human.html', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (46, 'Reading Fiction Improves Brain Connectivity and Function | Psychology Today', 'https://www.psychologytoday.com/us/blog/the-athletes-way/201401/reading-fiction-improves-brain-connectivity-and-function', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (47, 'Growing Up Surrounded by Books Could Have Powerful, Lasting Effect on the Mind', 'https://www.smithsonianmag.com/smart-news/growing-surrounded-books-may-bolster-skills-later-life-180970523/', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (48, 'IBM Software Exec Predicts Quantum Computers Will Become Mainstream in Five Years - WSJ', 'https://www.wsj.com/articles/ibm-software-exec-predicts-quantum-computers-will-become-mainstream-in-five-years-11558548160', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (49, 'Microsoft makes quantum breakthrough, plans commercial offering | CIO', 'https://www.cio.com/article/3511493/microsoft-makes-quantum-breakthrough-plans-commercial-offering.html', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (50, 'Footnotes Issues | American Sociological Association', 'https://www.asanet.org/footnotes/footnotes-archive/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (51, 'Dailytech', 'http://localhost:4200/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (52, 'Inside Facebook''s Hellish Two Years-and Mark Zuckerberg''s Struggle to Fix it All | WIRED', 'https://www.wired.com/story/inside-facebook-mark-zuckerberg-2-years-of-hell/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (53, '404: This page could not be found.', 'https://www.coindesk.com/opera-browser-introduces-cryptocurrency-miner-protection-for-smartphones', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (54, 'Washington state passes net neutrality law as states push back against the FCC', 'https://www.nbcnews.com/tech/tech-news/washington-state-passes-net-neutrality-law-states-push-back-against-n854086', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (55, 'Amazon Knows Alexa Devices Are Laughing Spontaneously And It''s "Working To Fix It"', 'https://www.buzzfeednews.com/article/venessawong/amazon-alexa-devices-are-laughing-creepy#.cgggP2j2j', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (56, 'Is Amazon''s Alexa Creepily Laughing for No Apparent Reason? | Snopes.com', 'https://www.snopes.com/fact-check/is-amazons-alexa-emitting-unprompted-creepy-laughing/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (57, 'Hawaii missile mix-up: That was no ''wrong button.'' Take a look. - The Washington Post', 'https://www.washingtonpost.com/news/morning-mix/wp/2018/01/16/that-was-no-wrong-button-in-hawaii-take-a-look/?utm_term=.a2aa65329002', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (58, 'The Third Industrial Revolution: How Lateral Power is Transforming Energy, the Economy, and the World (St. Martin''s Press 2011) - The Office of Jeremy Rifkin', 'https://foet.org/project/the-third-industrial-revolution/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (59, 'The third industrial revolution', 'https://www.economist.com/leaders/2012/04/21/the-third-industrial-revolution', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (60, 'Privacy error', 'https://projektintegracija.pravo.hr/_download/repository/Kuhn_Structure_of_Scientific_Revolutions.pdf', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (61, 'Touring Can''t Save Musicians in the Age of Spotify - The New York Times', 'https://www.nytimes.com/2016/01/25/magazine/touring-cant-save-musicians-in-the-age-of-spotify.html', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (62, 'Taylor Swift''s New Album ''Reputation'' Not Streaming on Spotify or Apple Music - Business Insider', 'https://www.businessinsider.com/taylor-swift-new-album-reputation-not-on-spotify-apple-music-streaming-2017-11', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (63, 'Chief Defends Spotify After Snub by Taylor Swift - The New York Times', 'https://www.nytimes.com/2014/11/12/business/media/taylor-swifts-stand-on-royalties-draws-a-rebuttal-from-spotify.html', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (64, 'Digital Medici: How This Musician-Turned-Entrepreneur Plans To Save Creators From Advertising', 'https://www.forbes.com/sites/kathleenchaykowski/2018/02/13/digital-medici-how-this-musician-turned-entrepreneur-plans-to-save-creators-from-advertising/#6063ea771313', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (65, 'Mark Zuckerberg apologises for Facebook''s ''mistakes'' over Cambridge Analytica | Facebook | The Guardian', 'https://www.theguardian.com/technology/2018/mar/21/mark-zuckerberg-response-facebook-cambridge-analytica', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (66, 'Pursuing Academic Freedom and Data Privacy Is a Balancing Act | EdSurge News', 'https://www.edsurge.com/news/2016-10-26-pursuing-academic-freedom-and-data-privacy-is-a-balancing-act', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (67, 'Bloomberg - Are you a robot?', 'https://www.bloomberg.com/news/articles/2018-03-21/paul-ford-facebook-is-why-we-need-a-digital-protection-agency', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (68, 'Video released of Uber self-driving crash that killed woman in Arizona | Uber | The Guardian', 'https://www.theguardian.com/technology/2018/mar/22/video-released-of-uber-self-driving-crash-that-killed-woman-in-arizona', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (69, 'Uber calls claims it stole self-driving technology ''demonstrably false'' | Uber | The Guardian', 'https://www.theguardian.com/technology/2017/apr/07/uber-waymo-lawsuit-lidar', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (70, 'Uber''s Self-Driving Cars Missed Six Red Lights In San Francisco | Fortune', 'https://fortune.com/2017/02/26/uber-self-driving-car-red-lights/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (71, 'The Web Is Dead. Long Live the Internet | WIRED', 'https://www.wired.com/2010/08/ff-webrip/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (72, 'App Downloads Data (2026) - Business of Apps', 'https://www.businessofapps.com/data/app-statistics/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (73, 'Page not found - TechRepublic', 'https://www.techrepublic.com/article/how-progressive-web-apps-promise-to-upend-native-mobile-apps/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (74, 'Wait! The Web Isn''t Dead After All. Google Made Sure of It | WIRED', 'https://www.wired.com/2016/04/wait-web-isnt-really-dead-google-made-sure/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (75, 'Why Progressive Web Apps Will Replace Native Mobile Apps', 'https://www.forbes.com/sites/forbestechcouncil/2018/03/09/why-progressive-web-apps-will-replace-native-mobile-apps/#3f39b4fa2112', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (76, 'All-In-One User Research Software | PlaybookUX', 'https://www.playbookux.com/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (77, 'Just a moment...', 'https://minervapatterns.com/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (78, 'Fastly error: unknown domain www.recode.net', 'https://www.recode.net/2017/5/24/15685870/new-republican-privacy-bill-tech-telecom-lobbying-fcc-congress', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (79, 'A Tough Task for Facebook: European-Type Privacy for All - The New York Times', 'https://www.nytimes.com/2018/04/08/technology/a-tough-task-for-facebook-european-type-privacy-for-all.html?ribbon-ad-idx=2&rref=technology&module=Ribbon&version=context&region=Header&action=click&contentCollection=Technology&pgtype=article', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (80, 'Zuckerberg resists effort by U.S. senators to commit him to regulation | Reuters', 'https://www.reuters.com/article/us-facebook-privacy-zuckerberg/zuckerberg-resists-effort-by-u-s-senators-to-commit-him-to-regulation-idUSKBN1HH1CU/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (81, 'Mark Zuckerberg Q&A: The Facebook CEO Talks Cambridge Analytica, the Company’s Problems, and Big Data | WIRED', 'https://www.wired.com/story/mark-zuckerberg-talks-to-wired-about-facebooks-privacy-problem/', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (82, 'Dailytech', 'https://ourdailytech.net/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (83, 'ERIC - ED065999 - Communication of Innovations; A Cross-Cultural Approach., 1971', 'https://eric.ed.gov/?id=ED065999', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (84, 'Governments may be big backers of the blockchain', 'https://www.economist.com/business/2017/06/01/governments-may-be-big-backers-of-the-blockchain', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (85, 'Cut and try: building a dream | Ethereum Foundation Blog', 'https://blog.ethereum.org/2016/02/09/cut-and-try-building-a-dream', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (86, '404: Page Not Found', 'https://www.bard.edu/library/arendt/pdfs/Sartre-Search.pdf', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (87, 'Privacy error', 'https://projektintegracija.pravo.hr/_download/repository/Kuhn_Structure_of_Scientific_Revolutions.pdf', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (88, 'The Truth About Blockchain', 'https://hbr.org/2017/01/the-truth-about-blockchain', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (89, 'Provenance | Sustainability Marketing Technology', 'https://www.provenance.org/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (90, 'Skuchain', 'https://www.skuchain.com/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (91, 'www.blockverify.io', 'http://www.blockverify.io/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (92, '1 new message', 'https://www.globalbankingandfinance.com/how-a-graph-database-unearthed-major-financial-improprieties/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (93, 'Analyzing the Panama Papers with Neo4j: Data Models, Queries & More', 'https://neo4j.com/blog/cypher-and-gql/analyzing-panama-papers-neo4j/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (94, 'Microsoft adds Ethereum language Solidity to Visual Studio | IBTimes UK', 'https://www.ibtimes.co.uk/microsoft-adds-ethereum-language-solidity-visual-studio-1552171', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (95, 'Bitcoin, Ethereum or Litecoin: Which is best for you? - CNET', 'https://www.cnet.com/personal-finance/crypto/bitcoin-ethereum-or-litecoin-which-cryptocurrency-is-best-for-you/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (96, 'motherboard.vice.com', 'https://motherboard.vice.com/en_us/article/d3zn9a/ethereum-mining-transaction-electricity-consumption-bitcoin', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (97, 'How much energy does bitcoin mining really use? It''s complicated | WIRED', 'https://www.wired.com/story/how-much-energy-does-bitcoin-mining-really-use/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (98, 'Bitcoin versus Gold - Digiconomist', 'https://digiconomist.net/bitcoin-versus-gold', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (99, 'XRP Digital Asset for Global Crypto Utility | Ripple', 'https://ripple.com/xrp/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (100, 'Just a moment...', 'https://blockexplorer.com/news/ethereum-launches-casper-testnet-paving-way-proof-stake/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (101, 'Bitcoin''s electricity consumption surpasses Singapore and Portugal - Digiconomist', 'https://digiconomist.net/bitcoin-electricity-consumption-surpasses-singapore-portugal', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (102, 'Bitcoin Energy Consumption Index - Digiconomist', 'https://digiconomist.net/bitcoin-energy-consumption', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (103, 'Hedera Hashgraph Thinks It Can One-Up Bitcoin And Ethereum With Faster Transactions', 'https://www.forbes.com/sites/jeffkauflin/2018/03/13/hedera-hashgraph-thinks-it-can-one-up-bitcoin-and-ethereum-with-faster-transactions/#175e5c79abcb', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (104, '404: This page could not be found.', 'https://www.coindesk.com/hedera-hashgraph-swirlds-no-fork-guarantee-cryptocurrency-touts-resistance-code-splits', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (105, 'VentureBeat | Transformative tech coverage that matters', 'https://venturebeat.com/technology/hedera-hashgraph-and-mz-unveil-next-generation-blockchain-alternative', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (106, 'China''s Decline in Coal Consumption Drives Global Slowdown in Emissions | World Resources Institute', 'https://www.wri.org/insights/chinas-decline-coal-consumption-drives-global-slowdown-emissions', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (107, 'Two countries are the reason the EU is hitting its ambitious renewable energy targets', 'https://qz.com/1193603/two-countries-are-the-reason-the-eu-is-hitting-its-ambitious-renewable-energy-targets', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (108, 'Upstate New York town bans bitcoin mining - The Washington Post', 'https://www.washingtonpost.com/business/economy/upstate-new-york-town-bans-bitcoin-mining/2018/03/16/bd6f669e-2947-11e8-bc72-077aa4dab9ef_story.html?utm_term=.6282ea8429d5', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (109, 'Next-Generation Crypto-Ledgers Take the Block Out of Blockchain - Bloomberg', 'https://www.bloomberg.com/news/articles/2018-02-14/next-generation-crypto-ledgers-take-the-block-out-of-blockchain', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (110, 'Cryptographic vulnerabilities in IOTA | by Neha Narula | Medium', 'https://medium.com/@neha/cryptographic-vulnerabilities-in-iota-9a6a9ddc4367', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (111, 'Hello future | Hedera', 'https://hedera.com/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (112, 'Eat. Pray. Hashgraph.. I''m not easily won over. I''ve watched... | by Ken Anderson | Hedera Blog | Medium', 'https://medium.com/hedera/eat-pray-hashgraph-56b9613ed46f', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (113, 'By reading this page, you are mining bitcoins', 'https://qz.com/154877/by-reading-this-page-you-are-mining-bitcoins', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (114, 'Page not found - Blockchain News, Opinion, TV and Jobs %', 'https://www.the-blockchain.com/2018/03/20/hedera-plans-speedier-safer-more-democratic-blockchain-alternative-hashgraph/', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (115, 's3.amazonaws.com/hedera-hashgraph/hh-whitepaper-v1.0-180313.pdf', 'https://s3.amazonaws.com/hedera-hashgraph/hh-whitepaper-v1.0-180313.pdf', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (116, 'www.bloomberg.com', 'https://www.bloomberg.com/amp/news/articles/2018-04-26/ibm-s-blockchain-tech-to-track-jewels-from-mine-to-retail-stores', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (117, 'Yep, Bitcoin Was a Bubble. And It Popped. - Bloomberg', 'https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (118, 'Bitcoin Market Price Is Wrong, Fundstrat''s Tom Lee Says - Bloomberg', 'https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (119, 'Bank of America Awarded New Patent for Storing Private Keys', 'https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (120, 'patft.uspto.gov', 'http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (121, '10 things blockchain isn''t | HackerNoon', 'https://hackernoon.com/10-things-blockchain-isnt-dcb7966d22e5', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (122, 'Cryptocurrency Markets Continue Resurgence as Ripple Claims 68 Percent Weekly Gains', 'https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (123, 'Dailytech', 'https://ourdailytech.net/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (124, 'Just a moment...', 'https://onlinelibrary.wiley.com/doi/full/10.1111/insr.12016', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (125, 'Classification and Regression Trees | Leo Breiman, Jerome Friedman, R.', 'https://www.taylorfrancis.com/books/mono/10.1201/9781315139470/classification-regression-trees-leo-breiman-jerome-friedman-olshen-charles-stone', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (126, 'ML Kit Google for Developers', 'https://developers.google.com/ml-kit/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (127, 'Frankenstein | Project Gutenberg', 'https://www.gutenberg.org/files/84/84-h/84-h.htm', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (128, 'CUDA Platform for Accelerated Computing | NVIDIA Developer', 'https://developer.nvidia.com/cuda', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (129, 'New Chips From AMD, Intel, and Qualcomm Make PCs Exciting Again | WIRED', 'https://www.wired.com/story/computex-2018-new-chips-qualcomm-amd-intel/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (130, 'Deep learning | Nature', 'https://www.nature.com/articles/nature14539', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (131, 'ImageNet Classification with Deep Convolutional Neural Networks', 'https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (132, 'How Computers Could Make Your Customer-Service Calls More Human - WSJ', 'https://www.wsj.com/articles/call-center-agents-get-a-human-touch-1528984801?mod=foesummaries', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (133, 'The "Iron Cage" and the "Shell as Hard as Steel": Parsons, Weber, and the Stahlhartes Gehaeuse Metaphor in the Protestant Ethic and the Spirit of Capitalism on JSTOR', 'https://www.jstor.org/stable/2678029?seq=1#page_scan_tab_contents', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (134, 'Opinion | Why Are So Many Political Parties Blowing Up? (Part 1) - The New York Times', 'https://www.nytimes.com/2018/06/26/opinion/political-parties-climate.html', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (135, 'One college prepares for automation with free classes forever - The Washington Post', 'https://www.washingtonpost.com/news/wonk/wp/2018/06/06/in-the-future-college-never-really-ends/?noredirect=on&utm_term=.4d7810952eb7', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (136, 'AI Tips Off Regulators to Possible EU Data Privacy Faults - Bloomberg', 'https://www.bloomberg.com/news/articles/2018-07-04/new-ai-tips-off-regulators-to-possible-eu-data-privacy-faults', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (137, 'Can This Startup Break Big Tech''s Hold on A.I.? | Fortune', 'https://fortune.com/longform/element-ai-startup-tech/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (138, 'Join AI Pioneer Geoffrey Hinton in Toronto, and Learn from Global Leaders in Deep Learning - Benzinga', 'https://www.benzinga.com/pressreleases/18/06/p11846924/join-ai-pioneer-geoffrey-hinton-in-toronto-and-learn-from-global-leade', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (139, 'TensorFlow.js | Machine Learning for JavaScript Developers', 'https://www.tensorflow.org/js', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (140, 'The AI revolution has spawned a new chips arms race - Ars Technica', 'https://arstechnica.com/gadgets/2018/07/the-ai-revolution-has-spawned-a-new-chips-arms-race/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (141, 'Turn your dancing into an AI-powered GIF with Google''s fun Move Mirror experiment | London Evening Standard | The Standard', 'https://www.standard.co.uk/news/tech/google-move-mirror-dancing-gif-a3892471.html', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (142, 'AI is seen less of a threat and is welcomed by health professionals, research reveals | Healthcare Digital', 'https://healthcare-digital.com/technology-and-ai/ai-seen-less-threat-and-welcomed-health-professionals-research-reveals', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (143, 'Causal Inference in Sociological Research | Annual Reviews', 'https://www.annualreviews.org/content/journals/10.1146/annurev.soc.012809.102702', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (144, 'A review of the application of propensity score methods yielded increasing use, advantages in specific settings, but not substantially different estimates compared with conventional multivariable methods - PMC', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC1448214/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (145, 'Bots vs. Trolls: How AI Could Clean Up Social Media - WSJ', 'https://www.wsj.com/articles/bots-vs-trolls-how-ai-could-clean-up-social-media-1533849001?mod=djemCIO_h', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (146, 'Apple''s Latest iPhones Are Packed With AI Smarts | WIRED', 'https://www.wired.com/story/apples-latest-iphones-packed-with-ai-smarts/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (147, 'Machine learning - Is the emperor wearing clothes? | HackerNoon', 'https://hackernoon.com/machine-learning-is-the-emperor-wearing-clothes-59933d12a3cc', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (148, 'Page not found | Towards Data Science', 'https://towardsdatascience.com/selecting-the-best-machine-learning-algorithm-for-your-regression-problem-20c330bad4ef', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (149, 'JPMorgan Invests in Startup Tech That Analyzes Encrypted Data - WSJ', 'https://www.wsj.com/articles/jpmorgan-invests-in-startup-tech-that-analyzes-encrypted-data-1542138443', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (150, 'The rare form of machine learning that can spot hackers who have already broken in | MIT Technology Review', 'https://www.technologyreview.com/2018/11/16/139055/the-rare-form-of-machine-learning-that-can-spot-hackers-who-have-already-broken-in/', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (151, 'iPhone Suppliers'' Poor Forecasts Make Everyone Very Nervous', 'https://nymag.com/intelligencer/2018/11/poor-iphone-supplier-forecasts-make-everyone-very-nervous.html', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (152, 'Dailytech', 'https://ourdailytech.net/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (153, 'Greek Medicine: THE HIPPOCRATIC OATH', 'https://www.greekmedicine.net/whos_who/The_Hippocratic_Oath.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (154, 'Changing the MCAT Exam | Students & Residents', 'https://students-residents.aamc.org/about-mcat-exam/changing-mcat-exam', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (155, 'Health systems science peer reviewed articles | American Medical Association', 'https://www.ama-assn.org/education/changemeded-initiative/health-systems-science-peer-reviewed-articles', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (156, 'Just a moment...', 'https://www.researchgate.net/publication/228173911_The_Sociology_of_Suicide', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (157, 'The Stats On Women In Tech Are Actually Getting Worse | HuffPost Life', 'https://www.huffpost.com/entry/women-in-tech_n_6955940', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (158, 'Fairygodboss', 'https://renderer.fairygodboss.com/career-topics/women-in-tech-facts-figures-and-percentages', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (159, 'Home - AAUW : Empowering Women Since 1881', 'https://www.aauw.org/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (160, 'Guns, germs, and Steel: the fates of human societies', 'http://www.jareddiamond.org/Jared_Diamond/Guns,_Germs,_and_Steel.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (161, 'Why flu vaccines so often fail | Science | AAAS', 'https://www.science.org/content/article/why-flu-vaccines-so-often-fail', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (162, 'A virus mutation has made this year''s flu vaccine less effective', 'https://qz.com/1143420/the-2017-2018-flu-vaccine-is-less-effective-than-usual', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (163, 'How Flu Viruses Can Change: "Drift" and "Shift" | Influenza (Flu) | CDC', 'https://www.cdc.gov/flu/php/viruses/change.html?CDC_AAref_Val=https://www.cdc.gov/flu/about/viruses/change.htm', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (164, 'When Did Companies Become People? Excavating The Legal Evolution : NPR', 'https://www.npr.org/2014/07/28/335288388/when-did-companies-become-people-excavating-the-legal-evolution', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (165, 'Campaign Finance and the Supreme Court', 'https://www.ncsl.org/elections-and-campaigns/campaign-finance-and-the-supreme-court#dnn_ctr77443_HtmlModule_lblContent', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (166, 'White House Bans Venezuela''s Digital Currency and Expands Sanctions - The New York Times', 'https://www.nytimes.com/2018/03/19/world/americas/trump-venezuela-sanctions-petro.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (167, 'Live coverage: March for Our Lives rallies in L.A., Orange County, Washington call for an end to school shootings - Los Angeles Times', 'https://www.latimes.com/local/california/la-me-saturday-walkouts-liveupdates-march24-2018-htmlstory.html#emma-gonzalez-leads-remarkable-moment-of-silence-at-washington-march', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (168, 'Page not found - TechRepublic', 'https://www.techrepublic.com/article/how-progressive-web-apps-promise-to-upend-native-mobile-apps/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (169, 'How Google And Others Are Plotting The Revenge Of The Web App - Fast Company', 'https://www.fastcompany.com/3063420/how-google-and-others-are-plotting-the-revenge-of-the-web-app', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (170, 'Not Found | The Webby Awards', 'https://www.webbyawards.com/winners/2017/mobile-sites-apps/features-categories/technical-achievement/progressive-web-app-by-the-washington-post/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (171, 'Gartner Business Insights, Strategies & Trends For Executives', 'https://www.gartner.com/en/insights', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (172, 'Just a moment...', 'https://journals.sagepub.com/doi/abs/10.1177/0049124198027002002', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (173, '''You Are the Product'': Targeted by Cambridge Analytica on Facebook - The New York Times', 'https://www.nytimes.com/2018/04/08/us/facebook-users-data-harvested-cambridge-analytica.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (174, 'How to Check If Cambridge Analytica Could Access Your Facebook Data | WIRED', 'https://www.wired.com/story/did-cambridge-analytica-access-your-facebook-data/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (175, 'Just a moment...', 'https://onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9558.2008.00324.x', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (176, 'Mark Zuckerberg Q&A: The Facebook CEO Talks Cambridge Analytica, the Company''s Problems, and Big Data | WIRED', 'https://www.wired.com/story/mark-zuckerberg-talks-to-wired-about-facebooks-privacy-problem/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (177, '404 Page Not Found - CNNMoney', 'https://money.cnn.com/2018/04/15/technology/online-purchases-sales-taxes-supreme-court/index.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (178, 'This billionaire toy executive has a last-ditch mission to save Toys R Us, before it''s too late - The Washington Post', 'https://www.washingtonpost.com/news/business/wp/2018/04/13/this-billionaire-toy-executive-has-a-last-ditch-mission-to-save-toys-r-us-before-its-too-late/?noredirect=on&utm_term=.b3201ad77891', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (179, 'npm is Massive', 'https://nodesource.com/blog/npm-is-massive', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (180, 'E.W.Dijkstra Archive: Home page', 'https://www.cs.utexas.edu/~EWD/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (181, 'Your old phone is full of untapped precious metals', 'https://www.bbc.com/future/article/20161017-your-old-phone-is-full-of-precious-metals', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (182, 'Westworld | Official Website for the HBO Series | HBO.com', 'https://www.hbo.com/westworld', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (183, 'Yoshua Bengio | Mila', 'https://mila.quebec/en/directory/yoshua-bengio', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (184, 'Why Montreal Has Emerged As An Artificial Intelligence Powerhouse', 'https://www.forbes.com/sites/peterhigh/2017/11/06/why-montreal-has-emerged-as-an-artificial-intelligence-powerhouse/#7435a66123bd', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (185, 'Why WebAssembly is a game changer for the web - and a source of pride for Mozilla and Firefox | by David Bryant | Mozilla Tech | Medium', 'https://medium.com/mozilla-tech/why-webassembly-is-a-game-changer-for-the-web-and-a-source-of-pride-for-mozilla-and-firefox-dda80e4c43cb', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (186, 'WebAssembly', 'https://webassembly.org/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (187, 'Supreme Court Ruling Favors Sports Betting - The New York Times', 'https://www.nytimes.com/2018/05/14/us/politics/supreme-court-sports-betting-new-jersey.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (188, 'Get Android 15 Android Developers', 'https://developer.android.com/about/versions/15/get', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (189, 'Android 9.0 Pie: Everything you need to know - Digital Trends', 'https://www.digitaltrends.com/phones/google-android-p-news/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (190, 'Exclusive: Android P is Google''s most ambitious update in years | The Verge', 'https://www.theverge.com/2018/5/8/17327302/android-p-update-new-features-changes-video-google-io-2018', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (191, 'Supreme Court rules that internet businesses must collect all state and local sales taxes - Los Angeles Times', 'https://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (192, 'California Net Neutrality Bill Was ''Hijacked,'' Lawmaker Says | WIRED', 'https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00');
