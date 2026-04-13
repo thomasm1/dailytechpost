@@ -5,10 +5,9 @@ import { Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
-import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
-import { UiService } from 'src/app/service/ui.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
+import * as AuthActions from '../../../reducers/auth.actions';
 
 @Component({
   selector: 'app-signon',
@@ -33,8 +32,6 @@ export class SignonComponent implements OnInit { //, OnDestroy {
   constructor(
     private router: Router,
     private awsAuthService: AwsAuthenticationService,
-    private firebaseAuthService: FirebaseAuthService,
-    private uiService: UiService,
     // private store: Store<{ ui: fromApp.State }>,
     private store: Store< fromRoot.State >
   ) { }
@@ -61,10 +58,10 @@ export class SignonComponent implements OnInit { //, OnDestroy {
    handleFirebaseLogin( ){
     console.log(this.loginForm);
 
-    this.firebaseAuthService.login({
+    this.store.dispatch(new AuthActions.AuthLoginStart({
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
-    });
+    }));
 
   }
 
@@ -73,10 +70,10 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     console.log(form);
 
     // USER REGISTER (SIDENAV --temporary)
-    this.firebaseAuthService.registerUser({ 
+    this.store.dispatch(new AuthActions.AuthRegisterStart({ 
       email: form.value.email,
       password: form.value.password
-    });
+    }));
   }
 
 

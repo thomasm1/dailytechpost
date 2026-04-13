@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { KeysService } from 'src/app/service/keys.service';
 import { environment } from '../../../environments/environment';
 import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -21,9 +21,22 @@ export class NewsService {
 
   constructor(private http: HttpClient, private keys: KeysService) {   }
 
-  getNytKey() {
-    this.nytKey = this.keys.getNytApi();
-    return this.nytKey;
+  private resolveNytKey(): Observable<string> {
+    if (this.nytKey) {
+      return of(this.nytKey);
+    }
+
+    return this.http.get(environment.nyt_url).pipe(
+      map((response: any) => {
+        const fetched = response?.NYT_API_KEY?.[0] || environment.apiKeyNYT;
+        this.nytKey = fetched;
+        return fetched;
+      }),
+      catchError(() => {
+        this.nytKey = environment.apiKeyNYT;
+        return of(this.nytKey);
+      })
+    );
   }
 
   /**
@@ -66,29 +79,30 @@ export class NewsService {
       return of(cached);
     }
 
-    this.getNytKey();
+    return this.resolveNytKey().pipe(
+      switchMap((apiKey: string) => {
+        let params: HttpParams = new HttpParams();
+        params = params.set('api-key', apiKey);
 
-    let params: HttpParams = new HttpParams();
-    params = params.set('api-key', '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5'); // this.nytKey);
+        if (data.q !== undefined) {
+          params = params.set('q', data.q);
+        }
+        if (data.begin_date !== undefined) {
+          params = params.set('begin_date', data.begin_date);
+        }
+        if (data.end_date !== undefined) {
+          params = params.set('end_date', data.end_date);
+        }
+        if (data.sort !== undefined) {
+          params = params.set('sort', data.sort);
+        }
 
-    if (data.q !== undefined) {
-      params = params.set('q', data.q);
-    }
-    if (data.begin_date !== undefined) {
-      params = params.set('begin_date', data.begin_date);
-    }
-    if (data.end_date !== undefined) {
-      params = params.set('end_date', data.end_date);
-    }
-    if (data.sort !== undefined) {
-      params = params.set('sort', data.sort);
-    }
-    
-    console.log('Fetching search results from NYT API');
-    return this.http.get(
-      `${environment.apiUrlNYT}/search/v2/articlesearch.json`,
-      { params }
-    ).pipe(
+        console.log('Fetching search results from NYT API');
+        return this.http.get(
+          `${environment.apiUrlNYT}/search/v2/articlesearch.json`,
+          { params }
+        );
+      }),
       tap(result => {
         this.searchCache.set(cacheKey, result);
         this.searchCacheTimestamp.set(cacheKey, Date.now());
@@ -112,14 +126,17 @@ export class NewsService {
       return of(cached);
     }
 
-    let params: HttpParams = new HttpParams();
-    params = params.set('api-key', '06voWGzUHt0AJNvF2CeIqGezsRBQTZd5'); // this.nytKey);
+    return this.resolveNytKey().pipe(
+      switchMap((apiKey: string) => {
+        let params: HttpParams = new HttpParams();
+        params = params.set('api-key', apiKey);
 
-    console.log(`Fetching ${section} articles from NYT API`);
-    return this.http.get(
-      `${environment.apiUrlNYT}/topstories/v2/${section}.json`,
-      { params }
-    ).pipe(
+        console.log(`Fetching ${section} articles from NYT API`);
+        return this.http.get(
+          `${environment.apiUrlNYT}/topstories/v2/${section}.json`,
+          { params }
+        );
+      }),
       tap(result => {
         this.articlesCache.set(section, result);
         this.articlesCacheTimestamp.set(section, Date.now());

@@ -6,17 +6,21 @@ import { environment } from '../../environments/environment';
 
 import * as fromUi from './ui.reducer';
 import * as fromAuth from './auth.reducer';
-// import  { NewsReducer } from './news.reducer';
-// import { NewsSearchReducer } from './news-search.reducer';
+import { NewsReducer } from './news.reducer';
+import { NewsSearchReducer } from './news-search.reducer';
 
 export interface State {
   ui: fromUi.State;
   auth: fromAuth.State;
+  menuState: boolean;
+  searchResults: any[];
 }
 
 export const reducers: ActionReducerMap<State> = {
   ui: fromUi.uiReducer,
   auth: fromAuth.authReducer,
+  menuState: NewsReducer,
+  searchResults: NewsSearchReducer,
 };
 
 export const getUiState = createFeatureSelector<fromUi.State>('ui');
@@ -24,6 +28,9 @@ export const getIsLoading = createSelector(getUiState, fromUi.getIsLoading);
 
 export const getAuthState = createFeatureSelector<fromAuth.State>('auth');
 export const getIsAuth = createSelector(getAuthState, fromAuth.getIsAuth);
+
+export const getMenuState = createFeatureSelector<boolean>('menuState');
+export const getSearchResultsState = createFeatureSelector<any[]>('searchResults');
 
 // export const reducers = {
 //   searchResults: NewsSearchReducer,

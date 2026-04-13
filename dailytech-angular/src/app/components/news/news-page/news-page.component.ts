@@ -26,8 +26,34 @@ ngOnInit() {
 getArticles() {
     this.newsService.getArticles(this.selectedSection)
       .subscribe(res => {
-        this.results = (res as any).results;
+        const rawResults = (res as any).results || [];
+        this.results = rawResults.map((item: any) => ({
+          ...item,
+          bestImage: this.selectBestImage(item.multimedia)
+        }));
+        this.newsLoading = false;
+      }, () => {
+        this.results = [];
         this.newsLoading = false;
       })
+  }
+
+  private selectBestImage(multimedia: any): { url: string; caption?: string } | null {
+    const mediaList = Array.isArray(multimedia) ? multimedia : [];
+    const validImages = mediaList.filter((m: any) => m?.url);
+    if (!validImages.length) {
+      return null;
+    }
+
+    const best = validImages.reduce((winner: any, current: any) => {
+      const winnerScore = (winner?.width || 0) * (winner?.height || 0);
+      const currentScore = (current?.width || 0) * (current?.height || 0);
+      return currentScore > winnerScore ? current : winner;
+    }, validImages[0]);
+
+    return {
+      url: best.url,
+      caption: best.caption,
+    };
   }
 }

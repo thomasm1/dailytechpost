@@ -1,9 +1,9 @@
 
 img.image {
-  max-width: 75%;
-  min-width: 40%;
-  margin:25px 10px 2px;
-  margin-right: 10px;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  margin:25px 0 2px;
   border: rgb(37, 37, 252) 3px solid;
 }
 .news {
@@ -11,15 +11,51 @@ img.image {
  margin:10px;
  background:aliceblue;
 }
+
+@media (min-width: 600px) {
+  .news {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  mat-card-title,
+mat-card-subtitle,
+mat-card-content {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom:0;
+}
+}
 #abstract {
   padding:5px 0px;
 }
+
+.article-abstract {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.article-title {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
 mat-card-title {
   font-size:18px;
   line-height: 1.2rem;
   padding-bottom:8px;
   text-align:center;
 }
+
+
+
+.published-date {
+  display: block;
+}
+
 mat-list-item a {
   cursor: pointer;
 }
@@ -34,4 +70,10 @@ mat-list-item a {
 }
 .view-sections {
   margin:13px;
+}
+
+hr {
+  margin: 20px auto;
+  border: none;
+  border-top: 2px solid rgb(195, 196, 255);
 }

@@ -5,5 +5,6 @@ export class SearchData {
     q?: string;
     begin_date?: string;
     end_date?: string;
+    sort?: string;
  
 }

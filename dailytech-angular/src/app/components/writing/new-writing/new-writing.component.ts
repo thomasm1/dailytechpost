@@ -6,6 +6,7 @@ import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-mods.model';
 import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
+import * as WritingActions from '../../../reducers/writing.actions';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
 import { CategoryMod } from '../../../models/category-mods.model';
@@ -34,6 +35,7 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
 
   isLoading = true;
   private loadingSubscription!: Subscription;
+  private draftSubscription!: Subscription;
   // isLoading$: Observable<boolean>;
 
   constructor(
@@ -46,6 +48,7 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
 
   ngOnInit() {
     this.isAuth$ = this.store.select(fromRoot.getIsAuth);
+    this.store.dispatch(new WritingActions.HydrateWritingDraft());
     this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
       (isLoading) => { this.isLoading = isLoading; }
     );
@@ -57,27 +60,21 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   }
 
   private checkForSavedDraft() {
-    const draftRaw = localStorage.getItem('writingDraft');
-    if (!draftRaw) {
-      this.hasSavedDraft = false;
-      this.savedDraftCategory = '';
-      return;
-    }
-
-    try {
-      const draft = JSON.parse(draftRaw);
-      const title = (draft?.title || '').toString().trim();
-      const post = (draft?.post || '').toString().trim();
-      const cat3 = (draft?.cat3 || '').toString().trim();
+    this.draftSubscription = this.store.select(fromWriting.getWritingDraft).subscribe((draft) => {
+      if (!draft) {
+        this.hasSavedDraft = false;
+        this.savedDraftCategory = '';
+        return;
+      }
+      const title = (draft.title || '').toString().trim();
+      const post = (draft.post || '').toString().trim();
+      const cat3 = (draft.cat3 || '').toString().trim();
       this.hasSavedDraft = !!(title || post);
       this.savedDraftCategory = cat3;
       if (cat3) {
         this.selectedCategory = cat3;
       }
-    } catch {
-      this.hasSavedDraft = false;
-      this.savedDraftCategory = '';
-    }
+    });
   }
 
   // getDefaultWritings() {
@@ -105,6 +102,9 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   ngOnDestroy() {
     if (this.loadingSubscription) {
       this.loadingSubscription.unsubscribe();
+    }
+    if (this.draftSubscription) {
+      this.draftSubscription.unsubscribe();
     }
     // if (this.writingSubscription) {
     //   this.writingSubscription.unsubscribe();

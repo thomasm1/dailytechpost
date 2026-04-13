@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
+import * as WritingActions from '../../../reducers/writing.actions';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router  } from '@angular/router';
 import * as fromRoot from '../../../reducers/app.reducer';
@@ -45,7 +46,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.initForm();
-    this.loadDraftFromLocalStorage();
+    this.hydrateDraftFormFromStore();
     this.startOrResumeWriting();
     this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
   }
@@ -60,21 +61,19 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     });
   }
 
-  private loadDraftFromLocalStorage(): void {
-    const draftRaw = localStorage.getItem('writingDraft');
-    if (!draftRaw) {
-      return;
-    }
-
-    try {
-      const draft = JSON.parse(draftRaw);
+  private hydrateDraftFormFromStore(): void {
+    this.store.select(fromWriting.getWritingDraft).pipe(take(1)).subscribe((draft) => {
+      if (!draft) {
+        return;
+      }
       this.writingForm.patchValue({
-        title: draft?.title || '',
-        post: draft?.post || ''
+        title: draft.title || '',
+        post: draft.post || ''
       });
-    } catch {
-      // ignore malformed draft payload
-    }
+      if (draft.cat3) {
+        this.category = draft.cat3;
+      }
+    });
   }
 
 
@@ -129,19 +128,6 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     this.showClock = !this.showClock;
   }
 
-  private saveDraftToLocalStorage(): void {
-    const draft = {
-      title: this.writingForm.get('title')?.value || '',
-      post: this.writingForm.get('post')?.value || '',
-      cat3: this.category || ''
-    };
-    localStorage.setItem('writingDraft', JSON.stringify(draft));
-  }
-
-  private clearDraftFromLocalStorage(): void {
-    localStorage.removeItem('writingDraft');
-  }
-
   private exitWritingSession(): void {
     this.writingService.hardQuitWriting();
     this.progress = 0;
@@ -158,10 +144,14 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === 'discard') {
-        this.clearDraftFromLocalStorage();
+        this.store.dispatch(new WritingActions.ClearWritingDraft());
         this.exitWritingSession();
       } else if (result === 'draft') {
-        this.saveDraftToLocalStorage();
+        this.store.dispatch(new WritingActions.SaveWritingDraft({
+          title: this.writingForm.get('title')?.value || '',
+          post: this.writingForm.get('post')?.value || '',
+          cat3: this.category || ''
+        }));
         this.exitWritingSession();
       } else {
         this.startOrResumeWriting();
@@ -205,6 +195,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
       console.log("Form is valid", formValues);
       this.writingService.addFullDataToDatabase(formValues).then(
         () => {
+          this.store.dispatch(new WritingActions.ClearWritingDraft());
           console.log('addFullDataToDatabase Submission to finished-writing-mods successful');
           this.writingForm.reset();
           this.progress = 0;

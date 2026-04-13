@@ -21,6 +21,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './effects/auth.effects';
+import { NewsEffects } from './effects/news.effects';
+import { WritingEffects } from './effects/writing.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 // import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';  // Removed redundant import
@@ -41,7 +45,7 @@ import { LoggingService } from './service/logging.service';  // Uncommented impo
 
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { AnimationComponent } from './components/util/animation/animation.component';
+import { AnimationComponent } from './utility/animation/animation.component';
 import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
 import { PostEntityComponent } from './components/post-dir/post-entity/post-entity.component';
 import { BlogComponent } from './components/blogs-public/blog/blog.component';
@@ -110,12 +114,10 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
     ],
     imports: [
         BlogsModule,
-        // QRCodeModule,  // Removed
-        // MatDialogModule,  // Removed redundant import
+        // QRCodeModule,  // Removed 
         BrowserModule,
         BrowserAnimationsModule,
-        MaterialModule,
-        // MatSidenavModule,  // Removed redundant import
+        MaterialModule, 
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
@@ -133,6 +135,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
                 strictActionImmutability: true,
             },
         }),
+        EffectsModule.forRoot([AuthEffects, NewsEffects, WritingEffects]),
         WritingModule,
         AuthModule,
         // WritingRoutingModule,

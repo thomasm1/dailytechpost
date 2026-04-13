@@ -7,7 +7,7 @@ import { BlogsService } from './blogs.service';
 import { A11yModule } from "@angular/cdk/a11y";
 import { BlogsListComponent } from './blogs-list/blogs-list.component';
 import { BlogComponent } from './blog/blog.component';
-import { MaterialModule } from 'src/app/material.module';
+import { MaterialModule } from '../../material.module';
 import { SharedModule } from '../../shared.module';
 import { AgChartsAngularModule } from 'ag-charts-angular';
 

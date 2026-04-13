@@ -2,7 +2,7 @@
 <h2> <span class="daily-tech monoton text-box">OUR DAILY TECH</span> </h2>
 <hr>
 <nav class="writing-nav">
-  <a routerLink="/writing/new" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">New Session</a>
+  <a *ngIf="!(ongoingWriting$ | async)" routerLink="/writing/new" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">New Session</a>
   <a *ngIf="ongoingWriting$ | async" routerLink="/writing/current" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">Writing</a>
   <a routerLink="/writing/past" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">Past Writing</a>
   <a routerLink="/writing/stats" routerLinkActive="active-link" class="writing-nav-link daily-tech monoton">Statistics</a>

@@ -2,10 +2,10 @@ import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import {  NgForm } from '@angular/forms';
 
-import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
 import { UiService } from '../../../service/ui.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
+import * as AuthActions from '../../../reducers/auth.actions';
 
 
 @Component({
@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   private loadingSubs: Subscription;
 
   constructor(
-    private firebaseAuthService: FirebaseAuthService,
     private uiService: UiService,
     // private store: Store<{ ui: fromApp.State }>,
     private store: Store< fromRoot.State > ) {
@@ -44,10 +43,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
     console.log(form);
 
     // USER REGISTER (SIDENAV --temporary)
-    this.firebaseAuthService.registerUser({ 
+    this.store.dispatch(new AuthActions.AuthRegisterStart({ 
       email: form.value.email,
       password: form.value.password
-    });
+    }));
   }
 
   ngOnDestroy() {

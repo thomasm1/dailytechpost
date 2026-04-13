@@ -1,3 +1,48 @@
-.content {
-  padding: 0px 15px;
+.search-wrap {
+  position: relative;
+  margin: 10px;
+  padding: 14px;
+  background: aliceblue;
+}
+
+@media (min-width: 600px) {
+  .search-wrap {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+.search-card {
+  margin-bottom: 14px;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.results-title {
+  margin: 6px 0 10px;
+}
+
+.search-form mat-form-field {
+  width: 100%;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2a3a4a;
+  margin: 0 0 4px;
 }

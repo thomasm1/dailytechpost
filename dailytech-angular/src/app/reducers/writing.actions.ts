@@ -5,6 +5,16 @@ export const SET_AVAILABLE_WRITINGS = '[Writing] Set Available Writings';
 export const SET_FINISHED_WRITINGS = '[Writing] Set Finished Writings';
 export const START_WRITING = '[Writing] Start Writing';
 export const STOP_WRITING = '[Writing] Stop Writing';
+export const APPLY_WRITING_DRAFT = '[Writing] Apply Draft';
+export const SAVE_WRITING_DRAFT = '[Writing] Save Draft';
+export const CLEAR_WRITING_DRAFT = '[Writing] Clear Draft';
+export const HYDRATE_WRITING_DRAFT = '[Writing] Hydrate Draft';
+
+export interface WritingDraft {
+  title: string;
+  post: string;
+  cat3: string;
+}
 
 export class SetAvailableWritings implements Action {
   readonly type = SET_AVAILABLE_WRITINGS;
@@ -26,4 +36,30 @@ export class  StopWriting implements Action {
    // no payload bc already stored in NGRX
 }
 
-export type WritingActions = SetAvailableWritings | SetFinishedWritings | StartWriting | StopWriting;
+export class ApplyWritingDraft implements Action {
+  readonly type = APPLY_WRITING_DRAFT;
+  constructor(public payload: WritingDraft | null) {}
+}
+
+export class SaveWritingDraft implements Action {
+  readonly type = SAVE_WRITING_DRAFT;
+  constructor(public payload: WritingDraft) {}
+}
+
+export class ClearWritingDraft implements Action {
+  readonly type = CLEAR_WRITING_DRAFT;
+}
+
+export class HydrateWritingDraft implements Action {
+  readonly type = HYDRATE_WRITING_DRAFT;
+}
+
+export type WritingActions =
+  | SetAvailableWritings
+  | SetFinishedWritings
+  | StartWriting
+  | StopWriting
+  | ApplyWritingDraft
+  | SaveWritingDraft
+  | ClearWritingDraft
+  | HydrateWritingDraft;

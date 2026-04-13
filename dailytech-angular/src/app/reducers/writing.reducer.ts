@@ -5,6 +5,10 @@ import {
   SET_FINISHED_WRITINGS,
   START_WRITING,
   STOP_WRITING,
+  APPLY_WRITING_DRAFT,
+  SAVE_WRITING_DRAFT,
+  CLEAR_WRITING_DRAFT,
+  WritingDraft,
 } from './writing.actions';
 import { WritingMod } from '../models/writing-mods.model';
 import * as fromRoot from './app.reducer';
@@ -13,7 +17,8 @@ export interface WritingState {
   /// State for this module;
   availableWritingMods: WritingMod[]; /// bc this is lazy loaded;
   finishedWritingMods: WritingMod[]; // Writing State Knows about the app state, but app state doesn't know about Writing!!
-  activeWriting: WritingMod;
+  activeWriting: WritingMod | null;
+  draft: WritingDraft | null;
 }
 
 export interface State extends fromRoot.State {
@@ -23,6 +28,7 @@ const initialState: WritingState = {
   availableWritingMods: [], // based on writing state
   finishedWritingMods: [],
   activeWriting: null,
+  draft: null,
 };
 
 export function writingReducer(state = initialState, action: WritingActions) {
@@ -50,6 +56,17 @@ export function writingReducer(state = initialState, action: WritingActions) {
         ...state,
         activeWriting: null
       };
+    case APPLY_WRITING_DRAFT:
+    case SAVE_WRITING_DRAFT:
+      return {
+        ...state,
+        draft: action.payload
+      };
+    case CLEAR_WRITING_DRAFT:
+      return {
+        ...state,
+        draft: null
+      };
     default: {
       return state;
     }
@@ -65,6 +82,8 @@ export const getAvailableWritingMods = createSelector(getWritingState, (state: W
 export const getFinishedWritingMods = createSelector(getWritingState, (state: WritingState) => state.finishedWritingMods);
 
 export const getActiveWriting = createSelector(getWritingState, (state: WritingState) => state.activeWriting);
+
+export const getWritingDraft = createSelector(getWritingState, (state: WritingState) => state.draft);
 
 export const getIsWriting = createSelector(getWritingState, (state: WritingState) => state.activeWriting != null);
 

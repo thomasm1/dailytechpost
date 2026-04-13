@@ -1,6 +1,6 @@
 
 <hr class="bar-white" />
-<h2><span class="daily-tech monoton text-box">{{ selectedSection | pipeCapitalizeCategory }}</span></h2>
+<h2><span class="daily-tech monoton text-box">NEWS &nbsp; - &nbsp; {{ selectedSection | pipeCapitalizeCategory }}</span></h2>
 <hr class="bar-white"/>
 <div class="news">
   <div
@@ -19,6 +19,13 @@
     <div gdArea="menu">
       <button mat-raised-button color="primary" class="mat-elevation-z10 view-sections" 
       [matMenuTriggerFor]="appMenu">View All News Sections</button>
+
+   <!-- TODO: GET NYT SEARCH API KEY -->
+    
+      <!-- <button mat-raised-button color="accent" class="mat-elevation-z10 view-sections" routerLink="/search">
+        Open Article Search
+      </button> -->
+
       <mat-menu #appMenu="matMenu">
         <button
           mat-menu-item
@@ -43,37 +50,27 @@
     <div class="news-content" *ngIf="results" gdArea="content">
       <mat-spinner *ngIf="newsLoading" class="centerSpinner"></mat-spinner>
       <mat-card *ngFor="let r of results">
-        <mat-list role="list">
-          <mat-list-item>
-            <mat-card-title>
-              {{ r.title }}
-            </mat-card-title>
-          </mat-list-item>
-        </mat-list>
+        <mat-card-title class="article-title">
+          {{ r.title }}
+        </mat-card-title>
         <mat-card-subtitle>
-          <mat-list role="list">
-            <mat-list-item
-              ><small>{{
-                r.published_date | date: "full"
-              }}</small></mat-list-item
-            >
-            <br />
-            <!-- <mat-list-item *ngIf='r.byline'><small>{{ r.byline }}</small></mat-list-item> -->
-          </mat-list>
+          <small class="published-date">{{
+            r.published_date | date: "full"
+          }}</small>
+          <!-- <mat-list-item *ngIf='r.byline'><small>{{ r.byline }}</small></mat-list-item> -->
         </mat-card-subtitle>
         <mat-card-content>
-          <mat-list id="abstract" role="list">
-            <mat-list-item>{{ r.abstract }}</mat-list-item>
-          </mat-list>
+          <p id="abstract" class="article-abstract">{{ r.abstract }}</p>
           <a href="{{ r.url }}" target="_blank"
             ><img
-              *ngIf="r.multimedia[r.multimedia.length - 1]?.url"
-              [src]="r.multimedia[r.multimedia.length - 1]?.url"
-              [alt]="r.multimedia[r.multimedia.length - 1]?.caption"
+              *ngIf="r.bestImage?.url"
+              [src]="r.bestImage?.url"
+              [alt]="r.bestImage?.caption || r.title"
               class="image"
             />
           </a>
         </mat-card-content>
+        <hr /> 
       </mat-card>
     </div>
   </div>

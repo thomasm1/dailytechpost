@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
@@ -17,9 +18,14 @@ export class WritingComponent implements OnInit { //, OnDestroy {
 
   constructor(
     private writingService: WritingService,
-    private store: Store<fromWriting.State>
+    private store: Store<fromWriting.State>,
+    private router: Router
     ) {
     this.ongoingWriting$ = this.store.select(fromWriting.getIsWriting);
+  }
+
+  isOnNewWritingPage(): boolean {
+    return this.router.url === '/writing/new';
   }
 
   ngOnInit() {

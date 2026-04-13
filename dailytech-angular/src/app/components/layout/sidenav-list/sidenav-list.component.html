@@ -74,7 +74,7 @@ routerLink="/writing"
     <button
       mat-icon-button
       *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
-      (click)="onLogout(); awsAuthService.logout()"
+      (click)="onLogout()"
       routerLink="/login"
     >
       <mat-icon>eject</mat-icon>

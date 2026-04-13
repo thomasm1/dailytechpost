@@ -1,1 +1,73 @@
-<p>news-article-search works!</p>
+
+
+<hr class="bar-white" />
+<h2><span class="daily-tech monoton text-box">NEWS &nbsp; - &nbsp; SEARCH </span></h2>
+<hr class="bar-white"/>
+<section class="search-wrap">
+     <button mat-raised-button color="primary" class="mat-elevation-z10 view-sections" routerLink="/news"
+      >Back to News Sections</button>
+	<mat-card class="search-card">
+		<mat-card-title>Search Articles</mat-card-title>
+		<mat-card-subtitle>Find New York Times articles by keyword, date range, and sort order.</mat-card-subtitle>
+
+		<form #searchForm="ngForm" (ngSubmit)="search(searchForm)" class="search-form">
+			<div class="field-group">
+				<label class="field-label">Keyword</label>
+				<mat-form-field appearance="outline">
+					<input
+						matInput
+						type="text"
+						name="q"
+						[(ngModel)]="searchData.q"
+					/>
+				</mat-form-field>
+			</div>
+
+			<div class="field-group">
+				<label class="field-label">Start Date</label>
+				<mat-form-field appearance="outline">
+					<input
+						matInput
+						type="date"
+						name="begin_date"
+						[(ngModel)]="searchData.begin_date"
+						[max]="searchData.end_date || ''"
+					/>
+				</mat-form-field>
+			</div>
+
+			<div class="field-group">
+				<label class="field-label">End Date</label>
+				<mat-form-field appearance="outline">
+					<input
+						matInput
+						type="date"
+						name="end_date"
+						[(ngModel)]="searchData.end_date"
+						[max]="today | date: 'yyyy-MM-dd'"
+					/>
+				</mat-form-field>
+			</div>
+
+			<div class="field-group">
+				<label class="field-label">Sort</label>
+				<mat-form-field appearance="outline">
+					<mat-select name="sort" [(ngModel)]="searchData.sort">
+						<mat-option value="newest">Newest</mat-option>
+						<mat-option value="oldest">Oldest</mat-option>
+						<mat-option value="relevance">Relevance</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+
+			<div class="actions">
+				<button mat-raised-button color="primary" type="submit">
+					Search
+				</button>
+			</div>
+		</form>
+	</mat-card>
+
+	<h3 class="results-title">Search Results</h3>
+	<app-news-article-results></app-news-article-results>
+</section>

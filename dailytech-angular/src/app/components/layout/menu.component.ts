@@ -1,10 +1,10 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { AwsAuthenticationService } from '../../service/auth/aws-authentication.service';
-import { FirebaseAuthService } from '../../service/auth/firebase-auth.service';
 import { ActivatedRoute } from '@angular/router';
  import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/app.reducer';
+import * as AuthActions from '../../reducers/auth.actions';
 
 @Component({
   selector: 'app-menu',
@@ -17,13 +17,12 @@ export class MenuComponent implements OnInit { //}, OnDestroy {
 
   // isAdminLoggedIn: boolean = false;
   // isAuth = false;
-  isAuth$: Observable<boolean>;
+  isAuth$!: Observable<boolean>;
   // authSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     public awsAuthService: AwsAuthenticationService,
-    private firebaseAuthService: FirebaseAuthService,
     private store: Store<fromRoot.State>
   ) { }
 
@@ -43,8 +42,7 @@ export class MenuComponent implements OnInit { //}, OnDestroy {
   }
 
   onLogout() {
-    this.firebaseAuthService.logout();
-    this.awsAuthService.logout();
+    this.store.dispatch(new AuthActions.AuthLogoutStart());
 
   }
 
