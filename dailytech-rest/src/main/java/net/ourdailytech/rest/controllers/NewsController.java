@@ -48,9 +48,9 @@ public class NewsController {
     return ResponseEntity.ok(newsServiceImpl.getAllNews());
   }
 
-  @Operation(summary = "Get all news items")
+  @Operation(summary = "Get news items by category id")
   @ApiResponse(responseCode = "200", description = "News items found")
-  @GetMapping
+  @GetMapping("/category/{categoryId}")
   public ResponseEntity<List<NewsDto>> getNewsListByCategory(@PathVariable ("categoryId") Long categoryId) {
     return ResponseEntity.ok(newsServiceImpl.getAllNewsByCategory(categoryId));
   }
