@@ -83,7 +83,7 @@
           <mat-icon>add</mat-icon> Add Research
         </button>
         <div *ngIf="newsAdd">
-          <form (ngSubmit)="onAddUrl(urlForm.value.url)" #urlForm="ngForm" class="add-url-form">
+          <form (ngSubmit)="onAddUrl(urlForm)" #urlForm="ngForm" class="add-url-form">
             <mat-form-field appearance="outline" class="full-width">
               <input
                 matInput
@@ -92,6 +92,15 @@
                 ngModel
                 required>
             </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+              <input
+                matInput
+                placeholder="Enter Title"
+                name="title"
+                ngModel
+                >
+            </mat-form-field>
+               
             <button mat-raised-button color="accent" type="submit" [disabled]="urlForm.invalid">
               Submit URL
             </button>
@@ -101,3 +110,5 @@
     </mat-card>
   </mat-card-content>
 </mat-card>
+<div class="wrap">      
+  </div>

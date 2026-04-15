@@ -37,9 +37,7 @@
   "dataGroups": [
     {
       "name": "posts+apis",
-      "urls": [
-        "http://3.215.230.246:8887/nft",
-        "http://3.215.230.246:8887/nft/**",
+      "urls": [ 
         "https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts",
         "https://z3noflrq9b.execute-api.us-east-1.amazonaws.com/dev/posts/**"
       ],

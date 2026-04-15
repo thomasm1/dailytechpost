@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { of, Observable, Subscription } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { firstValueFrom, lastValueFrom, of, Observable, Subscription } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import { WritingMod } from '../../models/writing-mods.model';
 import { CategoryMod } from '../../models/category-mods.model';
+import { NewsMod } from '../../models/news-mods.model';
 import { UiService } from '../../service/ui.service';
 import * as Writing from '../../reducers/writing.actions';
 import * as fromWriting from '../../reducers/writing.reducer';
 import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import * as Categories from '../../reducers/category.actions';
 import * as fromCategories from '../../reducers/category.reducer';
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -66,9 +70,12 @@ export class WritingService {
   private firebaseSubs: Subscription[] = [];
 
   private currentCategorySubs: Subscription[] = [];
+  private readonly newsApiUrl = `${environment.API_URL}/news`;
 
   constructor(
     private db: AngularFirestore,
+    private http: HttpClient,
+    private afAuth: AngularFireAuth,
     private uiService: UiService,
     private store: Store<fromWriting.State>,
     private snackBar: MatSnackBar
@@ -172,23 +179,29 @@ export class WritingService {
       }
     });
   }
-  updateNewsUrls(newUrl: string): Promise<void> {
-    return this.store.select(fromCategories.getCurrentCategoryMods).pipe(take(1)).toPromise().then(categoryObj  => {
-      const updatedNewsUrls = categoryObj ? [...(categoryObj[0].news || []), newUrl] : [newUrl];
-      if (!categoryObj || !categoryObj[0]) {
-        return Promise.reject('No category found');
-      }
-      return this.db.collection('writing-mods').doc(categoryObj[0].id).update({ news: updatedNewsUrls })
-        .then(() => {
-          console.log('News URLs updated successfully in writing-mods collection');
-        })
-        .catch(error => {
-          console.error('Error updating News URLs in writing-mods collection: ', error);
-          this.snackBar.open('Error updating News URLs in writing-mods collection: ', undefined, {
-            duration: 3000
-          });
-          throw error;
-        });
+  addResearchNews(categoryName: string, title: string, url: string): Promise<NewsMod> {
+    const trimmedUrl = url.trim();
+    const trimmedTitle = title.trim();
+
+    return Promise.all([
+      this.resolveCategoryForNews(categoryName),
+      this.getFirebaseAuthHeader()
+    ]).then(([category, headers]) => {
+      const payload = {
+        title: trimmedTitle || trimmedUrl,
+        url: trimmedUrl,
+        categoryId: Number(category.categoryId)
+      };
+      return lastValueFrom(this.http.post<NewsMod>(this.newsApiUrl, payload, { headers }));
+    }).then((savedNews) => {
+      this.snackBar.open('Research URL saved', undefined, { duration: 3000 });
+      return savedNews;
+    }).catch((error) => {
+      console.error('Error saving research URL to dailytech-rest:', error);
+      this.snackBar.open('Error saving research URL', undefined, {
+        duration: 3000
+      });
+      throw error;
     });
   }
   completeWriting() {
@@ -214,6 +227,9 @@ export class WritingService {
   cancelWriting(progress: number) {
     // this.writingMods.push({
     this.store.select(fromWriting.getActiveWriting).pipe(take(1)).subscribe(writingModObj => {
+      if (!writingModObj) {
+        return;
+      }
       this.addDataToDatabase({
         // ...this.ongoingWriting,
         ...writingModObj,
@@ -235,7 +251,10 @@ export class WritingService {
 
   fetchCompletedOrCancelledWritings() {
     this.firebaseSubs.push(
-      this.db.collection('finished-writing-mods').valueChanges()
+      this.db.collection('finished-writing-mods').valueChanges({ idField: 'id' })
+        .pipe(map(docArray => 
+          docArray.map(doc => doc as WritingMod)
+        ))
         .subscribe((writingModsArr: WritingMod[]) => {
           this.store.dispatch(new Writing.SetFinishedWritings(writingModsArr))
         }, () => {
@@ -280,6 +299,36 @@ export class WritingService {
         });
         throw error;
       });
+  }
+
+  private resolveCategoryForNews(categoryName: string): Promise<CategoryMod> {
+    return firstValueFrom(
+      this.store.select(fromCategories.getCurrentCategoryMods).pipe(
+        take(1),
+        map((categories) => {
+          const availableCategories = categories?.length ? categories : this.getDefaultCategoryMods();
+          const matchedCategory = availableCategories.find((category) =>
+            category.cat3 === categoryName || category.name === categoryName
+          );
+          if (!matchedCategory) {
+            throw new Error(`No category found for ${categoryName}`);
+          }
+          return matchedCategory;
+        })
+      )
+    );
+  }
+
+  private async getFirebaseAuthHeader(): Promise<HttpHeaders> {
+    const currentUser = await this.afAuth.currentUser;
+    if (!currentUser) {
+      throw new Error('Must be logged in with Firebase to save research URLs');
+    }
+
+    const idToken = await currentUser.getIdToken();
+    return new HttpHeaders({
+      Authorization: `Bearer ${idToken}`
+    });
   }
 
 }

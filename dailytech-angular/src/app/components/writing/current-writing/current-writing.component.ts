@@ -163,20 +163,18 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
         this.newsAdd = true;
         
   }
-  onAddUrl(urlOrInput: string | HTMLInputElement) {
-        const url = typeof urlOrInput === 'string' ? urlOrInput : urlOrInput?.value;
+  onAddUrl( urlForm: FormGroup) {
+        const title = urlForm.value.title || 'Untitled';
+        const url = typeof urlForm.value.url === 'string' ? urlForm.value.url : urlForm.value.url?.value;
         if (url && url.trim() !== '') {
           this.news.push(url.trim());
-               this.writingService.updateNewsUrls(url.trim()).then(
+               this.writingService.addResearchNews(this.category, title, url.trim()).then(
         () => {
-          console.log('aupdateNewsUrls Submission to writing-mods successful');
-          this.writingForm.reset();
-          this.progress = 0;
-          this.elapsedSeconds = 0;
-          this.router.navigate(['/writing/current']);
+          console.log('addResearchNews Submission to writing-mods successful');
+          urlForm.reset();   
         },
         error => {
-          console.error('updateNewsUrls Submission to writing-mods failed', error);
+          console.error('addResearchNews Submission to writing-mods failed', error);
         }
       );
         }
@@ -203,7 +201,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
           this.router.navigate(['/writing/new']);
         },
         error => {
-          console.error('FAILES: addFullDataToDatabase Submission to finished-writing-mods failed', error);
+          console.error('FAILED: addFullDataToDatabase Submission to finished-writing-mods failed', error);
         }
       );
     } else {
