@@ -27,3 +27,7 @@ databaseChangeLog:
       file: changes/002-add-audit-columns-users-userplan.sql
       relativeToChangelogFile: true
 
+  - include:
+      file: changes/003-add-news-user-ownership.sql
+      relativeToChangelogFile: true
+

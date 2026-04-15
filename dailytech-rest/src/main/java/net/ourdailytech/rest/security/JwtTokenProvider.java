@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.Optional;
 
 @Component
 @Primary
@@ -78,6 +79,19 @@ log.info("Generating JWT token========================");
             throw new PostApiException(HttpStatus.BAD_REQUEST, "Unsupported JWT token");
         } catch (IllegalArgumentException ex) {
             throw new PostApiException(HttpStatus.BAD_REQUEST, "JWT claims string is empty.");
+        }
+    }
+
+    public Optional<String> tryGetUsername(String token) {
+        try {
+            Claims claims = Jwts.parserBuilder()
+                    .setSigningKey(key())
+                    .build()
+                    .parseClaimsJws(token)
+                    .getBody();
+            return Optional.ofNullable(claims.getSubject());
+        } catch (JwtException | IllegalArgumentException ex) {
+            return Optional.empty();
         }
     }
 }

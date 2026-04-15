@@ -4,6 +4,8 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,81 +17,80 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-import java.io.IOException;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
-    private JwtTokenProvider jwtTokenProvider;
+  private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 
-    private UserDetailsService userDetailsService;
-    @Autowired
-    public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider, UserDetailsService userDetailsService) {
-        this.jwtTokenProvider = jwtTokenProvider;
-        this.userDetailsService = userDetailsService;
-    }
+  private final JwtTokenProvider jwtTokenProvider;
+  private final UserDetailsService userDetailsService;
+  private final FirebaseTokenAuthenticationService firebaseTokenAuthenticationService;
 
-    /**
-     * Skip filtering for GET and OPTIONS requests
-     * @param request current HTTP request
-     * @return
-     */
-    @Override
-    protected boolean shouldNotFilter(HttpServletRequest request) {
-        String method = request.getMethod();
-        return "GET".equalsIgnoreCase(method) || "OPTIONS".equalsIgnoreCase(method);
-    }
+  @Autowired
+  public JwtAuthenticationFilter(
+      JwtTokenProvider jwtTokenProvider,
+      UserDetailsService userDetailsService,
+      FirebaseTokenAuthenticationService firebaseTokenAuthenticationService) {
+    this.jwtTokenProvider = jwtTokenProvider;
+    this.userDetailsService = userDetailsService;
+    this.firebaseTokenAuthenticationService = firebaseTokenAuthenticationService;
+  }
 
-    @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
+  @Override
+  protected boolean shouldNotFilter(HttpServletRequest request) {
+    return "OPTIONS".equalsIgnoreCase(request.getMethod());
+  }
 
-        // get JWT token from http request
-        String token = getTokenFromRequest(request);
+  @Override
+  protected void doFilterInternal(
+      HttpServletRequest request,
+      HttpServletResponse response,
+      FilterChain filterChain) throws ServletException, IOException {
 
-        // validate token
-        try {
-        if(StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)){
+    String token = getTokenFromRequest(request);
 
-            // get username from token
-            String username = jwtTokenProvider.getUsername(token);
-
-            // load the user associated with token
-            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-
-            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                userDetails,
-                null,
-                userDetails.getAuthorities()
-            );
-            authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
-            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-
-        }  else {
-        // no token OR validateToken() returned false → anonymous user
+    try {
+      if (StringUtils.hasText(token)) {
+        Optional<UserDetails> resolvedUserDetails = resolveUserDetails(token);
+        if (resolvedUserDetails.isPresent()) {
+          UserDetails userDetails = resolvedUserDetails.get();
+          UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+              userDetails,
+              null,
+              userDetails.getAuthorities()
+          );
+          authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+          SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+        } else {
+          SecurityContextHolder.clearContext();
+        }
+      } else {
         SecurityContextHolder.clearContext();
-    }
-} catch (Exception ex) {
-    // Any exception (expired / malformed token etc.) → treat as NOT logged in
-    log.info("Invalid or expired token, continuing as anonymous", ex);
-            SecurityContextHolder.clearContext();
-        }
-
-        filterChain.doFilter(request, response);
+      }
+    } catch (Exception ex) {
+      log.info("Invalid bearer token, continuing as anonymous", ex);
+      SecurityContextHolder.clearContext();
     }
 
-    private String getTokenFromRequest(HttpServletRequest request){
+    filterChain.doFilter(request, response);
+  }
 
-        String bearerToken = request.getHeader("Authorization");
+  private Optional<UserDetails> resolveUserDetails(String token) {
+    Optional<String> internalUsername = jwtTokenProvider.tryGetUsername(token);
+    if (internalUsername.isPresent()) {
+      return Optional.of(userDetailsService.loadUserByUsername(internalUsername.get()));
+    }
+    return firebaseTokenAuthenticationService.authenticate(token);
+  }
 
-        if(StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")){
-            return bearerToken.substring(7);
-        }
+  private String getTokenFromRequest(HttpServletRequest request) {
+    String bearerToken = request.getHeader("Authorization");
 
-        return null;
+    if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
+      return bearerToken.substring(7);
     }
 
+    return null;
+  }
 }

@@ -53,7 +53,7 @@ class NewsControllerTest {
   @Test
   @WithMockUser
   void addNews_ShouldReturnCreated() throws Exception {
-    when(newsServiceImpl.createNews(any(NewsDto.class))).thenReturn(newsDto);
+    when(newsServiceImpl.createNews(any(NewsDto.class), any(String.class))).thenReturn(newsDto);
 
     mockMvc.perform(post("/api/news")
             .contentType(MediaType.APPLICATION_JSON)
@@ -85,7 +85,7 @@ class NewsControllerTest {
   @Test
   @WithMockUser(roles = {"ADMIN", "USER"})
   void updateNews_ShouldReturnOk() throws Exception {
-    when(newsServiceImpl.updateNews(any(NewsDto.class))).thenReturn(newsDto);
+    when(newsServiceImpl.updateNews(any(NewsDto.class), any(String.class), any(Boolean.class))).thenReturn(newsDto);
 
     mockMvc.perform(put("/api/news")
             .param("id", "1")

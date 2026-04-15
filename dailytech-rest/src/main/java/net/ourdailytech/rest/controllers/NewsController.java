@@ -8,6 +8,7 @@ import net.ourdailytech.rest.service.NewsServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,10 +27,10 @@ public class NewsController {
   @Operation(summary = "Add a new news item")
   @ApiResponse(responseCode = "201", description = "News created")
   @SecurityRequirement(name = "Bearer Authentication")
-  // @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
   @PostMapping({"", "/"})
-  public ResponseEntity<NewsDto> addNews(@RequestBody NewsDto newsDto) {
-    NewsDto saved = newsServiceImpl.createNews(newsDto);
+  public ResponseEntity<NewsDto> addNews(@RequestBody NewsDto newsDto, Authentication authentication) {
+    NewsDto saved = newsServiceImpl.createNews(newsDto, authentication.getName());
     return new ResponseEntity<>(saved, HttpStatus.CREATED);
   }
 
@@ -55,6 +56,26 @@ public class NewsController {
     return ResponseEntity.ok(newsServiceImpl.getAllNewsByCategory(categoryId));
   }
 
+  @Operation(summary = "Get news items for the current user")
+  @ApiResponse(responseCode = "200", description = "Current user news items found")
+  @SecurityRequirement(name = "Bearer Authentication")
+  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+  @GetMapping("/me")
+  public ResponseEntity<List<NewsDto>> getCurrentUserNews(Authentication authentication) {
+    return ResponseEntity.ok(newsServiceImpl.getAllNewsByUser(authentication.getName()));
+  }
+
+  @Operation(summary = "Get current user news items by category id")
+  @ApiResponse(responseCode = "200", description = "Current user news items found")
+  @SecurityRequirement(name = "Bearer Authentication")
+  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+  @GetMapping("/me/category/{categoryId}")
+  public ResponseEntity<List<NewsDto>> getCurrentUserNewsByCategory(
+      @PathVariable("categoryId") Long categoryId,
+      Authentication authentication) {
+    return ResponseEntity.ok(newsServiceImpl.getAllNewsByCategoryAndUser(categoryId, authentication.getName()));
+  }
+
   @Operation(summary = "Update a news item")
   @ApiResponse(responseCode = "200", description = "News updated")
   @SecurityRequirement(name = "Bearer Authentication")
@@ -63,13 +84,16 @@ public class NewsController {
   @PutMapping({"", "/"})
   public ResponseEntity<NewsDto> updateNews(
       @RequestParam(value = "id", required = false) Long newsId,
-      @RequestBody NewsDto newsDto) {
+      @RequestBody NewsDto newsDto,
+      Authentication authentication) {
     Long effectiveId = (newsId != null) ? newsId : newsDto.getId();
     if (effectiveId == null) {
       return ResponseEntity.badRequest().build();
     }
     newsDto.setId(effectiveId); // ensure consistency if id provided as param
-    return ResponseEntity.ok(newsServiceImpl.updateNews(newsDto));
+    boolean isAdmin = authentication.getAuthorities().stream()
+        .anyMatch(authority -> "ROLE_ADMIN".equals(authority.getAuthority()));
+    return ResponseEntity.ok(newsServiceImpl.updateNews(newsDto, authentication.getName(), isAdmin));
   }
 
   @Operation(summary = "Delete a news item")

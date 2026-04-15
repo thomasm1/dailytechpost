@@ -34,6 +34,12 @@ public class News extends AbstractDomainClass  {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @JsonIgnore
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_userid")
+    private User user;
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;

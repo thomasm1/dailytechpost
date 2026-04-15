@@ -99,6 +99,11 @@ public class User extends AbstractDomainClass {
     private Set<PostEntity> posts = new HashSet<>();
 
     @Builder.Default
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Exclude
+    private Set<News> news = new HashSet<>();
+
+    @Builder.Default
     @ToString.Exclude  // ✅ Prevents infinite recursion
     @EqualsAndHashCode.Exclude // ✅ Avoids issues with hashCode()
     @ManyToMany(fetch = FetchType.LAZY)
