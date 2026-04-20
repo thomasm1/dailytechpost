@@ -1,5 +1,5 @@
 // src/test/java/net/ourdailytech/rest/serviceTests/PostServiceImplIntegrationIT.java
-package net.ourdailytech.rest.serviceTests;
+package net.ourdailytech.rest.serviceIIntegrationTests;
 
 import net.ourdailytech.rest.models.Category;
 import net.ourdailytech.rest.models.dto.PostEntityDto;

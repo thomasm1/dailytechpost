@@ -1,4 +1,4 @@
-package net.ourdailytech.rest.controllerTests;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          package net.ourdailytech.rest.controllerTests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.ourdailytech.rest.controllers.NewsController;
@@ -11,23 +11,27 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
 class NewsControllerTest {
 
   private MockMvc mockMvc;
+  private ObjectMapper objectMapper;
 
   @Mock
   private NewsServiceImpl newsServiceImpl;
@@ -35,14 +39,14 @@ class NewsControllerTest {
   @InjectMocks
   private NewsController newsController;
 
-  private ObjectMapper objectMapper;
-  private NewsDto newsDto;
-
   @BeforeEach
   void setUp() {
     mockMvc = MockMvcBuilders.standaloneSetup(newsController).build();
     objectMapper = new ObjectMapper();
-    newsDto = NewsDto.builder()
+  }
+
+  private NewsDto getNewsDto() {
+    return NewsDto.builder()
         .id(1L)
         .title("Test News")
         .url("http://example.com")
@@ -51,11 +55,18 @@ class NewsControllerTest {
   }
 
   @Test
-  @WithMockUser
-  void addNews_ShouldReturnCreated() throws Exception {
+  void testAddNews_ShouldReturnCreated() throws Exception {
+    NewsDto newsDto = getNewsDto();
     when(newsServiceImpl.createNews(any(NewsDto.class), any(String.class))).thenReturn(newsDto);
 
+    UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+        "testuser",
+        "N/A",
+        List.of(new SimpleGrantedAuthority("ROLE_USER"))
+    );
+
     mockMvc.perform(post("/api/news")
+            .principal(auth)
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(newsDto)))
         .andExpect(status().isCreated())
@@ -64,7 +75,8 @@ class NewsControllerTest {
   }
 
   @Test
-  void getNews_ShouldReturnOk() throws Exception {
+  void testGetNews_ShouldReturnOk() throws Exception {
+    NewsDto newsDto = getNewsDto();
     when(newsServiceImpl.getNews(1L)).thenReturn(newsDto);
 
     mockMvc.perform(get("/api/news/1"))
@@ -74,7 +86,8 @@ class NewsControllerTest {
   }
 
   @Test
-  void getNewsList_ShouldReturnOk() throws Exception {
+  void testGetNewsList_ShouldReturnOk() throws Exception {
+    NewsDto newsDto = getNewsDto();
     when(newsServiceImpl.getAllNews()).thenReturn(List.of(newsDto));
 
     mockMvc.perform(get("/api/news"))
@@ -83,11 +96,21 @@ class NewsControllerTest {
   }
 
   @Test
-  @WithMockUser(roles = {"ADMIN", "USER"})
-  void updateNews_ShouldReturnOk() throws Exception {
+  void testUpdateNews_ShouldReturnOk() throws Exception {
+    NewsDto newsDto = getNewsDto();
     when(newsServiceImpl.updateNews(any(NewsDto.class), any(String.class), any(Boolean.class))).thenReturn(newsDto);
 
+    UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+        "testuser",
+        "N/A",
+        List.of(
+            new SimpleGrantedAuthority("ROLE_ADMIN"),
+            new SimpleGrantedAuthority("ROLE_USER")
+        )
+    );
+
     mockMvc.perform(put("/api/news")
+            .principal(auth)
             .param("id", "1")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(newsDto)))
@@ -96,12 +119,11 @@ class NewsControllerTest {
   }
 
   @Test
-  @WithMockUser(roles = {"ADMIN"})
-  void deleteNews_ShouldReturnOk() throws Exception {
+  void testDeleteNews_ShouldReturnOk() throws Exception {
     when(newsServiceImpl.deleteNews(1L)).thenReturn(true);
 
     mockMvc.perform(delete("/api/news/1"))
         .andExpect(status().isOk());
   }
-
 }
+

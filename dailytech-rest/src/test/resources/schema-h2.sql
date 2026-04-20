@@ -3,7 +3,7 @@
 
 CREATE SCHEMA IF NOT EXISTS dailytech;
 
-CREATE TABLE dailytech.roles
+CREATE TABLE IF NOT EXISTS dailytech.roles
 (
     id   BIGINT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255)          NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE dailytech.roles
     CONSTRAINT uc_roles_name UNIQUE (name)
 );
 
-CREATE TABLE dailytech.users
+CREATE TABLE IF NOT EXISTS dailytech.users
 (
     userid           BIGINT AUTO_INCREMENT NOT NULL,
     password         VARCHAR(255) NULL,
@@ -32,7 +32,7 @@ CREATE TABLE dailytech.users
     CONSTRAINT pk_users PRIMARY KEY (userid)
 );
 
-CREATE TABLE dailytech.users_roles
+CREATE TABLE IF NOT EXISTS dailytech.users_roles
 (
     role_id BIGINT NOT NULL,
     user_id BIGINT NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE dailytech.users_roles
     CONSTRAINT fk_userol_on_user FOREIGN KEY (user_id) REFERENCES dailytech.users (userid)
 );
 
-CREATE TABLE dailytech.user_plan
+CREATE TABLE IF NOT EXISTS dailytech.user_plan
 (
     userid                   BIGINT       NOT NULL,
     plan                     VARCHAR(50)  NULL,
@@ -63,7 +63,7 @@ CREATE TABLE dailytech.user_plan
     CONSTRAINT fk_user_plan_user FOREIGN KEY (userid) REFERENCES dailytech.users (userid)
 );
 
-CREATE TABLE dailytech.categories
+CREATE TABLE IF NOT EXISTS dailytech.categories
 (
     id           BIGINT AUTO_INCREMENT NOT NULL,
     name         VARCHAR(255) NULL,
@@ -74,7 +74,7 @@ CREATE TABLE dailytech.categories
     CONSTRAINT pk_categories PRIMARY KEY (id)
 );
 
-CREATE TABLE dailytech.post_entity
+CREATE TABLE IF NOT EXISTS dailytech.post_entity
 (
     id            BIGINT AUTO_INCREMENT NOT NULL,
     did           VARCHAR(255)  NOT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE dailytech.post_entity
     CONSTRAINT fk_post_entity_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
 );
 
-CREATE TABLE dailytech.comments
+CREATE TABLE IF NOT EXISTS dailytech.comments
 (
     id           BIGINT AUTO_INCREMENT NOT NULL,
     name         VARCHAR(255) NULL,
@@ -114,7 +114,7 @@ CREATE TABLE dailytech.comments
     CONSTRAINT fk_comments_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
 );
 
-CREATE TABLE dailytech.weblinks
+CREATE TABLE IF NOT EXISTS dailytech.weblinks
 (
     id             BIGINT AUTO_INCREMENT NOT NULL,
     title          VARCHAR(255)  NOT NULL,
@@ -131,7 +131,7 @@ CREATE TABLE dailytech.weblinks
     CONSTRAINT fk_weblinks_on_post FOREIGN KEY (post_id) REFERENCES dailytech.post_entity (id)
 );
 
-CREATE TABLE dailytech.news
+CREATE TABLE IF NOT EXISTS dailytech.news
 (
     id           BIGINT AUTO_INCREMENT NOT NULL,
     title        VARCHAR(255) NULL,
