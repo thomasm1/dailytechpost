@@ -1,0 +1,48 @@
+-- NEWS seed from data/musingBlockchain.txt
+-- Category mapping used: Musing Blockchain -> category_id 11
+
+INSERT INTO dailytech.news (
+    id, title, url, category_id, version,  time_created,  time_updated
+)
+VALUES
+    (82, 'Dailytech', 'https://ourdailytech.net/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (83, 'ERIC - ED065999 - Communication of Innovations; A Cross-Cultural Approach., 1971', 'https://eric.ed.gov/?id=ED065999', 11, 1, '2025-01-15',   '2026-04-10'),
+    (84, 'Governments may be big backers of the blockchain', 'https://www.economist.com/business/2017/06/01/governments-may-be-big-backers-of-the-blockchain', 11, 1, '2025-01-15',   '2026-04-10'),
+    (85, 'Cut and try: building a dream | Ethereum Foundation Blog', 'https://blog.ethereum.org/2016/02/09/cut-and-try-building-a-dream', 11, 1, '2025-01-15',   '2026-04-10'),
+    (86, '404: Page Not Found', 'https://www.bard.edu/library/arendt/pdfs/Sartre-Search.pdf', 11, 1, '2025-01-15',   '2026-04-10'),
+    (87, 'Privacy error', 'https://projektintegracija.pravo.hr/_download/repository/Kuhn_Structure_of_Scientific_Revolutions.pdf', 11, 1, '2025-01-15',   '2026-04-10'),
+    (88, 'The Truth About Blockchain', 'https://hbr.org/2017/01/the-truth-about-blockchain', 11, 1, '2025-01-15',   '2026-04-10'),
+    (89, 'Provenance | Sustainability Marketing Technology', 'https://www.provenance.org/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (90, 'Skuchain', 'https://www.skuchain.com/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (91, 'www.blockverify.io', 'http://www.blockverify.io/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (92, '1 new message', 'https://www.globalbankingandfinance.com/how-a-graph-database-unearthed-major-financial-improprieties/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (93, 'Analyzing the Panama Papers with Neo4j: Data Models, Queries & More', 'https://neo4j.com/blog/cypher-and-gql/analyzing-panama-papers-neo4j/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (94, 'Microsoft adds Ethereum language Solidity to Visual Studio | IBTimes UK', 'https://www.ibtimes.co.uk/microsoft-adds-ethereum-language-solidity-visual-studio-1552171', 11, 1, '2025-01-15',   '2026-04-10'),
+    (95, 'Bitcoin, Ethereum or Litecoin: Which is best for you? - CNET', 'https://www.cnet.com/personal-finance/crypto/bitcoin-ethereum-or-litecoin-which-cryptocurrency-is-best-for-you/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (96, 'motherboard.vice.com', 'https://motherboard.vice.com/en_us/article/d3zn9a/ethereum-mining-transaction-electricity-consumption-bitcoin', 11, 1, '2025-01-15',   '2026-04-10'),
+    (97, 'How much energy does bitcoin mining really use? It''s complicated | WIRED', 'https://www.wired.com/story/how-much-energy-does-bitcoin-mining-really-use/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (98, 'Bitcoin versus Gold - Digiconomist', 'https://digiconomist.net/bitcoin-versus-gold', 11, 1, '2025-01-15',   '2026-04-10'),
+    (99, 'XRP Digital Asset for Global Crypto Utility | Ripple', 'https://ripple.com/xrp/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (100, 'Just a moment...', 'https://blockexplorer.com/news/ethereum-launches-casper-testnet-paving-way-proof-stake/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (101, 'Bitcoin''s electricity consumption surpasses Singapore and Portugal - Digiconomist', 'https://digiconomist.net/bitcoin-electricity-consumption-surpasses-singapore-portugal', 11, 1, '2025-01-15',   '2026-04-10'),
+    (102, 'Bitcoin Energy Consumption Index - Digiconomist', 'https://digiconomist.net/bitcoin-energy-consumption', 11, 1, '2025-01-15',   '2026-04-10'),
+    (103, 'Hedera Hashgraph Thinks It Can One-Up Bitcoin And Ethereum With Faster Transactions', 'https://www.forbes.com/sites/jeffkauflin/2018/03/13/hedera-hashgraph-thinks-it-can-one-up-bitcoin-and-ethereum-with-faster-transactions/#175e5c79abcb', 11, 1, '2025-01-15',   '2026-04-10'),
+    (104, '404: This page could not be found.', 'https://www.coindesk.com/hedera-hashgraph-swirlds-no-fork-guarantee-cryptocurrency-touts-resistance-code-splits', 11, 1, '2025-01-15',   '2026-04-10'),
+    (105, 'VentureBeat | Transformative tech coverage that matters', 'https://venturebeat.com/technology/hedera-hashgraph-and-mz-unveil-next-generation-blockchain-alternative', 11, 1, '2025-01-15',   '2026-04-10'),
+    (106, 'China''s Decline in Coal Consumption Drives Global Slowdown in Emissions | World Resources Institute', 'https://www.wri.org/insights/chinas-decline-coal-consumption-drives-global-slowdown-emissions', 11, 1, '2025-01-15',   '2026-04-10'),
+    (107, 'Two countries are the reason the EU is hitting its ambitious renewable energy targets', 'https://qz.com/1193603/two-countries-are-the-reason-the-eu-is-hitting-its-ambitious-renewable-energy-targets', 11, 1, '2025-01-15',   '2026-04-10'),
+    (108, 'Upstate New York town bans bitcoin mining - The Washington Post', 'https://www.washingtonpost.com/business/economy/upstate-new-york-town-bans-bitcoin-mining/2018/03/16/bd6f669e-2947-11e8-bc72-077aa4dab9ef_story.html?utm_term=.6282ea8429d5', 11, 1, '2025-01-15',   '2026-04-10'),
+    (109, 'Next-Generation Crypto-Ledgers Take the Block Out of Blockchain - Bloomberg', 'https://www.bloomberg.com/news/articles/2018-02-14/next-generation-crypto-ledgers-take-the-block-out-of-blockchain', 11, 1, '2025-01-15',   '2026-04-10'),
+    (110, 'Cryptographic vulnerabilities in IOTA | by Neha Narula | Medium', 'https://medium.com/@neha/cryptographic-vulnerabilities-in-iota-9a6a9ddc4367', 11, 1, '2025-01-15',   '2026-04-10'),
+    (111, 'Hello future | Hedera', 'https://hedera.com/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (112, 'Eat. Pray. Hashgraph.. I''m not easily won over. I''ve watched... | by Ken Anderson | Hedera Blog | Medium', 'https://medium.com/hedera/eat-pray-hashgraph-56b9613ed46f', 11, 1, '2025-01-15',   '2026-04-10'),
+    (113, 'By reading this page, you are mining bitcoins', 'https://qz.com/154877/by-reading-this-page-you-are-mining-bitcoins', 11, 1, '2025-01-15',   '2026-04-10'),
+    (114, 'Page not found - Blockchain News, Opinion, TV and Jobs %', 'https://www.the-blockchain.com/2018/03/20/hedera-plans-speedier-safer-more-democratic-blockchain-alternative-hashgraph/', 11, 1, '2025-01-15',   '2026-04-10'),
+    (115, 's3.amazonaws.com/hedera-hashgraph/hh-whitepaper-v1.0-180313.pdf', 'https://s3.amazonaws.com/hedera-hashgraph/hh-whitepaper-v1.0-180313.pdf', 11, 1, '2025-01-15',   '2026-04-10'),
+    (116, 'www.bloomberg.com', 'https://www.bloomberg.com/amp/news/articles/2018-04-26/ibm-s-blockchain-tech-to-track-jewels-from-mine-to-retail-stores', 11, 1, '2025-01-15',   '2026-04-10'),
+    (117, 'Yep, Bitcoin Was a Bubble. And It Popped. - Bloomberg', 'https://www.bloomberg.com/opinion/articles/2018-12-11/yep-bitcoin-was-a-bubble-and-it-popped', 11, 1, '2025-01-15',   '2026-04-10'),
+    (118, 'Bitcoin Market Price Is Wrong, Fundstrat''s Tom Lee Says - Bloomberg', 'https://www.bloomberg.com/news/articles/2018-12-13/unabashed-bitcoin-bull-thomas-lee-says-the-market-is-wrong?srnd=cryptocurrencies', 11, 1, '2025-01-15',   '2026-04-10'),
+    (119, 'Bank of America Awarded New Patent for Storing Private Keys', 'https://u.today/bank-of-america-awarded-new-patent-for-storing-private-keys', 11, 1, '2025-01-15',   '2026-04-10'),
+    (120, 'patft.uspto.gov', 'http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=1&p=1&f=G&l=50&d=PTXT&S1=10,116,633.PN.&OS=pn/10,116,633&RS=PN/10,116,633', 11, 1, '2025-01-15',   '2026-04-10'),
+    (121, '10 things blockchain isn''t | HackerNoon', 'https://hackernoon.com/10-things-blockchain-isnt-dcb7966d22e5', 11, 1, '2025-01-15',   '2026-04-10'),
+    (122, 'Cryptocurrency Markets Continue Resurgence as Ripple Claims 68 Percent Weekly Gains', 'https://cointelegraph.com/news/cryptocurrency-markets-continue-resurgence-as-ripple-claims-68-percent-weekly-gains', 11, 1, '2025-01-15',   '2026-04-10');

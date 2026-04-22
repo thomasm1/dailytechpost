@@ -4,16 +4,6 @@
   font-weight: bold;
 }
 
-.nav-link {
-  color: white !important;
-}
-
-::ng-deep .nav-link {
-  color: white !important;
-}
-
-
-/* Fix for horizontal mat-nav-list menu items */
 .navigation-items.mat-mdc-nav-list {
   display: flex;
   flex-direction: row;
@@ -39,123 +29,90 @@
   }
 }
 
-/* Gap between navigation items */
-.nav-gap-10 a.mat-mdc-list-item {
-  margin-right:1px;
+.nav-gap-10 {
+  gap: 20px;
 }
 
-.li {
-  list-style-type: none;
-  color:white;
+.pointer {
+  cursor: pointer;
 }
-
- li.pointer  {
-   cursor: pointer;
- }
-
- .menu-center {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
-
- .navigation-items {
-   display: flex;
-   flex-direction: row;
- }
-
- .nav-gap-10 {
-   gap: 20px;
- }
-
- .hide-xs {
-   display: flex;
- }
-
- .hide-gt-xs {
-   display: none;
- }
-
- @media (max-width: 599px) {
-   .hide-xs {
-     display: none !important;
-   }
-   .hide-gt-xs {
-     display: block;
-   }
- }
-
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
-     margin: 8px 0;
- }
-
- p {
-     margin: 0;
- }
-
- .spacer {
-     flex: 1;
- }
- 
-mat-toolbar {
-    height:80px;
-    position: relative;
-}
-// mat-toolbar.mat-primary {
-//     background: #673ab75c;
-// }
 
 div.menu {
   background-image: url("../../../assets/bluechipTile.jpg");
 }
+
+mat-toolbar {
+  height: 80px;
+  position: relative;
+}
+
 mat-toolbar.mat-primary {
-    background: #673ab75c;  // Restore the background color
+  background: #673ab75c;
 }
 
 .menu-center {
-   margin-left:10px;  // Start after the logo
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: static;  // Remove absolute positioning
- }
-
-#menu-list a {
-
-  color:rgba(255, 255, 255, 0.497);
-  font-family:'roboto';
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
- .logo {
-     /* position: relative; */
-     top: -10px;
-     height: 75px;
-     margin: 0 10px;
- }
- .logo-box {
-   background-color:transparent;
-   cursor:pointer;
- }
+#menu-list a {
+  color: rgba(170, 188, 237, 0.9);
+  font-family: Roboto, sans-serif;
+}
 
- /* ANIMATION */
+:host ::ng-deep #menu-list .mat-mdc-list-item-unscoped-content,
+:host ::ng-deep #menu-list .mdc-list-item__primary-text {
+  color: rgba(189, 202, 239, 0.9) !important;
+}
+
+.logo {
+  top: -10px;
+  height: 75px;
+  margin: 0 10px;
+}
+
+.logo-box {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.hide-xs {
+  display: flex;
+}
+
+.hide-gt-xs {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  .hide-xs {
+    display: none !important;
+  }
+
+  .hide-gt-xs {
+    display: block;
+  }
+}
 
 
 
- a,
- a:visited, a:hover  {
-     text-decoration: none;
-     font-weight:500;
-     font-size: 1.4rem;
-     min-height:100%;
- }
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  min-height: 100%;
+}
 
- a:active {
-     color: lightgray;
- }
+a:active {
+  color: lightgray;
+}
 
 

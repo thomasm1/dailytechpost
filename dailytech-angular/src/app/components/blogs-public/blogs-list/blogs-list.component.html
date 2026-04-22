@@ -9,8 +9,8 @@
   label="All Categories">
     <div class="temp">
       <mat-spinner *ngIf="blogsLoading" class="centerSpinner"></mat-spinner>
-      <ul *ngFor="let blog of blogs" class="view-blog">
-        <mat-card (click)="openBlogModal(blog.id)">
+      <mat-card (click)="openBlogModal(blog.id)">
+          <ul *ngFor="let blog of blogs" class="view-blog">
           <li>
             <span [innerHTML]="blog.cat3 | safeHtml" class="category"></span>
             <button
@@ -39,8 +39,10 @@
           </li>
           <h6 [innerHTML]="blog.title | safeHtml"></h6>
           <p class="blog-post" [innerHTML]="blog.post | safeHtml"></p>
+          <p class="blog-post" [innerHTML]="blog.blogcite | safeHtml"></p>
+         </ul> 
         </mat-card>
-      </ul>
+        <hr />
     </div>
   </mat-tab>
 

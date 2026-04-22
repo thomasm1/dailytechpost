@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prod": "ng build --configuration production", 
+    "prod": "ng build --configuration production",
     "build": "ng build",
+    "watch": "ng build --configuration production --watch",
     "test": "ng test",
     "lint": "ng lint",
     "pwa": "ng add @angular/pwa",
@@ -39,7 +40,7 @@
     "@ngrx/store": "^16.3.0",
     "ag-charts-angular": "9.3.2",
     "angularx-qrcode": "^21.0.4",
-    "bootstrap": "^3.4.1",
+    "bootstrap": "^4.6.2",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "day": "0.0.2",
@@ -70,6 +71,7 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "sass": "^1.99.0",
     "workbox-webpack-plugin": "^7.3.0"
   }
 }

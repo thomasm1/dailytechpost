@@ -1,0 +1,48 @@
+-- NEWS seed from data/sociologyTomorrow.txt
+-- Category mapping used: Sociology Tomorrow -> category_id 13
+
+INSERT INTO dailytech.news (
+    id, title, url, category_id, version,  time_created,  time_updated
+)
+VALUES
+    (152, 'Dailytech', 'https://ourdailytech.net/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (153, 'Greek Medicine: THE HIPPOCRATIC OATH', 'https://www.greekmedicine.net/whos_who/The_Hippocratic_Oath.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (154, 'Changing the MCAT Exam | Students & Residents', 'https://students-residents.aamc.org/about-mcat-exam/changing-mcat-exam', 13, 1, '2025-01-15',   '2026-04-10'),
+    (155, 'Health systems science peer reviewed articles | American Medical Association', 'https://www.ama-assn.org/education/changemeded-initiative/health-systems-science-peer-reviewed-articles', 13, 1, '2025-01-15',   '2026-04-10'),
+    (156, 'Just a moment...', 'https://www.researchgate.net/publication/228173911_The_Sociology_of_Suicide', 13, 1, '2025-01-15',   '2026-04-10'),
+    (157, 'The Stats On Women In Tech Are Actually Getting Worse | HuffPost Life', 'https://www.huffpost.com/entry/women-in-tech_n_6955940', 13, 1, '2025-01-15',   '2026-04-10'),
+    (158, 'Fairygodboss', 'https://renderer.fairygodboss.com/career-topics/women-in-tech-facts-figures-and-percentages', 13, 1, '2025-01-15',   '2026-04-10'),
+    (159, 'Home - AAUW : Empowering Women Since 1881', 'https://www.aauw.org/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (160, 'Guns, germs, and Steel: the fates of human societies', 'http://www.jareddiamond.org/Jared_Diamond/Guns,_Germs,_and_Steel.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (161, 'Why flu vaccines so often fail | Science | AAAS', 'https://www.science.org/content/article/why-flu-vaccines-so-often-fail', 13, 1, '2025-01-15',   '2026-04-10'),
+    (162, 'A virus mutation has made this year''s flu vaccine less effective', 'https://qz.com/1143420/the-2017-2018-flu-vaccine-is-less-effective-than-usual', 13, 1, '2025-01-15',   '2026-04-10'),
+    (163, 'How Flu Viruses Can Change: "Drift" and "Shift" | Influenza (Flu) | CDC', 'https://www.cdc.gov/flu/php/viruses/change.html?CDC_AAref_Val=https://www.cdc.gov/flu/about/viruses/change.htm', 13, 1, '2025-01-15',   '2026-04-10'),
+    (164, 'When Did Companies Become People? Excavating The Legal Evolution : NPR', 'https://www.npr.org/2014/07/28/335288388/when-did-companies-become-people-excavating-the-legal-evolution', 13, 1, '2025-01-15',   '2026-04-10'),
+    (165, 'Campaign Finance and the Supreme Court', 'https://www.ncsl.org/elections-and-campaigns/campaign-finance-and-the-supreme-court#dnn_ctr77443_HtmlModule_lblContent', 13, 1, '2025-01-15',   '2026-04-10'),
+    (166, 'White House Bans Venezuela''s Digital Currency and Expands Sanctions - The New York Times', 'https://www.nytimes.com/2018/03/19/world/americas/trump-venezuela-sanctions-petro.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (167, 'Live coverage: March for Our Lives rallies in L.A., Orange County, Washington call for an end to school shootings - Los Angeles Times', 'https://www.latimes.com/local/california/la-me-saturday-walkouts-liveupdates-march24-2018-htmlstory.html#emma-gonzalez-leads-remarkable-moment-of-silence-at-washington-march', 13, 1, '2025-01-15',   '2026-04-10'),
+    (168, 'Page not found - TechRepublic', 'https://www.techrepublic.com/article/how-progressive-web-apps-promise-to-upend-native-mobile-apps/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (169, 'How Google And Others Are Plotting The Revenge Of The Web App - Fast Company', 'https://www.fastcompany.com/3063420/how-google-and-others-are-plotting-the-revenge-of-the-web-app', 13, 1, '2025-01-15',   '2026-04-10'),
+    (170, 'Not Found | The Webby Awards', 'https://www.webbyawards.com/winners/2017/mobile-sites-apps/features-categories/technical-achievement/progressive-web-app-by-the-washington-post/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (171, 'Gartner Business Insights, Strategies & Trends For Executives', 'https://www.gartner.com/en/insights', 13, 1, '2025-01-15',   '2026-04-10'),
+    (172, 'Just a moment...', 'https://journals.sagepub.com/doi/abs/10.1177/0049124198027002002', 13, 1, '2025-01-15',   '2026-04-10'),
+    (173, '''You Are the Product'': Targeted by Cambridge Analytica on Facebook - The New York Times', 'https://www.nytimes.com/2018/04/08/us/facebook-users-data-harvested-cambridge-analytica.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (174, 'How to Check If Cambridge Analytica Could Access Your Facebook Data | WIRED', 'https://www.wired.com/story/did-cambridge-analytica-access-your-facebook-data/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (175, 'Just a moment...', 'https://onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9558.2008.00324.x', 13, 1, '2025-01-15',   '2026-04-10'),
+    (176, 'Mark Zuckerberg Q&A: The Facebook CEO Talks Cambridge Analytica, the Company''s Problems, and Big Data | WIRED', 'https://www.wired.com/story/mark-zuckerberg-talks-to-wired-about-facebooks-privacy-problem/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (177, '404 Page Not Found - CNNMoney', 'https://money.cnn.com/2018/04/15/technology/online-purchases-sales-taxes-supreme-court/index.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (178, 'This billionaire toy executive has a last-ditch mission to save Toys R Us, before it''s too late - The Washington Post', 'https://www.washingtonpost.com/news/business/wp/2018/04/13/this-billionaire-toy-executive-has-a-last-ditch-mission-to-save-toys-r-us-before-its-too-late/?noredirect=on&utm_term=.b3201ad77891', 13, 1, '2025-01-15',   '2026-04-10'),
+    (179, 'npm is Massive', 'https://nodesource.com/blog/npm-is-massive', 13, 1, '2025-01-15',   '2026-04-10'),
+    (180, 'E.W.Dijkstra Archive: Home page', 'https://www.cs.utexas.edu/~EWD/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (181, 'Your old phone is full of untapped precious metals', 'https://www.bbc.com/future/article/20161017-your-old-phone-is-full-of-precious-metals', 13, 1, '2025-01-15',   '2026-04-10'),
+    (182, 'Westworld | Official Website for the HBO Series | HBO.com', 'https://www.hbo.com/westworld', 13, 1, '2025-01-15',   '2026-04-10'),
+    (183, 'Yoshua Bengio | Mila', 'https://mila.quebec/en/directory/yoshua-bengio', 13, 1, '2025-01-15',   '2026-04-10'),
+    (184, 'Why Montreal Has Emerged As An Artificial Intelligence Powerhouse', 'https://www.forbes.com/sites/peterhigh/2017/11/06/why-montreal-has-emerged-as-an-artificial-intelligence-powerhouse/#7435a66123bd', 13, 1, '2025-01-15',   '2026-04-10'),
+    (185, 'Why WebAssembly is a game changer for the web - and a source of pride for Mozilla and Firefox | by David Bryant | Mozilla Tech | Medium', 'https://medium.com/mozilla-tech/why-webassembly-is-a-game-changer-for-the-web-and-a-source-of-pride-for-mozilla-and-firefox-dda80e4c43cb', 13, 1, '2025-01-15',   '2026-04-10'),
+    (186, 'WebAssembly', 'https://webassembly.org/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (187, 'Supreme Court Ruling Favors Sports Betting - The New York Times', 'https://www.nytimes.com/2018/05/14/us/politics/supreme-court-sports-betting-new-jersey.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (188, 'Get Android 15 Android Developers', 'https://developer.android.com/about/versions/15/get', 13, 1, '2025-01-15',   '2026-04-10'),
+    (189, 'Android 9.0 Pie: Everything you need to know - Digital Trends', 'https://www.digitaltrends.com/phones/google-android-p-news/', 13, 1, '2025-01-15',   '2026-04-10'),
+    (190, 'Exclusive: Android P is Google''s most ambitious update in years | The Verge', 'https://www.theverge.com/2018/5/8/17327302/android-p-update-new-features-changes-video-google-io-2018', 13, 1, '2025-01-15',   '2026-04-10'),
+    (191, 'Supreme Court rules that internet businesses must collect all state and local sales taxes - Los Angeles Times', 'https://www.latimes.com/politics/la-na-pol-court-online-taxes-20180621-story.html', 13, 1, '2025-01-15',   '2026-04-10'),
+    (192, 'California Net Neutrality Bill Was ''Hijacked,'' Lawmaker Says | WIRED', 'https://www.wired.com/story/california-net-neutrality-bill-was-hijacked-lawmaker-says/', 13, 1, '2025-01-15',   '2026-04-10');

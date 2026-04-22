@@ -10,6 +10,13 @@ import { Component, OnInit } from '@angular/core';
       color:rgb(220, 220, 247);text-decoration:none;
 
     }
+    a {
+      color:rgb(220, 220, 247);text-decoration:none;
+      text-decoration:none;
+    }
+     a:hover {
+      color:rgb(255, 255, 255);text-decoration:none;
+    }
     a.footer-text {
       color:rgb(220, 220, 247);text-decoration:none;
     }
@@ -22,7 +29,7 @@ import { Component, OnInit } from '@angular/core';
       color:rgb(220, 220, 247);
       text-align:center;
       line-height:2rem;
-    background-color: rgba(96, 79, 245, 0.592);
+    background-color: rgba(38, 23, 181, 0.7);
     }
     div.menu {
 
@@ -41,7 +48,7 @@ export class FooterComponent implements OnInit {
 
   dt = new Date;
 
-  copyright = `Copyright 2019, ${this.dt.getFullYear()} All Rights Reserved.      `;
+  copyright = `2019-${this.dt.getFullYear()}  `;
 
   constructor() { }
 

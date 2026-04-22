@@ -1,16 +1,22 @@
 package net.ourdailytech.rest.security;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
+import java.nio.charset.StandardCharsets;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Instant;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -34,6 +40,7 @@ public class FirebaseTokenAuthenticationService {
 
   private static final Logger log = LoggerFactory.getLogger(FirebaseTokenAuthenticationService.class);
   private static final String FIREBASE_APP_NAME = "dailytech-rest-firebase-auth";
+  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
   private final UsersRepository usersRepository;
   private final RoleRepository roleRepository;
@@ -54,7 +61,9 @@ public class FirebaseTokenAuthenticationService {
   }
 
   public Optional<UserDetails> authenticate(String token) {
+    Map<String, Object> unverifiedClaims = decodeClaimsWithoutVerification(token);
     try {
+      logTokenDiagnostics(unverifiedClaims);
       FirebaseToken decodedToken = getFirebaseAuth().verifyIdToken(token);
       String email = decodedToken.getEmail();
       if (!StringUtils.hasText(email)) {
@@ -75,8 +84,66 @@ public class FirebaseTokenAuthenticationService {
           "",
           authorities));
     } catch (FirebaseAuthException | IOException ex) {
-      log.debug("Bearer token is not a valid Firebase ID token", ex);
+      log.warn(
+          "Firebase token verification failed (configuredProjectId={}, aud={}, iss={}, exp={})",
+          StringUtils.hasText(firebaseProjectId) ? firebaseProjectId : "<not-set>",
+          claimAsString(unverifiedClaims, "aud"),
+          claimAsString(unverifiedClaims, "iss"),
+          expAsIso(unverifiedClaims),
+          ex);
       return Optional.empty();
+    }
+  }
+
+  private void logTokenDiagnostics(Map<String, Object> claims) {
+    if (claims.isEmpty()) {
+      log.warn("Bearer token payload could not be decoded before Firebase verification");
+      return;
+    }
+    log.debug(
+        "Firebase token diagnostics: aud={}, iss={}, exp={}, configuredProjectId={}",
+        claimAsString(claims, "aud"),
+        claimAsString(claims, "iss"),
+        expAsIso(claims),
+        StringUtils.hasText(firebaseProjectId) ? firebaseProjectId : "<not-set>");
+  }
+
+  private Map<String, Object> decodeClaimsWithoutVerification(String token) {
+    if (!StringUtils.hasText(token)) {
+      return Collections.emptyMap();
+    }
+    try {
+      String[] parts = token.split("\\.");
+      if (parts.length < 2) {
+        return Collections.emptyMap();
+      }
+      byte[] payloadBytes = Base64.getUrlDecoder().decode(parts[1]);
+      String payloadJson = new String(payloadBytes, StandardCharsets.UTF_8);
+      return OBJECT_MAPPER.readValue(payloadJson, new TypeReference<>() {
+      });
+    } catch (Exception ex) {
+      return Collections.emptyMap();
+    }
+  }
+
+  private String claimAsString(Map<String, Object> claims, String claimName) {
+    Object value = claims.get(claimName);
+    if (value == null) {
+      return "<missing>";
+    }
+    return String.valueOf(value);
+  }
+
+  private String expAsIso(Map<String, Object> claims) {
+    Object expRaw = claims.get("exp");
+    if (expRaw == null) {
+      return "<missing>";
+    }
+    try {
+      long epochSeconds = Long.parseLong(String.valueOf(expRaw));
+      return Instant.ofEpochSecond(epochSeconds).toString();
+    } catch (NumberFormatException ex) {
+      return String.valueOf(expRaw);
     }
   }
 

@@ -1,35 +1,46 @@
-@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css);
-@import url('https://fonts.googleapis.com/css?family=Monoton:100,200,300,400,500,600');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,600,600i,700');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
-/* ANGULAR  MATERIAL */
-// @import '@angular/material/prebuilt-themes/indigo-pink.css';  
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
-      // Defined in daily-theme.scss ....old  angular.json
-      // "styles": [ "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss" ],
+ @use '@angular/material' as mat;
 
-$color-primary-text:  rgb(19, 1, 179);
+/* Angular Material prebuilt theme */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* App colors */
+$bg-steel: steelblue;
+$app-background-color: rgb(46, 73, 152);
+$app-text-color: #222;
+
+$color-primary-text: rgb(238, 237, 244);
 $color-secondary-text: darken($color-primary-text, 25%);
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
+/* Global document sizing */
 html,
 body {
-    height: 100%;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
+ height: 100%;
+  margin: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global body styles */
+body { 
+  background-color: $app-background-color;
+  color: $app-text-color;
+}
+
+/* Optional light reset - safer than resetting every element's margin/padding */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ 
 h1,
 h2,
 h3,

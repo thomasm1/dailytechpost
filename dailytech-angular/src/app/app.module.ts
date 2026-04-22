@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import { QRCodeComponent } from 'angularx-qrcode';  // Removed library import
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule  } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 // import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 // import { provideAuth, getAuth } from '@angular/fire/auth';
 // import { provideFirestore, getFirestore } from '@angular/fire/firestore';
@@ -35,7 +36,7 @@ import { PipeCapitalizeCategoryPipe } from './utility/pipe-capitalize-category.p
 
 // SERVICES
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
+// import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { WritingService } from './components/writing/writing.service';
 import { KeysService } from './service/keys.service';
@@ -60,16 +61,16 @@ import { AuthModule } from './components/user/auth.module';
 import { WritingModule } from './components/writing/writing.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
- 
+
 
 // NEWS
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 import { NewsArticleResultsComponent } from './components/news/news-article-results/news-article-results.component';
 import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-bar.component';
- 
 
-// FEATURES  
+
+// FEATURES
 import { GrootService } from './service/groot.service';
 // import { WritingRoutingModule } from './writing-routing.module';
 
@@ -89,14 +90,14 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         // BlogsListComponent,
         PostCancelComponent,
         BlogModalComponent,
-        BlogsComponent, 
-   
+        BlogsComponent,
+
         // TECH NEWS
         NewsPageComponent,
         NewsArticleSearchComponent,
         NewsArticleResultsComponent,
-        NewsToolBarComponent, 
-        PipeCapitalizeCategoryPipe, 
+        NewsToolBarComponent,
+        PipeCapitalizeCategoryPipe,
         QrcodeComponent,  // Added custom QR code component
         /////// AUTH MODULE ///////
         // AdminComponent,
@@ -114,10 +115,10 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
     ],
     imports: [
         BlogsModule,
-        // QRCodeModule,  // Removed 
+        // QRCodeModule,  // Removed
         BrowserModule,
         BrowserAnimationsModule,
-        MaterialModule, 
+        MaterialModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
@@ -156,7 +157,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         // provideFirebaseApp(() => initializeApp(environment.firebase)),  // Moved from imports
         // provideAuth(() => getAuth()),  // Moved to imports
         // provideFirestore(() => getFirestore()),  // Moved from imports
-        { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
+        // { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
     ],
     bootstrap: [AppComponent]
 })
