@@ -30,6 +30,12 @@ public interface UsersRepository extends JpaRepository<User, Integer> {
 
     Optional<User> findByEmail(String email);
 
+    @Query("SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.email = :email")
+    Optional<User> findByEmailWithRoles(@Param("email") String email);
+
+    @Query("SELECT r.name FROM User u JOIN u.roles r WHERE u.email = :email")
+    List<String> findRoleNamesByEmail(@Param("email") String email);
+
     Optional<User> findByEmailAndPassword(String email, String password);
 
     //    // SQL /////////////////////

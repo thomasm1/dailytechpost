@@ -106,7 +106,7 @@ app:
     project-id: ${FIREBASE_PROJECT_ID:}
     credentials-path: ${FIREBASE_CREDENTIALS_PATH:}
   cors:
-    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://74.98.230.192:4200,http://74.98.230.192:8080,http://74.98.230.192:8081,https://ourdailytech.net,https://www.ourdailytech.net}
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:4200,http://localhost:8080,http://74.98.230.192:4200,http://74.98.230.192:8080,http://74.98.230.192:8081,https://ourdailytech.net,https://www.ourdailytech.net}
   dailytech:
     message: ${info.app.message}
 
