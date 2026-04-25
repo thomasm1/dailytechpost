@@ -16,8 +16,8 @@ import * as fromWriting from '../../../reducers/writing.reducer';
   styleUrls: ['./grid-writings.component.scss']
 })
 export class GridWritingsComponent implements OnInit, AfterViewInit { //, OnDestroy {
-
-  displayedColumns = ['date', 'title', 'durationGoal', 'wordCount', 'state'];
+ 
+  displayedColumns = [ 'did', 'title', 'post', 'wordCount', 'durationGoal',  'state','date'];
   dataSource = new MatTableDataSource<WritingMod>();
   // private exChangedSubscription: Subscription;
 

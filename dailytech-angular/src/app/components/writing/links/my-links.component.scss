@@ -1,0 +1,199 @@
+.links-page {
+  padding: 0 12px 24px;
+}
+
+.add-link-form {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.4fr) minmax(170px, 0.9fr) auto;
+  gap: 10px;
+  align-items: end;
+  max-width: 980px;
+  margin: 0 0 18px;
+}
+
+.link-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.link-field span {
+  color: rgba(248, 251, 255, 0.86);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.link-field input,
+.link-field select {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid rgba(143, 215, 255, 0.38);
+  border-radius: 6px;
+  background: rgba(7, 15, 34, 0.78);
+  color: #f8fbff;
+  font: inherit;
+  letter-spacing: 0;
+  outline: none;
+}
+
+.link-field input:focus,
+.link-field select:focus {
+  border-color: rgba(143, 215, 255, 0.82);
+  box-shadow: 0 0 0 2px rgba(143, 215, 255, 0.16);
+}
+
+.link-field select {
+  cursor: pointer;
+}
+
+.add-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid rgba(143, 215, 255, 0.46);
+  border-radius: 6px;
+  background: rgba(143, 215, 255, 0.18);
+  color: #f8fbff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.add-link-button mat-icon {
+  margin-right: 6px;
+}
+
+.add-link-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.links-shell {
+  color: #f8fbff;
+}
+
+.links-tree {
+  max-width: 760px;
+}
+
+.tree-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 4px 10px;
+  color: rgba(248, 251, 255, 0.92);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tree-root mat-icon {
+  color: #8fd7ff;
+}
+
+.tree-children {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 18px;
+  padding-left: 24px;
+}
+
+.tree-children::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 18px;
+  left: 0;
+  width: 1px;
+  background: rgba(143, 215, 255, 0.34);
+}
+
+.link-node {
+  position: relative;
+  justify-content: flex-start;
+  width: min(100%, 680px);
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #f8fbff;
+  text-align: left;
+  background: url('/assets/bluechipTileT8.png') repeat;
+}
+
+.link-node:hover,
+.link-node:focus-visible {
+  border-color: rgba(143, 215, 255, 0.46);
+  background: rgba(143, 215, 255, 0.1);
+}
+
+.node-connector {
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  width: 24px;
+  height: 1px;
+  background: rgba(143, 215, 255, 0.34);
+}
+
+.node-icon {
+  flex: 0 0 auto;
+  margin-right: 8px;
+  color: #8fd7ff;
+}
+
+.link-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.link-count {
+  flex: 0 0 auto;
+  margin-left: 12px;
+  color: rgba(248, 251, 255, 0.62);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+  .links-page {
+    padding-inline: 4px;
+  }
+
+  .add-link-form {
+    grid-template-columns: 1fr;
+  }
+
+  .add-link-button {
+    width: 100%;
+  }
+
+  .tree-children {
+    margin-left: 12px;
+    padding-left: 18px;
+  }
+
+  .node-connector {
+    left: -18px;
+    width: 18px;
+  }
+
+  .link-node {
+    min-height: 48px;
+  }
+
+  .link-count {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+<section class="links-page">
+  <div class="links-shell">
+    <div class="links-tree">
+      <div class="tree-root">
+        <mat-icon>account_tree</mat-icon>
+        <span>Links</span>
+      </div>
+
+      <div class="tree-children">
+        <button
+          *ngFor="let category of categoryMods$ | async"
+          mat-button
+          type="button"
+          class="link-node"
+          (click)="openLinkCategory(category)"
+        >
+          <span class="node-connector"></span>
+          <mat-icon class="node-icon">chevron_right</mat-icon>
+          <span class="link-name">{{ category.cat3 || category.name }}</span>
+          <span class="link-count">Research URLs</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -14,7 +14,7 @@ describe('AppComponent', () => {
       providers: [
         {
           provide: FirebaseAuthService,
-          useValue: jasmine.createSpyObj<FirebaseAuthService>('FirebaseAuthService', ['initAuthListener']),
+          useValue: jasmine.createSpyObj<FirebaseAuthService>('FirebaseAuthService', ['authState$']),
         },
         {
           provide: KeysService,

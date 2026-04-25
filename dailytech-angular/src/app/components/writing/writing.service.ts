@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { firstValueFrom, lastValueFrom, of, Observable, Subscription } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { firstValueFrom, lastValueFrom, of, Observable, Subscription, throwError } from 'rxjs';
+import { catchError, filter, map, take, timeout } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import { WritingMod } from '../../models/writing-mods.model';
@@ -16,6 +16,7 @@ import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack
 import * as Categories from '../../reducers/category.actions';
 import * as fromCategories from '../../reducers/category.reducer';
 import { environment } from '../../../environments/environment';
+import { AwsAuthenticationService } from '../../service/auth/aws-authentication.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -78,7 +79,8 @@ export class WritingService {
     private afAuth: AngularFireAuth,
     private uiService: UiService,
     private store: Store<fromWriting.State>,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private authService: AwsAuthenticationService
   ) { }
 
   getDefaultWritingMods(): Observable<WritingMod[]> {  /// Functionality for non-logged-in users
@@ -187,12 +189,7 @@ export class WritingService {
       this.resolveCategoryForNews(categoryName),
       this.getFirebaseAuthHeader()
     ]).then(([category, headers]) => {
-      const payload = {
-        title: trimmedTitle || trimmedUrl,
-        url: trimmedUrl,
-        categoryId: Number(category.categoryId)
-      };
-      return lastValueFrom(this.http.post<NewsMod>(this.newsApiUrl, payload, { headers }));
+      return this.saveResearchNewsForCategory(category, trimmedTitle, trimmedUrl, headers);
     }).then((savedNews) => {
       this.snackBar.open('Research URL saved', undefined, { duration: 3000 });
       return savedNews;
@@ -203,6 +200,42 @@ export class WritingService {
       });
       throw error;
     });
+  }
+
+  addResearchNewsForCategory(category: CategoryMod, title: string, url: string): Promise<NewsMod> {
+    const trimmedUrl = url.trim();
+    const trimmedTitle = title.trim();
+
+    return this.getFirebaseAuthHeader().then((headers) =>
+      this.saveResearchNewsForCategory(category, trimmedTitle, trimmedUrl, headers)
+    ).then((savedNews) => {
+      this.snackBar.open('Research URL saved', undefined, { duration: 3000 });
+      return savedNews;
+    }).catch((error) => {
+      console.error('Error saving research URL to dailytech-rest:', error);
+      this.snackBar.open('Error saving research URL', undefined, {
+        duration: 3000
+      });
+      throw error;
+    });
+  }
+
+  getResearchNewsByCategory(categoryId: number): Observable<NewsMod[]> {
+    return this.http.get<NewsMod[]>(`${this.newsApiUrl}/category/${categoryId}`).pipe(
+      catchError((error) => {
+        console.error(`Error loading research URLs for category ${categoryId}:`, error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  getMyResearchNewsByCategory(categoryId: number): Observable<NewsMod[]> {
+    return this.http.get<NewsMod[]>(`${this.newsApiUrl}/me/category/${categoryId}`).pipe(
+      catchError((error) => {
+        console.error(`Error loading private research URLs for category ${categoryId}:`, error);
+        return throwError(() => error);
+      })
+    );
   }
   completeWriting() {
     // this.writingMods.push({
@@ -319,8 +352,35 @@ export class WritingService {
     );
   }
 
+  private saveResearchNewsForCategory(category: CategoryMod, title: string, url: string, headers: HttpHeaders): Promise<NewsMod> {
+    const payload = {
+      title: title || url,
+      url,
+      categoryId: Number(category.categoryId)
+    };
+    return lastValueFrom(this.http.post<NewsMod>(this.newsApiUrl, payload, { headers }));
+  }
+
   private async getFirebaseAuthHeader(): Promise<HttpHeaders> {
-    const currentUser = await this.afAuth.currentUser;
+    const sessionToken = this.authService.getAuthenticatedToken();
+    if (sessionToken) {
+      return new HttpHeaders({
+        Authorization: sessionToken
+      });
+    }
+
+    let currentUser = await this.afAuth.currentUser;
+
+    if (!currentUser) {
+      currentUser = await firstValueFrom(
+        this.afAuth.authState.pipe(
+          filter((user): user is any => !!user),
+          take(1),
+          timeout(3000)
+        )
+      ).catch(() => null);
+    }
+
     if (!currentUser) {
       throw new Error('Must be logged in with Firebase to save research URLs');
     }

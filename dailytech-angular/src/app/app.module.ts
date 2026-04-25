@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import { QRCodeComponent } from 'angularx-qrcode';  // Removed library import
 
-// import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,7 +35,7 @@ import { PipeCapitalizeCategoryPipe } from './utility/pipe-capitalize-category.p
 
 // SERVICES
 import { ServiceWorkerModule } from '@angular/service-worker';
-// import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
+import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { WritingService } from './components/writing/writing.service';
 import { KeysService } from './service/keys.service';
@@ -157,7 +156,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         // provideFirebaseApp(() => initializeApp(environment.firebase)),  // Moved from imports
         // provideAuth(() => getAuth()),  // Moved to imports
         // provideFirestore(() => getFirestore()),  // Moved from imports
-        // { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
     ],
     bootstrap: [AppComponent]
 })

@@ -13,8 +13,9 @@ import { BlogComponent } from './components/blogs-public/blog/blog.component';
 import { WritingComponent } from './components/writing/writing.component';
 import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
 import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
-import { PastWritingsComponent } from './components/writing/past-writings/past-writings.component';
 import { GridWritingsComponent } from './components/writing/grid-writings/grid-writings.component';
+import { LinksComponent } from './components/writing/links/links.component';
+import { MyLinksComponent } from './components/writing/links/my-links.component';
 
 import { AwsGuardService } from './service/auth/aws-guard.service';
 import { FirebaseGuardService } from './service/auth/firebase-guard.service';
@@ -41,8 +42,9 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: 'new' },
       { path: 'new', component: NewWritingComponent },
       { path: 'current', component: CurrentWritingComponent },
-      { path: 'past', component: PastWritingsComponent },
       { path: 'stats', component: GridWritingsComponent },
+      { path: 'links', component: LinksComponent },
+      { path: 'my-links', component: MyLinksComponent },
     ]
   }, 
   { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService,AwsGuardService]},   

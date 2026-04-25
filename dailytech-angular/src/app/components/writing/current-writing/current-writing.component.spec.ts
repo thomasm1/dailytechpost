@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, fakeAsync, tick, flush } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -11,6 +11,7 @@ import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
+import * as WritingActions from '../../../reducers/writing.actions';
 
 describe('CurrentWritingComponent', () => {
   let component: CurrentWritingComponent;
@@ -33,12 +34,12 @@ describe('CurrentWritingComponent', () => {
     mockWritingService = jasmine.createSpyObj('WritingService', [
       'hardQuitWriting',
       'addFullDataToDatabase',
-      'updateNewsUrls',
+      'addResearchNews',
       'completeWriting',
       'cancelWriting'
     ]);
     mockWritingService.addFullDataToDatabase.and.returnValue(Promise.resolve());
-    mockWritingService.updateNewsUrls.and.returnValue(Promise.resolve());
+    mockWritingService.addResearchNews.and.returnValue(Promise.resolve({} as any));
 
     mockDialog = jasmine.createSpyObj('MatDialog', ['open']);
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
@@ -58,7 +59,7 @@ describe('CurrentWritingComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [CurrentWritingComponent],
-      imports: [ReactiveFormsModule],
+      imports: [FormsModule, ReactiveFormsModule],
       providers: [
         { provide: WritingService, useValue: mockWritingService },
         { provide: MatDialog, useValue: mockDialog },
@@ -120,18 +121,16 @@ describe('CurrentWritingComponent', () => {
   });
 
   it('should discard draft and exit when dialog returns discard', () => {
-    spyOn(localStorage, 'removeItem');
     mockDialog.open.and.returnValue({ afterClosed: () => of('discard') } as any);
 
     component.postCancel();
 
-    expect(localStorage.removeItem).toHaveBeenCalledWith('writingDraft');
+    expect(mockStore.dispatch).toHaveBeenCalledWith(jasmine.any(WritingActions.ClearWritingDraft));
     expect(mockWritingService.hardQuitWriting).toHaveBeenCalled();
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/new']);
   });
 
   it('should save draft and exit when dialog returns draft', () => {
-    spyOn(localStorage, 'setItem');
     mockDialog.open.and.returnValue({ afterClosed: () => of('draft') } as any);
     component.ngOnInit();
     component.writingForm.patchValue({
@@ -142,10 +141,11 @@ describe('CurrentWritingComponent', () => {
 
     component.postCancel();
 
-    expect(localStorage.setItem).toHaveBeenCalled();
-    const args = (localStorage.setItem as jasmine.Spy).calls.mostRecent().args;
-    expect(args[0]).toBe('writingDraft');
-    const payload = JSON.parse(args[1] as string);
+    expect(mockStore.dispatch).toHaveBeenCalledWith(jasmine.any(WritingActions.SaveWritingDraft));
+    const action = mockStore.dispatch.calls.allArgs()
+      .map((args) => args[0])
+      .find((item) => item instanceof WritingActions.SaveWritingDraft) as WritingActions.SaveWritingDraft;
+    const payload = action.payload;
     expect(payload.title).toBe('Draft title');
     expect(payload.post).toBe('Draft post');
     expect(payload.cat3).toBe('A.I.Now.');
@@ -217,14 +217,25 @@ describe('CurrentWritingComponent', () => {
       state: [''],
     });
     component.news = [];
-    mockWritingService.updateNewsUrls.and.returnValue(Promise.resolve());
+    component.category = 'Web Dev Affairs';
+    const mockUrlForm = {
+      value: {
+        title: 'Example title',
+        url: 'https://example.com/new'
+      },
+      resetForm: jasmine.createSpy('resetForm')
+    } as any;
 
-    component.onAddUrl('https://example.com/new');
+    component.onAddUrl(mockUrlForm);
     tick();
 
     expect(component.news).toEqual(['https://example.com/new']);
-    expect(mockWritingService.updateNewsUrls).toHaveBeenCalledWith('https://example.com/new');
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/current']);
+    expect(mockWritingService.addResearchNews).toHaveBeenCalledWith(
+      'Web Dev Affairs',
+      'Example title',
+      'https://example.com/new'
+    );
+    expect(mockUrlForm.resetForm).toHaveBeenCalled();
     flush();
   }));
 });

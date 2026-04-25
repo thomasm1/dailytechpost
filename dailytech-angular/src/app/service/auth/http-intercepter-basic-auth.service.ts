@@ -13,6 +13,10 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor {
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
+    if (request.headers.has('Authorization')) {
+      return next.handle(request);
+    }
+
     let adminAuthHeaderString = this.awsAuthenticationService.getAuthenticatedToken();
     let username = this.awsAuthenticationService.getAuthenticatedUser()
 

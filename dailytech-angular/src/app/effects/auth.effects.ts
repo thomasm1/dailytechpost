@@ -6,7 +6,7 @@ import { from, of } from 'rxjs';
 import { catchError, exhaustMap, map, switchMap, tap } from 'rxjs/operators';
 
 import { UiService } from '../service/ui.service';
-import { AwsAuthenticationService } from '../service/auth/aws-authentication.service';
+import { AUTH_STORAGE_KEY, AwsAuthenticationService } from '../service/auth/aws-authentication.service';
 import { WritingService } from '../components/writing/writing.service';
 import * as UI from '../reducers/ui.actions';
 import {
@@ -22,8 +22,6 @@ import {
   AuthRegisterStart,
 } from '../reducers/auth.actions';
 
-const AUTH_STORAGE_KEY = 'dailytech.auth.isAuthenticated';
-
 @Injectable()
 export class AuthEffects {
   initAuthListener$ = createEffect(() =>
@@ -31,7 +29,20 @@ export class AuthEffects {
       ofType(AUTH_INIT_LISTENER),
       switchMap(() =>
         this.afAuth.authState.pipe(
-          map((user) => (user ? new SetAuthenticated() : new SetUnauthenticated()))
+          switchMap((user) => {
+            if (!user) {
+              return of(this.awsAuthService.hasActiveSession() ? new SetAuthenticated() : new SetUnauthenticated());
+            }
+
+            return from(this.awsAuthService.persistFirebaseSession(user)).pipe(
+              map(() => new SetAuthenticated()),
+              catchError((error) => {
+                console.error('Unable to persist Firebase session', error);
+                this.awsAuthService.clearSession();
+                return of(new SetUnauthenticated());
+              })
+            );
+          })
         )
       )
     )
@@ -114,8 +125,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(ROOT_EFFECTS_INIT),
       map(() => {
-        const storedValue = localStorage.getItem(AUTH_STORAGE_KEY);
-        return storedValue === 'true' ? new SetAuthenticated() : new SetUnauthenticated();
+        return this.awsAuthService.hasActiveSession() ? new SetAuthenticated() : new SetUnauthenticated();
       })
     ),
     { dispatch: true } //default anyway
@@ -126,7 +136,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(SET_AUTHENTICATED),
         tap(() => {
-          localStorage.setItem(AUTH_STORAGE_KEY, 'true');
+          sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
         })
       ),
     { dispatch: false }
@@ -137,7 +147,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(SET_UNAUTHENTICATED),
         tap(() => {
-          localStorage.setItem(AUTH_STORAGE_KEY, 'false');
+          this.awsAuthService.clearSession();
         })
       ),
     { dispatch: false }

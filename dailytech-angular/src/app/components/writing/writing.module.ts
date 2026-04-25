@@ -8,9 +8,11 @@ import { StoreModule } from '@ngrx/store';
 import { WritingComponent } from './writing.component';
 import { CurrentWritingComponent } from './current-writing/current-writing.component';
 import { NewWritingComponent } from './new-writing/new-writing.component';
-import { PastWritingsComponent } from './past-writings/past-writings.component';
 import { GridWritingsComponent } from './grid-writings/grid-writings.component';
 import { StopWritingComponent } from './current-writing/stop-writing.component';
+import { LinksComponent } from './links/links.component';
+import { LinkDetailsDialogComponent } from './links/link-details-dialog.component';
+import { MyLinksComponent } from './links/my-links.component';
 import { MaterialModule } from '../../material.module'; 
 import { writingReducer } from '../../reducers/writing.reducer';
 import { categoryReducer } from '../../reducers/category.reducer';
@@ -20,9 +22,11 @@ import { categoryReducer } from '../../reducers/category.reducer';
         WritingComponent,
         CurrentWritingComponent,
         NewWritingComponent,
-        PastWritingsComponent,
         GridWritingsComponent,
-        StopWritingComponent
+        StopWritingComponent,
+        LinksComponent,
+        LinkDetailsDialogComponent,
+        MyLinksComponent
     ],
     imports: [
         CommonModule, 

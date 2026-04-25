@@ -10,7 +10,7 @@ import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { Router  } from '@angular/router';
 import * as fromRoot from '../../../reducers/app.reducer';
 
@@ -163,22 +163,30 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
         this.newsAdd = true;
         
   }
-  onAddUrl( urlForm: FormGroup) {
-        const title = urlForm.value.title || 'Untitled';
-        const url = typeof urlForm.value.url === 'string' ? urlForm.value.url : urlForm.value.url?.value;
-        if (url && url.trim() !== '') {
-          this.news.push(url.trim());
-               this.writingService.addResearchNews(this.category, title, url.trim()).then(
-        () => {
-          console.log('addResearchNews Submission to writing-mods successful');
-          urlForm.reset();   
-        },
-        error => {
-          console.error('addResearchNews Submission to writing-mods failed', error);
-        }
-      );
+  onAddUrl(urlForm: NgForm) {
+    const title = urlForm.value.title || 'Untitled';
+    const url = typeof urlForm.value.url === 'string' ? urlForm.value.url : urlForm.value.url?.value;
+    const trimmedUrl = typeof url === 'string' ? url.trim() : '';
+
+    if (!trimmedUrl) {
+      return;
+    }
+
+    this.writingService.addResearchNews(this.category, title, trimmedUrl).then(
+      () => {
+        console.log('addResearchNews submission successful');
+        this.news.push(trimmedUrl);
+        if (typeof urlForm.resetForm === 'function') {
+          urlForm.resetForm();
+        } else if (typeof (urlForm as any).reset === 'function') {
+          (urlForm as any).reset();
         }
         this.newsAdd = false;
+      },
+      error => {
+        console.error('addResearchNews submission failed', error);
+      }
+    );
   } 
 
   onSubmit(): void {

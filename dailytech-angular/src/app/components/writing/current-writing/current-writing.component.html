@@ -84,22 +84,15 @@
         </button>
         <div *ngIf="newsAdd">
           <form (ngSubmit)="onAddUrl(urlForm)" #urlForm="ngForm" class="add-url-form">
-            <mat-form-field appearance="outline" class="full-width">
-              <input
-                matInput
-                placeholder="Enter URL"
-                name="url"
-                ngModel
-                required>
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="full-width">
-              <input
-                matInput
-                placeholder="Enter Title"
-                name="title"
-                ngModel
-                >
-            </mat-form-field>
+            <label class="add-url-field">
+              <span>URL</span>
+              <input name="url" ngModel required autocomplete="off">
+            </label>
+
+            <label class="add-url-field">
+              <span>Title</span>
+              <input name="title" ngModel autocomplete="off">
+            </label>
                
             <button mat-raised-button color="accent" type="submit" [disabled]="urlForm.invalid">
               Submit URL

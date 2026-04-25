@@ -116,7 +116,7 @@ import { MatTreeModule } from '@angular/material/tree';
     MatRadioModule,
     MatRippleModule,
     MatSliderModule,
-    MatSlideToggleModule,
+    MatSlideToggleModule, 
     MatTreeModule
        ]
 })
