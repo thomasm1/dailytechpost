@@ -1,14 +1,59 @@
+
+:root {
+        --color-primary: rgb(61, 58, 151);
+        --color-secondary: rgb(255, 255, 255);
+        --color-accent: rgb(255, 0, 0);
+
+        --color-primary-light: rgba(61, 58, 151, 0.8);
+        --color-primary-dark: rgba(61, 58, 151, 0.6); 
+        --color-secondary-light: rgba(255, 255, 255, 0.8);
+        --color-secondary-dark: rgba(255, 255, 255, 0.6);
+
+        --color-primary-text: rgb(17, 122, 192);
+        --color-secondary-text: rgb(255, 255, 255);
+
+        --background-color: rgb(240, 240, 240);
+
+        --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+        --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+
+        --line: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+$bp-largest: 75em; // 1200px;   1200/16 = 75%
+$bp-large: 62.5em; // 1000px;   9oo/16 = 62.5%
+$bp-medium: 56.25em; // 900px;    900/16 = 56.25%
+// $bp-small: 50em;   // 800px; 900/16 = 50%
+$bp-smallest: 37.5em; // 600px;    900/16 = 37.5%
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
     box-sizing: inherit;
-}
-
+} 
+ 
 html {
     // This defines what 1rem is
-    font-size: 62.5%;
+    font-size: 62.5%; // 1 rem = 10px, 10/16 = 62.5%
+
+    box-sizing: border-box;
+
+   @media only screen and (max-width: $bp-large) {
+        font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        font-size: 43.75%; // 1 rem = 7px, 7/16 = 43.75%
+    }
 }
 
 body {

@@ -1,11 +1,4 @@
-.add-link-form {
-  display: grid;
-  grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.4fr) minmax(170px, 0.9fr) auto;
-  gap: 10px;
-  align-items: end;
-  max-width: 980px;
-  margin: 0 0 18px;
-}
+ 
 
 .link {
   padding: 0 12px;
@@ -69,7 +62,7 @@
     font-size: 0.82rem;
   }
 
-  @media (max-width: 600px) {
+  @media only screen and  (max-width: 600px) {// $bp-smallest) {
     & {
       padding: 0 12px 24px;
       display: flex;
@@ -81,7 +74,7 @@
       min-height: 48px;
     }
 
-    &-count {
+    &-count { 
       display: none;
     }
 
@@ -224,7 +217,7 @@
   background: rgba(143, 215, 255, 0.34);
 }
 
-@media (max-width: 600px) {
+@media only screen and  (max-width: 600px) {// $bp-smallest) {
 
   .add-link-form {
     grid-template-columns: 1fr;
