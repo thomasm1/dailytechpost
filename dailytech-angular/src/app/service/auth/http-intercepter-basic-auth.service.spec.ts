@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 
 import { HttpIntercepterBasicAuthService } from './http-intercepter-basic-auth.service';
 import { AwsAuthenticationService } from './aws-authentication.service';
+import { environment } from '../../../environments/environment';
 
 describe('HttpIntercepterBasicAuthService', () => {
   let service: HttpIntercepterBasicAuthService;
@@ -42,6 +43,33 @@ describe('HttpIntercepterBasicAuthService', () => {
     const handledRequest = next.handle.calls.mostRecent().args[0] as HttpRequest<any>;
     expect(handledRequest.headers.get('Authorization')).toBe('Bearer firebase-token');
     expect(handledRequest.headers.get('Accept')).toBe('application/json');
+  });
+
+  it('should attach the bearer token to the configured DailyTech API URL', () => {
+    awsAuthService.getAuthenticatedToken.and.returnValue('Bearer firebase-token');
+    awsAuthService.getAuthenticatedUser.and.returnValue('writer@example.com');
+    const request = new HttpRequest('GET', `${environment.API_URL}/news/me/category/10`);
+    const next = jasmine.createSpyObj<HttpHandler>('HttpHandler', ['handle']);
+    next.handle.and.returnValue(of({} as any));
+
+    service.intercept(request, next);
+
+    const handledRequest = next.handle.calls.mostRecent().args[0] as HttpRequest<any>;
+    expect(handledRequest.headers.get('Authorization')).toBe('Bearer firebase-token');
+  });
+
+  it('should not attach auth headers to NYT API requests', () => {
+    awsAuthService.getAuthenticatedToken.and.returnValue('Bearer firebase-token');
+    awsAuthService.getAuthenticatedUser.and.returnValue('writer@example.com');
+    const request = new HttpRequest('GET', `${environment.apiUrlNYT}/topstories/v2/technology.json`);
+    const next = jasmine.createSpyObj<HttpHandler>('HttpHandler', ['handle']);
+    next.handle.and.returnValue(of({} as any));
+
+    service.intercept(request, next);
+
+    const handledRequest = next.handle.calls.mostRecent().args[0] as HttpRequest<any>;
+    expect(handledRequest.headers.get('Authorization')).toBeNull();
+    expect(handledRequest.headers.get('Accept')).toBeNull();
   });
 
   it('should not overwrite an existing authorization header', () => {

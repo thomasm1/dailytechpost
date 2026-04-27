@@ -69,6 +69,57 @@ describe('MyLinksComponent', () => {
       value: {
         categoryId: '10',
         title: 'Example',
+        url: 'https://example.com',
+        privateLink: true
+      },
+      resetForm: jasmine.createSpy('resetForm')
+    } as any;
+    writingService.addResearchNewsForCategory.and.returnValue(Promise.resolve({} as any));
+
+    fixture.detectChanges();
+    component.onAddLink(form);
+    await Promise.resolve();
+
+    expect(writingService.addResearchNewsForCategory).toHaveBeenCalledWith(
+      categories[0],
+      'Example',
+      'https://example.com',
+      false
+    );
+    expect(form.resetForm).toHaveBeenCalled();
+    expect(component.isSaving).toBeFalse();
+  });
+
+  it('should match category ids when Firestore returns them as numbers', async () => {
+    const numericCategory = { cat3: 'Web Dev Affairs', categoryId: 10, durationGoal: 15 } as any;
+    const form = {
+      value: {
+        categoryId: '10',
+        title: 'Example',
+        url: 'https://example.com',
+        privateLink: true
+      },
+      resetForm: jasmine.createSpy('resetForm')
+    } as any;
+    writingService.addResearchNewsForCategory.and.returnValue(Promise.resolve({} as any));
+    component.categoryMods = [numericCategory];
+
+    component.onAddLink(form);
+    await Promise.resolve();
+
+    expect(writingService.addResearchNewsForCategory).toHaveBeenCalledWith(
+      numericCategory,
+      'Example',
+      'https://example.com',
+      false
+    );
+  });
+
+  it('should add a public link unless private is checked', async () => {
+    const form = {
+      value: {
+        categoryId: '10',
+        title: 'Example',
         url: 'https://example.com'
       },
       resetForm: jasmine.createSpy('resetForm')
@@ -82,9 +133,8 @@ describe('MyLinksComponent', () => {
     expect(writingService.addResearchNewsForCategory).toHaveBeenCalledWith(
       categories[0],
       'Example',
-      'https://example.com'
+      'https://example.com',
+      true
     );
-    expect(form.resetForm).toHaveBeenCalled();
-    expect(component.isSaving).toBeFalse();
   });
 });

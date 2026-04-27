@@ -35,11 +35,17 @@ describe('CurrentWritingComponent', () => {
       'hardQuitWriting',
       'addFullDataToDatabase',
       'addResearchNews',
+      'getResearchNewsForCategoryName',
       'completeWriting',
       'cancelWriting'
     ]);
     mockWritingService.addFullDataToDatabase.and.returnValue(Promise.resolve());
     mockWritingService.addResearchNews.and.returnValue(Promise.resolve({} as any));
+    mockWritingService.getResearchNewsForCategoryName.and.callFake((category: string, privateOnly?: boolean) =>
+      of(privateOnly
+        ? [{ id: 'private-1', title: 'Private link', url: 'https://example.com/private', categoryId: 10 }]
+        : [{ id: 'public-1', title: 'Public link', url: 'https://example.com/public', categoryId: 10 }] as any)
+    );
 
     mockDialog = jasmine.createSpyObj('MatDialog', ['open']);
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
@@ -89,6 +95,8 @@ describe('CurrentWritingComponent', () => {
     expect(component.writingForm).toBeTruthy();
     expect(component.category).toBe('Web Dev Affairs');
     expect(component.news).toEqual(['https://example.com/a']);
+    expect(component.publicResearchUrls[0].url).toBe('https://example.com/public');
+    expect(component.privateResearchUrls[0].url).toBe('https://example.com/private');
     expect(component.goalMinutes).toBeGreaterThan(0);
     expect(component.timer).toBeDefined();
   });
@@ -229,13 +237,39 @@ describe('CurrentWritingComponent', () => {
     component.onAddUrl(mockUrlForm);
     tick();
 
-    expect(component.news).toEqual(['https://example.com/new']);
     expect(mockWritingService.addResearchNews).toHaveBeenCalledWith(
       'Web Dev Affairs',
       'Example title',
-      'https://example.com/new'
+      'https://example.com/new',
+      true
     );
+    expect(mockWritingService.getResearchNewsForCategoryName).toHaveBeenCalledWith('Web Dev Affairs');
+    expect(mockWritingService.getResearchNewsForCategoryName).toHaveBeenCalledWith('Web Dev Affairs', true);
     expect(mockUrlForm.resetForm).toHaveBeenCalled();
+    flush();
+  }));
+
+  it('should add a private URL when private is checked', fakeAsync(() => {
+    component.news = [];
+    component.category = 'Web Dev Affairs';
+    const mockUrlForm = {
+      value: {
+        title: 'Private example',
+        url: 'https://example.com/private',
+        privateLink: true
+      },
+      resetForm: jasmine.createSpy('resetForm')
+    } as any;
+
+    component.onAddUrl(mockUrlForm);
+    tick();
+
+    expect(mockWritingService.addResearchNews).toHaveBeenCalledWith(
+      'Web Dev Affairs',
+      'Private example',
+      'https://example.com/private',
+      false
+    );
     flush();
   }));
 });

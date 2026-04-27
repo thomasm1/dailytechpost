@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { firstValueFrom, lastValueFrom, of, Observable, Subscription, throwError } from 'rxjs';
-import { catchError, filter, map, take, timeout } from 'rxjs/operators';
+import { firstValueFrom, from, lastValueFrom, of, Observable, Subscription, throwError } from 'rxjs';
+import { catchError, filter, map, switchMap, take, timeout } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import { WritingMod } from '../../models/writing-mods.model';
@@ -32,35 +32,47 @@ export class WritingService {
   urlsSoc = ['https://www.wired.com/', 'https://www.sociologylens.net/article-types/opinion/digital-sociology-reinvention-social-research-noortje-marres-digital-technology-contributes-sociology/18108'];
   urlsQuantum = ['https://www.wired.com/tag/quantum-computing/', 'https://phys.org/physics-news/quantum-physics/'];
   private readonly DEFAULT_DURATION_GOAL_MINUTES = 15;
+  private readonly categoryIdsByName: Record<string, CategoryMod['categoryId']> = {
+    'A.I.Now.': '10',
+    'Web Dev Affairs': '11',
+    'Sociology Tomorrow!': '12',
+    'Quantum Data': '13',
+    'Musing Blockchain': '14'
+  };
 
   private defaultWritingMods: WritingMod[] = [  /// Functionality for non-logged-in users
     {
       id: '0a',
       cat3: 'Web Dev Affairs',
+      categoryId: '11',
       news: this.urlsWebDev,
       durationGoal: this.DEFAULT_DURATION_GOAL_MINUTES, wordCount: 0, date: new Date(), state: null
     },
     {
       id: '1a',
       cat3: 'Quantum Data',
+      categoryId: '13',
       news: this.urlsQuantum,
       durationGoal: this.DEFAULT_DURATION_GOAL_MINUTES, wordCount: 0, date: new Date(), state: null
     },
     {
       id: '2a',
       cat3: 'Musing Blockchain',
+      categoryId: '14',
       news: this.urlsBlockchain,
       durationGoal: this.DEFAULT_DURATION_GOAL_MINUTES, wordCount: 0, date: new Date(), state: null
     },
     {
       id: '3a',
       cat3: 'Sociology Tomorrow!',
+      categoryId: '12',
       news: this.urlsSoc,
       durationGoal: this.DEFAULT_DURATION_GOAL_MINUTES, wordCount: 0, date: new Date(), state: null
     },
     {
       id: '4a',
       cat3: 'A.I.Now.',
+      categoryId: '10',
       news: this.urlsAI,
       durationGoal: this.DEFAULT_DURATION_GOAL_MINUTES, wordCount: 0, date: new Date(), state: null
     },
@@ -88,13 +100,13 @@ export class WritingService {
   }
 
   private getDefaultCategoryMods(): CategoryMod[] {
-    return this.defaultWritingMods.map((writingMod, index) => ({
+    return this.defaultWritingMods.map((writingMod) => ({
       id: writingMod.id,
       cat3: writingMod.cat3,
       name: writingMod.cat3,
       news: writingMod.news,
       durationGoal: writingMod.durationGoal!,
-      categoryId: `${10 + index}` as CategoryMod['categoryId'],
+      categoryId: writingMod.categoryId as CategoryMod['categoryId'],
       description: `${writingMod.cat3} starter topic`,
     }));
   }
@@ -110,11 +122,11 @@ export class WritingService {
               id: doc.payload.doc.id,
               // spread operator pulling objects out of payload, and adding to object returned
               cat3: data['cat3'],
-              news: data['news'], 
+              categoryId: data['categoryId'],
+              news: data['news'],
               description: data['description'],
               name: data['name'],
-              durationGoal: data['durationGoal'],
-              categoryId: data['categoryId'],
+              durationGoal: data['durationGoal'], 
             };  
           });
         })).subscribe((categoryModsArr: CategoryMod[]) => {
@@ -181,7 +193,7 @@ export class WritingService {
       }
     });
   }
-  addResearchNews(categoryName: string, title: string, url: string): Promise<NewsMod> {
+  addResearchNews(categoryName: string, title: string, url: string, publicLink = true): Promise<NewsMod> {
     const trimmedUrl = url.trim();
     const trimmedTitle = title.trim();
 
@@ -189,7 +201,7 @@ export class WritingService {
       this.resolveCategoryForNews(categoryName),
       this.getFirebaseAuthHeader()
     ]).then(([category, headers]) => {
-      return this.saveResearchNewsForCategory(category, trimmedTitle, trimmedUrl, headers);
+      return this.saveResearchNewsForCategory(category, trimmedTitle, trimmedUrl, publicLink, headers);
     }).then((savedNews) => {
       this.snackBar.open('Research URL saved', undefined, { duration: 3000 });
       return savedNews;
@@ -202,12 +214,12 @@ export class WritingService {
     });
   }
 
-  addResearchNewsForCategory(category: CategoryMod, title: string, url: string): Promise<NewsMod> {
+  addResearchNewsForCategory(category: CategoryMod, title: string, url: string, publicLink = true): Promise<NewsMod> {
     const trimmedUrl = url.trim();
     const trimmedTitle = title.trim();
 
     return this.getFirebaseAuthHeader().then((headers) =>
-      this.saveResearchNewsForCategory(category, trimmedTitle, trimmedUrl, headers)
+      this.saveResearchNewsForCategory(category, trimmedTitle, trimmedUrl, publicLink, headers)
     ).then((savedNews) => {
       this.snackBar.open('Research URL saved', undefined, { duration: 3000 });
       return savedNews;
@@ -221,7 +233,7 @@ export class WritingService {
   }
 
   getResearchNewsByCategory(categoryId: number): Observable<NewsMod[]> {
-    return this.http.get<NewsMod[]>(`${this.newsApiUrl}/category/${categoryId}`).pipe(
+    return this.http.get<NewsMod[]>(`${this.newsApiUrl}/category/public/${categoryId}`).pipe(
       catchError((error) => {
         console.error(`Error loading research URLs for category ${categoryId}:`, error);
         return throwError(() => error);
@@ -234,6 +246,17 @@ export class WritingService {
       catchError((error) => {
         console.error(`Error loading private research URLs for category ${categoryId}:`, error);
         return throwError(() => error);
+      })
+    );
+  }
+
+  getResearchNewsForCategoryName(categoryName: string, privateOnly = false): Observable<NewsMod[]> {
+    return from(this.resolveCategoryForNews(categoryName)).pipe(
+      switchMap((category) => {
+        const categoryId = Number(category.categoryId);
+        return privateOnly
+          ? this.getMyResearchNewsByCategory(categoryId)
+          : this.getResearchNewsByCategory(categoryId);
       })
     );
   }
@@ -346,17 +369,23 @@ export class WritingService {
           if (!matchedCategory) {
             throw new Error(`No category found for ${categoryName}`);
           }
-          return matchedCategory;
+          const matchedCategoryName = matchedCategory.cat3 || matchedCategory.name || categoryName;
+          return {
+            ...matchedCategory,
+            categoryId: this.categoryIdsByName[matchedCategoryName] || matchedCategory.categoryId
+          };
         })
       )
     );
   }
 
-  private saveResearchNewsForCategory(category: CategoryMod, title: string, url: string, headers: HttpHeaders): Promise<NewsMod> {
+  private saveResearchNewsForCategory(category: CategoryMod, title: string, url: string, publicLink: boolean, headers: HttpHeaders): Promise<NewsMod> {
+    const categoryName = category.cat3 || category.name || '';
     const payload = {
       title: title || url,
       url,
-      categoryId: Number(category.categoryId)
+      categoryId: Number(this.categoryIdsByName[categoryName] || category.categoryId),
+      publicLink
     };
     return lastValueFrom(this.http.post<NewsMod>(this.newsApiUrl, payload, { headers }));
   }

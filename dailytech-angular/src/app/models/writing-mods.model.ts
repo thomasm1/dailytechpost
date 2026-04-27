@@ -2,6 +2,7 @@ export interface WritingMod {
     id?: string; 
     cat3?: 'Web Dev Affairs' | 'Musing Blockchain' | 'A.I.Now.' | 'Sociology Tomorrow!' | 'Quantum Data' ,
     category?: 'Web Dev Affairs' | 'Musing Blockchain' | 'A.I.Now.' | 'Sociology Tomorrow!' | 'Quantum Data' ,
+    categoryId?: '10' | '11' | '12' | '13' | '14';
     news?: string[]; 
     duration?: number;
     durationGoal?: number;

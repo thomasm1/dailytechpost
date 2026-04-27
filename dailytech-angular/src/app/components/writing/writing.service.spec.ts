@@ -76,7 +76,7 @@ describe('WritingService', () => {
       actualResponse = response;
     });
 
-    const request = httpMock.expectOne(`${environment.API_URL}/news/category/10`);
+    const request = httpMock.expectOne(`${environment.API_URL}/news/category/public/10`);
     expect(request.request.method).toBe('GET');
     request.flush(mockResponse);
 
@@ -112,7 +112,8 @@ describe('WritingService', () => {
     expect(request.request.body).toEqual({
       title: 'Example',
       url: 'https://example.com',
-      categoryId: 10
+      categoryId: 11,
+      publicLink: true
     });
     request.flush({ id: '52', title: 'Example', url: 'https://example.com', categoryId: 10 });
 
@@ -135,9 +136,40 @@ describe('WritingService', () => {
     expect(request.request.body).toEqual({
       title: 'Quantum',
       url: 'https://example.com/quantum',
-      categoryId: 11
+      categoryId: 13,
+      publicLink: true
     });
     request.flush({ id: '53', title: 'Quantum', url: 'https://example.com/quantum', categoryId: 11 });
+
+    await expectAsync(savePromise).toBeResolved();
+  });
+
+  it('should save private research urls when requested', async () => {
+    authService.getAuthenticatedToken.and.returnValue('Bearer session-token');
+
+    const savePromise = service.addResearchNewsForCategory(
+      { cat3: 'Quantum Data', categoryId: '11', durationGoal: 15 },
+      'Private Quantum',
+      'https://example.com/private-quantum',
+      false
+    );
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
+    const request = httpMock.expectOne(`${environment.API_URL}/news`);
+    expect(request.request.method).toBe('POST');
+    expect(request.request.body).toEqual({
+      title: 'Private Quantum',
+      url: 'https://example.com/private-quantum',
+      categoryId: 13,
+      publicLink: false
+    });
+    request.flush({
+      id: '54',
+      title: 'Private Quantum',
+      url: 'https://example.com/private-quantum',
+      categoryId: 11,
+      publicLink: false
+    });
 
     await expectAsync(savePromise).toBeResolved();
   });

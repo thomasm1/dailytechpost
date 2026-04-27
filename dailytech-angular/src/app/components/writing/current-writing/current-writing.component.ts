@@ -29,6 +29,8 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   goalMinutes = 15;
   showClock = true;
   news!: string [];
+  publicResearchUrls: NewsMod[] = [];
+  privateResearchUrls: NewsMod[] = [];
   writingForm!: FormGroup;
   writingMods$!: Observable<WritingMod[]>;
   newsMods$!: Observable<NewsMod[]>;
@@ -86,9 +88,36 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
       // this.news = this.writingService.getWritingExercise().news;
       this.news = writingMod.news || [];
       this.category = writingMod.cat3 || '';
+      this.loadResearchUrls();
       this.goalMinutes = this.resolveGoalMinutes(writingMod.durationGoal);
       this.startStopwatch();
     })
+  }
+
+  private loadResearchUrls(): void {
+    if (!this.category) {
+      this.publicResearchUrls = [];
+      this.privateResearchUrls = [];
+      return;
+    }
+
+    this.writingService.getResearchNewsForCategoryName(this.category).subscribe({
+      next: (items) => {
+        this.publicResearchUrls = items || [];
+      },
+      error: () => {
+        this.publicResearchUrls = [];
+      }
+    });
+
+    this.writingService.getResearchNewsForCategoryName(this.category, true).subscribe({
+      next: (items) => {
+        this.privateResearchUrls = items || [];
+      },
+      error: () => {
+        this.privateResearchUrls = [];
+      }
+    });
   }
 
   private resolveGoalMinutes(durationGoal?: number): number {
@@ -167,15 +196,16 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     const title = urlForm.value.title || 'Untitled';
     const url = typeof urlForm.value.url === 'string' ? urlForm.value.url : urlForm.value.url?.value;
     const trimmedUrl = typeof url === 'string' ? url.trim() : '';
+    const publicLink = urlForm.value.privateLink !== true;
 
     if (!trimmedUrl) {
       return;
     }
 
-    this.writingService.addResearchNews(this.category, title, trimmedUrl).then(
+    this.writingService.addResearchNews(this.category, title, trimmedUrl, publicLink).then(
       () => {
         console.log('addResearchNews submission successful');
-        this.news.push(trimmedUrl);
+        this.loadResearchUrls();
         if (typeof urlForm.resetForm === 'function') {
           urlForm.resetForm();
         } else if (typeof (urlForm as any).reset === 'function') {

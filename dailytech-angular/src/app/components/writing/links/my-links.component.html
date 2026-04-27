@@ -1,38 +1,44 @@
-<section class="links-page">
-  <form class="add-link-form" #linkForm="ngForm" (ngSubmit)="onAddLink(linkForm)">
-   
-    <label class="link-field">
-      <span>URL</span>
-      <input name="url" ngModel required autocomplete="off" />
-    </label>
+<section class="link">
+  <div class="link-form">
+    <form class="add-link-form" #linkForm="ngForm" (ngSubmit)="onAddLink(linkForm)">
+      <label class="link-field">
+        <span>URL</span>
+        <input type="url" name="url" ngModel required autocomplete="off" />
+      </label>
 
-     <label class="link-field">
-      <span>Title</span>
-      <input name="title" ngModel autocomplete="off" />
-    </label>
-    
-    <label class="link-field">
-      <span>Category</span>
-      <select name="categoryId" ngModel required>
-        <option value="" disabled selected></option>
-        <option *ngFor="let category of categoryMods$ | async" [value]="category.categoryId">
-          {{ category.cat3 || category.name }}
-        </option>
-      </select>
-    </label>
+      <label class="link-field">
+        <span>Title</span>
+        <input name="title" ngModel autocomplete="off" />
+      </label>
 
-    <button
-      type="submit"
-      class="add-link-button"
-      [disabled]="linkForm.invalid || isSaving"
-    >
-      <mat-icon>add_link</mat-icon>
-      <span>{{ isSaving ? 'Saving' : 'Add Link' }}</span>
-    </button>
-  </form>
+      <label class="link-field">
+        <span>Category</span>
+        <select name="categoryId" ngModel required>
+          <option value="" disabled selected></option>
+          <option *ngFor="let category of categoryMods$ | async" [value]="category.categoryId">
+            {{ category.cat3 || category.name }}
+          </option>
+        </select>
+      </label>
 
-  <div class="links-shell">
-    <div class="links-tree">
+      <label class="private-link-toggle">
+        <input type="checkbox" name="privateLink" ngModel />
+        <span>Private</span>
+      </label>
+
+      <button
+        type="submit"
+        class="add-link-button"
+        [disabled]="linkForm.invalid || isSaving"
+      >
+        <mat-icon>add_link</mat-icon>
+        <span>{{ isSaving ? 'Saving' : 'Add Link' }}</span>
+      </button>
+    </form>
+  </div>
+
+  <div class="link-shell">
+    <div class="link-tree">
       <div class="tree-root">
         <mat-icon>account_tree</mat-icon>
         <span>My Links</span>
@@ -49,7 +55,6 @@
           <span class="node-connector"></span>
           <mat-icon class="node-icon">chevron_right</mat-icon>
           <span class="link-name">{{ category.cat3 || category.name }}</span>
-          <span class="link-count">Private URLs</span>
         </button>
       </div>
     </div>

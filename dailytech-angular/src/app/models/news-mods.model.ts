@@ -3,5 +3,6 @@ export interface NewsMod {
     title?: string;
     url?: string;
     categoryId?: number | '10' | '11' | '12' | '13' | '14';
+    publicLink?: boolean;
 
 }
