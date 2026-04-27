@@ -31,3 +31,6 @@ databaseChangeLog:
       file: changes/003-add-news-user-ownership.sql
       relativeToChangelogFile: true
 
+  - include:
+      file: changes/004-add-news-public-link.sql
+      relativeToChangelogFile: true

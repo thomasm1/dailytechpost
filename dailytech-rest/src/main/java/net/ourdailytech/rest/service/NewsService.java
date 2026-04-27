@@ -17,6 +17,8 @@ public interface NewsService {
 
   List<NewsDto> getAllNewsByCategory(Long categoryId);
 
+  List<NewsDto> getAllPublicNewsByCategory(Long categoryId);
+
   List<NewsDto> getAllNewsByUser(String userEmail);
 
   List<NewsDto> getAllNewsByCategoryAndUser(Long categoryId, String userEmail);

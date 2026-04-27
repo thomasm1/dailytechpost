@@ -27,6 +27,10 @@ public class News extends AbstractDomainClass  {
     @Column(name = "url")
     private String url;
 
+    @Builder.Default
+    @Column(name = "public_link")
+    private Boolean publicLink = true;
+
     // Many news items can belong to one Category
     @JsonIgnore // ✅ Prevents infinite recursion when serializing JSON
       @ToString.Exclude

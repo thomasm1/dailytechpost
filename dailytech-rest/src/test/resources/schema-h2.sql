@@ -136,6 +136,7 @@ CREATE TABLE IF NOT EXISTS dailytech.news
     id           BIGINT AUTO_INCREMENT NOT NULL,
     title        VARCHAR(255) NULL,
     url          VARCHAR(255) NULL,
+    public_link  BOOLEAN      NOT NULL DEFAULT TRUE,
     category_id  BIGINT       NULL,
     version      INT          DEFAULT 1,
     time_created DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,

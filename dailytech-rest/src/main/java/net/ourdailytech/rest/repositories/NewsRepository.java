@@ -14,6 +14,8 @@ public interface NewsRepository extends JpaRepository<News, Long> {
 
   List<News> findByCategoryId(Long categoryId);
 
+  List<News> findByCategoryIdAndPublicLinkTrueOrCategoryIdAndPublicLinkIsNull(Long publicCategoryId, Long legacyCategoryId);
+
   List<News> findByUserEmail(String email);
 
   List<News> findByCategoryIdAndUserEmail(Long categoryId, String email);

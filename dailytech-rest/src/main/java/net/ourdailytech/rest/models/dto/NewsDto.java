@@ -23,4 +23,5 @@ public class NewsDto implements Serializable {
     String title;
     String url;
     Long categoryId;
+    Boolean publicLink;
 }

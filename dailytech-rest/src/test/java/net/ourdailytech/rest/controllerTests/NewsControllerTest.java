@@ -96,6 +96,16 @@ class NewsControllerTest {
   }
 
   @Test
+  void testGetPublicNewsByCategory_ShouldReturnOk() throws Exception {
+    NewsDto newsDto = getNewsDto();
+    when(newsServiceImpl.getAllPublicNewsByCategory(1L)).thenReturn(List.of(newsDto));
+
+    mockMvc.perform(get("/api/news/category/public/1"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$[0].id").value(1L));
+  }
+
+  @Test
   void testUpdateNews_ShouldReturnOk() throws Exception {
     NewsDto newsDto = getNewsDto();
     when(newsServiceImpl.updateNews(any(NewsDto.class), any(String.class), any(Boolean.class))).thenReturn(newsDto);

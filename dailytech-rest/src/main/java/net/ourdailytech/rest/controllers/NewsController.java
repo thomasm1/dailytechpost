@@ -56,6 +56,13 @@ public class NewsController {
     return ResponseEntity.ok(newsServiceImpl.getAllNewsByCategory(categoryId));
   }
 
+  @Operation(summary = "Get public news items by category id")
+  @ApiResponse(responseCode = "200", description = "Public news items found")
+  @GetMapping("/category/public/{categoryId}")
+  public ResponseEntity<List<NewsDto>> getPublicNewsListByCategory(@PathVariable("categoryId") Long categoryId) {
+    return ResponseEntity.ok(newsServiceImpl.getAllPublicNewsByCategory(categoryId));
+  }
+
   @Operation(summary = "Get news items for the current user")
   @ApiResponse(responseCode = "200", description = "Current user news items found")
   @SecurityRequirement(name = "Bearer Authentication")

@@ -39,6 +39,9 @@ public class NewsServiceImpl implements NewsService {
   public NewsDto createNews(NewsDto newsDto, String userEmail) {
     News newsEntity = newsMapper.toEntity(newsDto);
     newsEntity.setUser(getRequiredUser(userEmail));
+    if (newsEntity.getPublicLink() == null) {
+      newsEntity.setPublicLink(true);
+    }
     if (newsDto.getCategoryId() != null) {
       newsEntity.setCategory(getRequiredCategory(newsDto.getCategoryId()));
     }
@@ -68,6 +71,14 @@ public class NewsServiceImpl implements NewsService {
   @Override
   public List<NewsDto> getAllNewsByCategory(Long categoryId) {
     return newsRepository.findByCategoryId(categoryId)
+        .stream()
+        .map(newsMapper::toDto)
+        .collect(Collectors.toList()); 
+  }
+
+  @Override
+  public List<NewsDto> getAllPublicNewsByCategory(Long categoryId) {
+    return newsRepository.findByCategoryIdAndPublicLinkTrueOrCategoryIdAndPublicLinkIsNull(categoryId, categoryId)
         .stream()
         .map(newsMapper::toDto)
         .collect(Collectors.toList()); 
