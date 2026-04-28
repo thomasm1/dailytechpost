@@ -438,3 +438,14 @@ a.trans-back {
 .border {
     border: 1px solid white;
 }
+
+/* Research URL tooltip */
+.url-tooltip.mat-tooltip,
+.url-tooltip.mdc-tooltip__surface {
+  background-color: #09173cb4 !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  font-size: 0.82rem;
+  padding: 6px 10px;
+}

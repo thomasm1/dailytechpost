@@ -192,6 +192,11 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
         this.newsAdd = true;
         
   }
+
+  closeAddUrlModal(): void {
+    this.newsAdd = false;
+  }
+
   onAddUrl(urlForm: NgForm) {
     const title = urlForm.value.title || 'Untitled';
     const url = typeof urlForm.value.url === 'string' ? urlForm.value.url : urlForm.value.url?.value;

@@ -56,7 +56,7 @@
                 <span class="progress-text-small" >{{ getElapsedDisplay() }} / {{ getGoalDisplay() }}</span>
               </div>
               <button mat-raised-button color="warn" type="button" (click)="postCancel()">
-                Quit Writing
+                Save Work/Quit Writing
               </button>
          
             </div>
@@ -70,62 +70,87 @@
 
     <!-- Resources Section -->
     <mat-card class="resources-card">
-      <mat-card-header>
-        <mat-card-title>Resources</mat-card-title>
+      <mat-card-header class="resources-header">
+        <div class="resources-header-row">
+          <mat-card-title>Category: <b>{{ category }}</b></mat-card-title>
+          <button type="button" class="add-link-button" (click)="addUrl()">
+            <mat-icon>add_link</mat-icon>
+            <span>Add</span>
+          </button>
+        </div>
       </mat-card-header>
       <mat-card-content>
-        <mat-tab-group class="research-tabs">
-          <mat-tab label="Public">
-            <mat-list>
-              <mat-list-item *ngFor="let item of publicResearchUrls">
-                <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer">
-                  {{ item.title || item.url }}
-                </a>
-              </mat-list-item>
-            </mat-list>
-            <p *ngIf="!publicResearchUrls.length" class="research-empty">
-              No public links yet for this category.
-            </p>
-          </mat-tab>
+        <section class="research-link">
+          <div class="research-link-shell">
+         
 
-          <mat-tab label="Private">
-            <mat-list>
-              <mat-list-item *ngFor="let item of privateResearchUrls">
-                <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer">
-                  {{ item.title || item.url }}
-                </a>
-              </mat-list-item>
-            </mat-list>
-            <p *ngIf="!privateResearchUrls.length" class="research-empty">
-              No private links yet for this category.
-            </p>
-          </mat-tab>
-        </mat-tab-group>
+            <mat-tab-group class="research-tabs">
+              <mat-tab label="Public">
+                <mat-list class="research-url-list">
+                  <mat-list-item *ngFor="let item of publicResearchUrls">
+                    <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer" [matTooltip]="item.url" matTooltipPosition="above" matTooltipClass="url-tooltip">
+                      <span class="node-connector"></span>
+                      <mat-icon class="node-icon">chevron_right</mat-icon>
+                      <span class="research-url-title">{{ item.title || item.url }}</span>
+                    </a>
+                  </mat-list-item>
+                </mat-list>
+                <p *ngIf="!publicResearchUrls.length" class="research-empty">
+                  No public links yet for this category.
+                </p>
+              </mat-tab>
 
-        <button mat-stroked-button color="primary" (click)="addUrl()">
-          <mat-icon>add</mat-icon> Add Research
-        </button>
-        <div *ngIf="newsAdd">
-          <form (ngSubmit)="onAddUrl(urlForm)" #urlForm="ngForm" class="add-url-form">
-            <label class="add-url-field">
-              <span>URL</span>
-              <input name="url" ngModel required autocomplete="off">
-            </label>
+              <mat-tab label="Private">
+                <mat-list class="research-url-list">
+                  <mat-list-item *ngFor="let item of privateResearchUrls">
+                    <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer" [matTooltip]="item.url" matTooltipPosition="above" matTooltipClass="url-tooltip">
+                      <span class="node-connector"></span>
+                      <mat-icon class="node-icon">chevron_right</mat-icon>
+                      <span class="research-url-title">{{ item.title || item.url }}</span>
+                    </a>
+                  </mat-list-item>
+                </mat-list>
+                <p *ngIf="!privateResearchUrls.length" class="research-empty">
+                  No private links yet for this category.
+                </p>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </section>
 
-            <label class="add-url-field">
-              <span>Title</span>
-              <input name="title" ngModel autocomplete="off">
-            </label>
+        <div class="research-modal-overlay" *ngIf="newsAdd" (click)="closeAddUrlModal()">
+          <div class="research-modal" (click)="$event.stopPropagation()">
+            <h3 class="research-modal-title">Add Research Link</h3>
+            <form
+              (ngSubmit)="onAddUrl(urlForm)"
+              #urlForm="ngForm"
+              class="add-url-form">
+              <label class="add-url-field">
+                <span>URL</span>
+                <input name="url" ngModel required autocomplete="off">
+              </label>
 
-            <label class="add-url-private-toggle">
-              <input type="checkbox" name="privateLink" ngModel>
-              <span>Private</span>
-            </label>
-               
-            <button mat-raised-button color="accent" type="submit" [disabled]="urlForm.invalid">
-              Submit URL
-            </button>
-          </form>
+              <label class="add-url-field">
+                <span>Title</span>
+                <input name="title" ngModel autocomplete="off">
+              </label>
+
+              <label class="add-url-private-toggle">
+                <input type="checkbox" name="privateLink" ngModel>
+                <span>Private</span>
+              </label>
+
+              <div class="research-modal-actions">
+                <button class="submit-url-button" type="submit" [disabled]="urlForm.invalid">
+                  <mat-icon>check</mat-icon>
+                  <span>Submit URL</span>
+                </button>
+                <button type="button" class="modal-cancel-button" (click)="closeAddUrlModal()">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </mat-card-content>
     </mat-card>

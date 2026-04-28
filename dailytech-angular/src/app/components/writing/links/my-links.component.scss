@@ -62,7 +62,7 @@
     font-size: 0.82rem;
   }
 
-  @media only screen and  (max-width: 600px) {// $bp-smallest) {
+  @media only screen and  (max-width: 600px) {// $bp-small) {
     & {
       padding: 0 12px 24px;
       display: flex;
@@ -217,7 +217,7 @@
   background: rgba(143, 215, 255, 0.34);
 }
 
-@media only screen and  (max-width: 600px) {// $bp-smallest) {
+@media only screen and  (max-width: 600px) {  // $bp-small) {
 
   .add-link-form {
     grid-template-columns: 1fr;
