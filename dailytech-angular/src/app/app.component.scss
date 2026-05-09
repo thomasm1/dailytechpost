@@ -14,3 +14,19 @@ mat-sidenav {
 mat-sidenav {
     width: 250px;
 }
+
+.app-loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 15, 48, 0.28);
+    pointer-events: none;
+}
+
+// GLOBAL SPINNER       globalSpinnerDiameter 
+.app-loading-overlay mat-spinner ::ng-deep circle {
+  stroke: #3652efa8;
+}

@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 
 import { BlogComponent } from './blog.component';
 import { BlogsService } from '../blogs.service';
+import { UiService } from '../../../service/ui.service';
 
 @Pipe({ name: 'safeHtml' })
 class MockSafeHtmlPipe implements PipeTransform {
@@ -34,7 +35,11 @@ describe('BlogComponent', () => {
           }
         },
         { provide: Router, useValue: mockRouter },
-        { provide: BlogsService, useValue: mockBlogsService }
+        { provide: BlogsService, useValue: mockBlogsService },
+        {
+          provide: UiService,
+          useValue: jasmine.createSpyObj<UiService>('UiService', ['startLoading', 'stopLoading']),
+        }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })

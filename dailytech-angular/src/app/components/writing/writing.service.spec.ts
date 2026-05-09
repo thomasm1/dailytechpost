@@ -40,6 +40,8 @@ describe('WritingService', () => {
           provide: UiService,
           useValue: {
             loadingStateChanged: { next: jasmine.createSpy('next') },
+            startLoading: jasmine.createSpy('startLoading'),
+            stopLoading: jasmine.createSpy('stopLoading'),
             showSnackBar: jasmine.createSpy('showSnackBar'),
           },
         },

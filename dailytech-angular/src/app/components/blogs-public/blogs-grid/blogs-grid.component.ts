@@ -1,25 +1,39 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; // Added ChangeDetectorRef import
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, UntypedFormArray } from '@angular/forms';
 import { BlogsService } from '../blogs.service';
 import { StatisticsService } from '../Statistics.service';
 import { Blog, CategoryStat, BlogStatistics } from '../../../models/blog.model';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { UiService } from '../../../service/ui.service';
+
+interface BlogGridRow extends Blog {
+  displayTitle: string;
+  preview: string;
+  displayWordCount: number;
+}
 
 @Component({
   selector: 'app-blogs-grid',
   templateUrl: './blogs-grid.component.html',
   styleUrls: ['./blogs-grid.component.scss']
 })
-export class BlogsGridComponent implements OnInit {
+export class BlogsGridComponent implements OnInit, AfterViewInit, OnDestroy {
   categories: string[] = [];
-  blogs: Blog[] = [];
-  allBlogs: Blog[] = [];
+  blogs: BlogGridRow[] = [];
+  allBlogs: BlogGridRow[] = [];
   categoriesForm: UntypedFormGroup;
   fetchBlogsEnabled: boolean = false;
   loading: boolean = true;
+  contentReady: boolean = false;
+  chartReady: boolean = false;
 
   statistics: BlogStatistics | null = null;
   categoryStats: CategoryStat[] = [];
+  private loadTimerId: ReturnType<typeof setTimeout> | null = null;
+  private chartTimerId: ReturnType<typeof setTimeout> | null = null;
+  private blogsSubscription?: Subscription;
 
   // Material Table columns
   categoryColumns: string[] = ['category', 'count', 'avgWordCount'];
@@ -80,6 +94,7 @@ export class BlogsGridComponent implements OnInit {
     private fb: UntypedFormBuilder,
     private blogsService: BlogsService,
     private statisticsService: StatisticsService,
+    private uiService: UiService,
     private cdr: ChangeDetectorRef // Added ChangeDetectorRef injection
   ) {
     this.categoriesForm = this.fb.group({
@@ -88,8 +103,24 @@ export class BlogsGridComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("Loading blogs and statistics from AWS Lambda...");
-    this.loadAllBlogs();
+    console.log("Stats page shell initialized.");
+  }
+
+  ngAfterViewInit(): void {
+    this.loadTimerId = setTimeout(() => {
+      console.log("Loading blogs and statistics from AWS Lambda...");
+      this.loadAllBlogs();
+    }, 0);
+  }
+
+  ngOnDestroy(): void {
+    if (this.loadTimerId) {
+      clearTimeout(this.loadTimerId);
+    }
+    if (this.chartTimerId) {
+      clearTimeout(this.chartTimerId);
+    }
+    this.blogsSubscription?.unsubscribe();
   }
 
 stripHtml(html: string): string {
@@ -99,22 +130,26 @@ stripHtml(html: string): string {
 }
   loadAllBlogs(): void {
     console.log('Calling blogsService.getAllBlogs()...');
-    this.blogsService.getAllBlogs().subscribe({
+    this.uiService.startLoading();
+    this.blogsSubscription = this.blogsService.getAllBlogs().subscribe({
       next: (blogs: Blog[]) => {
         console.log('SUCCESS: Received blogs:', blogs.length);
-        this.allBlogs = blogs;
-        this.blogs = blogs;
+        this.allBlogs = blogs.map(blog => this.toGridRow(blog));
+        this.blogs = this.allBlogs;
 
         // Update statistics service
         this.statisticsService.setBlogs(blogs);
 
         // Subscribe to statistics
-        this.statisticsService.getBlogStatistics().subscribe(stats => {
+        this.statisticsService.getBlogStatistics().pipe(take(1)).subscribe(stats => {
           console.log('Statistics calculated:', stats);
           this.statistics = stats;
           this.calculateLocalStats();
           this.loading = false;
+          this.contentReady = true;
           this.cdr.detectChanges(); // Added: Force change detection to update view
+          this.deferChartRender();
+          this.uiService.stopLoading();
         });
 
         // Extract categories from blogs
@@ -123,6 +158,8 @@ stripHtml(html: string): string {
       error: (err) => {
         console.error('ERROR loading blogs:', err);
         this.loading = false;
+        this.contentReady = true;
+        this.uiService.stopLoading();
         this.cdr.detectChanges(); // Added: Force change detection on error
       }
     });
@@ -176,7 +213,7 @@ stripHtml(html: string): string {
     const statsMap = new Map<string, { count: number, totalWords: number }>();
 
     this.blogs.forEach(blog => {
-      const wordCount = blog.wordCount ||  this.calculateWordCount(blog.post || '');
+      const wordCount = blog.displayWordCount;
       const category = blog.cat3 || 'Uncategorized';
 
       if (!statsMap.has(category)) {
@@ -211,6 +248,18 @@ stripHtml(html: string): string {
     };
   }
 
+  private deferChartRender(): void {
+    this.chartReady = false;
+    if (this.chartTimerId) {
+      clearTimeout(this.chartTimerId);
+    }
+
+    this.chartTimerId = setTimeout(() => {
+      this.chartReady = true;
+      this.cdr.detectChanges();
+    }, 0);
+  }
+
  calculateWordCount(text: string): number {
   if (!text) return 0;
   // Remove HTML tags and count words
@@ -218,6 +267,18 @@ stripHtml(html: string): string {
   const words = plainText.trim().split(/\s+/).filter(word => word.length > 0);
   return words.length;
 }
+
+  private toGridRow(blog: Blog): BlogGridRow {
+    const plainPost = this.stripHtml(blog.post || '');
+
+    return {
+      ...blog,
+      displayTitle: this.stripHtml(blog.title || ''),
+      preview: plainPost.slice(0, 100),
+      displayWordCount: blog.wordCount || this.calculateWordCount(blog.post || '')
+    };
+  }
+
   resetFilters(): void {
     this.selectedCategories.clear();
     this.blogs = this.allBlogs;

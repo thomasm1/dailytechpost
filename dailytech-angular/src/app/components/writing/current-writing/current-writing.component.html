@@ -88,7 +88,7 @@
               <mat-tab label="Public">
                 <mat-list class="research-url-list">
                   <mat-list-item *ngFor="let item of publicResearchUrls">
-                    <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer" [matTooltip]="item.url" matTooltipPosition="above" matTooltipClass="url-tooltip">
+                    <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer">
                       <span class="node-connector"></span>
                       <mat-icon class="node-icon">chevron_right</mat-icon>
                       <span class="research-url-title">{{ item.title || item.url }}</span>
@@ -103,7 +103,7 @@
               <mat-tab label="Private">
                 <mat-list class="research-url-list">
                   <mat-list-item *ngFor="let item of privateResearchUrls">
-                    <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer" [matTooltip]="item.url" matTooltipPosition="above" matTooltipClass="url-tooltip">
+                    <a mat-line [href]="item.url" target="_blank" rel="noopener noreferrer">
                       <span class="node-connector"></span>
                       <mat-icon class="node-icon">chevron_right</mat-icon>
                       <span class="research-url-title">{{ item.title || item.url }}</span>

@@ -54,7 +54,6 @@
           <div class="row buttons">
             <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">SIGN ON</button> &nbsp;
             <button  *ngIf="!(isLoading$ | async)" mat-raised-button color="basic">CANCEL</button>
-            <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
           </div>
         </form>
 
@@ -92,7 +91,6 @@
           <div class="row">
             <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">REGISTER</button> &nbsp;
             <button  *ngIf="!(isLoading$ | async)" mat-raised-button routerLink="/login" color="basic">CANCEL</button>
-            <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
           </div>
         </form>
       </section>

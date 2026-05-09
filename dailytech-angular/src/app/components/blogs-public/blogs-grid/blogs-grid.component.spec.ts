@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { BlogsGridComponent } from './blogs-grid.component';
 import { BlogsService } from '../blogs.service';
+import { UiService } from '../../../service/ui.service';
 
 describe('BlogsGridComponent', () => {
   let component: BlogsGridComponent;
@@ -21,7 +22,11 @@ describe('BlogsGridComponent', () => {
       imports: [ReactiveFormsModule],
       providers: [
         { provide: BlogsService, useValue: mockBlogService },
-        { provide: Router, useValue: mockRouter }
+        { provide: Router, useValue: mockRouter },
+        {
+          provide: UiService,
+          useValue: jasmine.createSpyObj<UiService>('UiService', ['startLoading', 'stopLoading']),
+        }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();

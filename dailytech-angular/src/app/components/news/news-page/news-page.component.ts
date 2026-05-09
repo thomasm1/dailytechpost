@@ -1,4 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
+import { finalize } from 'rxjs/operators';
+import { UiService } from '../../../service/ui.service';
 import { NewsService } from '../news.service';
 
 @Component({
@@ -18,13 +20,17 @@ export class NewsPageComponent implements OnInit   {
   results: any[] = [];
   selectedSection: string = 'technology';
 constructor(
-    private newsService: NewsService
+    private newsService: NewsService,
+    private uiService: UiService
   ) { }
 ngOnInit() {
     this.getArticles(); 
   }
 getArticles() {
+    this.newsLoading = true;
+    this.uiService.startLoading();
     this.newsService.getArticles(this.selectedSection)
+      .pipe(finalize(() => this.uiService.stopLoading()))
       .subscribe(res => {
         const rawResults = (res as any).results || [];
         this.results = rawResults.map((item: any) => ({

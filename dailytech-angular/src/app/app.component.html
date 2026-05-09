@@ -4,6 +4,9 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-menu (sidenavToggle)="sidenav.toggle()"></app-menu>
+    <div class="app-loading-overlay" *ngIf="isAppLoading$ | async">
+      <mat-spinner [diameter]="globalSpinnerDiameter"></mat-spinner>
+    </div>
     <main>
       <!-- <app-loader></app-loader> -->
       <router-outlet></router-outlet>

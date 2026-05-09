@@ -7,6 +7,7 @@ import { BlogsListComponent } from './blogs-list.component';
 import { BlogsService } from '../blogs.service';
 import { Blog } from 'src/app/models/blog.model';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
+import { UiService } from '../../../service/ui.service';
 
 describe('BlogsListComponent', () => {
   let component: BlogsListComponent;
@@ -14,6 +15,7 @@ describe('BlogsListComponent', () => {
   let mockBlogsService: jasmine.SpyObj<BlogsService>;
   let mockRouter: jasmine.SpyObj<Router>;
   let mockDialog: jasmine.SpyObj<MatDialog>;
+  let mockUiService: jasmine.SpyObj<UiService>;
 
   // Sample test data following DRY principle
   const mockBlogs: Blog[] = [
@@ -29,13 +31,15 @@ describe('BlogsListComponent', () => {
     mockBlogsService = jasmine.createSpyObj('BlogsService', ['getAllBlogs']);
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockDialog = jasmine.createSpyObj('MatDialog', ['open']);
+    mockUiService = jasmine.createSpyObj<UiService>('UiService', ['startLoading', 'stopLoading']);
 
     TestBed.configureTestingModule({
       declarations: [BlogsListComponent],
       providers: [
         { provide: BlogsService, useValue: mockBlogsService },
         { provide: Router, useValue: mockRouter },
-        { provide: MatDialog, useValue: mockDialog }
+        { provide: MatDialog, useValue: mockDialog },
+        { provide: UiService, useValue: mockUiService }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();

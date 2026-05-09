@@ -7,6 +7,7 @@ import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/lega
 
 import { NewsPageComponent } from './news-page.component';
 import { NewsService } from '../news.service';
+import { UiService } from '../../../service/ui.service';
 
 @Pipe({ name: 'pipeCapitalizeCategory' })
 class MockPipeCapitalizeCategoryPipe implements PipeTransform {
@@ -29,6 +30,10 @@ describe('NewsPageComponent', () => {
           useValue: jasmine.createSpyObj<NewsService>('NewsService', {
             getArticles: of({ results: [] }),
           }),
+        },
+        {
+          provide: UiService,
+          useValue: jasmine.createSpyObj<UiService>('UiService', ['startLoading', 'stopLoading']),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

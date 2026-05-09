@@ -1,12 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 // import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { BlogsService } from '../blogs.service';
 import { Blog } from 'src/app/models/blog.model';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
+import { UiService } from '../../../service/ui.service';
 
 @Component({
   selector: 'app-blogs-list',
@@ -35,7 +37,8 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private blogsService: BlogsService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private uiService: UiService
   ) {}
 
   ngOnInit() {
@@ -49,8 +52,11 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   refreshBlogs() {
+    this.blogsLoading = true;
+    this.uiService.startLoading();
     this.blogsSubscription = this.blogsService
       .getAllBlogs()
+      .pipe(finalize(() => this.uiService.stopLoading()))
       .subscribe({
         next: (response) => {
           // console.log(response);
@@ -70,8 +76,10 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
    */
   forceRefreshBlogs() {
     this.blogsLoading = true;
+    this.uiService.startLoading();
     this.blogsSubscription = this.blogsService
       .getAllBlogs(true)  
+      .pipe(finalize(() => this.uiService.stopLoading()))
       .subscribe({
         next: (response) => {
           this.blogs = response;

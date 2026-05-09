@@ -8,9 +8,15 @@
   text-align: center;
   padding: 40px;
   
-  mat-progress-spinner {
+  mat-spinner {
+    display: block;
     margin: 0 auto 20px;
   }
+}
+
+.loading-card mat-spinner ::ng-deep circle,
+.chart-spinner ::ng-deep circle {
+  stroke: #3f51b5;
 }
 
 .stats-overview {
@@ -82,6 +88,11 @@
       line-height: 1.4;
     }
   }
+}
+
+.chart-spinner {
+  display: block;
+  margin: 170px auto 0;
 }
 
 @media (max-width: 480px) {

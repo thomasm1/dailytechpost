@@ -1,6 +1,5 @@
- <br />
- <hr class="bar-white" />
-<h2><span class="daily-tech monoton text-box">OUR DAILY TECH</span></h2>
+<hr class="bar-white" />
+<h2><span class="daily-tech  title  monoton text-box">OUR DAILY TECH</span></h2>
 <hr class="bar-white" />
  
 <div class="tab-wrapper">
@@ -8,7 +7,6 @@
   <mat-tab color="primary"  
   label="All Categories">
     <div class="temp">
-      <mat-spinner *ngIf="blogsLoading" class="centerSpinner"></mat-spinner>
       <mat-card (click)="openBlogModal(blog.id)">
           <ul *ngFor="let blog of blogs" class="view-blog">
           <li>

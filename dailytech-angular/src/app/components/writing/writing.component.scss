@@ -1,52 +1,76 @@
+$color-primary-text-light:  rgb(215, 213, 254);
  
-hr {
-  background: rgb(195, 196, 255);
-  max-width: 60%;
-  margin: 30px auto;
+ .title {
+    color: $color-primary-text-light!important;
 }
 
-.writing-nav {
-  max-width: 980px;
-  margin: 0 auto 24px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+$color-primary-text: rgb(40, 37, 97);
 
-  &-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 180px;
-    min-height: 64px;
-    padding: 0 20px;
-    border-radius: 8px;
-    background: rgba(103, 58, 183, 0.36);
-    color: rgba(255, 255, 255, 0.82);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-align: center;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  }
+ .daily-tech {
+   color: $color-primary-text;
+   font-weight: 500;
+   line-height: 1.2;
+   font: 2rem;
+ }
 
-  &-link:hover {
-    background: rgba(103, 58, 183, 0.52);
-    color: #fff;
-    transform: translateY(-1px);
-  }
+ h2 .daily-tech {
+   font-weight: inherit;
+   line-height: inherit;
+   font-size: inherit;
+ }
 
-  &-link.active-link {
-    background: rgba(255, 255, 255, 0.14);
-    border-bottom: 3px solid #fff;
-    color: #fff;
-    font-weight: 700;
-  }
+ hr {
+   background: rgb(195, 196, 255);
+   max-width: 60%;
 
-}
+ }
 
-section.writing-panel {
-  max-width: 1200px;  
-  margin: 0 10%;
-}
+ hr.bar-white {
+   margin: auto;
+ }
+
+ .writing-nav {
+   max-width: 980px;
+   margin: 0 auto 24px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 0;
+
+   &-link {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 180px;
+     min-height: 64px;
+     padding: 0 20px;
+     border-radius: 0;
+     background: rgba(103, 58, 183, 0.36);
+     color: rgba(255, 255, 255, 0.82);
+     text-decoration: none;
+     font-size: 1.2rem;
+     font-weight: 500;
+     letter-spacing: 0.02em;
+     text-align: center;
+     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+   }
+
+   &-link:hover {
+     background: rgba(103, 58, 183, 0.52);
+     color: #fff;
+     transform: translateY(-1px);
+   }
+
+   &-link.active-link {
+     background: rgba(255, 255, 255, 0.14);
+     border-bottom: 3px solid #fff;
+     color: #fff;
+     font-weight: 700;
+   }
+
+ }
+
+ section.writing-panel {
+   max-width: 1200px;
+   margin: 0 10%;
+ }

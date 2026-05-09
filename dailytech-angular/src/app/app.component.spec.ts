@@ -1,11 +1,14 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { AppComponent } from './app.component';
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { KeysService } from './service/keys.service';
 import { LoggingService } from './service/logging.service';
 import { PwaUpdateService } from './service/pwa-update.service';
+import { UiService } from './service/ui.service';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
@@ -28,6 +31,17 @@ describe('AppComponent', () => {
           provide: PwaUpdateService,
           useValue: jasmine.createSpyObj<PwaUpdateService>('PwaUpdateService', ['initialize']),
         },
+        {
+          provide: UiService,
+          useValue: {
+            loadingStateChanged: new BehaviorSubject<boolean>(false),
+          },
+        },
+        provideMockStore({
+          initialState: {
+            ui: { isLoading: false },
+          },
+        }),
       ],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();

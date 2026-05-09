@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../blogs.service';
 import { Blog } from 'src/app/models/blog.model';
 import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
+import { UiService } from '../../../service/ui.service';
 
 @Component({
   selector: 'app-blog',
@@ -21,7 +23,8 @@ export class BlogComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private blogsService: BlogsService) { }
+    private blogsService: BlogsService,
+    private uiService: UiService) { }
 
   ngOnInit() {
     this.getBlog();
@@ -30,10 +33,17 @@ export class BlogComponent implements OnInit, OnDestroy {
   getBlog() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
-      this.blogSubscription = this.blogsService.getBlog(this.id).subscribe((response) =>{   this.blog = response;
-            console.log(this.blog)})
-
+      this.blogsLoading = true;
+      this.uiService.startLoading();
+      this.blogSubscription = this.blogsService.getBlog(this.id)
+        .pipe(finalize(() => {
           this.blogsLoading = false;
+          this.uiService.stopLoading();
+        }))
+        .subscribe((response) => {
+          this.blog = response;
+          console.log(this.blog);
+        });
     })
   }
 

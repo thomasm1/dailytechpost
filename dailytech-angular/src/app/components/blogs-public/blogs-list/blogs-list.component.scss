@@ -1,5 +1,12 @@
 $color-primary-text:  rgb(31, 30, 51);
 
+$color-primary-text-light:  rgb(215, 213, 254);
+ .daily-tech  {
+    color: $color-primary-text;
+}
+ .title {
+    color: $color-primary-text-light!important;
+}
  mat-card {
      background: rgba(191, 185, 248, 0.233);
     
@@ -25,9 +32,7 @@ hr {
     padding:1px;
     margin:2px;
 }
- .daily-tech {
-    color: $color-primary-text;
-}
+
 .date {
 max-width:60px;
  

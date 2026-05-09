@@ -112,7 +112,7 @@ export class WritingService {
   }
 
   getCategories() { 
-    this.uiService.loadingStateChanged.next(true); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
+    this.uiService.startLoading(); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
     this.currentCategorySubs.push(
       this.db.collection('writing-mods').snapshotChanges()
         .pipe(map(docArray => {
@@ -132,12 +132,12 @@ export class WritingService {
         })).subscribe((categoryModsArr: CategoryMod[]) => {
           console.log('categoryModsArr');
           console.dir(categoryModsArr);
-          this.uiService.loadingStateChanged.next(false);
+          this.uiService.stopLoading();
           this.store.dispatch(new Categories.SetCurrentCategories(
             categoryModsArr.length ? categoryModsArr : this.getDefaultCategoryMods()
           ));
         }, error => {
-          this.uiService.loadingStateChanged.next(false);
+          this.uiService.stopLoading();
           this.store.dispatch(new Categories.SetCurrentCategories(this.getDefaultCategoryMods()));
           this.uiService.showSnackBar('Database is down, and fetching Categories failed, please try again later', null, 3000);
         }));
@@ -145,7 +145,7 @@ export class WritingService {
 
   fetchAvailableWritingMods() {
     // return this.availableWritingMods.slice();
-    this.uiService.loadingStateChanged.next(true); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
+    this.uiService.startLoading(); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
     // this.store.dispatch(new UI.StartLoading());
     this.firebaseSubs.push(
       this.db.collection('writing-mods').snapshotChanges()
@@ -169,12 +169,12 @@ export class WritingService {
         ).subscribe((writingModsArr: WritingMod[]) => {
           console.dir("writingModsArr");
           console.dir(writingModsArr);
-          this.uiService.loadingStateChanged.next(false);
+          this.uiService.stopLoading();
           this.store.dispatch(new Writing.SetAvailableWritings(
             writingModsArr.length ? writingModsArr : this.defaultWritingMods
           ));
         }, error => {
-          this.uiService.loadingStateChanged.next(false);
+          this.uiService.stopLoading();
           this.store.dispatch(new Writing.SetAvailableWritings(this.defaultWritingMods));
           this.uiService.showSnackBar('Database is down, and fetching Mods failed, please try again later', null, 3000);
         }));  // END FIREBASE SUBSCRIPTION ARRAY
