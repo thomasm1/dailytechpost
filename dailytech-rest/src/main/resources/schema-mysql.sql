@@ -138,12 +138,18 @@ CREATE TABLE  IF NOT EXISTS  dailytech.news
     id          BIGINT AUTO_INCREMENT NOT NULL,
     title       VARCHAR(255)          NULL,
     url         VARCHAR(255)          NULL,
+    normalized_url VARCHAR(2048)      NULL,
+    normalized_url_hash CHAR(64)      NULL,
+    public_link BIT                   NOT NULL DEFAULT 1,
     category_id BIGINT                NULL,
+    user_userid BIGINT                NULL,
     version     INT                   DEFAULT 1,
     time_created  DATETIME            NOT NULL,
     time_updated  DATETIME            NOT NULL,
     CONSTRAINT pk_news PRIMARY KEY (id),
-    CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id)
+    CONSTRAINT fk_news_on_category FOREIGN KEY (category_id) REFERENCES dailytech.categories (id),
+    CONSTRAINT fk_news_on_user FOREIGN KEY (user_userid) REFERENCES dailytech.users (userid),
+    CONSTRAINT uq_news_user_normalized_url_hash UNIQUE (user_userid, normalized_url_hash)
 );
 
 ALTER TABLE dailytech.post_entity

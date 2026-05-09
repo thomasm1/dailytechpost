@@ -1,5 +1,8 @@
 package net.ourdailytech.rest.service;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
 import net.ourdailytech.rest.exception.PostApiException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
@@ -39,6 +42,7 @@ public class NewsServiceImpl implements NewsService {
   public NewsDto createNews(NewsDto newsDto, String userEmail) {
     News newsEntity = newsMapper.toEntity(newsDto);
     newsEntity.setUser(getRequiredUser(userEmail));
+    applyNormalizedUrl(newsEntity);
     if (newsEntity.getPublicLink() == null) {
       newsEntity.setPublicLink(true);
     }
@@ -112,6 +116,9 @@ public class NewsServiceImpl implements NewsService {
         throw new PostApiException(HttpStatus.FORBIDDEN, "You are not allowed to update this news item");
       }
       News news = newsMapper.partialUpdate(newsDto, existing.get());
+      if (newsDto.getUrl() != null) {
+        applyNormalizedUrl(news);
+      }
       if (newsDto.getCategoryId() != null) {
         news.setCategory(getRequiredCategory(newsDto.getCategoryId()));
       }
@@ -143,6 +150,46 @@ public class NewsServiceImpl implements NewsService {
     return news.getUser() != null
         && news.getUser().getEmail() != null
         && news.getUser().getEmail().equalsIgnoreCase(userEmail);
+  }
+
+  private void applyNormalizedUrl(News news) {
+    String normalizedUrl = normalizeUrl(news.getUrl());
+    news.setNormalizedUrl(normalizedUrl);
+    news.setNormalizedUrlHash(hashUrl(normalizedUrl));
+  }
+
+  private String normalizeUrl(String url) {
+    if (url == null) {
+      return null;
+    }
+
+    String normalized = url.trim().toLowerCase();
+    normalized = normalized.replaceFirst("^https?://", "");
+    normalized = normalized.replaceFirst("^www\\.", "");
+
+    while (normalized.endsWith("/")) {
+      normalized = normalized.substring(0, normalized.length() - 1);
+    }
+
+    return normalized;
+  }
+
+  private String hashUrl(String normalizedUrl) {
+    if (normalizedUrl == null || normalizedUrl.isBlank()) {
+      return null;
+    }
+
+    try {
+      MessageDigest digest = MessageDigest.getInstance("SHA-256");
+      byte[] hash = digest.digest(normalizedUrl.getBytes(StandardCharsets.UTF_8));
+      StringBuilder hex = new StringBuilder(hash.length * 2);
+      for (byte b : hash) {
+        hex.append(String.format("%02x", b));
+      }
+      return hex.toString();
+    } catch (NoSuchAlgorithmException e) {
+      throw new IllegalStateException("SHA-256 is not available", e);
+    }
   }
 
 }

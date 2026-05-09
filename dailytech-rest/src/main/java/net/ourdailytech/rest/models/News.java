@@ -13,7 +13,12 @@ import org.hibernate.proxy.HibernateProxy;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@Table(name = "news")
+@Table(
+    name = "news",
+    uniqueConstraints = {
+        @UniqueConstraint(name = "uq_news_user_normalized_url_hash", columnNames = {"user_userid", "normalized_url_hash"})
+    }
+)
 public class News extends AbstractDomainClass  {
 
     @Id
@@ -26,6 +31,12 @@ public class News extends AbstractDomainClass  {
 
     @Column(name = "url")
     private String url;
+
+    @Column(name = "normalized_url", length = 2048)
+    private String normalizedUrl;
+
+    @Column(name = "normalized_url_hash", length = 64)
+    private String normalizedUrlHash;
 
     @Builder.Default
     @Column(name = "public_link")
