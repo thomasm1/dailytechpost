@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions, ROOT_EFFECTS_INIT, createEffect, ofType } from '@ngrx/effects';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { from, of } from 'rxjs';
 import { catchError, exhaustMap, map, switchMap, tap } from 'rxjs/operators';
 
 import { UiService } from '../service/ui.service';
 import { AUTH_STORAGE_KEY, AwsAuthenticationService } from '../service/auth/aws-authentication.service';
+import { FirebaseAuthService } from '../service/auth/firebase-auth.service';
 import { WritingService } from '../components/writing/writing.service';
 import * as UI from '../reducers/ui.actions';
 import {
@@ -28,17 +28,18 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AUTH_INIT_LISTENER),
       switchMap(() =>
-        this.afAuth.authState.pipe(
+        this.firebaseAuthService.authState$().pipe(
           switchMap((user) => {
             if (!user) {
               return of(this.awsAuthService.hasActiveSession() ? new SetAuthenticated() : new SetUnauthenticated());
             }
 
-            return from(this.awsAuthService.persistFirebaseSession(user)).pipe(
+            return from(this.firebaseAuthService.persistFirebaseSession(user)).pipe(
               map(() => new SetAuthenticated()),
               catchError((error) => {
                 console.error('Unable to persist Firebase session', error);
                 this.awsAuthService.clearSession();
+                this.firebaseAuthService.clearFirebaseSession();
                 return of(new SetUnauthenticated());
               })
             );
@@ -75,7 +76,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AUTH_LOGIN_START),
       exhaustMap((action: AuthLoginStart) =>
-        from(this.afAuth.signInWithEmailAndPassword(action.payload.email, action.payload.password)).pipe(
+        from(this.firebaseAuthService.login(action.payload)).pipe(
           map(() => new UI.StopLoading()),
           catchError((error) => {
             this.uiService.showSnackBar(error?.message || 'Login failed', null, 2500);
@@ -90,7 +91,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AUTH_REGISTER_START),
       exhaustMap((action: AuthRegisterStart) =>
-        from(this.afAuth.createUserWithEmailAndPassword(action.payload.email, action.payload.password)).pipe(
+        from(this.firebaseAuthService.registerUser(action.payload)).pipe(
           map(() => new UI.StopLoading()),
           catchError((error) => {
             this.uiService.showSnackBar(error?.message || 'Registration failed', null, 2500);
@@ -106,7 +107,7 @@ export class AuthEffects {
       ofType(AUTH_LOGOUT_START),
       exhaustMap(() => {
         this.awsAuthService.logout();
-        return from(this.afAuth.signOut()).pipe(
+        return from(this.firebaseAuthService.logout()).pipe(
           map(() => new SetUnauthenticated()),
           catchError(() => of(new SetUnauthenticated()))
         );
@@ -148,6 +149,7 @@ export class AuthEffects {
         ofType(SET_UNAUTHENTICATED),
         tap(() => {
           this.awsAuthService.clearSession();
+          this.firebaseAuthService.clearFirebaseSession();
         })
       ),
     { dispatch: false }
@@ -155,10 +157,10 @@ export class AuthEffects {
 
   constructor(
     private actions$: Actions,
-    private afAuth: AngularFireAuth,
     private router: Router,
     private uiService: UiService,
     private awsAuthService: AwsAuthenticationService,
+    private firebaseAuthService: FirebaseAuthService,
     private writingService: WritingService
   ) {}
 }
