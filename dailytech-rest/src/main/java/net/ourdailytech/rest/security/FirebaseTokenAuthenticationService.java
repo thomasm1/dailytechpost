@@ -20,9 +20,8 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.Optional;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
 import net.ourdailytech.rest.models.Role;
 import net.ourdailytech.rest.models.User;
@@ -64,7 +63,7 @@ public class FirebaseTokenAuthenticationService {
     this.roleRepository = roleRepository;
   }
 
-  @Transactional(readOnly = true)
+  @Transactional
   public Optional<UserDetails> authenticate(String token) {
     Map<String, Object> unverifiedClaims = decodeClaimsWithoutVerification(token);
     try {
@@ -81,12 +80,20 @@ public class FirebaseTokenAuthenticationService {
         return Optional.empty();
       }
 
-      User user = usersRepository.findByEmail(email)
+      User user = usersRepository.findByEmailWithRoles(email)
+          .map(existingUser -> synchronizeFirebaseUser(existingUser, decodedToken.getUid()))
           .orElseGet(() -> provisionFirebaseUser(email, decodedToken.getUid()));
 
-      Set<GrantedAuthority> authorities = usersRepository.findRoleNamesByEmail(user.getEmail()).stream()
+      log.info(
+          "User authenticated via Firebase (email={}, [getAuthSubject]_firebaseUid={}, roles={})",
+          user.getEmail(),
+          user.getAuthSubject(),
+          user.getRoles().stream().map(Role::getName).toList());
+
+      Set<GrantedAuthority> authorities = user.getRoles().stream()
+          .map(Role::getName)
           .map(SimpleGrantedAuthority::new)
-          .collect(Collectors.toCollection(HashSet::new));
+          .collect(java.util.stream.Collectors.toCollection(HashSet::new));
 
       return Optional.of(new org.springframework.security.core.userdetails.User(
           user.getEmail(),
@@ -237,17 +244,40 @@ public class FirebaseTokenAuthenticationService {
   }
 
   private User provisionFirebaseUser(String email, String firebaseUid) {
-    Role userRole = roleRepository.findByName("ROLE_USER")
-        .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER"));
-
     User firebaseUser = User.builder()
         .email(email)
         .password("")
         .authProvider(AuthProvider.FIREBASE)
         .authSubject(firebaseUid)
-        .roles(new HashSet<>(Collections.singleton(userRole)))
+        .roles(new HashSet<>(Collections.singleton(getDefaultUserRole())))
         .build();
 
     return usersRepository.save(firebaseUser);
+  }
+
+  private User synchronizeFirebaseUser(User user, String firebaseUid) {
+    boolean changed = false;
+
+    if (user.getAuthProvider() == null) {
+      user.setAuthProvider(AuthProvider.FIREBASE);
+      changed = true;
+    }
+
+    if (!StringUtils.hasText(user.getAuthSubject())) {
+      user.setAuthSubject(firebaseUid);
+      changed = true;
+    }
+
+    if (user.getRoles() == null || user.getRoles().isEmpty()) {
+      user.setRoles(new HashSet<>(Collections.singleton(getDefaultUserRole())));
+      changed = true;
+    }
+
+    return changed ? usersRepository.save(user) : user;
+  }
+
+  private Role getDefaultUserRole() {
+    return roleRepository.findByName("ROLE_USER")
+        .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER"));
   }
 }

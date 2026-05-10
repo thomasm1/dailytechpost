@@ -14,6 +14,7 @@ import net.ourdailytech.rest.service.UsersService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity; 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.access.prepost.PreAuthorize; 
 import org.springframework.web.bind.annotation.*;
 
@@ -91,6 +92,30 @@ public class UsersController {
             throw new ResourceNotFoundException("MESSAGE: User " + email + "...not found");
         }
         return new ResponseEntity<>(usersService.getUserByEmail(email).get(), HttpStatus.OK);
+    }
+
+    @Operation(
+            summary = "Get Current User REST API",
+            description = "Returns the authenticated local DailyTech user after Firebase/internal JWT authentication"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "HTTP Status 200 SUCCESS"
+    )
+    @SecurityRequirement(
+            name = "Bearer Authentication"
+    )
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+    @GetMapping(value = USER_PATH + "/me")
+    public ResponseEntity<UserDto> getCurrentUser(Authentication authentication) {
+        if (authentication == null || authentication.getName() == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
+        return usersService.getUserByEmail(authentication.getName())
+                .map(userDto -> new ResponseEntity<>(userDto, HttpStatus.OK))
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "MESSAGE: User " + authentication.getName() + "...not found"));
     }
 
     /// Non-Register Creation Request
