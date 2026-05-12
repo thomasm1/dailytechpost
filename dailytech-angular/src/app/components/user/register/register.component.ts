@@ -14,10 +14,10 @@ import * as AuthActions from '../../../reducers/auth.actions';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit, OnDestroy {
-  maxDate;
+  maxDate:any;
   // isLoading = false;
-  isLoading$ : Observable<boolean>; // $ at end of variable ngrx convention
-  private loadingSubs: Subscription;
+  isLoading$!: Observable<boolean>; // $ at end of variable ngrx convention
+  private loadingSubs: Subscription = new Subscription;
 
   constructor(
     private uiService: UiService,

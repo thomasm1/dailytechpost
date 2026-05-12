@@ -38,15 +38,17 @@ export class AwsAuthenticationService {
     //   );
 
   executeAuthAwsService(email:string, password:string) {
+    const usernameOrEmail = email.trim();
+
     return this.http.post<any>(
-        `${this.baseUrl}/auth/login`,{
-          emailOrEmail: email,
+        `${this.baseUrl}/users/auth/login`,{
+          usernameOrEmail,
           password
         }).pipe(
           map(
             data => {
-              sessionStorage.setItem(AUTHENTICATED_USER, email);
-              sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+              sessionStorage.setItem(AUTHENTICATED_USER, usernameOrEmail);
+              sessionStorage.setItem(TOKEN, `Bearer ${data.accessToken}`);
               sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
               return data;
             }

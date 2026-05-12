@@ -1,39 +1,119 @@
-mat-form-field {
-    width: 300px;
-}
-hr {
-    background: rgb(195, 196, 255);
-    max-width: 60%;
-    margin: 30px auto;
+$color-primary-text: rgb(40, 37, 97);
+$color-panel: rgba(241, 240, 248, 0.72);
+$color-panel-border: rgba(103, 58, 183, 0.22);
+$color-accent: rgb(215, 213, 254);
+
+.auth-shell {
+  width: min(92%, 760px);
+  margin: 24px auto 48px;
 }
 
-button {
-    margin-right: 10px;
+.auth-tabs {
+  overflow: hidden;
+  color: $color-primary-text;
+  background: $color-panel;
+  border: 1px solid $color-panel-border;
+  border-radius: 5px;
+  box-shadow: 0 16px 34px rgba(40, 37, 97, 0.14);
+}
+
+.auth-panel {
+  width: 100%;
+  min-height: 420px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  color: $color-primary-text;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.auth-form-section,
+.register-form,
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .centered-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  justify-content: center;
+  gap: 14px;
+}
+
+.auth-heading {
+  margin: 0 0 10px;
+  color: $color-primary-text;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+mat-form-field {
+  width: min(100%, 340px);
+}
+
+mat-card-actions {
+  padding: 0;
+  margin: 4px 0 0;
 }
 
 .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+button {
+  min-width: 112px;
+  font-family: inherit;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 .admin-flag {
-  cursor:pointer;
+  margin-top: 24px;
+  color: $color-primary-text;
+  border-top: 1px solid $color-accent;
+  border-radius: 0;
 }
- .temp {
-    max-height: 600px;
-    min-height: 500px;
-    width: 90%;
-    padding: 10px;
-    color: darkblue;
-    background-color: rgba(241, 240, 248, 0.5);
-    border-radius: 5px;
-    margin: 30px auto;
+
+::ng-deep .auth-tabs .mat-tab-label {
+  min-width: 150px;
+  color: rgba(40, 37, 97, 0.78);
+  font-weight: 600;
+}
+
+::ng-deep .auth-tabs .mat-tab-header {
+  background: rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid $color-panel-border;
+}
+
+::ng-deep .auth-tabs .mat-tab-label-active {
+  color: $color-primary-text;
+}
+
+::ng-deep .auth-tabs .mat-ink-bar {
+  background-color: $color-primary-text;
+}
+
+@media only screen and (max-width: 600px) {
+  .auth-shell {
+    width: 94%;
+    margin-top: 16px;
+  }
+
+  .auth-panel {
+    min-height: 380px;
+    padding: 24px 14px;
+  }
+
+  .row {
+    width: 100%;
+  }
 }

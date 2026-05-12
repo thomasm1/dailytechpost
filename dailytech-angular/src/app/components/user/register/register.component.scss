@@ -1,37 +1,76 @@
-mat-form-field {
-  width: 300px;
+$color-primary-text: rgb(40, 37, 97);
+$color-panel: rgba(241, 240, 248, 0.72);
+$color-panel-border: rgba(103, 58, 183, 0.22);
+
+.auth-shell {
+  width: min(92%, 640px);
+  margin: 24px auto 48px;
 }
 
-hr {
-  background: rgb(195, 196, 255);
-  max-width: 60%;
-  margin: 30px auto;
+.auth-panel {
+  width: 100%;
+  min-height: 360px;
+  padding: 32px 20px;
+  color: $color-primary-text;
+  background: $color-panel;
+  border: 1px solid $color-panel-border;
+  border-radius: 5px;
+  box-shadow: 0 16px 34px rgba(40, 37, 97, 0.14);
 }
 
-button {
-  margin-right: 10px;
-}
-
+.register-form,
 .centered-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.centered-form {
+  width: 100%;
   justify-content: center;
+  gap: 14px;
+}
+
+.auth-heading {
+  margin: 0 0 10px;
+  color: $color-primary-text;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+mat-form-field {
+  width: min(100%, 340px);
 }
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 12px;
 }
 
-div.temp {
-  max-height: 600px;
-  min-height: 500px;
-  width: 90%;
-  padding: 10px;
-  color: whitesmoke;
-  background-color: rgba(96, 79, 245, 0.5);
-  border-radius: 5px;
-  margin: 30px auto;
+button {
+  min-width: 112px;
+  font-family: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .auth-shell {
+    width: 94%;
+    margin-top: 16px;
+  }
+
+  .auth-panel {
+    min-height: 340px;
+    padding: 24px 14px;
+  }
+
+  .row {
+    width: 100%;
+  }
 }

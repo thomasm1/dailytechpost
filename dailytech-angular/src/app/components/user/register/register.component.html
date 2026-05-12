@@ -1,35 +1,48 @@
-        <app-title-bar></app-title-bar>
-<div class="temp">
-<h6>REGISTER</h6>
-      <section class="register-form">
-        <form class="centered-form"  (ngSubmit)="onFirebaseRegister(f)"   #f="ngForm">
+<hr class="bar-white" />
+<h2><span class="daily-tech  title  monoton text-box">OUR DAILY TECH</span></h2>
+<hr class="bar-white" />
 
-          <div class="welcome alert  ">
-          </div>
-          <!-- email (Used for User Auth) -->
-          <mat-form-field appearance="outline">
-            <input type="email" matInput placeholder="email" ngModel name="email" required
-              #emailInput="ngModel">
-            <!-- <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error> -->
-            <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
-          </mat-form-field>
+<section class="auth-shell">
+  <mat-card class="auth-panel">
+    <section class="register-form">
+      <form class="centered-form" (ngSubmit)="onFirebaseRegister(f)" #f="ngForm">
+        <h3 class="auth-heading daily-tech monoton">REGISTER</h3>
 
- 
-          <!-- password (USERS) -->
-          <mat-form-field appearance="outline">
-            <input type="password" matInput placeholder="password" ngModel name="password" required minlength="6"
-              #pwInput="ngModel">
-            <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
-            <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
-            <!-- <mat-error *ngIf="pwInput.hasError('required')">Field must not be empty</mat-error> -->
-          </mat-form-field>
-          <hr>
+        <mat-form-field appearance="outline">
+          <input type="email" matInput placeholder="Email" ngModel name="email" required #emailInput="ngModel" />
+          <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
+        </mat-form-field>
 
-          <div class="row">
-            <button  *ngIf="!(isLoading$ | async)"  type="submit" mat-raised-button color="primary">REGISTER</button> &nbsp;
-            <button  *ngIf="!(isLoading$ | async)" mat-raised-button routerLink="/login" color="basic">CANCEL</button>
-          </div>
-<hr>
-        </form>
-      </section>
-    </div>
+        <mat-form-field appearance="outline">
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            ngModel
+            name="password"
+            required
+            minlength="6"
+            #pwInput="ngModel"
+          />
+          <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
+          <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+        </mat-form-field>
+
+        <div class="row">
+          <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary">
+            REGISTER
+          </button>
+          <button
+            *ngIf="!(isLoading$ | async)"
+            type="button"
+            mat-raised-button
+            routerLink="/login"
+            color="basic"
+          >
+            CANCEL
+          </button>
+        </div>
+      </form>
+    </section>
+  </mat-card>
+</section>

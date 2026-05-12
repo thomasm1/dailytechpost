@@ -11,11 +11,8 @@ export class AdminComponent implements OnInit {
 
   name = '';
   message = 'Welcome ' + this.name;
-  getPostFromService: string;
-  // cat3 = {
-  //   "a":"b"
-  // }
-
+  getPostFromService: string = '';
+ 
   constructor(private route: ActivatedRoute,
     private adminService: AdminDataService) { }
 
@@ -51,11 +48,11 @@ onStartWriting() {
     this.message = 'Welcome ' + this.name;
   }
 
-  handleResponse(response) {
+  handleResponse(response: any) {
     this.getPostFromService = response.post
   }
 
-  handleErrorResponse(error) {
+  handleErrorResponse(error: any) {
     this.getPostFromService = error.error.message;
   }
 }

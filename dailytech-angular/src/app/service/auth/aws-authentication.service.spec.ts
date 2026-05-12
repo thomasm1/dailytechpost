@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import {
   AUTHENTICATED_USER,
@@ -7,19 +7,23 @@ import {
   AwsAuthenticationService,
   TOKEN
 } from './aws-authentication.service';
+import { environment } from '../../../environments/environment';
 
 // Firebase session/profile behavior lives in FirebaseAuthService.
 describe('AwsAuthenticationService', () => {
   let service: AwsAuthenticationService;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     });
     service = TestBed.inject(AwsAuthenticationService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {
+    httpMock.verify();
     service.clearSession();
   });
 
@@ -48,5 +52,24 @@ describe('AwsAuthenticationService', () => {
     expect(sessionStorage.getItem(AUTHENTICATED_USER)).toBeNull();
     expect(sessionStorage.getItem(TOKEN)).toBeNull();
     expect(service.hasActiveSession()).toBeFalse();
+  });
+
+  it('should post native JWT login credentials and store returned access token', () => {
+    service.executeAuthAwsService(' admin@example.com ', 'secret').subscribe(data => {
+      expect(data.accessToken).toBe('jwt-token');
+    });
+
+    const req = httpMock.expectOne(`${environment.API_URL}/users/auth/login`);
+    expect(req.request.method).toBe('POST');
+    expect(req.request.body).toEqual({
+      usernameOrEmail: 'admin@example.com',
+      password: 'secret'
+    });
+
+    req.flush({ accessToken: 'jwt-token', tokenType: 'Bearer' });
+
+    expect(sessionStorage.getItem(AUTH_STORAGE_KEY)).toBe('true');
+    expect(sessionStorage.getItem(AUTHENTICATED_USER)).toBe('admin@example.com');
+    expect(sessionStorage.getItem(TOKEN)).toBe('Bearer jwt-token');
   });
 });
