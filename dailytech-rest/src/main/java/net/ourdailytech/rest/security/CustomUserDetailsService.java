@@ -1,5 +1,6 @@
 package net.ourdailytech.rest.security;
 
+import net.ourdailytech.rest.models.Role;
 import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.repositories.UsersRepository;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -35,9 +37,17 @@ public class CustomUserDetailsService implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
-        User user = usersRepository.findByEmail(usernameOrEmail)
+        String normalizedUsernameOrEmail = StringUtils.hasText(usernameOrEmail)
+                ? usernameOrEmail.trim()
+                : usernameOrEmail;
+        User user = usersRepository.findByEmail(normalizedUsernameOrEmail)
                 .orElseThrow(() ->
-                        new UsernameNotFoundException("User not found with email: "+ usernameOrEmail));
+                        new UsernameNotFoundException("User not found with email: "+ normalizedUsernameOrEmail));
+
+        log.info(
+                "Loaded native JWT user (email={}, roles={})",
+                user.getEmail(),
+                user.getRoles().stream().map(Role::getName).toList());
 
         Set<GrantedAuthority> authorities = user
                 .getRoles()

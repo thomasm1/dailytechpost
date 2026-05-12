@@ -90,9 +90,28 @@ public class UsersServiceImpl implements UsersService {
    */
   @Override
   public String login(LoginDto loginDto) {
+    String usernameOrEmail = StringUtils.hasText(loginDto.getUsernameOrEmail())
+        ? loginDto.getUsernameOrEmail().trim()
+        : loginDto.getUsernameOrEmail();
+
+    Optional<User> loginUser = StringUtils.hasText(usernameOrEmail)
+        ? usersRepository.findByEmail(usernameOrEmail)
+        : Optional.empty();
+    Boolean passwordMatches = loginUser
+        .map(user -> StringUtils.hasText(user.getPassword())
+            && loginDto.getPassword() != null
+            && passwordEncoder.matches(loginDto.getPassword(), user.getPassword()))
+        .orElse(null);
+
+    log.info(
+        "Native JWT login attempt (usernameOrEmail={}, userFound={}, passwordMatches={})",
+        usernameOrEmail,
+        loginUser.isPresent(),
+        passwordMatches);
+
     Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(
-            loginDto.getUsernameOrEmail(),
+            usernameOrEmail,
             loginDto.getPassword()));
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
