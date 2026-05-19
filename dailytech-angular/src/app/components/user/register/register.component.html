@@ -6,7 +6,7 @@
   <mat-card class="auth-panel">
     <section class="register-form">
       <form class="centered-form" (ngSubmit)="onFirebaseRegister(f)" #f="ngForm">
-        <h3 class="auth-heading daily-tech monoton">REGISTER</h3>
+        <h3 class="auth-heading daily-tech monoton">ADMIN REGISTER</h3>
 
         <mat-form-field appearance="outline">
           <input type="email" matInput placeholder="Email" ngModel name="email" required #emailInput="ngModel" />
@@ -24,8 +24,10 @@
             minlength="6"
             #pwInput="ngModel"
           />
-          <mat-hint *ngIf="pwInput.value?.length<5">Should be at least 6 characters long</mat-hint>
-          <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
+          <mat-hint *ngIf="pwInput.value?.length<5 && pwInput.touched" align="start">
+            <small>Password must be at least 6 characters</small>
+          </mat-hint>
+          <mat-hint align="end" *ngIf="pwInput.touched">{{ pwInput.value?.length }} / 6</mat-hint>
         </mat-form-field>
 
         <div class="row">

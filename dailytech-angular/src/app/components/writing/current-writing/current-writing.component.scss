@@ -355,8 +355,22 @@
   justify-content: space-between;
 }
 
+.left-buttons {
+  display: flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: flex-start;
+  gap: 12px;
+}
+.row-submit{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .right-buttons {
   display: flex;
+  flex-direction:column;
+  justify-content:flex-end;
   align-items: center;
   gap: 12px;
 }

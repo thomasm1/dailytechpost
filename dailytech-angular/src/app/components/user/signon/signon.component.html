@@ -7,34 +7,16 @@
     <mat-tab label="SIGN ON">
       <mat-card class="auth-panel">
         <section class="auth-form-section">
-          <form
-            *ngIf="!adminFlag"
-            class="centered-form"
-            [formGroup]="loginForm"
-            (ngSubmit)="handleFirebaseLogin()"
-          >
-         
+          <form *ngIf="!adminFlag" class="centered-form" [formGroup]="loginForm" (ngSubmit)="handleFirebaseLogin()">
+
             <mat-form-field appearance="outline">
-              <input
-                type="email"
-                matInput
-                placeholder="Email"
-                class="form-control"
-                name="email"
-                color="primary"
-                formControlName="email"
-              />
+              <input type="email" matInput placeholder="Email" class="form-control" name="email" color="primary"
+                formControlName="email" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <input
-                type="password"
-                matInput
-                placeholder="Password"
-                class="form-control"
-                name="password"
-                formControlName="password"
-              />
+              <input type="password" matInput placeholder="Password" class="form-control" name="password"
+                formControlName="password" />
             </mat-form-field>
 
             <mat-card-actions>
@@ -43,24 +25,15 @@
                 <button type="button" mat-raised-button color="basic">CANCEL</button>
               </div>
             </mat-card-actions>
+            
+            <br />
+            <hr />
+            <br />
           </form>
-
-          <button
-            *ngIf="!adminFlag"
-            type="button"
-            class="admin-flag"
-            mat-button
-            (click)="adminOpen()"
-          >
-            ADMIN LOGIN
-          </button>
-
-          <form
-            *ngIf="adminFlag"
-            class="centered-form"
-            (ngSubmit)="handleAwsAuthLogin(fAdmin)"
-            #fAdmin="ngForm"
-          >
+          <p *ngIf="!adminFlag" type="button" class="admin-flag" mat-button (click)="adminOpen()">
+           admin login
+          </p>
+          <form *ngIf="adminFlag" class="centered-form" (ngSubmit)="handleAwsAuthLogin(fAdmin)" #fAdmin="ngForm">
             <h3 class="auth-heading daily-tech monoton">ADMINISTRATION LOGIN</h3>
 
             <mat-form-field appearance="outline">
@@ -73,7 +46,7 @@
 
             <div class="row buttons">
               <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary">
-                SIGN ON
+                LOGIN
               </button>
               <button *ngIf="!(isLoading$ | async)" type="button" mat-raised-button color="basic">
                 CANCEL
@@ -81,24 +54,18 @@
             </div>
           </form>
 
-          <button
-            *ngIf="adminFlag"
-            type="button"
-            class="admin-flag"
-            mat-button
-            (click)="adminOpen()"
-          >
+            <br />
+          <p *ngIf="adminFlag" type="button" class="admin-flag" mat-button (click)="adminOpen()">
             back to USER LOGIN
-          </button>
+          </p>
         </section>
       </mat-card>
     </mat-tab>
 
-    <mat-tab style="color:darkblue" label="REGISTER">
+    <mat-tab  *ngIf="!adminFlag"  style="color:darkblue" label="REGISTER">
       <mat-card class="auth-panel">
         <section class="register-form">
-          <form class="centered-form" (ngSubmit)="onRegister(f)" #f="ngForm">
-            <h3 class="auth-heading daily-tech monoton">REGISTER</h3>
+          <form class="centered-form" (ngSubmit)="onRegister(f)" #f="ngForm"> 
 
             <mat-form-field appearance="outline">
               <input type="email" matInput placeholder="Email" ngModel name="email" required #emailInput="ngModel" />
@@ -106,35 +73,21 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <input
-                type="password"
-                matInput
-                placeholder="Password"
-                ngModel
-                name="password"
-                required
-                minlength="6"
-                #pwInput="ngModel"
-              />
-              <mat-hint *ngIf="pwInput.value?.length<5">
-                <small>Should be at least 6 characters long</small>
+              <input type="password" matInput placeholder="Password" ngModel name="password" required minlength="6"
+                #pwInput="ngModel" />
+              <mat-hint *ngIf="pwInput.value?.length<5 && pwInput.touched" align="start">
+                <small>Password at least 6 characters</small>
               </mat-hint>
-              <mat-hint align="end">
+              <mat-hint align="end"  *ngIf="pwInput.touched">
                 <small>{{ pwInput.value?.length }} / 6</small>
               </mat-hint>
             </mat-form-field>
-<br />
+            <br />
             <div class="row">
               <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary">
                 REGISTER
               </button>
-              <button
-                *ngIf="!(isLoading$ | async)"
-                type="button"
-                mat-raised-button
-                routerLink="/login"
-                color="basic"
-              >
+              <button *ngIf="!(isLoading$ | async)" type="button" mat-raised-button routerLink="/login" color="basic">
                 CANCEL
               </button>
             </div>

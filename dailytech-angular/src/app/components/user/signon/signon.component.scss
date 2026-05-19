@@ -34,12 +34,13 @@ $color-accent: rgb(215, 213, 254);
 .centered-form {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .centered-form {
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 14px;
 }
 

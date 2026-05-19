@@ -10,9 +10,8 @@
   </div>
 <hr>
  
-
-<!-- *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" -->
-<a
+ 
+<a  *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" 
 mat-list-item
 routerLink="/writing"
 (click)="onClose()" 
