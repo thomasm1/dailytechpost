@@ -22,6 +22,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     public CategoryDto addCategory(CategoryDto categoryDto) {
         Category cat3 = categoryMapper.toEntity(categoryDto);
+        assignParent(cat3, categoryDto.getParentId());
         categoryRepository.save(cat3);
 
         CategoryDto catNewDto = categoryMapper.toDto(cat3);
@@ -47,6 +48,28 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public List<CategoryDto> getRootCategories() {
+        return categoryRepository.findByParentIsNull().stream()
+                .map(categoryMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CategoryDto> getChildCategories(Long parentId) {
+        ensureCategoryExists(parentId);
+        return categoryRepository.findByParentId(parentId).stream()
+                .map(categoryMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CategoryDto> getCategoryTree() {
+        return categoryRepository.findByParentIsNull().stream()
+                .map(this::toTreeDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public CategoryDto updateCategory(CategoryDto categoryDto ) {
 
         Category category = categoryMapper.toEntity(categoryDto);
@@ -54,6 +77,9 @@ public class CategoryServiceImpl implements CategoryService {
                 () -> new ResourceNotFoundException("Category", "id", Long.toString(category.getId())));
 
         categoryMapper.partialUpdate(categoryDto, categoryUpdate);
+        if (categoryDto.getParentId() != null) {
+            assignParent(categoryUpdate, categoryDto.getParentId());
+        }
 
         Category categoryDone = categoryRepository.save(categoryUpdate);
 
@@ -69,5 +95,29 @@ public class CategoryServiceImpl implements CategoryService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    private CategoryDto toTreeDto(Category category) {
+        CategoryDto dto = categoryMapper.toDto(category);
+        dto.setChildren(categoryRepository.findByParentId(category.getId()).stream()
+                .map(this::toTreeDto)
+                .collect(Collectors.toList()));
+        return dto;
+    }
+
+    private void assignParent(Category category, Long parentId) {
+        if (parentId == null) {
+            category.setParent(null);
+            return;
+        }
+        if (category.getId() != null && category.getId().equals(parentId)) {
+            throw new IllegalArgumentException("Category cannot be its own parent");
+        }
+        category.setParent(ensureCategoryExists(parentId));
+    }
+
+    private Category ensureCategoryExists(Long categoryId) {
+        return categoryRepository.findById(categoryId).orElseThrow(
+                () -> new ResourceNotFoundException("Category", "id", Long.toString(categoryId)));
     }
 }

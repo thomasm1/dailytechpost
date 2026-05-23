@@ -37,6 +37,14 @@ VALUES
     (13, 'Quantum Data', 'Quantum news & tips', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'),
     (14, 'Musing Blockchain', ' Blockchain Cryptocurrency insights', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00');
 
+INSERT INTO dailytech.categories (id, name, description, parent_id, version, time_created, time_updated)
+VALUES
+    (1001, 'Developer', 'Developer resources for A.I.Now.', 10, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (1101, 'Developer', 'Developer resources for Web Dev Affairs', 11, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (1201, 'Developer', 'Developer resources for Sociology Tomorrow!', 12, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (1301, 'Developer', 'Developer resources for Quantum Data', 13, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00'),
+    (1401, 'Developer', 'Developer resources for Musing Blockchain', 14, 1, '2026-01-15 00:00:00', '2026-04-10 00:00:00');
+
 -- POST_ENTITY: 5 entries
 INSERT INTO dailytech.post_entity (
     id, did, post_date, author, month_order, cat3, title,

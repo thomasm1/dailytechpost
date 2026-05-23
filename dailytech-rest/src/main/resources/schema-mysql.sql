@@ -68,10 +68,12 @@ CREATE TABLE  IF NOT EXISTS  dailytech.categories
     id            BIGINT AUTO_INCREMENT NOT NULL,
     name          VARCHAR(255)          NULL,
     `description` VARCHAR(255)          NULL,
+    parent_id     BIGINT                NULL,
     version       INT                   DEFAULT 1,
     time_created  DATETIME              NOT NULL,
     time_updated  DATETIME              NOT NULL,
-    CONSTRAINT pk_categories PRIMARY KEY (id)
+    CONSTRAINT pk_categories PRIMARY KEY (id),
+    CONSTRAINT fk_categories_on_parent FOREIGN KEY (parent_id) REFERENCES dailytech.categories (id)
 );
 
 CREATE TABLE  IF NOT EXISTS  dailytech.post_entity

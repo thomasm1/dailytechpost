@@ -3,6 +3,7 @@ package net.ourdailytech.rest.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import lombok.experimental.SuperBuilder;
 
@@ -25,6 +26,16 @@ public class Category extends AbstractDomainClass  {
 
     @Column(name = "description")
     private String description;
+
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private Category parent;
+
+    @Builder.Default
+    @ToString.Exclude
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
+    private List<Category> children = new ArrayList<>();
 
     // A category can have many News items
     @ToString.Exclude  // ✅ Prevents infinite recursion

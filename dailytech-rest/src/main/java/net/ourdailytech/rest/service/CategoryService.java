@@ -12,6 +12,12 @@ public interface CategoryService {
 
     List<CategoryDto> getAllCategories();
 
+    List<CategoryDto> getRootCategories();
+
+    List<CategoryDto> getChildCategories(Long parentId);
+
+    List<CategoryDto> getCategoryTree();
+
     CategoryDto updateCategory(CategoryDto categoryDto);
 
     boolean deleteCategory(Long categoryId);

@@ -13,6 +13,8 @@ public class CategoryDto {
     private Long id;
     private String name;
     private String description;
+    private Long parentId;
+    private List<CategoryDto> children;
     private List<NewsDto> news;
 //    private List<PostEntityDto> posts;
 }

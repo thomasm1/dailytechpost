@@ -47,6 +47,27 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
 
+    @Operation(summary = "Get root categories")
+    @ApiResponse(responseCode = "200", description = "Root categories found")
+    @GetMapping("/root")
+    public ResponseEntity<List<CategoryDto>> getRootCategories(){
+        return ResponseEntity.ok(categoryService.getRootCategories());
+    }
+
+    @Operation(summary = "Get category tree")
+    @ApiResponse(responseCode = "200", description = "Category tree found")
+    @GetMapping("/tree")
+    public ResponseEntity<List<CategoryDto>> getCategoryTree(){
+        return ResponseEntity.ok(categoryService.getCategoryTree());
+    }
+
+    @Operation(summary = "Get direct child categories")
+    @ApiResponse(responseCode = "200", description = "Child categories found")
+    @GetMapping("/{id}/children")
+    public ResponseEntity<List<CategoryDto>> getChildCategories(@PathVariable("id") Long categoryId){
+        return ResponseEntity.ok(categoryService.getChildCategories(categoryId));
+    }
+
 
     @Operation(summary = "Update a category")
     @ApiResponse(responseCode = "200", description = "Category updated")
