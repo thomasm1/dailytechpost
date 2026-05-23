@@ -17,12 +17,26 @@ describe('MyLinksComponent', () => {
   let dialog: jasmine.SpyObj<MatDialog>;
 
   const categories: CategoryMod[] = [
-    { cat3: 'Web Dev Affairs', categoryId: '10', durationGoal: 15 },
-    { cat3: 'Quantum Data', categoryId: '11', durationGoal: 15 }
+    {
+      cat3: 'Web Dev Affairs',
+      categoryId: '11',
+      durationGoal: 15,
+      children: [{ name: 'Developer', categoryId: '1101', parentId: '11', durationGoal: 15 }]
+    },
+    { cat3: 'Quantum Data', categoryId: '13', durationGoal: 15 }
   ];
 
   beforeEach(async () => {
-    writingService = jasmine.createSpyObj('WritingService', ['getCategories', 'addResearchNewsForCategory']);
+    writingService = jasmine.createSpyObj('WritingService', [
+      'getCategories',
+      'addResearchNewsForCategory',
+      'getFlattenedCategoryBuckets'
+    ]);
+    writingService.getFlattenedCategoryBuckets.and.returnValue([
+      categories[0],
+      categories[0].children![0],
+      categories[1]
+    ]);
     dialog = jasmine.createSpyObj('MatDialog', ['open']);
 
     await TestBed.configureTestingModule({
@@ -67,7 +81,7 @@ describe('MyLinksComponent', () => {
   it('should add a private link for the selected category', async () => {
     const form = {
       value: {
-        categoryId: '10',
+        categoryId: '11',
         title: 'Example',
         url: 'https://example.com',
         privateLink: true
@@ -91,10 +105,10 @@ describe('MyLinksComponent', () => {
   });
 
   it('should match category ids when Firestore returns them as numbers', async () => {
-    const numericCategory = { cat3: 'Web Dev Affairs', categoryId: 10, durationGoal: 15 } as any;
+    const numericCategory = { cat3: 'Web Dev Affairs', categoryId: 11, durationGoal: 15 } as any;
     const form = {
       value: {
-        categoryId: '10',
+        categoryId: '11',
         title: 'Example',
         url: 'https://example.com',
         privateLink: true
@@ -102,7 +116,7 @@ describe('MyLinksComponent', () => {
       resetForm: jasmine.createSpy('resetForm')
     } as any;
     writingService.addResearchNewsForCategory.and.returnValue(Promise.resolve({} as any));
-    component.categoryMods = [numericCategory];
+    component.categoryBuckets = [numericCategory];
 
     component.onAddLink(form);
     await Promise.resolve();
@@ -118,7 +132,7 @@ describe('MyLinksComponent', () => {
   it('should add a public link unless private is checked', async () => {
     const form = {
       value: {
-        categoryId: '10',
+        categoryId: '1101',
         title: 'Example',
         url: 'https://example.com'
       },
@@ -131,7 +145,7 @@ describe('MyLinksComponent', () => {
     await Promise.resolve();
 
     expect(writingService.addResearchNewsForCategory).toHaveBeenCalledWith(
-      categories[0],
+      categories[0].children![0],
       'Example',
       'https://example.com',
       true

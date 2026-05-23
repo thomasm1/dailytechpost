@@ -37,4 +37,8 @@ export class LinksComponent implements OnInit {
       }
     });
   }
+
+  getCategoryLabel(category: CategoryMod): string {
+    return category.cat3 || category.name || '';
+  }
 }

@@ -84,6 +84,7 @@ export class WritingService {
 
   private currentCategorySubs: Subscription[] = [];
   private readonly newsApiUrl = `${environment.API_URL}/news`;
+  private readonly categoriesApiUrl = `${environment.API_URL}/categories`;
 
   constructor(
     private db: AngularFirestore,
@@ -108,28 +109,14 @@ export class WritingService {
       durationGoal: writingMod.durationGoal!,
       categoryId: writingMod.categoryId as CategoryMod['categoryId'],
       description: `${writingMod.cat3} starter topic`,
+      children: [],
     }));
   }
 
   getCategories() { 
     this.uiService.startLoading(); // GONNA KEEP SUBSCRIPTION LOADER FOR NOW
     this.currentCategorySubs.push(
-      this.db.collection('writing-mods').snapshotChanges()
-        .pipe(map(docArray => {
-          return docArray.map(doc => {
-            const data = doc.payload.doc.data() as any;
-            return {
-              id: doc.payload.doc.id,
-              // spread operator pulling objects out of payload, and adding to object returned
-              cat3: data['cat3'],
-              categoryId: data['categoryId'],
-              news: data['news'],
-              description: data['description'],
-              name: data['name'],
-              durationGoal: data['durationGoal'], 
-            };  
-          });
-        })).subscribe((categoryModsArr: CategoryMod[]) => {
+      this.getCategoryTree().subscribe((categoryModsArr: CategoryMod[]) => {
           console.log('categoryModsArr');
           console.dir(categoryModsArr);
           this.uiService.stopLoading();
@@ -142,6 +129,26 @@ export class WritingService {
           this.uiService.showSnackBar('Database is down, and fetching Categories failed, please try again later', null, 3000);
         }));
 }
+
+  getCategoryTree(): Observable<CategoryMod[]> {
+    return this.http.get<CategoryMod[]>(`${this.categoriesApiUrl}/tree`).pipe(
+      map((categories) => this.normalizeCategoryTree(categories || [])),
+      catchError((error) => {
+        console.error('Error loading category tree from dailytech-rest:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  getFlattenedCategoryBuckets(categories: CategoryMod[]): CategoryMod[] {
+    return (categories || []).reduce((buckets: CategoryMod[], category) => {
+      buckets.push(category);
+      if (category.children?.length) {
+        buckets.push(...this.getFlattenedCategoryBuckets(category.children));
+      }
+      return buckets;
+    }, []);
+  }
 
   fetchAvailableWritingMods() {
     // return this.availableWritingMods.slice();
@@ -384,10 +391,25 @@ export class WritingService {
     const payload = {
       title: title || url,
       url,
-      categoryId: Number(this.categoryIdsByName[categoryName] || category.categoryId),
+      categoryId: Number(category.categoryId || this.categoryIdsByName[categoryName]),
       publicLink
     };
     return lastValueFrom(this.http.post<NewsMod>(this.newsApiUrl, payload, { headers }));
+  }
+
+  private normalizeCategoryTree(categories: CategoryMod[]): CategoryMod[] {
+    return categories.map((category) => {
+      const categoryId = category.categoryId ?? category.id;
+      const normalized: CategoryMod = {
+        ...category,
+        id: category.id ?? categoryId,
+        categoryId,
+        cat3: category.cat3 || category.name,
+        durationGoal: category.durationGoal || this.DEFAULT_DURATION_GOAL_MINUTES,
+        children: category.children ? this.normalizeCategoryTree(category.children) : []
+      };
+      return normalized;
+    });
   }
 
   private async getFirebaseAuthHeader(): Promise<HttpHeaders> {

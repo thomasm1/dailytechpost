@@ -17,6 +17,7 @@ import { LinkDetailsDialogComponent } from './link-details-dialog.component';
 export class MyLinksComponent implements OnInit, OnDestroy {
   categoryMods$!: Observable<CategoryMod[]>;
   categoryMods: CategoryMod[] = [];
+  categoryBuckets: CategoryMod[] = [];
   isSaving = false;
   private categorySubscription?: Subscription;
 
@@ -30,6 +31,7 @@ export class MyLinksComponent implements OnInit, OnDestroy {
     this.categoryMods$ = this.store.select(fromCategories.getCurrentCategoryMods);
     this.categorySubscription = this.categoryMods$.subscribe((categories) => {
       this.categoryMods = categories || [];
+      this.categoryBuckets = this.writingService.getFlattenedCategoryBuckets(this.categoryMods);
     });
     this.writingService.getCategories();
   }
@@ -53,7 +55,7 @@ export class MyLinksComponent implements OnInit, OnDestroy {
 
   onAddLink(form: NgForm): void {
     const categoryId = Number(form.value.categoryId);
-    const category = this.categoryMods.find((item) => Number(item.categoryId) === categoryId);
+    const category = this.categoryBuckets.find((item) => Number(item.categoryId) === categoryId);
     const title = (form.value.title || '').trim();
     const url = (form.value.url || '').trim();
     const publicLink = form.value.privateLink !== true;
@@ -69,5 +71,9 @@ export class MyLinksComponent implements OnInit, OnDestroy {
     }, () => {
       this.isSaving = false;
     });
+  }
+
+  getCategoryLabel(category: CategoryMod): string {
+    return category.cat3 || category.name || '';
   }
 }

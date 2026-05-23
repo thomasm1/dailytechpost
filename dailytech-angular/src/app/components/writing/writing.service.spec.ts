@@ -9,6 +9,7 @@ import { WritingService } from './writing.service';
 import { UiService } from '../../service/ui.service';
 import { environment } from '../../../environments/environment';
 import { AwsAuthenticationService } from '../../service/auth/aws-authentication.service';
+import { CategoryMod } from '../../models/category-mods.model';
 
 describe('WritingService', () => {
   let service: WritingService;
@@ -102,6 +103,33 @@ describe('WritingService', () => {
     expect(actualResponse).toEqual(mockResponse);
   });
 
+  it('should load and normalize the category tree', () => {
+    const mockResponse = [
+      {
+        id: 11,
+        name: 'Web Dev Affairs',
+        description: 'Web links',
+        children: [
+          { id: 1101, name: 'Developer', parentId: 11 }
+        ]
+      }
+    ] as any;
+    let actualResponse: CategoryMod[] | undefined;
+
+    service.getCategoryTree().subscribe((response) => {
+      actualResponse = response;
+    });
+
+    const request = httpMock.expectOne(`${environment.API_URL}/categories/tree`);
+    expect(request.request.method).toBe('GET');
+    request.flush(mockResponse);
+
+    expect(actualResponse?.[0].categoryId).toBe(11);
+    expect(actualResponse?.[0].cat3).toBe('Web Dev Affairs');
+    expect(actualResponse?.[0].children?.[0].categoryId).toBe(1101);
+    expect(actualResponse?.[0].children?.[0].parentId).toBe(11);
+  });
+
   it('should save research urls with the session bearer token', async () => {
     authService.getAuthenticatedToken.and.returnValue('Bearer session-token');
 
@@ -135,10 +163,10 @@ describe('WritingService', () => {
     const request = httpMock.expectOne(`${environment.API_URL}/news`);
     expect(request.request.method).toBe('POST');
     expect(request.request.headers.get('Authorization')).toBe('Bearer session-token');
-    expect(request.request.body).toEqual({
+      expect(request.request.body).toEqual({
       title: 'Quantum',
       url: 'https://example.com/quantum',
-      categoryId: 13,
+      categoryId: 11,
       publicLink: true
     });
     request.flush({ id: '53', title: 'Quantum', url: 'https://example.com/quantum', categoryId: 11 });
@@ -162,7 +190,7 @@ describe('WritingService', () => {
     expect(request.request.body).toEqual({
       title: 'Private Quantum',
       url: 'https://example.com/private-quantum',
-      categoryId: 13,
+      categoryId: 11,
       publicLink: false
     });
     request.flush({

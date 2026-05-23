@@ -16,8 +16,13 @@ describe('LinksComponent', () => {
   let dialog: jasmine.SpyObj<MatDialog>;
 
   const categories: CategoryMod[] = [
-    { cat3: 'Web Dev Affairs', categoryId: '10', durationGoal: 15 },
-    { cat3: 'Quantum Data', categoryId: '11', durationGoal: 15 }
+    {
+      cat3: 'Web Dev Affairs',
+      categoryId: '11',
+      durationGoal: 15,
+      children: [{ name: 'Developer', categoryId: '1101', parentId: '11', durationGoal: 15 }]
+    },
+    { cat3: 'Quantum Data', categoryId: '13', durationGoal: 15 }
   ];
 
   beforeEach(async () => {

@@ -1,10 +1,12 @@
 export interface CategoryMod {
-    id?: string; // Long
-    name?: 'Web Dev Affairs' | 'Musing Blockchain' | 'A.I.Now.' | 'Sociology Tomorrow!' | 'Quantum Data';
+    id?: string | number; // Long
+    name?: string;
     description?: string;
     durationGoal: number;  
     news?: Array<string>;
-    categoryId?: '10' | '11' | '12' | '13' | '14';
-    cat3?: 'Web Dev Affairs' | 'Musing Blockchain' | 'A.I.Now.' | 'Sociology Tomorrow!' | 'Quantum Data' ;
+    categoryId?: string | number;
+    parentId?: string | number | null;
+    children?: CategoryMod[];
+    cat3?: string;
  
 }

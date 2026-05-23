@@ -55,6 +55,11 @@
     background: rgba(143, 215, 255, 0.1);
   }
 
+  .child-link-node {
+    margin-left: 24px;
+    width: calc(min(100%, 680px) - 24px);
+  }
+
   &-count {
     flex: 0 0 auto;
     margin-left: 12px;

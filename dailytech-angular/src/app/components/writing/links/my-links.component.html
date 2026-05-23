@@ -15,9 +15,14 @@
         <span>Category</span>
         <select name="categoryId" ngModel required>
           <option value="" disabled selected></option>
-          <option *ngFor="let category of categoryMods$ | async" [value]="category.categoryId">
-            {{ category.cat3 || category.name }}
-          </option>
+          <ng-container *ngFor="let category of categoryMods$ | async">
+            <option [value]="category.categoryId">
+              {{ getCategoryLabel(category) }}
+            </option>
+            <option *ngFor="let child of category.children || []" [value]="child.categoryId">
+              {{ getCategoryLabel(category) }} / {{ getCategoryLabel(child) }}
+            </option>
+          </ng-container>
         </select>
       </label>
 
@@ -45,17 +50,31 @@
       </div>
 
       <div class="tree-children">
-        <button
-          *ngFor="let category of categoryMods$ | async"
-          mat-button
-          type="button"
-          class="link-node"
-          (click)="openLinkCategory(category)"
-        >
-          <span class="node-connector"></span>
-          <mat-icon class="node-icon">chevron_right</mat-icon>
-          <span class="link-name">{{ category.cat3 || category.name }}</span>
-        </button>
+        <ng-container *ngFor="let category of categoryMods$ | async">
+          <button
+            mat-button
+            type="button"
+            class="link-node"
+            (click)="openLinkCategory(category)"
+          >
+            <span class="node-connector"></span>
+            <mat-icon class="node-icon">chevron_right</mat-icon>
+            <span class="link-name">{{ getCategoryLabel(category) }}</span>
+          </button>
+
+          <ng-container *ngFor="let child of category.children || []">
+            <button
+              mat-button
+              type="button"
+              class="link-node child-link-node"
+              (click)="openLinkCategory(child)"
+            >
+              <span class="node-connector"></span>
+              <mat-icon class="node-icon">subdirectory_arrow_right</mat-icon>
+              <span class="link-name">{{ getCategoryLabel(child) }}</span>
+            </button>
+          </ng-container>
+        </ng-container>
       </div>
     </div>
     <div>
