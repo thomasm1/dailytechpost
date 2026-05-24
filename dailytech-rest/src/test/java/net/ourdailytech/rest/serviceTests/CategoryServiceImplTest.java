@@ -16,6 +16,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -84,6 +85,38 @@ class CategoryServiceImplTest {
         assertNotNull(tree.get(0).getChildren());
         assertEquals(1, tree.get(0).getChildren().size());
         assertEquals(1101L, tree.get(0).getChildren().get(0).getId());
+    }
+
+    @Test
+    void addCategoryInfersParentForDeveloperSubtopicId() {
+        CategoryDto categoryDto = categoryDto(1101L, "Developer", null);
+        Category developer = category(1101L, "Developer", null);
+        Category webDev = category(11L, "Web Dev Affairs", null);
+
+        when(categoryMapper.toEntity(categoryDto)).thenReturn(developer);
+        when(categoryRepository.findById(11L)).thenReturn(Optional.of(webDev));
+        when(categoryMapper.toDto(developer)).thenReturn(categoryDto(1101L, "Developer", 11L));
+
+        CategoryDto saved = categoryService.addCategory(categoryDto);
+
+        assertEquals(webDev, developer.getParent());
+        assertEquals(11L, saved.getParentId());
+        verify(categoryRepository).save(developer);
+    }
+
+    @Test
+    void addCategoryLeavesTwoDigitCategoryAsRoot() {
+        CategoryDto categoryDto = categoryDto(11L, "Web Dev Affairs", null);
+        Category webDev = category(11L, "Web Dev Affairs", null);
+
+        when(categoryMapper.toEntity(categoryDto)).thenReturn(webDev);
+        when(categoryMapper.toDto(webDev)).thenReturn(categoryDto);
+
+        CategoryDto saved = categoryService.addCategory(categoryDto);
+
+        assertNull(webDev.getParent());
+        assertNull(saved.getParentId());
+        verify(categoryRepository).save(webDev);
     }
 
     private Category category(Long id, String name, Category parent) {

@@ -9,6 +9,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Optional;
 import net.ourdailytech.rest.exception.PostApiException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
@@ -29,6 +32,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class NewsServiceImpl implements NewsService {
+
+  private static final Long DEFAULT_CSV_CATEGORY_ID = 1101L;
 
   private final NewsRepository newsRepository;
   private final NewsMapper newsMapper;
@@ -63,29 +68,40 @@ public class NewsServiceImpl implements NewsService {
   public List<NewsDto> createNewsFromCsv(InputStream csvInputStream, String userEmail) {
     User user = getRequiredUser(userEmail);
     List<NewsDto> created = new ArrayList<>();
+    Map<String, Integer> headerIndexes = null;
 
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(csvInputStream, StandardCharsets.UTF_8))) {
       String line;
       int lineNumber = 0;
       while ((line = reader.readLine()) != null) {
         lineNumber++;
-        if (lineNumber == 1 && isCsvHeader(line)) {
-          continue;
-        }
         if (line.isBlank()) {
           continue;
         }
 
         List<String> columns = parseCsvLine(line);
-        if (columns.size() != 4) {
-          throw new PostApiException(HttpStatus.BAD_REQUEST,
-              "CSV line " + lineNumber + " must have categoryId,parentId,description,url");
+        if (headerIndexes == null && isCsvHeader(columns)) {
+          headerIndexes = getHeaderIndexes(columns);
+          if (!headerIndexes.containsKey("url")) {
+            throw new PostApiException(HttpStatus.BAD_REQUEST, "CSV header must include url");
+          }
+          continue;
         }
 
         News news = new News();
-        news.setCategory(getRequiredCategory(parseRequiredLong(columns.get(0), "categoryId", lineNumber)));
-        news.setTitle(columns.get(2).trim());
-        news.setUrl(columns.get(3).trim());
+        String url = getCsvValue(columns, headerIndexes, "url", lineNumber);
+        if (url == null || url.isBlank()) {
+          throw new PostApiException(HttpStatus.BAD_REQUEST, "CSV line " + lineNumber + " must include url");
+        }
+
+        String description = getCsvValue(columns, headerIndexes, "description", lineNumber);
+        if (description == null) {
+          description = getCsvValue(columns, headerIndexes, "title", lineNumber);
+        }
+
+        news.setUrl(url.trim());
+        news.setTitle(resolveCsvDescription(description, news.getUrl()));
+        news.setCategory(resolveCsvCategory(columns, headerIndexes, lineNumber));
         news.setUser(user);
         news.setPublicLink(true);
         applyNormalizedUrl(news);
@@ -97,6 +113,23 @@ public class NewsServiceImpl implements NewsService {
     }
 
     return created;
+  }
+
+  private String resolveCsvDescription(String description, String url) {
+    if (description != null && !description.isBlank()) {
+      return description.trim();
+    }
+
+    return getUrlWithoutScheme(url);
+  }
+
+  private Category resolveCsvCategory(List<String> columns, Map<String, Integer> headerIndexes, int lineNumber) {
+    String categoryId = getCsvValue(columns, headerIndexes, "categoryid", lineNumber);
+    Long effectiveCategoryId = (categoryId == null || categoryId.isBlank())
+        ? DEFAULT_CSV_CATEGORY_ID
+        : parseRequiredLong(categoryId, "categoryId", lineNumber);
+
+    return getRequiredCategory(effectiveCategoryId);
   }
 
   @Override
@@ -192,8 +225,68 @@ public class NewsServiceImpl implements NewsService {
         .orElseThrow(() -> new ResourceNotFoundException("User", "email", userEmail));
   }
 
-  private boolean isCsvHeader(String line) {
-    return line.stripLeading().toLowerCase().startsWith("categoryid,parentid,description,url");
+  private boolean isCsvHeader(List<String> columns) {
+    return columns.stream()
+        .map(this::normalizeHeader)
+        .anyMatch(column -> column.equals("url") || column.equals("categoryid") || column.equals("description"));
+  }
+
+  private Map<String, Integer> getHeaderIndexes(List<String> columns) {
+    Map<String, Integer> headerIndexes = new HashMap<>();
+    for (int i = 0; i < columns.size(); i++) {
+      String header = normalizeHeader(columns.get(i));
+      if (!header.isBlank()) {
+        if (!isSupportedCsvHeader(header)) {
+          throw new PostApiException(HttpStatus.BAD_REQUEST,
+              "CSV header " + columns.get(i).trim() + " is not supported. Use url,description,categoryId");
+        }
+        headerIndexes.put(header, i);
+      }
+    }
+    return headerIndexes;
+  }
+
+  private boolean isSupportedCsvHeader(String header) {
+    return header.equals("url") || header.equals("description") || header.equals("title") || header.equals("categoryid");
+  }
+
+  private String normalizeHeader(String header) {
+    return header.trim().toLowerCase(Locale.ROOT).replace("_", "");
+  }
+
+  private String getCsvValue(List<String> columns, Map<String, Integer> headerIndexes, String columnName, int lineNumber) {
+    if (headerIndexes != null) {
+      Integer index = headerIndexes.get(columnName);
+      if (index == null) {
+        return null;
+      }
+      return index < columns.size() ? columns.get(index) : null;
+    }
+
+    return getPositionalCsvValue(columns, columnName, lineNumber);
+  }
+
+  private String getPositionalCsvValue(List<String> columns, String columnName, int lineNumber) {
+    if (columns.size() == 1) {
+      return columnName.equals("url") ? columns.get(0) : null;
+    }
+    if (columns.size() == 2) {
+      if (columnName.equals("description")) {
+        return columns.get(1);
+      }
+      return columnName.equals("url") ? columns.get(0) : null;
+    }
+    if (columns.size() == 3) {
+      if (columnName.equals("categoryid")) {
+        return columns.get(2);
+      }
+      if (columnName.equals("description")) {
+        return columns.get(1);
+      }
+      return columnName.equals("url") ? columns.get(0) : null;
+    }
+    throw new PostApiException(HttpStatus.BAD_REQUEST,
+        "CSV line " + lineNumber + " must use url,description,categoryId");
   }
 
   private Long parseRequiredLong(String value, String columnName, int lineNumber) {
@@ -257,6 +350,14 @@ public class NewsServiceImpl implements NewsService {
     }
 
     return normalized;
+  }
+
+  private String getUrlWithoutScheme(String url) {
+    if (url == null) {
+      return null;
+    }
+
+    return url.trim().replaceFirst("(?i)^https?://", "");
   }
 
   private String hashUrl(String normalizedUrl) {

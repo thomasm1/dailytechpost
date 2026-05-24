@@ -22,7 +22,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     public CategoryDto addCategory(CategoryDto categoryDto) {
         Category cat3 = categoryMapper.toEntity(categoryDto);
-        assignParent(cat3, categoryDto.getParentId());
+        assignParent(cat3, resolveParentId(cat3.getId(), categoryDto.getParentId()));
         categoryRepository.save(cat3);
 
         CategoryDto catNewDto = categoryMapper.toDto(cat3);
@@ -79,6 +79,8 @@ public class CategoryServiceImpl implements CategoryService {
         categoryMapper.partialUpdate(categoryDto, categoryUpdate);
         if (categoryDto.getParentId() != null) {
             assignParent(categoryUpdate, categoryDto.getParentId());
+        } else if (categoryUpdate.getParent() == null) {
+            assignParent(categoryUpdate, resolveParentId(categoryUpdate.getId(), null));
         }
 
         Category categoryDone = categoryRepository.save(categoryUpdate);
@@ -114,6 +116,19 @@ public class CategoryServiceImpl implements CategoryService {
             throw new IllegalArgumentException("Category cannot be its own parent");
         }
         category.setParent(ensureCategoryExists(parentId));
+    }
+
+    private Long resolveParentId(Long categoryId, Long requestedParentId) {
+        if (requestedParentId != null || categoryId == null) {
+            return requestedParentId;
+        }
+        if (categoryId >= 10 && categoryId <= 99) {
+            return null;
+        }
+        if (categoryId >= 1000 && categoryId <= 9999) {
+            return categoryId / 100;
+        }
+        return null;
     }
 
     private Category ensureCategoryExists(Long categoryId) {

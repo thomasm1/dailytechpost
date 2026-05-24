@@ -1,27 +1,27 @@
-categoryId,parentId,description,url
-1101,11,"LEARNING PLATFORMS,One Month Courses",https://onemonth.com/courses
-1101,11,"CSS,W3C CSS 2.1 Specification",https://www.w3.org/TR/2011/REC-CSS2-20110607/#minitoc
-1101,11,"JAVASCRIPT,Codecademy JavaScript Discussion",https://discuss.codecademy.com/c/javascript/getting-started-v2
-1101,11,"WEB DEVELOPMENT,SitePoint",https://www.sitepoint.com
-1101,11,"LEARNING PLATFORMS,The New Boston",https://thenewboston.com
-1101,11,"SKILLS ASSESSMENT,Pluralsight Skills Assessment",https://www.pluralsight.com/product/skills-assessment
-1101,11,"LEARNING PLATFORMS,Codecademy",https://www.codecademy.com
-1101,11,"DATA SCIENCE,R vs Python Free Books",https://ucanalytics.com/blogs/r-vs-python-comparison-and-awsome-books-free-pdfs-to-learn-them/
-1101,11,"RUBY ON RAILS,Ruby on Rails Tutorial",https://www.railstutorial.org/book
-1101,11,"LEARNING PLATFORMS,freeCodeCamp",https://www.freecodecamp.org
-1101,11,"FREELANCE BUSINESS,Brad Hussey",https://bradhussey.ca
-1101,11,"WEB DEVELOPMENT,O'Reilly Cory House Interview",https://www.oreilly.com/content/5-questions-with-cory-house/
-1101,11,"JAVASCRIPT TESTING,Jest",https://jestjs.io
-1101,11,"UNIX,Useful Commands",https://www.tutorialspoint.com/unix/unix-useful-commands.htm
-1101,11,"CODE TUTORIALS,Envato Tuts Plus",https://code.tutsplus.com
-1101,11,"BUILD TOOLS,Gulp Build Tool Discussion",https://gon.to/2015/02/26/gulp-is-awesome-but-do-we-really-need-it
-1101,11,"BUILD TOOLS,Use npm as a Build Tool",https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
-1101,11,"BUILD TOOLS,Advanced Front-End Automation with npm Scripts",https://www.youtube.com/watch?v=0RYETb9YVrk
-1101,11,"ANGULARJS,Sort Rows by Table Header",https://csharp-video-tutorials.blogspot.com/2015/11/angularjs-sort-rows-by-table-header.html
-1101,11,"QUANTUM COMPUTING,IBM Quantum Experience",https://quantumexperience.ng.bluemix.net/qx/experience
-1101,11,"PRODUCTIVITY,Google Docs Useful Features",https://www.fastcompany.com/90221069/25-incredibly-useful-things-you-didnt-know-google-docs-could-do
-1101,11,"SHELL SCRIPTING,Shell Scripting Tutorial",https://www.newthinktank.com/2016/06/shell-scripting-tutorial/
-1101,11,"ANGULARJS,Service vs Factory",https://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
-1101,11,"ANGULARJS TESTING,Unit Test AngularJS Controllers",https://nathanleclaire.com/blog/2013/12/13/how-to-unit-test-controllers-in-angularjs-without-setting-your-hair-on-fire/
-1101,11,"PYTHON,Mode Python Tutorial",https://mode.com/python-tutorial
-1101,11,"CODING CHALLENGES,Coderbyte Challenges",https://coderbyte.com/challenges
+url,description,categoryId
+https://onemonth.com/courses,"LEARNING PLATFORMS,One Month Courses",1101
+https://www.w3.org/TR/2011/REC-CSS2-20110607/#minitoc,"CSS,W3C CSS 2.1 Specification",1101
+https://discuss.codecademy.com/c/javascript/getting-started-v2,"JAVASCRIPT,Codecademy JavaScript Discussion",1101
+https://www.sitepoint.com,"WEB DEVELOPMENT,SitePoint",1101
+https://thenewboston.com,"LEARNING PLATFORMS,The New Boston",1101
+https://www.pluralsight.com/product/skills-assessment,"SKILLS ASSESSMENT,Pluralsight Skills Assessment",1101
+https://www.codecademy.com,"LEARNING PLATFORMS,Codecademy",1101
+https://ucanalytics.com/blogs/r-vs-python-comparison-and-awsome-books-free-pdfs-to-learn-them/,"DATA SCIENCE,R vs Python Free Books",1101
+https://www.railstutorial.org/book,"RUBY ON RAILS,Ruby on Rails Tutorial",1101
+https://www.freecodecamp.org,"LEARNING PLATFORMS,freeCodeCamp",1101
+https://bradhussey.ca,"FREELANCE BUSINESS,Brad Hussey",1101
+https://www.oreilly.com/content/5-questions-with-cory-house/,"WEB DEVELOPMENT,O'Reilly Cory House Interview",1101
+https://jestjs.io,"JAVASCRIPT TESTING,Jest",1101
+https://www.tutorialspoint.com/unix/unix-useful-commands.htm,"UNIX,Useful Commands",1101
+https://code.tutsplus.com,"CODE TUTORIALS,Envato Tuts Plus",1101
+https://gon.to/2015/02/26/gulp-is-awesome-but-do-we-really-need-it,"BUILD TOOLS,Gulp Build Tool Discussion",1101
+https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/,"BUILD TOOLS,Use npm as a Build Tool",1101
+https://www.youtube.com/watch?v=0RYETb9YVrk,"BUILD TOOLS,Advanced Front-End Automation with npm Scripts",1101
+https://csharp-video-tutorials.blogspot.com/2015/11/angularjs-sort-rows-by-table-header.html,"ANGULARJS,Sort Rows by Table Header",1101
+https://quantumexperience.ng.bluemix.net/qx/experience,"QUANTUM COMPUTING,IBM Quantum Experience",1101
+https://www.fastcompany.com/90221069/25-incredibly-useful-things-you-didnt-know-google-docs-could-do,"PRODUCTIVITY,Google Docs Useful Features",1101
+https://www.newthinktank.com/2016/06/shell-scripting-tutorial/,"SHELL SCRIPTING,Shell Scripting Tutorial",1101
+https://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html,"ANGULARJS,Service vs Factory",1101
+https://nathanleclaire.com/blog/2013/12/13/how-to-unit-test-controllers-in-angularjs-without-setting-your-hair-on-fire/,"ANGULARJS TESTING,Unit Test AngularJS Controllers",1101
+https://mode.com/python-tutorial,"PYTHON,Mode Python Tutorial",1101
+https://coderbyte.com/challenges,"CODING CHALLENGES,Coderbyte Challenges",1101

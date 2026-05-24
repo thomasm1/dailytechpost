@@ -87,7 +87,7 @@ class NewsControllerTest {
     );
 
     mockMvc.perform(multipart("/api/news/bulk/csv")
-            .file("file", "categoryId,parentId,description,url\n1101,11,\"LESS,LESS CDN\",https://example.com".getBytes())
+            .file("file", "url,description,categoryId\nhttps://example.com,\"LESS,LESS CDN\",1101".getBytes())
             .principal(auth))
         .andExpect(status().isCreated())
         .andExpect(jsonPath("$[0].id").value(1L))

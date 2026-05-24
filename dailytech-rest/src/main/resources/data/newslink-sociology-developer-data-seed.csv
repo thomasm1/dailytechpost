@@ -1,16 +1,16 @@
-categoryId,parentId,description,url
-1201,12,"STATISTICS,Statisticien-mathematicien",https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page1800?toggleLanguage=fr&poster=939011
-1201,12,"STATISTICS,UCLA Statistical Computing FAQ",http://www.ats.ucla.edu/stat/mult_pkg/faq/general/default.htm
-1201,12,"ONLINE COURSES,Stanford Lagunita Learning Platform",https://online.stanford.edu/lagunita-learning-platform
-1201,12,"RESEARCH METHODS,Sage Research Methods",https://methods.sagepub.com/#_
-1201,12,"STATISTICS DATA,StatCan Nesstar WebView",http://dli-idd-nesstar.statcan.gc.ca/webview/
-1201,12,"DATA VISUALIZATION,Gapminder",https://www.gapminder.org
-1201,12,"ACADEMIC MEDIA,Bibliotheques UdeM YouTube Playlists",https://www.youtube.com/user/BibliothequesUdeM/playlists
-1201,12,"EDUCATION,Savvas Learning Company",https://www.savvas.com
-1201,12,"SOCIOLOGY JOURNALS,Sociological Science",https://sociologicalscience.com
-1201,12,"SOCIOLOGY COURSE,SOL6210",https://sol6210.netlify.app
-1201,12,"DATA SCIENCE,Kaggle",https://www.kaggle.com
-1201,12,"MACHINE LEARNING,Fifty Years of Classification and Regression Trees",https://www.semanticscholar.org/paper/Fifty-Years-of-Classification-and-Regression-Trees-Loh/f1c3683cacc3dc7898f3603753af87565f8ad677?p2df
-1201,12,"OPEN DATA,Data.gov",https://data.gov
-1201,12,"R PROGRAMMING,Programming with R",https://www.pluralsight.com/courses/programming-with-r
-1201,12,"MACHINE LEARNING DATA,MNIST Dataset",https://www.kaggle.com/datasets/hojjatk/mnist-dataset
+url,description,categoryId
+https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page1800?toggleLanguage=fr&poster=939011,"STATISTICS,Statisticien-mathematicien",1201
+http://www.ats.ucla.edu/stat/mult_pkg/faq/general/default.htm,"STATISTICS,UCLA Statistical Computing FAQ",1201
+https://online.stanford.edu/lagunita-learning-platform,"ONLINE COURSES,Stanford Lagunita Learning Platform",1201
+https://methods.sagepub.com/#_,"RESEARCH METHODS,Sage Research Methods",1201
+http://dli-idd-nesstar.statcan.gc.ca/webview/,"STATISTICS DATA,StatCan Nesstar WebView",1201
+https://www.gapminder.org,"DATA VISUALIZATION,Gapminder",1201
+https://www.youtube.com/user/BibliothequesUdeM/playlists,"ACADEMIC MEDIA,Bibliotheques UdeM YouTube Playlists",1201
+https://www.savvas.com,"EDUCATION,Savvas Learning Company",1201
+https://sociologicalscience.com,"SOCIOLOGY JOURNALS,Sociological Science",1201
+https://sol6210.netlify.app,"SOCIOLOGY COURSE,SOL6210",1201
+https://www.kaggle.com,"DATA SCIENCE,Kaggle",1201
+https://www.semanticscholar.org/paper/Fifty-Years-of-Classification-and-Regression-Trees-Loh/f1c3683cacc3dc7898f3603753af87565f8ad677?p2df,"MACHINE LEARNING,Fifty Years of Classification and Regression Trees",1201
+https://data.gov,"OPEN DATA,Data.gov",1201
+https://www.pluralsight.com/courses/programming-with-r,"R PROGRAMMING,Programming with R",1201
+https://www.kaggle.com/datasets/hojjatk/mnist-dataset,"MACHINE LEARNING DATA,MNIST Dataset",1201
