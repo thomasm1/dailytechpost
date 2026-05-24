@@ -22,6 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -72,6 +73,25 @@ class NewsControllerTest {
         .andExpect(status().isCreated())
         .andExpect(jsonPath("$.id").value(1L))
         .andExpect(jsonPath("$.title").value("Test News"));
+  }
+
+  @Test
+  void testAddNewsFromCsv_ShouldReturnCreatedItems() throws Exception {
+    NewsDto newsDto = getNewsDto();
+    when(newsServiceImpl.createNewsFromCsv(any(), any(String.class))).thenReturn(List.of(newsDto));
+
+    UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+        "testuser",
+        "N/A",
+        List.of(new SimpleGrantedAuthority("ROLE_USER"))
+    );
+
+    mockMvc.perform(multipart("/api/news/bulk/csv")
+            .file("file", "categoryId,parentId,description,url\n1101,11,\"LESS,LESS CDN\",https://example.com".getBytes())
+            .principal(auth))
+        .andExpect(status().isCreated())
+        .andExpect(jsonPath("$[0].id").value(1L))
+        .andExpect(jsonPath("$[0].title").value("Test News"));
   }
 
   @Test

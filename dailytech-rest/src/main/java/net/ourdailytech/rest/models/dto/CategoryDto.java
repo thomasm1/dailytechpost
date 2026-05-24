@@ -25,6 +25,10 @@ public class CategoryDto {
 //12	Sociology Tomorrow!      Sociology
 //13	Quantum Data            Quantum  news
 //14	Musing Blockchain   	Cryptocurrency insights
-//15	category name	description category
-//16	category name	description category
-//17	category name	description category
+// INSERT INTO categories (id, name, description, parent_id, depth)
+// VALUES
+//     (1001, 'A.I. Developer', 'Developer resources for A.I.Now.', 10, 1),
+//     (1101, 'Web Dev Developer', 'Developer resources for Web Dev Affairs', 11, 1),
+//     (1201, 'Sociology Developer', 'Developer resources for Sociology Tomorrow!', 12, 1),
+//     (1301, 'Quantum Developer', 'Developer resources for Quantum Data', 13, 1),
+//     (1401, 'Blockchain Developer', 'Developer resources for Musing Blockchain', 14, 1);

@@ -3,6 +3,12 @@ package net.ourdailytech.rest.service;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UncheckedIOException;
+import java.util.ArrayList;
 import java.util.Optional;
 import net.ourdailytech.rest.exception.PostApiException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
@@ -51,6 +57,46 @@ public class NewsServiceImpl implements NewsService {
     }
     News saved = newsRepository.save(newsEntity);
     return newsMapper.toDto(saved);
+  }
+
+  @Override
+  public List<NewsDto> createNewsFromCsv(InputStream csvInputStream, String userEmail) {
+    User user = getRequiredUser(userEmail);
+    List<NewsDto> created = new ArrayList<>();
+
+    try (BufferedReader reader = new BufferedReader(new InputStreamReader(csvInputStream, StandardCharsets.UTF_8))) {
+      String line;
+      int lineNumber = 0;
+      while ((line = reader.readLine()) != null) {
+        lineNumber++;
+        if (lineNumber == 1 && isCsvHeader(line)) {
+          continue;
+        }
+        if (line.isBlank()) {
+          continue;
+        }
+
+        List<String> columns = parseCsvLine(line);
+        if (columns.size() != 4) {
+          throw new PostApiException(HttpStatus.BAD_REQUEST,
+              "CSV line " + lineNumber + " must have categoryId,parentId,description,url");
+        }
+
+        News news = new News();
+        news.setCategory(getRequiredCategory(parseRequiredLong(columns.get(0), "categoryId", lineNumber)));
+        news.setTitle(columns.get(2).trim());
+        news.setUrl(columns.get(3).trim());
+        news.setUser(user);
+        news.setPublicLink(true);
+        applyNormalizedUrl(news);
+
+        created.add(newsMapper.toDto(newsRepository.save(news)));
+      }
+    } catch (IOException e) {
+      throw new UncheckedIOException("Unable to read news CSV upload", e);
+    }
+
+    return created;
   }
 
   @Override
@@ -144,6 +190,45 @@ public class NewsServiceImpl implements NewsService {
   private User getRequiredUser(String userEmail) {
     return usersRepository.findByEmail(userEmail)
         .orElseThrow(() -> new ResourceNotFoundException("User", "email", userEmail));
+  }
+
+  private boolean isCsvHeader(String line) {
+    return line.stripLeading().toLowerCase().startsWith("categoryid,parentid,description,url");
+  }
+
+  private Long parseRequiredLong(String value, String columnName, int lineNumber) {
+    try {
+      return Long.parseLong(value.trim());
+    } catch (NumberFormatException e) {
+      throw new PostApiException(HttpStatus.BAD_REQUEST,
+          "CSV line " + lineNumber + " has invalid " + columnName + ": " + value);
+    }
+  }
+
+  private List<String> parseCsvLine(String line) {
+    List<String> columns = new ArrayList<>();
+    StringBuilder current = new StringBuilder();
+    boolean inQuotes = false;
+
+    for (int i = 0; i < line.length(); i++) {
+      char ch = line.charAt(i);
+      if (ch == '"') {
+        if (inQuotes && i + 1 < line.length() && line.charAt(i + 1) == '"') {
+          current.append('"');
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (ch == ',' && !inQuotes) {
+        columns.add(current.toString());
+        current.setLength(0);
+      } else {
+        current.append(ch);
+      }
+    }
+    columns.add(current.toString());
+
+    return columns;
   }
 
   private boolean isOwnedBy(News news, String userEmail) {

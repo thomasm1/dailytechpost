@@ -50,8 +50,8 @@ class CategoryServiceImplTest {
     @Test
     void getChildCategoriesReturnsDirectChildrenForParent() {
         Category webDev = category(11L, "Web Dev Affairs", null);
-        Category developer = category(1101L, "Developer", webDev);
-        CategoryDto developerDto = categoryDto(1101L, "Developer", 11L);
+        Category developer = category(1101L, "Web Developer", webDev);
+        CategoryDto developerDto = categoryDto(1101L, "Web Developer", 11L);
 
         when(categoryRepository.findById(11L)).thenReturn(Optional.of(webDev));
         when(categoryRepository.findByParentId(11L)).thenReturn(List.of(developer));
@@ -68,9 +68,9 @@ class CategoryServiceImplTest {
     @Test
     void getCategoryTreeAddsChildrenToRootDtos() {
         Category webDev = category(11L, "Web Dev Affairs", null);
-        Category developer = category(1101L, "Developer", webDev);
+        Category developer = category(1101L, "Web Developer", webDev);
         CategoryDto webDevDto = categoryDto(11L, "Web Dev Affairs", null);
-        CategoryDto developerDto = categoryDto(1101L, "Developer", 11L);
+        CategoryDto developerDto = categoryDto(1101L, "Web Developer", 11L);
 
         when(categoryRepository.findByParentIsNull()).thenReturn(List.of(webDev));
         when(categoryRepository.findByParentId(11L)).thenReturn(List.of(developer));

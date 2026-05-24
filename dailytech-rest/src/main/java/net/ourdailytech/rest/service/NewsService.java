@@ -2,10 +2,13 @@ package net.ourdailytech.rest.service;
 
 import net.ourdailytech.rest.models.dto.NewsDto;
 
+import java.io.InputStream;
 import java.util.List;
 
 public interface NewsService {
   NewsDto createNews(NewsDto newsDto, String userEmail);
+
+  List<NewsDto> createNewsFromCsv(InputStream csvInputStream, String userEmail);
 
   NewsDto getNews(Long newsId);
 

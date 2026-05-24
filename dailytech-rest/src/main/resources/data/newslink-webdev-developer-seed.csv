@@ -1,0 +1,50 @@
+categoryId,parentId,description,url
+1101,11,"LESS,LESS CDN",http://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js
+1101,11,"GENERATORS,Text Content Generator",http://www.lipsum.com
+1101,11,"GENERATORS,Favicon Generator",http://tools.dynamicdrive.com/favicon
+1101,11,"GENERATORS,Data Generator",https://mockaroo.com/
+1101,11,"GENERATORS,Mobile Mockup Generator",https://mockuphone.com
+1101,11,"GENERATORS,Logo Generator",https://www.logaster.com
+1101,11,"GENERATORS,UUID Generator",https://www.uuidgenerator.net/
+1101,11,"GENERATORS,Hash Generator",https://passwordsgenerator.net/sha256-hash-generator/
+1101,11,"GENERATORS,Ultimate Code Generator",https://webcode.tools/
+1101,11,"IMAGE RESOURCES,Free Stock Images",https://www.pexels.com
+1101,11,"IMAGE RESOURCES,Free Stock Images With Great API",https://unsplash.com/
+1101,11,"IMAGE RESOURCES,Free Vectors and Mockups",https://www.freepik.com
+1101,11,"IMAGE RESOURCES,Dummy Image Placeholders",https://source.unsplash.com/
+1101,11,"IMAGE RESOURCES,Dummy Image Placeholders",https://placeholder.com
+1101,11,"IMAGE RESOURCES,Free Icons",https://www.iconfinder.com
+1101,11,"CODE OPTIMIZATION,Minify JS and CSS",http://minifier.org
+1101,11,"CODE OPTIMIZATION,Code Optimization Tools",https://codebeautify.org
+1101,11,"CODE OPTIMIZATION,Code Diff Checker",https://www.diffchecker.com
+1101,11,"CONVERTERS,ES6 and JSX Compiler",https://babeljs.io/repl
+1101,11,"CONVERTERS,Sass Converter",https://www.sassmeister.com/
+1101,11,"CONVERTERS,Less Converter and More",http://www.webtoolkitonline.com
+1101,11,"CONVERTERS,Markdown Editor",https://stackedit.io
+1101,11,"CONVERTERS,Jade Converter",http://www.html2jade.org/
+1101,11,"IMAGE COMPRESSION,Compress All Images",https://compressor.io/compress
+1101,11,"IMAGE COMPRESSION,Compress JPG",http://jpeg-optimizer.com/
+1101,11,"IMAGE COMPRESSION,Compress PNG",https://tinypng.com/
+1101,11,"VALIDATION AND COMPATIBILITY,Validate HTML",https://validator.w3.org
+1101,11,"VALIDATION AND COMPATIBILITY,Validate CSS",https://jigsaw.w3.org/css-validator
+1101,11,"VALIDATION AND COMPATIBILITY,Check Browser Compatibility",https://caniuse.com/
+1101,11,"VALIDATION AND COMPATIBILITY,ES6 Compatibility Table",https://kangax.github.io/compat-table/es6/
+1101,11,"IN BROWSER CODING,Client Side Code",https://codepen.io
+1101,11,"IN BROWSER CODING,Client Side Code",https://jsfiddle.net
+1101,11,"IN BROWSER CODING,Client Side Code",http://liveweave.com
+1101,11,"IN BROWSER CODING,Server Side Code",https://repl.it
+1101,11,"SNIPPET TOOLS,Snippet Manager",https://gist.github.com
+1101,11,"SNIPPET TOOLS,Snippet Manager",https://pastebin.com
+1101,11,"COLOR AND DESIGN,Create Color Schemes",https://color.hailpixel.com
+1101,11,"COLOR AND DESIGN,Get Color Schemes of Websites",http://stylifyme.com
+1101,11,"COLOR AND DESIGN,Create Gradients",https://uigradients.com
+1101,11,"COLOR AND DESIGN,CSS Button Generator",http://css3buttongenerator.com
+1101,11,"COLOR AND DESIGN,HTML Entity Lookup",http://entity-lookup.leftlogic.com/
+1101,11,"RESPONSIVENESS,Device Testing",http://www.responsinator.com
+1101,11,"RESPONSIVENESS,What's My Browser Size",https://www.webpagefx.com/tools/whats-my-browser-size/
+1101,11,"WIREFRAME,In Browser Wireframing",https://app.moqups.com
+1101,11,"WIREFRAME,Very Basic In Browser Wireframing",https://wireframe.cc
+1101,11,"SPEED TEST,Speed and Performance Testing",https://tools.keycdn.com/speed
+1101,11,"SPEED TEST,Pingdom Speed Test",https://tools.pingdom.com/
+1101,11,"OTHER,Public API Resources",https://github.com/toddmotto/public-apis?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
+1101,11,"OTHER,Organized Docs for Popular Web Technologies",https://devdocs.io

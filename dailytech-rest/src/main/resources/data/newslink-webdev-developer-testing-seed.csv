@@ -1,0 +1,11 @@
+categoryId,parentId,description,url
+1101,11,"TESTING EBOOKS,Practical Software Testing Free eBook",https://www.softwaretestinghelp.com/practical-software-testing-new-free-ebook-download/
+1101,11,"TESTING EBOOKS,Manual Testing Help eBook",https://www.softwaretestinghelp.com/manual-testing-help-ebook-free-download/
+1101,11,"TESTING EBOOKS,Testing Primer eBook",https://www.softwaretestinghelp.com/testing-primer-ebook-download/
+1101,11,"API TESTING,SoapUI Download and Install",https://www.softwaretestinghelp.com/soapui-tutorial-4-soapui-download-and-install/
+1101,11,"API TESTING,ReqRes Free REST API",https://reqres.in
+1101,11,"SPRING TESTING,Testing Spring Boot Applications Made Simple",https://rieckpil.de/start-here/
+1101,11,"TEST AUTOMATION,Automation Panda",https://automationpanda.com
+1101,11,"SPRING SECURITY,Spring Security Lambda DSL",https://spring.io/blog/2019/11/21/spring-security-lambda-dsl
+1101,11,"SECURITY TESTING,Pentesting and Vulnerability Assessment Toolkit",https://pentest-tools.com
+1101,11,"TEST AUTOMATION,Karate Test Automation",https://github.com/karatelabs/karate
