@@ -69,8 +69,7 @@ import { NewsArticleResultsComponent } from './components/news/news-article-resu
 import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-bar.component';
 
 
-// FEATURES
-import { GrootService } from './service/groot.service';
+// FEATURES 
 // import { WritingRoutingModule } from './writing-routing.module';
 
 // CUSTOM COMPONENTS
@@ -84,9 +83,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         SidenavListComponent,
         MenuComponent,
         PostEntityComponent,
-        PostEntityViewerComponent,
-        // BlogComponent,
-        // BlogsListComponent,
+        PostEntityViewerComponent, 
         PostCancelComponent,
         BlogModalComponent,
         BlogsComponent,
@@ -98,21 +95,11 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         NewsToolBarComponent,
         PipeCapitalizeCategoryPipe,
         QrcodeComponent,  // Added custom QR code component
-        /////// AUTH MODULE ///////
-        // AdminComponent,
-        // PostsListComponent,
-        // RegisterComponent,
-        // SignonComponent,
-        // TitleBarComponent,
-        ////// WRITING MODULE ///////
-        // CurrentWritingComponent,
-        // NewWritingComponent,
-        // GridWritingsComponent,
-        // PastWritingsComponent,
-        // StopWritingComponent,
-        // WritingComponent
+ 
     ],
     imports: [
+        WritingModule,
+        AuthModule,
         BlogsModule,
         // QRCodeModule,  // Removed
         BrowserModule,
@@ -136,8 +123,6 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
             },
         }),
         EffectsModule.forRoot([AuthEffects, NewsEffects, WritingEffects]),
-        WritingModule,
-        AuthModule,
         // WritingRoutingModule,
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,
@@ -150,8 +135,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         NewsService,
         WritingService,
         UiService,
-        TitleCasePipe,
-        GrootService,
+        TitleCasePipe, 
         LoggingService,  // Uncommented provider
         // provideFirebaseApp(() => initializeApp(environment.firebase)),  // Moved from imports
         // provideAuth(() => getAuth()),  // Moved to imports

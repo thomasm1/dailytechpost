@@ -1,14 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
-import { Observable, Subscription } from 'rxjs';
+import { firstValueFrom,  Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { CategoryMod } from '../../../models/category-mods.model';
 import { WritingService } from '../writing.service';
 import * as fromCategories from '../../../reducers/category.reducer';
 import { LinkDetailsDialogComponent } from './link-details-dialog.component';
-
+ 
+import { environment } from '../../../../environments/environment';
+import { NewsMod } from '../../../models/news-mods.model';
+import { FileService } from '../../../service/file.service';
+import { UiService } from '../../../service/ui.service';
 @Component({
   selector: 'app-my-links',
   templateUrl: './my-links.component.html',
@@ -19,12 +23,15 @@ export class MyLinksComponent implements OnInit, OnDestroy {
   categoryMods: CategoryMod[] = [];
   categoryBuckets: CategoryMod[] = [];
   isSaving = false;
+  isUploadingCsv = false;
   private categorySubscription?: Subscription;
 
   constructor(
     private writingService: WritingService,
-    private store: Store<fromCategories.State>,
-    private dialog: MatDialog
+      private store: Store<fromCategories.State>,
+    private dialog: MatDialog,
+    private fileService: FileService,
+    private uiService: UiService
   ) {}
 
   ngOnInit(): void {
@@ -72,7 +79,35 @@ export class MyLinksComponent implements OnInit, OnDestroy {
       this.isSaving = false;
     });
   }
+  
+  onCsvSelected(event: Event): void {
+  const input = event.target as HTMLInputElement;
+  const file = input.files && input.files.length ? input.files[0] : null;
 
+  if (!file || this.isUploadingCsv) {
+    return;
+  }
+
+  this.isUploadingCsv = true;
+
+  firstValueFrom(
+    this.fileService.uploadCsv<NewsMod[]>(`${environment.API_URL}/news/bulk/csv`, file)
+  ).then((savedNews) => {
+    this.uiService.showSnackBar(`${savedNews.length} links imported`, 'Close', 3000);
+  }).catch((error) => {
+    console.error('Error uploading CSV:', error);
+    const message = error?.error?.message
+      || error?.error?.error
+      || error?.message
+      || 'Error uploading CSV';
+    this.uiService.showSnackBar(message, 'Close', 5000);
+  }).finally(() => {
+    input.value = '';
+    this.isUploadingCsv = false;
+  });
+}
+ 
+  
   getCategoryLabel(category: CategoryMod): string {
     return category.cat3 || category.name || '';
   }

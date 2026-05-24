@@ -64,7 +64,7 @@ export class UiService {
     this.stopLoading();
   }
 
-  showSnackBar(message, action, duration) {
+  showSnackBar(message: string, action: string, duration: number): void {
     this.snackBar.open(message, action, {
       duration: duration
     });

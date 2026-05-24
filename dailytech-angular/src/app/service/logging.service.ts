@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class LoggingService {
-    prevlog: string;
+    prevlog: string = '';
 
     printLog(message:string) {
         console.log(message);
@@ -11,3 +11,5 @@ export class LoggingService {
         this.prevlog = message;
     }
 }
+
+ 

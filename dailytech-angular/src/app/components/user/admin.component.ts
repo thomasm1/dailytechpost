@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AdminDataService } from '../../service/data/admin-data.service';
+import { ActivatedRoute } from '@angular/router'; 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -13,8 +12,7 @@ export class AdminComponent implements OnInit {
   message = 'Welcome ' + this.name;
   getPostFromService: string = '';
  
-  constructor(private route: ActivatedRoute,
-    private adminService: AdminDataService) { }
+  constructor(private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
 
@@ -26,27 +24,10 @@ onStartWriting() {
       this.writingStart.emit();
 }
 
-  getParameterUpdate() {
-    // this.adminService.executeParameterService(this.name).subscribe(
-    //   response => this.handleResponse(response),
-    //   error => this.handleErrorResponse(error)      // /DISABLED UNTIL BASIC AUTH ==> JWT
-    // );
+  getParameterUpdate() { 
     this.message = 'Welcome ' + this.name;
   }
-  getUpdate() {
-    this.adminService.executeAdminService().subscribe(
-      response => this.handleResponse(response),
-      error => this.handleErrorResponse(error)
-    );
-    this.message = 'Welcome ' + this.name;
-  }
-  getErrorUpdate() {
-    this.adminService.errorService().subscribe(
-      response => this.handleResponse(response),
-      error => this.handleErrorResponse(error)
-    );
-    this.message = 'Welcome ' + this.name;
-  }
+ 
 
   handleResponse(response: any) {
     this.getPostFromService = response.post
