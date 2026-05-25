@@ -1,5 +1,8 @@
 build:
   version: "2.0.0"
+spring:
+  config:
+    import: "optional:classpath:categories.yml"
 cryptomaven:
   message: "Welcome to DAILYTECH-REST APIs "
   contactDetails:

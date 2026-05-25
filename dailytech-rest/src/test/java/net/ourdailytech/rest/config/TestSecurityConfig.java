@@ -56,8 +56,3 @@ public class TestSecurityConfig {
     return configuration.getAuthenticationManager();
   }
 }
-
-
-
-
-

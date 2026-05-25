@@ -19,7 +19,7 @@ import org.hibernate.proxy.HibernateProxy;
         @UniqueConstraint(name = "uq_news_user_normalized_url_hash", columnNames = {"user_userid", "normalized_url_hash"})
     }
 )
-public class News extends AbstractDomainClass  {
+public class Link extends AbstractDomainClass  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class News extends AbstractDomainClass  {
     @Column(name = "public_link")
     private Boolean publicLink = true;
 
-    // Many news items can belong to one Category
+    // Many link items can belong to one Category
     @JsonIgnore // ✅ Prevents infinite recursion when serializing JSON
       @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
@@ -66,8 +66,8 @@ public class News extends AbstractDomainClass  {
                 ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass()
                 : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
-        News news = (News) o;
-        return getId() != null && getId().equals(news.getId());
+        Link link = (Link) o;
+        return getId() != null && getId().equals(link.getId());
     }
 
     @Override

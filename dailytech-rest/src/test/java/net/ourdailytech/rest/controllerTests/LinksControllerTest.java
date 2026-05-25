@@ -1,9 +1,9 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           package net.ourdailytech.rest.controllerTests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.ourdailytech.rest.controllers.NewsController;
-import net.ourdailytech.rest.models.dto.NewsDto;
-import net.ourdailytech.rest.service.NewsServiceImpl;
+import net.ourdailytech.rest.controllers.LinksController;
+import net.ourdailytech.rest.models.dto.LinkDto;
+import net.ourdailytech.rest.service.LinkServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,36 +29,36 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
-class NewsControllerTest {
+class LinksControllerTest {
 
   private MockMvc mockMvc;
   private ObjectMapper objectMapper;
 
   @Mock
-  private NewsServiceImpl newsServiceImpl;
+  private LinkServiceImpl linkServiceImpl;
 
   @InjectMocks
-  private NewsController newsController;
+  private LinksController linksController;
 
   @BeforeEach
   void setUp() {
-    mockMvc = MockMvcBuilders.standaloneSetup(newsController).build();
+    mockMvc = MockMvcBuilders.standaloneSetup(linksController).build();
     objectMapper = new ObjectMapper();
   }
 
-  private NewsDto getNewsDto() {
-    return NewsDto.builder()
+  private LinkDto getLinkDto() {
+    return LinkDto.builder()
         .id(1L)
-        .title("Test News")
+        .title("Test Link")
         .url("http://example.com")
         .categoryId(1L)
         .build();
   }
 
   @Test
-  void testAddNews_ShouldReturnCreated() throws Exception {
-    NewsDto newsDto = getNewsDto();
-    when(newsServiceImpl.createNews(any(NewsDto.class), any(String.class))).thenReturn(newsDto);
+  void testaddLink_ShouldReturnCreated() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.createLink(any(LinkDto.class), any(String.class))).thenReturn(linkDto);
 
     UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
         "testuser",
@@ -66,19 +66,19 @@ class NewsControllerTest {
         List.of(new SimpleGrantedAuthority("ROLE_USER"))
     );
 
-    mockMvc.perform(post("/api/news")
+    mockMvc.perform(post("/api/links")
             .principal(auth)
             .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(newsDto)))
+            .content(objectMapper.writeValueAsString(linkDto)))
         .andExpect(status().isCreated())
         .andExpect(jsonPath("$.id").value(1L))
-        .andExpect(jsonPath("$.title").value("Test News"));
+        .andExpect(jsonPath("$.title").value("Test Link"));
   }
 
   @Test
-  void testAddNewsFromCsv_ShouldReturnCreatedItems() throws Exception {
-    NewsDto newsDto = getNewsDto();
-    when(newsServiceImpl.createNewsFromCsv(any(), any(String.class))).thenReturn(List.of(newsDto));
+  void testaddLinksFromCsv_ShouldReturnCreatedItems() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.createLinksFromCsv(any(), any(String.class))).thenReturn(List.of(linkDto));
 
     UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
         "testuser",
@@ -86,29 +86,39 @@ class NewsControllerTest {
         List.of(new SimpleGrantedAuthority("ROLE_USER"))
     );
 
-    mockMvc.perform(multipart("/api/news/bulk/csv")
+    mockMvc.perform(multipart("/api/links/bulk/csv")
             .file("file", "url,description,categoryId\nhttps://example.com,\"LESS,LESS CDN\",1101".getBytes())
             .principal(auth))
         .andExpect(status().isCreated())
         .andExpect(jsonPath("$[0].id").value(1L))
-        .andExpect(jsonPath("$[0].title").value("Test News"));
+        .andExpect(jsonPath("$[0].title").value("Test Link"));
   }
 
   @Test
-  void testGetNews_ShouldReturnOk() throws Exception {
-    NewsDto newsDto = getNewsDto();
-    when(newsServiceImpl.getNews(1L)).thenReturn(newsDto);
+  void testgetLink_ShouldReturnOk() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.getLink(1L)).thenReturn(linkDto);
 
-    mockMvc.perform(get("/api/news/1"))
+    mockMvc.perform(get("/api/links/1"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.id").value(1L))
-        .andExpect(jsonPath("$.title").value("Test News"));
+        .andExpect(jsonPath("$.title").value("Test Link"));
   }
 
   @Test
-  void testGetNewsList_ShouldReturnOk() throws Exception {
-    NewsDto newsDto = getNewsDto();
-    when(newsServiceImpl.getAllNews()).thenReturn(List.of(newsDto));
+  void testgetLinkList_ShouldReturnOk() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.getAllLinks()).thenReturn(List.of(linkDto));
+
+    mockMvc.perform(get("/api/links"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$[0].id").value(1L));
+  }
+
+  @Test
+  void testLegacyNewsPathStillReturnsLinks() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.getAllLinks()).thenReturn(List.of(linkDto));
 
     mockMvc.perform(get("/api/news"))
         .andExpect(status().isOk())
@@ -116,19 +126,19 @@ class NewsControllerTest {
   }
 
   @Test
-  void testGetPublicNewsByCategory_ShouldReturnOk() throws Exception {
-    NewsDto newsDto = getNewsDto();
-    when(newsServiceImpl.getAllPublicNewsByCategory(1L)).thenReturn(List.of(newsDto));
+  void testGetPublicLinksByCategory_ShouldReturnOk() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.getAllPublicLinksByCategory(1L)).thenReturn(List.of(linkDto));
 
-    mockMvc.perform(get("/api/news/category/public/1"))
+    mockMvc.perform(get("/api/links/category/public/1"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$[0].id").value(1L));
   }
 
   @Test
-  void testUpdateNews_ShouldReturnOk() throws Exception {
-    NewsDto newsDto = getNewsDto();
-    when(newsServiceImpl.updateNews(any(NewsDto.class), any(String.class), any(Boolean.class))).thenReturn(newsDto);
+  void testupdateLink_ShouldReturnOk() throws Exception {
+    LinkDto linkDto = getLinkDto();
+    when(linkServiceImpl.updateLink(any(LinkDto.class), any(String.class), any(Boolean.class))).thenReturn(linkDto);
 
     UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
         "testuser",
@@ -139,21 +149,20 @@ class NewsControllerTest {
         )
     );
 
-    mockMvc.perform(put("/api/news")
+    mockMvc.perform(put("/api/links")
             .principal(auth)
             .param("id", "1")
             .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(newsDto)))
+            .content(objectMapper.writeValueAsString(linkDto)))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.id").value(1L));
   }
 
   @Test
-  void testDeleteNews_ShouldReturnOk() throws Exception {
-    when(newsServiceImpl.deleteNews(1L)).thenReturn(true);
+  void testdeleteLink_ShouldReturnOk() throws Exception {
+    when(linkServiceImpl.deleteLink(1L)).thenReturn(true);
 
-    mockMvc.perform(delete("/api/news/1"))
+    mockMvc.perform(delete("/api/links/1"))
         .andExpect(status().isOk());
   }
 }
-

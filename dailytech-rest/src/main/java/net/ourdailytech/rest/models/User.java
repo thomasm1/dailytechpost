@@ -101,7 +101,7 @@ public class User extends AbstractDomainClass {
     @Builder.Default
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @Exclude
-    private Set<News> news = new HashSet<>();
+    private Set<Link> links = new HashSet<>();
 
     @Builder.Default
     @ToString.Exclude  // ✅ Prevents infinite recursion

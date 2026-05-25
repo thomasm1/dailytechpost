@@ -55,4 +55,3 @@ class UserJpaRepositoryIT {
         System.out.println("user: " + user);
     }
 }
-

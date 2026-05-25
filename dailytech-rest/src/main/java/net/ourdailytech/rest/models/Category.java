@@ -37,10 +37,10 @@ public class Category extends AbstractDomainClass  {
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private List<Category> children = new ArrayList<>();
 
-    // A category can have many News items
+    // A category can have many link items
     @ToString.Exclude  // ✅ Prevents infinite recursion
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<News> news;
+    private List<Link> links;
 
     // A category can have many PostEntity items
     @ToString.Exclude  // ✅ Prevents infinite recursion

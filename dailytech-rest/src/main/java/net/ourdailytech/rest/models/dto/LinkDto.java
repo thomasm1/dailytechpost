@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 
 /**
- * DTO for {@link net.ourdailytech.rest.models.News}
+ * DTO for {@link net.ourdailytech.rest.models.Link}
  */
 
 @Getter
@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class NewsDto implements Serializable {
+public class LinkDto implements Serializable {
     Long id;
     String title;
     String url;

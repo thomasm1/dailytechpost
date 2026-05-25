@@ -15,15 +15,15 @@ public class CategoryDto {
     private String description;
     private Long parentId;
     private List<CategoryDto> children;
-    private List<NewsDto> news;
+    private List<LinkDto> links;
 //    private List<PostEntityDto> posts;
 }
 
 //  id	name        	       description
-//10	A.I.Now.	           AI news
+//10	A.I.Now.	           AI Link
 //11	Web Dev Affairs 	     Web
 //12	Sociology Tomorrow!      Sociology
-//13	Quantum Data            Quantum  news
+//13	Quantum Data            Quantum  Link
 //14	Musing Blockchain   	Cryptocurrency insights
 // INSERT INTO categories (id, name, description, parent_id, depth)
 // VALUES

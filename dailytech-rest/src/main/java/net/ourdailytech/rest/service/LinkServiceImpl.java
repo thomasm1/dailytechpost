@@ -15,13 +15,13 @@ import java.util.Map;
 import java.util.Optional;
 import net.ourdailytech.rest.exception.PostApiException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
-import net.ourdailytech.rest.mapper.NewsMapper;
+import net.ourdailytech.rest.mapper.LinkMapper;
 import net.ourdailytech.rest.models.Category;
-import net.ourdailytech.rest.models.News;
+import net.ourdailytech.rest.models.Link;
 import net.ourdailytech.rest.models.User;
-import net.ourdailytech.rest.models.dto.NewsDto;
+import net.ourdailytech.rest.models.dto.LinkDto;
 import net.ourdailytech.rest.repositories.CategoryRepository;
-import net.ourdailytech.rest.repositories.NewsRepository;
+import net.ourdailytech.rest.repositories.LinkRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,43 +31,44 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class NewsServiceImpl implements NewsService {
+public class LinkServiceImpl implements LinkService {
 
-  private static final Long DEFAULT_CSV_CATEGORY_ID = 1101L;
-
-  private final NewsRepository newsRepository;
-  private final NewsMapper newsMapper;
+  private final LinkRepository linkRepository;
+  private final LinkMapper linkMapper;
   private final CategoryRepository categoryRepository;
   private final UsersRepository usersRepository;
+  private final LinkClassificationService linkClassificationService;
 
-  public NewsServiceImpl(NewsRepository newsRepository, NewsMapper newsMapper,
-      CategoryRepository categoryRepository, UsersRepository usersRepository) {
-    this.newsRepository = newsRepository;
-    this.newsMapper = newsMapper;
+  public LinkServiceImpl(LinkRepository linkRepository, LinkMapper linkMapper,
+      CategoryRepository categoryRepository, UsersRepository usersRepository,
+      LinkClassificationService linkClassificationService) {
+    this.linkRepository = linkRepository;
+    this.linkMapper = linkMapper;
     this.categoryRepository = categoryRepository;
     this.usersRepository = usersRepository;
+    this.linkClassificationService = linkClassificationService;
   }
 
 
   @Override
-  public NewsDto createNews(NewsDto newsDto, String userEmail) {
-    News newsEntity = newsMapper.toEntity(newsDto);
-    newsEntity.setUser(getRequiredUser(userEmail));
-    applyNormalizedUrl(newsEntity);
-    if (newsEntity.getPublicLink() == null) {
-      newsEntity.setPublicLink(true);
+  public LinkDto createLink(LinkDto linkDto, String userEmail) {
+    Link linkEntity = linkMapper.toEntity(linkDto);
+    linkEntity.setUser(getRequiredUser(userEmail));
+    applyNormalizedUrl(linkEntity);
+    if (linkEntity.getPublicLink() == null) {
+      linkEntity.setPublicLink(true);
     }
-    if (newsDto.getCategoryId() != null) {
-      newsEntity.setCategory(getRequiredCategory(newsDto.getCategoryId()));
+    if (linkDto.getCategoryId() != null) {
+      linkEntity.setCategory(getRequiredCategory(linkDto.getCategoryId()));
     }
-    News saved = newsRepository.save(newsEntity);
-    return newsMapper.toDto(saved);
+    Link saved = linkRepository.save(linkEntity);
+    return linkMapper.toDto(saved);
   }
 
   @Override
-  public List<NewsDto> createNewsFromCsv(InputStream csvInputStream, String userEmail) {
+  public List<LinkDto> createLinksFromCsv(InputStream csvInputStream, String userEmail) {
     User user = getRequiredUser(userEmail);
-    List<NewsDto> created = new ArrayList<>();
+    List<LinkDto> created = new ArrayList<>();
     Map<String, Integer> headerIndexes = null;
 
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(csvInputStream, StandardCharsets.UTF_8))) {
@@ -88,7 +89,7 @@ public class NewsServiceImpl implements NewsService {
           continue;
         }
 
-        News news = new News();
+        Link link = new Link();
         String url = getCsvValue(columns, headerIndexes, "url", lineNumber);
         if (url == null || url.isBlank()) {
           throw new PostApiException(HttpStatus.BAD_REQUEST, "CSV line " + lineNumber + " must include url");
@@ -99,17 +100,17 @@ public class NewsServiceImpl implements NewsService {
           description = getCsvValue(columns, headerIndexes, "title", lineNumber);
         }
 
-        news.setUrl(url.trim());
-        news.setTitle(resolveCsvDescription(description, news.getUrl()));
-        news.setCategory(resolveCsvCategory(columns, headerIndexes, lineNumber));
-        news.setUser(user);
-        news.setPublicLink(true);
-        applyNormalizedUrl(news);
+        link.setUrl(url.trim());
+        link.setTitle(resolveCsvDescription(description, link.getUrl()));
+        link.setCategory(resolveCsvCategory(columns, headerIndexes, lineNumber, link.getUrl(), link.getTitle()));
+        link.setUser(user);
+        link.setPublicLink(true);
+        applyNormalizedUrl(link);
 
-        created.add(newsMapper.toDto(newsRepository.save(news)));
+        created.add(linkMapper.toDto(linkRepository.save(link)));
       }
     } catch (IOException e) {
-      throw new UncheckedIOException("Unable to read news CSV upload", e);
+      throw new UncheckedIOException("Unable to read Link CSV upload", e);
     }
 
     return created;
@@ -123,27 +124,36 @@ public class NewsServiceImpl implements NewsService {
     return getUrlWithoutScheme(url);
   }
 
-  private Category resolveCsvCategory(List<String> columns, Map<String, Integer> headerIndexes, int lineNumber) {
+  private Category resolveCsvCategory(
+      List<String> columns,
+      Map<String, Integer> headerIndexes,
+      int lineNumber,
+      String url,
+      String title
+  ) {
     String categoryId = getCsvValue(columns, headerIndexes, "categoryid", lineNumber);
-    Long effectiveCategoryId = (categoryId == null || categoryId.isBlank())
-        ? DEFAULT_CSV_CATEGORY_ID
-        : parseRequiredLong(categoryId, "categoryId", lineNumber);
+    Long effectiveCategoryId;
+    if (categoryId == null || categoryId.isBlank()) {
+      effectiveCategoryId = linkClassificationService.suggestCategory(url, title).categoryId();
+    } else {
+      effectiveCategoryId = parseRequiredLong(categoryId, "categoryId", lineNumber);
+    }
 
     return getRequiredCategory(effectiveCategoryId);
   }
 
   @Override
-  public NewsDto getNews(Long newsId) {
-    News news = newsRepository.findById(newsId)
-        .orElseThrow(() -> new ResourceNotFoundException("News", "id", String.valueOf(newsId)));
-    return newsMapper.toDto(news);
+  public LinkDto getLink(Long linkId) {
+    Link link = linkRepository.findById(linkId)
+        .orElseThrow(() -> new ResourceNotFoundException("Link", "id", String.valueOf(linkId)));
+    return linkMapper.toDto(link);
   }
 
   @Override
-  public List<NewsDto> getAllNews() {
-    return newsRepository.findAll()
+  public List<LinkDto> getAllLinks() {
+    return linkRepository.findAll()
         .stream()
-        .map(newsMapper::toDto)
+        .map(linkMapper::toDto)
         .collect(Collectors.toList());
   }
 
@@ -152,66 +162,66 @@ public class NewsServiceImpl implements NewsService {
    * @return
    */
   @Override
-  public List<NewsDto> getAllNewsByCategory(Long categoryId) {
-    return newsRepository.findByCategoryId(categoryId)
+  public List<LinkDto> getAllLinksByCategory(Long categoryId) {
+    return linkRepository.findByCategoryId(categoryId)
         .stream()
-        .map(newsMapper::toDto)
+        .map(linkMapper::toDto)
         .collect(Collectors.toList()); 
   }
 
   @Override
-  public List<NewsDto> getAllPublicNewsByCategory(Long categoryId) {
-    return newsRepository.findByCategoryIdAndPublicLinkTrueOrCategoryIdAndPublicLinkIsNull(categoryId, categoryId)
+  public List<LinkDto> getAllPublicLinksByCategory(Long categoryId) {
+    return linkRepository.findByCategoryIdAndPublicLinkTrueOrCategoryIdAndPublicLinkIsNull(categoryId, categoryId)
         .stream()
-        .map(newsMapper::toDto)
+        .map(linkMapper::toDto)
         .collect(Collectors.toList()); 
   }
 
   @Override
-  public List<NewsDto> getAllNewsByUser(String userEmail) {
-    return newsRepository.findByUserEmail(userEmail)
+  public List<LinkDto> getAllLinksByUser(String userEmail) {
+    return linkRepository.findByUserEmail(userEmail)
         .stream()
-        .map(newsMapper::toDto)
+        .map(linkMapper::toDto)
         .collect(Collectors.toList());
   }
 
   @Override
-  public List<NewsDto> getAllNewsByCategoryAndUser(Long categoryId, String userEmail) {
-    return newsRepository.findByCategoryIdAndUserEmail(categoryId, userEmail)
+  public List<LinkDto> getAllLinksByCategoryAndUser(Long categoryId, String userEmail) {
+    return linkRepository.findByCategoryIdAndUserEmail(categoryId, userEmail)
         .stream()
-        .map(newsMapper::toDto)
+        .map(linkMapper::toDto)
         .collect(Collectors.toList());
   }
 
   @Override
-  public NewsDto updateNews(NewsDto newsDto, String userEmail, boolean isAdmin) {
-    if (newsDto.getId() == null) {
+  public LinkDto updateLink(LinkDto linkDto, String userEmail, boolean isAdmin) {
+    if (linkDto.getId() == null) {
       throw new PostApiException(HttpStatus.BAD_REQUEST, "The given id must not be null");
     }
-    Optional<News> existing = newsRepository.findById(newsDto.getId());
+    Optional<Link> existing = linkRepository.findById(linkDto.getId());
 
     if (existing.isPresent()) {
       if (!isAdmin && !isOwnedBy(existing.get(), userEmail)) {
-        throw new PostApiException(HttpStatus.FORBIDDEN, "You are not allowed to update this news item");
+        throw new PostApiException(HttpStatus.FORBIDDEN, "You are not allowed to update this Link item");
       }
-      News news = newsMapper.partialUpdate(newsDto, existing.get());
-      if (newsDto.getUrl() != null) {
-        applyNormalizedUrl(news);
+      Link link = linkMapper.partialUpdate(linkDto, existing.get());
+      if (linkDto.getUrl() != null) {
+        applyNormalizedUrl(link);
       }
-      if (newsDto.getCategoryId() != null) {
-        news.setCategory(getRequiredCategory(newsDto.getCategoryId()));
+      if (linkDto.getCategoryId() != null) {
+        link.setCategory(getRequiredCategory(linkDto.getCategoryId()));
       }
-      News updated = newsRepository.save(news);
-      return newsMapper.toDto(updated);
+      Link updated = linkRepository.save(link);
+      return linkMapper.toDto(updated);
     }
     return null;
   }
 
   @Override
-  public boolean deleteNews(Long newsId) {
-    News existing = newsRepository.findById(newsId)
-        .orElseThrow(() -> new ResourceNotFoundException("News", "id", String.valueOf(newsId)));
-    newsRepository.delete(existing);
+  public boolean deleteLink(Long linkId) {
+    Link existing = linkRepository.findById(linkId)
+        .orElseThrow(() -> new ResourceNotFoundException("Link", "id", String.valueOf(linkId)));
+    linkRepository.delete(existing);
     return true;
   }
 
@@ -324,16 +334,16 @@ public class NewsServiceImpl implements NewsService {
     return columns;
   }
 
-  private boolean isOwnedBy(News news, String userEmail) {
-    return news.getUser() != null
-        && news.getUser().getEmail() != null
-        && news.getUser().getEmail().equalsIgnoreCase(userEmail);
+  private boolean isOwnedBy(Link link, String userEmail) {
+    return link.getUser() != null
+        && link.getUser().getEmail() != null
+        && link.getUser().getEmail().equalsIgnoreCase(userEmail);
   }
 
-  private void applyNormalizedUrl(News news) {
-    String normalizedUrl = normalizeUrl(news.getUrl());
-    news.setNormalizedUrl(normalizedUrl);
-    news.setNormalizedUrlHash(hashUrl(normalizedUrl));
+  private void applyNormalizedUrl(Link link) {
+    String normalizedUrl = normalizeUrl(link.getUrl());
+    link.setNormalizedUrl(normalizedUrl);
+    link.setNormalizedUrlHash(hashUrl(normalizedUrl));
   }
 
   private String normalizeUrl(String url) {

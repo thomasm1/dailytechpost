@@ -106,4 +106,3 @@ public class PostEntity extends AbstractDomainClass  {
 		wl.setPostEntity(null);
 	}
 }
-

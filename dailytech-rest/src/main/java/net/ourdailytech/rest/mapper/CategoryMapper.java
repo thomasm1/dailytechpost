@@ -14,7 +14,7 @@ public interface CategoryMapper {
     @Mapping(target = "children", ignore = true)
     CategoryDto toDto(Category category);
 
-    @Mapping(target = "news", ignore = true)
+    @Mapping(target = "links", ignore = true)
     @Mapping(target = "parent", ignore = true)
     @Mapping(target = "children", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

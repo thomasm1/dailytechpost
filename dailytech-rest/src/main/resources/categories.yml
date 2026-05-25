@@ -1,0 +1,124 @@
+dailytech:
+  link-classification:
+    default-category-id: 11
+    patterns:
+      - category-id: 10
+        confidence: 0.8
+        reason: "Matched configured AI terms"
+        terms:
+          - anthropic
+          - chatgpt
+          - claude
+          - gemini
+          - copilot
+          - prompt engineering
+          - transformer
+          - embeddings
+          - vector database
+          - rag
+          - agents
+          - artificial intelligence
+          - ai
+          - machine learning
+          - deep learning
+          - neural network
+          - llm
+          - openai
+          - google ai
+          - microsoft ai
+          - ai research
+          - ai news
+      - category-id: 11
+        confidence: 0.8
+        reason: "Matched configured web development terms"
+        terms:
+          - node.js
+          - spring boot
+          - java
+          - ngrx
+          - firebase
+          - auth0
+          - kubernetes
+          - kafka
+          - skaffold
+          - letsencrypt
+          - ag-grid
+          - jest
+          - cypress
+          - react
+          - angular
+          - vue
+          - svelte
+          - web development
+          - web dev
+          - webdev
+          - full stack
+          - frontend
+          - backend
+          - devops
+      - category-id: 12
+        confidence: 0.8
+        reason: "Matched configured sociology or data terms"
+        terms:
+          - census
+          - survey
+          - social research
+          - social science
+          - social data
+          - social statistics
+          - social research methods
+          - social research techniques
+          - social research design
+          - social research software
+          - research data
+          - regression
+          - classification trees
+          - r programming
+          - data
+          - social
+          - research
+          - statistics
+          - stata
+          - spss
+      - category-id: 13
+        confidence: 0.8
+        reason: "Matched configured quantum terms"
+        terms:
+          - quantum data
+          - quantum mechanics
+          - quantum computer
+          - quantum computers
+          - shor's algorithm
+          - grover's algorithm
+          - quantum supremacy
+          - cubic quantum computing
+          - cubic
+          - quantum algorithm
+          - quantum circuit
+      - category-id: 14
+        confidence: 0.8
+        reason: "Matched configured blockchain terms"
+        terms:
+          - ethereum
+          - bitcoin
+          - defi
+          - crypto
+          - pulsechain
+          - solana
+          - avalanche
+          - binance smart chain
+          - distributed ledger
+          - rabbit
+          - coinbase
+          - wallet
+          - exchange
+          - web3
+          - trufflesuite
+          - nft
+          - dao
+          - dex
+          - chainlink
+          - polygon
+          - metamask
+          - cryptocurrency
+          - decentralized
