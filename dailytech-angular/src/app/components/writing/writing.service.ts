@@ -28,7 +28,7 @@ export class WritingService {
 
   urlsWebDev = ['https://www.wired.com/tag/the-web/', 'https://www.infoworld.com/category/web-development/'];
   urlsBlockchain = ['https://www.wired.com/tag/blockchain/', 'https://cointelegraph.com/tags/blockchain'];
-  urlsAI = ['https://www.wired.com/tag/artificial-intelligence/', 'https://www.sciencedaily.com/news/computers_math/artificial_intelligence/'];
+  urlsAI = ['https://www.wired.com/tag/artificial-intelligence/', 'https://www.sciencedaily.com/links/computers_math/artificial_intelligence/'];
   urlsSoc = ['https://www.wired.com/', 'https://www.sociologylens.net/article-types/opinion/digital-sociology-reinvention-social-research-noortje-marres-digital-technology-contributes-sociology/18108'];
   urlsQuantum = ['https://www.wired.com/tag/quantum-computing/', 'https://phys.org/physics-news/quantum-physics/'];
   private readonly DEFAULT_DURATION_GOAL_MINUTES = 15;
@@ -83,7 +83,7 @@ export class WritingService {
   private firebaseSubs: Subscription[] = [];
 
   private currentCategorySubs: Subscription[] = [];
-  private readonly newsApiUrl = `${environment.API_URL}/news`;
+  private readonly newsApiUrl = `${environment.API_URL}/links`;
   private readonly categoriesApiUrl = `${environment.API_URL}/categories`;
 
   constructor(
@@ -443,4 +443,6 @@ export class WritingService {
   }
 
 }
+
+
 

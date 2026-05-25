@@ -79,7 +79,7 @@ describe('WritingService', () => {
       actualResponse = response;
     });
 
-    const request = httpMock.expectOne(`${environment.API_URL}/news/category/public/10`);
+    const request = httpMock.expectOne(`${environment.API_URL}/links/category/public/10`);
     expect(request.request.method).toBe('GET');
     request.flush(mockResponse);
 
@@ -96,7 +96,7 @@ describe('WritingService', () => {
       actualResponse = response;
     });
 
-    const request = httpMock.expectOne(`${environment.API_URL}/news/me/category/10`);
+    const request = httpMock.expectOne(`${environment.API_URL}/links/me/category/10`);
     expect(request.request.method).toBe('GET');
     request.flush(mockResponse);
 
@@ -136,7 +136,7 @@ describe('WritingService', () => {
     const savePromise = service.addResearchNews('Web Dev Affairs', 'Example', 'https://example.com');
     await new Promise((resolve) => setTimeout(resolve, 0));
 
-    const request = httpMock.expectOne(`${environment.API_URL}/news`);
+    const request = httpMock.expectOne(`${environment.API_URL}/links`);
     expect(request.request.method).toBe('POST');
     expect(request.request.headers.get('Authorization')).toBe('Bearer session-token');
     expect(request.request.body).toEqual({
@@ -160,7 +160,7 @@ describe('WritingService', () => {
     );
     await new Promise((resolve) => setTimeout(resolve, 0));
 
-    const request = httpMock.expectOne(`${environment.API_URL}/news`);
+    const request = httpMock.expectOne(`${environment.API_URL}/links`);
     expect(request.request.method).toBe('POST');
     expect(request.request.headers.get('Authorization')).toBe('Bearer session-token');
       expect(request.request.body).toEqual({
@@ -185,7 +185,7 @@ describe('WritingService', () => {
     );
     await new Promise((resolve) => setTimeout(resolve, 0));
 
-    const request = httpMock.expectOne(`${environment.API_URL}/news`);
+    const request = httpMock.expectOne(`${environment.API_URL}/links`);
     expect(request.request.method).toBe('POST');
     expect(request.request.body).toEqual({
       title: 'Private Quantum',
@@ -204,3 +204,4 @@ describe('WritingService', () => {
     await expectAsync(savePromise).toBeResolved();
   });
 });
+

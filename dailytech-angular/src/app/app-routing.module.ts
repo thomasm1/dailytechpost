@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router'; 
 import { SignonComponent } from './components/user/signon/signon.component';
 import { RegisterComponent } from './components/user/register/register.component';
-import { AdminComponent } from './components/user/admin.component';
 import { PostsListComponent } from './components/post-dir/posts-list/posts-list.component';
 import { PostEntityComponent } from './components/post-dir/post-entity/post-entity.component';
 import { PostEntityViewerComponent } from './components/post-dir/posts-viewer/posts-viewer.component';
@@ -14,8 +13,8 @@ import { WritingComponent } from './components/writing/writing.component';
 import { NewWritingComponent } from './components/writing/new-writing/new-writing.component';
 import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
 import { GridWritingsComponent } from './components/writing/grid-writings/grid-writings.component';
-import { LinksComponent } from './components/writing/links/links.component';
-import { MyLinksComponent } from './components/writing/links/my-links.component';
+import { LinksComponent } from './components/links/links.component';
+import { MyLinksComponent } from './components/links/my-links.component';
 
 import { AwsGuardService } from './service/auth/aws-guard.service';
 import { FirebaseGuardService } from './service/auth/firebase-guard.service';
@@ -53,8 +52,7 @@ const routes: Routes = [
 
   { path: 'admin/posts', component: PostsListComponent},
   { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[FirebaseGuardService,AwsGuardService]},
-  { path: 'admin/:name', component: AdminComponent, canActivate:[FirebaseGuardService,AwsGuardService]},
-
+ 
 
   { path: 'login', component: SignonComponent },
   { path: 'register', component: RegisterComponent },

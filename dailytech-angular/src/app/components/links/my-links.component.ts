@@ -4,15 +4,15 @@ import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { firstValueFrom,  Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { CategoryMod } from '../../../models/category-mods.model';
-import { WritingService } from '../writing.service';
-import * as fromCategories from '../../../reducers/category.reducer';
+import { CategoryMod } from '../../models/category-mods.model';
+import { WritingService } from '../writing/writing.service';
+import * as fromCategories from '../../reducers/category.reducer';
 import { LinkDetailsDialogComponent } from './link-details-dialog.component';
  
-import { environment } from '../../../../environments/environment';
-import { NewsMod } from '../../../models/news-mods.model';
-import { FileService } from '../../../service/file.service';
-import { UiService } from '../../../service/ui.service';
+import { environment } from '../../../environments/environment';
+import { NewsMod } from '../../models/news-mods.model';
+import { FileService } from '../../service/file.service';
+import { UiService } from '../../service/ui.service';
 @Component({
   selector: 'app-my-links',
   templateUrl: './my-links.component.html',
@@ -91,7 +91,7 @@ export class MyLinksComponent implements OnInit, OnDestroy {
   this.isUploadingCsv = true;
 
   firstValueFrom(
-    this.fileService.uploadCsv<NewsMod[]>(`${environment.API_URL}/news/bulk/csv`, file)
+    this.fileService.uploadCsv<NewsMod[]>(`${environment.API_URL}/links/bulk/csv`, file)
   ).then((savedNews) => {
     this.uiService.showSnackBar(`${savedNews.length} links imported`, 'Close', 3000);
   }).catch((error) => {
@@ -112,3 +112,5 @@ export class MyLinksComponent implements OnInit, OnDestroy {
     return category.cat3 || category.name || '';
   }
 }
+
+

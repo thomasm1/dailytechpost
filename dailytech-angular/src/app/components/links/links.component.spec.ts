@@ -5,9 +5,9 @@ import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 
 import { LinksComponent } from './links.component';
-import { WritingService } from '../writing.service';
+import { WritingService } from '../writing/writing.service';
 import { LinkDetailsDialogComponent } from './link-details-dialog.component';
-import { CategoryMod } from '../../../models/category-mods.model';
+import { CategoryMod } from '../../models/category-mods.model';
 
 describe('LinksComponent', () => {
   let component: LinksComponent;

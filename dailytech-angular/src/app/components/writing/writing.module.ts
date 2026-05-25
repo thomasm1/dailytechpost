@@ -10,12 +10,10 @@ import { CurrentWritingComponent } from './current-writing/current-writing.compo
 import { NewWritingComponent } from './new-writing/new-writing.component';
 import { GridWritingsComponent } from './grid-writings/grid-writings.component';
 import { StopWritingComponent } from './current-writing/stop-writing.component';
-import { LinksComponent } from './links/links.component';
-import { LinkDetailsDialogComponent } from './links/link-details-dialog.component';
-import { MyLinksComponent } from './links/my-links.component';
 import { MaterialModule } from '../../material.module'; 
 import { writingReducer } from '../../reducers/writing.reducer';
 import { categoryReducer } from '../../reducers/category.reducer';
+import { LinksModule } from '../links/links.module';
 
 @NgModule({
     declarations: [
@@ -23,10 +21,7 @@ import { categoryReducer } from '../../reducers/category.reducer';
         CurrentWritingComponent,
         NewWritingComponent,
         GridWritingsComponent,
-        StopWritingComponent,
-        LinksComponent,
-        LinkDetailsDialogComponent,
-        MyLinksComponent
+        StopWritingComponent
     ],
     imports: [
         CommonModule, 
@@ -34,6 +29,7 @@ import { categoryReducer } from '../../reducers/category.reducer';
         ReactiveFormsModule,
         RouterModule,
         MaterialModule, 
+        LinksModule,
         StoreModule.forFeature('writing', writingReducer),
         StoreModule.forFeature('category', categoryReducer)
     ]

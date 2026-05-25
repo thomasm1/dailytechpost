@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './sidenav-list.component';
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
 import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
+import * as AuthActions from '../../../reducers/auth.actions';
 
 describe('SidenavListComponent', () => {
   let component: SidenavListComponent;
@@ -80,23 +81,27 @@ describe('SidenavListComponent', () => {
   });
 
   it('should emit closeSidenav when the writing link is clicked', () => {
+    store.setState({
+      auth: { isAuthenticated: true },
+      ui: { isLoading: false }
+    });
+
     createComponent();
     spyOn(component.closeSidenav, 'emit');
 
     const writingLink = fixture.debugElement.query(
       By.css('a[routerLink="/writing"]')
     );
-    writingLink.triggerEventHandler('click');
+    writingLink.triggerEventHandler('click', { button: 0, ctrlKey: true, metaKey: false, shiftKey: false });
 
     expect(component.closeSidenav.emit).toHaveBeenCalled();
   });
 
-  it('should show register and login links when the user is not authenticated', () => {
+  it('should show the login link when the user is not authenticated', () => {
     createComponent();
 
     const content = getTextContent();
 
-    expect(content).toContain('Register');
     expect(content).toContain('Login');
     expect(content).not.toContain('Logout');
   });
@@ -128,14 +133,14 @@ describe('SidenavListComponent', () => {
     expect(content).not.toContain('Login');
   });
 
-  it('should close the sidenav and log out from both auth services', () => {
+  it('should close the sidenav and dispatch logout', () => {
     createComponent();
     spyOn(component, 'onClose').and.callThrough();
+    spyOn(store, 'dispatch');
 
     component.onLogout();
 
     expect(component.onClose).toHaveBeenCalled();
-    expect(firebaseAuthService.logout).toHaveBeenCalled();
-    expect(awsAuthService.logout).toHaveBeenCalled();
+    expect(store.dispatch).toHaveBeenCalledWith(new AuthActions.AuthLogoutStart());
   });
 });

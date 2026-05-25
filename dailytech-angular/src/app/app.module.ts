@@ -58,6 +58,7 @@ import { PostCancelComponent } from './components/post-dir/post-cancel/post-canc
 
 import { AuthModule } from './components/user/auth.module';
 import { WritingModule } from './components/writing/writing.module';
+import { LinksModule } from './components/links/links.module';
 import { BlogModalComponent } from './components/blogs-public/blog-modal/blog-modal.component';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 
@@ -99,6 +100,7 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
     ],
     imports: [
         WritingModule,
+        LinksModule,
         AuthModule,
         BlogsModule,
         // QRCodeModule,  // Removed

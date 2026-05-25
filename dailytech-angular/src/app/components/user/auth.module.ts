@@ -9,7 +9,6 @@ import { MaterialModule } from '../../material.module';
 
 
 import { PostsListComponent } from '../post-dir/posts-list/posts-list.component';
-import { AdminComponent } from './admin.component';
 import { RegisterComponent } from './register/register.component';
 import { SignonComponent } from './signon/signon.component'; 
 // import { AuthRoutingModule } from './auth-routing.module';
@@ -19,7 +18,6 @@ import { SignonComponent } from './signon/signon.component';
     RegisterComponent, 
     SignonComponent, 
     TitleBarComponent,  
-    AdminComponent, 
     PostsListComponent],
   imports: [
     CommonModule,

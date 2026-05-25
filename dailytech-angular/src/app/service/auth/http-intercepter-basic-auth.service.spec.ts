@@ -34,7 +34,7 @@ describe('HttpIntercepterBasicAuthService', () => {
   it('should attach the bearer token when a user session exists', () => {
     awsAuthService.getAuthenticatedToken.and.returnValue('Bearer firebase-token');
     awsAuthService.getAuthenticatedUser.and.returnValue('writer@example.com');
-    const request = new HttpRequest('GET', '/api/news/me/category/10');
+    const request = new HttpRequest('GET', '/api/links/me/category/10');
     const next = jasmine.createSpyObj<HttpHandler>('HttpHandler', ['handle']);
     next.handle.and.returnValue(of({} as any));
 
@@ -48,7 +48,7 @@ describe('HttpIntercepterBasicAuthService', () => {
   it('should attach the bearer token to the configured DailyTech API URL', () => {
     awsAuthService.getAuthenticatedToken.and.returnValue('Bearer firebase-token');
     awsAuthService.getAuthenticatedUser.and.returnValue('writer@example.com');
-    const request = new HttpRequest('GET', `${environment.API_URL}/news/me/category/10`);
+    const request = new HttpRequest('GET', `${environment.API_URL}/links/me/category/10`);
     const next = jasmine.createSpyObj<HttpHandler>('HttpHandler', ['handle']);
     next.handle.and.returnValue(of({} as any));
 
@@ -75,7 +75,7 @@ describe('HttpIntercepterBasicAuthService', () => {
   it('should not overwrite an existing authorization header', () => {
     awsAuthService.getAuthenticatedToken.and.returnValue('Bearer stale-session-token');
     awsAuthService.getAuthenticatedUser.and.returnValue('writer@example.com');
-    const request = new HttpRequest('POST', '/api/news', {}, {
+    const request = new HttpRequest('POST', '/api/links', {}, {
       headers: new HttpHeaders({
         Authorization: 'Bearer fresh-firebase-token'
       })
@@ -90,3 +90,4 @@ describe('HttpIntercepterBasicAuthService', () => {
     expect(handledRequest.headers.get('Accept')).toBeNull();
   });
 });
+
