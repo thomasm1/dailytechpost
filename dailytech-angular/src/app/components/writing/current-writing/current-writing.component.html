@@ -6,13 +6,13 @@
     <!-- Form Section -->
     <mat-card class="form-card">
       <mat-card-header>
-        <mat-card-title class="form-title">Write Here. Write Now. ...on the topic: {{this.category }}
+        <mat-card-title class="form-title">Write Here. Write Now. <strong>{{this.category }}</strong>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <form [formGroup]="writingForm" (ngSubmit)="onSubmit()" class="writing-form">
           <mat-form-field appearance="outline" class="full-width">
-            <input matInput formControlName="title" placeholder="Enter your blog title here..." required>
+            <input matInput formControlName="title" placeholder="Blog title ..." required>
           </mat-form-field>
 
           <mat-form-field appearance="outline" class="full-width">
@@ -89,6 +89,7 @@
                   No public links yet for this category.
                 </p>
               </mat-tab>
+
               <mat-tab label="Saved">
                 <mat-list class="research-url-list">
                   <mat-list-item *ngFor="let item of privateResearchUrls">
@@ -107,37 +108,6 @@
           </div>
         </section>
 
-        <div class="research-modal-overlay" *ngIf="newsAdd" (click)="closeAddUrlModal()">
-          <div class="research-modal" (click)="$event.stopPropagation()">
-            <h3 class="research-modal-title">Add Research Link</h3>
-            <form (ngSubmit)="onAddUrl(urlForm)" #urlForm="ngForm" class="add-url-form">
-              <label class="add-url-field">
-                <span>URL</span>
-                <input name="url" ngModel required autocomplete="off">
-              </label>
-
-              <label class="add-url-field">
-                <span>Title</span>
-                <input name="title" ngModel autocomplete="off">
-              </label>
-
-              <label class="add-url-private-toggle">
-                <input type="checkbox" name="privateLink" ngModel>
-                <span>Private</span>
-              </label>
-
-              <div class="research-modal-actions">
-                <button class="submit-url-button" type="submit" [disabled]="urlForm.invalid">
-                  <mat-icon>check</mat-icon>
-                  <span>Submit URL</span>
-                </button>
-                <button type="button" class="modal-cancel-button" (click)="closeAddUrlModal()">
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
       </mat-card-content>
     </mat-card>
   </mat-card-content>

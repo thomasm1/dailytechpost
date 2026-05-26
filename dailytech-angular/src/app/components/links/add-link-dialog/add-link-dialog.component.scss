@@ -1,0 +1,120 @@
+:host {
+  display: block;
+  min-width: min(480px, 82vw);
+  color: #f8fbff;
+}
+
+.add-link-title {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.add-link-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.add-link-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.add-link-field span {
+  color: rgba(248, 251, 255, 0.86);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.add-link-field input,
+.add-link-field select {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid rgba(143, 215, 255, 0.38);
+  border-radius: 6px;
+  background: rgba(7, 15, 34, 0.78);
+  color: #f8fbff;
+  font: inherit;
+  letter-spacing: 0;
+  outline: none;
+}
+
+.add-link-field input:focus,
+.add-link-field select:focus {
+  border-color: rgba(143, 215, 255, 0.82);
+  box-shadow: 0 0 0 2px rgba(143, 215, 255, 0.16);
+}
+
+.add-link-private-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(248, 251, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.add-link-private-toggle input {
+  width: 16px;
+  height: 16px;
+}
+
+.add-link-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.submit-link-button,
+.dialog-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.submit-link-button {
+  border: 1px solid rgba(143, 215, 255, 0.46);
+  background: rgba(143, 215, 255, 0.18);
+  color: #f8fbff;
+}
+
+.submit-link-button mat-icon {
+  margin-right: 6px;
+}
+
+.submit-link-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.dialog-cancel-button {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fbff;
+}
+
+@media only screen and (max-width: 600px) {
+  :host {
+    min-width: 0;
+  }
+
+  .add-link-actions {
+    flex-direction: column;
+  }
+
+  .submit-link-button,
+  .dialog-cancel-button {
+    width: 100%;
+  }
+}

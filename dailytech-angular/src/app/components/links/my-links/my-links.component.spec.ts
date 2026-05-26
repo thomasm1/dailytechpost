@@ -6,12 +6,13 @@ import { Store } from '@ngrx/store';
 import { of, throwError } from 'rxjs';
 
 import { MyLinksComponent } from './my-links.component';
-import { WritingService } from '../writing/writing.service';
-import { LinkDetailsDialogComponent } from './link-details-dialog.component';
-import { CategoryMod } from '../../models/category-mods.model';
-import { FileService } from '../../service/file.service';
-import { UiService } from '../../service/ui.service';
-import { environment } from '../../../environments/environment';
+import { WritingService } from '../../writing/writing.service';
+import { LinkDetailsDialogComponent } from '../link-details-dialog/link-details-dialog.component';
+import { AddLinkDialogComponent } from '../add-link-dialog/add-link-dialog.component';
+import { CategoryMod } from '../../../models/category-mods.model';
+import { FileService } from '../../../service/file.service';
+import { UiService } from '../../../service/ui.service';
+import { environment } from '../../../../environments/environment';
 
 describe('MyLinksComponent', () => {
   let component: MyLinksComponent;
@@ -110,6 +111,36 @@ describe('MyLinksComponent', () => {
       false
     );
     expect(form.resetForm).toHaveBeenCalled();
+    expect(component.isSaving).toBeFalse();
+  });
+
+  it('should open the add link dialog and save the returned link', async () => {
+    writingService.addResearchNewsForCategory.and.returnValue(Promise.resolve({} as any));
+    dialog.open.and.returnValue({
+      afterClosed: () => of({
+        categoryId: 1101,
+        title: 'Dialog example',
+        url: 'https://example.com/dialog',
+        privateLink: false
+      })
+    } as any);
+
+    fixture.detectChanges();
+    component.openAddLinkDialog();
+    await Promise.resolve();
+
+    expect(dialog.open).toHaveBeenCalledWith(AddLinkDialogComponent, jasmine.objectContaining({
+      data: jasmine.objectContaining({
+        title: 'Add Link',
+        categories
+      })
+    }));
+    expect(writingService.addResearchNewsForCategory).toHaveBeenCalledWith(
+      categories[0].children![0],
+      'Dialog example',
+      'https://example.com/dialog',
+      true
+    );
     expect(component.isSaving).toBeFalse();
   });
 

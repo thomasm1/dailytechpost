@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { CategoryMod } from '../../models/category-mods.model';
 import { WritingService } from '../writing/writing.service';
 import * as fromCategories from '../../reducers/category.reducer';
-import { LinkDetailsDialogComponent } from './link-details-dialog.component';
+import { LinkDetailsDialogComponent } from './link-details-dialog/link-details-dialog.component';
 
 @Component({
   selector: 'app-links',

@@ -18,5 +18,7 @@ public interface LinkRepository extends JpaRepository<Link, Long> {
 
   List<Link> findByUserEmail(String email);
 
+  boolean existsByUserEmailAndNormalizedUrlHash(String email, String normalizedUrlHash);
+
   List<Link> findByCategoryIdAndUserEmail(Long categoryId, String email);
 }

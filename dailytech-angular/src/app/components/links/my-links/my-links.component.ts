@@ -4,15 +4,16 @@ import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { firstValueFrom,  Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { CategoryMod } from '../../models/category-mods.model';
-import { WritingService } from '../writing/writing.service';
-import * as fromCategories from '../../reducers/category.reducer';
-import { LinkDetailsDialogComponent } from './link-details-dialog.component';
+import { CategoryMod } from '../../../models/category-mods.model';
+import { WritingService } from '../../writing/writing.service';
+import * as fromCategories from '../../../reducers/category.reducer';
+import { LinkDetailsDialogComponent } from '../link-details-dialog/link-details-dialog.component';
+import { AddLinkDialogComponent, AddLinkDialogResult } from '../add-link-dialog/add-link-dialog.component';
  
-import { environment } from '../../../environments/environment';
-import { NewsMod } from '../../models/news-mods.model';
-import { FileService } from '../../service/file.service';
-import { UiService } from '../../service/ui.service';
+import { environment } from '../../../../environments/environment';
+import { NewsMod } from '../../../models/news-mods.model';
+import { FileService } from '../../../service/file.service';
+import { UiService } from '../../../service/ui.service';
 @Component({
   selector: 'app-my-links',
   templateUrl: './my-links.component.html',
@@ -57,6 +58,40 @@ export class MyLinksComponent implements OnInit, OnDestroy {
         category,
         privateOnly: true
       }
+    });
+  }
+
+  openAddLinkDialog(): void {
+    const dialogRef = this.dialog.open(AddLinkDialogComponent, {
+      width: '520px',
+      maxWidth: '95vw',
+      data: {
+        title: 'Add Link',
+        categories: this.categoryMods,
+        selectedCategoryId: null
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((result?: AddLinkDialogResult) => {
+      if (result) {
+        this.addLinkFromDialog(result);
+      }
+    });
+  }
+
+  private addLinkFromDialog(result: AddLinkDialogResult): void {
+    const category = this.categoryBuckets.find((item) => Number(item.categoryId) === result.categoryId);
+    const publicLink = result.privateLink !== true;
+
+    if (!category || !result.url || this.isSaving) {
+      return;
+    }
+
+    this.isSaving = true;
+    this.writingService.addResearchNewsForCategory(category, result.title, result.url, publicLink).then(() => {
+      this.isSaving = false;
+    }, () => {
+      this.isSaving = false;
     });
   }
 
@@ -112,5 +147,4 @@ export class MyLinksComponent implements OnInit, OnDestroy {
     return category.cat3 || category.name || '';
   }
 }
-
 

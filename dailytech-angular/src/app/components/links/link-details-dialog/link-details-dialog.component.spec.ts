@@ -4,7 +4,7 @@ import { of, throwError } from 'rxjs';
 import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 
 import { LinkDetailsDialogComponent } from './link-details-dialog.component';
-import { WritingService } from '../writing/writing.service';
+import { WritingService } from '../../writing/writing.service';
 
 describe('LinkDetailsDialogComponent', () => {
   let component: LinkDetailsDialogComponent;

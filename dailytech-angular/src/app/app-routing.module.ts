@@ -14,7 +14,7 @@ import { NewWritingComponent } from './components/writing/new-writing/new-writin
 import { CurrentWritingComponent } from './components/writing/current-writing/current-writing.component';
 import { GridWritingsComponent } from './components/writing/grid-writings/grid-writings.component';
 import { LinksComponent } from './components/links/links.component';
-import { MyLinksComponent } from './components/links/my-links.component';
+import { MyLinksComponent } from './components/links/my-links/my-links.component';
 
 import { AwsGuardService } from './service/auth/aws-guard.service';
 import { FirebaseGuardService } from './service/auth/firebase-guard.service';

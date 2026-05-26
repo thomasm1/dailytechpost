@@ -1,0 +1,43 @@
+<h3 class="add-link-title">{{ data.title || 'Add Link' }}</h3>
+
+<form (ngSubmit)="onSubmit(addLinkForm)" #addLinkForm="ngForm" class="add-link-form">
+  <label class="add-link-field">
+    <span>Category</span>
+    <select name="categoryId" [ngModel]="selectedCategoryId" required>
+      <option value="" disabled></option>
+      <ng-container *ngFor="let category of data.categories">
+        <option [value]="category.categoryId">
+          {{ getCategoryLabel(category) }}
+        </option>
+        <option *ngFor="let child of category.children || []" [value]="child.categoryId">
+          {{ getCategoryLabel(category) }} / {{ getCategoryLabel(child) }}
+        </option>
+      </ng-container>
+    </select>
+  </label>
+
+  <label class="add-link-field">
+    <span>URL</span>
+    <input type="url" name="url" ngModel required autocomplete="off">
+  </label>
+
+  <label class="add-link-field">
+    <span>Title</span>
+    <input name="title" ngModel autocomplete="off">
+  </label>
+
+  <label class="add-link-private-toggle">
+    <input type="checkbox" name="privateLink" ngModel>
+    <span>Private</span>
+  </label>
+
+  <div class="add-link-actions">
+    <button class="submit-link-button" type="submit" [disabled]="addLinkForm.invalid">
+      <mat-icon>check</mat-icon>
+      <span>Submit URL</span>
+    </button>
+    <button type="button" class="dialog-cancel-button" (click)="close()">
+      Cancel
+    </button>
+  </div>
+</form>

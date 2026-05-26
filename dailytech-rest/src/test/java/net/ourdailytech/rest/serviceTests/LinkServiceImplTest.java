@@ -28,7 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -238,6 +240,90 @@ class LinkServiceImplTest {
     ));
 
     assertEquals("CSV header parentId is not supported. Use url,description,categoryId", exception.getMessage());
+  }
+
+  @Test
+  void createLinksFromCsvSkipsExistingDuplicateAndContinues() {
+    String csv = """
+        url,description,categoryId
+        https://example.com/existing,Existing,1101
+        https://example.com/new,New,1101
+        """;
+    User user = new User();
+    user.setEmail("testuser@example.com");
+    Category developer = new Category();
+    developer.setId(1101L);
+    LinkDto savedDto = LinkDto.builder()
+        .id(54L)
+        .url("https://example.com/new")
+        .categoryId(1101L)
+        .build();
+
+    when(usersRepository.findByEmail("testuser@example.com")).thenReturn(Optional.of(user));
+    when(categoryRepository.findById(1101L)).thenReturn(Optional.of(developer));
+    when(linkRepository.existsByUserEmailAndNormalizedUrlHash(
+        anyString(),
+        anyString()
+    )).thenAnswer(invocation -> invocation.getArgument(1, String.class).equals(sha256("example.com/existing")));
+    when(linkRepository.save(any(Link.class))).thenAnswer(invocation -> invocation.getArgument(0));
+    when(linkMapper.toDto(any(Link.class))).thenReturn(savedDto);
+
+    List<LinkDto> created = linkService.createLinksFromCsv(
+        new ByteArrayInputStream(csv.getBytes(StandardCharsets.UTF_8)),
+        "testuser@example.com"
+    );
+
+    ArgumentCaptor<Link> linkCaptor = ArgumentCaptor.forClass(Link.class);
+    verify(linkRepository).save(linkCaptor.capture());
+
+    assertEquals(1, created.size());
+    assertEquals("https://example.com/new", linkCaptor.getValue().getUrl());
+  }
+
+  @Test
+  void createLinksFromCsvSkipsDuplicateWithinSameUpload() {
+    String csv = """
+        url,description,categoryId
+        https://example.com/same,Same One,1101
+        https://www.example.com/same/,Same Two,1101
+        """;
+    User user = new User();
+    user.setEmail("testuser@example.com");
+    Category developer = new Category();
+    developer.setId(1101L);
+    LinkDto savedDto = LinkDto.builder()
+        .id(55L)
+        .url("https://example.com/same")
+        .categoryId(1101L)
+        .build();
+
+    when(usersRepository.findByEmail("testuser@example.com")).thenReturn(Optional.of(user));
+    when(categoryRepository.findById(1101L)).thenReturn(Optional.of(developer));
+    when(linkRepository.existsByUserEmailAndNormalizedUrlHash(anyString(), anyString())).thenReturn(false);
+    when(linkRepository.save(any(Link.class))).thenAnswer(invocation -> invocation.getArgument(0));
+    when(linkMapper.toDto(any(Link.class))).thenReturn(savedDto);
+
+    List<LinkDto> created = linkService.createLinksFromCsv(
+        new ByteArrayInputStream(csv.getBytes(StandardCharsets.UTF_8)),
+        "testuser@example.com"
+    );
+
+    verify(linkRepository, times(1)).save(any(Link.class));
+    assertEquals(1, created.size());
+  }
+
+  private String sha256(String value) {
+    try {
+      java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
+      byte[] hash = digest.digest(value.getBytes(StandardCharsets.UTF_8));
+      StringBuilder hex = new StringBuilder(hash.length * 2);
+      for (byte b : hash) {
+        hex.append(String.format("%02x", b));
+      }
+      return hex.toString();
+    } catch (java.security.NoSuchAlgorithmException e) {
+      throw new IllegalStateException(e);
+    }
   }
 
 }

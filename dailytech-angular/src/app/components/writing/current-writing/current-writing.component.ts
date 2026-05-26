@@ -2,15 +2,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { WritingMod } from '../../../models/writing-mods.model';
 import { NewsMod } from '../../../models/news-mods.model';
+import { CategoryMod } from '../../../models/category-mods.model';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { StopWritingComponent } from './stop-writing.component';
+import { AddLinkDialogComponent, AddLinkDialogResult } from '../../links/add-link-dialog/add-link-dialog.component';
 import { WritingService } from '../writing.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import * as fromCategories from '../../../reducers/category.reducer';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router  } from '@angular/router';
 import * as fromRoot from '../../../reducers/app.reducer';
 
@@ -34,8 +37,11 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   writingForm!: FormGroup;
   writingMods$!: Observable<WritingMod[]>;
   newsMods$!: Observable<NewsMod[]>;
+  categoryMods: CategoryMod[] = [];
   category!: string;
+  activeCategoryId?: string | number;
   newsAdd: boolean= false;
+  private categorySubscription?: Subscription;
 
 
   constructor(
@@ -51,6 +57,10 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     this.hydrateDraftFormFromStore();
     this.startOrResumeWriting();
     this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
+    this.categorySubscription = this.store.select(fromCategories.getCurrentCategoryMods).subscribe((categories) => {
+      this.categoryMods = categories || [];
+    });
+    this.writingService.getCategories();
   }
 
   private initForm() {
@@ -88,6 +98,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
       // this.news = this.writingService.getWritingExercise().news;
       this.news = writingMod.news || [];
       this.category = writingMod.cat3 || '';
+      this.activeCategoryId = writingMod.categoryId;
       this.loadResearchUrls();
       this.goalMinutes = this.resolveGoalMinutes(writingMod.durationGoal);
       this.startStopwatch();
@@ -188,41 +199,60 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     });
   }
   addUrl() {
-        console.log("add-url");
-        this.newsAdd = true;
-        
+    console.log("add-url");
+    const selectedCategoryId = this.resolveSelectedCategoryId(this.categoryMods);
+    const dialogRef = this.dialog.open(AddLinkDialogComponent, {
+      width: '520px',
+      maxWidth: '95vw',
+      data: {
+        title: 'Add Research Link',
+        categories: this.categoryMods,
+        selectedCategoryId
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((result?: AddLinkDialogResult) => {
+      if (result) {
+        this.onAddUrl(result, this.categoryMods);
+      }
+    });
   }
 
-  closeAddUrlModal(): void {
-    this.newsAdd = false;
-  }
+  onAddUrl(result: AddLinkDialogResult, categories?: CategoryMod[]) {
+    const availableCategories = categories || [];
+    const categoryBuckets = this.writingService.getFlattenedCategoryBuckets(availableCategories);
+    const category = categoryBuckets.find((item) => Number(item.categoryId) === result.categoryId);
+    const title = result.title || 'Untitled';
+    const trimmedUrl = result.url.trim();
+    const publicLink = result.privateLink !== true;
 
-  onAddUrl(urlForm: NgForm) {
-    const title = urlForm.value.title || 'Untitled';
-    const url = typeof urlForm.value.url === 'string' ? urlForm.value.url : urlForm.value.url?.value;
-    const trimmedUrl = typeof url === 'string' ? url.trim() : '';
-    const publicLink = urlForm.value.privateLink !== true;
-
-    if (!trimmedUrl) {
+    if (!category || !trimmedUrl) {
       return;
     }
 
-    this.writingService.addResearchNews(this.category, title, trimmedUrl, publicLink).then(
+    this.writingService.addResearchNewsForCategory(category, title, trimmedUrl, publicLink).then(
       () => {
         console.log('addResearchNews submission successful');
         this.loadResearchUrls();
-        if (typeof urlForm.resetForm === 'function') {
-          urlForm.resetForm();
-        } else if (typeof (urlForm as any).reset === 'function') {
-          (urlForm as any).reset();
-        }
-        this.newsAdd = false;
       },
       error => {
         console.error('addResearchNews submission failed', error);
       }
     );
   } 
+
+  private resolveSelectedCategoryId(categories: CategoryMod[]): string | number | null {
+    if (this.activeCategoryId) {
+      return this.activeCategoryId;
+    }
+
+    const categoryBuckets = this.writingService.getFlattenedCategoryBuckets(categories);
+    const matchedCategory = categoryBuckets.find((item) =>
+      item.cat3 === this.category || item.name === this.category
+    );
+
+    return matchedCategory?.categoryId ?? null;
+  }
 
   onSubmit(): void {
     if (this.writingForm.valid) {
@@ -262,6 +292,9 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.timer) {
       clearInterval(this.timer);
+    }
+    if (this.categorySubscription) {
+      this.categorySubscription.unsubscribe();
     }
   }
 }

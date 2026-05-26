@@ -9,10 +9,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import net.ourdailytech.rest.exception.PostApiException;
 import net.ourdailytech.rest.exception.ResourceNotFoundException;
 import net.ourdailytech.rest.mapper.LinkMapper;
@@ -69,6 +71,7 @@ public class LinkServiceImpl implements LinkService {
   public List<LinkDto> createLinksFromCsv(InputStream csvInputStream, String userEmail) {
     User user = getRequiredUser(userEmail);
     List<LinkDto> created = new ArrayList<>();
+    Set<String> uploadedHashes = new HashSet<>();
     Map<String, Integer> headerIndexes = null;
 
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(csvInputStream, StandardCharsets.UTF_8))) {
@@ -107,6 +110,10 @@ public class LinkServiceImpl implements LinkService {
         link.setPublicLink(true);
         applyNormalizedUrl(link);
 
+        if (isDuplicateCsvLink(userEmail, link.getNormalizedUrlHash(), uploadedHashes)) {
+          continue;
+        }
+
         created.add(linkMapper.toDto(linkRepository.save(link)));
       }
     } catch (IOException e) {
@@ -114,6 +121,16 @@ public class LinkServiceImpl implements LinkService {
     }
 
     return created;
+  }
+
+  private boolean isDuplicateCsvLink(String userEmail, String normalizedUrlHash, Set<String> uploadedHashes) {
+    if (normalizedUrlHash == null || normalizedUrlHash.isBlank()) {
+      return false;
+    }
+    if (!uploadedHashes.add(normalizedUrlHash)) {
+      return true;
+    }
+    return linkRepository.existsByUserEmailAndNormalizedUrlHash(userEmail, normalizedUrlHash);
   }
 
   private String resolveCsvDescription(String description, String url) {

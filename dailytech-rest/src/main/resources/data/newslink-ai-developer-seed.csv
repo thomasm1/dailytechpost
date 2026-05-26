@@ -1,0 +1,8 @@
+url,description,categoryId
+https://danielmiessler.com,"AI SECURITY,Daniel Miessler",1001
+https://aistudio.google.com/prompts/new_chat,"AI TOOLS,Google AI Studio",1001
+https://platform.openai.com/login,"AI PLATFORM,OpenAI Platform",1001
+https://cursor.com,"AI CODING,Cursor Coding Agent",1001
+https://replit.com,"AI CODING,Replit AI App Builder",1001
+https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features,"AI CODING,GitHub Copilot in VS Code Cheat Sheet",1001
+https://m365.cloud.microsoft/chat/,"AI PRODUCTIVITY,M365 Copilot Chat",1001

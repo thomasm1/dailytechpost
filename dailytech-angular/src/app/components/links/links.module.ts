@@ -5,14 +5,16 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from '../../material.module';
 import { LinksComponent } from './links.component';
-import { LinkDetailsDialogComponent } from './link-details-dialog.component';
-import { MyLinksComponent } from './my-links.component';
+import { LinkDetailsDialogComponent } from './link-details-dialog/link-details-dialog.component';
+import { MyLinksComponent } from './my-links/my-links.component';
+import { AddLinkDialogComponent } from './add-link-dialog/add-link-dialog.component';
 
 @NgModule({
   declarations: [
     LinksComponent,
     LinkDetailsDialogComponent,
-    MyLinksComponent
+    MyLinksComponent,
+    AddLinkDialogComponent
   ],
   imports: [
     CommonModule,

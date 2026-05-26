@@ -3,7 +3,6 @@
     <form class="add-link-form" #linkForm="ngForm" (ngSubmit)="onAddLink(linkForm)">
 
       <input #csvInput type="file" accept=".csv,text/csv" hidden (change)="onCsvSelected($event)" />
-
       <button
         type="button"
         class="add-link-button"
@@ -15,7 +14,17 @@
         <span>{{ isUploadingCsv ? 'Uploading' : 'Upload CSV' }}</span>
       </button>
 
-      <label class="link-field">
+      <button
+        type="button"
+        class="add-link-button"
+        [disabled]="isSaving"
+        (click)="openAddLinkDialog()"
+      >
+        <mat-icon>add_link</mat-icon>
+        <span>{{ isSaving ? 'Saving' : 'Add Link' }}</span>
+      </button>
+ 
+      <!-- <label class="link-field">
         <span>URL</span>
         <input type="url" name="url" ngModel required autocomplete="off" />
       </label>
@@ -48,7 +57,7 @@
       <button type="submit" class="add-link-button" [disabled]="linkForm.invalid || isSaving">
         <mat-icon>add_link</mat-icon>
         <span>{{ isSaving ? 'Saving' : 'Add Link' }}</span>
-      </button>
+      </button> -->
 
     </form>
   </div>

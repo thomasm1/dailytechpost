@@ -10,8 +10,11 @@ import { CurrentWritingComponent } from './current-writing.component';
 import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-mods.model';
+import { CategoryMod } from '../../../models/category-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
+import * as fromCategories from '../../../reducers/category.reducer';
+import { AddLinkDialogComponent } from '../../links/add-link-dialog/add-link-dialog.component';
 
 describe('CurrentWritingComponent', () => {
   let component: CurrentWritingComponent;
@@ -21,6 +24,7 @@ describe('CurrentWritingComponent', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockStore: jasmine.SpyObj<Store>;
   let activeWritingSubject: BehaviorSubject<WritingMod | null>;
+  let categories: CategoryMod[];
 
   const activeWriting: WritingMod = {
     id: 'w-1',
@@ -31,16 +35,37 @@ describe('CurrentWritingComponent', () => {
   } as WritingMod;
 
   beforeEach(async () => {
+    categories = [
+      {
+        cat3: 'Web Dev Affairs',
+        categoryId: '11',
+        durationGoal: 15,
+        children: [{ name: 'Developer', categoryId: '1101', parentId: '11', durationGoal: 15 }]
+      }
+    ];
     mockWritingService = jasmine.createSpyObj('WritingService', [
       'hardQuitWriting',
       'addFullDataToDatabase',
       'addResearchNews',
+      'addResearchNewsForCategory',
+      'getFlattenedCategoryBuckets',
+      'getCategories',
       'getResearchNewsForCategoryName',
       'completeWriting',
       'cancelWriting'
     ]);
     mockWritingService.addFullDataToDatabase.and.returnValue(Promise.resolve());
     mockWritingService.addResearchNews.and.returnValue(Promise.resolve({} as any));
+    mockWritingService.addResearchNewsForCategory.and.returnValue(Promise.resolve({} as any));
+    mockWritingService.getFlattenedCategoryBuckets.and.callFake((items: CategoryMod[]) =>
+      (items || []).reduce((buckets: CategoryMod[], category) => {
+        buckets.push(category);
+        if (category.children?.length) {
+          buckets.push(...category.children);
+        }
+        return buckets;
+      }, [])
+    );
     mockWritingService.getResearchNewsForCategoryName.and.callFake((category: string, privateOnly?: boolean) =>
       of(privateOnly
         ? [{ id: 'private-1', title: 'Private link', url: 'https://example.com/private', categoryId: 10 }]
@@ -59,6 +84,9 @@ describe('CurrentWritingComponent', () => {
       }
       if (selector === fromWriting.getAvailableWritingMods) {
         return of([]);
+      }
+      if (selector === fromCategories.getCurrentCategoryMods) {
+        return of(categories);
       }
       return of(null);
     });
@@ -215,6 +243,21 @@ describe('CurrentWritingComponent', () => {
     expect(console.error).toHaveBeenCalledWith('Form is invalid');
   });
 
+  it('should open add link dialog with the active category selected', () => {
+    component.ngOnInit();
+    mockDialog.open.and.returnValue({ afterClosed: () => of(undefined) } as any);
+
+    component.addUrl();
+
+    expect(mockDialog.open).toHaveBeenCalledWith(AddLinkDialogComponent, jasmine.objectContaining({
+      data: jasmine.objectContaining({
+        title: 'Add Research Link',
+        categories,
+        selectedCategoryId: '11'
+      })
+    }));
+  });
+
   it('should add URL and persist it', fakeAsync(() => {
     const fb = TestBed.inject(FormBuilder);
     component.writingForm = fb.group({
@@ -226,46 +269,42 @@ describe('CurrentWritingComponent', () => {
     });
     component.news = [];
     component.category = 'Web Dev Affairs';
-    const mockUrlForm = {
-      value: {
-        title: 'Example title',
-        url: 'https://example.com/new'
-      },
-      resetForm: jasmine.createSpy('resetForm')
-    } as any;
+    const result = {
+      categoryId: 11,
+      title: 'Example title',
+      url: 'https://example.com/new',
+      privateLink: false
+    };
 
-    component.onAddUrl(mockUrlForm);
+    component.onAddUrl(result, categories);
     tick();
 
-    expect(mockWritingService.addResearchNews).toHaveBeenCalledWith(
-      'Web Dev Affairs',
+    expect(mockWritingService.addResearchNewsForCategory).toHaveBeenCalledWith(
+      categories[0],
       'Example title',
       'https://example.com/new',
       true
     );
     expect(mockWritingService.getResearchNewsForCategoryName).toHaveBeenCalledWith('Web Dev Affairs');
     expect(mockWritingService.getResearchNewsForCategoryName).toHaveBeenCalledWith('Web Dev Affairs', true);
-    expect(mockUrlForm.resetForm).toHaveBeenCalled();
     flush();
   }));
 
   it('should add a private URL when private is checked', fakeAsync(() => {
     component.news = [];
     component.category = 'Web Dev Affairs';
-    const mockUrlForm = {
-      value: {
-        title: 'Private example',
-        url: 'https://example.com/private',
-        privateLink: true
-      },
-      resetForm: jasmine.createSpy('resetForm')
-    } as any;
+    const result = {
+      categoryId: 1101,
+      title: 'Private example',
+      url: 'https://example.com/private',
+      privateLink: true
+    };
 
-    component.onAddUrl(mockUrlForm);
+    component.onAddUrl(result, categories);
     tick();
 
-    expect(mockWritingService.addResearchNews).toHaveBeenCalledWith(
-      'Web Dev Affairs',
+    expect(mockWritingService.addResearchNewsForCategory).toHaveBeenCalledWith(
+      categories[0].children![0],
       'Private example',
       'https://example.com/private',
       false
