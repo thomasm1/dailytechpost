@@ -55,4 +55,14 @@ describe('BlogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should navigate to the current blog category', () => {
+    component.blog = { cat3: 'Sociology Tomorrow!' } as any;
+
+    component.viewCategory();
+
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/blogs'], {
+      queryParams: { category: 'Sociology Tomorrow!' }
+    });
+  });
 });

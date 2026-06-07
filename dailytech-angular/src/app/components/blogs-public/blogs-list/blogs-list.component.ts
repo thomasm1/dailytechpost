@@ -31,6 +31,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
 
   someVar = '<h5>h5-title</h5>';
   blogsLoading = true;
+  selectedTabIndex = 0;
   dialogValue: string;
   sendValue: string;
 
@@ -38,13 +39,29 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
     private blogsService: BlogsService,
     public dialog: MatDialog,
     private router: Router,
+    private route: ActivatedRoute,
     private uiService: UiService
   ) {}
 
   ngOnInit() {
     this.username = sessionStorage.getItem('AuthenticatedUser');
+    this.route.queryParamMap.subscribe((params) => {
+      this.selectedTabIndex = this.getCategoryTabIndex(params.get('category'));
+    });
 
     this.refreshBlogs();
+  }
+
+  private getCategoryTabIndex(category: string | null): number {
+    const categoryTabs: Record<string, number> = {
+      'Web Dev Affairs': 1,
+      'Musing Blockchain': 2,
+      'A.I.Now.': 3,
+      'Sociology Tomorrow!': 4,
+      'Quantum Data': 5
+    };
+
+    return category ? categoryTabs[category] ?? 0 : 0;
   }
 
   ngAfterViewInit() {

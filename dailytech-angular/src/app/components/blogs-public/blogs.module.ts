@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { BlogsGridComponent } from './blogs-grid/blogs-grid.component';
 import { StatisticsService } from './Statistics.service';
 import { BlogsService } from './blogs.service';
@@ -20,6 +21,7 @@ import { AgChartsAngularModule } from 'ag-charts-angular';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
     MaterialModule,
     A11yModule,
     AgChartsAngularModule,

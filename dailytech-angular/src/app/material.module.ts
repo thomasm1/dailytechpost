@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';  // For BreakpointObserver
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
@@ -20,22 +20,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';  
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
-import { MatLegacyTooltipModule as MatTooltipModule } from '@angular/material/legacy-tooltip';
-import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatBadgeModule } from '@angular/material/badge';
-import { MatLegacyAutocompleteModule as MatAutocompleteModule } from '@angular/material/legacy-autocomplete';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatLegacyRadioModule as MatRadioModule } from '@angular/material/legacy-radio';
 import { MatRippleModule } from '@angular/material/core';
-import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
-import { MatLegacySlideToggleModule as MatSlideToggleModule } from '@angular/material/legacy-slide-toggle';
 import { MatTreeModule } from '@angular/material/tree'; 
 
 
@@ -66,19 +61,19 @@ import { MatTreeModule } from '@angular/material/tree';
     MatTableModule,
     MatTabsModule,
     MatExpansionModule,
-    MatChipsModule,
+    // MatChipsModule,
     MatTooltipModule,
     MatSnackBarModule,
     MatStepperModule,
     MatBadgeModule,
-    MatAutocompleteModule,
+    // MatAutocompleteModule,
     MatBottomSheetModule,
     MatButtonToggleModule,
     MatDividerModule,
-    MatRadioModule,
+    // MatRadioModule,
     MatRippleModule,
-    MatSliderModule,
-    MatSlideToggleModule,
+    // MatSliderModule,
+    // MatSlideToggleModule,
     MatTreeModule
   ],
   exports: [
@@ -104,19 +99,19 @@ import { MatTreeModule } from '@angular/material/tree';
     MatMenuModule,
     MatTabsModule,
     MatExpansionModule,
-    MatChipsModule,
+    // MatChipsModule,
     MatTooltipModule,
     MatSnackBarModule,
     MatStepperModule,
     MatBadgeModule,
-    MatAutocompleteModule,
+    // MatAutocompleteModule,
     MatBottomSheetModule,
     MatButtonToggleModule,
     MatDividerModule,
-    MatRadioModule,
+    // MatRadioModule,
     MatRippleModule,
-    MatSliderModule,
-    MatSlideToggleModule, 
+    // MatSliderModule,
+    // MatSlideToggleModule, 
     MatTreeModule
        ]
 })

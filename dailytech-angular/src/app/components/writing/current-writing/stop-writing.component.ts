@@ -8,9 +8,9 @@ import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALO
               <p>Your current session can be kept as a local draft.</p>
             </div>
             <div>
-              <button mat-button type="button" (click)="closeDialog('discard')">Yes, don't save</button>
-              <button mat-button type="button" (click)="closeDialog('draft')">Yes, keep session draft</button>
-              <button mat-button type="button" (click)="closeDialog('resume')">No</button>
+              <button mat-button type="button" (click)="closeDialog('discard')">Quit, don't save</button>
+              <button mat-button type="button" (click)="closeDialog('draft')">Quit, save session draft</button>
+              <button mat-button type="button" (click)="closeDialog('resume')">Don't Quit</button>
             </div>
   `,
   styles: [

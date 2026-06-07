@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogsService } from '../blogs.service';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog } from '../../../models/blog.model';
 import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { UiService } from '../../../service/ui.service';
@@ -13,12 +13,12 @@ import { UiService } from '../../../service/ui.service';
 })
 export class BlogComponent implements OnInit, OnDestroy {
 
-  blogSubscription: Subscription;
+  blogSubscription: Subscription | undefined;
 
-  @Input() blogName: string;
+  @Input() blogName: string = '';
   @Output() blogClicked = new EventEmitter();
-  private id: string;
-  public blog: Blog;
+  private id: string = '';
+  public blog!: Blog;
   blogsLoading = true;
   constructor(
     private route: ActivatedRoute,
@@ -32,7 +32,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   getBlog() {
     this.route.paramMap.subscribe(params => {
-      this.id = params.get('id');
+      this.id = params.get('id') || '';
       this.blogsLoading = true;
       this.uiService.startLoading();
       this.blogSubscription = this.blogsService.getBlog(this.id)
@@ -50,6 +50,14 @@ export class BlogComponent implements OnInit, OnDestroy {
   onClicked() {
     // this.blogClicked.emit();
     this.blogsService.hideBlog(this.blogName);
+  }
+
+  viewCategory(): void {
+    if (this.blog?.cat3) {
+      this.router.navigate(['/blogs'], {
+        queryParams: { category: this.blog.cat3 }
+      });
+    }
   }
 
    ngOnDestroy() {

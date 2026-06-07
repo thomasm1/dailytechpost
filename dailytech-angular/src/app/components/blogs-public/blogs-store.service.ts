@@ -72,30 +72,19 @@ export class BlogsStore  {
  }
 
   getAllBlogs() {
-    //  let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
-    // let header = new HttpHeaders({
-    //     Authorization: basicAuthHeaderString
-    // })
+ 
     return this.httpClient.get<Blog[]>(`${this.urlDev}/posts`  // ,
     )
   }
 
   getBlog(id) {
-    //  let basicAuthHeaderString = this.zcreateBasicAuthenticationHttpHeader();
-    // let header = new HttpHeaders({
-    //     Authorization: basicAuthHeaderString
-    // })
+ 
     console.log(id)
     return this.httpClient.get<Blog>(`${this.urlDev2}/post/${id}`,
       // {headers: header}
     )
   }
-
-  // getBlogsArray() {
-  //   console.log(this.blogs);
-  //   return [...this.blogs];
-  // }
-
+ 
   hideBlog(blogName: string) {
     this.blogs = this.blogs.filter(b => b !== blogName);
     this.blogsUpdated.next({value: this.blogs});

@@ -4,8 +4,19 @@
   align-items: center;
 }
 
-.flex-40 {
-  width: 40%;
+.search {
+  width:400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding:5px;
+  background: aliceblue;
+}
+.table {
+  width: 95%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: aliceblue;
+  margin: 4px auto;
 }
 
 mat-table {
@@ -15,9 +26,13 @@ mat-table {
 .paginator-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
+  position:sticky;
+  bottom:80px;
 }
 
 .paginator-wrap mat-paginator {
-  background: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: aliceblue;
 }

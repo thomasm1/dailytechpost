@@ -12,7 +12,7 @@ import { NewsMod } from '../../models/news-mods.model';
 import { UiService } from '../../service/ui.service';
 import * as Writing from '../../reducers/writing.actions';
 import * as fromWriting from '../../reducers/writing.reducer';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import * as Categories from '../../reducers/category.actions';
 import * as fromCategories from '../../reducers/category.reducer';
 import { environment } from '../../../environments/environment';

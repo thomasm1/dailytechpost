@@ -1,10 +1,19 @@
 <hr class="bar-white" />
 <h2><span class="daily-tech monoton text-box">OUR DAILY TECH</span></h2>
 <hr class="bar-white"/>
-<!-- <article class="blog" (click)="onClicked()">
-    <div>{{ blog  }}</div>
-</article> -->
+ 
+<nav class="nav-wrap" >
+  <a class="blog-navigation" mat-stroked-button routerLink="/blogs">
+    <mat-icon>arrow_back</mat-icon>
+    All Blogs
+  </a> 
+  <button class="blog-navigation" *ngIf="blog" type="button" 
+  mat-stroked-button (click)="viewCategory()">
+    {{ blog.cat3 }}
+  </button>
+</nav>
 <div class="outer-div">
+  
   <div  class="inner-div" *ngIf="blog">
     <span class="category">{{ blog.cat3 }}</span>
     <!-- <button class="btnModal" mat-stroked-button>Modal</button> -->

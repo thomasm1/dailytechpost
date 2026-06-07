@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of, throwError } from 'rxjs';
@@ -38,6 +38,12 @@ describe('BlogsListComponent', () => {
       providers: [
         { provide: BlogsService, useValue: mockBlogsService },
         { provide: Router, useValue: mockRouter },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            queryParamMap: of({ get: () => null })
+          }
+        },
         { provide: MatDialog, useValue: mockDialog },
         { provide: UiService, useValue: mockUiService }
       ],

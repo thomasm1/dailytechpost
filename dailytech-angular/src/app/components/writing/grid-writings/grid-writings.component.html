@@ -1,11 +1,12 @@
 <div class="centered-row">
-  <mat-form-field class="flex-40">
+  <mat-form-field class="search ">
+    <mat-label></mat-label>
     <!-- <input type="text" (keyup)="blogFilter($event.target.value)" placeholder="Mod Filter"> -->
-    <input matInput type="text" (keyup)="blogFilter($any($event.target).value)" placeholder="Mod Filter">
+    <input matInput type="text" (keyup)="blogFilter($any($event.target).value)" [placeholder]="'Blog Filter'">
   </mat-form-field>
 </div>
 
-<mat-table [dataSource]="dataSource" matSort>
+<mat-table class="table" [dataSource]="dataSource" matSort>
 
 
  <ng-container matColumnDef="did">

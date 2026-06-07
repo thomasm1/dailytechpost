@@ -20,7 +20,6 @@ export class GridWritingsComponent implements OnInit, AfterViewInit { //, OnDest
   displayedColumns = [ 'did', 'title', 'post', 'wordCount', 'durationGoal',  'state','date'];
   dataSource = new MatTableDataSource<WritingMod>();
   // private exChangedSubscription: Subscription;
-
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
 

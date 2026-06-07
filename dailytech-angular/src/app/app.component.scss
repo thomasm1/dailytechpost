@@ -15,6 +15,10 @@ mat-sidenav {
     width: 250px;
 }
 
+main {
+    padding-bottom: 72px;
+}
+
 .app-loading-overlay {
     position: fixed;
     inset: 0;
@@ -22,8 +26,12 @@ mat-sidenav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(6, 15, 48, 0.28);
-    pointer-events: none;
+    background: transparent;
+    pointer-events: none !important;
+}
+
+.app-loading-overlay * {
+    pointer-events: none !important;
 }
 
 // GLOBAL SPINNER       globalSpinnerDiameter 
