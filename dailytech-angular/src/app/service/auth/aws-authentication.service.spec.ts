@@ -3,7 +3,9 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import {
   AUTHENTICATED_USER,
+  AUTH_PROVIDER_KEY,
   AUTH_STORAGE_KEY,
+  AWS_USER_INFO_STORAGE_KEY,
   AwsAuthenticationService,
   TOKEN
 } from './aws-authentication.service';
@@ -55,8 +57,16 @@ describe('AwsAuthenticationService', () => {
   });
 
   it('should post native JWT login credentials and store returned access token', () => {
+    const payload = btoa(JSON.stringify({
+      sub: 'admin@example.com',
+      roles: ['ROLE_ADMIN'],
+      iat: 100,
+      exp: 200
+    })).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    const accessToken = `header.${payload}.signature`;
+
     service.executeAuthAwsService(' admin@example.com ', 'secret').subscribe(data => {
-      expect(data.accessToken).toBe('jwt-token');
+      expect(data.accessToken).toBe(accessToken);
     });
 
     const req = httpMock.expectOne(`${environment.API_URL}/users/auth/login`);
@@ -66,10 +76,19 @@ describe('AwsAuthenticationService', () => {
       password: 'secret'
     });
 
-    req.flush({ accessToken: 'jwt-token', tokenType: 'Bearer' });
+    req.flush({ accessToken, tokenType: 'Bearer' });
 
     expect(sessionStorage.getItem(AUTH_STORAGE_KEY)).toBe('true');
+    expect(sessionStorage.getItem(AUTH_PROVIDER_KEY)).toBe('aws');
     expect(sessionStorage.getItem(AUTHENTICATED_USER)).toBe('admin@example.com');
-    expect(sessionStorage.getItem(TOKEN)).toBe('Bearer jwt-token');
+    expect(sessionStorage.getItem(TOKEN)).toBe(`Bearer ${accessToken}`);
+    expect(JSON.parse(sessionStorage.getItem(AWS_USER_INFO_STORAGE_KEY) || '{}')).toEqual({
+      email: 'admin@example.com',
+      roles: ['ROLE_ADMIN'],
+      issuedAt: 100,
+      expiresAt: 200
+    });
+    expect(service.getRoles()).toEqual(['ROLE_ADMIN']);
+    expect(service.isAdminLoggedIn()).toBeTrue();
   });
 });

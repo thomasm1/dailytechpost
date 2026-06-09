@@ -32,6 +32,9 @@ import { LinksModule } from '../links/links.module';
         LinksModule,
         StoreModule.forFeature('writing', writingReducer),
         StoreModule.forFeature('category', categoryReducer)
+    ],
+    exports: [
+        NewWritingComponent
     ]
 })
 export class WritingModule {}

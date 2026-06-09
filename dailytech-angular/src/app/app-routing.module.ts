@@ -22,6 +22,7 @@ import { BlogsComponent } from './components/blogs-public/blogs/blogs.component'
 import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component'; 
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
+import { AdminConsoleComponent } from './components/admin/admin-console/admin-console.component';
  
 const routes: Routes = [ 
   { path: '', component: BlogsListComponent, pathMatch: 'full' }, 
@@ -36,7 +37,6 @@ const routes: Routes = [
   {
     path: 'writing',
     component: WritingComponent,
-    canActivate:[FirebaseGuardService],
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'new' },
       { path: 'new', component: NewWritingComponent },
@@ -50,8 +50,9 @@ const routes: Routes = [
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 
-  { path: 'admin/posts', component: PostsListComponent},
-  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[FirebaseGuardService,AwsGuardService]},
+  { path: 'admin/posts', component: PostsListComponent, canActivate:[AwsGuardService]},
+  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AwsGuardService]},
+  { path: 'admin/:email', component: AdminConsoleComponent, canActivate:[AwsGuardService]},
  
 
   { path: 'login', component: SignonComponent },

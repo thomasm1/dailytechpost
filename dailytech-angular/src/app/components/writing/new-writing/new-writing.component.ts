@@ -4,7 +4,6 @@ import { Observable, Subscription } from 'rxjs';
 
 import { WritingService } from '../writing.service';
 import { WritingMod } from '../../../models/writing-mods.model';
-import { UiService } from '../../../service/ui.service';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
 import { Store } from '@ngrx/store';
@@ -33,14 +32,11 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   savedDraftCategory = '';
   selectedCategory = '';
 
-  isLoading = true;
-  private loadingSubscription!: Subscription;
   private draftSubscription!: Subscription;
   // isLoading$: Observable<boolean>;
 
   constructor(
     private writingService: WritingService,
-    private uiService: UiService,
     private store: Store<fromWriting.State>,
     private router: Router
 
@@ -49,9 +45,6 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   ngOnInit() {
     this.isAuth$ = this.store.select(fromRoot.getIsAuth);
     this.store.dispatch(new WritingActions.HydrateWritingDraft());
-    this.loadingSubscription = this.uiService.loadingStateChanged.subscribe(
-      (isLoading) => { this.isLoading = isLoading; }
-    );
     this.categoryMods$ = this.store.select(fromCategories.getCurrentCategoryMods);
     this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods);
     this.fetchCategories();
@@ -100,9 +93,6 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.loadingSubscription) {
-      this.loadingSubscription.unsubscribe();
-    }
     if (this.draftSubscription) {
       this.draftSubscription.unsubscribe();
     }

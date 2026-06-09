@@ -16,12 +16,76 @@
           </mat-form-field>
 
           <mat-form-field appearance="outline" class="full-width">
-            <textarea matInput formControlName="post" placeholder="Write here, write now..." rows="15" required>
-            </textarea>
-            <mat-hint>
-              {{ writingForm.get('post')?.value?.length || 0 }} characters
-            </mat-hint>
+            <input matInput formControlName="author" placeholder="Author" required>
           </mat-form-field>
+
+          <section class="html-editor">
+            <div class="html-editor-header">
+              <strong>Post HTML</strong>
+              <button mat-stroked-button type="button" (click)="showPostPreview = !showPostPreview">
+                {{ showPostPreview ? 'Hide Preview' : 'Show Preview' }}
+              </button>
+            </div>
+            <div class="snippet-toolbar" aria-label="Post HTML tools">
+              <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('\n<p>{{selection}}...</p>\n')">Paragraph</button>
+              <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('\n<p class=&quot;quote&quot;>{{selection}}...</p>\n')">Quote</button>
+              <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('\n<p class=&quot;firstparagraph quote&quot;>{{selection}}...</p>\n')">First Quote</button>
+              <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('<a href=&quot;https://...&quot; target=&quot;_blank&quot;>{{selection}}link text</a>')">Link</button>
+              <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('<sup>{{selection}}1</sup>')">Superscript</button>
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <textarea #postEditor matInput formControlName="post" placeholder="Write HTML here..." rows="15" required>
+              </textarea>
+              <mat-hint>
+                {{ writingForm.get('post')?.value?.length || 0 }} characters
+              </mat-hint>
+            </mat-form-field>
+
+            <div *ngIf="showPostPreview" class="html-preview">
+              <strong>Post Preview</strong>
+              <article [innerHTML]="writingForm.get('post')?.value || '<p>Start writing to preview the post.</p>'"></article>
+            </div>
+          </section>
+
+          <section class="html-editor">
+            <div class="html-editor-header">
+              <strong>Citations HTML</strong>
+              <button mat-stroked-button type="button" (click)="showCitationPreview = !showCitationPreview">
+                {{ showCitationPreview ? 'Hide Preview' : 'Show Preview' }}
+              </button>
+            </div>
+            <div class="snippet-toolbar" aria-label="Citation HTML tools">
+              <button mat-stroked-button type="button"
+                (click)="insertCitationSnippet('\n<p class=&quot;footnotes&quot;>{{selection}}1. ...</p>\n')">Footnote</button>
+              <button mat-stroked-button type="button"
+                (click)="insertCitationSnippet('<a href=&quot;https://...&quot; target=&quot;_blank&quot;>{{selection}}citation text</a>')">Citation Link</button>
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <textarea #citationEditor matInput formControlName="blogcite" placeholder="Footnotes and citations HTML..." rows="6">
+              </textarea>
+            </mat-form-field>
+
+            <div *ngIf="showCitationPreview" class="html-preview">
+              <strong>Citations Preview</strong>
+              <article [innerHTML]="writingForm.get('blogcite')?.value || '<p>No citations yet.</p>'"></article>
+            </div>
+          </section>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-select formControlName="publishTarget" placeholder="Publish destination">
+              <mat-option value="firebase">Firebase writing history</mat-option>
+              <mat-option value="aws">AWS public blog</mat-option>
+              <mat-option value="both">Firebase and AWS</mat-option>
+            </mat-select>
+          </mat-form-field>
+
           <div class="form-actions">
             <div class="left-buttons">
               <div class="row-submit">

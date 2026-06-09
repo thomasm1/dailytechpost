@@ -8,6 +8,7 @@ import { AuthData } from '../../models/auth-data.model';
 import { AUTHENTICATED_USER, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
 
 export const FIREBASE_USER_INFO_STORAGE_KEY = 'userInfoFirebase'
+export const AUTH_PROVIDER_KEY = 'dailytech.auth.provider';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,7 @@ export class FirebaseAuthService {
       signInProvider: tokenResult.signInProvider,
       signInSecondFactor: tokenResult.signInSecondFactor
     };
-
+    sessionStorage.setItem(AUTH_PROVIDER_KEY, 'firebase');
     sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
     sessionStorage.setItem(AUTHENTICATED_USER, email);
     sessionStorage.setItem(TOKEN, bearerToken);

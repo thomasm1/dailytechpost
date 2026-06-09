@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { WritingMod } from '../../../models/writing-mods.model';
 import { NewsMod } from '../../../models/news-mods.model';
@@ -16,7 +16,10 @@ import * as fromCategories from '../../../reducers/category.reducer';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router  } from '@angular/router';
 import * as fromRoot from '../../../reducers/app.reducer';
+import { firstValueFrom } from 'rxjs';
+import { AwsBlogPublisherService } from '../../blogs-public/aws-blog-publisher.service';
 
+type PublishTarget = 'firebase' | 'aws' | 'both';
 
 
 @Component({
@@ -25,6 +28,8 @@ import * as fromRoot from '../../../reducers/app.reducer';
   styleUrls: ['./current-writing.component.scss']
 })
 export class CurrentWritingComponent implements OnInit, OnDestroy {
+  @ViewChild('postEditor') postEditor?: ElementRef<HTMLTextAreaElement>;
+  @ViewChild('citationEditor') citationEditor?: ElementRef<HTMLTextAreaElement>;
 
   progress = 0;
   timer: any;
@@ -41,6 +46,8 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   category!: string;
   activeCategoryId?: string | number;
   newsAdd: boolean= false;
+  showPostPreview = true;
+  showCitationPreview = true;
   private categorySubscription?: Subscription;
 
 
@@ -50,6 +57,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     private store: Store<fromWriting.State>,
     private fb: FormBuilder,
     private router: Router,
+    private awsBlogPublisher: AwsBlogPublisherService,
   ) { }
 
   ngOnInit() {
@@ -70,6 +78,9 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
       cat3: [''],
       did: [''],
       state: [''],
+      author: ['by Thomas Maestas, MA', Validators.required],
+      blogcite: [''],
+      publishTarget: ['firebase' as PublishTarget, Validators.required],
     });
   }
 
@@ -168,6 +179,42 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     this.showClock = !this.showClock;
   }
 
+  insertPostSnippet(snippet: string): void {
+    this.insertAtCursor('post', snippet, this.postEditor);
+  }
+
+  insertCitationSnippet(snippet: string): void {
+    this.insertAtCursor('blogcite', snippet, this.citationEditor);
+  }
+
+  private insertAtCursor(
+    controlName: 'post' | 'blogcite',
+    snippet: string,
+    editor?: ElementRef<HTMLTextAreaElement>
+  ): void {
+    const control = this.writingForm.get(controlName);
+    const currentValue = control?.value || '';
+    const textarea = editor?.nativeElement;
+    const selectionStart = textarea?.selectionStart ?? currentValue.length;
+    const selectionEnd = textarea?.selectionEnd ?? selectionStart;
+    const selectedText = currentValue.slice(selectionStart, selectionEnd);
+    const insertion = snippet.replace('{{selection}}', selectedText);
+    const nextValue = `${currentValue.slice(0, selectionStart)}${insertion}${currentValue.slice(selectionEnd)}`;
+
+    control?.setValue(nextValue);
+    control?.markAsDirty();
+
+    const placeholderOffset = insertion.indexOf('...');
+    const nextCursor = placeholderOffset >= 0
+      ? selectionStart + placeholderOffset
+      : selectionStart + insertion.length;
+
+    setTimeout(() => {
+      textarea?.focus();
+      textarea?.setSelectionRange(nextCursor, nextCursor);
+    });
+  }
+
   private exitWritingSession(): void {
     this.writingService.hardQuitWriting();
     this.progress = 0;
@@ -254,29 +301,42 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     return matchedCategory?.categoryId ?? null;
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.writingForm.valid) {
       // this.writingForm.value.id = getuid();
       this.writingForm.value.did = this.formatDate(new Date());
       this.writingForm.value.cat3 = this.category;
       this.writingForm.value.state = 'completed';
       this.writingForm.value.date = new Date();
-      this.writingForm.value.wordCount = this.writingForm.value.post.length;
+      this.writingForm.value.wordCount = this.awsBlogPublisher.calculateWordCount(this.writingForm.value.post);
       const formValues: WritingMod = this.writingForm.value;
+      const publishTarget = (this.writingForm.value.publishTarget || 'firebase') as PublishTarget;
       console.log("Form is valid", formValues);
-      this.writingService.addFullDataToDatabase(formValues).then(
-        () => {
-          this.store.dispatch(new WritingActions.ClearWritingDraft());
-          console.log('addFullDataToDatabase Submission to finished-writing-mods successful');
-          this.writingForm.reset();
-          this.progress = 0;
-          this.elapsedSeconds = 0;
-          this.router.navigate(['/writing/new']);
-        },
-        error => {
-          console.error('FAILED: addFullDataToDatabase Submission to finished-writing-mods failed', error);
-        }
-      );
+      const publications: Promise<unknown>[] = [];
+
+      if (publishTarget === 'firebase' || publishTarget === 'both') {
+        publications.push(this.writingService.addFullDataToDatabase(formValues));
+      }
+      if (publishTarget === 'aws' || publishTarget === 'both') {
+        publications.push(firstValueFrom(this.awsBlogPublisher.publish(formValues)));
+      }
+
+      const results = await Promise.allSettled(publications);
+      const failures = results.filter((result) => result.status === 'rejected');
+
+      if (failures.length) {
+        console.error('One or more publishing targets failed', failures);
+        return;
+      }
+
+      this.store.dispatch(new WritingActions.ClearWritingDraft());
+      this.writingForm.reset({
+        author: 'by Thomas Maestas, MA',
+        publishTarget: 'firebase'
+      });
+      this.progress = 0;
+      this.elapsedSeconds = 0;
+      this.router.navigate(['/writing/new']);
     } else {
       console.error('Form is invalid');
     }

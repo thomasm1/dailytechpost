@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { BlogsService } from '../blogs.service';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog } from '../../../models/blog.model';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
@@ -16,24 +16,24 @@ import { UiService } from '../../../service/ui.service';
   styleUrls: ['./blogs-list.component.scss'],
 })
 export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
-  blogsSubscription: Subscription;
+  blogsSubscription: Subscription | undefined;
 
-  username: string;
+  username: string | null = '' ;
   // blogsUpdated = new Subject();
-  blog: Blog;
-  blogs = [];
+  blog: Blog | undefined;
+  blogs: Blog[] = [];
 
-  blogsWeb = [];
-  blogsBlockchain = [];
-  blogsAI = [];
-  blogsSoc = [];
-  blogsQuantum = [];
+  blogsWeb: Blog[] = [];
+  blogsBlockchain: Blog[] = [];
+  blogsAI: Blog[] = [];
+  blogsSoc: Blog[] = [];
+  blogsQuantum: Blog[] = [];
 
   someVar = '<h5>h5-title</h5>';
   blogsLoading = true;
   selectedTabIndex = 0;
-  dialogValue: string;
-  sendValue: string;
+  dialogValue: string = '';
+  sendValue: string = '';
 
   constructor(
     private blogsService: BlogsService,
@@ -110,7 +110,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
       });
   }
 
-  categoryUpdater(blogs) {
+  private categoryUpdater(blogs: Blog[]) {
         // console.log(blogs);
         this.blogsWeb = blogs.filter((x) => x.cat3 == 'Web Dev Affairs');
         this.blogsBlockchain = blogs.filter( (x) => x.cat3 == 'Musing Blockchain'  );
@@ -119,18 +119,18 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
         this.blogsQuantum = blogs.filter((x) => x.cat3 == 'Quantum Data');
   }
 
-  viewBlog(id) {
+  viewBlog(id: string) {
     this.router.navigate(
       ['/blog', id]
       // , { maybe put in query params...   }
     );
   }
 
-  viewAllBlogs(cat) {
+  viewAllBlogs(cat: string) {
     this.router.navigate(['/blogs', cat]);
   }
 
-  openBlogModal(id) {
+  openBlogModal(id: string) {
     console.log('newModal id: ' + id);
     // this.sendValue = id;
     // const dialogRef =

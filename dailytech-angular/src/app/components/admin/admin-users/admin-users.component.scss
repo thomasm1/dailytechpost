@@ -1,0 +1,22 @@
+.admin-users {
+  margin: 20px 0;
+   * {
+    font-size: 13px; 
+   }
+}
+
+.full-width {
+  width: 100%;
+}
+td mat-cell {
+  padding:0;
+  max-height: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 0.5rem;
+}
+td mat-row {
+  padding:0;
+  max-height: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 0.5rem;
+}

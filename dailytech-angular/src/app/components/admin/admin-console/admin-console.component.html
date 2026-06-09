@@ -1,0 +1,29 @@
+<section class="admin-console">
+  <h2 class="daily-tech monoton">Admin Console</h2>
+
+  <mat-tab-group dynamicHeight>
+    <mat-tab label="Writing">
+      <ng-template matTabContent>
+        <div class="tab-panel"> 
+          <app-new-writing></app-new-writing>
+        </div>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Blog Stats">
+      <ng-template matTabContent>
+        <div class="tab-panel">
+          <app-blogs-grid></app-blogs-grid>
+        </div>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Users">
+      <ng-template matTabContent>
+        <div class="tab-panel">
+          <app-admin-users></app-admin-users>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</section>

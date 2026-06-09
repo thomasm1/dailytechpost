@@ -15,6 +15,7 @@ import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
 import * as fromCategories from '../../../reducers/category.reducer';
 import { AddLinkDialogComponent } from '../../links/add-link-dialog/add-link-dialog.component';
+import { AwsBlogPublisherService } from '../../blogs-public/aws-blog-publisher.service';
 
 describe('CurrentWritingComponent', () => {
   let component: CurrentWritingComponent;
@@ -23,6 +24,7 @@ describe('CurrentWritingComponent', () => {
   let mockDialog: jasmine.SpyObj<MatDialog>;
   let mockRouter: jasmine.SpyObj<Router>;
   let mockStore: jasmine.SpyObj<Store>;
+  let mockAwsBlogPublisher: jasmine.SpyObj<AwsBlogPublisherService>;
   let activeWritingSubject: BehaviorSubject<WritingMod | null>;
   let categories: CategoryMod[];
 
@@ -75,6 +77,9 @@ describe('CurrentWritingComponent', () => {
     mockDialog = jasmine.createSpyObj('MatDialog', ['open']);
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockStore = jasmine.createSpyObj('Store', ['select', 'dispatch']);
+    mockAwsBlogPublisher = jasmine.createSpyObj('AwsBlogPublisherService', ['publish', 'calculateWordCount']);
+    mockAwsBlogPublisher.publish.and.returnValue(of({}));
+    mockAwsBlogPublisher.calculateWordCount.and.returnValue(3);
 
     activeWritingSubject = new BehaviorSubject<WritingMod | null>(activeWriting);
 
@@ -98,7 +103,8 @@ describe('CurrentWritingComponent', () => {
         { provide: WritingService, useValue: mockWritingService },
         { provide: MatDialog, useValue: mockDialog },
         { provide: Router, useValue: mockRouter },
-        { provide: Store, useValue: mockStore }
+        { provide: Store, useValue: mockStore },
+        { provide: AwsBlogPublisherService, useValue: mockAwsBlogPublisher }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();

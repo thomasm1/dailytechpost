@@ -11,7 +11,7 @@ import * as fromRoot from '../../reducers/app.reducer';
 })
 export class FirebaseGuardService  {
   constructor(
-    private awsAuthService: AwsAuthenticationService,
+    // private awsAuthService: AwsAuthenticationService,
     // private authService: FirebaseAuthService,
     private store: Store<fromRoot.State>,
     private router: Router
@@ -21,7 +21,8 @@ export class FirebaseGuardService  {
     return this.store.select(fromRoot.getIsAuth).pipe(
       take(1),
       map((isAuth) => {
-        if (isAuth || this.awsAuthService.isAdminLoggedIn()) {
+      // isAuth == FIREBASE AUTH 
+        if (isAuth ) {
           return true;
         }
         return this.router.createUrlTree(['/login']);
@@ -31,8 +32,9 @@ export class FirebaseGuardService  {
   canLoad(route: Route) {
     return this.store.select(fromRoot.getIsAuth).pipe(
       take(1),
+      // isAuth == FIREBASE AUTH 
       map((isAuth) => {
-        if (isAuth || this.awsAuthService.isAdminLoggedIn()) {
+        if (isAuth  ) {
           return true;
         }
         return this.router.createUrlTree(['/login']);

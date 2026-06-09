@@ -28,6 +28,7 @@
   "license": "ISC",
   "homepage": "http://ourdailytech.net",
   "dependencies": {
+    "bootstrap": "^4.6.2",
     "browserify-zlib": "^0.2.0",
     "express": "^4.18.1",
     "morgan": "^1.10.0",

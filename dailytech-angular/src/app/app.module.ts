@@ -75,6 +75,8 @@ import { NewsToolBarComponent } from './components/news/news-tool-bar/news-tool-
 
 // CUSTOM COMPONENTS
 import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added custom QR code component
+import { AdminConsoleComponent } from './components/admin/admin-console/admin-console.component';
+import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
 
 @NgModule({
     declarations: [
@@ -96,6 +98,8 @@ import { QrcodeComponent } from './utility/qrcode/qrcode.component';  // Added c
         NewsToolBarComponent,
         PipeCapitalizeCategoryPipe,
         QrcodeComponent,  // Added custom QR code component
+        AdminConsoleComponent,
+        AdminUsersComponent,
  
     ],
     imports: [

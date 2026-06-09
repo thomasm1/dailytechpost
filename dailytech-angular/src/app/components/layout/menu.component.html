@@ -18,23 +18,14 @@
  
     <div class="menu-center hide-xs" id="menu-list">
       <mat-nav-list class="navigation-items nav-gap-10">
-        <a   *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
+        <a   
           mat-list-item
-          routerLink="/writing"
+          routerLink="/writing/"
           routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
           >WRITE!
         </a>
-
-        <!-- <a
-          mat-list-item
-          *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
-          routerLink="/admin/user"
-          routerLinkActive="active-link"
-          class="nav-link daily-tech monoton"
-          >ADMIN CONSOLE</a
-        > -->
-
+ 
         <a
           mat-list-item
           routerLink=""
@@ -44,13 +35,14 @@
           >BLOG</a
         >
 
-        <a
-          mat-list-item
-          routerLink="/stats"
-          routerLinkActive="active-link"
-          class="nav-link daily-tech monoton"
-          >STATS</a
-        >
+       <a
+        mat-list-item
+        *ngIf="awsAuthService.isAdminLoggedIn()"
+        [routerLink]="['/admin', awsAuthService.getAuthenticatedUser()]"
+        routerLinkActive="active-link"
+        class="nav-link daily-tech monoton">
+        ADMIN
+      </a>
         <a
           mat-list-item
           routerLink="/news"

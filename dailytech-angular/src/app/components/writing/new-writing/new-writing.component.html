@@ -4,7 +4,7 @@
             <mat-card>
                 <mat-card-title class="centered-text">Time to Write!</mat-card-title>
                 <mat-card-content class="centered-text">
-                    <mat-form-field  *ngIf="!isLoading && writingMods$ | async">
+                    <mat-form-field *ngIf="writingMods$ | async">
 
                         <mat-select placeholder="Choose topic" [(ngModel)]="selectedCategory" name="category_five"
                             required>
@@ -18,7 +18,7 @@
                     <br />
                     <hr />
                 </mat-card-content>
-                <mat-card-actions class="centered-text" *ngIf="!isLoading">
+                <mat-card-actions class="centered-text">
                     <button mat-raised-button color="primary" *ngIf="writingMods$ | async" type="submit" mat-raised-button
                         [disabled]="f.invalid">Start</button>
                     <button *ngIf="hasSavedDraft" type="button" mat-stroked-button (click)="onContinueDraft()">Continue
