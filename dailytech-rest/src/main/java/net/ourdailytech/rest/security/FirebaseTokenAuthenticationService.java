@@ -164,7 +164,7 @@ public class FirebaseTokenAuthenticationService {
     }
   }
 
-  private synchronized FirebaseAuth getFirebaseAuth() throws IOException {
+  public synchronized FirebaseAuth getFirebaseAuth() throws IOException {
     if (firebaseAuth != null) {
       return firebaseAuth;
     }
