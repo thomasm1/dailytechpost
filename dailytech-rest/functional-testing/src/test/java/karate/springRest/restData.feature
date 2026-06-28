@@ -3,7 +3,7 @@ Feature: Thorough Testing of Spring Data REST APIs
   Background: background
     * url baseUrl
     * def token = jwtToken
-    * def id = 101
+    * def id = 10
     * def postId = 20
 
   Scenario: Get All Users
@@ -24,7 +24,6 @@ Feature: Thorough Testing of Spring Data REST APIs
     When method GET
     Then status 200
     * def user = response
-    * match user.username == '#string'
     * match user.email == '#string'
     * match user._links.self.href == baseUrl + '/api/rest/users/' + id
     * print user
@@ -35,7 +34,6 @@ Feature: Thorough Testing of Spring Data REST APIs
     And request
       """
       {
-        "username": "newuser@gmail.com",
         "password": "newpassword",
         "firstName": "New",
         "lastName": "User",
@@ -47,7 +45,7 @@ Feature: Thorough Testing of Spring Data REST APIs
     When method POST
     Then status 401
     #    * def newUser = response.data
-    #    * match newUser.username == 'newuser@gmail.com'
+    #    * match newUser.email == 'newuser@gmail.com'
     #    * print newUser
 
     # Test - Update Existing User (PUT)

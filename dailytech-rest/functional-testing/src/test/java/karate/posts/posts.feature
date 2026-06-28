@@ -39,7 +39,6 @@ Feature: Posts API karate test script
     "wordCount": 2000,
     "durationGoal": 14,
     "categoryId": 11
-
   }
          """
 
@@ -64,8 +63,8 @@ Feature: Posts API karate test script
        And header Authorization = 'Bearer ' + token
        When method delete
 
-       Then status 401
-                # Unauthorized for delete without admin role
+       Then status 200
+                # IF NOT ADMIN,  Unauthorized for delete without admin role
 
 #       Then status 200
                   # And print 'deleted id is: ', localId

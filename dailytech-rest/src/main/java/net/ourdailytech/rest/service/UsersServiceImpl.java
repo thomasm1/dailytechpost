@@ -219,12 +219,14 @@ public class UsersServiceImpl implements UsersService {
    */
   @Override
   public Optional<UserDto> updateUser(UserDto change, long userId) {
-    usersRepository.findByUserId(userId).orElseThrow(
-        () -> new ResourceNotFoundException("User", "email", change.getEmail())
+    User existing = usersRepository.findByUserId(userId).orElseThrow(
+        () -> new ResourceNotFoundException("User", "userId", String.valueOf(userId))
     );
-    User uEntity = userMapper.toEntity(change);
-    User uDone = usersRepository.save(uEntity);
-    return Optional.ofNullable(userMapper.toDto(uDone));
+    userMapper.partialUpdate(change, existing);
+    existing.setUserId(userId); // keep path/query id authoritative
+
+    User saved = usersRepository.save(existing);
+    return Optional.ofNullable(userMapper.toDto(saved));
   }
 
   /**

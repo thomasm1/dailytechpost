@@ -21,7 +21,7 @@ Feature: chains feature api
     Examples:
       | _path      | _meth | _stat | _var1 | _var2 | _var3 |
       | users      | GET   | 200   |       |       |       |
-      | users      | GET   | 200   | /101  |       |       |
+      | users      | GET   | 200   | /10  |       |       |
 
       | weblinks   | GET   | 200   |       |       |       |
       | weblinks   | GET   | 200   | /1    |       |       |

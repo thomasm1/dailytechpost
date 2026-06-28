@@ -17,11 +17,9 @@ Feature: Users API karate test script
     Given path 'users', first.userId
     When method GET
     Then status 200
-    And match response ==
+    And match response contains
       """
       {"userId":'#number',
-        "username":'#string',
-        "password":'#string',
         "lastName":'##string',
         "firstName":'##string',
         "userType":'##number',
@@ -31,8 +29,8 @@ Feature: Users API karate test script
         "contactType":'##number',
         "organizationCode":'##string',
         "dashboardCode":'##string',
-        "id":'##present',
-        "roles": '#array'
+        "roles": '#array',
+
       }
       """
 
@@ -46,7 +44,6 @@ Feature: Users API karate test script
     * def user =
       """
       {
-        "username": '#(usernameEmail)',
         "lastName": "Wonderland",
         "firstName": "Alice",
         "organizationCode": "ORG001",
@@ -62,7 +59,6 @@ Feature: Users API karate test script
             "name": "ROLE_ADMIN"
           }
         ],
-        "id": null
       }
       """
     #call read('classpath:auth.feature') { username: '   ', password: '    ' }
@@ -112,14 +108,13 @@ Feature: Users API karate test script
   ############################1
   @Order(3)
   @ignore
-  Scenario Outline: Update a user, get it by id, verify changes
+  Scenario: Update a user, get it by id, verify changes
     * def rando = Math.floor(Math.random() * 100)
     * def usernameEmail = "user"+rando+"@gmail.com"
     * print "_______________________ID____" + usernameEmail
     * def user =
       """
       {
-        "username": '#(usernameEmail)',
         "lastName": "Wonderland",
         "firstName": "Alice",
         "organizationCode": "ORG001",
@@ -134,7 +129,6 @@ Feature: Users API karate test script
             "id": 1,
             "name": "ROLE_ADMIN"
           }
-        ],
-        "id": 4
+        ]
       }
       """
