@@ -6,7 +6,7 @@
     <!-- Form Section -->
     <mat-card class="form-card">
       <mat-card-header>
-        <mat-card-title class="form-title">Write Here. Write Now. <strong>{{this.category }}</strong>
+        <mat-card-title class="form-title"><strong>{{this.category }} Write Here. Write Now. </strong>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
@@ -30,13 +30,15 @@
               <button mat-stroked-button type="button"
                 (click)="insertPostSnippet('\n<p>{{selection}}...</p>\n')">Paragraph</button>
               <button mat-stroked-button type="button"
-                (click)="insertPostSnippet('\n<p class=&quot;quote&quot;>{{selection}}...</p>\n')">Quote</button>
+                (click)="insertPostSnippet('\n<p class=&quot;quote&quot;> {{selection}} </p>\n')">Quote</button>
               <button mat-stroked-button type="button"
-                (click)="insertPostSnippet('\n<p class=&quot;firstparagraph quote&quot;>{{selection}}...</p>\n')">First Quote</button>
+                (click)="insertPostSnippet('\n<p class=&quot;firstparagraph&quot;>{{selection}} </p>\n')">First Paragraph</button>
               <button mat-stroked-button type="button"
-                (click)="insertPostSnippet('<a href=&quot;https://...&quot; target=&quot;_blank&quot;>{{selection}}link text</a>')">Link</button>
+                (click)="insertPostSnippet('<a href=&quot;https://&quot; target=&quot;_blank&quot;>{{selection}}link text</a>')">Link</button>
               <button mat-stroked-button type="button"
                 (click)="insertPostSnippet('<sup>{{selection}}1</sup>')">Superscript</button>
+              <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('<img src=&quot;https://&quot; class=&quot;zoom&quot;>{{selection}}')">Image</button>
             </div>
 
             <mat-form-field appearance="outline" class="full-width">

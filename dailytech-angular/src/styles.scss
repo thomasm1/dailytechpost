@@ -119,6 +119,8 @@ hr.bar-white {
 }
  .zoom:hover {
   width: 700px;
+  overflow: visible;
+  z-index:1000;
   transition: transform .8s;
 }
 /*  BLOG LIST & MODAL ************** *****************/
