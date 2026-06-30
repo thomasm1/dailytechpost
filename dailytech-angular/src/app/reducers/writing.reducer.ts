@@ -31,6 +31,10 @@ const initialState: WritingState = {
   draft: null,
 };
 
+function resolveWritingCategoryAlias(category: string): string {
+  return category === 'web-dev' ? 'Web Dev Affairs' : category;
+}
+
 export function writingReducer(state = initialState, action: WritingActions) {
   switch (action.type) {
     case SET_AVAILABLE_WRITINGS:
@@ -44,7 +48,8 @@ export function writingReducer(state = initialState, action: WritingActions) {
         finishedWritingMods: action.payload
       };
     case START_WRITING:
-      const activeWriting = state.availableWritingMods.find(ex => ex.cat3 === action.payload)
+      const selectedCategory = resolveWritingCategoryAlias(action.payload);
+      const activeWriting = state.availableWritingMods.find(ex => ex.cat3 === selectedCategory)
         || state.availableWritingMods[0]
         || null;
       return {

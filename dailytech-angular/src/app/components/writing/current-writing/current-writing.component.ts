@@ -18,6 +18,7 @@ import { Router  } from '@angular/router';
 import * as fromRoot from '../../../reducers/app.reducer';
 import { firstValueFrom } from 'rxjs';
 import { AwsBlogPublisherService } from '../../blogs-public/aws-blog-publisher.service';
+import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
 
 type PublishTarget = 'firebase' | 'aws' | 'both';
 
@@ -49,6 +50,8 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   showPostPreview = true;
   showCitationPreview = true;
   private categorySubscription?: Subscription;
+  private firebaseAuthSubscription?: Subscription;
+  isFirebaseAdmin = false;
 
 
   constructor(
@@ -58,6 +61,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private router: Router,
     private awsBlogPublisher: AwsBlogPublisherService,
+    private awsAuthService: AwsAuthenticationService,
   ) { }
 
   ngOnInit() {
@@ -67,6 +71,9 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     this.writingMods$ = this.store.select(fromWriting.getAvailableWritingMods)
     this.categorySubscription = this.store.select(fromCategories.getCurrentCategoryMods).subscribe((categories) => {
       this.categoryMods = categories || [];
+    });
+    this.firebaseAuthSubscription = this.store.select(fromRoot.getIsAuth).subscribe((isAuth) => {
+      this.isFirebaseAdmin = !!isAuth;
     });
     this.writingService.getCategories();
   }
@@ -177,6 +184,28 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   toggleClock(): void {
     this.showClock = !this.showClock;
+  }
+
+  hasAwsSession(): boolean {
+    return this.awsAuthService.hasActiveSession();
+  }
+
+  canPublishAws(): boolean {
+    return this.awsAuthService.isAdminLoggedIn();
+  }
+
+  canSubmitWriting(): boolean {
+    return !!this.writingForm?.valid && (this.isFirebaseAdmin || this.hasAwsSession());
+  }
+
+  getSubmitTooltip(): string {
+    if (!this.writingForm?.valid) {
+      return 'Please fill in title and content.';
+    }
+    if (!this.isFirebaseAdmin && !this.hasAwsSession()) {
+      return 'Log in to submit this writing.';
+    }
+    return '';
   }
 
   insertPostSnippet(snippet: string): void {
@@ -303,6 +332,10 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
 
   async onSubmit(): Promise<void> {
     if (this.writingForm.valid) {
+      if (!this.isFirebaseAdmin && !this.hasAwsSession()) {
+        console.error('Login required to submit writing');
+        return;
+      }
       // this.writingForm.value.id = getuid();
       this.writingForm.value.did = this.formatDate(new Date());
       this.writingForm.value.cat3 = this.category;
@@ -311,6 +344,10 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
       this.writingForm.value.wordCount = this.awsBlogPublisher.calculateWordCount(this.writingForm.value.post);
       const formValues: WritingMod = this.writingForm.value;
       const publishTarget = (this.writingForm.value.publishTarget || 'firebase') as PublishTarget;
+      if ((publishTarget === 'aws' || publishTarget === 'both') && !this.canPublishAws()) {
+        console.error('AWS publishing requires ROLE_ADMIN');
+        return;
+      }
       console.log("Form is valid", formValues);
       const publications: Promise<unknown>[] = [];
 
@@ -355,6 +392,9 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     }
     if (this.categorySubscription) {
       this.categorySubscription.unsubscribe();
+    }
+    if (this.firebaseAuthSubscription) {
+      this.firebaseAuthSubscription.unsubscribe();
     }
   }
 }

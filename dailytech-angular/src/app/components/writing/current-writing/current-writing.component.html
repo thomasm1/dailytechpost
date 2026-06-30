@@ -6,7 +6,7 @@
     <!-- Form Section -->
     <mat-card class="form-card">
       <mat-card-header>
-        <mat-card-title class="form-title"><strong>{{this.category }} Write Here. Write Now. </strong>
+        <mat-card-title class="form-title"><strong>{{this.category }}. <i>Write Here. Write Now.</i> </strong>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
@@ -27,16 +27,17 @@
               </button>
             </div>
             <div class="snippet-toolbar" aria-label="Post HTML tools">
-              <button mat-stroked-button type="button"
+               <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('\n<p class=&quot;firstparagraph&quot;>{{selection}} </p>\n')">First Paragraph</button>
+            <button mat-stroked-button type="button"
                 (click)="insertPostSnippet('\n<p>{{selection}}...</p>\n')">Paragraph</button>
               <button mat-stroked-button type="button"
                 (click)="insertPostSnippet('\n<p class=&quot;quote&quot;> {{selection}} </p>\n')">Quote</button>
-              <button mat-stroked-button type="button"
-                (click)="insertPostSnippet('\n<p class=&quot;firstparagraph&quot;>{{selection}} </p>\n')">First Paragraph</button>
-              <button mat-stroked-button type="button"
-                (click)="insertPostSnippet('<a href=&quot;https://&quot; target=&quot;_blank&quot;>{{selection}}link text</a>')">Link</button>
-              <button mat-stroked-button type="button"
+               <button mat-stroked-button type="button"
                 (click)="insertPostSnippet('<sup>{{selection}}1</sup>')">Superscript</button>
+                
+               <button mat-stroked-button type="button"
+                (click)="insertPostSnippet('<a href=&quot;https://&quot; target=&quot;_blank&quot;>{{selection}}link text</a>')">Link</button>
               <button mat-stroked-button type="button"
                 (click)="insertPostSnippet('<img src=&quot;https://&quot; class=&quot;zoom&quot;>{{selection}}')">Image</button>
             </div>
@@ -83,24 +84,29 @@
           <mat-form-field appearance="outline" class="full-width">
             <mat-select formControlName="publishTarget" placeholder="Publish destination">
               <mat-option value="firebase">Firebase writing history</mat-option>
-              <mat-option value="aws">AWS public blog</mat-option>
-              <mat-option value="both">Firebase and AWS</mat-option>
+              <mat-option value="aws" [disabled]="!canPublishAws()">AWS public blog</mat-option>
+              <mat-option value="both" [disabled]="!canPublishAws()">Firebase and AWS</mat-option>
             </mat-select>
           </mat-form-field>
 
           <div class="form-actions">
             <div class="left-buttons">
               <div class="row-submit">
-                <button mat-raised-button color="primary" type="submit" [disabled]="!writingForm.valid">
-                  &nbsp;&nbsp;&nbsp; Submit &nbsp;&nbsp;&nbsp;
-                </button>
+                <span
+                  class="submit-tooltip"
+                  [matTooltip]="getSubmitTooltip()"
+                  [matTooltipDisabled]="canSubmitWriting()">
+                  <button mat-raised-button color="primary" type="submit" [disabled]="!canSubmitWriting()">
+                    Submit & Publish&nbsp;
+                  </button>
+                </span>
                 <span *ngIf="!writingForm.valid && writingForm.touched" class="error-text">
                   Please fill in title and content.
                 </span>
               </div>
               <div class="row">
                 <button mat-raised-button color="warn" type="button" (click)="postCancel()">
-                  Save & Quit
+                  Save Draft & Quit
                 </button>
               </div>
             </div>

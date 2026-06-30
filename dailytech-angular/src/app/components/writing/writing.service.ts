@@ -312,9 +312,16 @@ export class WritingService {
   //   return { ...this.ongoingWriting };
   // }
 
+
+// this.db.collection('finished-writing-mods', ref =>
+  // ref.orderBy('date', 'desc')
+// ).valueChanges({ idField: 'id' })
+
   fetchCompletedOrCancelledWritings() {
     this.firebaseSubs.push(
-      this.db.collection('finished-writing-mods').valueChanges({ idField: 'id' })
+      this.db.collection('finished-writing-mods', ref => 
+        ref.orderBy('date', 'desc')
+      ).valueChanges({ idField: 'id' })
         .pipe(map(docArray => 
           docArray.map(doc => doc as WritingMod)
         ))

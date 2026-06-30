@@ -1,6 +1,7 @@
 *.zip
 .next
 *.code-workspace
+/**/.code-workspace
 env
 /env
 node_modules

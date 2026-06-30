@@ -5,6 +5,7 @@ import { Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
+import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
 import * as AuthActions from '../../../reducers/auth.actions';
@@ -15,9 +16,9 @@ import * as AuthActions from '../../../reducers/auth.actions';
   styleUrls: ['./signon.component.scss']
 })
 export class SignonComponent implements OnInit { //, OnDestroy {
-  maxDate;
+  maxDate!: Date;
 
-  loginForm: UntypedFormGroup;
+  loginForm!: UntypedFormGroup;
   email = '';
   password = '';
   errorMessage = 'Invalid Credentials';
@@ -26,12 +27,13 @@ export class SignonComponent implements OnInit { //, OnDestroy {
 
   adminFlag: boolean = false
   // isLoading = false;
-  isLoading$ : Observable<boolean>; // $ at end of variable ngrx convention
-  private loadingSubs: Subscription;
+  isLoading$ : Observable<boolean>; 
+  // private loadingSubs: Subscription;
 
   constructor(
     private router: Router,
     private awsAuthService: AwsAuthenticationService,
+    private firebaseAuthService: FirebaseAuthService,
     // private store: Store<{ ui: fromApp.State }>,
     private store: Store< fromRoot.State >
   ) { }
@@ -85,14 +87,25 @@ export class SignonComponent implements OnInit { //, OnDestroy {
 
   handleAwsAuthLogin(form:NgForm) {
     console.log(form); 
+    const credentials = {
+      email: form.value.email,
+      password: form.value.password
+    };
     // this.adminAuthService.executeAuthenticationService(form.value.email, form.value.password)
-      this.awsAuthService.executeAuthAwsService(form.value.email, form.value.password)
+      this.awsAuthService.executeAuthAwsService(credentials.email, credentials.password)
     .subscribe(
         data => {
           console.log(data)
-          this.router.navigate(['admin', form.value.email])
-          this.invalidLogin = false
-          this.authLogin = true
+          this.firebaseAuthService.login(credentials).then(() => {
+            this.router.navigate(['admin', credentials.email])
+            this.invalidLogin = false
+            this.authLogin = true
+          }).catch(error => {
+            console.log(error)
+            this.awsAuthService.logout();
+            this.invalidLogin = true
+            this.authLogin = false
+          });
         },
         error => {
           console.log(error)

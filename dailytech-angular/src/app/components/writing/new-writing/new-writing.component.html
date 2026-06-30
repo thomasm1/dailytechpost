@@ -8,6 +8,9 @@
 
                         <mat-select placeholder="Choose topic" [(ngModel)]="selectedCategory" name="category_five"
                             required>
+                            <mat-option value="web-dev">
+                                &nbsp;web-dev
+                            </mat-option>
                             <mat-option *ngFor="let cat of writingMods$ | async" [value]="cat.cat3">
                                 &nbsp;{{ cat.cat3 }}
                             </mat-option>

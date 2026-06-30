@@ -14,8 +14,10 @@ import { CategoryMod } from '../../../models/category-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
 import * as fromCategories from '../../../reducers/category.reducer';
+import * as fromRoot from '../../../reducers/app.reducer';
 import { AddLinkDialogComponent } from '../../links/add-link-dialog/add-link-dialog.component';
 import { AwsBlogPublisherService } from '../../blogs-public/aws-blog-publisher.service';
+import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
 
 describe('CurrentWritingComponent', () => {
   let component: CurrentWritingComponent;
@@ -25,7 +27,9 @@ describe('CurrentWritingComponent', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockStore: jasmine.SpyObj<Store>;
   let mockAwsBlogPublisher: jasmine.SpyObj<AwsBlogPublisherService>;
+  let mockAwsAuthService: jasmine.SpyObj<AwsAuthenticationService>;
   let activeWritingSubject: BehaviorSubject<WritingMod | null>;
+  let firebaseAuthSubject: BehaviorSubject<boolean>;
   let categories: CategoryMod[];
 
   const activeWriting: WritingMod = {
@@ -80,10 +84,17 @@ describe('CurrentWritingComponent', () => {
     mockAwsBlogPublisher = jasmine.createSpyObj('AwsBlogPublisherService', ['publish', 'calculateWordCount']);
     mockAwsBlogPublisher.publish.and.returnValue(of({}));
     mockAwsBlogPublisher.calculateWordCount.and.returnValue(3);
+    mockAwsAuthService = jasmine.createSpyObj('AwsAuthenticationService', ['hasActiveSession', 'isAdminLoggedIn']);
+    mockAwsAuthService.hasActiveSession.and.returnValue(false);
+    mockAwsAuthService.isAdminLoggedIn.and.returnValue(false);
 
     activeWritingSubject = new BehaviorSubject<WritingMod | null>(activeWriting);
+    firebaseAuthSubject = new BehaviorSubject<boolean>(true);
 
     mockStore.select.and.callFake((selector: unknown) => {
+      if (selector === fromRoot.getIsAuth) {
+        return firebaseAuthSubject.asObservable();
+      }
       if (selector === fromWriting.getActiveWriting) {
         return activeWritingSubject.asObservable();
       }
@@ -104,7 +115,8 @@ describe('CurrentWritingComponent', () => {
         { provide: MatDialog, useValue: mockDialog },
         { provide: Router, useValue: mockRouter },
         { provide: Store, useValue: mockStore },
-        { provide: AwsBlogPublisherService, useValue: mockAwsBlogPublisher }
+        { provide: AwsBlogPublisherService, useValue: mockAwsBlogPublisher },
+        { provide: AwsAuthenticationService, useValue: mockAwsAuthService }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -212,8 +224,10 @@ describe('CurrentWritingComponent', () => {
       cat3: [''],
       did: [''],
       state: [''],
+      publishTarget: ['firebase'],
     });
     component.category = 'Web Dev Affairs';
+    component.isFirebaseAdmin = true;
     component.writingForm.patchValue({
       title: 'Final title',
       post: 'Final post body'
@@ -227,6 +241,147 @@ describe('CurrentWritingComponent', () => {
     expect(saved.title).toBe('Final title');
     expect(saved.cat3).toBe('Web Dev Affairs');
     expect(saved.state).toBe('completed');
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/new']);
+    flush();
+  }));
+
+  it('should not submit when the form is valid but no login is active', fakeAsync(() => {
+    spyOn(console, 'error');
+    const fb = TestBed.inject(FormBuilder);
+    component.writingForm = fb.group({
+      title: ['', Validators.required],
+      post: ['', Validators.required],
+      cat3: [''],
+      did: [''],
+      state: [''],
+      publishTarget: ['firebase'],
+    });
+    component.isFirebaseAdmin = false;
+    mockAwsAuthService.hasActiveSession.and.returnValue(false);
+    component.category = 'Web Dev Affairs';
+    component.writingForm.patchValue({
+      title: 'Final title',
+      post: 'Final post body'
+    });
+
+    component.onSubmit();
+    tick();
+
+    expect(mockWritingService.addFullDataToDatabase).not.toHaveBeenCalled();
+    expect(mockAwsBlogPublisher.publish).not.toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalledWith('Login required to submit writing');
+    flush();
+  }));
+
+  it('should allow AWS ROLE_USER to submit Firebase only', fakeAsync(() => {
+    const fb = TestBed.inject(FormBuilder);
+    component.writingForm = fb.group({
+      title: ['', Validators.required],
+      post: ['', Validators.required],
+      cat3: [''],
+      did: [''],
+      state: [''],
+      publishTarget: ['firebase'],
+    });
+    component.isFirebaseAdmin = false;
+    mockAwsAuthService.hasActiveSession.and.returnValue(true);
+    mockAwsAuthService.isAdminLoggedIn.and.returnValue(false);
+    component.category = 'Web Dev Affairs';
+    component.writingForm.patchValue({
+      title: 'Final title',
+      post: 'Final post body'
+    });
+
+    component.onSubmit();
+    tick();
+
+    expect(mockWritingService.addFullDataToDatabase).toHaveBeenCalled();
+    expect(mockAwsBlogPublisher.publish).not.toHaveBeenCalled();
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/new']);
+    flush();
+  }));
+
+  it('should block AWS publishing for AWS ROLE_USER even if the value is forced', fakeAsync(() => {
+    spyOn(console, 'error');
+    const fb = TestBed.inject(FormBuilder);
+    component.writingForm = fb.group({
+      title: ['', Validators.required],
+      post: ['', Validators.required],
+      cat3: [''],
+      did: [''],
+      state: [''],
+      publishTarget: ['aws'],
+    });
+    component.isFirebaseAdmin = false;
+    mockAwsAuthService.hasActiveSession.and.returnValue(true);
+    mockAwsAuthService.isAdminLoggedIn.and.returnValue(false);
+    component.category = 'Web Dev Affairs';
+    component.writingForm.patchValue({
+      title: 'Final title',
+      post: 'Final post body'
+    });
+
+    component.onSubmit();
+    tick();
+
+    expect(mockWritingService.addFullDataToDatabase).not.toHaveBeenCalled();
+    expect(mockAwsBlogPublisher.publish).not.toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalledWith('AWS publishing requires ROLE_ADMIN');
+    flush();
+  }));
+
+  it('should allow AWS ROLE_ADMIN to publish AWS only', fakeAsync(() => {
+    const fb = TestBed.inject(FormBuilder);
+    component.writingForm = fb.group({
+      title: ['', Validators.required],
+      post: ['', Validators.required],
+      cat3: [''],
+      did: [''],
+      state: [''],
+      publishTarget: ['aws'],
+    });
+    component.isFirebaseAdmin = false;
+    mockAwsAuthService.hasActiveSession.and.returnValue(true);
+    mockAwsAuthService.isAdminLoggedIn.and.returnValue(true);
+    component.category = 'Web Dev Affairs';
+    component.writingForm.patchValue({
+      title: 'Final title',
+      post: 'Final post body'
+    });
+
+    component.onSubmit();
+    tick();
+
+    expect(mockWritingService.addFullDataToDatabase).not.toHaveBeenCalled();
+    expect(mockAwsBlogPublisher.publish).toHaveBeenCalled();
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/new']);
+    flush();
+  }));
+
+  it('should allow AWS ROLE_ADMIN to publish both Firebase and AWS', fakeAsync(() => {
+    const fb = TestBed.inject(FormBuilder);
+    component.writingForm = fb.group({
+      title: ['', Validators.required],
+      post: ['', Validators.required],
+      cat3: [''],
+      did: [''],
+      state: [''],
+      publishTarget: ['both'],
+    });
+    component.isFirebaseAdmin = false;
+    mockAwsAuthService.hasActiveSession.and.returnValue(true);
+    mockAwsAuthService.isAdminLoggedIn.and.returnValue(true);
+    component.category = 'Web Dev Affairs';
+    component.writingForm.patchValue({
+      title: 'Final title',
+      post: 'Final post body'
+    });
+
+    component.onSubmit();
+    tick();
+
+    expect(mockWritingService.addFullDataToDatabase).toHaveBeenCalled();
+    expect(mockAwsBlogPublisher.publish).toHaveBeenCalled();
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/new']);
     flush();
   }));
