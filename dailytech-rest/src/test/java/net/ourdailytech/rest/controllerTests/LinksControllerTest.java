@@ -116,16 +116,6 @@ class LinksControllerTest {
   }
 
   @Test
-  void testLegacyNewsPathStillReturnsLinks() throws Exception {
-    LinkDto linkDto = getLinkDto();
-    when(linkServiceImpl.getAllLinks()).thenReturn(List.of(linkDto));
-
-    mockMvc.perform(get("/api/news"))
-        .andExpect(status().isOk())
-        .andExpect(jsonPath("$[0].id").value(1L));
-  }
-
-  @Test
   void testGetPublicLinksByCategory_ShouldReturnOk() throws Exception {
     LinkDto linkDto = getLinkDto();
     when(linkServiceImpl.getAllPublicLinksByCategory(1L)).thenReturn(List.of(linkDto));

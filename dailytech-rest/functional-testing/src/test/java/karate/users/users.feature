@@ -2,8 +2,7 @@ Feature: Users API karate test script
 
   Background:
     * url baseUrl + '/api/'
-    * def token = jwtToken
-    * def token = jwtTokenAdmin
+    * def token = authHeader
 
   @getCycle
   @Order(1)
@@ -38,8 +37,8 @@ Feature: Users API karate test script
   @Order(2)
   Scenario Outline: create a user and then get it by id
 
-    * def rando = Math.floor(Math.random() * 1031)
-    * def usernameEmail = "user" + rando + "@gmail.com"
+    * def uuid = Java.type('java.util.UUID')
+    * def usernameEmail = "user-" + uuid.randomUUID() + "@gmail.com"
     * print "_______________________ID____:" + usernameEmail
     * def user =
       """
@@ -65,7 +64,7 @@ Feature: Users API karate test script
 
     # 1 CREATE
     Given path 'users'
-    And header Authorization = 'Bearer ' + token
+    And header Authorization = token
     And request user
     When method POST
     Then status 201
@@ -84,7 +83,7 @@ Feature: Users API karate test script
     Given path 'users'
     * print 'user is: ', localId
     * user['userId'] = localId
-    And header Authorization = 'Bearer ' + token
+    And header Authorization = token
     And param userId = localId
     And request user
     When method PUT
@@ -94,7 +93,7 @@ Feature: Users API karate test script
     Given path 'users/' + localId
     * print 'user is: ', localId
     When method DELETE
-    And header Authorization = 'Bearer ' + token
+    And header Authorization = token
 #    Then status 200
     Then status 401
                   # because delete is not allowed for this user role

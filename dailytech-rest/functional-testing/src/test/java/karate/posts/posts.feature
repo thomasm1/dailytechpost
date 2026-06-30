@@ -2,7 +2,7 @@ Feature: Posts API karate test script
 
   Background:
     Given url baseUrl + '/api/'
-    * def token = jwtToken
+    * def token = authHeader
 
   @getCycle
   @Order(1)
@@ -44,7 +44,7 @@ Feature: Posts API karate test script
 
        Given path 'posts'
        And request post
-       And header Authorization = 'Bearer ' + token
+       And header Authorization = token
        When method POST
        Then status 201
        * def localId = response.id
@@ -53,14 +53,14 @@ Feature: Posts API karate test script
        Given path 'posts'
        * print 'created id  is: ', localId
        * post['id'] = localId
-       And header Authorization = 'Bearer ' + token
+       And header Authorization = token
        And param id = localId
        And request post
        When method PUT
        Then status 200
 
        Given path 'posts', localId
-       And header Authorization = 'Bearer ' + token
+       And header Authorization = token
        When method delete
 
        Then status 200

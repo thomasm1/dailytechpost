@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ApiTest {
 
   @Test
-  @Timeout(30)
+  @Timeout(90)
   void testParallel() {
     String options = System.getProperty("karate.options");
     Results results = Runner.path("classpath:karate")

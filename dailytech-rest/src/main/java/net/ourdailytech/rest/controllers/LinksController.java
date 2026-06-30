@@ -17,11 +17,10 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping({LinksController.API_LINKS, LinksController.LEGACY_API_NEWS})
+@RequestMapping(LinksController.API_LINKS)
 public class LinksController {
 
   public static final String API_LINKS = "/api/links";
-  public static final String LEGACY_API_NEWS = "/api/news";
   private final LinkServiceImpl linkService;
 
   public LinksController(LinkServiceImpl linkService) {

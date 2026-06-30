@@ -2,7 +2,7 @@ Feature: Posts API karate test script
 
   Background:
     * url baseUrl + '/api/'
-    * def token = jwtToken
+    * def token = authHeader
   @getCycle
   @Order(1)
   Scenario: get all comments and then get the first comment by id
@@ -30,7 +30,7 @@ Feature: Posts API karate test script
     Given path 'posts/' + firstPostId + '/comments'
 
     And request comment
-    And header Authorization = 'Bearer ' + token
+    And header Authorization = token
     When method POST
     Then status 201
 
@@ -39,7 +39,7 @@ Feature: Posts API karate test script
 
     Given path 'posts/' + firstPostId + '/comments/' + nextCommentId
     And request commentNext
-    And header Authorization = 'Bearer ' + token
+    And header Authorization = token
     When method PUT
     Then status 200
   
