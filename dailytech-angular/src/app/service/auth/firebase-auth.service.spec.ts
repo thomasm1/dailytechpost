@@ -6,7 +6,7 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
-import { AUTHENTICATED_USER, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
+import { AUTHENTICATED_USER,  AUTH_PROVIDER_KEY, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
 import { FIREBASE_USER_INFO_STORAGE_KEY, FirebaseAuthService } from './firebase-auth.service';
 import { WritingService } from '../../components/writing/writing.service';
 import { UiService } from '../ui.service';
@@ -51,6 +51,7 @@ describe('FirebaseAuthService', () => {
   afterEach(() => {
     service.clearFirebaseSession();
     sessionStorage.removeItem(AUTH_STORAGE_KEY);
+    sessionStorage.removeItem(AUTH_PROVIDER_KEY);
     sessionStorage.removeItem(AUTHENTICATED_USER);
     sessionStorage.removeItem(TOKEN);
     httpMock.verify();
@@ -95,6 +96,29 @@ describe('FirebaseAuthService', () => {
     expect(userInfo.permissions.admin).toBeFalse();
     expect(service.getFirebaseUserInfo()?.email).toBe('writer@example.com');
   });
+
+  it('should clear Firebase and shared auth session details on logout', async () => {
+  const afAuth = TestBed.inject(AngularFireAuth) as jasmine.SpyObj<AngularFireAuth>;
+  afAuth.signOut.and.returnValue(Promise.resolve());
+
+  sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+  sessionStorage.setItem(AUTH_PROVIDER_KEY, 'firebase');
+  sessionStorage.setItem(AUTHENTICATED_USER, 'writer@example.com');
+  sessionStorage.setItem(TOKEN, 'Bearer firebase-jwt');
+  sessionStorage.setItem(FIREBASE_USER_INFO_STORAGE_KEY, JSON.stringify({
+    email: 'writer@example.com',
+    uid: 'firebase-uid-1',
+  }));
+
+  await service.logout();
+
+  expect(afAuth.signOut).toHaveBeenCalled();
+  expect(sessionStorage.getItem(AUTH_STORAGE_KEY)).toBeNull();
+  expect(sessionStorage.getItem(AUTH_PROVIDER_KEY)).toBeNull();
+  expect(sessionStorage.getItem(AUTHENTICATED_USER)).toBeNull();
+  expect(sessionStorage.getItem(TOKEN)).toBeNull();
+  expect(sessionStorage.getItem(FIREBASE_USER_INFO_STORAGE_KEY)).toBeNull();
+});
 });
 
 

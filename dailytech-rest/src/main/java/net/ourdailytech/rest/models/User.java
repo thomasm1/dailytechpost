@@ -61,8 +61,7 @@ public class User extends AbstractDomainClass {
 
     @Column(name = "usertype")
     private int userType;
-
-//    @UniqueEmail
+ 
     @Column(name = "email", nullable = false)
     private String email;
 

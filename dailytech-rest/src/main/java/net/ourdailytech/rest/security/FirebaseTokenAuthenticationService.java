@@ -110,7 +110,24 @@ public class FirebaseTokenAuthenticationService {
       return Optional.empty();
     }
   }
+  
+public boolean looksLikeFirebaseToken(String token) {
+  if (!StringUtils.hasText(token)) {
+    return false;
+  }
 
+  String[] parts = token.split("\\.");
+  if (parts.length < 2) {
+    return false;
+  }
+
+  try {
+    String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), StandardCharsets.UTF_8);
+    return payloadJson.contains("\"iss\":\"https://securetoken.google.com/");
+  } catch (Exception ex) {
+    return false;
+  }
+}
   private void logTokenDiagnostics(Map<String, Object> claims) {
     if (claims.isEmpty()) {
       log.warn("Bearer token payload could not be decoded before Firebase verification");

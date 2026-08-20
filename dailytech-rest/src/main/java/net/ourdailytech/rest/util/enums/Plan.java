@@ -2,11 +2,11 @@ package net.ourdailytech.rest.util.enums;
 
 public enum Plan {
 
-  // MUST BE ORDERED - FREE <  WHALE_WATCHER < TOKEN_STALKER < TOKEN_STALKER_PRO
+  // MUST BE ORDERED - FREE <  WHALE_WATCHER < TOKEN_STALKER < PREMIUM
   FREE, 
   WHALE_WATCHER,
   TOKEN_STALKER,
-  TOKEN_STALKER_PRO;
+  PREMIUM;
 
   public boolean isAtLeast(Plan other) {
     return this.ordinal() >= other.ordinal();

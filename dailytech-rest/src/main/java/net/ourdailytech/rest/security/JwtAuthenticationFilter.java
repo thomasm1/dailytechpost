@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
+import net.ourdailytech.rest.security.JwtTokenProvider;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -37,10 +38,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     this.firebaseTokenAuthenticationService = firebaseTokenAuthenticationService;
   }
 
-  @Override
-  protected boolean shouldNotFilter(HttpServletRequest request) {
-    return "OPTIONS".equalsIgnoreCase(request.getMethod());
-  }
+
 
   @Override
   protected void doFilterInternal(
@@ -75,12 +73,28 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     filterChain.doFilter(request, response);
   }
+@Override
+protected boolean shouldNotFilter(HttpServletRequest request) {
+  String method = request.getMethod();
+  String path = request.getServletPath();
 
+  if ("OPTIONS".equalsIgnoreCase(method)) {
+    return true;
+  }
+
+  return path != null && path.startsWith("/api/users/auth/");
+}
+
+ 
   private Optional<UserDetails> resolveUserDetails(String token) {
     Optional<String> internalUsername = jwtTokenProvider.tryGetUsername(token);
     if (internalUsername.isPresent()) {
       return Optional.of(userDetailsService.loadUserByUsername(internalUsername.get()));
     }
+    // If the token is not an internal JWT, check if it is a Firebase token
+  if (!firebaseTokenAuthenticationService.looksLikeFirebaseToken(token)) {
+    return Optional.empty();
+  }
     return firebaseTokenAuthenticationService.authenticate(token);
   }
 

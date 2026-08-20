@@ -31,7 +31,6 @@ function fn() {
 
     if (env === 'local'  ) {
         config.baseUrl = 'http://localhost:8082';
-//        config.spring_datasource_url = "jdbc:mysql://localhost:3306/groot?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false";
         config.spring_datasource_url = "jdbc:mysql://cryptomav3n1.cun222sm0fjn.us-east-1.rds.amazonaws.com:3306/dailytech?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC";
         karate.log('Using Local or H2 environment. Base URL:', config.baseUrl);
     }

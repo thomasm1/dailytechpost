@@ -77,10 +77,14 @@ export class AuthEffects {
       ofType(AUTH_LOGIN_START),
       exhaustMap((action: AuthLoginStart) =>
         from(this.firebaseAuthService.login(action.payload)).pipe(
-          map(() => new UI.StopLoading()),
+          switchMap((credential:any) => 
+            from(this.firebaseAuthService.persistFirebaseSession(credential.user)).pipe(
+              switchMap(() => of(new UI.StopLoading(), new SetAuthenticated()))            
+            )
+          ),
           catchError((error) => {
-            this.uiService.showSnackBar(error?.message || 'Login failed', null, 2500);
-            return of(new UI.StopLoading());
+            this.uiService.showSnackBar(error?.message || 'Login failed', '', 2500);
+            return of(new UI.StopLoading(), new SetUnauthenticated());
           })
         )
       )
@@ -94,7 +98,7 @@ export class AuthEffects {
         from(this.firebaseAuthService.registerUser(action.payload)).pipe(
           map(() => new UI.StopLoading()),
           catchError((error) => {
-            this.uiService.showSnackBar(error?.message || 'Registration failed', null, 2500);
+            this.uiService.showSnackBar(error?.message || 'Registration failed', '', 2500);
             return of(new UI.StopLoading());
           })
         )

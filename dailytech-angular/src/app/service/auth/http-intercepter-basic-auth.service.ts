@@ -13,6 +13,8 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor {
     private awsAuthenticationService: AwsAuthenticationService
   ) { }
 
+
+  
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     if (!this.isDailyTechApiRequest(request.url)) {
       return next.handle(request);
@@ -36,6 +38,9 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor {
 
     return next.handle(request);
   }
+
+
+
 
   private isDailyTechApiRequest(url: string): boolean {
     return url.startsWith('/api') || url.startsWith(environment.API_URL);

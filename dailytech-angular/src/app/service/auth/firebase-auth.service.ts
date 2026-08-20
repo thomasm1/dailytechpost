@@ -5,10 +5,10 @@ import { firstValueFrom, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 import { AuthData } from '../../models/auth-data.model';
-import { AUTHENTICATED_USER, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
+import { AUTHENTICATED_USER,  AUTH_PROVIDER_KEY, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
 
 export const FIREBASE_USER_INFO_STORAGE_KEY = 'userInfoFirebase'
-export const AUTH_PROVIDER_KEY = 'dailytech.auth.provider';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -85,6 +85,10 @@ export class FirebaseAuthService {
 
   clearFirebaseSession(): void {
     sessionStorage.removeItem(FIREBASE_USER_INFO_STORAGE_KEY);
+  sessionStorage.removeItem(AUTH_STORAGE_KEY);
+  sessionStorage.removeItem(AUTHENTICATED_USER);
+  sessionStorage.removeItem(TOKEN);
+  sessionStorage.removeItem(AUTH_PROVIDER_KEY);
   }
 
   logout(): Promise<void> {
