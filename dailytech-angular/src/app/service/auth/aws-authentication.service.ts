@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { is } from 'date-fns/locale/is';
 
 export const TOKEN = 'token';
 export const AUTHENTICATED_USER = 'AuthenticatedUser';
@@ -106,19 +107,25 @@ export class AwsAuthenticationService {
   }
 
   isAdminLoggedIn(): boolean {
-    return (
+    let isAdminLoggedIn:boolean = false;
+    isAdminLoggedIn = (
       this.hasActiveSession() &&
       sessionStorage.getItem(AUTH_PROVIDER_KEY) === 'aws' &&
       this.getRoles().includes('ROLE_ADMIN')
     );
+    console.log("isAdminLoggedIn: ",  isAdminLoggedIn); 
+    return isAdminLoggedIn;
   }
 
   hasActiveSession() {
-    return (
+    let isActiveSession:boolean = false;
+    isActiveSession = (
       sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true' &&
       !!sessionStorage.getItem(TOKEN) &&
       !!this.getAuthenticatedUser()
     );
+    console.log("isActiveSession: ", isActiveSession);
+    return isActiveSession;
   }
 
   clearSession() {
