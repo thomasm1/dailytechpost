@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of, BehaviorSubject } from 'rxjs';
 import { BlogsComponent } from './blogs.component';
 import { BlogsService } from '../blogs.service';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog } from 'src/app/model/blog.model';
 
 describe('BlogsComponent', () => {
   let component: BlogsComponent;

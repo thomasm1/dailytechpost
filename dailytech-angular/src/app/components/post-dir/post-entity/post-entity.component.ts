@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PostEntityService } from '../post-entity.service';
-import {  PostEntity } from '../../../models/PostEntity.model';
+import {  PostEntity } from '../../../model/PostEntity.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { PostCancelComponent } from '../post-cancel/post-cancel.component';

@@ -37,12 +37,28 @@
 
        <a
         mat-list-item
-        *ngIf="awsAuthService.isAdminLoggedIn()"
+        *ngIf="authPolicy.canAccessAdmin()"
         [routerLink]="['/admin', awsAuthService.getAuthenticatedUser()]"
         routerLinkActive="active-link"
         class="nav-link daily-tech monoton">
         ADMIN
       </a>
+      
+        <a
+          mat-list-item *ngIf="authPolicy.canAccessAdmin()" 
+          routerLink="/stats"
+          routerLinkActive="active-link"
+          class="nav-link daily-tech monoton"
+          ><mat-icon>bar_chart</mat-icon>STATS
+        </a> 
+       <a
+        mat-list-item *ngIf="authPolicy.canAccessAdmin()" 
+        routerLink="/visuals"
+        routerLinkActive="active-link"
+        class="nav-link daily-tech monoton"
+        ><mat-icon>pie_chart</mat-icon>Visuals
+        </a>
+
         <a
           mat-list-item
           routerLink="/news"
@@ -50,9 +66,10 @@
           class="nav-link daily-tech monoton"
           >NEWS</a
         > 
+       
         <a
           mat-list-item
-          *ngIf="!awsAuthService.isAdminLoggedIn() && !(isAuth$ | async)"
+          *ngIf="!authPolicy.canAccessAdmin() && !(isAuth$ | async)"
           routerLink="/login"
           routerLinkActive="active-link"
           class="nav-link daily-tech monoton"
@@ -61,7 +78,7 @@
         <a
           mat-list-item
           class="pointer"
-          *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()"
+          *ngIf="(isAuth$ | async) || authPolicy.canAccessAdmin()"
           (click)="onLogout()"
           routerLink="/login"
           routerLinkActive="active-link"

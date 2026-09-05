@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Blog } from '../../models/blog.model';
+import { Blog } from '../../model/blog.model';
 import { environment } from '../../../environments/environment';
 
 import { catchError, shareReplay } from 'rxjs/operators';

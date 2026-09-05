@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
-import { AwsBlogPayload } from '../../models/aws-blog-payload.model';
-import { WritingMod } from '../../models/writing-mods.model';
+import { AwsBlogPayload } from '../../model/aws-blog-payload.model';
+import { WritingMod } from '../../model/writing-mods.model';
 import { BlogsService } from './blogs.service';
 
 @Injectable({

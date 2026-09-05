@@ -3,7 +3,7 @@ import {BehaviorSubject, from, Observable, Subject, timer} from 'rxjs';
  
 import {delayWhen, filter, map,  shareReplay, tap, withLatestFrom} from 'rxjs/operators';
 import {createHttpObservable} from './observable';  
-import { Chain } from '../models/chain';
+import { Chain } from '../model/chain';
 import { environment } from '../../environments/environment';
 @Injectable({
     providedIn: 'root'

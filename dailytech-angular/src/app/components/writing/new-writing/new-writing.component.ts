@@ -3,12 +3,12 @@ import { NgForm } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 
 import { WritingService } from '../writing.service';
-import { WritingMod } from '../../../models/writing-mods.model';
+import { WritingMod } from '../../../model/writing-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
-import { CategoryMod } from '../../../models/category-mods.model';
+import { CategoryMod } from '../../../model/category-mods.model';
 import * as fromCategories from '../../../reducers/category.reducer';
 import { Router } from '@angular/router';
 

@@ -10,7 +10,7 @@ import {
   CLEAR_WRITING_DRAFT,
   WritingDraft,
 } from './writing.actions';
-import { WritingMod } from '../models/writing-mods.model';
+import { WritingMod } from '../model/writing-mods.model';
 import * as fromRoot from './app.reducer';
 
 export interface WritingState {

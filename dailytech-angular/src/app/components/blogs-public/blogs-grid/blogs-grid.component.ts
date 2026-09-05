@@ -12,7 +12,7 @@ import {
 } from '@angular/forms';
 import { BlogsService } from '../blogs.service';
 import { StatisticsService } from '../Statistics.service';
-import { Blog, CategoryStat, BlogStatistics } from '../../../models/blog.model';
+import { Blog, CategoryStat, BlogStatistics } from '../../../model/blog.model';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -51,8 +51,8 @@ export class BlogsGridComponent implements OnInit, AfterViewInit, OnDestroy {
   monthColumns: string[] = ['month', 'count'];
   stateColumns: string[] = ['state', 'count'];
   blogColumns: string[] = ['date', 'title', 'category', 'preview', 'wordCount'];
-
-  // charting options for ag-charts v9
+ 
+  // charting options for ag-charts v10
   options: any = {
     data: [],
     series: [

@@ -48,6 +48,7 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     ) 
   
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping({USER_PATH, USER_PATH+"/", USER_PATH+"/list"}) 
     public ResponseEntity<List<UserDto>> getUsers() {
         List<UserDto> users = new ArrayList<>();
@@ -68,6 +69,7 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = USER_PATH_ID)
     public ResponseEntity<UserDto> getUser(@PathVariable("userId") long userId) {
         if (usersService.getUser(userId).isEmpty()) {
@@ -86,6 +88,7 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = USER_PATH + "/email/{email}")
     public ResponseEntity<UserDto> getUserByEmail(@PathVariable("email") String email) { 
         if (usersService.getUserByEmail(email).isEmpty()) {
@@ -105,7 +108,7 @@ public class UsersController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+    @PreAuthorize("isAuthenticated()")
     @GetMapping(value = USER_PATH + "/me")
     public ResponseEntity<UserDto> getCurrentUser(Authentication authentication) {
         if (authentication == null || authentication.getName() == null) {
@@ -127,6 +130,7 @@ public class UsersController {
             responseCode = "201",
             description = "HTTP Status 201 SUCCESS"
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(USER_PATH)
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
         UserDto savedUser = usersService.createUser(user); 
@@ -183,6 +187,7 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(value = { USER_PATH}, consumes = "application/json")  // userId in body
     public ResponseEntity<UserDto> updateUser( @RequestParam(value="userId", required = false) Long userId, @RequestBody UserDto userDto) {
         Long effectiveId = (userId != null) ? userId : userDto.getUserId();
@@ -204,6 +209,7 @@ public class UsersController {
             responseCode = "200",
             description = "HTTP Status 200 SUCCESS"
     )
+    @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping(value = {USER_PATH,PATCH_USER_PATH })
     public ResponseEntity<UserDto> patchUserById(@RequestParam(value="userId", required = false) Long userId,
         @RequestBody UserDto user) {
@@ -226,7 +232,7 @@ public class UsersController {
     @SecurityRequirement(
             name = "Bearer Authentication"
     )
-   //  @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(value = {USER_PATH+USER_ID,  DELETE_USER_PATH+USER_ID})
     public ResponseEntity<Boolean> deleteUser(@PathVariable("userId") long userId) {
         Boolean boolSuccess = null;

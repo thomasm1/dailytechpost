@@ -5,7 +5,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of, throwError } from 'rxjs';
 import { BlogsListComponent } from './blogs-list.component';
 import { BlogsService } from '../blogs.service';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog } from 'src/app/model/blog.model';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { UiService } from '../../../service/ui.service';
 
@@ -157,7 +157,7 @@ describe('BlogsListComponent', () => {
       const webDevBlogs = mockBlogs.filter(b => b.cat3 === 'Web Dev Affairs');
 
       // Act
-      component.categoryUpdater(mockBlogs);
+      (component as any).categoryUpdater(mockBlogs);
 
       // Assert
       expect(component.blogsWeb.length).toBe(webDevBlogs.length);
@@ -169,7 +169,7 @@ describe('BlogsListComponent', () => {
       const aiBlogs = mockBlogs.filter(b => b.cat3 === 'A.I.Now.');
 
       // Act
-      component.categoryUpdater(mockBlogs);
+      (component as any).categoryUpdater(mockBlogs);
 
       // Assert
       expect(component.blogsAI.length).toBe(aiBlogs.length);
@@ -181,7 +181,7 @@ describe('BlogsListComponent', () => {
       const blockchainBlogs = mockBlogs.filter(b => b.cat3 === 'Musing Blockchain');
 
       // Act
-      component.categoryUpdater(mockBlogs);
+      (component as any).categoryUpdater(mockBlogs);
 
       // Assert
       expect(component.blogsBlockchain.length).toBe(blockchainBlogs.length);
@@ -193,7 +193,7 @@ describe('BlogsListComponent', () => {
       const sociologyBlogs = mockBlogs.filter(b => b.cat3 === 'Sociology Tomorrow!');
 
       // Act
-      component.categoryUpdater(mockBlogs);
+      (component as any).categoryUpdater(mockBlogs);
 
       // Assert
       expect(component.blogsSoc.length).toBe(sociologyBlogs.length);
@@ -205,7 +205,7 @@ describe('BlogsListComponent', () => {
       const quantumBlogs = mockBlogs.filter(b => b.cat3 === 'Quantum Data');
 
       // Act
-      component.categoryUpdater(mockBlogs);
+      (component as any).categoryUpdater(mockBlogs);
 
       // Assert
       expect(component.blogsQuantum.length).toBe(quantumBlogs.length);
@@ -219,7 +219,7 @@ describe('BlogsListComponent', () => {
       ];
 
       // Act
-      component.categoryUpdater(unknownBlogs);
+      (component as any).categoryUpdater(unknownBlogs);
 
       // Assert
       expect(component.blogsWeb.length).toBe(0);

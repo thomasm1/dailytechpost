@@ -2,7 +2,7 @@ import { Action, createFeatureSelector, createSelector } from '@ngrx/store';
 import { CategoryActions,
   SET_CURRENT_CATEGORIES,
   SET_UPDATED_CATEGORIES} from './category.actions'
- import { CategoryMod } from '../models/category-mods.model';
+ import { CategoryMod } from '../model/category-mods.model';
 import * as fromRoot from './app.reducer';
 
 /// State for this module;

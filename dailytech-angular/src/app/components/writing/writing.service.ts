@@ -6,9 +6,9 @@ import { firstValueFrom, from, lastValueFrom, of, Observable, Subscription, thro
 import { catchError, filter, map, switchMap, take, timeout } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
-import { WritingMod } from '../../models/writing-mods.model';
-import { CategoryMod } from '../../models/category-mods.model';
-import { NewsMod } from '../../models/news-mods.model';
+import { WritingMod } from '../../model/writing-mods.model';
+import { CategoryMod } from '../../model/category-mods.model';
+import { NewsMod } from '../../model/news-mods.model';
 import { UiService } from '../../service/ui.service';
 import * as Writing from '../../reducers/writing.actions';
 import * as fromWriting from '../../reducers/writing.reducer';

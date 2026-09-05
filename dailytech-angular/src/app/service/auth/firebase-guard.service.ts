@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
 import { take, map } from 'rxjs/operators';
 
-import { AwsAuthenticationService } from './aws-authentication.service';
+import { AuthPolicyService } from './auth-policy.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../reducers/app.reducer';
 
@@ -10,35 +10,35 @@ import * as fromRoot from '../../reducers/app.reducer';
   providedIn: 'root'
 })
 export class FirebaseGuardService  {
-  constructor(
-    // private awsAuthService: AwsAuthenticationService,
-    // private authService: FirebaseAuthService,
-    private store: Store<fromRoot.State>,
-    private router: Router
-  ) {}
+constructor(
+  private store: Store<fromRoot.State>,
+  private authPolicy: AuthPolicyService,
+  private router: Router
+) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this.store.select(fromRoot.getIsAuth).pipe(
-      take(1),
-      map((isAuth) => {
-      // isAuth == FIREBASE AUTH 
-        if (isAuth ) {
-          return true;
-        }
-        return this.router.createUrlTree(['/login']);
-      })
-    );
-  }
-  canLoad(route: Route) {
-    return this.store.select(fromRoot.getIsAuth).pipe(
-      take(1),
-      // isAuth == FIREBASE AUTH 
-      map((isAuth) => {
-        if (isAuth  ) {
-          return true;
-        }
-        return this.router.createUrlTree(['/login']);
-      })
-    );
-  }
+canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  return this.store.select(fromRoot.getIsAuth).pipe(
+    take(1),
+    map((isAuth) => {
+      if (isAuth && this.authPolicy.canAccessMember()) {
+        return true;
+      }
+
+      return this.router.createUrlTree(['/login']);
+    })
+  );
+}
+
+canLoad(route: Route) {
+  return this.store.select(fromRoot.getIsAuth).pipe(
+    take(1),
+    map((isAuth) => {
+      if (isAuth && this.authPolicy.canAccessMember()) {
+        return true;
+      }
+
+      return this.router.createUrlTree(['/login']);
+    })
+  );
+}
 }

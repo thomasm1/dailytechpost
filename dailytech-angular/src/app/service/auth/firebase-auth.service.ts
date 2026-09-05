@@ -4,8 +4,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { firstValueFrom, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
-import { AuthData } from '../../models/auth-data.model';
+import { AuthData } from '../../model/auth-data.model';
 import { AUTHENTICATED_USER,  AUTH_PROVIDER_KEY, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
+import { AuthSessionStorageService } from './auth-session-storage.service';
 
 export const FIREBASE_USER_INFO_STORAGE_KEY = 'userInfoFirebase'
  
@@ -18,7 +19,8 @@ export class FirebaseAuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private http: HttpClient
+    private http: HttpClient,
+  private sessionStorageService: AuthSessionStorageService
   ) {}
 
   authState$(): Observable<any> {
@@ -37,6 +39,8 @@ export class FirebaseAuthService {
     const tokenResult = await user.getIdTokenResult();
     const email = user.email || tokenResult.claims?.email || '';
     const bearerToken = `Bearer ${tokenResult.token}`;
+    const issuedAt = Math.floor(new Date(tokenResult.issuedAtTime).getTime() / 1000);
+const expiresAt = Math.floor(new Date(tokenResult.expirationTime).getTime() / 1000);
     const userInfoFirebase = {
       email,
       uid: user.uid,
@@ -53,6 +57,16 @@ export class FirebaseAuthService {
     sessionStorage.setItem(TOKEN, bearerToken);
     sessionStorage.setItem(FIREBASE_USER_INFO_STORAGE_KEY, JSON.stringify(userInfoFirebase));
 
+    this.sessionStorageService.setActiveSession({
+      provider: 'firebase',
+      email,
+      token: bearerToken,
+      roles: ['ROLE_USER'],
+      uid: user.uid,
+      issuedAt,
+      expiresAt,
+    });
+    
     await this.syncFirebaseUser(bearerToken);
   }
 
@@ -89,6 +103,7 @@ export class FirebaseAuthService {
   sessionStorage.removeItem(AUTHENTICATED_USER);
   sessionStorage.removeItem(TOKEN);
   sessionStorage.removeItem(AUTH_PROVIDER_KEY);
+  this.sessionStorageService.clearSession('firebase');
   }
 
   logout(): Promise<void> {

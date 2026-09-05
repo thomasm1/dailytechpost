@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 
 import { SignonComponent } from './signon.component';
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
-import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
+import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
 import { UiService } from 'src/app/service/ui.service';
 import { Store } from '@ngrx/store';
 
@@ -15,7 +15,7 @@ describe('SignonComponent', () => {
   let fixture: ComponentFixture<SignonComponent>;
   let router: jasmine.SpyObj<Router>;
   let awsAuthService: jasmine.SpyObj<AwsAuthenticationService>;
-  let firebaseAuthService: jasmine.SpyObj<FirebaseAuthService>;
+  let authPolicy: jasmine.SpyObj<AuthPolicyService>;
 
   beforeEach(waitForAsync(() => {
     router = jasmine.createSpyObj<Router>('Router', ['navigate']);
@@ -23,7 +23,7 @@ describe('SignonComponent', () => {
       'executeAuthAwsService',
       'logout'
     ]);
-    firebaseAuthService = jasmine.createSpyObj<FirebaseAuthService>('FirebaseAuthService', ['login', 'registerUser']);
+    authPolicy = jasmine.createSpyObj<AuthPolicyService>('AuthPolicyService', ['canAccessAdmin']);
 
     TestBed.configureTestingModule({
       declarations: [SignonComponent],
@@ -38,8 +38,8 @@ describe('SignonComponent', () => {
           useValue: awsAuthService,
         },
         {
-          provide: FirebaseAuthService,
-          useValue: firebaseAuthService,
+          provide: AuthPolicyService,
+          useValue: authPolicy,
         },
         {
           provide: UiService,
@@ -66,32 +66,25 @@ describe('SignonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should admin login to AWS and Firebase before navigating', async () => {
+  it('should admin login to AWS before navigating', async () => {
     awsAuthService.executeAuthAwsService.and.returnValue(of({}));
-    firebaseAuthService.login.and.returnValue(Promise.resolve({} as any));
+    authPolicy.canAccessAdmin.and.returnValue(true);
     const form = { value: { email: 'thomas1@gmail.com', password: 'secret' } } as any;
 
     component.handleAwsAuthLogin(form);
-    await Promise.resolve();
 
     expect(awsAuthService.executeAuthAwsService).toHaveBeenCalledWith('thomas1@gmail.com', 'secret');
-    expect(firebaseAuthService.login).toHaveBeenCalledWith({
-      email: 'thomas1@gmail.com',
-      password: 'secret'
-    });
     expect(router.navigate).toHaveBeenCalledWith(['admin', 'thomas1@gmail.com']);
     expect(component.authLogin).toBeTrue();
     expect(component.invalidLogin).toBeFalse();
   });
 
-  it('should clear AWS session when admin Firebase login fails', async () => {
+  it('should clear AWS session when AWS login does not have admin role', () => {
     awsAuthService.executeAuthAwsService.and.returnValue(of({}));
-    firebaseAuthService.login.and.returnValue(Promise.reject(new Error('Firebase failed')));
+    authPolicy.canAccessAdmin.and.returnValue(false);
     const form = { value: { email: 'thomas1@gmail.com', password: 'secret' } } as any;
 
     component.handleAwsAuthLogin(form);
-    await Promise.resolve();
-    await Promise.resolve();
 
     expect(awsAuthService.logout).toHaveBeenCalled();
     expect(router.navigate).not.toHaveBeenCalled();

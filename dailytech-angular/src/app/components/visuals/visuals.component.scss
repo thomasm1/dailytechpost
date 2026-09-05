@@ -1,0 +1,193 @@
+:host {
+    margin: 0;
+    padding: 0;
+}
+
+
+.visuals {
+    display: grid; 
+
+    justify-content: center;
+    /* horizontal */
+
+    /* align-content: start; vertical 
+    // justify-items: center;
+    // align-items: center; */
+
+    grid-gap: 20px; 
+
+    grid-template-rows:
+        /* VERTICAL */
+        [header-start] 150px [header-end 
+        box-start] minmax(320px, 28vw) [box-end 
+            //   repeat(5, minmax(320px, 28vw))
+        box-2-start] minmax(320px, 28vw) [box-2-end 
+        box-3-start] minmax(320px, 28vw) [box-3-end 
+        box-4-start] minmax(320px, 28vw) [box-4-end 
+        box-5-start] minmax(320px, 28vw) [box-5-end 
+        box-6-start] minmax(320px, 28vw) [box-6-end 
+        box-7-start] minmax(320px, 28vw) [box-7-end 
+        main-start] 400px [main-end 
+        footer-start] 100px [footer-end];
+
+    grid-template-columns:
+        /* HORIZONTAL */
+        [boxes-start] repeat(3, 1fr) [boxes-end sidebar-start] 100px [sidebar-end];
+
+    grid-template-areas: 
+        "header header header header"
+        "box1 box2 box3 sidebar"
+        "box4 box5 box6 sidebar"
+        "box7 box8 box9 sidebar"
+        "box10 box11 box12 sidebar"
+        "box13 box14 box15 sidebar"
+        "box16 box16 box16 sidebar"
+        "main main main sidebar"
+        "footer footer footer footer";
+
+    &>* {
+        background-color: #5093ff;
+        padding: 5px;
+        color: white;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+    } 
+
+    .header {
+        grid-row: header-start / header-end;
+        /* 1 / 2; */
+        grid-column: boxes-start / sidebar-end;
+        /* 1 / 5; */
+
+        grid-area: header;
+    }
+
+    .sidebar {
+        grid-row: box-start / main-end;
+        /* 2 / 5; */
+        grid-column: sidebar-start / sidebar-end;
+        /* 4 / 5; */ 
+        grid-area: sidebar;
+    }
+
+    .content {
+        grid-row: main-start / main-end;
+        /*  3 / 5; */
+        grid-column: boxes-start / boxes-end;
+        /* 1 / 4  */ 
+        grid-area: main;
+    }
+
+    .footer {
+        grid-row: footer-start / footer-end;
+        /* 5 / 6; */
+        grid-column: boxes-start / sidebar-end;
+        /* 1 / 5; */
+        grid-area: footer;
+    }
+
+    .chart-10 {
+        position:relative;
+        background-color: #9a9a9a;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .chart-10-options {
+       position: absolute;
+       top: 2px;
+       right: 5px;
+       z-index:2;
+    } 
+    /* chart11 */
+    .chart {
+        background-color: #9a9a9a;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+    } 
+    .chart-options {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    } 
+    
+    .small-16 {
+    grid-area: box16;
+    min-width: 0;
+    min-height: 0;
+    }
+
+  .small-16 > chart16 {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}  /* END .visuals */
+
+  /* 2-column layout */
+@media (max-width: 1100px) { 
+    .visuals {
+        grid-template-rows: 
+            150px 
+            repeat(8, minmax(320px, 28vw)) 
+            400px 
+            100px;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) 50px;
+        
+        grid-template-areas:
+            "header header header"
+            "box1 box2 sidebar"
+            "box3 box4 sidebar"
+            "box5 box6 sidebar"
+            "box7 box8 sidebar"
+            "box9 box10 sidebar"
+            "box11 box12 sidebar"
+            "box13 box14 sidebar"
+            "box15 .     sidebar"
+            "box16 box16 sidebar"
+            "main main sidebar"
+            "footer footer footer";
+    }
+}
+
+/* 1-column layout */
+@media (max-width: 500px) {
+    .visuals {
+        grid-template-rows: 
+        150px 
+        repeat(15, minmax(320px, 28vw)) 
+        400px 
+        auto 
+        100px;
+
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5"
+            "box6"
+            "box7"
+            "box8"
+            "box9"
+            "box10"
+            "box11"
+            "box12"
+            "box13"
+            "box14"
+            "box15"
+            "box16"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}

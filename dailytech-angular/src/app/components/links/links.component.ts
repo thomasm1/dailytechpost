@@ -3,7 +3,7 @@ import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { CategoryMod } from '../../models/category-mods.model';
+import { CategoryMod } from '../../model/category-mods.model';
 import { WritingService } from '../writing/writing.service';
 import * as fromCategories from '../../reducers/category.reducer';
 import { LinkDetailsDialogComponent } from './link-details-dialog/link-details-dialog.component';

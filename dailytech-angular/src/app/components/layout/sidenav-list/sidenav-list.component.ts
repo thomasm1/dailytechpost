@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
 import * as AuthActions from '../../../reducers/auth.actions';
+import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class SidenavListComponent implements OnInit { // }, OnDestroy {
 
   constructor(private route: ActivatedRoute,
     public awsAuthService: AwsAuthenticationService,
+    public authPolicy: AuthPolicyService,
     private store: Store<fromRoot.State>) { }
 
   ngOnInit() {

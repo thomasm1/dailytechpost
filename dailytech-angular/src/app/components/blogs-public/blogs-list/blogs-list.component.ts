@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { BlogsService } from '../blogs.service';
-import { Blog } from '../../../models/blog.model';
+import { Blog } from '../../../model/blog.model';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
@@ -119,7 +119,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
         this.blogsQuantum = blogs.filter((x) => x.cat3 == 'Quantum Data');
   }
 
-  viewBlog(id: string) {
+  viewBlog(id: string | number | undefined) {
     this.router.navigate(
       ['/blog', id]
       // , { maybe put in query params...   }
@@ -130,7 +130,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
     this.router.navigate(['/blogs', cat]);
   }
 
-  openBlogModal(id: string) {
+  openBlogModal(id: string | number | undefined) {
     console.log('newModal id: ' + id);
     // this.sendValue = id;
     // const dialogRef =

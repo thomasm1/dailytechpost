@@ -3,7 +3,7 @@ import { Actions, ROOT_EFFECTS_INIT, createEffect, ofType } from '@ngrx/effects'
 import { Router } from '@angular/router';
 import { from, of } from 'rxjs';
 import { catchError, exhaustMap, map, switchMap, tap } from 'rxjs/operators';
-
+import { AuthPolicyService } from '../service/auth/auth-policy.service';
 import { UiService } from '../service/ui.service';
 import { AUTH_STORAGE_KEY, AwsAuthenticationService } from '../service/auth/aws-authentication.service';
 import { FirebaseAuthService } from '../service/auth/firebase-auth.service';
@@ -31,7 +31,7 @@ export class AuthEffects {
         this.firebaseAuthService.authState$().pipe(
           switchMap((user) => {
             if (!user) {
-              return of(this.awsAuthService.hasActiveSession() ? new SetAuthenticated() : new SetUnauthenticated());
+              return of(this.authPolicy.isAuthenticated() ? new SetAuthenticated() : new SetUnauthenticated());
             }
 
             return from(this.firebaseAuthService.persistFirebaseSession(user)).pipe(
@@ -48,6 +48,15 @@ export class AuthEffects {
       )
     )
   );
+constructor(
+  private actions$: Actions,
+  private router: Router,
+  private uiService: UiService,
+  private awsAuthService: AwsAuthenticationService,
+  private firebaseAuthService: FirebaseAuthService,
+  private writingService: WritingService,
+  private authPolicy: AuthPolicyService
+) {}
 
   onAuthenticated$ = createEffect(
     () =>
@@ -130,7 +139,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(ROOT_EFFECTS_INIT),
       map(() => {
-        return this.awsAuthService.hasActiveSession() ? new SetAuthenticated() : new SetUnauthenticated();
+         return this.authPolicy.isAuthenticated() ? new SetAuthenticated() : new SetUnauthenticated();
       })
     ),
     { dispatch: true } //default anyway
@@ -159,12 +168,4 @@ export class AuthEffects {
     { dispatch: false }
   );
 
-  constructor(
-    private actions$: Actions,
-    private router: Router,
-    private uiService: UiService,
-    private awsAuthService: AwsAuthenticationService,
-    private firebaseAuthService: FirebaseAuthService,
-    private writingService: WritingService
-  ) {}
 }

@@ -22,7 +22,12 @@
     <span class="nav-caption daily-tech monoton">NEWS</span>
   </a>
 
-  <a mat-list-item *ngIf="awsAuthService.isAdminLoggedIn()"
+  <a mat-list-item routerLink="/stats" (click)="onClose()">
+    <mat-icon>bar_chart</mat-icon>
+    <span class="nav-caption daily-tech monoton">STATS</span>
+  </a>
+
+  <a mat-list-item *ngIf="authPolicy.canAccessAdmin()"
     [routerLink]="['/admin',awsAuthService.getAuthenticatedUser()]" (click)="onClose()">
     <mat-icon>computer</mat-icon>
     <span class="nav-caption daily-tech monoton">ADMIN</span>
@@ -32,7 +37,7 @@
 
   <!-- <a
     mat-list-item
-    *ngIf="!(isAuth$ | async) && !awsAuthService.isAdminLoggedIn()"
+    *ngIf="!(isAuth$ | async) && !authPolicy.canAccessAdmin()"
     routerLink="/register"
     (click)="onClose()"
   >
@@ -40,14 +45,14 @@
     <span class="nav-caption daily-tech monoton">Register</span>
   </a> -->
 
-  <a mat-list-item *ngIf="!(isAuth$ | async) && !awsAuthService.isAdminLoggedIn()" routerLink="/login"
+  <a mat-list-item *ngIf="!(isAuth$ | async) && !authPolicy.canAccessAdmin()" routerLink="/login"
     (click)="onClose()">
     <mat-icon>input</mat-icon>
     <span class="nav-caption daily-tech monoton">LOGIN</span>
   </a>
 
 
-  <a mat-list-item *ngIf="(isAuth$ | async) || awsAuthService.isAdminLoggedIn()" (click)="onLogout()"
+  <a mat-list-item *ngIf="(isAuth$ | async) || authPolicy.canAccessAdmin()" (click)="onLogout()"
     routerLink="/login">
     <mat-icon>eject</mat-icon>
     <span class="nav-caption daily-tech monoton">LOGOUT</span>

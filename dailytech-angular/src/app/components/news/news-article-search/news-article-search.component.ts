@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchData } from '../../../models/SearchData';
+import { SearchData } from '../../../model/SearchData';
 import { NgForm } from '@angular/forms';
 import * as momentNs from 'moment';
 import { Store } from '@ngrx/store';

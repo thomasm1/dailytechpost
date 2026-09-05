@@ -1,0 +1,1282 @@
+[
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "708804"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "673832"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "748674"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "711514"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "827157"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "795267"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "854925"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "832921"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "454656"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "431283"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "795158"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "789819"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "774443"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "780149"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "151748"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "144370"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "5090237"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "5415113"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "721135"
+  },
+  {
+    "﻿iso2": "AUS",
+    "country_name": "Australia",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "682656"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "217467"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "206738"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "251511"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "238107"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "269844"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "262119"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "279148"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "276526"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "121066"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "114685"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "274319"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "271360"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "281762"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "285389"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "40148"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "38372"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2133816"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2394756"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "207883"
+  },
+  {
+    "﻿iso2": "AUT",
+    "country_name": "Austria",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "198426"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "312566"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "299666"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "325268"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "312581"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "346200"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "343190"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "346348"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "348150"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "198802"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "189699"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "364694"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "361652"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "367153"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "358703"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "65521"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "62648"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2706342"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2982351"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "313954"
+  },
+  {
+    "﻿iso2": "BEL",
+    "country_name": "Belgium",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "299969"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "972285"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "920822.5"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1115081.5"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1065141"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1225393"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1159659"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1223651"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1185491"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "586637"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "556888"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1168175"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1168005"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1144416"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1136106.5"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "191916.5"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "182607"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "8354896.5"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "8935207.5"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "934969"
+  },
+  {
+    "﻿iso2": "CAN",
+    "country_name": "Canada",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "881761.5"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2004013"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1903524"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2094790"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1985672"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2537958"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2421962"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2543493"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2447109"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1036432"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "985676"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2505090"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2437824"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2425249"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2359922"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "355973"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "337482"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "22544514"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "24708072"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1803899"
+  },
+  {
+    "﻿iso2": "DEU",
+    "country_name": "Germany",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1711890"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1809704"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1726324"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1996315"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1893805"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2239298"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2138979"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2216544"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2150971"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1238587"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1178875"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2063522"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2045886"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2016138"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2031276"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "396800"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "377648"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "14932518"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "16443915"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1828149"
+  },
+  {
+    "﻿iso2": "GBR",
+    "country_name": "United Kingdom",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1742981"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "10585377"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "10116606"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "11067371"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "10480232"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "11367809"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "10900133"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "10778315"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "10534510"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "6073231"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "5816125"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "10349674"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "10296814"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "9729700"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "9803348"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2107838"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2018964"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "69048064"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "76704157"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "10404826"
+  },
+  {
+    "﻿iso2": "USA",
+    "country_name": "United States",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "9967690"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "10-14 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2225316"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "10-14 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2134514"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "15-19 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2253817"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "15-19 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2147601"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "20-24 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2131976"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "20-24 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2037584"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "25-29 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1865770"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "25-29 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1881166"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "Under 3 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1317025"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "Under 3 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1257664"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "30-34 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1645881"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "30-34 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1729487"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "35-39 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "1455986"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "35-39 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "1551280"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "4 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "439008"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "4 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "419221.4"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "40 years and over",
+    "gender": "Males",
+    "year": "2012",
+    "value": "6776106"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "40 years and over",
+    "gender": "Females",
+    "year": "2012",
+    "value": "7551196"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "5-9 years",
+    "gender": "Males",
+    "year": "2012",
+    "value": "2183050"
+  },
+  {
+    "﻿iso2": "COL",
+    "country_name": "Colombia",
+    "age_group": "5-9 years",
+    "gender": "Females",
+    "year": "2012",
+    "value": "2088961"
+  }
+]

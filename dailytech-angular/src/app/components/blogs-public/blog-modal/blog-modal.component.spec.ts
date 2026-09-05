@@ -5,7 +5,7 @@ import { of, Subject, throwError } from 'rxjs';
 import { BlogModalComponent } from './blog-modal.component';
 import { BlogsStore } from '../blogs-store.service';
 import { BlogsService } from '../blogs.service';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog } from 'src/app/model/blog.model';
 
 @Pipe({ name: 'safeHtml' })
 class MockSafeHtmlPipe implements PipeTransform {

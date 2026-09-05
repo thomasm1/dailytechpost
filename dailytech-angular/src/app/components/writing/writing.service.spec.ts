@@ -9,7 +9,7 @@ import { WritingService } from './writing.service';
 import { UiService } from '../../service/ui.service';
 import { environment } from '../../../environments/environment';
 import { AwsAuthenticationService } from '../../service/auth/aws-authentication.service';
-import { CategoryMod } from '../../models/category-mods.model';
+import { CategoryMod } from '../../model/category-mods.model';
 
 describe('WritingService', () => {
   let service: WritingService;

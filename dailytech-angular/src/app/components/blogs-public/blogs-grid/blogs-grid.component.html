@@ -75,10 +75,10 @@
     <!-- Chart Section -->
     <mat-card class="chart-section">
       <mat-card-content>
-        <div style="height: 400px; width: 100%;">
+        <div class="chart-container">
           <mat-spinner *ngIf="!chartReady" class="chart-spinner" mode="indeterminate" diameter="42"></mat-spinner>
-          <ag-charts-angular *ngIf="chartReady" [options]="options">
-          </ag-charts-angular>
+          <ag-charts *ngIf="chartReady" [options]="options">
+          </ag-charts>
         </div>
       </mat-card-content>
 

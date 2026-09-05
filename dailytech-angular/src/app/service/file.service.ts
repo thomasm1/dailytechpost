@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NewsMod } from '../models/news-mods.model';
+import { NewsMod } from '../model/news-mods.model';
 import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 import { firstValueFrom, Observable } from 'rxjs';
 import { filter, take, timeout } from 'rxjs/operators';

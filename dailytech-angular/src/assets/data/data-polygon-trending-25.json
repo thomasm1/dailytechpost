@@ -1,0 +1,786 @@
+[
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x1bdf71ede1a4777db1eebe7232bcda20d6fc1610",
+        "name": "WhaleBit",
+        "uniqueName": "whale-bit-1",
+        "symbol": "CES",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0x1bdf71ede1a4777db1eebe7232bcda20d6fc1610_4342b4a6cd948e3429494c320fb8459e.webp",
+        "usdPrice": 0.695770328919,
+        "createdAt": 1746905546,
+        "marketCap": 293876396,
+        "liquidityUsd": 260302,
+        "holders": 165919,
+        "pricePercentChange": {
+            "1h": -0.0004662645382574975,
+            "4h": -0.011989727504677488,
+            "12h": 0.02019624159512944,
+            "24h": 0.01856246543780353
+        },
+        "totalVolume": {
+            "1h": 10507,
+            "4h": 134651,
+            "12h": 364274,
+            "24h": 578555
+        },
+        "transactions": {
+            "1h": 22,
+            "4h": 247,
+            "12h": 842,
+            "24h": 1316
+        },
+        "buyTransactions": {
+            "1h": 13,
+            "4h": 110,
+            "12h": 415,
+            "24h": 644
+        },
+        "sellTransactions": {
+            "1h": 9,
+            "4h": 137,
+            "12h": 427,
+            "24h": 672
+        },
+        "buyers": {
+            "1h": 13,
+            "4h": 90,
+            "12h": 316,
+            "24h": 491
+        },
+        "sellers": {
+            "1h": 9,
+            "4h": 109,
+            "12h": 310,
+            "24h": 495
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x98965474ecbec2f532f1f780ee37b0b05f77ca55",
+        "name": "SUPER TRUST",
+        "uniqueName": "supertrust-1",
+        "symbol": "SUT",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0x98965474ecbec2f532f1f780ee37b0b05f77ca55_7e8d910c4ccdd34def6eda12e488fda9.webp",
+        "usdPrice": 0.785758324185,
+        "createdAt": 1734596409,
+        "marketCap": 187327717,
+        "liquidityUsd": 282432,
+        "holders": 32977,
+        "pricePercentChange": {
+            "1h": 0.0000695304265794885,
+            "4h": -0.010207693825555081,
+            "12h": -0.09799464701272453,
+            "24h": -0.023049643841892946
+        },
+        "totalVolume": {
+            "1h": 6,
+            "4h": 2812,
+            "12h": 47857,
+            "24h": 114440
+        },
+        "transactions": {
+            "1h": 2,
+            "4h": 12,
+            "12h": 175,
+            "24h": 365
+        },
+        "buyTransactions": {
+            "1h": 2,
+            "4h": 8,
+            "12h": 76,
+            "24h": 184
+        },
+        "sellTransactions": {
+            "1h": 0,
+            "4h": 4,
+            "12h": 99,
+            "24h": 181
+        },
+        "buyers": {
+            "1h": 2,
+            "4h": 6,
+            "12h": 30,
+            "24h": 57
+        },
+        "sellers": {
+            "1h": 0,
+            "4h": 3,
+            "12h": 37,
+            "24h": 77
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x6631ee651da438db2be611b5a44dfe2ca04590c5",
+        "name": "A",
+        "uniqueName": "a-53",
+        "symbol": "A",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0x6631ee651da438db2be611b5a44dfe2ca04590c5_a6f00ecb583999928937328e81a9771a.webp",
+        "usdPrice": 2.78122718248,
+        "createdAt": 1753687093,
+        "marketCap": 105647201,
+        "liquidityUsd": 50982,
+        "holders": 347647,
+        "pricePercentChange": {
+            "1h": -0.005900856658633642,
+            "4h": -0.00043231250140766654,
+            "12h": 0.028293195319952977,
+            "24h": 0.10929561118557275
+        },
+        "totalVolume": {
+            "1h": 584,
+            "4h": 3098,
+            "12h": 24421,
+            "24h": 39841
+        },
+        "transactions": {
+            "1h": 3,
+            "4h": 38,
+            "12h": 322,
+            "24h": 489
+        },
+        "buyTransactions": {
+            "1h": 2,
+            "4h": 21,
+            "12h": 261,
+            "24h": 383
+        },
+        "sellTransactions": {
+            "1h": 1,
+            "4h": 17,
+            "12h": 61,
+            "24h": 106
+        },
+        "buyers": {
+            "1h": 2,
+            "4h": 18,
+            "12h": 197,
+            "24h": 271
+        },
+        "sellers": {
+            "1h": 1,
+            "4h": 14,
+            "12h": 49,
+            "24h": 91
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x87bdfbe98ba55104701b2f2e999982a317905637",
+        "name": "Coinnekt+",
+        "uniqueName": null,
+        "symbol": "CNKT+",
+        "decimals": 18,
+        "logo": null,
+        "usdPrice": 0.00530056458574,
+        "createdAt": 1761028198,
+        "marketCap": 53005646,
+        "liquidityUsd": 306913,
+        "holders": 33911,
+        "pricePercentChange": {
+            "1h": 0.004156075687821171,
+            "4h": -0.047697076123994084,
+            "12h": -0.03752053298342421,
+            "24h": -0.12292331006209616
+        },
+        "totalVolume": {
+            "1h": 29909,
+            "4h": 75950,
+            "12h": 119639,
+            "24h": 848134
+        },
+        "transactions": {
+            "1h": 107,
+            "4h": 229,
+            "12h": 378,
+            "24h": 2546
+        },
+        "buyTransactions": {
+            "1h": 68,
+            "4h": 135,
+            "12h": 211,
+            "24h": 1617
+        },
+        "sellTransactions": {
+            "1h": 39,
+            "4h": 94,
+            "12h": 167,
+            "24h": 929
+        },
+        "buyers": {
+            "1h": 55,
+            "4h": 106,
+            "12h": 157,
+            "24h": 896
+        },
+        "sellers": {
+            "1h": 20,
+            "4h": 59,
+            "12h": 119,
+            "24h": 501
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0xbbba073c31bf03b8acf7c28ef0738decf3695683",
+        "name": "SAND",
+        "uniqueName": "sand",
+        "symbol": "SAND",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0xbbba073c31bf03b8acf7c28ef0738decf3695683_b7e6d1dc1418dc447398a55adcb5a550.webp",
+        "usdPrice": 0.149459805847,
+        "createdAt": 1638865146,
+        "marketCap": 45430523,
+        "liquidityUsd": 193120,
+        "holders": 106710,
+        "pricePercentChange": {
+            "1h": -0.0023248733123919477,
+            "4h": -0.01737523112903021,
+            "12h": -0.019775255727852735,
+            "24h": -0.0724461505040536
+        },
+        "totalVolume": {
+            "1h": 189,
+            "4h": 1247,
+            "12h": 5916,
+            "24h": 23409
+        },
+        "transactions": {
+            "1h": 3,
+            "4h": 16,
+            "12h": 61,
+            "24h": 206
+        },
+        "buyTransactions": {
+            "1h": 1,
+            "4h": 8,
+            "12h": 29,
+            "24h": 94
+        },
+        "sellTransactions": {
+            "1h": 2,
+            "4h": 8,
+            "12h": 32,
+            "24h": 112
+        },
+        "buyers": {
+            "1h": 1,
+            "4h": 7,
+            "12h": 17,
+            "24h": 32
+        },
+        "sellers": {
+            "1h": 2,
+            "4h": 5,
+            "12h": 17,
+            "24h": 29
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x714db550b574b3e927af3d93e26127d15721d4c2",
+        "name": "GreenMetaverseToken",
+        "uniqueName": "green-metaverse-token",
+        "symbol": "GMT",
+        "decimals": 8,
+        "logo": "https://logo.moralis.io/0x89_0x714db550b574b3e927af3d93e26127d15721d4c2_a0ed3ee66b60db74adb264b5c958cd66.webp",
+        "usdPrice": 0.015947502966,
+        "createdAt": 1703604053,
+        "marketCap": 25835150,
+        "liquidityUsd": 822919,
+        "holders": 45616,
+        "pricePercentChange": {
+            "1h": -0.005788473978965216,
+            "4h": -0.016910767093503084,
+            "12h": -0.02076675306864818,
+            "24h": -0.049751945142541304
+        },
+        "totalVolume": {
+            "1h": 2408,
+            "4h": 7133,
+            "12h": 9291,
+            "24h": 23184
+        },
+        "transactions": {
+            "1h": 8,
+            "4h": 46,
+            "12h": 100,
+            "24h": 208
+        },
+        "buyTransactions": {
+            "1h": 1,
+            "4h": 7,
+            "12h": 31,
+            "24h": 56
+        },
+        "sellTransactions": {
+            "1h": 7,
+            "4h": 39,
+            "12h": 69,
+            "24h": 152
+        },
+        "buyers": {
+            "1h": 1,
+            "4h": 7,
+            "12h": 29,
+            "24h": 47
+        },
+        "sellers": {
+            "1h": 1,
+            "4h": 14,
+            "12h": 36,
+            "24h": 56
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x311434160d7537be358930def317afb606c0d737",
+        "name": "Nakamoto.Games",
+        "uniqueName": "nakamoto-games",
+        "symbol": "NAKA",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0x311434160d7537be358930def317afb606c0d737_88a56357c924baf12d3473f460edc0dc.webp",
+        "usdPrice": 0.10107828817,
+        "createdAt": 1638959616,
+        "marketCap": 18194092,
+        "liquidityUsd": 29273,
+        "holders": 25293,
+        "pricePercentChange": {
+            "1h": -0.06472067681400842,
+            "4h": -0.09526434115243702,
+            "12h": -0.11167438283444629,
+            "24h": -0.09229853430122752
+        },
+        "totalVolume": {
+            "1h": 1598,
+            "4h": 2152,
+            "12h": 4342,
+            "24h": 6513
+        },
+        "transactions": {
+            "1h": 84,
+            "4h": 112,
+            "12h": 194,
+            "24h": 300
+        },
+        "buyTransactions": {
+            "1h": 61,
+            "4h": 69,
+            "12h": 113,
+            "24h": 173
+        },
+        "sellTransactions": {
+            "1h": 23,
+            "4h": 43,
+            "12h": 81,
+            "24h": 127
+        },
+        "buyers": {
+            "1h": 33,
+            "4h": 36,
+            "12h": 45,
+            "24h": 54
+        },
+        "sellers": {
+            "1h": 9,
+            "4h": 12,
+            "12h": 24,
+            "24h": 28
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x88548808840220390dd9e19eefafa442e8e75041",
+        "name": "VDDS",
+        "uniqueName": "vdds-1",
+        "symbol": "Vollar",
+        "decimals": 8,
+        "logo": null,
+        "usdPrice": 1.18966815237,
+        "createdAt": 1745460875,
+        "marketCap": 11896682,
+        "liquidityUsd": 255157,
+        "holders": 4782,
+        "pricePercentChange": {
+            "1h": -0.01602650384116683,
+            "4h": 0.002123205237438389,
+            "12h": 0.2835928831956747,
+            "24h": 0.26803630976299975
+        },
+        "totalVolume": {
+            "1h": 1186,
+            "4h": 7016,
+            "12h": 101213,
+            "24h": 104698
+        },
+        "transactions": {
+            "1h": 1,
+            "4h": 29,
+            "12h": 376,
+            "24h": 406
+        },
+        "buyTransactions": {
+            "1h": 0,
+            "4h": 17,
+            "12h": 247,
+            "24h": 250
+        },
+        "sellTransactions": {
+            "1h": 1,
+            "4h": 12,
+            "12h": 129,
+            "24h": 156
+        },
+        "buyers": {
+            "1h": 0,
+            "4h": 7,
+            "12h": 84,
+            "24h": 84
+        },
+        "sellers": {
+            "1h": 1,
+            "4h": 10,
+            "12h": 73,
+            "24h": 86
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0xd0258a3fd00f38aa8090dfee343f10a9d4d30d3f",
+        "name": "VOXEL Token",
+        "uniqueName": "voxel-token",
+        "symbol": "VOXEL",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0xd0258a3fd00f38aa8090dfee343f10a9d4d30d3f_0e977a006ee60de8c98869873404bd3a.webp",
+        "usdPrice": 0.0125266805783,
+        "createdAt": 1744566335,
+        "marketCap": 3758004,
+        "liquidityUsd": 16882,
+        "holders": 46673,
+        "pricePercentChange": {
+            "1h": -0.05496441179302803,
+            "4h": 0.05627788445678997,
+            "12h": 0.32274910649993077,
+            "24h": 0.27340311900943076
+        },
+        "totalVolume": {
+            "1h": 229,
+            "4h": 1115,
+            "12h": 6091,
+            "24h": 6130
+        },
+        "transactions": {
+            "1h": 47,
+            "4h": 165,
+            "12h": 752,
+            "24h": 758
+        },
+        "buyTransactions": {
+            "1h": 27,
+            "4h": 96,
+            "12h": 405,
+            "24h": 407
+        },
+        "sellTransactions": {
+            "1h": 20,
+            "4h": 69,
+            "12h": 347,
+            "24h": 351
+        },
+        "buyers": {
+            "1h": 17,
+            "4h": 33,
+            "12h": 101,
+            "24h": 102
+        },
+        "sellers": {
+            "1h": 4,
+            "4h": 13,
+            "12h": 79,
+            "24h": 81
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0xe9c21de62c5c5d0ceacce2762bf655afdceb7ab3",
+        "name": "Arkreen Token",
+        "uniqueName": "arkreen-token-2",
+        "symbol": "AKRE",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0xe9c21de62c5c5d0ceacce2762bf655afdceb7ab3_97751ab97e41337033568fc2d6e09f62.webp",
+        "usdPrice": 0.000265074696635,
+        "createdAt": 1709532008,
+        "marketCap": 2638807,
+        "liquidityUsd": 2295,
+        "holders": 73816,
+        "pricePercentChange": {
+            "1h": -0.009440221604768121,
+            "4h": -0.026749502006107657,
+            "12h": -0.000864015703462364,
+            "24h": -0.011624303649079442
+        },
+        "totalVolume": {
+            "1h": 467,
+            "4h": 987,
+            "12h": 3609,
+            "24h": 5812
+        },
+        "transactions": {
+            "1h": 121,
+            "4h": 248,
+            "12h": 867,
+            "24h": 1439
+        },
+        "buyTransactions": {
+            "1h": 63,
+            "4h": 127,
+            "12h": 440,
+            "24h": 730
+        },
+        "sellTransactions": {
+            "1h": 58,
+            "4h": 121,
+            "12h": 427,
+            "24h": 709
+        },
+        "buyers": {
+            "1h": 51,
+            "4h": 82,
+            "12h": 133,
+            "24h": 150
+        },
+        "sellers": {
+            "1h": 52,
+            "4h": 82,
+            "12h": 124,
+            "24h": 133
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0xab787774bdf01fc22410165ffabf76e0e0ebc94f",
+        "name": "PiX",
+        "uniqueName": null,
+        "symbol": "PiX",
+        "decimals": 18,
+        "logo": null,
+        "usdPrice": 0.0598271832453,
+        "createdAt": 1762224545,
+        "marketCap": 2128972,
+        "liquidityUsd": 1097882,
+        "holders": 10266,
+        "pricePercentChange": {
+            "1h": -0.00038208707345422743,
+            "4h": -0.013677614012337613,
+            "12h": -0.01000106426300434,
+            "24h": 0.015419187495196215
+        },
+        "totalVolume": {
+            "1h": 209,
+            "4h": 7992,
+            "12h": 21433,
+            "24h": 52782
+        },
+        "transactions": {
+            "1h": 1,
+            "4h": 33,
+            "12h": 179,
+            "24h": 375
+        },
+        "buyTransactions": {
+            "1h": 0,
+            "4h": 10,
+            "12h": 94,
+            "24h": 222
+        },
+        "sellTransactions": {
+            "1h": 1,
+            "4h": 23,
+            "12h": 85,
+            "24h": 153
+        },
+        "buyers": {
+            "1h": 0,
+            "4h": 10,
+            "12h": 83,
+            "24h": 177
+        },
+        "sellers": {
+            "1h": 1,
+            "4h": 19,
+            "12h": 73,
+            "24h": 133
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0xc157ee77518769b8009642f68a8d6a500ff59d53",
+        "name": "NoLimitCoin",
+        "uniqueName": "no-limit-coin-1",
+        "symbol": "NLC",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0xc157ee77518769b8009642f68a8d6a500ff59d53_d08d5353d84953a3c967c085cf098116.webp",
+        "usdPrice": 0.00117303824888,
+        "createdAt": 1740767697,
+        "marketCap": 1051956,
+        "liquidityUsd": 6819,
+        "holders": 242,
+        "pricePercentChange": {
+            "1h": -0.001784160889302639,
+            "4h": -0.00864596018254941,
+            "12h": -0.012763821552738058,
+            "24h": -0.03630419815865753
+        },
+        "totalVolume": {
+            "1h": 312,
+            "4h": 756,
+            "12h": 1947,
+            "24h": 3705
+        },
+        "transactions": {
+            "1h": 68,
+            "4h": 194,
+            "12h": 518,
+            "24h": 1002
+        },
+        "buyTransactions": {
+            "1h": 35,
+            "4h": 101,
+            "12h": 273,
+            "24h": 526
+        },
+        "sellTransactions": {
+            "1h": 33,
+            "4h": 93,
+            "12h": 245,
+            "24h": 476
+        },
+        "buyers": {
+            "1h": 8,
+            "4h": 10,
+            "12h": 11,
+            "24h": 11
+        },
+        "sellers": {
+            "1h": 10,
+            "4h": 12,
+            "12h": 12,
+            "24h": 13
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x658cda444ac43b0a7da13d638700931319b64014",
+        "name": "SMARTMALL TOKEN",
+        "uniqueName": "smartmalltoken-2",
+        "symbol": "SMT",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x89_0x658cda444ac43b0a7da13d638700931319b64014_a29644b24ef48a294add7f834fa3c310.webp",
+        "usdPrice": 0.00273492535991,
+        "createdAt": 1705231293,
+        "marketCap": 273493,
+        "liquidityUsd": 16816,
+        "holders": 148240,
+        "pricePercentChange": {
+            "1h": -0.0016533998964831935,
+            "4h": -0.010633105947423253,
+            "12h": -0.013036915899273468,
+            "24h": -0.04913395550630836
+        },
+        "totalVolume": {
+            "1h": 14,
+            "4h": 28,
+            "12h": 83,
+            "24h": 90
+        },
+        "transactions": {
+            "1h": 57,
+            "4h": 106,
+            "12h": 291,
+            "24h": 317
+        },
+        "buyTransactions": {
+            "1h": 45,
+            "4h": 74,
+            "12h": 198,
+            "24h": 223
+        },
+        "sellTransactions": {
+            "1h": 12,
+            "4h": 32,
+            "12h": 93,
+            "24h": 94
+        },
+        "buyers": {
+            "1h": 36,
+            "4h": 38,
+            "12h": 67,
+            "24h": 88
+        },
+        "sellers": {
+            "1h": 8,
+            "4h": 17,
+            "12h": 20,
+            "24h": 20
+        }
+    },
+    {
+        "chainId": "0x89",
+        "tokenAddress": "0x90aed5320d64fecb6003ffc561f494dfe9f09a0c",
+        "name": "OZZORA",
+        "uniqueName": null,
+        "symbol": "OZZO",
+        "decimals": 18,
+        "logo": null,
+        "usdPrice": 5.54754315975e-7,
+        "createdAt": 1768281681,
+        "marketCap": 171723,
+        "liquidityUsd": 72,
+        "holders": 742,
+        "pricePercentChange": {
+            "1h": -0.10252000276073926,
+            "4h": -0.09213016339134034,
+            "12h": -0.03840879049728155,
+            "24h": -0.11871337945016795
+        },
+        "totalVolume": {
+            "1h": 3,
+            "4h": 61,
+            "12h": 243,
+            "24h": 399
+        },
+        "transactions": {
+            "1h": 2,
+            "4h": 52,
+            "12h": 237,
+            "24h": 397
+        },
+        "buyTransactions": {
+            "1h": 0,
+            "4h": 30,
+            "12h": 140,
+            "24h": 228
+        },
+        "sellTransactions": {
+            "1h": 2,
+            "4h": 22,
+            "12h": 97,
+            "24h": 169
+        },
+        "buyers": {
+            "1h": 0,
+            "4h": 14,
+            "12h": 34,
+            "24h": 42
+        },
+        "sellers": {
+            "1h": 1,
+            "4h": 10,
+            "12h": 38,
+            "24h": 49
+        }
+    }
+]

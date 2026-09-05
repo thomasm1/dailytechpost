@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { Blog } from '../../models/blog.model';
+import { Blog } from '../../model/blog.model';
 import { environment } from '../../../environments/environment';
 import { Subject } from 'rxjs';
 import { of } from 'rxjs';

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { CategoryMod } from '../models/category-mods.model';
+import { CategoryMod } from '../model/category-mods.model';
 
 export const SET_CURRENT_CATEGORIES = '[Category] Set Current Categories';
 export const SET_UPDATED_CATEGORIES = '[Category] Set Updated Categories';

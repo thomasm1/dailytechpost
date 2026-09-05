@@ -1,0 +1,1402 @@
+[
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xd82544bf0dfe8385ef8fa34d67e6e4940cc63e16",
+        "name": "MYX",
+        "uniqueName": "myx-2",
+        "symbol": "MYX",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xd82544bf0dfe8385ef8fa34d67e6e4940cc63e16_4572e5cfeb3177f94320e503d3c93c2a.webp",
+        "usdPrice": 7.24639949445,
+        "createdAt": 1746450444,
+        "marketCap": 7246399494,
+        "liquidityUsd": 1011837,
+        "holders": 57384,
+        "pricePercentChange": {
+            "1h": 0.031860272548132576,
+            "4h": 0.12427743570517565,
+            "12h": 0.169603380669352,
+            "24h": 0.262024243444436
+        },
+        "totalVolume": {
+            "1h": 416230,
+            "4h": 1549594,
+            "12h": 2923493,
+            "24h": 3504152
+        },
+        "transactions": {
+            "1h": 2155,
+            "4h": 7656,
+            "12h": 15195,
+            "24h": 18935
+        },
+        "buyTransactions": {
+            "1h": 1008,
+            "4h": 3663,
+            "12h": 7340,
+            "24h": 9278
+        },
+        "sellTransactions": {
+            "1h": 1147,
+            "4h": 3993,
+            "12h": 7855,
+            "24h": 9657
+        },
+        "buyers": {
+            "1h": 319,
+            "4h": 514,
+            "12h": 657,
+            "24h": 944
+        },
+        "sellers": {
+            "1h": 391,
+            "4h": 724,
+            "12h": 1007,
+            "24h": 1116
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x000ae314e2a2172a039b26378814c252734f556a",
+        "name": "Aster",
+        "uniqueName": null,
+        "symbol": "ASTER",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x000ae314e2a2172a039b26378814c252734f556a_d13e91ac0a38cc832c2d8ebd66005b45.webp",
+        "usdPrice": 0.67035047759,
+        "createdAt": 1758392859,
+        "marketCap": 5362803821,
+        "liquidityUsd": 225888,
+        "holders": 213540,
+        "pricePercentChange": {
+            "1h": 0.009191907101143417,
+            "4h": 0.017256155227662023,
+            "12h": 0.053918908913832254,
+            "24h": 0.04605169094606246
+        },
+        "totalVolume": {
+            "1h": 169658,
+            "4h": 602509,
+            "12h": 2068375,
+            "24h": 3939572
+        },
+        "transactions": {
+            "1h": 603,
+            "4h": 2518,
+            "12h": 8935,
+            "24h": 15862
+        },
+        "buyTransactions": {
+            "1h": 241,
+            "4h": 1109,
+            "12h": 4273,
+            "24h": 8150
+        },
+        "sellTransactions": {
+            "1h": 362,
+            "4h": 1409,
+            "12h": 4662,
+            "24h": 7712
+        },
+        "buyers": {
+            "1h": 146,
+            "4h": 452,
+            "12h": 1492,
+            "24h": 2707
+        },
+        "sellers": {
+            "1h": 189,
+            "4h": 502,
+            "12h": 1340,
+            "24h": 1882
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xda7ad9dea9397cffddae2f8a052b82f1484252b3",
+        "name": "River",
+        "uniqueName": null,
+        "symbol": "RIVER",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xda7ad9dea9397cffddae2f8a052b82f1484252b3_d959abd4468a9ba17044e3ccf680b6d6.webp",
+        "usdPrice": 54.0508319279,
+        "createdAt": 1758530935,
+        "marketCap": 2276323845,
+        "liquidityUsd": 286368,
+        "holders": 25720,
+        "pricePercentChange": {
+            "1h": -0.006742485159302312,
+            "4h": -0.003382130470174241,
+            "12h": 0.05211070191083325,
+            "24h": 0.2510519165759163
+        },
+        "totalVolume": {
+            "1h": 75674,
+            "4h": 571360,
+            "12h": 3091481,
+            "24h": 5312616
+        },
+        "transactions": {
+            "1h": 418,
+            "4h": 2505,
+            "12h": 12361,
+            "24h": 23620
+        },
+        "buyTransactions": {
+            "1h": 191,
+            "4h": 1152,
+            "12h": 5849,
+            "24h": 11519
+        },
+        "sellTransactions": {
+            "1h": 227,
+            "4h": 1353,
+            "12h": 6512,
+            "24h": 12101
+        },
+        "buyers": {
+            "1h": 77,
+            "4h": 361,
+            "12h": 977,
+            "24h": 1380
+        },
+        "sellers": {
+            "1h": 93,
+            "4h": 414,
+            "12h": 1049,
+            "24h": 1423
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x194b302a4b0a79795fb68e2adf1b8c9ec5ff8d1f",
+        "name": "WebKey DAO",
+        "uniqueName": "web-key-dao-2",
+        "symbol": "wkeyDAO",
+        "decimals": 9,
+        "logo": "https://logo.moralis.io/0x38_0x194b302a4b0a79795fb68e2adf1b8c9ec5ff8d1f_ee17893bf940d4b6d7ab471eaa83b1e4.webp",
+        "usdPrice": 6.49082148509,
+        "createdAt": 1730979318,
+        "marketCap": 641079753,
+        "liquidityUsd": 1655502,
+        "holders": 1162121,
+        "pricePercentChange": {
+            "1h": 0.007397556693326597,
+            "4h": 0.0013134460531236587,
+            "12h": -0.05362836571017903,
+            "24h": -0.010470925987564208
+        },
+        "totalVolume": {
+            "1h": 106155,
+            "4h": 1268723,
+            "12h": 6016514,
+            "24h": 11882024
+        },
+        "transactions": {
+            "1h": 1747,
+            "4h": 18444,
+            "12h": 79901,
+            "24h": 162158
+        },
+        "buyTransactions": {
+            "1h": 689,
+            "4h": 6587,
+            "12h": 26770,
+            "24h": 54037
+        },
+        "sellTransactions": {
+            "1h": 1058,
+            "4h": 11857,
+            "12h": 53131,
+            "24h": 108121
+        },
+        "buyers": {
+            "1h": 418,
+            "4h": 3827,
+            "12h": 13164,
+            "24h": 23106
+        },
+        "sellers": {
+            "1h": 351,
+            "4h": 3314,
+            "12h": 12204,
+            "24h": 20829
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x924fa68a0fc644485b8df8abfa0a41c2e7744444",
+        "name": "币安人生",
+        "uniqueName": null,
+        "symbol": "币安人生",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x924fa68a0fc644485b8df8abfa0a41c2e7744444_f788868e383a513cfd2db7ac29c4a5a4.webp",
+        "usdPrice": 0.17997121229,
+        "createdAt": 1759590092,
+        "marketCap": 179971212,
+        "liquidityUsd": 2212253,
+        "holders": 47835,
+        "pricePercentChange": {
+            "1h": -0.005630658154073397,
+            "4h": 0.018097427568921916,
+            "12h": 0.030467946779999366,
+            "24h": 0.026165743595198274
+        },
+        "totalVolume": {
+            "1h": 197369,
+            "4h": 364503,
+            "12h": 810517,
+            "24h": 1156956
+        },
+        "transactions": {
+            "1h": 190,
+            "4h": 575,
+            "12h": 2228,
+            "24h": 4388
+        },
+        "buyTransactions": {
+            "1h": 83,
+            "4h": 290,
+            "12h": 1009,
+            "24h": 2273
+        },
+        "sellTransactions": {
+            "1h": 107,
+            "4h": 285,
+            "12h": 1219,
+            "24h": 2115
+        },
+        "buyers": {
+            "1h": 60,
+            "4h": 127,
+            "12h": 300,
+            "24h": 742
+        },
+        "sellers": {
+            "1h": 62,
+            "4h": 114,
+            "12h": 430,
+            "24h": 653
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x001208f7f53f78db2b32e1c68198d3e8f320aa23",
+        "name": "APD",
+        "uniqueName": null,
+        "symbol": "APD",
+        "decimals": 9,
+        "logo": "https://logo.moralis.io/0x38_0x001208f7f53f78db2b32e1c68198d3e8f320aa23_92e78da4bc8bb793e6172413ee4782d5.webp",
+        "usdPrice": 0.0224631364429,
+        "createdAt": 1754679575,
+        "marketCap": 123859964,
+        "liquidityUsd": 5235780,
+        "holders": 684845,
+        "pricePercentChange": {
+            "1h": -0.005485415683581001,
+            "4h": -0.014192426674077496,
+            "12h": -0.031805954611570646,
+            "24h": -0.09501000709503929
+        },
+        "totalVolume": {
+            "1h": 59615,
+            "4h": 266389,
+            "12h": 838713,
+            "24h": 1816621
+        },
+        "transactions": {
+            "1h": 1120,
+            "4h": 4371,
+            "12h": 12887,
+            "24h": 26099
+        },
+        "buyTransactions": {
+            "1h": 566,
+            "4h": 2211,
+            "12h": 6549,
+            "24h": 13086
+        },
+        "sellTransactions": {
+            "1h": 554,
+            "4h": 2160,
+            "12h": 6338,
+            "24h": 13013
+        },
+        "buyers": {
+            "1h": 412,
+            "4h": 766,
+            "12h": 1076,
+            "24h": 1280
+        },
+        "sellers": {
+            "1h": 388,
+            "4h": 654,
+            "12h": 755,
+            "24h": 962
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xed9ae3def8d6f052971bb8b6d1975ff267cf9aad",
+        "name": "Bluwhale AI",
+        "uniqueName": null,
+        "symbol": "BLUAI",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xed9ae3def8d6f052971bb8b6d1975ff267cf9aad_33d29c13ff8740d9d96518a259fa38e1.webp",
+        "usdPrice": 0.00657452089076,
+        "createdAt": 1760966384,
+        "marketCap": 65745209,
+        "liquidityUsd": 298465,
+        "holders": 42806,
+        "pricePercentChange": {
+            "1h": -0.033017641281588815,
+            "4h": -0.05843840797924531,
+            "12h": -0.12344534516345827,
+            "24h": 0.046421529767437665
+        },
+        "totalVolume": {
+            "1h": 60113,
+            "4h": 298567,
+            "12h": 3171227,
+            "24h": 5224268
+        },
+        "transactions": {
+            "1h": 465,
+            "4h": 2249,
+            "12h": 21336,
+            "24h": 35688
+        },
+        "buyTransactions": {
+            "1h": 237,
+            "4h": 1121,
+            "12h": 10543,
+            "24h": 17783
+        },
+        "sellTransactions": {
+            "1h": 228,
+            "4h": 1128,
+            "12h": 10793,
+            "24h": 17905
+        },
+        "buyers": {
+            "1h": 139,
+            "4h": 313,
+            "12h": 814,
+            "24h": 1004
+        },
+        "sellers": {
+            "1h": 148,
+            "4h": 332,
+            "12h": 880,
+            "24h": 1076
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x53ec33cd4fa46b9eced9ca3f6db626c5ffcd55cc",
+        "name": "DeAgentAI",
+        "uniqueName": null,
+        "symbol": "AIA",
+        "decimals": 9,
+        "logo": null,
+        "usdPrice": 0.21921592851,
+        "createdAt": 1765778679,
+        "marketCap": 43843186,
+        "liquidityUsd": 655917,
+        "holders": 2184,
+        "pricePercentChange": {
+            "1h": 0.011439677028694481,
+            "4h": 0.008482768297591006,
+            "12h": -0.059258076765734254,
+            "24h": 0.014731873262072925
+        },
+        "totalVolume": {
+            "1h": 65926,
+            "4h": 446152,
+            "12h": 1953662,
+            "24h": 4628506
+        },
+        "transactions": {
+            "1h": 439,
+            "4h": 2432,
+            "12h": 9779,
+            "24h": 22286
+        },
+        "buyTransactions": {
+            "1h": 228,
+            "4h": 1238,
+            "12h": 4767,
+            "24h": 11224
+        },
+        "sellTransactions": {
+            "1h": 211,
+            "4h": 1194,
+            "12h": 5012,
+            "24h": 11062
+        },
+        "buyers": {
+            "1h": 94,
+            "4h": 219,
+            "12h": 441,
+            "24h": 661
+        },
+        "sellers": {
+            "1h": 100,
+            "4h": 225,
+            "12h": 416,
+            "24h": 617
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x82ec31d69b3c289e541b50e30681fd1acad24444",
+        "name": "哈基米",
+        "uniqueName": null,
+        "symbol": "哈基米",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x82ec31d69b3c289e541b50e30681fd1acad24444_19ae52725e98907bafb3b85ea46537dd.webp",
+        "usdPrice": 0.0416763579613,
+        "createdAt": 1759878542,
+        "marketCap": 41676358,
+        "liquidityUsd": 945537,
+        "holders": 14816,
+        "pricePercentChange": {
+            "1h": 0.0472984420329577,
+            "4h": 0.07578661859762686,
+            "12h": 0.0023067635153206137,
+            "24h": 0.17278668366760913
+        },
+        "totalVolume": {
+            "1h": 455433,
+            "4h": 555799,
+            "12h": 1589744,
+            "24h": 2926087
+        },
+        "transactions": {
+            "1h": 1221,
+            "4h": 1544,
+            "12h": 3962,
+            "24h": 7428
+        },
+        "buyTransactions": {
+            "1h": 577,
+            "4h": 716,
+            "12h": 2102,
+            "24h": 3575
+        },
+        "sellTransactions": {
+            "1h": 644,
+            "4h": 828,
+            "12h": 1860,
+            "24h": 3853
+        },
+        "buyers": {
+            "1h": 218,
+            "4h": 283,
+            "12h": 612,
+            "24h": 876
+        },
+        "sellers": {
+            "1h": 271,
+            "4h": 337,
+            "12h": 624,
+            "24h": 919
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x8dedf84656fa932157e27c060d8613824e7979e3",
+        "name": "STBL_Token - STBL Governance Token",
+        "uniqueName": null,
+        "symbol": "STBL",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x8dedf84656fa932157e27c060d8613824e7979e3_ddc60907ee46d5c2307cb41db8204654.webp",
+        "usdPrice": 0.0420398751811,
+        "createdAt": 1757690491,
+        "marketCap": 29427913,
+        "liquidityUsd": 1082756,
+        "holders": 16550,
+        "pricePercentChange": {
+            "1h": 0.0034252279104506934,
+            "4h": -0.0529008354694289,
+            "12h": -0.056740765870921646,
+            "24h": -0.05166548935930087
+        },
+        "totalVolume": {
+            "1h": 95748,
+            "4h": 492857,
+            "12h": 956213,
+            "24h": 1747476
+        },
+        "transactions": {
+            "1h": 425,
+            "4h": 2303,
+            "12h": 4571,
+            "24h": 8732
+        },
+        "buyTransactions": {
+            "1h": 214,
+            "4h": 1182,
+            "12h": 2301,
+            "24h": 4329
+        },
+        "sellTransactions": {
+            "1h": 211,
+            "4h": 1121,
+            "12h": 2270,
+            "24h": 4403
+        },
+        "buyers": {
+            "1h": 89,
+            "4h": 317,
+            "12h": 386,
+            "24h": 435
+        },
+        "sellers": {
+            "1h": 78,
+            "4h": 204,
+            "12h": 295,
+            "24h": 401
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xc51a9250795c0186a6fb4a7d20a90330651e4444",
+        "name": "我踏马来了",
+        "uniqueName": null,
+        "symbol": "我踏马来了",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xc51a9250795c0186a6fb4a7d20a90330651e4444_b36ff75ea4936e2dfd62be8b11098f0b.webp",
+        "usdPrice": 0.0290791467848,
+        "createdAt": 1767246410,
+        "marketCap": 29079147,
+        "liquidityUsd": 849584,
+        "holders": 15752,
+        "pricePercentChange": {
+            "1h": 0.01821352789133851,
+            "4h": 0.03491387499966863,
+            "12h": 0.03755724918346682,
+            "24h": -0.05872902590751452
+        },
+        "totalVolume": {
+            "1h": 82856,
+            "4h": 318161,
+            "12h": 1420280,
+            "24h": 3161745
+        },
+        "transactions": {
+            "1h": 286,
+            "4h": 995,
+            "12h": 4458,
+            "24h": 10761
+        },
+        "buyTransactions": {
+            "1h": 126,
+            "4h": 513,
+            "12h": 2189,
+            "24h": 5222
+        },
+        "sellTransactions": {
+            "1h": 160,
+            "4h": 482,
+            "12h": 2269,
+            "24h": 5539
+        },
+        "buyers": {
+            "1h": 71,
+            "4h": 187,
+            "12h": 579,
+            "24h": 1072
+        },
+        "sellers": {
+            "1h": 80,
+            "4h": 197,
+            "12h": 664,
+            "24h": 1145
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x6261963ebe9ff014aad10ecc3b0238d4d04e8353",
+        "name": "Hana Token",
+        "uniqueName": null,
+        "symbol": "HANA",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x6261963ebe9ff014aad10ecc3b0238d4d04e8353_dca0501b65ea90b4048ad0e815d9f3fd.webp",
+        "usdPrice": 0.0242964679731,
+        "createdAt": 1758766544,
+        "marketCap": 24296468,
+        "liquidityUsd": 558807,
+        "holders": 7786,
+        "pricePercentChange": {
+            "1h": 0.005432997112263672,
+            "4h": -0.018788206503997464,
+            "12h": 0.030199225957095,
+            "24h": 0.012270787525983786
+        },
+        "totalVolume": {
+            "1h": 97995,
+            "4h": 782665,
+            "12h": 2933766,
+            "24h": 6312882
+        },
+        "transactions": {
+            "1h": 584,
+            "4h": 4251,
+            "12h": 15932,
+            "24h": 33766
+        },
+        "buyTransactions": {
+            "1h": 288,
+            "4h": 2091,
+            "12h": 7853,
+            "24h": 16701
+        },
+        "sellTransactions": {
+            "1h": 296,
+            "4h": 2160,
+            "12h": 8079,
+            "24h": 17065
+        },
+        "buyers": {
+            "1h": 93,
+            "4h": 290,
+            "12h": 556,
+            "24h": 809
+        },
+        "sellers": {
+            "1h": 106,
+            "4h": 334,
+            "12h": 632,
+            "24h": 842
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x011ebe7d75e2c9d1e0bd0be0bef5c36f0a90075f",
+        "name": "STABLE",
+        "uniqueName": null,
+        "symbol": "STABLE",
+        "decimals": 18,
+        "logo": null,
+        "usdPrice": 0.0201110655274,
+        "createdAt": 1765130706,
+        "marketCap": 18126643,
+        "liquidityUsd": 267497,
+        "holders": 5713,
+        "pricePercentChange": {
+            "1h": -0.0042575945167420345,
+            "4h": -0.023774992556439636,
+            "12h": -0.018282618908446548,
+            "24h": 0.058799130275819164
+        },
+        "totalVolume": {
+            "1h": 47093,
+            "4h": 354396,
+            "12h": 1994984,
+            "24h": 3301291
+        },
+        "transactions": {
+            "1h": 313,
+            "4h": 2244,
+            "12h": 10860,
+            "24h": 19333
+        },
+        "buyTransactions": {
+            "1h": 143,
+            "4h": 1110,
+            "12h": 5328,
+            "24h": 9537
+        },
+        "sellTransactions": {
+            "1h": 170,
+            "4h": 1134,
+            "12h": 5532,
+            "24h": 9796
+        },
+        "buyers": {
+            "1h": 78,
+            "4h": 278,
+            "12h": 577,
+            "24h": 641
+        },
+        "sellers": {
+            "1h": 93,
+            "4h": 254,
+            "12h": 587,
+            "24h": 725
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xb2d97c4ed2d0ef452654f5cab3da3735b5e6f3ab",
+        "name": "FIGHT",
+        "uniqueName": null,
+        "symbol": "FIGHT",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xb2d97c4ed2d0ef452654f5cab3da3735b5e6f3ab_4643e28d7cbd9b52cebb4c02ad4fe1c8.webp",
+        "usdPrice": 0.0290805507936,
+        "createdAt": 1769108723,
+        "marketCap": 15772032,
+        "liquidityUsd": 7242,
+        "holders": 2598,
+        "pricePercentChange": {
+            "1h": 0.032112083446556194,
+            "4h": 0.2465482627018144,
+            "12h": 0.3442503489855126,
+            "24h": 0.41239333041950055
+        },
+        "totalVolume": {
+            "1h": 74751,
+            "4h": 882995,
+            "12h": 10629529,
+            "24h": 24047618
+        },
+        "transactions": {
+            "1h": 1071,
+            "4h": 7627,
+            "12h": 32976,
+            "24h": 56485
+        },
+        "buyTransactions": {
+            "1h": 533,
+            "4h": 3867,
+            "12h": 16392,
+            "24h": 28301
+        },
+        "sellTransactions": {
+            "1h": 538,
+            "4h": 3760,
+            "12h": 16584,
+            "24h": 28184
+        },
+        "buyers": {
+            "1h": 216,
+            "4h": 704,
+            "12h": 1179,
+            "24h": 1358
+        },
+        "sellers": {
+            "1h": 233,
+            "4h": 722,
+            "12h": 1284,
+            "24h": 1430
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xf74548802f4c700315f019fde17178b392ee4444",
+        "name": "memes will continue",
+        "uniqueName": null,
+        "symbol": "memes",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xf74548802f4c700315f019fde17178b392ee4444_dcbf67f7afac3cfac79caf3f19d50aaf.webp",
+        "usdPrice": 0.0091234793535,
+        "createdAt": 1768966200,
+        "marketCap": 9123479,
+        "liquidityUsd": 150951,
+        "holders": 7352,
+        "pricePercentChange": {
+            "1h": -0.06821312584523631,
+            "4h": -0.09874092686138783,
+            "12h": -0.1031615299253327,
+            "24h": 0.19465556193318942
+        },
+        "totalVolume": {
+            "1h": 424611,
+            "4h": 2297324,
+            "12h": 12496730,
+            "24h": 15136817
+        },
+        "transactions": {
+            "1h": 4145,
+            "4h": 21517,
+            "12h": 85707,
+            "24h": 102856
+        },
+        "buyTransactions": {
+            "1h": 2149,
+            "4h": 10878,
+            "12h": 43434,
+            "24h": 52517
+        },
+        "sellTransactions": {
+            "1h": 1996,
+            "4h": 10639,
+            "12h": 42273,
+            "24h": 50339
+        },
+        "buyers": {
+            "1h": 581,
+            "4h": 1448,
+            "12h": 4626,
+            "24h": 5887
+        },
+        "sellers": {
+            "1h": 511,
+            "4h": 1528,
+            "12h": 5139,
+            "24h": 6269
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xef91c1eae97edcd429a5ad197753a6c3e4214444",
+        "name": "一",
+        "uniqueName": null,
+        "symbol": "一",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xef91c1eae97edcd429a5ad197753a6c3e4214444_cd4ba8ad36701b7a7dbc6c4c76a872d6.webp",
+        "usdPrice": 0.00611817085752,
+        "createdAt": 1768515395,
+        "marketCap": 6118171,
+        "liquidityUsd": 121206,
+        "holders": 4859,
+        "pricePercentChange": {
+            "1h": 0.0027964701525599414,
+            "4h": 0.05371886770500314,
+            "12h": -0.08586571530068374,
+            "24h": -0.1045966866248325
+        },
+        "totalVolume": {
+            "1h": 566467,
+            "4h": 2510652,
+            "12h": 7954682,
+            "24h": 17232946
+        },
+        "transactions": {
+            "1h": 1771,
+            "4h": 7648,
+            "12h": 24283,
+            "24h": 51390
+        },
+        "buyTransactions": {
+            "1h": 795,
+            "4h": 3462,
+            "12h": 11064,
+            "24h": 23374
+        },
+        "sellTransactions": {
+            "1h": 976,
+            "4h": 4186,
+            "12h": 13219,
+            "24h": 28016
+        },
+        "buyers": {
+            "1h": 172,
+            "4h": 258,
+            "12h": 458,
+            "24h": 542
+        },
+        "sellers": {
+            "1h": 158,
+            "4h": 223,
+            "12h": 408,
+            "24h": 495
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x61fac5f038515572d6f42d4bcb6b581642753d50",
+        "name": "INFINIT",
+        "uniqueName": null,
+        "symbol": "IN",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x61fac5f038515572d6f42d4bcb6b581642753d50_bc6b12d2d9c72c76143e3d591bf2bdf1.webp",
+        "usdPrice": 0.0800974609891,
+        "createdAt": 1762310141,
+        "marketCap": 5741194,
+        "liquidityUsd": 802792,
+        "holders": 17102,
+        "pricePercentChange": {
+            "1h": 0.006124417251103371,
+            "4h": -0.02812510393146746,
+            "12h": -0.03353544861622715,
+            "24h": 0.027969702040606573
+        },
+        "totalVolume": {
+            "1h": 55333,
+            "4h": 428234,
+            "12h": 2531415,
+            "24h": 10668167
+        },
+        "transactions": {
+            "1h": 628,
+            "4h": 3456,
+            "12h": 14791,
+            "24h": 51845
+        },
+        "buyTransactions": {
+            "1h": 312,
+            "4h": 1709,
+            "12h": 7390,
+            "24h": 24978
+        },
+        "sellTransactions": {
+            "1h": 316,
+            "4h": 1747,
+            "12h": 7401,
+            "24h": 26867
+        },
+        "buyers": {
+            "1h": 207,
+            "4h": 851,
+            "12h": 2157,
+            "24h": 3805
+        },
+        "sellers": {
+            "1h": 231,
+            "4h": 874,
+            "12h": 2106,
+            "24h": 4331
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xff5d99a5c16cf2ffb4e7da1d7c42a791e70e4444",
+        "name": "Ucan fix life in1day",
+        "uniqueName": null,
+        "symbol": "1",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xff5d99a5c16cf2ffb4e7da1d7c42a791e70e4444_eb234ccb031b5a53c0b137a8e0650ddb.webp",
+        "usdPrice": 0.00272767493789,
+        "createdAt": 1768697541,
+        "marketCap": 2727675,
+        "liquidityUsd": 83016,
+        "holders": 5321,
+        "pricePercentChange": {
+            "1h": 0.005662570011622399,
+            "4h": 0.041625370697079736,
+            "12h": -0.22344489665524606,
+            "24h": -0.3661287165258823
+        },
+        "totalVolume": {
+            "1h": 93351,
+            "4h": 439544,
+            "12h": 1984445,
+            "24h": 3490143
+        },
+        "transactions": {
+            "1h": 1143,
+            "4h": 5325,
+            "12h": 22035,
+            "24h": 39045
+        },
+        "buyTransactions": {
+            "1h": 630,
+            "4h": 2534,
+            "12h": 11080,
+            "24h": 19841
+        },
+        "sellTransactions": {
+            "1h": 513,
+            "4h": 2791,
+            "12h": 10955,
+            "24h": 19204
+        },
+        "buyers": {
+            "1h": 187,
+            "4h": 629,
+            "12h": 1574,
+            "24h": 2222
+        },
+        "sellers": {
+            "1h": 178,
+            "4h": 595,
+            "12h": 1606,
+            "24h": 2263
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x4fa7c69a7b69f8bc48233024d546bc299d6b03bf",
+        "name": "quq",
+        "uniqueName": "quq-41400985",
+        "symbol": "quq",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x4fa7c69a7b69f8bc48233024d546bc299d6b03bf_43115c19e734a6f67807f8a2c328e2e0.webp",
+        "usdPrice": 0.0021941911364,
+        "createdAt": 1751165165,
+        "marketCap": 2194191,
+        "liquidityUsd": 1378523,
+        "holders": 52335,
+        "pricePercentChange": {
+            "1h": 0.00002109873928961883,
+            "4h": -0.000011948237470192981,
+            "12h": -0.0004943499389265695,
+            "24h": 0.09904133983237921
+        },
+        "totalVolume": {
+            "1h": 2483664,
+            "4h": 17462259,
+            "12h": 108905243,
+            "24h": 226088457
+        },
+        "transactions": {
+            "1h": 688,
+            "4h": 7004,
+            "12h": 29664,
+            "24h": 58756
+        },
+        "buyTransactions": {
+            "1h": 342,
+            "4h": 3893,
+            "12h": 15234,
+            "24h": 29953
+        },
+        "sellTransactions": {
+            "1h": 346,
+            "4h": 3111,
+            "12h": 14430,
+            "24h": 28803
+        },
+        "buyers": {
+            "1h": 37,
+            "4h": 259,
+            "12h": 1220,
+            "24h": 2186
+        },
+        "sellers": {
+            "1h": 37,
+            "4h": 271,
+            "12h": 1230,
+            "24h": 2236
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x87d87671aefb97610390cd7fdbb4281c3f734444",
+        "name": "Crypto winter",
+        "uniqueName": null,
+        "symbol": "Crypto winter",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x87d87671aefb97610390cd7fdbb4281c3f734444_e046bfae16988337ced41650bf8c5a72.webp",
+        "usdPrice": 0.00192540276166,
+        "createdAt": 1767501681,
+        "marketCap": 1925403,
+        "liquidityUsd": 123074,
+        "holders": 4949,
+        "pricePercentChange": {
+            "1h": -0.00665145635779768,
+            "4h": 0.28474171893808914,
+            "12h": -0.08691231973374977,
+            "24h": 0.112790332486329
+        },
+        "totalVolume": {
+            "1h": 51080,
+            "4h": 1054391,
+            "12h": 1506592,
+            "24h": 1952767
+        },
+        "transactions": {
+            "1h": 253,
+            "4h": 4593,
+            "12h": 7298,
+            "24h": 9894
+        },
+        "buyTransactions": {
+            "1h": 147,
+            "4h": 2493,
+            "12h": 4189,
+            "24h": 5558
+        },
+        "sellTransactions": {
+            "1h": 106,
+            "4h": 2100,
+            "12h": 3109,
+            "24h": 4336
+        },
+        "buyers": {
+            "1h": 100,
+            "4h": 1052,
+            "12h": 1447,
+            "24h": 1769
+        },
+        "sellers": {
+            "1h": 75,
+            "4h": 968,
+            "12h": 1330,
+            "24h": 1676
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xe1e93e92c0c2aff2dc4d7d4a8b250d973cad4444",
+        "name": "三维威廉泰尔企鹅",
+        "uniqueName": null,
+        "symbol": "恶俗企鹅",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xe1e93e92c0c2aff2dc4d7d4a8b250d973cad4444_74d0c0f18d11eb858e2df199c1b2087c.webp",
+        "usdPrice": 0.0014875090905,
+        "createdAt": 1761420931,
+        "marketCap": 1487509,
+        "liquidityUsd": 141727,
+        "holders": 9159,
+        "pricePercentChange": {
+            "1h": -0.08172204719393786,
+            "4h": -0.022931787663219513,
+            "12h": -0.1599218460751467,
+            "24h": 0.49016370177517965
+        },
+        "totalVolume": {
+            "1h": 180248,
+            "4h": 537931,
+            "12h": 1655051,
+            "24h": 4852539
+        },
+        "transactions": {
+            "1h": 1590,
+            "4h": 4590,
+            "12h": 13542,
+            "24h": 33458
+        },
+        "buyTransactions": {
+            "1h": 829,
+            "4h": 2355,
+            "12h": 7051,
+            "24h": 17422
+        },
+        "sellTransactions": {
+            "1h": 761,
+            "4h": 2235,
+            "12h": 6491,
+            "24h": 16036
+        },
+        "buyers": {
+            "1h": 299,
+            "4h": 534,
+            "12h": 906,
+            "24h": 1922
+        },
+        "sellers": {
+            "1h": 284,
+            "4h": 504,
+            "12h": 914,
+            "24h": 1820
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x89e0fd879645c39a3b7d46559d6129c897c44444",
+        "name": "抖音热搜第四的狼格林",
+        "uniqueName": null,
+        "symbol": "格林",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x89e0fd879645c39a3b7d46559d6129c897c44444_73ec1bab6a7ff6ba2c5086921d26d6d0.webp",
+        "usdPrice": 0.0014856540177,
+        "createdAt": 1768288860,
+        "marketCap": 1485654,
+        "liquidityUsd": 82594,
+        "holders": 1806,
+        "pricePercentChange": {
+            "1h": 0.6900385071049774,
+            "4h": 1.0003638640139312,
+            "12h": 1.1614583328151058,
+            "24h": 2.5871113963482855
+        },
+        "totalVolume": {
+            "1h": 399854,
+            "4h": 471382,
+            "12h": 849135,
+            "24h": 1497552
+        },
+        "transactions": {
+            "1h": 1324,
+            "4h": 1771,
+            "12h": 3664,
+            "24h": 6636
+        },
+        "buyTransactions": {
+            "1h": 739,
+            "4h": 977,
+            "12h": 2041,
+            "24h": 3633
+        },
+        "sellTransactions": {
+            "1h": 585,
+            "4h": 794,
+            "12h": 1623,
+            "24h": 3003
+        },
+        "buyers": {
+            "1h": 366,
+            "4h": 508,
+            "12h": 977,
+            "24h": 1417
+        },
+        "sellers": {
+            "1h": 351,
+            "4h": 473,
+            "12h": 882,
+            "24h": 1307
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x1e3d869c2c76f3abcd4fc73f8f6e851110a64444",
+        "name": "一小步",
+        "uniqueName": null,
+        "symbol": "一小步",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x1e3d869c2c76f3abcd4fc73f8f6e851110a64444_6dc977acf8e8080084e87080a181828e.webp",
+        "usdPrice": 0.000501107052211,
+        "createdAt": 1769242540,
+        "marketCap": 501107,
+        "liquidityUsd": 40905,
+        "holders": 1145,
+        "pricePercentChange": {
+            "1h": -0.021802040706736178,
+            "4h": 0.8373771243250933,
+            "12h": 5.383664709419204,
+            "24h": 5.383664709419204
+        },
+        "totalVolume": {
+            "1h": 37357,
+            "4h": 195226,
+            "12h": 981028,
+            "24h": 981028
+        },
+        "transactions": {
+            "1h": 301,
+            "4h": 1338,
+            "12h": 7113,
+            "24h": 7113
+        },
+        "buyTransactions": {
+            "1h": 176,
+            "4h": 852,
+            "12h": 4162,
+            "24h": 4162
+        },
+        "sellTransactions": {
+            "1h": 125,
+            "4h": 486,
+            "12h": 2951,
+            "24h": 2951
+        },
+        "buyers": {
+            "1h": 98,
+            "4h": 429,
+            "12h": 1663,
+            "24h": 1663
+        },
+        "sellers": {
+            "1h": 83,
+            "4h": 253,
+            "12h": 1086,
+            "24h": 1086
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0xe715f10f4101f0364dfa7b0a623af54235a74444",
+        "name": "Nietzschean Penguin",
+        "uniqueName": null,
+        "symbol": "PENGUIN",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0xe715f10f4101f0364dfa7b0a623af54235a74444_df30ae6e7b1e08c2f64374cb0fb39e52.webp",
+        "usdPrice": 0.000304573505854,
+        "createdAt": 1769041131,
+        "marketCap": 304574,
+        "liquidityUsd": 26928,
+        "holders": 1064,
+        "pricePercentChange": {
+            "1h": 0.35482458792220006,
+            "4h": 0.8915729918714392,
+            "12h": -0.48510100781153603,
+            "24h": 3.283164164514047
+        },
+        "totalVolume": {
+            "1h": 109258,
+            "4h": 287470,
+            "12h": 1567160,
+            "24h": 7185859
+        },
+        "transactions": {
+            "1h": 846,
+            "4h": 2109,
+            "12h": 10894,
+            "24h": 38850
+        },
+        "buyTransactions": {
+            "1h": 446,
+            "4h": 1135,
+            "12h": 5985,
+            "24h": 21359
+        },
+        "sellTransactions": {
+            "1h": 400,
+            "4h": 974,
+            "12h": 4909,
+            "24h": 17491
+        },
+        "buyers": {
+            "1h": 248,
+            "4h": 542,
+            "12h": 1985,
+            "24h": 4361
+        },
+        "sellers": {
+            "1h": 237,
+            "4h": 477,
+            "12h": 2026,
+            "24h": 3863
+        }
+    },
+    {
+        "chainId": "0x38",
+        "tokenAddress": "0x33c57d2352c2f3ed8584819502c7340210694444",
+        "name": "Bean Factory",
+        "uniqueName": null,
+        "symbol": "BEAN",
+        "decimals": 18,
+        "logo": "https://logo.moralis.io/0x38_0x33c57d2352c2f3ed8584819502c7340210694444_41f4ac6c34b5ee5e797a863be3f84ca5.webp",
+        "usdPrice": 0.000138502798186,
+        "createdAt": 1769268110,
+        "marketCap": 138503,
+        "liquidityUsd": 21648,
+        "holders": 475,
+        "pricePercentChange": {
+            "1h": 0.2774002514640142,
+            "4h": -0.3749005458438824,
+            "12h": 0.7610224923189828,
+            "24h": 0.7610224923189828
+        },
+        "totalVolume": {
+            "1h": 16902,
+            "4h": 487675,
+            "12h": 725226,
+            "24h": 725226
+        },
+        "transactions": {
+            "1h": 279,
+            "4h": 4458,
+            "12h": 6081,
+            "24h": 6081
+        },
+        "buyTransactions": {
+            "1h": 184,
+            "4h": 2500,
+            "12h": 3317,
+            "24h": 3317
+        },
+        "sellTransactions": {
+            "1h": 95,
+            "4h": 1958,
+            "12h": 2764,
+            "24h": 2764
+        },
+        "buyers": {
+            "1h": 94,
+            "4h": 956,
+            "12h": 1241,
+            "24h": 1241
+        },
+        "sellers": {
+            "1h": 73,
+            "4h": 880,
+            "12h": 1082,
+            "24h": 1082
+        }
+    }
+]

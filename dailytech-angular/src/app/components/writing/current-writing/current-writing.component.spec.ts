@@ -9,8 +9,8 @@ import { BehaviorSubject, of } from 'rxjs';
 import { CurrentWritingComponent } from './current-writing.component';
 import { StopWritingComponent } from './stop-writing.component';
 import { WritingService } from '../writing.service';
-import { WritingMod } from '../../../models/writing-mods.model';
-import { CategoryMod } from '../../../models/category-mods.model';
+import { WritingMod } from '../../../model/writing-mods.model';
+import { CategoryMod } from '../../../model/category-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
 import * as fromCategories from '../../../reducers/category.reducer';
@@ -18,6 +18,7 @@ import * as fromRoot from '../../../reducers/app.reducer';
 import { AddLinkDialogComponent } from '../../links/add-link-dialog/add-link-dialog.component';
 import { AwsBlogPublisherService } from '../../blogs-public/aws-blog-publisher.service';
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
+import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
 
 describe('CurrentWritingComponent', () => {
   let component: CurrentWritingComponent;
@@ -28,6 +29,7 @@ describe('CurrentWritingComponent', () => {
   let mockStore: jasmine.SpyObj<Store>;
   let mockAwsBlogPublisher: jasmine.SpyObj<AwsBlogPublisherService>;
   let mockAwsAuthService: jasmine.SpyObj<AwsAuthenticationService>;
+  let mockAuthPolicy: jasmine.SpyObj<AuthPolicyService>;
   let activeWritingSubject: BehaviorSubject<WritingMod | null>;
   let firebaseAuthSubject: BehaviorSubject<boolean>;
   let categories: CategoryMod[];
@@ -87,6 +89,8 @@ describe('CurrentWritingComponent', () => {
     mockAwsAuthService = jasmine.createSpyObj('AwsAuthenticationService', ['hasActiveSession', 'isAdminLoggedIn']);
     mockAwsAuthService.hasActiveSession.and.returnValue(false);
     mockAwsAuthService.isAdminLoggedIn.and.returnValue(false);
+    mockAuthPolicy = jasmine.createSpyObj('AuthPolicyService', ['canAccessAdmin']);
+    mockAuthPolicy.canAccessAdmin.and.returnValue(false);
 
     activeWritingSubject = new BehaviorSubject<WritingMod | null>(activeWriting);
     firebaseAuthSubject = new BehaviorSubject<boolean>(true);
@@ -116,7 +120,8 @@ describe('CurrentWritingComponent', () => {
         { provide: Router, useValue: mockRouter },
         { provide: Store, useValue: mockStore },
         { provide: AwsBlogPublisherService, useValue: mockAwsBlogPublisher },
-        { provide: AwsAuthenticationService, useValue: mockAwsAuthService }
+        { provide: AwsAuthenticationService, useValue: mockAwsAuthService },
+        { provide: AuthPolicyService, useValue: mockAuthPolicy }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -286,6 +291,7 @@ describe('CurrentWritingComponent', () => {
     component.isFirebaseAdmin = false;
     mockAwsAuthService.hasActiveSession.and.returnValue(true);
     mockAwsAuthService.isAdminLoggedIn.and.returnValue(false);
+    mockAuthPolicy.canAccessAdmin.and.returnValue(false);
     component.category = 'Web Dev Affairs';
     component.writingForm.patchValue({
       title: 'Final title',
@@ -315,6 +321,7 @@ describe('CurrentWritingComponent', () => {
     component.isFirebaseAdmin = false;
     mockAwsAuthService.hasActiveSession.and.returnValue(true);
     mockAwsAuthService.isAdminLoggedIn.and.returnValue(false);
+    mockAuthPolicy.canAccessAdmin.and.returnValue(false);
     component.category = 'Web Dev Affairs';
     component.writingForm.patchValue({
       title: 'Final title',
@@ -343,6 +350,7 @@ describe('CurrentWritingComponent', () => {
     component.isFirebaseAdmin = false;
     mockAwsAuthService.hasActiveSession.and.returnValue(true);
     mockAwsAuthService.isAdminLoggedIn.and.returnValue(true);
+    mockAuthPolicy.canAccessAdmin.and.returnValue(true);
     component.category = 'Web Dev Affairs';
     component.writingForm.patchValue({
       title: 'Final title',
@@ -371,6 +379,7 @@ describe('CurrentWritingComponent', () => {
     component.isFirebaseAdmin = false;
     mockAwsAuthService.hasActiveSession.and.returnValue(true);
     mockAwsAuthService.isAdminLoggedIn.and.returnValue(true);
+    mockAuthPolicy.canAccessAdmin.and.returnValue(true);
     component.category = 'Web Dev Affairs';
     component.writingForm.patchValue({
       title: 'Final title',

@@ -9,7 +9,7 @@ import { MyLinksComponent } from './my-links.component';
 import { WritingService } from '../../writing/writing.service';
 import { LinkDetailsDialogComponent } from '../link-details-dialog/link-details-dialog.component';
 import { AddLinkDialogComponent } from '../add-link-dialog/add-link-dialog.component';
-import { CategoryMod } from '../../../models/category-mods.model';
+import { CategoryMod } from '../../../model/category-mods.model';
 import { FileService } from '../../../service/file.service';
 import { UiService } from '../../../service/ui.service';
 import { environment } from '../../../../environments/environment';

@@ -1,9 +1,10 @@
 // import { API_URL } from './../app.constants';
+import { AuthSessionStorageService } from './auth-session-storage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
-import { is } from 'date-fns/locale/is';
 
 export const TOKEN = 'token';
 export const AUTHENTICATED_USER = 'AuthenticatedUser';
@@ -13,16 +14,24 @@ export const AWS_USER_INFO_STORAGE_KEY = 'userInfoAws';
 
 interface AwsJwtPayload {
   sub?: string;
-  roles?: string[];
+  roles?: unknown[];
   iat?: number;
   exp?: number;
 }
 
 interface AwsUserInfo {
   email: string;
+  userId?: number;
+  firstName?: string;
+  lastName?: string;
   roles: string[];
   issuedAt?: number;
   expiresAt?: number;
+}
+
+interface AuthenticatedAwsUser {
+  email: string;
+  tokenJWT: string;
 }
 
 @Injectable({
@@ -31,9 +40,13 @@ interface AwsUserInfo {
 export class AwsAuthenticationService {
   baseUrl: string;
 
-  constructor(private http: HttpClient) {
-    this.baseUrl = environment.API_URL;
-  }
+constructor(
+  private http: HttpClient,
+  private sessionStorageService: AuthSessionStorageService
+) {
+  this.baseUrl = environment.API_URL;
+  this.initAuthState();
+}
 
   // executeAuthenticationService(adminName, password) {
   // Basic Authentication
@@ -63,21 +76,16 @@ export class AwsAuthenticationService {
       })
       .pipe(
         map((data) => {
-          const jwtPayload = this.decodeJwtPayload(data.accessToken);
-          const userInfoAws: AwsUserInfo = {
-            email: jwtPayload.sub || usernameOrEmail,
-            roles: jwtPayload.roles || [],
-            issuedAt: jwtPayload.iat,
-            expiresAt: jwtPayload.exp,
-          };
-
-          sessionStorage.setItem(AUTH_PROVIDER_KEY, 'aws');
-          sessionStorage.setItem(AUTHENTICATED_USER, usernameOrEmail);
-          sessionStorage.setItem(TOKEN, `Bearer ${data.accessToken}`);
-          sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
-          sessionStorage.setItem(AWS_USER_INFO_STORAGE_KEY, JSON.stringify(userInfoAws));
+          const accessToken = data.accessToken || data.tokenJWT || data.token || '';
+          this.persistAwsSession(usernameOrEmail, accessToken);
           return data;
         }),
+        switchMap((data) =>
+          this.collectUserInfoAws().pipe(
+            map(() => data),
+            catchError(() => of(data)),
+          ),
+        ),
       );
   }
 
@@ -86,7 +94,36 @@ export class AwsAuthenticationService {
   }
 
   getAuthenticatedToken() {
-    if (this.getAuthenticatedUser()) return sessionStorage.getItem(TOKEN);
+    if (this.hasActiveSession()) return sessionStorage.getItem(TOKEN);
+    return null;
+  }
+
+  collectUserInfoAws(): Observable<any> {
+    const token = sessionStorage.getItem(TOKEN);
+
+    if (!this.hasActiveSession() || !token) {
+      return new Observable((subscriber) => {
+        subscriber.error(new Error('No active AWS authentication token in session storage'));
+      });
+    }
+
+    return this.http.get<any>(`${this.baseUrl}/users/me`).pipe(
+      map((data) => {
+        const currentInfo = this.getAwsUserInfo();
+        const userInfoAws: AwsUserInfo = {
+          email: data?.email || currentInfo?.email || this.getAuthenticatedUser() || '',
+          userId: Number(data?.userId || currentInfo?.userId || 0),
+          firstName: data?.firstName || currentInfo?.firstName,
+          lastName: data?.lastName || currentInfo?.lastName,
+          roles: this.normalizeRoles(data?.roles || currentInfo?.roles || []),
+          issuedAt: currentInfo?.issuedAt,
+          expiresAt: currentInfo?.expiresAt,
+        };
+
+        sessionStorage.setItem(AWS_USER_INFO_STORAGE_KEY, JSON.stringify(userInfoAws));
+        return data;
+      }),
+    );
   }
 
   getAwsUserInfo(): AwsUserInfo | null {
@@ -103,7 +140,11 @@ export class AwsAuthenticationService {
   }
 
   getRoles(): string[] {
-    return this.getAwsUserInfo()?.roles || [];
+    return this.normalizeRoles(this.getAwsUserInfo()?.roles || []);
+  }
+
+  hasRole(role: string): boolean {
+    return this.getRoles().includes(role);
   }
 
   isAdminLoggedIn(): boolean {
@@ -111,33 +152,106 @@ export class AwsAuthenticationService {
     isAdminLoggedIn = (
       this.hasActiveSession() &&
       sessionStorage.getItem(AUTH_PROVIDER_KEY) === 'aws' &&
-      this.getRoles().includes('ROLE_ADMIN')
+      this.hasRole('ROLE_ADMIN')
     );
     console.log("isAdminLoggedIn: ",  isAdminLoggedIn); 
     return isAdminLoggedIn;
   }
 
   hasActiveSession() {
-    let isActiveSession:boolean = false;
-    isActiveSession = (
+    const authenticatedUser = this.parseAuthenticatedAwsUser();
+    let isActiveSession = false;
+
+    if (
       sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true' &&
+      sessionStorage.getItem(AUTH_PROVIDER_KEY) === 'aws' &&
       !!sessionStorage.getItem(TOKEN) &&
-      !!this.getAuthenticatedUser()
-    );
+      !!authenticatedUser
+    ) {
+      const jwtPayload = this.decodeJwtPayload(authenticatedUser.tokenJWT);
+      isActiveSession = !!jwtPayload.exp && jwtPayload.exp * 1000 > Date.now();
+    }
+
     console.log("isActiveSession: ", isActiveSession);
     return isActiveSession;
   }
 
-  clearSession() {
-    sessionStorage.removeItem(AUTH_STORAGE_KEY);
-    sessionStorage.removeItem(AUTHENTICATED_USER);
-    sessionStorage.removeItem(TOKEN);
-    sessionStorage.removeItem(AUTH_PROVIDER_KEY);
-    sessionStorage.removeItem(AWS_USER_INFO_STORAGE_KEY);
+  initAuthState(): void {
+    if (sessionStorage.getItem(AUTH_PROVIDER_KEY) === 'aws' && !this.hasActiveSession()) {
+      this.clearSession();
+    }
   }
+
+clearSession() {
+  sessionStorage.removeItem(AUTH_STORAGE_KEY);
+  sessionStorage.removeItem(AUTHENTICATED_USER);
+  sessionStorage.removeItem(TOKEN);
+  sessionStorage.removeItem(AUTH_PROVIDER_KEY);
+  sessionStorage.removeItem(AWS_USER_INFO_STORAGE_KEY);
+  this.sessionStorageService.clearSession('aws');
+}
 
   logout() {
     this.clearSession();
+  }
+
+  private persistAwsSession(email: string, tokenJWT: string): void {
+    const jwtPayload = this.decodeJwtPayload(tokenJWT);
+    const userInfoAws: AwsUserInfo = {
+      email,
+      roles: this.normalizeRoles(jwtPayload.roles || []),
+      issuedAt: jwtPayload.iat,
+      expiresAt: jwtPayload.exp,
+    };
+
+    sessionStorage.setItem(AUTH_PROVIDER_KEY, 'aws');
+    sessionStorage.setItem(AUTHENTICATED_USER, email);
+    sessionStorage.setItem(TOKEN, `Bearer ${tokenJWT}`);
+    sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    sessionStorage.setItem(AWS_USER_INFO_STORAGE_KEY, JSON.stringify(userInfoAws));
+
+    this.sessionStorageService.setActiveSession({
+      provider: 'aws',
+      email,
+      token: `Bearer ${tokenJWT}`,
+      roles: userInfoAws.roles,
+      issuedAt: userInfoAws.issuedAt,
+      expiresAt: userInfoAws.expiresAt,
+    });
+  }
+
+  private parseAuthenticatedAwsUser(): AuthenticatedAwsUser | null {
+    const bearerToken = sessionStorage.getItem(TOKEN);
+    const email = sessionStorage.getItem(AUTHENTICATED_USER);
+
+    if (!bearerToken || !email || !bearerToken.startsWith('Bearer ')) {
+      return null;
+    }
+
+    return {
+      email,
+      tokenJWT: bearerToken.substring(7),
+    };
+  }
+
+  private normalizeRoles(roles: unknown): string[] {
+    if (!Array.isArray(roles)) {
+      return [];
+    }
+
+    return roles
+      .map((role) => {
+        if (typeof role === 'string') {
+          return role;
+        }
+
+        if (role && typeof role === 'object' && 'name' in role) {
+          return String((role as { name?: unknown }).name ?? '');
+        }
+
+        return '';
+      })
+      .filter((roleName) => roleName.length > 0);
   }
 
   private decodeJwtPayload(token: string): AwsJwtPayload {

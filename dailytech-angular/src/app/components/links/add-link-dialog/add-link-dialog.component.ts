@@ -5,7 +5,7 @@ import {
   MatLegacyDialogRef as MatDialogRef
 } from '@angular/material/legacy-dialog';
 
-import { CategoryMod } from '../../../models/category-mods.model';
+import { CategoryMod } from '../../../model/category-mods.model';
 
 export interface AddLinkDialogData {
   title?: string;

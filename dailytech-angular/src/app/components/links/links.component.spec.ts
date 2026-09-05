@@ -7,7 +7,7 @@ import { of } from 'rxjs';
 import { LinksComponent } from './links.component';
 import { WritingService } from '../writing/writing.service';
 import { LinkDetailsDialogComponent } from './link-details-dialog/link-details-dialog.component';
-import { CategoryMod } from '../../models/category-mods.model';
+import { CategoryMod } from '../../model/category-mods.model';
 
 describe('LinksComponent', () => {
   let component: LinksComponent;

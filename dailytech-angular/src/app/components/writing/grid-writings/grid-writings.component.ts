@@ -7,7 +7,7 @@ import {  MatSort } from '@angular/material/sort';
 import {  MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
 
 import { WritingService } from '../writing.service';
-import { WritingMod } from '../../../models/writing-mods.model';
+import { WritingMod } from '../../../model/writing-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 
 @Component({

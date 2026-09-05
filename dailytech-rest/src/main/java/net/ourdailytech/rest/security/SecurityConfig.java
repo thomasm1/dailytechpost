@@ -87,7 +87,7 @@ public class SecurityConfig {
 
     // IMPORTANT: with allowCredentials(true), do NOT use "*" here.
     config.setAllowedOrigins(getAllowedOrigins());
-    config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
     config.setAllowedHeaders(List.of("*"));
     config.setExposedHeaders(List.of("*"));
     config.setAllowCredentials(true);
@@ -105,6 +105,7 @@ public class SecurityConfig {
         http.cors(Customizer.withDefaults())
             .csrf(AbstractHttpConfigurer::disable) // disable CSRF for stateless APIs
             .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Open API
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll() // Actuator
@@ -112,8 +113,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/users/auth/**").permitAll() // Login & register
 
                         .requestMatchers(HttpMethod.POST, "/api/**" ).authenticated() //.permitAll()
-                        .requestMatchers(HttpMethod.OPTIONS, "/api/**" ).permitAll()
                         .requestMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("USER", "ADMIN") //.permitAll() //
+                        .requestMatchers(HttpMethod.PATCH, "/api/**").hasAnyRole("USER", "ADMIN") //.permitAll() //
                         .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole( "ADMIN") //permitAll() //
 
                     .requestMatchers(HttpMethod.GET, "/api/posts/*/comments").permitAll()

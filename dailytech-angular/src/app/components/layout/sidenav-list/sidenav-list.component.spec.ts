@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { SidenavListComponent } from './sidenav-list.component';
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
 import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
+import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
 import * as AuthActions from '../../../reducers/auth.actions';
 
 describe('SidenavListComponent', () => {
@@ -18,15 +19,20 @@ describe('SidenavListComponent', () => {
   let store: MockStore;
   let awsAuthService: jasmine.SpyObj<AwsAuthenticationService>;
   let firebaseAuthService: jasmine.SpyObj<FirebaseAuthService>;
+  let authPolicy: jasmine.SpyObj<AuthPolicyService>;
 
   beforeEach(async () => {
     awsAuthService = jasmine.createSpyObj<AwsAuthenticationService>(
       'AwsAuthenticationService',
-      ['isAdminLoggedIn', 'logout']
+      ['isAdminLoggedIn', 'getAuthenticatedUser', 'logout']
     );
     firebaseAuthService = jasmine.createSpyObj<FirebaseAuthService>(
       'FirebaseAuthService',
       ['logout']
+    );
+    authPolicy = jasmine.createSpyObj<AuthPolicyService>(
+      'AuthPolicyService',
+      ['canAccessAdmin']
     );
 
     await TestBed.configureTestingModule({
@@ -55,12 +61,15 @@ describe('SidenavListComponent', () => {
           }
         },
         { provide: AwsAuthenticationService, useValue: awsAuthService },
-        { provide: FirebaseAuthService, useValue: firebaseAuthService }
+        { provide: FirebaseAuthService, useValue: firebaseAuthService },
+        { provide: AuthPolicyService, useValue: authPolicy }
       ]
     }).compileComponents();
 
     store = TestBed.inject(MockStore);
     awsAuthService.isAdminLoggedIn.and.returnValue(false);
+    awsAuthService.getAuthenticatedUser.and.returnValue('admin@example.com');
+    authPolicy.canAccessAdmin.and.returnValue(false);
   });
 
   function createComponent(): void {
@@ -102,8 +111,8 @@ describe('SidenavListComponent', () => {
 
     const content = getTextContent();
 
-    expect(content).toContain('Login');
-    expect(content).not.toContain('Logout');
+    expect(content).toContain('LOGIN');
+    expect(content).not.toContain('LOGOUT');
   });
 
   it('should show the logout button when the store auth state is true', () => {
@@ -116,21 +125,22 @@ describe('SidenavListComponent', () => {
 
     const content = getTextContent();
 
-    expect(content).toContain('Logout');
+    expect(content).toContain('LOGOUT');
     expect(content).not.toContain('Register');
-    expect(content).not.toContain('Login');
+    expect(content).not.toContain('LOGIN');
   });
 
   it('should show the logout button when the admin is logged in', () => {
     awsAuthService.isAdminLoggedIn.and.returnValue(true);
+    authPolicy.canAccessAdmin.and.returnValue(true);
 
     createComponent();
 
     const content = getTextContent();
 
-    expect(content).toContain('Logout');
+    expect(content).toContain('LOGOUT');
     expect(content).not.toContain('Register');
-    expect(content).not.toContain('Login');
+    expect(content).not.toContain('LOGIN');
   });
 
   it('should close the sidenav and dispatch logout', () => {

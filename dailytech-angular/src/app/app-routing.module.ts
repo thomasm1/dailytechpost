@@ -16,14 +16,15 @@ import { GridWritingsComponent } from './components/writing/grid-writings/grid-w
 import { LinksComponent } from './components/links/links.component';
 import { MyLinksComponent } from './components/links/my-links/my-links.component';
 
-import { AwsGuardService } from './service/auth/aws-guard.service';
+import { VisualsComponent } from "./components/visuals/visuals.component"; 
 import { FirebaseGuardService } from './service/auth/firebase-guard.service';
 import { BlogsComponent } from './components/blogs-public/blogs/blogs.component';
 import { BlogsGridComponent } from './components/blogs-public/blogs-grid/blogs-grid.component'; 
 import { NewsPageComponent } from './components/news/news-page/news-page.component';
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 import { AdminConsoleComponent } from './components/admin/admin-console/admin-console.component';
- 
+import { AdminGuardService } from './service/auth/admin-guard.service';
+
 const routes: Routes = [ 
   { path: '', component: BlogsListComponent, pathMatch: 'full' }, 
   
@@ -34,6 +35,10 @@ const routes: Routes = [
   
   { path: 'posts', component: PostEntityViewerComponent },
   // { path: 'writing', loadChildren: './writing.module#WritingModule', canLoad: [FirebaseGuardService] },
+  {
+    path: "visuals",
+    component: VisualsComponent,
+  },
   {
     path: 'writing',
     component: WritingComponent,
@@ -46,13 +51,13 @@ const routes: Routes = [
       { path: 'my-links', component: MyLinksComponent },
     ]
   }, 
-  { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService,AwsGuardService]},   
+  // { path: 'premium', component: WritingComponent, canActivate:[FirebaseGuardService,AdminGuardService]},   
   { path: 'news', component: NewsPageComponent },
   { path: 'search', component: NewsArticleSearchComponent },
 
-  { path: 'admin/posts', component: PostsListComponent, canActivate:[AwsGuardService]},
-  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AwsGuardService]},
-  { path: 'admin/:email', component: AdminConsoleComponent, canActivate:[AwsGuardService]},
+  { path: 'admin/posts', component: PostsListComponent, canActivate:[AdminGuardService]},
+  { path: 'admin/post/:id', component: PostEntityComponent, canActivate:[AdminGuardService]},
+  { path: 'admin/:email', component: AdminConsoleComponent, canActivate:[AdminGuardService]},
  
 
   { path: 'login', component: SignonComponent },
@@ -68,7 +73,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [FirebaseGuardService, AwsGuardService],
+  providers: [FirebaseGuardService, AdminGuardService],
   declarations: []
 })
 export class AppRoutingModule { }

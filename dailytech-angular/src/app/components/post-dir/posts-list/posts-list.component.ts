@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostEntityService } from '../post-entity.service';
 import { Router } from '@angular/router';
-import { PostEntity } from '../../../models/PostEntity.model'
+import { PostEntity } from '../../../model/PostEntity.model'
 
 
 @Component({

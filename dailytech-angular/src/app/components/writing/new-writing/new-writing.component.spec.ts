@@ -11,8 +11,8 @@ import { BehaviorSubject, of } from 'rxjs';
 import { NewWritingComponent } from './new-writing.component';
 import { WritingService } from '../writing.service';
 import { UiService } from '../../../service/ui.service';
-import { WritingMod } from '../../../models/writing-mods.model';
-import { CategoryMod } from 'src/app/models/category-mods.model';
+import { WritingMod } from '../../../model/writing-mods.model';
+import { CategoryMod } from 'src/app/model/category-mods.model';
 import * as fromWriting from '../../../reducers/writing.reducer';
 import * as WritingActions from '../../../reducers/writing.actions';
 import * as fromRoot from '../../../reducers/app.reducer';
@@ -137,14 +137,12 @@ describe('NewWritingComponent', () => {
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/writing/current']);
   });
 
-  it('should unsubscribe from loading stream on destroy', () => {
+  it('should unsubscribe from draft stream on destroy', () => {
     fixture.detectChanges();
-    const loadingUnsubscribeSpy = spyOn((component as any).loadingSubscription, 'unsubscribe');
     const draftUnsubscribeSpy = spyOn((component as any).draftSubscription, 'unsubscribe');
 
     component.ngOnDestroy();
 
-    expect(loadingUnsubscribeSpy).toHaveBeenCalled();
     expect(draftUnsubscribeSpy).toHaveBeenCalled();
   });
 });

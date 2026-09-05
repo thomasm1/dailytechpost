@@ -10,7 +10,7 @@ import { BlogsListComponent } from './blogs-list/blogs-list.component';
 import { BlogComponent } from './blog/blog.component';
 import { MaterialModule } from '../../material.module';
 import { SharedModule } from '../../shared.module';
-import { AgChartsAngularModule } from 'ag-charts-angular';
+import { AgChartsModule } from 'ag-charts-angular';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { AgChartsAngularModule } from 'ag-charts-angular';
     RouterModule,
     MaterialModule,
     A11yModule,
-    AgChartsAngularModule,
+    AgChartsModule,
     SharedModule
   ],
   providers: [

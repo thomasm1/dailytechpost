@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Optional, Inject } from '@angular/core';
 import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog } from 'src/app/model/blog.model';
 import { BlogsStore } from '../blogs-store.service'; 
 import { BlogsService } from '../blogs.service';
 import { SafeHtmlPipe } from 'src/app/utility/safe-html.pipe';

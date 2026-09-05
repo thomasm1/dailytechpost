@@ -1,20 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
-import { AwsAuthenticationService } from './aws-authentication.service';
 import { environment } from '../../../environments/environment';
+import { AuthPolicyService } from './auth-policy.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class HttpIntercepterBasicAuthService implements HttpInterceptor {
+  constructor(private authPolicy: AuthPolicyService) {}
 
-  constructor(
-    private awsAuthenticationService: AwsAuthenticationService
-  ) { }
-
-
-  
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     if (!this.isDailyTechApiRequest(request.url)) {
       return next.handle(request);
@@ -24,23 +18,19 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor {
       return next.handle(request);
     }
 
-    const adminAuthHeaderString = this.awsAuthenticationService.getAuthenticatedToken();
-    const username = this.awsAuthenticationService.getAuthenticatedUser();
+    const token = this.authPolicy.getActiveToken();
 
-    if (adminAuthHeaderString && username) {
+    if (token) {
       request = request.clone({
         setHeaders: {
-          Authorization: adminAuthHeaderString,
+          Authorization: token,
           Accept: 'application/json',
-        }
+        },
       });
     }
 
     return next.handle(request);
   }
-
-
-
 
   private isDailyTechApiRequest(url: string): boolean {
     return url.startsWith('/api') || url.startsWith(environment.API_URL);

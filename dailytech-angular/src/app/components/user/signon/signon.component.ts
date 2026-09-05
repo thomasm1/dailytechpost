@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {  UntypedFormGroup, UntypedFormControl, Validators, NgForm } from '@angular/forms';
-import { Subscription, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
-import { FirebaseAuthService } from '../../../service/auth/firebase-auth.service';
+import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducers/app.reducer';
 import * as AuthActions from '../../../reducers/auth.actions';
@@ -33,7 +32,7 @@ export class SignonComponent implements OnInit { //, OnDestroy {
   constructor(
     private router: Router,
     private awsAuthService: AwsAuthenticationService,
-    private firebaseAuthService: FirebaseAuthService,
+    private authPolicy: AuthPolicyService,
     // private store: Store<{ ui: fromApp.State }>,
     private store: Store< fromRoot.State >
   ) { }
@@ -96,16 +95,15 @@ export class SignonComponent implements OnInit { //, OnDestroy {
     .subscribe(
         data => {
           console.log(data)
-          this.firebaseAuthService.login(credentials).then(() => {
+          if (this.authPolicy.canAccessAdmin()) {
             this.router.navigate(['admin', credentials.email])
             this.invalidLogin = false
             this.authLogin = true
-          }).catch(error => {
-            console.log(error)
+          } else {
             this.awsAuthService.logout();
             this.invalidLogin = true
             this.authLogin = false
-          });
+          }
         },
         error => {
           console.log(error)

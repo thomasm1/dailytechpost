@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
-import { WritingMod } from '../../../models/writing-mods.model';
-import { NewsMod } from '../../../models/news-mods.model';
-import { CategoryMod } from '../../../models/category-mods.model';
+import { WritingMod } from '../../../model/writing-mods.model';
+import { NewsMod } from '../../../model/news-mods.model';
+import { CategoryMod } from '../../../model/category-mods.model';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
@@ -18,7 +18,8 @@ import { Router  } from '@angular/router';
 import * as fromRoot from '../../../reducers/app.reducer';
 import { firstValueFrom } from 'rxjs';
 import { AwsBlogPublisherService } from '../../blogs-public/aws-blog-publisher.service';
-import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service';
+import { AwsAuthenticationService } from '../../../service/auth/aws-authentication.service'; 
+import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
 
 type PublishTarget = 'firebase' | 'aws' | 'both';
 
@@ -62,6 +63,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
     private router: Router,
     private awsBlogPublisher: AwsBlogPublisherService,
     private awsAuthService: AwsAuthenticationService,
+    private authPolicy: AuthPolicyService,
   ) { }
 
   ngOnInit() {
@@ -191,7 +193,7 @@ export class CurrentWritingComponent implements OnInit, OnDestroy {
   }
 
   canPublishAws(): boolean {
-    return this.awsAuthService.isAdminLoggedIn();
+    return this.authPolicy.canAccessAdmin();
   }
 
   canSubmitWriting(): boolean {

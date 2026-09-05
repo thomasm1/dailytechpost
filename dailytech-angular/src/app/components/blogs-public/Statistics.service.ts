@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Blog } from '../../models/blog.model';
-import { BlogStatistics } from '../../models/blog.model';
+import { Blog } from '../../model/blog.model';
+import { BlogStatistics } from '../../model/blog.model';
 
 
 @Injectable({

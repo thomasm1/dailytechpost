@@ -4,14 +4,14 @@ import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { firstValueFrom,  Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { CategoryMod } from '../../../models/category-mods.model';
+import { CategoryMod } from '../../../model/category-mods.model';
 import { WritingService } from '../../writing/writing.service';
 import * as fromCategories from '../../../reducers/category.reducer';
 import { LinkDetailsDialogComponent } from '../link-details-dialog/link-details-dialog.component';
 import { AddLinkDialogComponent, AddLinkDialogResult } from '../add-link-dialog/add-link-dialog.component';
  
 import { environment } from '../../../../environments/environment';
-import { NewsMod } from '../../../models/news-mods.model';
+import { NewsMod } from '../../../model/news-mods.model';
 import { FileService } from '../../../service/file.service';
 import { UiService } from '../../../service/ui.service';
 @Component({
