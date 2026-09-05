@@ -1,167 +1,42 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { KeysService } from 'src/app/service/keys.service';
 import { environment } from '../../../environments/environment';
 import { Observable, of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class NewsService {
-  nytKey: string = '';
-  apiUrlNYT: string = '';
-  
-  // Cache storage
-  private articlesCache = new Map<string, any>();
-  private searchCache = new Map<string, any>();
-  private articlesCacheTimestamp = new Map<string, number>();
-  private searchCacheTimestamp = new Map<string, number>();
-  private readonly CACHE_DURATION_MS = 10 * 60 * 1000; // 10 minutes for news
+  private readonly baseUrl = `${environment.API_URL.replace(/\/+$/, '')}/news`;
+  private readonly cache = new Map<string, { expires: number; data: any }>();
+  private readonly cacheDuration = 10 * 60 * 1000;
 
-  constructor(private http: HttpClient, private keys: KeysService) {   }
+  constructor(private http: HttpClient) {}
 
-  private resolveNytKey(): Observable<string> {
-    if (this.nytKey) {
-      return of(this.nytKey);
+  search(data: any, forceRefresh = false): Observable<any> {
+    let params = new HttpParams();
+    // Only supported search inputs cross the API boundary. No provider credential is needed.
+    for (const key of ['q', 'begin_date', 'end_date', 'sort']) {
+      if (data[key] !== undefined && data[key] !== null && data[key] !== '') {
+        params = params.set(key, data[key]);
+      }
     }
-
-    return this.http.get(environment.nyt_url).pipe(
-      map((response: any) => {
-        const fetched = response?.NYT_API_KEY?.[0] || environment.apiKeyNYT;
-        this.nytKey = fetched;
-        return fetched;
-      }),
-      catchError(() => {
-        this.nytKey = environment.apiKeyNYT;
-        return of(this.nytKey);
-      })
-    );
+    return this.fetch(`search:${params.toString()}`, `${this.baseUrl}/search`, params, forceRefresh);
   }
 
-  /**
-   * Check if cache is still valid based on timestamp
-   */
-  private isCacheValid(timestamp: number): boolean {
-    if (!timestamp) {
-      return false;
-    }
-    const now = Date.now();
-    const cacheAge = now - timestamp;
-    return cacheAge < this.CACHE_DURATION_MS;
+  getArticles(section = 'technology', forceRefresh = false): Observable<any> {
+    return this.fetch(`section:${section}`, `${this.baseUrl}/top-stories/${encodeURIComponent(section)}`,
+      new HttpParams(), forceRefresh);
   }
 
-  /**
-   * Generate cache key from search parameters
-   */
-  private getSearchCacheKey(data: any): string {
-    return JSON.stringify({
-      q: data.q || '',
-      begin_date: data.begin_date || '',
-      end_date: data.end_date || '',
-      sort: data.sort || ''
-    });
-  }
+  clearCache(): void { this.cache.clear(); }
+  clearArticlesCache(section: string): void { this.cache.delete(`section:${section}`); }
 
-  /**
-   * Search NYT articles with caching
-   * @param data - search parameters
-   * @param forceRefresh - if true, bypass cache and fetch fresh data
-   */
-  search(data: any, forceRefresh: boolean = false): Observable<any> {
-    const cacheKey = this.getSearchCacheKey(data);
-    const cachedTimestamp = this.searchCacheTimestamp.get(cacheKey);
-    
-    if (!forceRefresh && this.isCacheValid(cachedTimestamp)) {
-      const cached = this.searchCache.get(cacheKey);
-      console.log('Returning cached search results', 
-        `(age: ${Math.round((Date.now() - cachedTimestamp) / 1000)}s)`);
-      return of(cached);
-    }
-
-    return this.resolveNytKey().pipe(
-      switchMap((apiKey: string) => {
-        let params: HttpParams = new HttpParams();
-        params = params.set('api-key', apiKey);
-
-        if (data.q !== undefined) {
-          params = params.set('q', data.q);
-        }
-        if (data.begin_date !== undefined) {
-          params = params.set('begin_date', data.begin_date);
-        }
-        if (data.end_date !== undefined) {
-          params = params.set('end_date', data.end_date);
-        }
-        if (data.sort !== undefined) {
-          params = params.set('sort', data.sort);
-        }
-
-        console.log('Fetching search results from NYT API');
-        return this.http.get(
-          `${environment.apiUrlNYT}/search/v2/articlesearch.json`,
-          { params }
-        );
-      }),
-      tap(result => {
-        this.searchCache.set(cacheKey, result);
-        this.searchCacheTimestamp.set(cacheKey, Date.now());
-        console.log('Cached search results');
-      })
-    );
-  }
-
-  /**
-   * Get NYT articles by section with caching
-   * @param section - article section (default 'technology')
-   * @param forceRefresh - if true, bypass cache and fetch fresh data
-   */
-  getArticles(section: string = 'technology', forceRefresh: boolean = false): Observable<any> {
-    const cachedTimestamp = this.articlesCacheTimestamp.get(section);
-    
-    if (!forceRefresh && this.isCacheValid(cachedTimestamp)) {
-      const cached = this.articlesCache.get(section);
-      console.log(`Returning cached ${section} articles`, 
-        `(age: ${Math.round((Date.now() - cachedTimestamp) / 1000)}s)`);
-      return of(cached);
-    }
-
-    return this.resolveNytKey().pipe(
-      switchMap((apiKey: string) => {
-        let params: HttpParams = new HttpParams();
-        params = params.set('api-key', apiKey);
-
-        console.log(`Fetching ${section} articles from NYT API`);
-        return this.http.get(
-          `${environment.apiUrlNYT}/topstories/v2/${section}.json`,
-          { params }
-        );
-      }),
-      tap(result => {
-        this.articlesCache.set(section, result);
-        this.articlesCacheTimestamp.set(section, Date.now());
-        console.log(`Cached ${section} articles`);
-      })
-    );
-  }
-
-  /**
-   * Clear all news caches
-   */
-  clearCache(): void {
-    this.articlesCache.clear();
-    this.searchCache.clear();
-    this.articlesCacheTimestamp.clear();
-    this.searchCacheTimestamp.clear();
-    console.log('News cache cleared');
-  }
-
-  /**
-   * Clear cache for specific section
-   */
-  clearArticlesCache(section: string): void {
-    this.articlesCache.delete(section);
-    this.articlesCacheTimestamp.delete(section);
-    console.log(`Cache cleared for ${section} articles`);
+  private fetch(key: string, url: string, params: HttpParams, forceRefresh: boolean): Observable<any> {
+    const cached = this.cache.get(key);
+    if (!forceRefresh && cached && cached.expires > Date.now()) return of(cached.data);
+    return this.http.get(url, { params }).pipe(tap(data => {
+      if (this.cache.size >= 128) this.cache.delete(this.cache.keys().next().value);
+      this.cache.set(key, { expires: Date.now() + this.cacheDuration, data });
+    }));
   }
 }

@@ -5,7 +5,6 @@ import { provideMockStore } from '@ngrx/store/testing';
 
 import { AppComponent } from './app.component';
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
-import { KeysService } from './service/keys.service';
 import { LoggingService } from './service/logging.service';
 import { PwaUpdateService } from './service/pwa-update.service';
 import { UiService } from './service/ui.service';
@@ -18,10 +17,6 @@ describe('AppComponent', () => {
         {
           provide: FirebaseAuthService,
           useValue: jasmine.createSpyObj<FirebaseAuthService>('FirebaseAuthService', ['authState$']),
-        },
-        {
-          provide: KeysService,
-          useValue: jasmine.createSpyObj<KeysService>('KeysService', ['getGoogleApi']),
         },
         {
           provide: LoggingService,

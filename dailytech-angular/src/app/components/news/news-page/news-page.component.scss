@@ -6,10 +6,17 @@ img.image {
   margin:25px 0 2px;
   border: rgb(37, 37, 252) 3px solid;
 }
+
+.view-sections-btn {
+  margin:5px 15px 15px;
+  padding:15px;
+  font-size:1.2rem;
+
+}
 .news {
  position:relative;
  margin:10px;
- background:aliceblue;
+ background:transparent;
 }
 
 @media (min-width: 600px) {
@@ -67,9 +74,6 @@ mat-list-item a {
   // width:200px;
   max-width:4px;
   margin-right:8px;
-}
-.view-sections {
-  margin:13px;
 }
 
 hr {

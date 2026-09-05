@@ -38,7 +38,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpIntercepterBasicAuthService } from './service/auth/http-intercepter-basic-auth.service';
 import { FirebaseAuthService } from './service/auth/firebase-auth.service';
 import { WritingService } from './components/writing/writing.service';
-import { KeysService } from './service/keys.service';
 import { UiService } from './service/ui.service';
 import { NewsService } from './components/news/news.service';
 import { LoggingService } from './service/logging.service';  // Uncommented import
@@ -136,7 +135,6 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
         })
     ],
     providers: [
-        KeysService,
         FirebaseAuthService,
         NewsService,
         WritingService,

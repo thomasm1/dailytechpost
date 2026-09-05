@@ -15,7 +15,12 @@
     "update1": "ng update @angular/material@16",
     "update2": "ng update @ngrx/store@16 @ngrx/effects@16 @ngrx/entity@16 @ngrx/router-store@16",
     "update3": "ng update @angular/fire",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "check:public-config": "node scripts/check-public-config.cjs",
+    "prebuild": "npm run check:public-config",
+    "preprod": "npm run check:public-config",
+    "postbuild": "node scripts/check-public-config.cjs dist/dailytech",
+    "postprod": "node scripts/check-public-config.cjs dist/dailytech"
   },
   "private": true,
   "dependencies": {

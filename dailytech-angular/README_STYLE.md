@@ -1,6 +1,6 @@
 # Styling architecture
 
-This Angular app combines global styles with component-scoped styles. The global entry point is **`src/styles.scss`** (plural), not `style.scss`.
+This Angular app combines global styles with component-scoped styles. The global entry point is **`src/styles.scss`**.
 
 ## Global import path
 
@@ -61,7 +61,7 @@ Sass variables such as `$color-primary-light` are resolved during compilation. C
 
 ## Files outside the active import chain
 
-These files exist under `src/app/sass/` but are not imported by `main.scss`. No active reference from the configured Angular stylesheet entry point was found during this review:
+These files exist under `src/app/sass/` but are not imported by `main.scss`. They are outside the configured Angular stylesheet import chain:
 
 ```text
 abstracts/_customVariables.scss

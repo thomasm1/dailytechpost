@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { KeysService } from './service/keys.service';
 import { LoggingService } from './service/logging.service';
 import { PwaUpdateService } from './service/pwa-update.service';
 import { Store } from '@ngrx/store';
@@ -20,7 +19,6 @@ export class AppComponent implements OnInit {
   globalSpinnerDiameter = this.getGlobalSpinnerDiameter();
 
   constructor(
-    private keysService: KeysService, 
     private loggingService: LoggingService,
     private pwaUpdateService: PwaUpdateService,
     private store: Store<fromRoot.State>
@@ -30,7 +28,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new AuthActions.AuthInitListener());
-    this.keysService.getGoogleApi(); 
     this.pwaUpdateService.initialize();
     this.loggingService.printLog('AppComponent ngOnInit'); 
   }

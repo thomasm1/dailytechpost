@@ -57,7 +57,7 @@ describe('HttpIntercepterBasicAuthService', () => {
 
   it('should not attach auth headers to NYT API requests', () => {
     authPolicy.getActiveToken.and.returnValue('Bearer firebase-token');
-    const request = new HttpRequest('GET', `${environment.apiUrlNYT}/topstories/v2/technology.json`);
+    const request = new HttpRequest('GET', 'https://api.nytimes.com/svc/topstories/v2/technology.json');
     const next = jasmine.createSpyObj<HttpHandler>('HttpHandler', ['handle']);
     next.handle.and.returnValue(of({} as any));
 
