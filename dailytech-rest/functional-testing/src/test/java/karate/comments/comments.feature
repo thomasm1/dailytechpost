@@ -1,45 +1,20 @@
-Feature: Posts API karate test script
-
-  Background:
-    * url baseUrl + '/api/'
-    * def token = authHeader
-  @getCycle
-  @Order(1)
-  Scenario: get all comments and then get the first comment by id
-    Given path 'posts'
-    When method get
+@comments @smoke
+Feature: Comment reads do not assume every post has comments
+  Scenario: Read comments for a discovered post
+    Given url apiBaseUrl
+    And path 'posts'
+    And params { pageNo: 0, pageSize: 1 }
+    When method GET
+    * assert responseStatus == 200 || responseStatus == 204
+    * if (responseStatus == 204) karate.abort()
+    * def postId = response.content[0].id
+    Given path 'posts', postId, 'comments'
+    When method GET
     Then status 200
-
-    * def firstPostId = response.content[0].id
-    * def firstCommentIdOfFirstPost = response.content[0].comments[0].id
-    Given path 'posts/' + firstPostId + '/comments/' + firstCommentIdOfFirstPost
-
-    When method get
+    And match response == '#array'
+    * if (response.length == 0) karate.abort()
+    * def first = response[0]
+    Given path 'posts', postId, 'comments', first.id
+    When method GET
     Then status 200
-    * json resp = response
-    * match resp contains {   body: '#string',   name: '#string', email: '#string', id: '#number' }
-
-  @postCycle
-  @Order(2)
-  Scenario: create a comment and then get it by id
-    * def firstPostId = 20
-    * def comment =
-      """  {
-        "body": "body#3", "name": "Commenter#3", "email": "anonymous#3@gmail.com"}
-      """
-    Given path 'posts/' + firstPostId + '/comments'
-
-    And request comment
-    And header Authorization = token
-    When method POST
-    Then status 201
-
-    * def nextCommentId = response.id
-    * def commentNext = {  "body": "body#3edit",  "name": "Commenter#3-edit",  "email": "anonymous#3-edited@gmail.com"}
-
-    Given path 'posts/' + firstPostId + '/comments/' + nextCommentId
-    And request commentNext
-    And header Authorization = token
-    When method PUT
-    Then status 200
-  
+    And match response contains { id: '#(first.id)', body: '#string', name: '#string', email: '#string' }

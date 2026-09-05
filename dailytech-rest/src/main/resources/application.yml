@@ -34,6 +34,10 @@ management:
     env:
       enabled: true
   endpoint:
+    env:
+      show-values: never
+    configprops:
+      show-values: never
     health:
       show-details: always
   endpoints:
@@ -105,6 +109,20 @@ spring.rabbitmq.password: guest
 app:
   jwt-secret: e037837c23ab0fe4f59e203ece8c0ddda2c70bfd5b5319fce2af9647be43b704
   jwt-expiration-milliseconds: 604800000
+  # Server runtime environment only: never place literal provider credentials here.
+  news:
+    nyt-api-key: ${NYT_API:${NYT_API_KEY:}}
+    requests-per-minute: ${NEWS_REQUESTS_PER_MINUTE:5}
+    requests-per-day: ${NEWS_REQUESTS_PER_DAY:500}
+  # Reserved for future backend integrations; these do not create public key endpoints.
+  providers:
+    openai-api-key: ${OPENAI_API_KEY:}
+    gemini-api-key: ${GEMINI_API_KEY:}
+    google-maps-api-key: ${googleMapAPIKey:${GOOGLE_API_KEY:}}
+    google-api-key: ${GOOGLE_API_KEY:}
+    anthropic-api-key: ${ANTHRO_API_KEY:${ANTHROPIC_API_KEY:}}
+    moralis-api-key: ${MORALIS_API_KEY:}
+    nasa-api-key: ${NASA_API_KEY:${nasaAPIKey:}}
   firebase:
     project-id: ${FIREBASE_PROJECT_ID:}
     credentials-path: ${FIREBASE_CREDENTIALS_PATH:}

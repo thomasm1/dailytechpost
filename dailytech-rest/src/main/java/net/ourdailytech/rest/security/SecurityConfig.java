@@ -105,6 +105,7 @@ public class SecurityConfig {
         http.cors(Customizer.withDefaults())
             .csrf(AbstractHttpConfigurer::disable) // disable CSRF for stateless APIs
             .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/keys", "/api/keys/**").denyAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Open API
                         .requestMatchers("/h2-console/**").permitAll()

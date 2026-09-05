@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.nio.file.AccessDeniedException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +35,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ErrorDetails> handlePostApiException(PostApiException exception, WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorDetails, exception.getStatus());
     }
 
     @ExceptionHandler(AuthenticationException.class)
@@ -56,7 +59,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                                                                     WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean anonymous = authentication == null || !authentication.isAuthenticated()
+                || new AuthenticationTrustResolverImpl().isAnonymous(authentication);
+        return new ResponseEntity<>(errorDetails,
+                anonymous ? HttpStatus.UNAUTHORIZED : HttpStatus.FORBIDDEN);
     }
 
     /// Method from ResponseEntityExceptionHandler

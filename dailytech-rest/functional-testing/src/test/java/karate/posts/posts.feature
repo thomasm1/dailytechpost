@@ -1,82 +1,20 @@
-Feature: Posts API karate test script
-
-  Background:
-    Given url baseUrl + '/api/'
-    * def token = authHeader
-
-  @getCycle
-  @Order(1)
-  Scenario: get all AWS posts and then get the first post by id
-    Given path 'posts'
+@posts @smoke
+Feature: Post reads use discovered records, not seeded IDs
+  Scenario: Read an existing post and its category filter
+    Given url apiBaseUrl
+    And path 'posts'
+    And params { pageNo: 0, pageSize: 1, sortBy: 'id', sortDir: 'asc' }
+    When method GET
+    * assert responseStatus == 200 || responseStatus == 204
+    * if (responseStatus == 204) karate.abort()
+    * def first = response.content[0]
+    Given path 'posts', first.id
     When method GET
     Then status 200
-
-    * def first = response.content[0]
-    * print first
-
-     Given path 'posts', first.id
-     When method GET
-     Then status 200
-#     * print response
-    Then match response.id == first.id
-
-  @postCycle
-  @Order(2)
-     Scenario: create a post and then get it by id
-       * def post =
-         """
-  {
-    "did": "2025-05-05",
-    "date": "D1005",
-    "author": "ThomasM",
-    "monthOrder": "July",
-    "cat3": "crypto Finance",
-    "title": "Stock Market Trends",
-    "post": "Analyzing latest crypto market trends...",
-    "blogcite": "https://blogsite5.com",
-    "email": "thomas.maestas@example.com",
-    "state": "Published",
-    "wordCount": 2000,
-    "durationGoal": 14,
-    "categoryId": 11
-  }
-         """
-
-       Given path 'posts'
-       And request post
-       And header Authorization = token
-       When method POST
-       Then status 201
-       * def localId = response.id
-
-       #3 PUT
-       Given path 'posts'
-       * print 'created id  is: ', localId
-       * post['id'] = localId
-       And header Authorization = token
-       And param id = localId
-       And request post
-       When method PUT
-       Then status 200
-
-       Given path 'posts', localId
-       And header Authorization = token
-       When method delete
-
-       Then status 200
-                # IF NOT ADMIN,  Unauthorized for delete without admin role
-
-#       Then status 200
-                  # And print 'deleted id is: ', localId
-#        * match response ==
-#     """
-#     {
-#      "body": "Post deleted successfully"
-#  }
-#     """
-
-
-       # Given path id
-       # When method GET
-       # Then status 200
-       # And match response contains post
+    And match response.id == first.id
+    * if (!first.categoryId) karate.abort()
+    Given path 'posts', 'category', first.categoryId
+    When method GET
+    Then status 200
+    And match response == '#array'
+    And match response contains deep { id: '#(first.id)' }

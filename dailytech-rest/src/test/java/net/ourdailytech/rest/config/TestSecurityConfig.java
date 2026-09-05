@@ -35,6 +35,7 @@ public class TestSecurityConfig {
         .cors(Customizer.withDefaults())
         .csrf(AbstractHttpConfigurer::disable)
         .authorizeHttpRequests(auth -> auth
+            .requestMatchers("/api/keys", "/api/keys/**").denyAll()
             .anyRequest().permitAll()
         )
         .headers(headers -> headers 

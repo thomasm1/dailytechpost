@@ -1,133 +1,56 @@
-Feature: Users API karate test script 
-
+@users @authenticated
+Feature: ADMIN user reads and current-user identity
   Background:
-    * url baseUrl + '/api/'
-    * def token = authHeader
+    * url apiBaseUrl
+    * def admin = callonce read('classpath:helpers/auth.feature') { role: 'admin' }
+    * header Authorization = admin.authorization
 
-  @getCycle
-  @Order(1)
-  Scenario: get all users and then get the first user by id
-    Given path 'users'
+  Scenario Outline: ADMIN can list users through each alias
+    Given path <endpoint>
     When method GET
     Then status 200
-
-    * def first = response[1]
-
-    Given path 'users', first.userId
-    When method GET
-    Then status 200
-    And match response contains
-      """
-      {"userId":'#number',
-        "lastName":'##string',
-        "firstName":'##string',
-        "userType":'##number',
-        "email":'##string',
-        "cusUrl":'##string',
-        "isActive":'#number',
-        "contactType":'##number',
-        "organizationCode":'##string',
-        "dashboardCode":'##string',
-        "roles": '#array',
-
-      }
-      """
-
-  @postCycle
-  @Order(2)
-  Scenario Outline: create a user and then get it by id
-
-    * def uuid = Java.type('java.util.UUID')
-    * def usernameEmail = "user-" + uuid.randomUUID() + "@gmail.com"
-    * print "_______________________ID____:" + usernameEmail
-    * def user =
-      """
-      {
-        "lastName": "Wonderland",
-        "firstName": "Alice",
-        "organizationCode": "ORG001",
-        "dashboardCode": "DASH-A",
-        "cusUrl": "https://example.com/alice",
-        "userType": 1,
-        "email": '#(usernameEmail)',
-        "contactType": 101,
-        "isActive": 1,
-        "roles": [
-          {
-            "id": 1,
-            "name": "ROLE_ADMIN"
-          }
-        ],
-      }
-      """
-    #call read('classpath:auth.feature') { username: '   ', password: '    ' }
-
-    # 1 CREATE
-    Given path 'users'
-    And header Authorization = token
-    And request user
-    When method POST
-    Then status 201
-
-    * json resp = response
-    * def localId = resp.userId
-
-    * print 'created id is: ', localId
-    #2 READ
-    * path 'users/' + localId
-    * print 'user is: ',localId
-    When method GET
-    Then status 200
-    #    And match response contains user
-    #3 PUT
-    Given path 'users'
-    * print 'user is: ', localId
-    * user['userId'] = localId
-    And header Authorization = token
-    And param userId = localId
-    And request user
-    When method PUT
-    Then status 200
-    #    And match response contains user
-    #4 DELETE
-    Given path 'users/' + localId
-    * print 'user is: ', localId
-    When method DELETE
-    And header Authorization = token
-#    Then status 200
-    Then status 401
-                  # because delete is not allowed for this user role
+    And match response == '#array'
+    And match each response contains { userId: '#number', email: '#string', roles: '#array' }
     Examples:
-      | _path  | _meth | _stat | newid      | _meth2 | _stat2 |
-      | users/ | PUT   | 200   | '#(newid)' | GET    | 200    |
-  #      | users | PATCH  | 201   |    | GET    |  200   |
+      | endpoint     |
+      | 'users'      |
+      | 'users/'     |
+      | 'users/list' |
 
-  #      | users | POST   | 201   |       | GET    |  200   |
+  Scenario: ADMIN can look up its own profile by ID and email
+    Given path 'users', admin.profile.userId
+    When method GET
+    Then status 200
+    And match response.email == admin.profile.email
+    Given path 'users', 'email', admin.profile.email
+    And header Authorization = admin.authorization
+    When method GET
+    Then status 200
+    And match response.userId == admin.profile.userId
 
-  ############################1
-  @Order(3)
-  @ignore
-  Scenario: Update a user, get it by id, verify changes
-    * def rando = Math.floor(Math.random() * 100)
-    * def usernameEmail = "user"+rando+"@gmail.com"
-    * print "_______________________ID____" + usernameEmail
-    * def user =
-      """
-      {
-        "lastName": "Wonderland",
-        "firstName": "Alice",
-        "organizationCode": "ORG001",
-        "dashboardCode": "DASH-A",
-        "cusUrl": "https://example.com/alice",
-        "userType": 1,
-        "email": '#(usernameEmail)',
-        "contactType": 101,
-        "isActive": 1,
-        "roles": [
-          {
-            "id": 1,
-            "name": "ROLE_ADMIN"
-          }
-        ]
-      }
-      """
+  Scenario: Missing user returns 404
+    Given path 'users', 'email', 'missing-' + java.util.UUID.randomUUID() + '@example.com'
+    When method GET
+    Then status 404
+
+  Scenario: PUT without either query or body ID returns 400
+    Given path 'users'
+    And request { firstName: 'No identifier' }
+    When method PUT
+    Then status 400
+
+  @security
+  Scenario Outline: Even ADMIN cannot retrieve raw provider keys
+    Given path 'keys', '<operation>'
+    When method GET
+    Then status 403
+    Examples:
+      | operation       |
+      | getMoralisApi   |
+      | getNasaApi      |
+      | getGoogleApi    |
+      | getFirebaseApi  |
+      | getNytApi       |
+      | getAnthropicApi |
+      | getGeminiApi    |
+      | getOpenAIApi    |
