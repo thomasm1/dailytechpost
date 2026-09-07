@@ -10,6 +10,9 @@ import net.ourdailytech.rest.models.dto.JWTAuthResponse;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
+import net.ourdailytech.rest.models.dto.UserProfileUpdateDto;
+import jakarta.validation.Valid;
 import net.ourdailytech.rest.service.UsersService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,7 +21,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.access.prepost.PreAuthorize; 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,14 +53,7 @@ public class UsersController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping({USER_PATH, USER_PATH+"/", USER_PATH+"/list"}) 
     public ResponseEntity<List<UserDto>> getUsers() {
-        List<UserDto> users = new ArrayList<>();
-        try {
-            users = usersService.getUsers();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return new ResponseEntity<>(users,
-                HttpStatus.OK);
+        return ResponseEntity.ok(usersService.getUsers());
     }
 
     @Operation(
@@ -132,7 +127,7 @@ public class UsersController {
     )
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(USER_PATH)
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody CreateUserRequestDto user) {
         UserDto savedUser = usersService.createUser(user); 
 
         HttpHeaders headers = new HttpHeaders();
@@ -151,7 +146,7 @@ public class UsersController {
             description = "HTTP Status 201 SUCCESS"
     )
     @PostMapping({USER_PATH+"/auth/register", USER_PATH+"/auth/signup"})
-    public ResponseEntity<UserDto> register(@RequestBody RegisterDto registerDto) {
+    public ResponseEntity<UserDto> register(@Valid @RequestBody RegisterDto registerDto) {
         Optional<UserDto> response = usersService.register(registerDto);
         response.orElseThrow(() -> new ResourceNotFoundException("User not found"));
         HttpHeaders headers = new HttpHeaders();
@@ -214,12 +209,39 @@ public class UsersController {
     public ResponseEntity<UserDto> patchUserById(@RequestParam(value="userId", required = false) Long userId,
         @RequestBody UserDto user) {
 
-        usersService.patchUser(user, userId);
+        Long effectiveId = userId != null ? userId : user.getUserId();
+        if (effectiveId == null) return ResponseEntity.badRequest().build();
+        usersService.patchUser(user, effectiveId);
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
+
+    @PreAuthorize("isAuthenticated()")
+    @PatchMapping(value = USER_PATH + "/me/profile", consumes = "application/json")
+    public ResponseEntity<UserDto> updateCurrentUserProfile(
+            Authentication authentication, @RequestBody UserProfileUpdateDto change) {
+        return usersService.updateUserProfileByEmail(authentication.getName(), change)
+                .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PatchMapping(value = USER_PATH + "/email/{email}/profile", consumes = "application/json")
+    public ResponseEntity<UserDto> updateUserProfileByEmail(
+            @PathVariable String email, @RequestBody UserProfileUpdateDto change) {
+        return usersService.updateUserProfileByEmail(email, change)
+                .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping(value = USER_PATH + "/email/{email}", consumes = "application/json")
+    public ResponseEntity<UserDto> updateUserByEmail(@PathVariable String email, @RequestBody UserDto change) {
+        UserDto target = usersService.getUserByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
+        return usersService.updateUser(change, target.getUserId())
+                .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
     @Operation(
             summary = "Delete User REST API",

@@ -1,0 +1,88 @@
+databaseChangeLog:
+  # Do not merge duplicate accounts automatically: their owned posts and roles need review.
+  - changeSet:
+      id: 007-users-email-validation
+      author: thomasm1
+      preConditions:
+        - onFail: HALT
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM (SELECT email FROM users GROUP BY email HAVING COUNT(*) > 1) duplicates
+      changes:
+        - sql:
+            sql: SELECT 1
+  # Schema initialization may already have created the email constraint.
+  # Check its columns, not just its name; duplicate accounts must never be marked as migrated.
+  - changeSet:
+      id: 007-users-email-unique
+      author: thomasm1
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: HALT
+        # MySQL exposes unique indexes in STATISTICS; snapshot-based detection can miss them.
+        - or:
+            - and:
+                - dbms:
+                    type: mysql
+                - sqlCheck:
+                    expectedResult: 0
+                    sql: |
+                      SELECT COUNT(*) FROM (
+                        SELECT INDEX_NAME
+                        FROM information_schema.STATISTICS
+                        WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users'
+                        GROUP BY INDEX_NAME
+                        HAVING COUNT(*) = 1
+                          AND MAX(NON_UNIQUE) = 0
+                          AND MAX(COLUMN_NAME) = 'email'
+                          AND MAX(SUB_PART) IS NULL
+                      ) email_unique_indexes
+            - and:
+                - not:
+                    - dbms:
+                        type: mysql
+                - not:
+                    - uniqueConstraintExists:
+                        tableName: users
+                        columnNames: email
+      changes:
+        - addUniqueConstraint:
+            tableName: users
+            columnNames: email
+            constraintName: uk_users_email
+  - changeSet:
+      id: 007-users-profile-url
+      author: thomasm1
+      changes:
+        - modifyDataType:
+            tableName: users
+            columnName: cusurl
+            newDataType: varchar(1024)
+  - changeSet:
+      id: 007-user-plan-owner
+      author: thomasm1
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - foreignKeyConstraintExists:
+                foreignKeyName: fk_user_plan_user
+                foreignKeyTableName: user_plan
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: user_plan
+            baseColumnNames: userid
+            referencedTableName: users
+            referencedColumnNames: userid
+            constraintName: fk_user_plan_user
+  - changeSet:
+      id: 007-user-reference-data
+      author: thomasm1
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO roles (name) SELECT 'ROLE_USER' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_USER');
+              INSERT INTO roles (name) SELECT 'ROLE_ADMIN' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_ADMIN');
+              INSERT INTO user_plan (userid, plan, status, version, time_created, time_updated)
+              SELECT u.userid, 'FREE', 'ACTIVE', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+              FROM users u WHERE NOT EXISTS (SELECT 1 FROM user_plan p WHERE p.userid = u.userid);
+      # Existing memberships and paid plans are authoritative, regardless of provider.

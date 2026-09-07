@@ -3,20 +3,18 @@ Feature: Category hierarchy and owned links with isolated fixtures
   Scenario: USER owns its links, public filtering works, ADMIN updates and deletes
     * if (!allowWrites) karate.fail('Write tests require -DallowWrites=true')
     * def fixtures = []
-    * configure afterScenario = read('classpath:helpers/cleanup.js')
-    * def admin = callonce read('classpath:helpers/auth.feature') { role: 'admin' }
-    * def user = callonce read('classpath:helpers/auth.feature') { role: 'user' }
+    * configure afterScenario = read('classpath:utils/cleanup.js')
     * def unique = '' + java.util.UUID.randomUUID()
     Given url apiBaseUrl
     And path 'categories'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request { name: '#("Karate root " + unique)', description: 'Isolated test category' }
     When method POST
     Then status 201
     * def rootId = response.id
     * eval fixtures.push('categories/' + rootId)
     Given path 'categories'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request { name: '#("Karate child " + unique)', description: 'Child', parentId: '#(rootId)' }
     When method POST
     Then status 201
@@ -24,7 +22,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     * eval fixtures.push('categories/' + categoryId)
     Given path 'categories'
     And param id = categoryId
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request { name: 'Updated child', description: 'Updated', parentId: '#(rootId)' }
     When method PUT
     Then status 200
@@ -40,7 +38,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     And match roots[0].children contains deep { id: '#(categoryId)' }
     * def link = { title: 'Private fixture', url: '#("https://example.com/" + unique)', categoryId: '#(categoryId)', publicLink: false }
     Given path 'links'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request link
     When method POST
     Then status 201
@@ -48,7 +46,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     * eval fixtures.push('links/' + linkId)
     And match response.publicLink == false
     Given path 'links', 'me', 'category', categoryId
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     When method GET
     Then status 200
     And match response contains deep { id: '#(linkId)' }
@@ -57,14 +55,14 @@ Feature: Category hierarchy and owned links with isolated fixtures
     Then status 200
     And match response == []
     Given path 'links', 'me', 'category', categoryId
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     When method GET
     Then status 200
     And match response == []
     * set link.id = linkId
     * set link.publicLink = true
     Given path 'links'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request link
     When method PUT
     Then status 200
@@ -75,13 +73,13 @@ Feature: Category hierarchy and owned links with isolated fixtures
     * set link.title = 'Admin edited'
     Given path 'links'
     And param id = linkId
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     And request link
     When method PUT
     Then status 200
     And match response.title == 'Admin edited'
     Given path 'links', linkId
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     When method DELETE
     Then status 200
     * eval fixtures.pop()
@@ -92,7 +90,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     * set link.id = null
     * set link.url = 'https://example.com/admin-' + unique
     Given path 'links'
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     And request link
     When method POST
     Then status 201
@@ -101,7 +99,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     * set link.id = adminLinkId
     * set link.title = 'Unauthorized edit'
     Given path 'links'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request link
     When method PUT
     Then status 403
@@ -112,7 +110,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     # CSV import assigns the current owner and deduplicates repeated uploads.
     * def csv = 'url,title,categoryId\nhttps://example.com/csv-' + unique + ',CSV fixture,' + categoryId + '\n'
     Given path 'links', 'bulk', 'csv'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And multipart file file = { value: '#(csv)', filename: 'fixture.csv', contentType: 'text/csv' }
     When method POST
     Then status 201
@@ -121,7 +119,7 @@ Feature: Category hierarchy and owned links with isolated fixtures
     * eval fixtures.push('links/' + csvLinkId)
     And match response[0].categoryId == categoryId
     Given path 'links', 'bulk', 'csv'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And multipart file file = { value: '#(csv)', filename: 'fixture.csv', contentType: 'text/csv' }
     When method POST
     Then status 201

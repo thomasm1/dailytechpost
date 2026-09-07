@@ -4,6 +4,7 @@ import net.ourdailytech.rest.mapper.UserMapper;
 import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
 import net.ourdailytech.rest.service.UsersService;
 import net.ourdailytech.rest.service.UsersServiceImpl;
 import org.junit.jupiter.api.AfterAll;
@@ -56,8 +57,10 @@ public class UserServiceTest {      // *NOTE: change PK usernames before sending
         .isActive(1)
         .id("id")
                 .build(); 
-        when(usersService.createUser(u)).thenReturn(u);
-        assertEquals(usersService.createUser(u), u);
+        CreateUserRequestDto request = CreateUserRequestDto.builder()
+                .email(u.getEmail()).password("test-only-password").build();
+        when(usersService.createUser(request)).thenReturn(u);
+        assertEquals(usersService.createUser(request), u);
      }
 
     @Test

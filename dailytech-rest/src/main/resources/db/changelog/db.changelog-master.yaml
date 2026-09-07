@@ -42,3 +42,8 @@ databaseChangeLog:
   - include:
       file: changes/006-add-category-parent.sql
       relativeToChangelogFile: true
+
+  # User identity, profile storage and plan ownership parity with CryptoMaven.
+  - include:
+      file: changes/007-user-parity.yaml
+      relativeToChangelogFile: true

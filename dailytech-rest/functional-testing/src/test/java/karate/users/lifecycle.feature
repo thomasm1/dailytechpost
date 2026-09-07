@@ -4,8 +4,7 @@ Feature: Isolated user registration, ADMIN creation, update, patch and deletion
     * if (!allowWrites) karate.fail('Write tests require -DallowWrites=true and a disposable API database')
     * url apiBaseUrl
     * def fixtures = []
-    * configure afterScenario = read('classpath:helpers/cleanup.js')
-    * def admin = callonce read('classpath:helpers/auth.feature') { role: 'admin' }
+    * configure afterScenario = read('classpath:utils/cleanup.js')
     * def email = 'karate-' + java.util.UUID.randomUUID() + '@example.com'
     * def password = 'Karate-' + java.util.UUID.randomUUID() + '!'
 
@@ -34,31 +33,32 @@ Feature: Isolated user registration, ADMIN creation, update, patch and deletion
     Then status 200
     And match response.userId == id
     Given path 'users'
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     And request { userId: '#(id)', email: '#(email)', firstName: 'Updated', isActive: 1 }
     When method PUT
     Then status 200
     And match response.firstName == 'Updated'
     Given path '<patchPath>'
     And param userId = id
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     And request { firstName: 'Patched' }
     When method PATCH
     Then status 204
     Given path 'users', id
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     When method GET
     Then status 200
     And match response.firstName == 'Patched'
     And match response.email == email
     Given path '<deletePath>', id
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     When method DELETE
     Then status 200
-    And match response == true
+    * json deleted = response
+    And match deleted == true
     * eval fixtures.pop()
     Given path 'users', id
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     When method GET
     Then status 404
     Examples:
@@ -68,8 +68,8 @@ Feature: Isolated user registration, ADMIN creation, update, patch and deletion
 
   Scenario: ADMIN creation assigns USER and query ID overrides body ID on PUT
     Given path 'users'
-    And header Authorization = admin.authorization
-    And request { email: '#(email)', firstName: 'Created', lastName: 'Fixture', isActive: 1 }
+    And header Authorization = adminAuthHeader
+    And request { email: '#(email)', password: '#(password)', firstName: 'Created', lastName: 'Fixture', isActive: 1 }
     When method POST
     Then status 201
     * def id = response.userId
@@ -78,7 +78,7 @@ Feature: Isolated user registration, ADMIN creation, update, patch and deletion
     And match response.roles contains { id: '#number', name: 'ROLE_USER' }
     Given path 'users'
     And param userId = id
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     And request { userId: 0, firstName: 'QueryWins', email: '#(email)' }
     When method PUT
     Then status 200

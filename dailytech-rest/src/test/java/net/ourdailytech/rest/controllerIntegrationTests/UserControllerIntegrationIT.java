@@ -2,6 +2,7 @@ package net.ourdailytech.rest.controllerIntegrationTests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
 import net.ourdailytech.rest.service.UsersService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -63,7 +64,7 @@ class UserControllerIntegrationIT {
     UserDto userDto = UserDto.builder().email("newuser@example.com").build();
     UserDto savedUser = UserDto.builder().id("1").email("newuser@example.com").build();
 
-    Mockito.when(userService.createUser(any(UserDto.class))).thenReturn(savedUser);
+    Mockito.when(userService.createUser(any(CreateUserRequestDto.class))).thenReturn(savedUser);
 
     mockMvc.perform(post("/api/users")
             .contentType(MediaType.APPLICATION_JSON)

@@ -3,6 +3,8 @@ package net.ourdailytech.rest.service;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto; 
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
+import net.ourdailytech.rest.models.dto.UserProfileUpdateDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +15,8 @@ public interface UsersService {
 	UserDto loginUser(String username, String password);
 
 	String login(LoginDto loginDto);
-	public UserDto createUser(UserDto user);
+	public UserDto createUser(CreateUserRequestDto user);
+	Optional<UserDto> updateUserProfileByEmail(String email, UserProfileUpdateDto change);
 	Optional<UserDto> register(RegisterDto registerDto);
 	public Optional<UserDto>  getUser(long id);
 	Optional<UserDto> getUserByEmail(String email);

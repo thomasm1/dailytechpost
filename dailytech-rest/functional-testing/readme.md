@@ -4,33 +4,31 @@ The suite follows the controllers in `../src/main/java/net/ourdailytech/rest/con
 
 ## Authentication
 
-Public tests do not log in. Authenticated tests resolve USER and ADMIN independently through `helpers/auth.feature`, using a supplied bearer token or `POST /api/users/auth/login`. The helper reads `/api/users/me` and verifies the actual roles: USER tests reject an ADMIN identity. No account is automatically promoted or used as both roles.
+`karate-config.js` logs in USER and ADMIN through `utils/login.feature` and exposes `authHeaders` and `adminAuthHeaders`. Tests reuse these headers. `utils/auth.feature` checks `/api/users/me` with the configured header; it does not log in again. USER checks require ROLE_USER without ROLE_ADMIN. Anonymous requests omit Authorization, although configuration still requires both logins before those scenarios run.
 
 | Purpose | Environment variable | Optional JVM property |
 | --- | --- | --- |
 | API origin (without `/api`) | `DAILYTECH_BASE_URL` | `baseUrl` |
-| Ordinary USER email | `DAILYTECH_USER_EMAIL` | `api.username` |
-| Ordinary USER password | `DAILYTECH_USER_PASSWORD` | `api.password` |
-| ADMIN email | `DAILYTECH_ADMIN_EMAIL` | `api.adminUsername` |
-| ADMIN password | `DAILYTECH_ADMIN_PASSWORD` | `api.adminPassword` |
-| USER bearer token | `DAILYTECH_USER_TOKEN` | `api.token` |
-| ADMIN bearer token | `DAILYTECH_ADMIN_TOKEN` | `api.adminToken` |
+| Ordinary USER email | `THOMAS7_GMAIL` | `api.username` |
+| Ordinary USER password | `THOMAS7_GMAIL_PW` | `api.password` |
+| ADMIN email | `THOMAS1_GMAIL` | `api.adminUsername` |
+| ADMIN password | `THOMAS1_GMAIL_PW` | `api.adminPassword` |
 | Allowed frontend origin for CORS | `DAILYTECH_CORS_ORIGIN` | `corsOrigin` |
 
-Prefer environment variables for credentials so they are not placed in shell command history. Token variables contain only the token, without `Bearer `. Both native JWTs and Firebase ID tokens are accepted by the server; Firebase roles are resolved through the local user mapping. Login returns `accessToken`, not `token`. Registration accepts `email` and `password`, returns a UserDto with 201, and does not return a login token.
+Prefer environment variables for credentials so they are not placed in shell command history. The current configuration uses native REST login for both identities; a Firebase-only account needs a separately provisioned native password to use this login flow. Login returns `accessToken`. Registration accepts `email` and `password`, returns a UserDto with 201, and does not return a login token.
 
-Credentials are configured separately for USER and ADMIN. Loading the configuration does not require authentication.
+Configuration variables are `userEmail`, `userPassword`, `adminEmail` and `adminPassword`. The USER token is cached with `callSingle`; the ADMIN login runs when the configuration is evaluated. Tests do not perform additional role logins. Disposable profile accounts obtain their own token.
 
 ## Commands
 
 Run from `dailytech-rest/functional-testing` using Java 17+ and Maven:
 
 ```powershell
-# Public reads, anonymous security checks, CORS and health; no credentials needed.
+# Smoke reads, anonymous security checks, CORS and health; config requires both credentials.
 mvn test "-Dtest=ApiTest" "-Dkarate.options=--tags @smoke"
 
 # Default suite: public tests plus authenticated reads/role checks.
-# Supply separate USER and ADMIN credentials/tokens first.
+# Supply separate USER and ADMIN credentials first.
 mvn test "-Dtest=ApiTest"
 
 # Only user reads, without creating records.
@@ -73,7 +71,7 @@ mvn test "-Dtest=ApiTest" "-DdryRun=true" "-DallowWrites=true" "-DrunFirebase=tr
 | `karate/springActuator/actuator.feature` | Health reports UP. Other actuator endpoints depend on deployment exposure settings. |
 | `karate/springRest/restData.feature` | Spring Data REST root discovery without fixed IDs. |
 
-Read scenarios that require an existing post/root/comment abort their dependent steps when the collection is empty; the collection response is still checked. CRUD scenarios provide deterministic coverage using newly created resources. They use UUID-based names and register created IDs for reverse-order cleanup in `helpers/cleanup.js`, including after a failed assertion. Cleanup accepts already-deleted records (404); other cleanup failures are reported. An interrupted process can still leave fixtures behind.
+Read scenarios that require an existing post/root/comment abort their dependent steps when the collection is empty; the collection response is still checked. CRUD scenarios provide deterministic coverage using newly created resources. They use UUID-based names and register created IDs for reverse-order cleanup in `utils/cleanup.js`, including after a failed assertion. Cleanup accepts already-deleted records (404); other cleanup failures are reported. An interrupted process can still leave fixtures behind.
 
 ## Effective security matrix
 
@@ -83,6 +81,8 @@ The broad GET permit rule in `SecurityConfig` does not override method-level `@P
 | --- | --- |
 | POST `/api/users/auth/login`, `/signin`, `/register`, `/signup` | Public |
 | GET `/api/users/me` | Authenticated local/Firebase identity |
+| PATCH `/api/users/me/profile` | Authenticated user's profile |
+| PATCH `/api/users/email/{email}/profile` | ADMIN |
 | Other UsersController reads and all user CRUD | ADMIN |
 | GET `/api/admin/firebase-users` | ADMIN; listing additionally needs Firebase Admin configuration |
 | GET categories, posts, comments and weblinks | Public |
@@ -114,7 +114,7 @@ The Postman write requests are **manual examples, not an ordered CRUD workflow**
 
 ## API limitations
 
-- PATCH users requires `?userId=...` in practice: the service does not fall back to the body ID, even though the controller marks the query optional. PUT users supports either ID source.
+- PATCH and PUT users accept a query userId or body userId; a supplied query ID takes precedence.
 - Users listing returns an array and does not implement pagination parameters. Posts listing returns an envelope or 204 when empty.
 - `/api/keys/**` is denied for every role and the raw-key controller has been removed. The news UI uses `/api/news` instead. See [provider security and deployment](../README_PROVIDER_SECURITY.md).
 - `/api/links` and `/api/links/category/{id}` currently return all matching links, including private ones; the explicitly public category route filters them. The ownership tests check update authorization, not an assumed privacy policy for all reads.

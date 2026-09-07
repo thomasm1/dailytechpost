@@ -2,8 +2,8 @@
 Feature: Ordinary USER permissions are distinct from ADMIN permissions
   Background:
     * url apiBaseUrl
-    * def user = callonce read('classpath:helpers/auth.feature') { role: 'user' }
-    * header Authorization = user.authorization
+    * configure headers = authHeaders
+    * def user = callonce read('classpath:utils/auth.feature') { role: 'user' }
 
   Scenario: USER current profile is the authenticated identity
     Given path 'users', 'me'
@@ -26,7 +26,8 @@ Feature: Ordinary USER permissions are distinct from ADMIN permissions
 
   Scenario Outline: USER cannot administer users or delete resources
     Given path <endpoint>
-    And request {}
+    # Use a valid creation body so request validation cannot mask the permission check.
+    And request { email: '#("denied-" + java.util.UUID.randomUUID() + "@example.com")', password: 'test-only-password' }
     When method <verb>
     Then status 403
     Examples:
@@ -34,6 +35,8 @@ Feature: Ordinary USER permissions are distinct from ADMIN permissions
       | 'users'              | POST   |
       | 'users'              | PUT    |
       | 'users'              | PATCH  |
+      | 'users/email/' + adminEmail + '/profile' | PATCH |
+      | 'users/email/' + adminEmail | PUT |
       | 'users/0'            | DELETE |
       | 'posts/0'            | DELETE |
       | 'categories/0'       | DELETE |

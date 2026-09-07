@@ -6,6 +6,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletRequest;
@@ -48,7 +49,12 @@ class RetiredKeysSecurityTest {
                 String path = "/api/keys/get" + provider + "Api";
                 mvc.perform(get(path)).andExpect(status().is4xxClientError());
                 mvc.perform(get(path).with(user("reader").roles("USER"))).andExpect(status().isForbidden());
-                mvc.perform(get(path).with(user("admin").roles("ADMIN"))).andExpect(status().isForbidden());
+                var denied = mvc.perform(get(path).with(user("admin").roles("ADMIN")))
+                        .andExpect(status().isForbidden()).andReturn();
+                if (security == SecurityConfig.class) {
+                    // A container error dispatch can replace this status on stateless requests.
+                    assertFalse(denied.getResponse().isCommitted(), "Denial must not invoke sendError");
+                }
             }
             mvc.perform(get("/api/public-probe")).andExpect(status().isOk());
         }

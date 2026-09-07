@@ -62,13 +62,13 @@ public class User extends AbstractDomainClass {
     @Column(name = "usertype")
     private int userType;
  
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "organizationcode")
     private String organizationCode;
 
-    @Column(name = "cusurl")
+    @Column(name = "cusurl", length = 1024)
     private String cusUrl;
 
     @Column(name = "dashboardcode")

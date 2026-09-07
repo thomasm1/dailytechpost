@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS dailytech.users
     usertype         INT          NULL,
     email            VARCHAR(255) NOT NULL,
     organizationcode VARCHAR(255) NULL,
-    cusurl           VARCHAR(255) NULL,
+    cusurl           VARCHAR(1024) NULL,
     dashboardcode    VARCHAR(255) NULL,
     isactive         INT          NULL,
     contacttype      INT          NULL,
@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS dailytech.users
     version          INT          NOT NULL DEFAULT 1,
     time_created     DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     time_updated     DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT pk_users PRIMARY KEY (userid)
+    CONSTRAINT pk_users PRIMARY KEY (userid),
+    CONSTRAINT uk_users_email UNIQUE (email)
 );
 
 CREATE TABLE IF NOT EXISTS dailytech.users_roles

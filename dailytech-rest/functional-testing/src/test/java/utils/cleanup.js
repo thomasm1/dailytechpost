@@ -1,11 +1,11 @@
 function() {
   var fixtures = karate.get('fixtures') || [];
-  var admin = karate.get('admin');
+  var authorization = karate.get('adminAuthHeader');
   var errors = [];
   for (var i = fixtures.length - 1; i >= 0; i--) {
     try {
-      karate.call('classpath:helpers/cleanup.feature', {
-        resourcePath: fixtures[i], authorization: admin.authorization
+      karate.call('classpath:utils/cleanup.feature', {
+        resourcePath: fixtures[i], authorization: authorization
       });
     } catch (e) { errors.push(fixtures[i] + ': ' + e); }
   }

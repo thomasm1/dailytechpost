@@ -6,6 +6,7 @@ import net.ourdailytech.rest.mapper.UserMapper;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
 import net.ourdailytech.rest.service.UsersService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -99,11 +100,11 @@ public class UsersControllerTest {
             userDto.setUserId(1L);
             userDto.setEmail("newuser@example.com");
 
-            when(usersService.createUser(any(UserDto.class))).thenReturn(userDto);
+            when(usersService.createUser(any(CreateUserRequestDto.class))).thenReturn(userDto);
 
             mockMvc.perform(post("/api/users")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{ \"email\": \"newuser@example.com\" }"))
+                            .content("{ \"email\": \"newuser@example.com\", \"password\": \"test-only-password\" }"))
                     .andExpect(status().isCreated())
                     .andExpect(jsonPath("$.email").value("newuser@example.com"));
         }

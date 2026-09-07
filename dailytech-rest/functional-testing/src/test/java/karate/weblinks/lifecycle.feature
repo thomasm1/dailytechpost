@@ -3,13 +3,11 @@ Feature: Weblink CRUD matches the controller's current status codes
   Scenario:
     * if (!allowWrites) karate.fail('Write tests require -DallowWrites=true')
     * def fixtures = []
-    * configure afterScenario = read('classpath:helpers/cleanup.js')
-    * def admin = callonce read('classpath:helpers/auth.feature') { role: 'admin' }
-    * def user = callonce read('classpath:helpers/auth.feature') { role: 'user' }
-    * def link = { title: 'Karate reference', url: '#("https://example.com/" + java.util.UUID.randomUUID())', ownerEmail: '#(user.profile.email)' }
+    * configure afterScenario = read('classpath:utils/cleanup.js')
+    * def link = { title: 'Karate reference', url: '#("https://example.com/" + java.util.UUID.randomUUID())', ownerEmail: '#(userEmail)' }
     Given url apiBaseUrl
     And path 'weblinks'
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request link
     When method POST
     Then status 201
@@ -22,13 +20,13 @@ Feature: Weblink CRUD matches the controller's current status codes
     * set link.title = 'Updated reference'
     Given path 'weblinks'
     And param id = id
-    And header Authorization = user.authorization
+    And header Authorization = authHeader
     And request link
     When method PUT
     Then status 201
     And match response.title == 'Updated reference'
     Given path 'weblinks', id
-    And header Authorization = admin.authorization
+    And header Authorization = adminAuthHeader
     When method DELETE
     Then status 200
     And match response == true

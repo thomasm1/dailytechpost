@@ -22,7 +22,7 @@ CREATE TABLE  IF NOT EXISTS  dailytech.users
     usertype         INT                NULL,
     email            VARCHAR(255)       NOT NULL,
     organizationcode VARCHAR(255)       NULL,
-    cusurl           VARCHAR(255)       NULL,
+    cusurl           VARCHAR(1024)      NULL,
     dashboardcode    VARCHAR(255)       NULL,
     isactive         INT                NULL,
     contacttype      INT                NULL,
@@ -31,7 +31,8 @@ CREATE TABLE  IF NOT EXISTS  dailytech.users
      version       INT                   DEFAULT 1,
      time_created  DATETIME              NOT NULL,
      time_updated  DATETIME              NOT NULL,
-    CONSTRAINT pk_users PRIMARY KEY (userid)
+    CONSTRAINT pk_users PRIMARY KEY (userid),
+    CONSTRAINT uk_users_email UNIQUE (email)
 );
 
 CREATE TABLE  IF NOT EXISTS  dailytech.users_roles
@@ -60,7 +61,8 @@ CREATE TABLE IF NOT EXISTS dailytech.user_plan (
   version       INT                   DEFAULT 1,
   time_created  DATETIME              NOT NULL,
   time_updated  DATETIME              NOT NULL,
-  CONSTRAINT pk_user_plan PRIMARY KEY (userid)
+  CONSTRAINT pk_user_plan PRIMARY KEY (userid),
+  CONSTRAINT fk_user_plan_user FOREIGN KEY (userid) REFERENCES dailytech.users (userid)
 );
 
 CREATE TABLE  IF NOT EXISTS  dailytech.categories

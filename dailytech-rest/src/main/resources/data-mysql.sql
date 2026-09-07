@@ -4,26 +4,28 @@ VALUES
     (2, 'ROLE_USER');
 
 -- USERS: 5 entries
+-- Sample accounts are not login credentials. Passwords and provider subjects are unset.
+-- Provision real test identities separately; never overwrite deployed credentials with fixtures.
 INSERT INTO dailytech.users (
     userid, password, lastname, firstname,
     usertype, email, organizationcode, cusurl,
     dashboardcode, isactive, contacttype, authprovider, authsubject, version,  time_created,  time_updated
 )
 VALUES
-    (10, 'pass123', 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111 , 'INTERNAL', '123', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
-    (11, 'pass234', 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222 , 'INTERNAL', '123' , 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00' ),
-    (12, 'pass345', 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333 , 'INTERNAL', '123', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
-    (13, 'pass456', 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444 , 'FIREBASE', '123', 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
-    (14, 'pass567', 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', '123' , 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  );
+    (10, NULL, 'Smith', 'TomA', 0, 'tom.admin@example.com', 'ORG-A', 'https://example.com/tomA', 'DASH-A', 1, 111 , 'INTERNAL', NULL, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
+    (11, NULL, 'Doe', 'Jane', 1, 'jane.user@example.com', 'ORG-B', 'https://example.com/jane', 'DASH-B', 1, 222 , 'INTERNAL', NULL , 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00' ),
+    (12, NULL, 'Brown', 'Bob', 2, 'bob.user@example.com', 'ORG-C', 'https://example.com/bob', 'DASH-C', 0, 333 , 'INTERNAL', NULL, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
+    (13, NULL, 'Johnson', 'Alice', 3, 'alice.user@example.com', 'ORG-D', 'https://example.com/alice', 'DASH-D', 1, 444 , 'FIREBASE', NULL, 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  ),
+    (14, NULL, 'Maestas', 'ThomasM', 3, 'thomas.maestas@example.com', 'ORG-E', 'https://example.com/thomasM', 'DASH-E', 0, 555, 'COGNITO', NULL , 1, '2026-01-15 00:00:00',   '2026-04-10 00:00:00'  );
 
 -- USERS_ROLES: 5 entries
 INSERT INTO dailytech.users_roles (role_id, user_id)
 VALUES
-    (1, 10),  -- tomAdmin => ROLE_ADMIN
+    (2, 10),  -- tomAdmin => ROLE_ADMIN
     (2, 11),  -- janeUser => ROLE_USER
-    (1, 12),  -- bobUser => ROLE_ADMIN
+    (2, 12),  -- bobUser => ROLE_ADMIN
     (2, 13),  -- aliceUser => ROLE_USER
-    (1, 14);  -- thomasMaestas => ROLE_ADMIN
+    (2, 14);  -- thomasMaestas => ROLE_ADMIN
 -- USERS_ROLES: 5 entries
 
 -- CATEGORIES: 5 entries

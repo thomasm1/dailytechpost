@@ -1,4 +1,76 @@
-# DailyTech provider credentials
+# DailyTech authentication and provider security
+
+## Accounts and roles
+
+`users.userid` identifies the local account. Email is unique. `users_roles` stores
+role assignments, and `user_plan.userid` links the account to its subscription.
+Posts and links belong to the local user. The authentication provider does not
+determine the user's role or subscription.
+
+The Angular service `aws-authentication.service.ts` calls
+`POST /api/users/auth/login` for native JWT authentication. This login route does
+not exchange Cognito tokens. Firebase authentication looks up the local account
+by the email in the verified token and loads its database roles. An existing
+ADMIN account retains its role when signing in through Firebase. New Firebase
+accounts receive ROLE_USER.
+
+Firebase account lookup currently uses the token email without explicitly checking
+the `email_verified` claim. Verification of the token and verification of email
+ownership are separate checks; email verification is a remaining requirement for
+secure account linking across providers.
+
+## User endpoints
+
+| Endpoint | Access and account selection |
+| --- | --- |
+| `GET /api/users/me` | Authenticated user's email from `authentication.name` |
+| `GET /api/users`, `/api/users/list` | ADMIN |
+| `GET /api/users/{userId}` | ADMIN |
+| `GET /api/users/email/{email}` | ADMIN |
+| `PATCH /api/users/me/profile` | Authenticated user's profile |
+| `PATCH /api/users/email/{email}/profile` | ADMIN updating the specified user's profile |
+| `PUT /api/users/email/{email}` | ADMIN updating the specified user |
+| `POST /api/users` | ADMIN creating an account with an explicit password |
+| `POST /api/users/auth/register` | Public registration; assigns ROLE_USER |
+
+ID/query-based update and delete routes also require ADMIN. An ADMIN can use
+`/me` for their own account; selecting another account requires the corresponding
+email or ID route.
+
+Admin creation accepts `CreateUserRequestDto` and assigns ROLE_USER. Registration
+also assigns ROLE_USER. Neither operation derives a password from the email.
+User response DTOs do not expose passwords.
+
+Profile updates accept first name, last name, organization code, contact type and
+profile URL. They do not accept changes to email, user ID, password, provider,
+roles or subscription. Omitted numeric update fields retain their existing values.
+Profile URLs support up to 1,024 characters.
+
+User responses include provider metadata and the effective subscription plan.
+Missing plans, canceled or past-due subscriptions, and expired trials return FREE.
+Active plans and unexpired trials return their assigned plan. Reading a profile
+does not rewrite billing history.
+
+## User schema and sample data
+
+The Java entity and repository use Long IDs, stored as BIGINT. Liquibase manages
+schema upgrades through `src/main/resources/db/changelog/db.changelog-master.yaml`.
+The `007-user-parity.yaml` migration adds email uniqueness, expands profile URL
+storage and ensures plan ownership. It inserts missing ROLE_USER and ROLE_ADMIN
+definitions and supplies FREE plans only for users without a plan row. Existing
+credentials, role assignments and subscription records are preserved. Duplicate
+emails stop the migration so account ownership can be resolved before proceeding.
+
+Liquibase records applied changesets; subsequent runs skip them. The standalone
+MySQL and H2 schema files describe fresh databases, not upgrades to existing tables.
+
+`data-mysql.sql` and `data-h2.sql` contain five sample accounts with role assignments
+and billing scenarios. Their passwords and provider subjects are NULL. They are
+database fixtures, not login credentials. The full fixture scripts are not
+idempotent production seed scripts. Functional tests require separately configured
+DailyTech USER and ADMIN credentials.
+
+## External provider credentials
 
 Angular calls DailyTech for news data. DailyTech calls NYT with a server-only credential. No endpoint returns that credential to Angular, including to administrators.
 
@@ -31,6 +103,11 @@ Set `NYT_API`, or the fallback `NYT_API_KEY`, in the **REST process environment*
 For production, provision the secret in the deployment platform's secret store and inject it into the REST runtime with access limited to its service identity. Secret-store provisioning and runtime injection are managed by the deployment platform. Configure the deployment to refresh/restart the process when the credential changes.
 
 The news routes are public. They accept only supported sections and search inputs. The server never forwards browser authentication headers to NYT, never follows provider redirects, and returns generic provider errors. Keep outbound HTTP wire/debug logging disabled: NYT authenticates through a query parameter, so logging complete upstream URLs could expose the key.
+
+Local frontend origins include `http://localhost:3000` (`npm run start3000`) and
+`http://localhost:4200`. `APP_CORS_ALLOWED_ORIGINS` overrides the default allowlist;
+when set, it must include the frontend's exact origin. CORS can reject an anonymous
+news request even though the endpoint does not require login.
 
 Default limits:
 
@@ -88,6 +165,17 @@ From `dailytech-rest`:
 mvn test "-Dtest=NewsServiceTest,NewsControllerTest,RetiredKeysSecurityTest,AccessDeniedResponseTest"
 ```
 
+User account, profile permission, Firebase role and migration tests:
+
+```powershell
+mvn test "-Dtest=UserParityTest,UserParityMigrationTest,UserProfileSecurityTest,UsersControllerTest,UserServiceTest,FirebaseTokenAuthenticationServiceTest"
+```
+
+Migration tests use isolated H2 databases in MySQL compatibility mode. They cover
+repeat execution, preservation of existing plans, rejection of duplicate emails,
+and loading the H2 schema with its sample data. These tests do not apply changes
+to the deployed MySQL database.
+
 From `dailytech-angular`:
 
 ```powershell
@@ -96,3 +184,27 @@ node node_modules/@angular/cli/bin/ng.js test --watch=false --browsers=ChromeHea
 ```
 
 Postman includes backend news requests and denial checks for retired key endpoints. Karate includes anonymous, USER and ADMIN key-denial checks and invalid news inputs; see [functional testing](functional-testing/readme.md) for credentials and safe execution. Offline unit tests use fake provider credentials and mocked NYT responses. Karate dry-run parses scenarios but does not verify a live deployment.
+## Profile images
+
+Authenticated users upload JPEG or PNG images using `POST /api/users/me/profile/image`
+with a multipart `file` field. The server resolves the local user from authentication,
+checks the image format, uploads the original bytes to S3, and saves the resulting URL in
+`users.cusurl`. The response is the updated user profile. Uploads are limited to
+5 MB. SVG and other non-JPEG/PNG formats are rejected. The format check does not
+fully decode or sanitize image contents. Original EXIF metadata, including orientation
+and any location tags, is preserved; images are not resized or re-encoded.
+
+The default object location is `s3://tmm-nov/dailytech/img/users/{userId}/{uuid}.jpg`
+(or `.png`). CloudFront uses Origin path `/dailytech`, so the display URL is
+`https://d2cn5yubgz8yjt.cloudfront.net/img/users/{userId}/{uuid}.jpg`.
+`DAILYTECH_PROFILE_IMAGE_ORIGIN_PATH` must match CloudFront's Origin path; use an
+empty value for a distribution with no Origin path. This affects URL generation,
+not the S3 upload key. Existing stored image URLs are not automatically rewritten.
+`DAILYTECH_PROFILE_IMAGE_BUCKET`, `DAILYTECH_PROFILE_IMAGE_BASE_URL`, and `AWS_REGION`
+override deployment settings. AWS credentials use the SDK default credential chain;
+they are never supplied by Angular or stored in the application configuration.
+
+The runtime IAM identity needs `s3:PutObject` for this image prefix. The configured
+public URL must already allow image delivery through S3 or a CDN. The application
+does not change bucket policies, set public object ACLs, or delete previous images.
+Uploads succeed only when storage is configured and credentials have access.

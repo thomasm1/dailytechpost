@@ -74,7 +74,7 @@ public class SecurityConfig {
         this.authenticationFilter = authenticationFilter;
     }
 
-  @Value("${app.cors.allowed-origins:http://localhost:4200,http://localhost:8080,http://74.98.230.192:4200,http://74.98.230.192:8080,http://74.98.230.192:3000,https://ourdailytech.net,https://www.ourdailytech.net}")
+  @Value("${app.cors.allowed-origins:http://localhost:3000,http://localhost:4200,http://localhost:8080,http://74.98.230.192:4200,http://74.98.230.192:8080,http://74.98.230.192:3000,https://ourdailytech.net,https://www.ourdailytech.net}")
   private String allowedOriginsString;
  
   private List<String> getAllowedOrigins() {
@@ -127,7 +127,8 @@ public class SecurityConfig {
                 )
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint)
-                        .accessDeniedHandler((req, res, e) -> res.sendError(HttpServletResponse.SC_FORBIDDEN))
+                        // sendError dispatches to /error, where stateless authentication can become a 401.
+                        .accessDeniedHandler((req, res, e) -> res.setStatus(HttpServletResponse.SC_FORBIDDEN))
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

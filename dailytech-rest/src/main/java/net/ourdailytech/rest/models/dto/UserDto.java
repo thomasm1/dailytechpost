@@ -32,22 +32,25 @@ public class UserDto implements Serializable {
     private String organizationCode;
     private String dashboardCode; // usergroup
     private String cusUrl; // usergroup
-    private int userType;
+    private Integer userType;
 
     @Schema(description = "Username==email")
     @NotEmpty(message = "User email should not be null or empty")
     @Email(message = "Email address should be valid")
     private String email;
-    private int contactType;
-    private int isActive;
+    private Integer contactType;
+    private Integer isActive;
+
+    private net.ourdailytech.rest.util.enums.Plan userPlan;
+    private net.ourdailytech.rest.util.enums.AuthProvider authProvider;
+    private String authSubject;
 
     private Set<RoleDto> roles;
     private String id; // id
     private Set<PostEntity> posts = new HashSet<>();
 
-    public String getPassword() {
-        return email; // for/admin
-    }
+    // for/admin: creation now uses CreateUserRequestDto with an explicit password.
+    // Response DTOs never expose or manufacture credentials from the email.
 
 
 
@@ -56,10 +59,10 @@ public class UserDto implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserDto userDto = (UserDto) o;
-        return userId == userDto.userId &&
-                userType == userDto.userType &&
-                isActive == userDto.isActive &&
-                contactType == userDto.contactType &&
+        return Objects.equals(userId, userDto.userId) &&
+                Objects.equals(userType, userDto.userType) &&
+                Objects.equals(isActive, userDto.isActive) &&
+                Objects.equals(contactType, userDto.contactType) &&
                 Objects.equals(lastName, userDto.lastName) &&
                 Objects.equals(firstName, userDto.firstName) &&
                 Objects.equals(organizationCode, userDto.organizationCode) &&

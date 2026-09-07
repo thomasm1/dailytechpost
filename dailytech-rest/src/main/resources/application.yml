@@ -1,6 +1,10 @@
 build:
   version: "2.0.0"
 spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
   config:
     import: "optional:classpath:categories.yml"
 cryptomaven:
@@ -107,6 +111,14 @@ spring.rabbitmq.password: guest
 #resilience4j.retry.instances.AUTH-SERVICE.maxRetryAttempts: 5
 #resilience4j.retry.instances.AUTH-SERVICE.waitDuration: 2
 app:
+  aws:
+    s3:
+      region: ${AWS_REGION:us-east-1}
+      profile-image-bucket: ${DAILYTECH_PROFILE_IMAGE_BUCKET:tmm-nov}
+      profile-image-prefix: dailytech/img/
+      # Matches CloudFront's Origin path; the upload prefix remains the complete S3 folder.
+      public-origin-path: ${DAILYTECH_PROFILE_IMAGE_ORIGIN_PATH:/dailytech}
+      public-base-url: ${DAILYTECH_PROFILE_IMAGE_BASE_URL:https://d2cn5yubgz8yjt.cloudfront.net}
   jwt-secret: e037837c23ab0fe4f59e203ece8c0ddda2c70bfd5b5319fce2af9647be43b704
   jwt-expiration-milliseconds: 604800000
   # Server runtime environment only: never place literal provider credentials here.
@@ -127,7 +139,7 @@ app:
     project-id: ${FIREBASE_PROJECT_ID:}
     credentials-path: ${FIREBASE_CREDENTIALS_PATH:}
   cors:
-    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:4200,http://localhost:8080,http://74.98.230.192:4200,http://74.98.230.192:8080,http://74.98.230.192:3000,https://ourdailytech.net,https://www.ourdailytech.net}
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:4200,http://localhost:8080,http://74.98.230.192:4200,http://74.98.230.192:8080,http://74.98.230.192:3000,https://ourdailytech.net,https://www.ourdailytech.net}
   dailytech:
     message: ${info.app.message}
 

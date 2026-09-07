@@ -12,6 +12,7 @@ import jakarta.validation.constraints.NotNull;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class RegisterDto implements Serializable {
@@ -28,6 +29,9 @@ public class RegisterDto implements Serializable {
 //                       "one lowercase letter, one digit, and one special character")
     @NotNull(message = "Password cannot be null")
     private String password;
+
+    private String firstName;
+    private String lastName;
 
     public RegisterDto(String email, String password   ) {
 

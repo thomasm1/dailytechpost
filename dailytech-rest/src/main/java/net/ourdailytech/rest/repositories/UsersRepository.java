@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RepositoryRestResource(collectionResourceRel = "users", path = "users", itemResourceRel = "user")
-public interface UsersRepository extends JpaRepository<User, Integer> {
+public interface UsersRepository extends JpaRepository<User, Long> {
 
     // MULTIPLE
     Page<User> findAllByUserType(Integer userType, Pageable pageable);

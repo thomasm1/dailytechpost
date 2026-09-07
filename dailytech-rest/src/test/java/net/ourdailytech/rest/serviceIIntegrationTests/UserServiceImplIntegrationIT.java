@@ -1,6 +1,7 @@
 package net.ourdailytech.rest.serviceIIntegrationTests;
 
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
 import net.ourdailytech.rest.repositories.RoleRepository;
 import net.ourdailytech.rest.service.UsersService;
 import org.junit.jupiter.api.*;
@@ -47,7 +48,9 @@ public class UserServiceImplIntegrationIT {
 	@Test
 	@Order(1)
 	public void add_User() {
-		Assertions.assertEquals(usersService.createUser(u).getEmail(), u.getEmail());
+		CreateUserRequestDto request = CreateUserRequestDto.builder()
+				.email(u.getEmail()).password("test-only-password").build();
+		Assertions.assertEquals(usersService.createUser(request).getEmail(), u.getEmail());
 		System.out.println("added: " + dynamicUsername);
 	}
 

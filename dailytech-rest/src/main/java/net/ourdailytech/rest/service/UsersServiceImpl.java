@@ -11,6 +11,9 @@ import net.ourdailytech.rest.models.User;
 import net.ourdailytech.rest.models.dto.LoginDto;
 import net.ourdailytech.rest.models.dto.RegisterDto;
 import net.ourdailytech.rest.models.dto.UserDto;
+import net.ourdailytech.rest.models.dto.CreateUserRequestDto;
+import net.ourdailytech.rest.models.dto.UserProfileUpdateDto;
+import org.springframework.security.authentication.BadCredentialsException;
 import net.ourdailytech.rest.repositories.RoleRepository;
 import net.ourdailytech.rest.repositories.UsersRepository;
 import net.ourdailytech.rest.security.JwtTokenProvider;
@@ -81,7 +84,7 @@ public class UsersServiceImpl implements UsersService {
     } else {
       throw new ResourceNotFoundException("User", "email", email);
     }
-    return userMapper.toDto(optionalUser.get());
+    throw new BadCredentialsException("Invalid credentials");
   }
 
   /**
@@ -123,13 +126,24 @@ public class UsersServiceImpl implements UsersService {
    * @return UserDto
    */
   @Override
-  public UserDto createUser(UserDto userDto) {
+  public UserDto createUser(CreateUserRequestDto userDto) {
     Optional<User> optionalUser = usersRepository.findByEmail(userDto.getEmail());
     if (optionalUser.isPresent()) {
       throw new EmailAlreadyExistsException("User already exists");
     }
-    User user = userMapper.toEntity(userDto);
-    user.setPassword(passwordEncoder.encode(user.getPassword()));
+    User user = new User();
+    user.setEmail(userDto.getEmail());
+    user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+    user.setFirstName(userDto.getFirstName());
+    user.setLastName(userDto.getLastName());
+    user.setOrganizationCode(userDto.getOrganizationCode());
+    user.setDashboardCode(userDto.getDashboardCode());
+    user.setCusUrl(userDto.getCusUrl());
+    user.setUserType(userDto.getUserType() == null ? 0 : userDto.getUserType());
+    user.setContactType(userDto.getContactType() == null ? 0 : userDto.getContactType());
+    user.setIsActive(userDto.getIsActive() == null ? 1 : userDto.getIsActive());
+    user.setAuthProvider(userDto.getAuthProvider());
+    user.setAuthSubject(userDto.getAuthSubject());
     Role role = roleRepository.findByName("ROLE_USER")
         .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER"));
 
@@ -150,6 +164,10 @@ public class UsersServiceImpl implements UsersService {
     User user = new User();
     user.setEmail(registerDto.getEmail());
     user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+    user.setFirstName(registerDto.getFirstName());
+    user.setLastName(registerDto.getLastName());
+    user.setAuthProvider(net.ourdailytech.rest.util.enums.AuthProvider.INTERNAL);
+    user.setIsActive(1);
 
     Set<Role> roles = new HashSet<>();
     Optional<Role> userRole = Optional.ofNullable(roleRepository.findByName("ROLE_USER")
@@ -167,14 +185,7 @@ public class UsersServiceImpl implements UsersService {
    */
   @Override
   public Optional<UserDto> getUser(long id) {
-    try {
-      User u = usersRepository.findByUserId(id).orElseThrow(
-          () -> new ResourceNotFoundException("not found", "not found", String.valueOf(id))
-      );
-      return Optional.ofNullable(userMapper.toDto(u));
-    } catch (Exception e) {
-      return Optional.empty();
-    }
+    return usersRepository.findByUserId(id).map(userMapper::toDto);
   }
 
   /**
@@ -182,14 +193,7 @@ public class UsersServiceImpl implements UsersService {
    * @return UserDto
    */
   public Optional<UserDto> getUserByEmail(String email) {
-    try {
-      User u = usersRepository.findByEmail(email).orElseThrow(
-          () -> new ResourceNotFoundException("not found", "not found", email)
-      );
-      return Optional.ofNullable(userMapper.toDto(u));
-    } catch (Exception e) {
-      return Optional.empty();
-    }
+    return usersRepository.findByEmail(email).map(userMapper::toDto);
   }
 
   /**
@@ -197,19 +201,7 @@ public class UsersServiceImpl implements UsersService {
    */
   @Override
   public List<UserDto> getUsers() {
-    List<UserDto> userDtos = null;
-    try {
-      List<User> users = usersRepository.findAll();
-      if (users == null) {
-        throw new ResourceNotFoundException("not found", "not found", "not found");
-      } else {
-        return users.stream().map(userMapper::toDto).collect(Collectors.toList());
-      }
-    } catch (NullPointerException e) {
-      e.printStackTrace();
-      return new ArrayList<>();
-    }
-
+    return usersRepository.findAll().stream().map(userMapper::toDto).collect(Collectors.toList());
   }
 
   /**
@@ -246,6 +238,19 @@ public class UsersServiceImpl implements UsersService {
 
     User saved = usersRepository.save(user);
     return Optional.of(userMapper.toDto(saved));
+  }
+
+  @Override
+  public Optional<UserDto> updateUserProfileByEmail(String email, UserProfileUpdateDto change) {
+    // Both sister endpoints select the account here. A body cannot redirect the update.
+    User user = usersRepository.findByEmail(email)
+        .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
+    if (change.getFirstName() != null) user.setFirstName(change.getFirstName());
+    if (change.getLastName() != null) user.setLastName(change.getLastName());
+    if (change.getOrganizationCode() != null) user.setOrganizationCode(change.getOrganizationCode());
+    if (change.getContactType() != null) user.setContactType(change.getContactType());
+    if (change.getCusUrl() != null) user.setCusUrl(change.getCusUrl());
+    return Optional.of(userMapper.toDto(usersRepository.save(user)));
   }
 
   /**
