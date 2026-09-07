@@ -1,0 +1,25 @@
+:host { display: block; background: #f8fafc; color: #222b38; min-height: 65vh; letter-spacing: 0; }
+.profile-page { max-width: 880px; margin: 0 auto; padding: 28px 24px 48px; }
+h1 { font-size: 26px; margin: 0 0 22px; }
+h2 { font-size: 19px; margin: 0 0 8px; }
+.account-summary { display: flex; align-items: center; gap: 20px; padding: 0 0 24px; border-bottom: 1px solid #d4dde5; }
+.account-summary img, .avatar { width: 72px; height: 72px; flex: 0 0 72px; object-fit: cover; border-radius: 4px; }
+.avatar { font-size: 72px; color: #267980; }
+.identity { min-width: 0; overflow-wrap: anywhere; }
+.identity p { margin: 0 0 10px; }
+.account-facts { display: flex; gap: 16px; flex-wrap: wrap; color: #526270; font-size: 13px; }
+.upload-button { margin-top: 12px; }
+form { margin-top: 24px; }
+form h2 { margin-bottom: 20px; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 20px; }
+mat-form-field { width: 100%; min-width: 0; }
+.wide { grid-column: 1 / -1; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.error { color: #a52332; margin-top: 16px; }
+.success { color: #236246; margin-top: 16px; }
+@media (max-width: 600px) {
+  .profile-page { padding: 20px 16px 32px; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
+  .account-summary { gap: 12px; }
+}

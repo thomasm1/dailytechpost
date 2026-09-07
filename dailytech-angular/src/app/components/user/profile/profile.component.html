@@ -1,0 +1,51 @@
+<section class="profile-page" aria-labelledby="profile-title" *ngIf="profiles.state$ | async as state">
+  <header><h1 id="profile-title">Profile</h1></header>
+  <p *ngIf="state.loading" role="status">Loading profile...</p>
+  <div *ngIf="state.error" role="alert" class="error">
+    {{ state.error }}
+    <button mat-button type="button" (click)="profiles.refresh()"><mat-icon>refresh</mat-icon>Retry</button>
+  </div>
+  <ng-container *ngIf="state.profile as account">
+    <section class="account-summary" aria-label="Account summary">
+      <img *ngIf="imageUrl as url; else avatar" [src]="url" alt="Profile image" referrerpolicy="no-referrer" (error)="imageFailed = true">
+      <ng-template #avatar><mat-icon class="avatar" aria-hidden="true">account_circle</mat-icon></ng-template>
+      <div class="identity">
+        <h2>{{ account.firstName || account.lastName ? (account.firstName || '') + ' ' + (account.lastName || '') : account.email }}</h2>
+        <p>{{ account.email }}</p>
+        <div class="account-facts"><span>{{ account.userPlan }} plan</span><span *ngFor="let role of account.roles">{{ role.name.replace('ROLE_', '') }}</span></div>
+        <input #imageInput type="file" hidden accept="image/jpeg,image/png" (change)="uploadImage($event)">
+        <button mat-stroked-button class="upload-button" type="button" (click)="imageInput.click()" [disabled]="saving || uploading">
+          <mat-icon>upload</mat-icon>{{ uploading ? 'Uploading...' : 'Upload photo' }}
+        </button>
+      </div>
+    </section>
+    <form [formGroup]="form" (ngSubmit)="save()" aria-label="Edit profile">
+      <h2>Personal information</h2>
+      <fieldset [disabled]="saving || uploading">
+        <div class="fields">
+          <mat-form-field appearance="outline"><mat-label>First name</mat-label><input matInput formControlName="firstName" autocomplete="given-name" maxlength="255"></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>Last name</mat-label><input matInput formControlName="lastName" autocomplete="family-name" maxlength="255"></mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>What best describes your role?</mat-label>
+            <mat-select formControlName="organizationCode">
+              <mat-option *ngIf="legacyRole" [value]="form.controls.organizationCode.value">{{ form.controls.organizationCode.value }}</mat-option>
+              <mat-option *ngFor="let option of roleOptions" [value]="option.value">{{ option.label }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline"><mat-label>How did you find DailyTech?</mat-label>
+            <mat-select formControlName="contactType">
+              <mat-option *ngIf="legacyContact" [value]="form.controls.contactType.value">{{ form.controls.contactType.value }}</mat-option>
+              <mat-option *ngFor="let option of contactOptions" [value]="option.value">{{ option.label }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="wide"><mat-label>Profile image URL</mat-label><input matInput type="url" formControlName="cusUrl" maxlength="1024"><mat-error>Enter an HTTP or HTTPS URL, up to 1,024 characters.</mat-error></mat-form-field>
+        </div>
+        <div class="actions">
+          <button mat-flat-button color="primary" type="submit" [disabled]="saving || uploading || form.invalid || !form.dirty"><mat-icon>save</mat-icon>{{ saving ? 'Saving...' : 'Save changes' }}</button>
+          <button mat-stroked-button type="button" (click)="reset()" [disabled]="saving || uploading || !form.dirty"><mat-icon>undo</mat-icon>Reset</button>
+        </div>
+      </fieldset>
+      <p class="error" *ngIf="error" role="alert">{{ error }}</p>
+      <p class="success" *ngIf="success" role="status">{{ success }}</p>
+    </form>
+  </ng-container>
+</section>

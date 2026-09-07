@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ProfileSummaryComponent } from './components/user/profile/profile-summary.component';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { MatSidenavModule } from '@angular/material/sidenav';  // Removed redundant import
@@ -102,6 +103,7 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
  
     ],
     imports: [
+        ProfileSummaryComponent,
         WritingModule,
         LinksModule,
         AuthModule,

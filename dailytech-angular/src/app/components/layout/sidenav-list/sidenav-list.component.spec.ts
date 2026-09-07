@@ -32,7 +32,7 @@ describe('SidenavListComponent', () => {
     );
     authPolicy = jasmine.createSpyObj<AuthPolicyService>(
       'AuthPolicyService',
-      ['canAccessAdmin']
+      ['canAccessAdmin', 'isAuthenticated']
     );
 
     await TestBed.configureTestingModule({

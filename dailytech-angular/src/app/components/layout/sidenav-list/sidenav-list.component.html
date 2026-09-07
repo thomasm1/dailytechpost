@@ -34,6 +34,10 @@
   </a>
 
   <hr />
+  <a mat-list-item *ngIf="authPolicy.isAuthenticated()" routerLink="/profile" (click)="onClose()">
+    <mat-icon>account_circle</mat-icon>
+    <span class="nav-caption daily-tech monoton">PROFILE</span>
+  </a>
 
   <!-- <a
     mat-list-item

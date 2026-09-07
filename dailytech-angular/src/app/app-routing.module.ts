@@ -24,6 +24,7 @@ import { NewsPageComponent } from './components/news/news-page/news-page.compone
 import { NewsArticleSearchComponent } from './components/news/news-article-search/news-article-search.component';
 import { AdminConsoleComponent } from './components/admin/admin-console/admin-console.component';
 import { AdminGuardService } from './service/auth/admin-guard.service';
+import { ProfileComponent, profileGuard, unsavedProfileGuard } from './components/user/profile/profile.component';
 
 const routes: Routes = [ 
   { path: '', component: BlogsListComponent, pathMatch: 'full' }, 
@@ -61,6 +62,7 @@ const routes: Routes = [
  
 
   { path: 'login', component: SignonComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [profileGuard], canDeactivate: [unsavedProfileGuard] },
   { path: 'register', component: RegisterComponent },
   { path: '**', component: BlogsListComponent }  // wildcard route last},
 ];

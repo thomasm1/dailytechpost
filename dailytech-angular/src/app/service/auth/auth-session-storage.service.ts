@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import {
   ACTIVE_AUTH_PROVIDER_KEY,
   AUTH_SESSION_KEYS,
@@ -8,6 +9,9 @@ import {
 
 @Injectable({ providedIn: 'root' })
 export class AuthSessionStorageService {
+  private readonly changes = new BehaviorSubject<void>(undefined);
+  readonly changes$ = this.changes.asObservable();
+
   setActiveSession(session: AuthSession): void {
     sessionStorage.setItem(
       AUTH_SESSION_KEYS[session.provider],
@@ -15,6 +19,7 @@ export class AuthSessionStorageService {
     );
 
     sessionStorage.setItem(ACTIVE_AUTH_PROVIDER_KEY, session.provider);
+    this.changes.next();
   }
 
   getActiveProvider(): AuthProvider | null {
@@ -53,6 +58,7 @@ export class AuthSessionStorageService {
     if (this.getActiveProvider() === provider) {
       sessionStorage.removeItem(ACTIVE_AUTH_PROVIDER_KEY);
     }
+    this.changes.next();
   }
 
   clearAll(): void {
@@ -60,5 +66,6 @@ export class AuthSessionStorageService {
       sessionStorage.removeItem(key),
     );
     sessionStorage.removeItem(ACTIVE_AUTH_PROVIDER_KEY);
+    this.changes.next();
   }
 }
