@@ -112,7 +112,7 @@ export class VisualsComponent {
 
   irisCsvUrl: string =
     "https://raw.githubusercontent.com/d3taviz/dashboardOne/scatterplot-init/src/assets/iris.csv";
-
+ 
   covidJsonUrl: any = "https://api.covidtracking.com/v1/us/daily.json";
   browsersUrl: any = "assets/data/data-browsers.json";
 
@@ -173,8 +173,8 @@ export class VisualsComponent {
   subscriptions: Subscription[] = [];
   geoCountries$: Observable<any> | undefined;  
   geoCountriesUrl: string = 'assets/data/CNTR_RG_60M_2020_4326.json';
-  covidByCountryUrl: string = 'assets/data/covid-by-country.json';
-  countryCodesUrl: string = 'assets/data/country-codes.json';
+  covidByCountryUrl: string = 'assets/data/megafile--deaths.json';
+  countryCodesUrl: string = 'assets/data/mapcountries.json';
 
   mapCovidByCountry$: Observable<any> | undefined;
   mapCountryCodes$: Observable<any> | undefined;
@@ -238,6 +238,7 @@ export class VisualsComponent {
 
    subs = combineLatest([this.mapCovidByCountry$, this.mapCountryCodes$])
      .subscribe(([data, codes]) => {
+       this.covidMap.setData(data, codes);
        console.log("Combined map data:", { covidData: data, countryCodes: codes });
       });
 

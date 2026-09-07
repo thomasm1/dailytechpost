@@ -11,7 +11,11 @@ export class MapHelper {
 
     datesRange: [number, number] = [0, 0];
 
-    data: IMapData = { title: 'Covid-19 new death cases', data: [], thresholds: [] };
+    data: IMapData = { 
+        title: 'Covid-19 new death cases', 
+        data: [], 
+        thresholds: [] 
+    };
 
     parseDate = (date: string) : number => Date.parse(date);
 
@@ -39,7 +43,7 @@ export class MapHelper {
         this.data = {
             title: `Covid-19 new death cases (${this.timeFormat(this.currentDate)})`,
             data: this.dataByDate.get(this.currentDate) || [],
-            thresholds: [0.1, 0.2, 0.5, 1, 2, 5, 10, 20]
+            thresholds: [null, 0, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20]
         };
     }
 

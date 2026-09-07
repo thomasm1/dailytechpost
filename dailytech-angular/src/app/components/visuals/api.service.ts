@@ -63,18 +63,29 @@ export class ApiService {
   } 
 
   /// MAP
-  getCountriesGeoData(url: string): Observable<any> {
+  
+  getCovidData(url:string): Observable<any> {
+    url =url || 'assets/data/dailycovid.json';
+    return this.getJsonDataFromUrl(url);
+  }
+
+  getBrowsersData(url?:string): Observable<any> {
+    url = url || 'assets/browsers.json';
+    return this.getJsonDataFromUrl(url);
+  }
+
+  getCountriesGeoData(url?: string): Observable<any> {
     url = url || 'assets/data/CNTR_RG_60M_2020_4326.json';
     return this.getJsonDataFromUrl(url);
   }
 
   
-  getCovidByCountry(url: string): Observable<any> {
+  getCovidByCountry(url?: string): Observable<any> {
     url = url || 'assets/data/megafile--deaths.json';
     return this.getJsonDataFromUrl(url);
   }
   
-  getCountryCodes(url: string): Observable<any> {
+  getCountryCodes(url?: string): Observable<any> {
     url = url || 'assets/data/mapcountries.json';
     return this.getJsonDataFromUrl(url);
   }

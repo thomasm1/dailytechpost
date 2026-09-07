@@ -115,9 +115,39 @@ export interface IMapDataElement {
 export interface IMapData {
   title: string;
   data: IMapDataElement[];
-  thresholds: number[];
+  thresholds: (number | null)[];
 }
 export interface IMapConfig {
   margins: IChartMargins;
-  // tooltip: ITooltipConfig;
+  // tooltip: ITooltipConfig; 
+  title: {
+    fontWeight: string;
+    fontSize: number;
+  };
+  features: {
+    base: {
+      stroke: string;
+      fill: string;
+    };
+    data: {
+      stroke: string;
+    };
+    highlighted: {
+      stroke: string;
+    }
+  };
+  faded: {
+    opacity: number;
+  };
+  nodata: {
+    color: string;
+    label: string;
+  };
+  legend: {
+    width: number;
+    height: number;
+    fontSize: number;
+    nodataSeparator: number;
+  };
+  colors: string[];
 }
