@@ -183,7 +183,10 @@ export class WritingService {
         }, error => {
           this.uiService.stopLoading();
           this.store.dispatch(new Writing.SetAvailableWritings(this.defaultWritingMods));
-          this.uiService.showSnackBar('Database is down, and fetching Mods failed, please try again later', null, 3000);
+          if (!this.authService.isAdminLoggedIn()) {
+            this.uiService.showSnackBar('Unable to load writing topics. Showing starter topics; please try again later.', null, 3000);
+          }
+           
         }));  // END FIREBASE SUBSCRIPTION ARRAY
   }
 

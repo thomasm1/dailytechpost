@@ -151,3 +151,62 @@ export interface IMapConfig {
   };
   colors: string[];
 }
+
+export interface ITooltipState {
+  visible: boolean;
+  x: number;
+  y: number;
+}
+
+
+export interface ITimelineData {
+  title: string;
+  activeTime: number | null;
+  data: IMapDataElement[];
+  timeFormat: string;
+}
+
+export interface ITimelineConfig {
+  margins: IChartMargins;
+  dimensions: {
+    width: number;
+    height: number;
+  };
+  background: {
+    color: string;
+  };
+  title: {
+    fontSize: number;
+    fontWeight: string;
+  };
+  labels: {
+    fontSize: number;
+  };
+  line: {
+    stroke: string;
+  };
+  area: {
+    fill: string;
+    opacity: number;
+  },
+  axis: {
+    color: string;
+  };
+  circle: {
+    stroke: string;
+    fill: string;
+    radius: number;
+  };
+  values: {
+    decimalPlaces: number;
+    xPadding: number;
+    yPadding: number;
+  };
+}
+
+export interface IPlaySlider {
+  min: number;
+  max: number;
+  step: number;
+  speed: number;
+}

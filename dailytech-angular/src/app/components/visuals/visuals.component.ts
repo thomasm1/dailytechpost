@@ -14,6 +14,7 @@ import { Chart10Component } from "./chart10.component";
 import { Chart12Component } from "./chart12.component";
 import { Chart11Component } from "./chart11.component";
 import { Chart16Component } from "./chart16.component";
+import { PlaySliderComponent } from "./play-slider.component";
 
 import { Chart15Component } from "./chart15.component";
 import { Chart13Component } from "./chart13.component";
@@ -44,6 +45,7 @@ import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
     Chart13Component,
     Chart14Component,
     Chart16Component,
+    PlaySliderComponent,
     AsyncPipe,
     NgFor,
     NgIf,
@@ -99,6 +101,14 @@ import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
       </div>
        <div class="boxes small-16">
         <chart16 [geodata]="geoCountries$ | async" [data]="covidMap.data"></chart16>
+        <app-play-slider *ngIf="covidMap.fullDataSet.length"
+          [min]="covidMap.sliderState.min"
+          [max]="covidMap.sliderState.max"
+          [step]="covidMap.sliderState.step"
+          [speed]="covidMap.sliderState.speed"
+          [value]="covidMap.currentDate"
+          (changeValue)="covidMap.setMapData($event)">
+        </app-play-slider>
       </div> 
       <div class="sidebar"></div>
       <div class="content"></div>

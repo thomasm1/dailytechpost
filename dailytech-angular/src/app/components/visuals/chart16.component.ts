@@ -1,9 +1,11 @@
-import { Component, Input, Output, EventEmitter, ElementRef } from "@angular/core";
+import {   Component, Input, Output, EventEmitter, ElementRef,
+  AfterViewInit, OnDestroy } from '@angular/core';
 import { debounceTime, fromEvent, map, Subscription } from 'rxjs';
 
 import * as d3 from "d3";
 import { DimensionsService } from "./dimensions.service";
 import { IMapConfig, IMapData } from "../../model/interfaces/chart.interfaces";
+import { HideMapTooltip, MapTooltipActions, ShowMapTooltip } from '../../utility/functions/map-tooltip.actions';
 import ObjectHelper from "../../utility/functions/object.helper";
 import * as topojson from 'topojson-client';
 
@@ -47,7 +49,7 @@ import * as topojson from 'topojson-client';
   `],
   providers: [DimensionsService]
 })
-export class Chart16Component {
+export class Chart16Component implements AfterViewInit, OnDestroy {
 
     host: any;
     svg: any;
@@ -60,7 +62,8 @@ export class Chart16Component {
     colors: any;
     features: any; 
     dataFeatures: any[] = [];    
-
+private resizeObserver?: ResizeObserver;
+private resizeFrame?: number;
     private _geodata: any;
     private _data: IMapData = {} as IMapData;
     private _config?: IMapConfig;
@@ -73,7 +76,7 @@ export class Chart16Component {
         },
       title: {
         fontWeight: 'bold',
-        fontSize: 12
+        fontSize: 15,
       },
       features: {
       base: {
@@ -117,7 +120,7 @@ export class Chart16Component {
     this._config = ObjectHelper.UpdateObjectWithPartialValues(this._defaultConfig, values);
   }
   
-  @Output() tooltip = new EventEmitter<any>();
+  @Output() tooltip = new EventEmitter<MapTooltipActions>();
 
   get geodata() {
   return this._geodata;
@@ -131,31 +134,51 @@ export class Chart16Component {
  
   subscriptions: Subscription[] = [];
 
-  constructor(element: ElementRef, private dimensions: DimensionsService) {
+  constructor(element: ElementRef, public dimensions: DimensionsService) {
     this.host = d3.select(element.nativeElement); 
     console.log(this);
   }
   ngOnDestroy(): void {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+  this.resizeObserver?.disconnect();
+
+  if (this.resizeFrame !== undefined) {
+    cancelAnimationFrame(this.resizeFrame);
   }
-  ngOnInit():void  {
+  }
+
+  ngAfterViewInit():void  {
     
-    const resize$ = fromEvent(window, 'resize');
+    // const resize$ = fromEvent(window, 'resize');
 
-    const subs = resize$
-    .pipe(
-      debounceTime(500)
-    )
-    .subscribe(() => this.resizeChart());
+    // const subs = resize$
+    // .pipe(
+    //   map((event: any) => event),
+    //   debounceTime(500)
+    // )
+    // .subscribe(() => this.resizeChart());
 
-    this.subscriptions.push(subs);
+    // this.subscriptions.push(subs);
 
 
     this.setSvg();
     this.setDimensions();
     this.setElements();
-    if (!this.geodata) return;
+    // if (!this.geodata) return;
     this.updateChart();
+
+  this.resizeObserver = new ResizeObserver(() => {
+    if (this.resizeFrame !== undefined) {
+      cancelAnimationFrame(this.resizeFrame);
+    }
+
+    this.resizeFrame = requestAnimationFrame(() => {
+      this.resizeFrame = undefined;
+      this.resizeChart();
+    });
+  });
+
+  this.resizeObserver.observe(this.svg.node());
+
   }
   
   private setSvg() {
@@ -221,7 +244,8 @@ export class Chart16Component {
   setColors() {
     this.colors = d3.scaleThreshold<number, string>()
       // The first two legend entries are "no data" and the lowest bin (0).
-      .domain(this.data.thresholds.slice(2).filter((value): value is number => value !== null))
+      // .domain(this.data.thresholds.slice(2).filter((value): value is number => value !== null))
+      .domain(this.data.thresholds.slice(2, this.data.thresholds.length))
       .range(this.config.colors);
   }
   color(value: number | null): string {
@@ -241,7 +265,7 @@ export class Chart16Component {
   }
   setDataFeatures() {
     const ids = new Set(this.data.data.map((d:any) => d.id));
-    this.dataFeatures = this.features.features.filter((feature:any) => ids.has(feature.properties.ISO3_CODE ))|| [] ;
+    this.dataFeatures = this.features.features.filter((feature:any) => ids.has(this.getFeatureId(feature)))|| [] ;
   }
   setLabels() {
     this.title.text(this.data.title);
@@ -388,15 +412,37 @@ export class Chart16Component {
         this.highlightFeature(d);
         //highlight the legend item
         this.highlightLegendItems(currentValue); 
+      // show the tooltip
+      this.showTooltip(event, d);
     })
     .on('mouseleave', () => {
         //reset the current feature
         this.resetFeatures();
         //reset he legend item
         this.resetLegendItems(); 
+      //hide the tooltip
+      this.hideTooltip();
     });
   }
 
+  showTooltip(event: MouseEvent, feature: any) {
+    // country id (iso3) // x position, y position
+    const position = d3.pointer(event, this.svg.node());
+    const payload = {
+      id: this.getFeatureId(feature),
+      x: position[0],
+      y: position[1]
+    };
+
+    const action = new ShowMapTooltip(payload);
+    this.tooltip.emit(action);
+  }
+
+  hideTooltip() {
+    // no data needed
+    const action = new HideMapTooltip();
+    this.tooltip.emit(action);
+  }
   getValueByFeature(feature: any): number | null {
     const id = feature.properties.ISO3_CODE;
     return this.data.data.find(d  => d.id === id)?.value ?? null;

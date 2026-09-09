@@ -25,8 +25,8 @@
         box-3-start] minmax(320px, 28vw) [box-3-end 
         box-4-start] minmax(320px, 28vw) [box-4-end 
         box-5-start] minmax(320px, 28vw) [box-5-end 
-        box-6-start] minmax(320px, 28vw) [box-6-end 
-        box-7-start] minmax(320px, 28vw) [box-7-end 
+        box-6-start] minmax(520px, 40vw) [box-6-end 
+        box-7-start] minmax(420px, 36vw) [box-7-end 
         main-start] 400px [main-end 
         footer-start] 100px [footer-end];
 
@@ -118,15 +118,19 @@
     } 
     
     .small-16 {
+    display: flex;
+    flex-direction: column;
     grid-area: box16;
     min-width: 0;
     min-height: 0;
     }
 
   .small-16 > chart16 {
+    flex: 1;
+    min-height: 0;
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 }  /* END .visuals */
 
@@ -135,7 +139,9 @@
     .visuals {
         grid-template-rows: 
             150px 
-            repeat(8, minmax(320px, 28vw)) 
+            repeat(7, minmax(320px, 28vw)) 
+            minmax(460px, 40vw) 
+            minmax(520px, 40vw)
             400px 
             100px;
 
@@ -163,6 +169,7 @@
         grid-template-rows: 
         150px 
         repeat(15, minmax(320px, 28vw)) 
+        minmax(520px, 40vw) 
         400px 
         auto 
         100px;
