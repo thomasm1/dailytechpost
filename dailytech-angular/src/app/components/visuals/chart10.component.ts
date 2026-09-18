@@ -139,7 +139,7 @@ export class Chart10Component implements OnChanges, AfterViewInit, OnDestroy {
   host: any;
   svg: any;
 
-  dimensions!: ChartDimensions;
+  dimensions: ChartDimensions = new ChartDimensions(new DOMRect(), {});
 
   // axis
   xAxis: any;
@@ -167,7 +167,13 @@ export class Chart10Component implements OnChanges, AfterViewInit, OnDestroy {
     stackOrder: []
   };
 
-  private _data: IGroupStackData = this._defaultData;
+  private _data: IGroupStackData = {
+    title: '',
+    yLabel: '',
+    unit: '',
+    data: [],
+    stackOrder: []
+  };
 
   @Input() set data(values) {
     this._data = ObjectHelper.UpdateObjectWithPartialValues(this._defaultData, values);
@@ -228,7 +234,7 @@ export class Chart10Component implements OnChanges, AfterViewInit, OnDestroy {
     this._config = ObjectHelper.UpdateObjectWithPartialValues(this._defaultConfig, values);
   }
 
-  get config() {
+  get config(): IGroupStackConfig {
     if (!this._config) {
       this.config = this._defaultConfig;
     }
@@ -446,7 +452,7 @@ get filteredData() {
 
     // set item containers
     this.legendContainer.selectAll('g.legend-item')
-      .data(data, d => d)
+      .data(data, (d:any) => d)
       .join(
         (enter: any) => enter.append('g')
           .call(generateLegendItem),
@@ -495,7 +501,7 @@ get filteredData() {
     const data = this.filteredData;
     const groupedData = d3.groups(data, d => d.domain + '__' + d.group);
 
-    const keys = this.stacked ? this.data.stackOrder : [null]; //d3.groups(data, d => d.stack).map((d) => d[0]);
+    const keys = this.stacked ? this.data.stackOrder : ['']; //d3.groups(data, d => d.stack).map((d) => d[0]);
     const stack = d3.stack()
       .keys(keys)
       .value((element, key) => (Array.isArray(element[1]) ? element[1].find(d => d.stack === key)?.value : 0) || 0);
@@ -531,7 +537,7 @@ get filteredData() {
         .attr('height', 0)
     )
       .attr('class', 'data')
-      .attr('x', d => this.scales.x(d.domain) + this.scales.group(d.group))
+      .attr('x', (d:any) => this.scales.x(d.domain) + this.scales.group(d.group))
       .attr('width', this.scales.group.bandwidth())
       .attr('stroke', 'white')
       .style('fill', (d: IGroupStackRectData) => this.scales.color(d.index))
@@ -587,7 +593,7 @@ get filteredData() {
 
     // symbol
       this.tooltipContainer.select('rect.svg-tooltip__symbol')
-        .attr('y', (this.config?.tooltip?.labels?.height ?? 0) + this.config?.fontSize - (this.config?.tooltip?.symbol?.height ?? 0))
+        .attr('y', (this.config?.tooltip?.labels?.height ?? 0) + this.config.fontSize - (this.config?.tooltip?.symbol?.height ?? 0))
         .attr('width', this.config?.tooltip?.symbol?.width ?? 0)
         .attr('height', this.config?.tooltip?.symbol?.height ?? 0)
         .style('fill', tooltipData.color);
@@ -680,7 +686,7 @@ get filteredData() {
 
   resetLegendItems = () => {
     this.legendContainer.selectAll('g.legend-item')
-    .classed('faded', (d) => this.hiddenIds.has(d));
+    .classed('faded', (d:any) => this.hiddenIds.has(d));
   }
 
   toggleHighlight = (stack: string): void => {

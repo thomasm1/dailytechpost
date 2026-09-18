@@ -27,8 +27,8 @@ export class MapHelper {
     };
 
     tooltipData: ITimelineData = {
-        title: '',
-        activeTime: null,
+        title: '',       
+        activeTime: 0,
         data: [],
         timeFormat: ''
     };
@@ -71,7 +71,7 @@ export class MapHelper {
         this.data = {
             title: `Covid-19 new death cases (${this.timeFormat(this.currentDate)})`,
             data: this.dataByDate.get(this.currentDate) || [],
-            thresholds: [null, 0, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20]
+            thresholds: [null as any, 0, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20]
         };
     }
 

@@ -360,13 +360,13 @@ private resizeFrame?: number;
       .classed('faded', true);
 
     this.containers.data.selectAll('path.data')
-      .classed('highlighted', function (d:any) {
+      .classed('highlighted',  (d:any, i:any, nodes:any) => {
        // const currentColor = this.color(this.getValueByFeature(d));
-        const featureColor = d3.select(this).style('fill');
+        const featureColor = d3.select(nodes[i]).style('fill');
         return featureColor === color;
       })
-      .classed('faded', function() {
-        const featureColor = d3.select(this).style('fill');
+      .classed('faded', (d:any, i:any, nodes:any) => {
+        const featureColor = d3.select(nodes[i]).style('fill');
         return featureColor !== color;
       })
   }
@@ -445,7 +445,7 @@ private resizeFrame?: number;
   }
   getValueByFeature(feature: any): number | null {
     const id = feature.properties.ISO3_CODE;
-    return this.data.data.find(d  => d.id === id)?.value ?? null;
+    return this.data.data.find((d:any)  => d.id === id)?.value ?? null;
   }
 
 

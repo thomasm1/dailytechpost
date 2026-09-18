@@ -207,9 +207,10 @@ export class Chart11Component implements OnInit, OnChanges {
 
     this.arcTween = function(d:any) {
       const current = d;
-      const previous = (this as any)._previous;
+      const parent: any = this;
+      const previous = parent._previous;
       const interpolate = d3.interpolate(previous, current);
-      (this as any)._previous = current;
+      parent._previous = current;
       return function(t: number) {
         return chart.arc(interpolate(t));
       }

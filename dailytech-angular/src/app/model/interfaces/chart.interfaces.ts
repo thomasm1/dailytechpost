@@ -160,9 +160,9 @@ export interface ITooltipState {
 
 
 export interface ITimelineData {
-  title: string;
+  title: string | undefined;
   activeTime: number | null;
-  data: IMapDataElement[];
+  data: IMapDataElement[] | undefined;
   timeFormat: string;
 }
 

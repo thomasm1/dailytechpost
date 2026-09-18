@@ -2,8 +2,11 @@
 .next
 *.code-workspace
 /**/.code-workspace
+
 env
 /env
+target/
+/target
 node_modules
 bower_components
 fullstacktech 
