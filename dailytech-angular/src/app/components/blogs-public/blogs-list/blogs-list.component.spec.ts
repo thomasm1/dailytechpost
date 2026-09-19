@@ -2,9 +2,10 @@ import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angul
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { of, throwError } from 'rxjs';
+import { of, Subject, throwError } from 'rxjs';
+import { SafeHtmlPipe } from '../../../utility/safe-html.pipe';
 import { BlogsListComponent } from './blogs-list.component';
-import { BlogsService } from '../blogs.service';
+import { BlogsService, PublicBlogState } from '../blogs.service';
 import { Blog } from 'src/app/model/blog.model';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { UiService } from '../../../service/ui.service';
@@ -28,13 +29,13 @@ describe('BlogsListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     // Create test doubles following Michael Feathers' seam extraction pattern
-    mockBlogsService = jasmine.createSpyObj('BlogsService', ['getAllBlogs']);
+    mockBlogsService = jasmine.createSpyObj('BlogsService', ['getPublicBlogs']);
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockDialog = jasmine.createSpyObj('MatDialog', ['open']);
     mockUiService = jasmine.createSpyObj<UiService>('UiService', ['startLoading', 'stopLoading']);
 
     TestBed.configureTestingModule({
-      declarations: [BlogsListComponent],
+      declarations: [BlogsListComponent, SafeHtmlPipe],
       providers: [
         { provide: BlogsService, useValue: mockBlogsService },
         { provide: Router, useValue: mockRouter },
@@ -65,7 +66,7 @@ describe('BlogsListComponent', () => {
   describe('component_initialization', () => {
     it('should_create_component_when_dependencies_are_valid', () => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of([]));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: [], refreshing: false, refreshFailed: false }));
 
       // Act
       fixture.detectChanges();
@@ -77,7 +78,7 @@ describe('BlogsListComponent', () => {
 
     it('should_retrieve_authenticated_username_from_session_on_init', () => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of([]));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: [], refreshing: false, refreshFailed: false }));
 
       // Act
       component.ngOnInit();
@@ -94,7 +95,7 @@ describe('BlogsListComponent', () => {
   describe('refreshBlogs', () => {
     it('should_load_and_categorize_blogs_when_service_returns_data', fakeAsync(() => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of(mockBlogs));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: mockBlogs, refreshing: false, refreshFailed: false }));
 
       // Act
       component.refreshBlogs();
@@ -103,12 +104,12 @@ describe('BlogsListComponent', () => {
       // Assert
       expect(component.blogs.length).toBe(5);
       expect(component.blogsLoading).toBe(false);
-      expect(mockBlogsService.getAllBlogs).toHaveBeenCalled();
+      expect(mockBlogsService.getPublicBlogs).toHaveBeenCalled();
     }));
 
     it('should_set_loading_false_when_blogs_fetched_successfully', fakeAsync(() => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of(mockBlogs));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: mockBlogs, refreshing: false, refreshFailed: false }));
       component.blogsLoading = true;
 
       // Act
@@ -121,7 +122,7 @@ describe('BlogsListComponent', () => {
 
     it('should_handle_empty_blog_list_gracefully', fakeAsync(() => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of([]));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: [], refreshing: false, refreshFailed: false }));
 
       // Act
       component.refreshBlogs();
@@ -136,7 +137,7 @@ describe('BlogsListComponent', () => {
       // Arrange
       spyOn(console, 'error');
       const error = new Error('Network error');
-      mockBlogsService.getAllBlogs.and.returnValue(throwError(() => error));
+      mockBlogsService.getPublicBlogs.and.returnValue(throwError(() => error));
 
       // Act
       component.refreshBlogs();
@@ -146,6 +147,22 @@ describe('BlogsListComponent', () => {
       expect(component.blogsLoading).toBe(false);
       expect(console.error).toHaveBeenCalledWith('Failed to load blogs', error);
     }));
+  });
+
+  it('renders saved cards during refresh without a global loading overlay', () => {
+    const states = new Subject<PublicBlogState>();
+    mockBlogsService.getPublicBlogs.and.returnValue(states);
+    fixture.detectChanges();
+    states.next({ posts: mockBlogs, refreshing: true, refreshFailed: false });
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelectorAll('mat-card').length).toBeGreaterThan(0);
+    expect(component.blogsLoading).toBeFalse();
+    expect(mockUiService.startLoading).not.toHaveBeenCalled();
+    states.next({ posts: mockBlogs, refreshing: false, refreshFailed: true });
+    states.complete();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toContain('Showing saved posts');
+    expect(component.blogs.length).toBe(5);
   });
 
   // Unit of work: categoryUpdater
@@ -325,7 +342,7 @@ describe('BlogsListComponent', () => {
   describe('ngOnDestroy', () => {
     it('should_unsubscribe_from_blogs_when_component_destroyed', fakeAsync(() => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of(mockBlogs));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: mockBlogs, refreshing: false, refreshFailed: false }));
       component.refreshBlogs();
       tick();
       spyOn(component.blogsSubscription, 'unsubscribe');
@@ -352,7 +369,7 @@ describe('BlogsListComponent', () => {
   describe('complete_user_workflow', () => {
     it('should_load_categorize_and_enable_navigation_on_successful_init', fakeAsync(() => {
       // Arrange
-      mockBlogsService.getAllBlogs.and.returnValue(of(mockBlogs));
+      mockBlogsService.getPublicBlogs.and.returnValue(of({ posts: mockBlogs, refreshing: false, refreshFailed: false }));
 
       // Act - simulate component lifecycle
       component.ngOnInit();

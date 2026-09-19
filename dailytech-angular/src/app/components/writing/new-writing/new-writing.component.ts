@@ -30,7 +30,7 @@ export class NewWritingComponent implements OnInit { //, OnDestroy {
   isAuth$!: Observable<boolean>;
   hasSavedDraft = false;
   savedDraftCategory = '';
-  selectedCategory = 'web-dev';
+  selectedCategory = 'Web Dev Affairs';
 
   private draftSubscription!: Subscription;
   // isLoading$: Observable<boolean>;

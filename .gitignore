@@ -15,3 +15,5 @@ src/environments/
 dailytech/src/environments/ 
 dailytech/.angular 
 *Zone.Identifier*
+
+/docs/

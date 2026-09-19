@@ -2,6 +2,14 @@
 <h2><span class="daily-tech  title  monoton text-box">OUR DAILY TECH</span></h2>
 <hr class="bar-white" />
  
+<p *ngIf="blogsRefreshing" role="status" aria-live="polite">
+  {{ blogsLoading ? 'Loading blog posts?' : 'Checking for the latest posts?' }}
+</p>
+<p *ngIf="blogsError" role="status">
+  {{ blogs.length ? 'Could not refresh posts. Showing saved posts.' : 'Could not load posts. Please try Refresh.' }}
+</p>
+<p *ngIf="!blogsRefreshing && !blogsError && !blogs.length" role="status">No blog posts yet.</p>
+
 <div class="tab-wrapper">
 <mat-tab-group mat-align-tabs="center" [selectedIndex]="selectedTabIndex">
   <mat-tab color="primary"  
@@ -109,7 +117,7 @@
 
 
 <div style="text-align: right; margin-bottom: 100px;">
-  <button mat-stroked-button (click)="forceRefreshBlogs()" [disabled]="blogsLoading">
+  <button mat-stroked-button (click)="forceRefreshBlogs()" [disabled]="blogsRefreshing">
     <mat-icon>refresh</mat-icon> Refresh
   </button>
 </div>

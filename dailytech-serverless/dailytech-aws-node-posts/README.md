@@ -111,7 +111,7 @@ custom:
       - dev
 ```
 
-Additionally, we need to reconfigure `AWS.DynamoDB.DocumentClient` to connect to our local instance of DynamoDB. We can take advantage of `IS_OFFLINE` environment variable set by `serverless-offline` plugin and replace:
+Configure `AWS.DynamoDB.DocumentClient` to connect to the local DynamoDB instance when the `IS_OFFLINE` environment variable is set by `serverless-offline`. Replace:
 
 ```javascript
 const dynamoDbClient = new AWS.DynamoDB.DocumentClient();

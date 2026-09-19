@@ -7,10 +7,7 @@
                     <mat-form-field *ngIf="writingMods$ | async">
 
                         <mat-select placeholder="Choose topic" [(ngModel)]="selectedCategory" name="category_five"
-                            required>
-                            <mat-option value="web-dev">
-                                &nbsp;web-dev
-                            </mat-option>
+                            required> 
                             <mat-option *ngFor="let cat of writingMods$ | async" [value]="cat.cat3">
                                 &nbsp;{{ cat.cat3 }}
                             </mat-option>

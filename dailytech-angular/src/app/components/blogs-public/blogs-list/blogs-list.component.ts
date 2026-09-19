@@ -8,7 +8,6 @@ import { Blog } from '../../../model/blog.model';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { BlogModalComponent } from '../blog-modal/blog-modal.component';
 import { AfterViewInit } from '@angular/core';
-import { UiService } from '../../../service/ui.service';
 
 @Component({
   selector: 'app-blogs-list',
@@ -31,6 +30,8 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
 
   someVar = '<h5>h5-title</h5>';
   blogsLoading = true;
+  blogsRefreshing = false;
+  blogsError = false;
   selectedTabIndex = 0;
   dialogValue: string = '';
   sendValue: string = '';
@@ -39,8 +40,7 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
     private blogsService: BlogsService,
     public dialog: MatDialog,
     private router: Router,
-    private route: ActivatedRoute,
-    private uiService: UiService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -69,45 +69,34 @@ export class BlogsListComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   refreshBlogs() {
-    this.blogsLoading = true;
-    this.uiService.startLoading();
-    this.blogsSubscription = this.blogsService
-      .getAllBlogs()
-      .pipe(finalize(() => this.uiService.stopLoading()))
+    this.blogsSubscription?.unsubscribe();
+    this.blogsRefreshing = true;
+    this.blogsError = false;
+    this.blogsSubscription = this.blogsService.getPublicBlogs()
+      .pipe(finalize(() => {
+        this.blogsLoading = false;
+        this.blogsRefreshing = false;
+      }))
       .subscribe({
-        next: (response) => {
-          // console.log(response);
-          this.blogs = response;
-          this.categoryUpdater(this.blogs);
-          this.blogsLoading = false;
+        next: state => {
+          // Keep existing cards visible when manually refreshing before a cache arrives.
+          if (state.posts.length || !state.refreshing && !state.refreshFailed) {
+            this.blogs = state.posts;
+            this.categoryUpdater(this.blogs);
+          }
+          this.blogsRefreshing = state.refreshing;
+          this.blogsLoading = state.refreshing && !this.blogs.length;
+          this.blogsError = state.refreshFailed;
         },
-        error: (error) => {
+        error: error => {
           console.error('Failed to load blogs', error);
-          this.blogsLoading = false;
+          this.blogsError = true;
         }
       });
   }
 
-  /**
-   * Force refresh blogs from API (bypass cache)
-   */
   forceRefreshBlogs() {
-    this.blogsLoading = true;
-    this.uiService.startLoading();
-    this.blogsSubscription = this.blogsService
-      .getAllBlogs(true)  
-      .pipe(finalize(() => this.uiService.stopLoading()))
-      .subscribe({
-        next: (response) => {
-          this.blogs = response;
-          this.categoryUpdater(this.blogs);
-          this.blogsLoading = false;
-        },
-        error: (error) => {
-          console.error('Failed to force refresh blogs', error);
-          this.blogsLoading = false;
-        }
-      });
+    this.refreshBlogs();
   }
 
   private categoryUpdater(blogs: Blog[]) {
