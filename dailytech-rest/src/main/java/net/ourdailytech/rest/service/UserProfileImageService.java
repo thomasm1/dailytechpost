@@ -24,4 +24,10 @@ public class UserProfileImageService {
         user.setCusUrl(url);
         return mapper.toDto(users.save(user));
     }
+    @Transactional(readOnly = true)
+    public ProfileImageStorageService.ProfileImage read(String authenticatedEmail) {
+        var user = users.findByEmail(authenticatedEmail).orElseThrow(
+                () -> new ResourceNotFoundException("User", "email", authenticatedEmail));
+        return storage.read(user.getUserId(), user.getCusUrl());
+    }
 }

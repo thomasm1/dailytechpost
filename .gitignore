@@ -2,7 +2,7 @@
 .next
 *.code-workspace
 /**/.code-workspace
-
+dailytech/docs
 env
 /env
 target/

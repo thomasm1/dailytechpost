@@ -50,10 +50,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
     }
 
+    @ExceptionHandler(org.springframework.web.server.ResponseStatusException.class)
+    public ResponseEntity<ErrorDetails> handleResponseStatus(org.springframework.web.server.ResponseStatusException exception, WebRequest request) {
+        return new ResponseEntity<>(new ErrorDetails(new Date(), exception.getReason(), request.getDescription(false)), exception.getStatusCode());
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> handleGlobalException(Exception exception,
                                                                WebRequest webRequest){
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), "An unexpected error occurred",
                 webRequest.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -71,10 +76,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     /// Method from ResponseEntityExceptionHandler
-//    @Override
+    @Override
     protected  ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException notValidException,
                                                                            HttpHeaders headers,
-                                                                           HttpStatus status,
+                                                                           org.springframework.http.HttpStatusCode status,
                                                                            WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         notValidException.getBindingResult().getAllErrors().forEach((error) -> {

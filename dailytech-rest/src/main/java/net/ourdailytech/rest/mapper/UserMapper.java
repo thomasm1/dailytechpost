@@ -14,8 +14,9 @@ public interface UserMapper {
     @Mapping(target = "userPlan", ignore = true)
     User toEntity(UserDto userDto);
 
-    @Mapping(target = "userPlan", expression = "java(currentPlan(user.getUserPlan()))")
+    @Mapping(target = "userPlan", expression = "java(net.ourdailytech.rest.models.UserPlanPolicy.currentPlan(user.getUserPlan()))")
     @Mapping(target = "posts", ignore = true)
+    @Mapping(target = "planDetails", expression = "java(net.ourdailytech.rest.models.dto.UserPlanSummaryDto.from(user.getUserPlan()))")
     UserDto toDto(User user);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
@@ -28,13 +29,6 @@ public interface UserMapper {
     User partialUpdate(UserDto userDto, @MappingTarget User user);
 
     default net.ourdailytech.rest.util.enums.Plan currentPlan(net.ourdailytech.rest.models.UserPlan plan) {
-        // Match CryptoMaven's entitlement rules without modifying billing rows during mapping.
-        if (plan == null || plan.getPlan() == null) return net.ourdailytech.rest.util.enums.Plan.FREE;
-        if (plan.getStatus() == net.ourdailytech.rest.util.enums.PlanStatus.ACTIVE) return plan.getPlan();
-        if (plan.getStatus() == net.ourdailytech.rest.util.enums.PlanStatus.TRIALING
-                && plan.getTrialEnd() != null && plan.getTrialEnd().isAfter(java.time.LocalDateTime.now())) {
-            return plan.getPlan();
-        }
-        return net.ourdailytech.rest.util.enums.Plan.FREE;
+        return net.ourdailytech.rest.models.UserPlanPolicy.currentPlan(plan);
     }
 }

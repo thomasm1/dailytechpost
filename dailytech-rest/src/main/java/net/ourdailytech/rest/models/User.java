@@ -51,6 +51,8 @@ public class User extends AbstractDomainClass {
     private Long userId;
 
     @Column(name = "password")
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    @lombok.ToString.Exclude
     private String password;
 
     @Column(name = "lastname")

@@ -72,4 +72,21 @@ class ProfileImageStorageTest {
         assertEquals(413, assertThrows(ProfileImageException.class, () -> storage.upload(7L, large)).getStatus().value());
         verifyNoInteractions(s3);
     }
+
+    @Test void privateReadChecksOwnerAndOriginMappingBeforeS3() {
+        properties.setProfileImageBucket("test-bucket");
+        properties.setPublicBaseUrl("https://images.example.test");
+        properties.setPublicOriginPath("/dailytech");
+        String file = "12345678-1234-1234-1234-123456789abc.png";
+        String url = "https://images.example.test/img/users/7/" + file;
+        assertEquals(404, assertThrows(ProfileImageException.class, () -> storage.read(8L, url)).getStatus().value());
+        assertEquals(404, assertThrows(ProfileImageException.class, () -> storage.read(7L, "http://169.254.169.254/latest/meta-data/")).getStatus().value());
+        verifyNoInteractions(s3);
+        when(s3.getObjectAsBytes(any(software.amazon.awssdk.services.s3.model.GetObjectRequest.class)))
+                .thenReturn(software.amazon.awssdk.core.ResponseBytes.fromByteArray(
+                    software.amazon.awssdk.services.s3.model.GetObjectResponse.builder().contentType("image/png").build(), new byte[]{1, 2}));
+        assertArrayEquals(new byte[]{1, 2}, storage.read(7L, url).bytes());
+        verify(s3).getObjectAsBytes(software.amazon.awssdk.services.s3.model.GetObjectRequest.builder()
+                .bucket("test-bucket").key("dailytech/img/users/7/" + file).build());
+    }
 }

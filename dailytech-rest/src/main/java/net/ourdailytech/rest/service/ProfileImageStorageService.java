@@ -1,7 +1,6 @@
 package net.ourdailytech.rest.service;
 
 import java.io.ByteArrayInputStream;
-// import java.io.ByteArrayOutputStream; // Used by the previous encoding implementation below.
 import java.io.IOException;
 import java.util.Locale;
 import java.util.UUID;
@@ -32,7 +31,7 @@ public class ProfileImageStorageService {
         if (file.getSize() > MAX_BYTES) throw new ProfileImageException(HttpStatus.PAYLOAD_TOO_LARGE, "Images must be 5 MB or smaller.");
         byte[] content;
         String format;
-        // Keep the original bytes, including EXIF orientation. Inspect the format without decoding pixels.
+        // Validate format and pixels while retaining the original bytes and EXIF orientation.
         try {
             content = file.getBytes();
             try (var input = ImageIO.createImageInputStream(new ByteArrayInputStream(content))) {
@@ -40,6 +39,9 @@ public class ProfileImageStorageService {
                 if (!readers.hasNext()) throw invalid("Choose a JPEG or PNG image.");
                 var reader = readers.next();
                 try {
+                    reader.setInput(input);
+                    if ((long) reader.getWidth(0) * reader.getHeight(0) > 16_000_000) throw invalid("Images must be 16 megapixels or smaller.");
+                    reader.read(0); // Validate pixels while preserving the original bytes and EXIF orientation.
                     format = reader.getFormatName().toLowerCase(Locale.ROOT);
                     if (!format.equals("jpeg") && !format.equals("png")) throw invalid("Only JPEG and PNG images are supported.");
                 } finally { reader.dispose(); }
@@ -48,27 +50,6 @@ public class ProfileImageStorageService {
             throw invalid("Unable to read this image.");
         }
 
-        /* Previous encoding implementation retained for reference.
-         * It discarded EXIF orientation without rotating the stored pixels.
-        // Decode and re-encode pixels; do not trust filenames, MIME headers or embedded metadata.
-        try (var input = ImageIO.createImageInputStream(new ByteArrayInputStream(file.getBytes()))) {
-            var readers = ImageIO.getImageReaders(input);
-            if (!readers.hasNext()) throw invalid("Choose a valid JPEG or PNG image.");
-            var reader = readers.next();
-            try {
-                reader.setInput(input);
-                format = reader.getFormatName().toLowerCase(Locale.ROOT);
-                if (!format.equals("jpeg") && !format.equals("png")) throw invalid("Only JPEG and PNG images are supported.");
-                if ((long) reader.getWidth(0) * reader.getHeight(0) > 16_000_000) throw invalid("Images must be 16 megapixels or smaller.");
-                var output = new ByteArrayOutputStream();
-                if (!ImageIO.write(reader.read(0), format, output)) throw invalid("Unable to process this image.");
-                content = output.toByteArray();
-                if (content.length > MAX_BYTES) throw invalid("The processed image is too large. Choose a smaller image.");
-            } finally { reader.dispose(); }
-        } catch (IOException exception) {
-            throw invalid("Unable to read this image.");
-        }
-        */
         String base = properties.getPublicBaseUrl().replaceAll("/+$", "");
         if (properties.getProfileImageBucket().isBlank() || !base.startsWith("https://")) {
             throw new ProfileImageException(HttpStatus.SERVICE_UNAVAILABLE, "Profile image storage is not configured.");
@@ -87,13 +68,48 @@ public class ProfileImageStorageService {
         if (url.length() > 1024) throw new ProfileImageException(HttpStatus.SERVICE_UNAVAILABLE, "Profile image URL configuration is too long.");
         try {
             s3.putObject(PutObjectRequest.builder().bucket(properties.getProfileImageBucket()).key(key)
-                    .contentType("image/" + format).cacheControl("public, max-age=31536000")
+                    .contentType("image/" + format).cacheControl("private, no-store")
                     .serverSideEncryption(ServerSideEncryption.AES256).build(), RequestBody.fromBytes(content));
         } catch (SdkException exception) {
             throw new ProfileImageException(HttpStatus.SERVICE_UNAVAILABLE, "Image storage is temporarily unavailable.");
         }
         return url;
     }
+
+    public record ProfileImage(byte[] bytes, String contentType) {}
+
+    public ProfileImage read(Long userId, String storedUrl) {
+        String base = properties.getPublicBaseUrl().replaceAll("/+$", "");
+        String prefix = properties.getProfileImagePrefix().replaceAll("/+$", "");
+        String origin = properties.getPublicOriginPath().replaceAll("^/+|/+$", "");
+        if (properties.getProfileImageBucket().isBlank() || !base.startsWith("https://")
+                || !prefix.matches("[A-Za-z0-9/_-]+")
+                || (!origin.isEmpty() && !prefix.startsWith(origin + "/"))) {
+            throw new ProfileImageException(HttpStatus.SERVICE_UNAVAILABLE, "Profile image storage is not configured.");
+        }
+        String ownerPrefix = prefix + "/users/" + userId + "/";
+        String viewerPrefix = origin.isEmpty() ? ownerPrefix : ownerPrefix.substring(origin.length() + 1);
+        String expected = base + "/" + viewerPrefix;
+        if (storedUrl == null || !storedUrl.startsWith(expected)) throw missing();
+        String filename = storedUrl.substring(expected.length());
+        if (!filename.matches("[a-fA-F0-9-]{36}\\.(jpg|png)")) throw missing();
+        try {
+            var result = s3.getObjectAsBytes(software.amazon.awssdk.services.s3.model.GetObjectRequest.builder()
+                    .bucket(properties.getProfileImageBucket()).key(ownerPrefix + filename).build());
+            String type = result.response().contentType();
+            if (!"image/jpeg".equalsIgnoreCase(type) && !"image/png".equalsIgnoreCase(type)) {
+                throw new ProfileImageException(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "Invalid profile image.");
+            }
+            if (result.asByteArray().length > MAX_BYTES) throw invalid("Image is too large.");
+            return new ProfileImage(result.asByteArray(), type);
+        } catch (software.amazon.awssdk.services.s3.model.NoSuchKeyException exception) {
+            throw missing();
+        } catch (SdkException exception) {
+            throw new ProfileImageException(HttpStatus.SERVICE_UNAVAILABLE, "Image storage is temporarily unavailable.");
+        }
+    }
+
+    private ProfileImageException missing() { return new ProfileImageException(HttpStatus.NOT_FOUND, "No uploaded profile image."); }
 
     private ProfileImageException invalid(String message) { return new ProfileImageException(HttpStatus.BAD_REQUEST, message); }
 }

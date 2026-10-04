@@ -37,6 +37,25 @@ class ProfileImageSecurityTest {
             }
         }
     }
+    @Test void privateReadUsesAuthenticatedIdentityAndReturnsNoStoreHeaders() throws Exception {
+        try (var context = new AnnotationConfigWebApplicationContext()) {
+            context.setServletContext(new MockServletContext());
+            context.getEnvironment().setActiveProfiles("security-test");
+            context.register(SecurityConfig.class, RetiredKeysSecurityTest.Dependencies.class, Dependencies.class);
+            context.refresh();
+            var mvc = MockMvcBuilders.webAppContextSetup(context).apply(springSecurity()).build();
+            String path = "/api/users/me/profile/image";
+            mvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get(path)).andExpect(status().isUnauthorized());
+            var service = context.getBean(UserProfileImageService.class);
+            verifyNoInteractions(service);
+            when(service.read("owner@example.com")).thenReturn(new net.ourdailytech.rest.service.ProfileImageStorageService.ProfileImage(new byte[]{1}, "image/png"));
+            mvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get(path)
+                    .param("email", "other@example.com").with(user("owner@example.com").roles("USER")))
+                    .andExpect(status().isOk()).andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.header().string("Cache-Control", "private, no-store"))
+                    .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.content().bytes(new byte[]{1}));
+            verify(service).read("owner@example.com");
+        }
+    }
     @Configuration
     static class Dependencies {
         @Bean UserProfileImageService images() { return mock(UserProfileImageService.class); }

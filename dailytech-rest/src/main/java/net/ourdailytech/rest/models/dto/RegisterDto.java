@@ -1,5 +1,9 @@
 package net.ourdailytech.rest.models.dto;
 
+import jakarta.validation.constraints.Size;
+
+import jakarta.validation.constraints.NotBlank;
+
 import lombok.*; 
 import net.ourdailytech.rest.models.Role; 
 import java.io.Serializable;
@@ -19,18 +23,23 @@ public class RegisterDto implements Serializable {
     private static long serialVersionUID = 1L;
     @Email(message = "Email should be valid")
     @NotEmpty(message = "Email should not be empty")
-    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message = "Invalid email format")
     @NotNull(message = "Email cannot be null")
+    @NotBlank
+    @Email
+    @Size(max = 255)
     private String email;
 
     @NotEmpty(message = "Password should not be empty")
-//    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}$",
-//             message = "Password must be at least 6 characters long and include at least one uppercase letter, " +
+////             message = "Password must be at least 6 characters long and include at least one uppercase letter, " +
 //                       "one lowercase letter, one digit, and one special character")
     @NotNull(message = "Password cannot be null")
+    @NotBlank
+    @Size(min = 4, max = 30)
     private String password;
 
+    @Size(max = 255)
     private String firstName;
+    @Size(max = 255)
     private String lastName;
 
     public RegisterDto(String email, String password   ) {

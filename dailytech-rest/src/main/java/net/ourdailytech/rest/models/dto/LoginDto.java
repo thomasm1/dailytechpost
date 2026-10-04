@@ -1,5 +1,7 @@
 package net.ourdailytech.rest.models.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -17,10 +19,12 @@ public class LoginDto  implements Serializable {
 
         @NotEmpty(message = "Email/Username should not be empty")
         @NotNull(message = "Email/Username is invalid")
+    @NotBlank
     private String usernameOrEmail;
 
         @NotEmpty(message = "Password should not be empty")
         @NotNull(message = "Password is invalid")
+    @NotBlank
     private String password;
 
     public LoginDto(String usernameOrEmail, String password ) {

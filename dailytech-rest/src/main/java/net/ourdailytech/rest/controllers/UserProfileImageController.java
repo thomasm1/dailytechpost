@@ -21,4 +21,14 @@ public class UserProfileImageController {
     public UserDto upload(Authentication authentication, @RequestParam("file") MultipartFile file) {
         return profiles.upload(authentication.getName(), file);
     }
+    @PreAuthorize("isAuthenticated()")
+    @org.springframework.web.bind.annotation.GetMapping("/api/users/me/profile/image")
+    public org.springframework.http.ResponseEntity<byte[]> read(Authentication authentication) {
+        var image = profiles.read(authentication.getName());
+        return org.springframework.http.ResponseEntity.ok()
+                .header("Cache-Control", "private, no-store")
+                .header("X-Content-Type-Options", "nosniff")
+                .header("Content-Security-Policy", "default-src 'none'; sandbox")
+                .contentType(MediaType.parseMediaType(image.contentType())).body(image.bytes());
+    }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 import java.util.Set;
 
-@RepositoryRestResource(collectionResourceRel = "roles", path = "roles", itemResourceRel = "role")
+@RepositoryRestResource(exported = false)
 public interface RoleRepository extends JpaRepository<Role, Long> {
     Optional<Role> findById(@NotNull Long id);
 

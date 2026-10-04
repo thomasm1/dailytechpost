@@ -127,7 +127,7 @@ public class UsersController {
     )
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(USER_PATH)
-    public ResponseEntity<UserDto> createUser(@Valid @RequestBody CreateUserRequestDto user) {
+    public ResponseEntity<UserDto> createUser(@jakarta.validation.Valid @RequestBody CreateUserRequestDto user) {
         UserDto savedUser = usersService.createUser(user); 
 
         HttpHeaders headers = new HttpHeaders();
@@ -146,7 +146,7 @@ public class UsersController {
             description = "HTTP Status 201 SUCCESS"
     )
     @PostMapping({USER_PATH+"/auth/register", USER_PATH+"/auth/signup"})
-    public ResponseEntity<UserDto> register(@Valid @RequestBody RegisterDto registerDto) {
+    public ResponseEntity<UserDto> register(@jakarta.validation.Valid @RequestBody RegisterDto registerDto) {
         Optional<UserDto> response = usersService.register(registerDto);
         response.orElseThrow(() -> new ResourceNotFoundException("User not found"));
         HttpHeaders headers = new HttpHeaders();
@@ -164,7 +164,7 @@ public class UsersController {
             description = "HTTP Status 200 SUCCESS"
     )
     @PostMapping(value = {USER_PATH+"/auth/login", USER_PATH+"/auth/signin"}) 
-    public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto){
+    public ResponseEntity<JWTAuthResponse> login(@jakarta.validation.Valid @RequestBody LoginDto loginDto){
         String token = usersService.login(loginDto);
 
         JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
@@ -221,7 +221,7 @@ public class UsersController {
     @PreAuthorize("isAuthenticated()")
     @PatchMapping(value = USER_PATH + "/me/profile", consumes = "application/json")
     public ResponseEntity<UserDto> updateCurrentUserProfile(
-            Authentication authentication, @RequestBody UserProfileUpdateDto change) {
+            Authentication authentication, @jakarta.validation.Valid @RequestBody UserProfileUpdateDto change) {
         return usersService.updateUserProfileByEmail(authentication.getName(), change)
                 .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -229,7 +229,7 @@ public class UsersController {
     @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping(value = USER_PATH + "/email/{email}/profile", consumes = "application/json")
     public ResponseEntity<UserDto> updateUserProfileByEmail(
-            @PathVariable String email, @RequestBody UserProfileUpdateDto change) {
+            @PathVariable String email, @jakarta.validation.Valid @RequestBody UserProfileUpdateDto change) {
         return usersService.updateUserProfileByEmail(email, change)
                 .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }

@@ -31,7 +31,7 @@ functions:
         method: post
   getAllPosts:
     handler: handler.getAllPosts
-    events:
+    events: 
     - http:
         path: /posts
         method: get

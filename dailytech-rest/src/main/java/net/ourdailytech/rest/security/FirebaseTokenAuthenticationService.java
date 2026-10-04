@@ -68,7 +68,7 @@ public class FirebaseTokenAuthenticationService {
     Map<String, Object> unverifiedClaims = decodeClaimsWithoutVerification(token);
     try {
       logTokenDiagnostics(unverifiedClaims);
-      FirebaseToken decodedToken = getFirebaseAuth().verifyIdToken(token);
+      FirebaseToken decodedToken = getFirebaseAuth().verifyIdToken(token, true);
       log.info(
           "Firebase token verified successfully (uid={}, email={}, configuredProjectId={})",
           decodedToken.getUid(),
@@ -80,9 +80,15 @@ public class FirebaseTokenAuthenticationService {
         return Optional.empty();
       }
 
-      User user = usersRepository.findByEmailWithRoles(email)
-          .map(existingUser -> synchronizeFirebaseUser(existingUser, decodedToken.getUid()))
-          .orElseGet(() -> provisionFirebaseUser(email, decodedToken.getUid()));
+      Optional<User> existing = usersRepository.findByEmailWithRoles(email);
+      // Email lookup must never authenticate a different provider subject.
+      if (existing.isPresent() && StringUtils.hasText(existing.get().getAuthSubject())
+              && !decodedToken.getUid().equals(existing.get().getAuthSubject())) return Optional.empty();
+      if (existing.isPresent() && existing.get().getAuthProvider() != null
+              && existing.get().getAuthProvider() != AuthProvider.INTERNAL
+              && existing.get().getAuthProvider() != AuthProvider.FIREBASE) return Optional.empty();
+      User user = existing.map(u -> synchronizeFirebaseUser(u, decodedToken.getUid()))
+              .orElseGet(() -> provisionFirebaseUser(email, decodedToken.getUid()));
 
       log.info(
           "User authenticated via Firebase (email={}, [getAuthSubject]_firebaseUid={}, roles={})",
@@ -264,11 +270,13 @@ public boolean looksLikeFirebaseToken(String token) {
     User firebaseUser = User.builder()
         .email(email)
         .password("")
+        .isActive(1)
         .authProvider(AuthProvider.FIREBASE)
         .authSubject(firebaseUid)
         .roles(new HashSet<>(Collections.singleton(getDefaultUserRole())))
         .build();
 
+    net.ourdailytech.rest.models.UserPlanPolicy.initializeFreePlan(firebaseUser);
     return usersRepository.save(firebaseUser);
   }
 

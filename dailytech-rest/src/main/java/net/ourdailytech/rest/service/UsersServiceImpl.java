@@ -148,6 +148,7 @@ public class UsersServiceImpl implements UsersService {
         .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER"));
 
     user.setRoles(Collections.singleton(role));
+    net.ourdailytech.rest.models.UserPlanPolicy.initializeFreePlan(user);
     User u = usersRepository.save(user);
     return userMapper.toDto(u);
   }
@@ -174,6 +175,7 @@ public class UsersServiceImpl implements UsersService {
         .orElseThrow(() -> new ResourceNotFoundException("Role", "name", "ROLE_USER")));
     roles.add(userRole.get());
     user.setRoles(roles);
+    net.ourdailytech.rest.models.UserPlanPolicy.initializeFreePlan(user);
     User u = usersRepository.save(user);
     return Optional.ofNullable(userMapper.toDto(u));
   }

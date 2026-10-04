@@ -13,7 +13,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 import java.util.Optional;
 
-@RepositoryRestResource(collectionResourceRel = "users", path = "users", itemResourceRel = "user")
+@RepositoryRestResource(exported = false)
 public interface UsersRepository extends JpaRepository<User, Long> {
 
     // MULTIPLE

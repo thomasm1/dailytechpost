@@ -42,6 +42,7 @@ public class UserDto implements Serializable {
     private Integer isActive;
 
     private net.ourdailytech.rest.util.enums.Plan userPlan;
+    private UserPlanSummaryDto planDetails;
     private net.ourdailytech.rest.util.enums.AuthProvider authProvider;
     private String authSubject;
 

@@ -26,13 +26,13 @@ void firebaseLoginPreservesExistingLocalAdminIdentityAndRoles() throws Exception
   var token = mock(com.google.firebase.auth.FirebaseToken.class);
   var auth = spy(new FirebaseTokenAuthenticationService(users, roles));
   doReturn(firebase).when(auth).getFirebaseAuth();
-  when(firebase.verifyIdToken("test-token")).thenReturn(token);
+  when(firebase.verifyIdToken("test-token", true)).thenReturn(token);
   when(token.getEmail()).thenReturn("admin@example.com");
   when(token.getUid()).thenReturn("firebase-uid");
   var account = net.ourdailytech.rest.models.User.builder().userId(10L)
       .email("admin@example.com").firstName("Local Name")
       .authProvider(net.ourdailytech.rest.util.enums.AuthProvider.INTERNAL)
-      .authSubject("local-subject")
+      .authSubject("firebase-uid")
       .roles(java.util.Set.of(new net.ourdailytech.rest.models.Role(1L, "ROLE_ADMIN"))).build();
   when(users.findByEmailWithRoles("admin@example.com")).thenReturn(java.util.Optional.of(account));
   var principal = auth.authenticate("test-token").orElseThrow();
