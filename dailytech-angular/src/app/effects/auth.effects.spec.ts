@@ -60,6 +60,19 @@ describe('AuthEffects', () => {
     effects = TestBed.inject(AuthEffects);
   });
 
+  it('finishes registration without a verification snackbar', (done) => {
+    firebaseAuthService.registerUser.and.returnValue(Promise.resolve({user: {emailVerified: false}}));
+    actions$ = of(new AuthActions.AuthRegisterStart({email: 'writer@example.com', password: 'secret'}));
+    effects.register$.subscribe({
+      next: action => expect(action).toEqual(new UI.StopLoading()),
+      complete: () => {
+        expect(TestBed.inject(UiService).showSnackBar).not.toHaveBeenCalled();
+        done();
+      },
+      error: done.fail,
+    });
+  });
+
   it('should persist Firebase session and set authenticated after login succeeds', (done) => {
     const firebaseUser = { email: 'writer@example.com' };
     firebaseAuthService.login.and.returnValue(Promise.resolve({ user: firebaseUser }));

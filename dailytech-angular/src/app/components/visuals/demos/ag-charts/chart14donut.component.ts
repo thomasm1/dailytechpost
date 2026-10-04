@@ -1,10 +1,10 @@
 import { NgIf } from "@angular/common";
 import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { AgCharts } from "ag-charts-angular";
-import { IPieData, IPieDataElements } from "../../model/interfaces/chart.interfaces";
+import { IPieData, IPieDataElements } from "../../shared/chart.interfaces";
 
 @Component({
-  selector: "chart14",
+  selector: "chart14donut",
   standalone: true,
   imports: [NgIf, AgCharts],
   template: `
@@ -16,7 +16,7 @@ import { IPieData, IPieDataElements } from "../../model/interfaces/chart.interfa
       </select>
     </div>
 
-    <ag-charts [options]="chart14Options"></ag-charts>
+    <ag-charts [options]="chart14donutOptions"></ag-charts>
     <div class="no-data" *ngIf="!hasData">No data available</div>
   </div>
   `,
@@ -40,7 +40,7 @@ import { IPieData, IPieDataElements } from "../../model/interfaces/chart.interfa
     }
     .controller {
     position: absolute;
-    top: 8px;
+    top: 20px;
     right: 8px;
     z-index: 2;
     }
@@ -67,7 +67,7 @@ import { IPieData, IPieDataElements } from "../../model/interfaces/chart.interfa
     }
   `],
 })
-export class Chart14Component implements OnChanges {
+export class Chart14DonutComponent implements OnChanges {
 //   @Input() data!: IPieData;
 @Input() data: any[] = [];
 
@@ -93,7 +93,7 @@ private toChartData(data: any[]): IPieDataElements[] {
   title = "#14: AG Charts: Donut Chart";
  
  
-  chart14Options: any = this.createChartOptions([]);
+  chart14donutOptions: any = this.createChartOptions([]);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["data"]) {
@@ -104,7 +104,7 @@ private toChartData(data: any[]): IPieDataElements[] {
   private updateChart(): void {
     const chartData = this.toChartData(this.data);
     this.hasData = chartData.length > 0;
-    this.chart14Options = this.createChartOptions(chartData);
+    this.chart14donutOptions = this.createChartOptions(chartData);
   }
 
 //   private toChartData(data: IPieData | undefined): IPieDataElements[] {

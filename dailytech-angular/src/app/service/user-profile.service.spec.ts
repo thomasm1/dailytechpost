@@ -9,7 +9,7 @@ describe('UserProfileService', () => {
   let http: HttpTestingController;
   let storage: AuthSessionStorageService;
   const url = `${environment.API_URL}/users/me`;
-  const profile = { userId: 7, email: 'reader@example.com', firstName: 'Reader', userPlan: 'FREE', roles: [] };
+  const profile = { userId: 7, email: 'reader@example.com', firstName: 'Reader', userPlan: 'FREE' as const, roles: [] };
 
   beforeEach(() => {
     sessionStorage.clear();
@@ -78,5 +78,21 @@ describe('UserProfileService', () => {
     expect(upload.request.headers.has('Content-Type')).toBeFalse();
     upload.flush({ ...profile, cusUrl: 'https://example.com/photo.png' });
     service.state$.subscribe(state => expect(state.profile?.cusUrl).toBe('https://example.com/photo.png'));
+  });
+  it('reads private image bytes and revokes the preview on logout', () => {
+    spyOn(URL, 'createObjectURL').and.returnValue('blob:private-preview');
+    const revoke = spyOn(URL, 'revokeObjectURL');
+    let preview: string | null = null;
+    const subscription = service.image$.subscribe(url => preview = url);
+    storage.setActiveSession({ provider: 'aws', email: profile.email, token: 'Bearer test', roles: [] });
+    http.expectOne(url).flush({ ...profile, cusUrl: 'https://private.example.test/photo.png' });
+    const request = http.expectOne(`${url}/profile/image`);
+    expect(request.request.responseType).toBe('blob');
+    request.flush(new Blob(['image'], { type: 'image/png' }));
+    expect(preview).toBe('blob:private-preview');
+    storage.clearAll();
+    expect(preview).toBeNull();
+    expect(revoke).toHaveBeenCalledWith('blob:private-preview');
+    subscription.unsubscribe();
   });
 });

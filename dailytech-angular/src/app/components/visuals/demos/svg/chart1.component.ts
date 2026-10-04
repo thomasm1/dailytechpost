@@ -9,7 +9,7 @@ import {
   Input,
   SimpleChanges,
 } from "@angular/core";
-import * as  gridHelpers from "../../utility/functions/grid-helpers";
+import * as  gridHelpers from "../../shared/grid-helpers";
 
 @Component({
   selector: "chart1",

@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { ITooltipState, ITimelineData, IMapDataElement, IMapData, IPlaySlider } from '../../model/interfaces/chart.interfaces';
+import { ITooltipState, ITimelineData, IMapDataElement, IMapData, IPlaySlider } from './chart.interfaces';
 import { MapTooltipActions, MapTooltipActionsTypes, ShowMapTooltip } from './map-tooltip.actions';
 
 export class MapHelper {
@@ -50,16 +50,17 @@ export class MapHelper {
 
         this.countriesById = new Map(countryCodes.map((code) => [code.iso3, code.location]));
       
-        this.fullDataSet = data.location?.map((location: any,  i: number) => ({
+        this.fullDataSet = data?.location?.map((location: any,  i: number) => ({
             id: ids.get(location),
             value: data[dataAttr][i],
             date: this.parseDate(data.date[i])
-        }));
+        })) ?? [];
 
         this.dataByDate = d3.group(this.fullDataSet, d => d.date);
         this.dataByCountry = d3.group(this.fullDataSet, (d) => d.id);
       
-        this.datesRange = d3.extent(this.fullDataSet, d => d.date) as [number, any];
+        const [firstDate, lastDate] = d3.extent(this.fullDataSet, d => d.date);
+        this.datesRange = [firstDate ?? 0, lastDate ?? 0];
         this.currentDate = this.datesRange[1];
         this.setMapData(this.datesRange[1]) 
         console.log(this);
@@ -69,7 +70,9 @@ export class MapHelper {
     setMapData = (date: number) => {
         this.currentDate = date;
         this.data = {
-            title: `Covid-19 new death cases (${this.timeFormat(this.currentDate)})`,
+            title: this.fullDataSet.length
+                ? `Covid-19 new death cases (${this.timeFormat(this.currentDate)})`
+                : 'Covid-19 new death cases',
             data: this.dataByDate.get(this.currentDate) || [],
             thresholds: [null as any, 0, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20]
         };

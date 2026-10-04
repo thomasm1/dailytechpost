@@ -3,18 +3,18 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/cor
 import { CommonModule } from "@angular/common";
 import { AgCharts } from "ag-charts-angular";
 
-interface Chart4Datum {
+interface Chart5Datum {
   index: string;
   value: number;
 }
 
 @Component({
-  selector: "chart4",
+  selector: "chart5line",
   standalone: true,
   imports: [CommonModule, AgCharts],
   template: `
     <div class="chart-cell">
-      <ag-charts class="chart-cell" [options]="chart4Options"></ag-charts>
+      <ag-charts class="chart-cell" [options]="chart5lineOptions"></ag-charts>
     </div>
   `,
   styles: [
@@ -33,38 +33,38 @@ interface Chart4Datum {
     `,
   ],
 })
-export class Chart4Component implements OnChanges, OnInit {
+export class Chart5LineComponent implements OnChanges, OnInit {
   @Input() data: number[] = [];
-  title: string = "#4: Ag-Grid: Bar Chart";
+  title: string = "#5: Ag-Grid: Line Chart";
 
-  public chart4Options: any = this.createChartOptions([]);
+  public chart5lineOptions: any = this.createChartOptions([]);
 
   ngOnInit(): void {
-    this.updateChart4Data();
+    this.updateChart5Data();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["data"]) {
-      this.updateChart4Data();
+      this.updateChart5Data();
     }
   }
 
-  private updateChart4Data(): void {
+  private updateChart5Data(): void {
     const chartData = this.toChartData(this.data);
-    this.chart4Options = {
-      ...this.chart4Options,
+    this.chart5lineOptions = {
+      ...this.chart5lineOptions,
       data: chartData,
     };
   }
 
-  private toChartData(data: number[]): Chart4Datum[] {
+  private toChartData(data: number[]): Chart5Datum[] {
     return (data ?? []).map((value, index) => ({
       index: index.toString(),
       value,
     }));
   }
 
-  private createChartOptions(data: Chart4Datum[]): any {
+  private createChartOptions(data: Chart5Datum[]): any {
     return {
       data,
       title: {
@@ -81,7 +81,7 @@ export class Chart4Component implements OnChanges, OnInit {
       },
       series: [
         {
-          type: "bar" as const,
+          type: "line" as const,
           xKey: "index",
           yKey: "value",
           yName: "Value",

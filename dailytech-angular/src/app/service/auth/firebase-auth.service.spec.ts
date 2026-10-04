@@ -8,6 +8,7 @@ import { of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AUTHENTICATED_USER,  AUTH_PROVIDER_KEY, AUTH_STORAGE_KEY, TOKEN } from './aws-authentication.service';
 import { FIREBASE_USER_INFO_STORAGE_KEY, FirebaseAuthService } from './firebase-auth.service';
+import { AuthSessionStorageService } from './auth-session-storage.service';
 import { WritingService } from '../../components/writing/writing.service';
 import { UiService } from '../ui.service';
 
@@ -61,6 +62,16 @@ describe('FirebaseAuthService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('registers without requesting email verification', async () => {
+    const afAuth = TestBed.inject(AngularFireAuth) as jasmine.SpyObj<AngularFireAuth>;
+    const sendEmailVerification = jasmine.createSpy('sendEmailVerification');
+    const credential = { user: { emailVerified: false, sendEmailVerification } } as any;
+    afAuth.createUserWithEmailAndPassword.and.returnValue(Promise.resolve(credential));
+    expect(await service.registerUser({email: 'writer@example.com', password: 'secret'})).toBe(credential);
+    expect(afAuth.createUserWithEmailAndPassword).toHaveBeenCalledWith('writer@example.com', 'secret');
+    expect(sendEmailVerification).not.toHaveBeenCalled();
+  });
+
   it('should persist Firebase session details and sync the local REST user', async () => {
     const firebaseUser = {
       email: 'writer@example.com',
@@ -84,7 +95,7 @@ describe('FirebaseAuthService', () => {
     const req = httpMock.expectOne(`${environment.API_URL}/users/me`);
     expect(req.request.method).toBe('GET');
     expect(req.request.headers.get('Authorization')).toBe('Bearer firebase-jwt');
-    req.flush({ email: 'writer@example.com', userId: 10 });
+    req.flush({ email: 'writer@example.com', userId: 10, roles: [{ name: 'ROLE_ADMIN' }] });
 
     await persistPromise;
 
@@ -93,6 +104,7 @@ describe('FirebaseAuthService', () => {
     expect(sessionStorage.getItem(AUTHENTICATED_USER)).toBe('writer@example.com');
     expect(sessionStorage.getItem(TOKEN)).toBe('Bearer firebase-jwt');
     expect(userInfo.email).toBe('writer@example.com');
+    expect(TestBed.inject(AuthSessionStorageService).getActiveSession()?.roles).toEqual(['ROLE_ADMIN']);
     expect(userInfo.permissions.admin).toBeFalse();
     expect(service.getFirebaseUserInfo()?.email).toBe('writer@example.com');
   });

@@ -12,7 +12,7 @@
       <div class="identity">
         <h2>{{ account.firstName || account.lastName ? (account.firstName || '') + ' ' + (account.lastName || '') : account.email }}</h2>
         <p>{{ account.email }}</p>
-        <div class="account-facts"><span>{{ account.userPlan }} plan</span><span *ngFor="let role of account.roles">{{ role.name.replace('ROLE_', '') }}</span></div>
+        <div class="account-facts"><span>{{ account.userPlan }} plan</span><span *ngIf="account.planDetails?.status">{{ account.planDetails?.status }}</span><span *ngFor="let role of account.roles">{{ role.name.replace('ROLE_', '') }}</span></div>
         <input #imageInput type="file" hidden accept="image/jpeg,image/png" (change)="uploadImage($event)">
         <button mat-stroked-button class="upload-button" type="button" (click)="imageInput.click()" [disabled]="saving || uploading">
           <mat-icon>upload</mat-icon>{{ uploading ? 'Uploading...' : 'Upload photo' }}

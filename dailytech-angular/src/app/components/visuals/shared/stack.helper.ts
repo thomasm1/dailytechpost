@@ -1,6 +1,6 @@
 
 import * as d3 from 'd3';
-import { IChartMargins, IGroupStackDataElem } from '../../model/interfaces/chart.interfaces';
+import { IChartMargins, IGroupStackDataElem } from './chart.interfaces';
 
 export class StackHelper {
   static SetStacks<T>(data: T[], domainAttr: string, groupAttr: string, stackAttr: string, valueAttr: string, valueFormatter = (value: any) => value): IGroupStackDataElem[] {

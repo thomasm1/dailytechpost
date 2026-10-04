@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, catchError, combineLatest, map, of, switchMap, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, combineLatest, distinctUntilChanged, map, Observable, of, shareReplay, switchMap, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { ProfileUpdate, UserProfile } from '../model/user-profile.model';
 import { AuthPolicyService } from './auth/auth-policy.service';
@@ -16,6 +16,17 @@ export interface ProfileState {
 export class UserProfileService {
   private readonly state = new BehaviorSubject<ProfileState>({ profile: null, loading: false, error: '' });
   readonly state$ = this.state.asObservable();
+  readonly image$ = this.state$.pipe(
+    map(state => state.profile?.cusUrl ? `${state.profile.userId}:${state.profile.cusUrl}` : ''),
+    distinctUntilChanged(),
+    switchMap(key => key ? this.getImage().pipe(catchError(() => of(null))) : of(null)),
+    switchMap(blob => new Observable<string | null>(subscriber => {
+      const url = blob && ['image/jpeg', 'image/png'].includes(blob.type) ? URL.createObjectURL(blob) : null;
+      subscriber.next(url);
+      return () => { if (url) URL.revokeObjectURL(url); };
+    })),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
   private readonly reload = new BehaviorSubject<void>(undefined);
   private readonly url = `${environment.API_URL}/users/me`;
 
@@ -46,6 +57,11 @@ export class UserProfileService {
     return this.http.post<UserProfile>(`${this.url}/profile/image`, body).pipe(tap(profile => {
       if (token === this.auth.getActiveToken()) this.state.next({ profile, loading: false, error: '' });
     }));
+  }
+
+  getImage() {
+    if (!this.auth.getActiveToken()) return throwError(() => new Error('Please sign in again.'));
+    return this.http.get(`${this.url}/profile/image`, { responseType: 'blob' });
   }
 
   update(change: ProfileUpdate) {

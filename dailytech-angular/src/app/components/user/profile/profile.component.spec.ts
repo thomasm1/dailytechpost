@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { BehaviorSubject, of, throwError } from 'rxjs';
+import { BehaviorSubject, of, Subject, throwError } from 'rxjs';
 import { ProfileComponent, profileGuard, unsavedProfileGuard } from './profile.component';
 import { ProfileState, UserProfileService } from '../../../service/user-profile.service';
 import { AuthPolicyService } from '../../../service/auth/auth-policy.service';
@@ -8,12 +8,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
 describe('ProfileComponent', () => {
-  const profile = { userId: 7, email: 'reader@example.com', firstName: 'Reader', userPlan: 'FREE', roles: [{ id: 2, name: 'ROLE_USER' }] };
+  const profile = { userId: 7, email: 'reader@example.com', firstName: 'Reader', userPlan: 'FREE' as const, roles: [{ id: 2, name: 'ROLE_USER' }] };
   let state: BehaviorSubject<ProfileState>;
   let service: any;
   beforeEach(async () => {
     state = new BehaviorSubject<ProfileState>({ profile, loading: false, error: '' });
-    service = { state$: state.asObservable(), update: jasmine.createSpy('update'), refresh: jasmine.createSpy('refresh'), uploadImage: jasmine.createSpy('uploadImage') };
+    service = { image$: of('blob:test-preview'), state$: state.asObservable(), update: jasmine.createSpy('update'), refresh: jasmine.createSpy('refresh'), uploadImage: jasmine.createSpy('uploadImage') };
     await TestBed.configureTestingModule({
       imports: [ProfileComponent, NoopAnimationsModule, RouterTestingModule],
       providers: [{ provide: UserProfileService, useValue: service },
@@ -94,7 +94,7 @@ describe('ProfileComponent', () => {
     component.uploadImage({ target: { files: [new File(['test'], 'photo.jpg', { type: 'image/jpeg' })], value: '' } } as any);
     expect(component.form.controls.firstName.value).toBe('Unsaved');
     expect(component.form.dirty).toBeTrue();
-    expect(component.imageUrl).toBe(updated.cusUrl);
+    expect(component.imageUrl).toMatch(/^blob:/);
     expect(component.form.controls.cusUrl.value).toBe(updated.cusUrl);
     expect(component.uploading).toBeFalse();
   });
@@ -104,5 +104,20 @@ describe('ProfileComponent', () => {
     component.uploadImage({ target: { files: [new File(['svg'], 'image.svg', { type: 'image/svg+xml' })], value: '' } } as any);
     expect(service.uploadImage).not.toHaveBeenCalled();
     expect(component.error).toContain('JPEG or PNG');
+  });
+  it('ignores a previous account save response after switching accounts', () => {
+    const component = TestBed.createComponent(ProfileComponent).componentInstance;
+    const response = new Subject<any>();
+    service.update.and.returnValue(response);
+    component.form.controls.firstName.setValue('Old account edit');
+    component.form.markAsDirty();
+    component.save();
+    state.next({ profile: { ...profile, userId: 8, email: 'next@example.com', firstName: 'Next' }, loading: false, error: '' });
+    response.next({ ...profile, firstName: 'Old account edit' });
+    expect(component.profile?.userId).toBe(8);
+    expect(component.form.controls.firstName.value).toBe('Next');
+    expect(component.form.pristine).toBeTrue();
+    expect(component.success).toBe('');
+    expect(component.saving).toBeFalse();
   });
 });

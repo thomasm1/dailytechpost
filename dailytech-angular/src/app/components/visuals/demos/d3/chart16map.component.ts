@@ -3,36 +3,36 @@ import {   Component, Input, Output, EventEmitter, ElementRef,
 import { debounceTime, fromEvent, map, Subscription } from 'rxjs';
 
 import * as d3 from "d3";
-import { DimensionsService } from "./dimensions.service";
-import { IMapConfig, IMapData } from "../../model/interfaces/chart.interfaces";
-import { HideMapTooltip, MapTooltipActions, ShowMapTooltip } from '../../utility/functions/map-tooltip.actions';
-import ObjectHelper from "../../utility/functions/object.helper";
+import { DimensionsService } from "../../shared/dimensions.service";
+import { IMapConfig, IMapData } from "../../shared/chart.interfaces";
+import { HideMapTooltip, MapTooltipActions, ShowMapTooltip } from '../../shared/map-tooltip.actions';
+import ObjectHelper from "../../shared/object.helper";
 import * as topojson from 'topojson-client';
 
 @Component({
-  selector: "chart16",
+  selector: "chart16map",
   template: `
-    <div class="chart16"> 
+    <div class="chart16map"> 
        <svg>
         <style>
-  .chart16 path.countries {
+  .chart16map path.countries {
     fill: {{config.features.base.fill}};
     stroke: {{config.features.base.stroke}};
     stroke-width: 0.5px;
   }
-  .chart16 path.data {
+  .chart16map path.data {
     stroke: {{config.features.data.stroke}};
   }
-  .chart16 text.title {
+  .chart16map text.title {
     text-anchor: middle;
     font-size: {{config.title.fontSize}}px;
     font-weight: {{config.title.fontWeight}};
     dominant-baseline: middle;
   }
-  .chart16 .highlighted rect, .chart16 path.data.highlighted {
+  .chart16map .highlighted rect, .chart16map path.data.highlighted {
     stroke: {{config.features.highlighted.stroke}};
   }
-  .chart16 .faded {
+  .chart16map .faded {
     opacity: {{config.faded.opacity}};
   }
 </style>
@@ -42,14 +42,14 @@ import * as topojson from 'topojson-client';
   `,
   standalone:true,
   styles: [` 
-    .chart16, .chart16 svg {
+    .chart16map, .chart16map svg {
       width: 100%;
       height: 100%; 
     }
   `],
   providers: [DimensionsService]
 })
-export class Chart16Component implements AfterViewInit, OnDestroy {
+export class Chart16MapComponent implements AfterViewInit, OnDestroy {
 
     host: any;
     svg: any;
@@ -273,7 +273,7 @@ private resizeFrame?: number;
 
    
   
- /* borrowed from chart10 */
+ /* borrowed from chart10stack */
         setLegend() {
           const data = this.data.thresholds;
 

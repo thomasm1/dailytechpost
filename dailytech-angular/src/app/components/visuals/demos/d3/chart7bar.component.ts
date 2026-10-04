@@ -12,14 +12,15 @@ import {
 import * as d3 from "d3";
 
 @Component({
-  selector: "chart8",
+  selector: "chart7bar",
   standalone: true,
   imports: [CommonModule],
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="chart-cell">
-      <svg></svg>
-      <div class="chart-tooltip"></div>
+      <svg>
+        </svg>
+        <div class="chart-tooltip"></div>
         <div class="no-data" *ngIf="!hasData">No data available</div> 
     </div>
   `,
@@ -44,6 +45,32 @@ import * as d3 from "d3";
         display: block;
         background-color: #f0f0f09d;
       }
+      
+      rect {
+        transition: all 0.5s ease;
+      } 
+
+      .chart-tooltip {
+        position: absolute;
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px;
+        border-radius: 3px;
+        font-size: 12px;
+        display: none; /* Initially hidden */
+        min-width: 50px;
+        text-align: center;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        z-index:2;
+      }
+      .chart-tooltip-title {
+        font-weight: bold;
+        margin-bottom: 2px;
+      }
+      .chart-tooltip-value {
+        font-size: 14px;
+      }
 
       .grid {
         stroke: black;
@@ -52,36 +79,9 @@ import * as d3 from "d3";
       }
 
       .d3-rect {
-        fill: teal;
-      }
-      rect {
-        transition: all 0.5s ease;
-      }
-
-      .line-point {
         cursor: pointer;
       }
-
-      .chart-tooltip {
-        position: absolute;
-        display: none;
-        min-width: 92px;
-        padding: 6px 8px;
-        border-radius: 4px;
-        background: rgba(20, 20, 20, 0.9);
-        color: white;
-        font: 12px sans-serif;
-        line-height: 1.35;
-        pointer-events: none;
-        z-index: 2;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      }
-
-      .chart-tooltip-title {
-        font-weight: 700;
-        margin-bottom: 2px;
-      }
-       .no-data {
+      .no-data {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -91,9 +91,9 @@ import * as d3 from "d3";
         pointer-events: none; /* Prevents tooltip from blocking mouse events */
       }
     `,
-  ],
+  ],    
 })
-export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
+export class Chart7BarComponent implements OnChanges, AfterViewInit, OnDestroy {
   //  host: HTMLElement = d3.select(this.element.nativeElement).node() as HTMLElement;
   host: HTMLElement = this.element.nativeElement;
   // first generic "GElement": type of the selected element(s).
@@ -102,11 +102,12 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
   // fourth generic"PDatum": type of the datum of the parent element(s).
   @Input() data: number[] = [];
   hasData: boolean = false;
-  titleLabel: any;
-  title: string = "#8: D3: Bar/Line Chart";
+  title: string = "#7: D3: Bar Chart";
   chartSVG!: SVGSVGElement;
   tooltip!: HTMLDivElement;
+
   dimensions!: DOMRect;
+  textLabel: any;
 
   private resizeObserver?: ResizeObserver;
   private animationFrameId?: number;
@@ -114,8 +115,7 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
 
   private filterNum: number = 125;
   private dataIsFiltered = false;
-
-  get filteredData(): number[] {
+  get barsData(): number[] {
     this.filterNum = this.filterNum || 100;
     return this.dataIsFiltered
       ? this.data.filter((d) => d > this.filterNum)
@@ -129,7 +129,6 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
   private yAxisLabel?: any; // d3.Selection<SVGGElement, unknown, null, undefined>;
   private yAxis?: any; // d3.Axis<number | { valueOf(): number; }>;
   private x = d3.scaleBand<number>();
-  private xLine = d3.scaleLinear();
   private y = d3.scaleLinear();
 
   //dimensions
@@ -187,11 +186,7 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
   }
 
   private setScaleParams(): void {
-    const visibleData = this.filteredData;
-    // Linear scale for line chart
-    this.xLine
-      .domain([0, Math.max(visibleData.length - 1, 0)]) // indices as domain
-      .range([this.left, this.left + this.innerWidth]); // Range for the x-axis
+    const visibleData = this.barsData;
     // Band scale for categorical data (indices)
     this.x
       .domain(d3.range(visibleData.length)) // .domain(this.data.map((_, idx) => idx)) // indices as domain
@@ -221,7 +216,7 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
       .attr("transform", "translate(-13, 2) rotate( 45)") // Move labels down a bit
       .attr("fill", "black")
       .style("text-anchor", "end");
-    this.titleLabel.attr(
+    this.textLabel.attr(
       "transform",
       `translate(${0.5 * this.dimensions.width}, 20)`,
     );
@@ -251,53 +246,35 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
     if (!this.dataContainer || this.innerWidth <= 0 || this.innerHeight <= 0) {
       return;
     }
-    const lineGenerator = d3
-      .line<number>()
-      .x((d: number, i: number) => this.xLine(i) ?? this.left)
-      .y((d: number) => this.y(d));
+  
+    const barFill = this.dataIsFiltered ? "orange" : "teal";
+    const bars = this.dataContainer
+      .selectAll("rect")
+      .data(this.barsData, (_d: number, idx: number) => idx);
 
-    let linePath: d3.Selection<SVGPathElement, unknown, null, undefined>;
-    const bars: d3.Selection<SVGRectElement, number, SVGGElement, unknown> =
-      this.dataContainer
-        .selectAll("rect")
-        // make one rect per datum, using the index as the key for data binding
-        .data(this.filteredData, (_d: number, idx: number) => idx);
+    const mergedBars = bars
+      .enter()
+      .append("rect")
+      .style("fill", barFill)
+      .attr("class", "d3-rect")
+      .style("opacity", 0.5)
+      .merge(bars);
 
-    linePath = this.dataContainer
-      .selectAll(".line-path")
-      // make one path whose datum is the whole array.
-      .data([this.filteredData])
-      .join("path")
-      .attr("class", "line-path")
-      .attr("d", lineGenerator as any)
-      .attr("fill", "none")
-      .attr("stroke", "teal")
-      .attr("stroke-width", 2);
-
-    this.dataContainer
-      .selectAll(".line-point")
-      .data(this.filteredData, (_d: number, idx: number) => idx)
-      .join("circle")
-      .attr("class", "line-point")
-      .attr("cx", (_: number, idx: number) => this.xLine(idx))
-      .attr("cy", (d: number) => this.y(d))
-      .attr("r", 4)
-      .attr("fill", "white")
-      .attr("stroke", "teal")
-      .attr("stroke-width", 2)
+    mergedBars
+      .attr("x", (_: number, idx: number) => this.x(idx) ?? this.left)
+      .attr("y", (d: number) => this.y(d))
+      .attr("width", this.x.bandwidth())
+      .attr("height", (d: number) => this.top + this.innerHeight - this.y(d))
       .on("mouseenter", (event: MouseEvent, d: number) => {
-        const index = this.filteredData.indexOf(d);
+        const index = this.barsData.indexOf(d);
         this.showTooltip(event, index, d);
       })
       .on("mousemove", (event: MouseEvent, d: number) => {
-        const index = this.filteredData.indexOf(d);
+        const index = this.barsData.indexOf(d);
         this.showTooltip(event, index, d);
       })
-      .on("mouseleave", () => this.hideTooltip());
-
-    bars
-      .style("fill", "orange")
-      .style("opacity", 0.5)
+      .on("mouseleave", () => this.hideTooltip())
+      .style("fill", barFill)
       .transition()
       .duration(500)
       .attr("x", (_: number, idx: number) => this.x(idx) ?? this.left)
@@ -305,33 +282,22 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
       .attr("width", this.x.bandwidth())
       .attr("height", (d: number) => this.top + this.innerHeight - this.y(d));
 
-    bars
-      .enter()
-      .append("rect")
-      // .merge(bars)
-      .attr("x", (_: number, idx: number) => this.x(idx) ?? this.left)
-      .attr("y", (d: number) => this.y(d))
-      .attr("width", this.x.bandwidth())
-      .attr("height", (d: number) => this.top + this.innerHeight - this.y(d))
-      .attr("class", "d3-rect")
-      // .style("fill", "teal")
-      .style("opacity", 0.5);
-
     bars.exit().style("fill", "red").remove();
   }
 
   private initChart(): void {
-    this.chartSVG = this.host.getElementsByTagName("svg")[0]; 
-    this.tooltip = this.host.getElementsByClassName(
-      "chart-tooltip",
-    )[0] as HTMLDivElement;
+    
+    this.chartSVG = this.host.getElementsByTagName("svg")[0];
     this.dataContainer = d3.select(this.chartSVG);
+
+    this.tooltip = this.host.getElementsByClassName("chart-tooltip")[0] as HTMLDivElement;
+    
+    this.setElements();
+  
     this.chartSVG.onclick = () => {
       // console.log("SVG load aborted");
       this.dataChanged();
     };
-
-    this.setElements();
 
     this.yAxisLabel = this.dataContainer.append("g");
     this.yAxisLabel
@@ -342,17 +308,18 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
       .attr("fill", "black")
       .style("font-size", "11px");
 
-    this.titleLabel = this.dataContainer.append("g");
-    this.titleLabel
+
+    this.textLabel = this.dataContainer.append("g");
+    this.textLabel
       .append("text")
       .text(this.title)
-      .style("font-size", "18px") 
+      .style("font-size", "18px")
+      .style("font-weight", "bold")
       .style("fill", "#444444")
-      .attr("text-anchor", "middle") 
-      ;
+      .attr("text-anchor", "middle")
+      .attr("fill", "black");
   }
-
-  private showTooltip(event: MouseEvent, index: number, value: number): void {
+private showTooltip(event: MouseEvent, index: number, value: number): void {
     const hostBox = this.host.getBoundingClientRect();
     const x = event.clientX - hostBox.left + 12;
     const y = event.clientY - hostBox.top - 12;
@@ -369,7 +336,6 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
   private hideTooltip(): void {
     this.tooltip.style.display = "none";
   }
-
   private dataChanged(): void {
     this.dataIsFiltered = !this.dataIsFiltered;
     this.updateChart();
@@ -379,10 +345,10 @@ export class Chart8Component implements OnChanges, AfterViewInit, OnDestroy {
   private updateChart(): void {
     this.setDimensions();
     this.setScaleParams();
-
+    
     this.setAxis();
     this.setLabels();
-       this.hasData = this.data && this.data.length > 0;
+    this.hasData = this.data && this.data.length > 0;
     if (!this.hasData) {
       this.dataContainer?.selectAll(".d3-rect").remove();
       return;

@@ -1,15 +1,15 @@
 import { style } from '@angular/animations';
 import { Component, Input, OnInit, ElementRef, ViewEncapsulation, SimpleChanges, OnChanges } from '@angular/core';
 import * as d3 from 'd3';
-import { IPieConfig, IPieData } from '../../model/interfaces/chart.interfaces';
-import ObjectHelper from '../../utility/functions/object.helper';
+import { IPieConfig, IPieData } from '../../shared/chart.interfaces';
+import ObjectHelper from '../../shared/object.helper';
 
 @Component({
-  selector: 'chart11',
+  selector: 'chart11pie',
   standalone: true,
   imports: [],
   template: ` 
-    <svg class="chart11"></svg> 
+    <svg class="chart11pie"></svg> 
   `,
   styles: [`
 :host {
@@ -20,7 +20,7 @@ import ObjectHelper from '../../utility/functions/object.helper';
   min-height: 0;
 }
 
-.chart11 {
+.chart11pie {
   width: 100%;
   height: 100%;
   min-width: 0;
@@ -51,7 +51,7 @@ import ObjectHelper from '../../utility/functions/object.helper';
   `],
   encapsulation: ViewEncapsulation.None
 })
-export class Chart11Component implements OnInit, OnChanges {
+export class Chart11PieComponent implements OnInit, OnChanges {
 
   host: any;
   svg: any;

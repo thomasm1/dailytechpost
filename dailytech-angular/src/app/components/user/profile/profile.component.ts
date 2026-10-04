@@ -46,14 +46,26 @@ export class ProfileComponent {
   error = '';
   success = '';
   imageFailed = false;
+  private imagePreview: string | null = null;
+  private accountRevision = 0;
 
   constructor() {
     this.profiles.state$.pipe(takeUntilDestroyed()).subscribe(state => {
       const changedUser = this.profile?.userId !== state.profile?.userId;
+      if (changedUser) {
+        this.accountRevision++;
+        this.saving = false;
+        this.uploading = false;
+        this.form.enable({ emitEvent: false });
+      }
       this.profile = state.profile;
       if (changedUser || (!this.form.dirty && !this.saving)) this.reset();
     });
     this.form.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => { this.success = ''; });
+    this.profiles.image$.pipe(takeUntilDestroyed()).subscribe(url => {
+      this.imagePreview = url;
+      this.imageFailed = false;
+    });
   }
 
   reset(): void {
@@ -73,14 +85,17 @@ export class ProfileComponent {
     this.form.disable({ emitEvent: false });
     this.error = '';
     this.success = '';
+    const revision = this.accountRevision;
     this.profiles.update(this.form.getRawValue()).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: () => {
+        if (revision !== this.accountRevision) return;
         this.saving = false;
         this.form.enable({ emitEvent: false });
         this.reset();
         this.success = 'Profile updated.';
       },
       error: () => {
+        if (revision !== this.accountRevision) return;
         this.saving = false;
         this.form.enable({ emitEvent: false });
         this.error = 'Profile could not be saved. Your changes are still here.';
@@ -88,10 +103,7 @@ export class ProfileComponent {
     });
   }
 
-  get imageUrl(): string | null {
-    const url = this.profile?.cusUrl || '';
-    return !this.imageFailed && /^https?:\/\//i.test(url) ? url : null;
-  }
+  get imageUrl(): string | null { return this.imageFailed ? null : this.imagePreview; }
 
   get legacyRole(): boolean {
     return !this.roleOptions.some(option => option.value === this.form.controls.organizationCode.value);
@@ -114,8 +126,10 @@ export class ProfileComponent {
     }
     this.uploading = true;
     this.form.disable({ emitEvent: false });
+    const revision = this.accountRevision;
     this.profiles.uploadImage(file).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: profile => {
+        if (revision !== this.accountRevision) return;
         this.uploading = false;
         this.form.enable({ emitEvent: false });
         // The image is already saved; preserve any other unsaved profile fields.
@@ -125,6 +139,7 @@ export class ProfileComponent {
         input.value = '';
       },
       error: error => {
+        if (revision !== this.accountRevision) return;
         this.uploading = false;
         this.form.enable({ emitEvent: false });
         this.error = error.status === 413 ? 'Images must be 5 MB or smaller.'

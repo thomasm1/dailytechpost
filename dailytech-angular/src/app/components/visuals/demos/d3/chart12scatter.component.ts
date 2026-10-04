@@ -3,7 +3,7 @@ import { NgFor, NgIf } from "@angular/common";
 import * as d3 from "d3";
 
 @Component({
-  selector: "chart12",
+  selector: "chart12scatter",
   imports: [NgIf, NgFor],
   standalone: true,
   template: `
@@ -121,7 +121,7 @@ import * as d3 from "d3";
 
   `],
 })
-export class Chart12Component {
+export class Chart12ScatterComponent {
   // Generic type 'Selection<GElement, Datum, PElement, PDatum>' requires 4 type argument(s).ts(2314)
   host!: d3.Selection<HTMLDivElement, unknown, null, undefined>;
   svg!: any; // SVGSVGElement;
@@ -173,13 +173,13 @@ export class Chart12Component {
 
   constructor(element: ElementRef) {
     this.host = d3.select(element.nativeElement); // d3 wrapper for the host element
-    // console.log('constructor Chart12Component this:', this );
-    // console.log('constructor Chart12Component data:', this.data);
+    // console.log('constructor Chart12ScatterComponent this:', this );
+    // console.log('constructor Chart12ScatterComponent data:', this.data);
   }
 
   ngOnInit(): void {
     this.svg = this.host.select("svg");
-    // console.log("ngOnInit Chart12Component data:", this.data);
+    // console.log("ngOnInit Chart12ScatterComponent data:", this.data);
     // this.tooltip = this.host.getElementsByClassName("chart-tooltip",)[0] as HTMLDivElement;
     this.tooltip = this.host.select<HTMLDivElement>(".chart-tooltip"); //.node() as HTMLDivElement;
     this.setDimensions();
@@ -188,7 +188,7 @@ export class Chart12Component {
   }
 
   ngOnChanges(): void {
-    // console.log('ngOnChanges Chart12Component data:', this.data);
+    // console.log('ngOnChanges Chart12ScatterComponent data:', this.data);
     if (!this.svg) {
       return;
     }

@@ -9,20 +9,20 @@ import {
   SimpleChanges,
   ViewEncapsulation,
 } from "@angular/core";
-import { ChartDimensions } from "../../utility/functions/chart.dimensions.helper";
-import { ObjectHelper } from "../../utility/functions/object.helper";
+import { ChartDimensions } from "../../shared/chart.dimensions.helper";
+import { ObjectHelper } from "../../shared/object.helper";
 import * as d3 from "d3";
-import {  IGroupStackConfig, IGroupStackData, IGroupStackDataElem, IGroupStackRectData, ITooltipData } from "../../model/interfaces/chart.interfaces";
+import {  IGroupStackConfig, IGroupStackData, IGroupStackDataElem, IGroupStackRectData, ITooltipData } from "../../shared/chart.interfaces";
 import { BoundElementProperty } from "@angular/compiler";
 
 @Component({
-  selector: "chart10",
+  selector: "chart10stack",
   standalone: true,
   imports: [CommonModule],
   encapsulation: ViewEncapsulation.None,
   template: `
     <div class="chart-cell">
-     <svg class="chart10">
+     <svg class="chart10stack">
       <g class="tooltipContainer">
         <rect class="svg-tooltip__background"></rect>
         <g class="svg-tooltip">
@@ -38,14 +38,18 @@ import { BoundElementProperty } from "@angular/compiler";
         </g>
      </g>
     <style>
-      .chart10 { font-size: {{config.fontSize}}px; }
-      .chart10 text.title { font-weight: bold;}
-      .chart10 rect { fill: unset; }
-      .chart10 .svg-tooltip__value--value {
+      
+      .chart10stack { 
+        font-size: {{config.fontSize}}px; }
+      .chart10stack text.title { 
+        font-weight: bold;}
+      .chart10stack rect { 
+        fill: unset; }
+      .chart10stack .svg-tooltip__value--value {
         font-size: {{config.tooltip.labels.fontSize}}px;
         font-weight: bold; 
       }
-      .chart10 .svg-tooltip__background {
+      .chart10stack .svg-tooltip__background {
         fill: {{config.tooltip.background.color}};
         fill-opacity: {{config.tooltip.background.opacity}};
         stroke: {{config.tooltip.background.stroke}};
@@ -53,10 +57,10 @@ import { BoundElementProperty } from "@angular/compiler";
         rx: {{config.tooltip.background.rx}}px;
         ry: {{config.tooltip.background.ry}}px;
       }
-      .chart10 rect.faded, .chart10 g.legend-item.faded {
+      .chart10stack rect.faded, .chart10stack g.legend-item.faded {
         opacity: 0.3;
       }
-      .chart10 rect.data {
+      .chart10stack rect.data {
         transition: opacity {{config.transitions.normal}};
       }
     </style>
@@ -133,7 +137,7 @@ import { BoundElementProperty } from "@angular/compiler";
     `,
   ],    
 })
-export class Chart10Component implements OnChanges, AfterViewInit, OnDestroy {
+export class Chart10StackComponent implements OnChanges, AfterViewInit, OnDestroy {
 
 
   host: any;

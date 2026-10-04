@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IChartMargins } from '../../model/interfaces/chart.interfaces';
+import { IChartMargins } from './chart.interfaces';
 
 @Injectable({
   providedIn: 'root',

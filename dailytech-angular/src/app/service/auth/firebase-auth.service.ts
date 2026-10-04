@@ -67,7 +67,17 @@ const expiresAt = Math.floor(new Date(tokenResult.expirationTime).getTime() / 10
       expiresAt,
     });
     
-    await this.syncFirebaseUser(bearerToken);
+    try {
+      const account = await this.syncFirebaseUser(bearerToken);
+      const current = this.sessionStorageService.getActiveSession();
+      if (current?.provider !== 'firebase' || current.token !== bearerToken) return;
+      const roles = (account.roles || []).map((role: string | { name: string }) =>
+        typeof role === 'string' ? role : role.name);
+      this.sessionStorageService.setActiveSession({ ...current, roles });
+    } catch (error) {
+      if (this.sessionStorageService.getActiveSession()?.token === bearerToken) this.clearFirebaseSession();
+      throw new Error('Unable to load your account. Please try again or contact support.');
+    }
   }
 
   syncFirebaseUser(bearerToken?: string): Promise<any> {

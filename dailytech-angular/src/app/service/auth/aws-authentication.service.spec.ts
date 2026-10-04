@@ -127,4 +127,16 @@ describe('AwsAuthenticationService', () => {
     expect(service.getRoles()).toEqual(['ROLE_ADMIN']);
     expect(service.isAdminLoggedIn()).toBeTrue();
   });
+  it('does not restore native account metadata after logout while a profile request is pending', () => {
+    sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    sessionStorage.setItem(AUTH_PROVIDER_KEY, 'aws');
+    sessionStorage.setItem(AUTHENTICATED_USER, 'old@example.com');
+    sessionStorage.setItem(TOKEN, `Bearer ${createToken({sub: 'old@example.com', roles: ['ROLE_USER'], exp: Math.floor(Date.now() / 1000) + 3600})}`);
+    service.collectUserInfoAws().subscribe();
+    const response = httpMock.expectOne(`${environment.API_URL}/users/me`);
+    service.logout();
+    response.flush({email: 'old@example.com', userId: 7, roles: [{name: 'ROLE_ADMIN'}]});
+    expect(sessionStorage.getItem(AWS_USER_INFO_STORAGE_KEY)).toBeNull();
+    expect(service.hasActiveSession()).toBeFalse();
+  });
 });

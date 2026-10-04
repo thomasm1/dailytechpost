@@ -4,7 +4,7 @@ import { Component, ElementRef, Input } from "@angular/core";
 import * as d3 from "d3";
 import { merge, timeParse } from "d3";
 @Component({
-  selector: "chart9",
+  selector: "chart9line",
   imports: [NgIf   ],
   standalone: true,
   template: ` 
@@ -41,7 +41,7 @@ import { merge, timeParse } from "d3";
 
       `],
 })
-export class Chart9Component {
+export class Chart9LineComponent {
   @Input() data: any;
   hasData: boolean = false;
   host: any;
@@ -111,8 +111,8 @@ export class Chart9Component {
     this.setElements();// ONLY ONCE!!
     this.updateChart();
 
-    // console.log("chart9 this:", this);
-    // console.log("chart9 data:", this.data);
+    // console.log("chart9line this:", this);
+    // console.log("chart9line data:", this.data);
   }
 
   ngOnChanges() {
@@ -188,7 +188,7 @@ export class Chart9Component {
       ? [xExtent[0], xExtent[1]]
       : [new Date(), new Date()];
     const maxValues = data.map((series) => d3.max(series.data, (d: any) => d.y) ?? 0);
-    // console.log("chart9 maxValues:", maxValues);
+    // console.log("chart9line maxValues:", maxValues);
 
     const maxY = d3.max(maxValues) ?? 100;
     const yDomain: [number, number] = [0, maxY || 100];
@@ -284,16 +284,16 @@ export class Chart9Component {
       .call(updateLegendItems)
       .on("mouseover", function(this: SVGGElement, event: any, d: any) {
         d3.select(this as SVGGElement).select(".legend-icon").attr("r", 5);
-        // console.log("chart9 legend mouseover:", d);
+        // console.log("chart9line legend mouseover:", d);
       })
       .on("mouseout", function(this: SVGGElement, event: any, d: any) {
         d3.select(this as SVGGElement).select(".legend-icon").attr("r", 3);
-        // console.log("chart9 legend mouseout:", d);
+        // console.log("chart9line legend mouseout:", d);
       })
       .on("click", (event: any, d: any) => {
         if (this.selected.includes(d)) {
           this.selected = this.selected.filter((item) => item !== d)
-          // console.log("chart9 legend click: removed", d, "selected:", this.selected);
+          // console.log("chart9line legend click: removed", d, "selected:", this.selected);
           } else {
             this.selected.push(d);
           }
@@ -346,7 +346,7 @@ export class Chart9Component {
     this.setAxis();
     this.setLegend();
     this.hasData = this.data && this.data.length > 0;
-    // console.log("chart9 hasData:", this.hasData, this.data);
+    // console.log("chart9line hasData:", this.hasData, this.data);
     this.draw();
   }
 }

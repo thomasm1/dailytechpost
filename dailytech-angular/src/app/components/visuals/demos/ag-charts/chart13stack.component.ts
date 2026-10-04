@@ -5,15 +5,15 @@ import * as d3 from "d3";
 import {
   IGroupStackData,
   IGroupStackDataElem,
-} from "../../model/interfaces/chart.interfaces";
+} from "../../shared/chart.interfaces";
 
 @Component({
-  selector: "chart13",
+  selector: "chart13stack",
   standalone: true,
   imports: [NgIf, AgCharts],
   template: `
     <div class="chart-13">
-      <ag-charts [options]="chart13Options"></ag-charts>
+      <ag-charts [options]="chart13stackOptions"></ag-charts>
       <div class="no-data" *ngIf="!hasData">No data available</div>
     </div>
   `,
@@ -57,14 +57,14 @@ import {
     `,
   ],
 })
-export class Chart13Component implements OnChanges {
+export class Chart13StackComponent implements OnChanges {
 
   @Input() title = "#13: AG Charts: Grouped Stacked Bar Chart";
   @Input() data!: IGroupStackData;
 
   hasData = false;
 
-  chart13Options: any = this.createChartOptions([], []);
+  chart13stackOptions: any = this.createChartOptions([], []);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["data"]) {
@@ -77,7 +77,7 @@ export class Chart13Component implements OnChanges {
     const series = this.toSeries(this.data);
 
     this.hasData = chartData.length > 0 && series.length > 0;
-    this.chart13Options = this.createChartOptions(chartData, series);
+    this.chart13stackOptions = this.createChartOptions(chartData, series);
   }
 
   private toChartData(data: IGroupStackData | undefined): any[] {

@@ -48,5 +48,6 @@ describe('AuthPolicyService', () => {
 
     expect(service.canAccessAdmin()).toBeFalse();
     expect(service.getActiveToken()).toBeNull();
+    expect(service.hasRole('ROLE_ADMIN')).toBeFalse();
   });
 });

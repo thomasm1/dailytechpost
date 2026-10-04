@@ -30,6 +30,10 @@
           <mat-hint align="end" *ngIf="pwInput.touched">{{ pwInput.value?.length }} / 6</mat-hint>
         </mat-form-field>
 
+        <div *ngIf="isLoading$ | async" class="registration-loading" role="status" aria-live="polite">
+          <mat-spinner [diameter]="32" aria-label="Creating your account"></mat-spinner>
+          <span>Creating your account...</span>
+        </div>
         <div class="row">
           <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary">
             REGISTER

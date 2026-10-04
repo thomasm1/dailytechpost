@@ -9,7 +9,7 @@ import {
   SimpleChanges,
 } from "@angular/core";
 import { NgFor } from "@angular/common";
-import * as  gridHelpers from "../../utility/functions/grid-helpers";
+import * as  gridHelpers from "../../shared/grid-helpers";
 
 @Component({
   selector: "chart3",

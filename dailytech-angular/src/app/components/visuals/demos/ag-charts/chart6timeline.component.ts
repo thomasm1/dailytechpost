@@ -10,12 +10,12 @@ interface CovidChartDatum {
 }
 
 @Component({
-  selector: "chart6",
+  selector: "chart6timeline",
   standalone: true,
   imports: [NgIf, AgCharts],
   template: `
     <div class="chart-cell6">
-      <ag-charts [options]="chart6Options"></ag-charts>
+      <ag-charts [options]="chart6timelineOptions"></ag-charts>
       <div class="no-data" *ngIf="!hasData">No data available</div>
     </div>
   `,
@@ -60,7 +60,7 @@ interface CovidChartDatum {
     `,
   ],
 })
-export class Chart6Component implements OnChanges {
+export class Chart6TimelineComponent implements OnChanges {
   @Input() data: any[] | null = [];
 
   hasData = false;
@@ -72,7 +72,7 @@ export class Chart6Component implements OnChanges {
     { key: "hospitalizedCurrently", name: "Currently Hospitalized" },
   ];
 
-  chart6Options: any = this.createChartOptions([]);
+  chart6timelineOptions: any = this.createChartOptions([]);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes["data"]) {
@@ -83,7 +83,7 @@ export class Chart6Component implements OnChanges {
   private updateChart(): void {
     const chartData = this.toChartData(this.data);
     this.hasData = chartData.length > 0;
-    this.chart6Options = this.createChartOptions(chartData);
+    this.chart6timelineOptions = this.createChartOptions(chartData);
   }
 
   private createChartOptions(data: CovidChartDatum[]): any {

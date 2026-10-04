@@ -1,29 +1,29 @@
 import { Component, inject } from "@angular/core";
 import { AsyncPipe, NgFor, NgIf } from "@angular/common";
 import { Observable, Subscription, combineLatest, shareReplay, tap } from "rxjs";
-import { Chart1Component } from "./chart1.component";
-import { Chart2Component } from "./chart2.component";
-import { Chart3Component } from "./chart3.component";
-import { Chart4Component } from "./chart4.component";
-import { Chart5Component } from "./chart5.component";
-import { Chart6Component } from "./chart6.component";
-import { Chart7Component } from "./chart7.component";
-import { Chart8Component } from "./chart8.component";
-import { Chart9Component } from "./chart9.component";
-import { Chart10Component } from "./chart10.component";
-import { Chart12Component } from "./chart12.component";
-import { Chart11Component } from "./chart11.component";
-import { Chart16Component } from "./chart16.component";
-import { PlaySliderComponent } from "./play-slider.component";
+import { Chart1Component } from "./demos/svg/chart1.component";
+import { Chart2Component } from "./demos/svg/chart2.component";
+import { Chart3Component } from "./demos/svg/chart3.component";
+import { Chart4BarComponent } from "./demos/ag-charts/chart4bar.component";
+import { Chart5LineComponent } from "./demos/ag-charts/chart5line.component";
+import { Chart6TimelineComponent } from "./demos/ag-charts/chart6timeline.component";
+import { Chart7BarComponent } from "./demos/d3/chart7bar.component";
+import { Chart8BarComponent } from "./demos/d3/chart8bar.component";
+import { Chart9LineComponent } from "./demos/d3/chart9line.component";
+import { Chart10StackComponent } from "./demos/d3/chart10stack.component";
+import { Chart12ScatterComponent } from "./demos/d3/chart12scatter.component";
+import { Chart11PieComponent } from "./demos/d3/chart11pie.component";
+import { Chart16MapComponent } from "./demos/d3/chart16map.component";
+import { PlaySliderComponent } from "./shared/play-slider.component";
 
-import { Chart15Component } from "./chart15.component";
-import { Chart13Component } from "./chart13.component";
-import { Chart14Component } from "./chart14.component";
-import { ApiService } from "./api.service";
-import { PieHelper } from "../../utility/functions/pie.helper";
-import { MapHelper } from "../../utility/functions/map.helper";
-import { StackHelper } from "../../utility/functions/stack.helper";
-import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
+import { Chart15ScatterComponent } from "./demos/ag-charts/chart15scatter.component";
+import { Chart13StackComponent } from "./demos/ag-charts/chart13stack.component";
+import { Chart14DonutComponent } from "./demos/ag-charts/chart14donut.component";
+import { DemoDataService } from "./demos/demo-data.service";
+import { PieHelper } from "./shared/pie.helper";
+import { MapHelper } from "./shared/map.helper";
+import { StackHelper } from "./shared/stack.helper";
+import { IGroupStackData } from "./shared/chart.interfaces";
 
 @Component({
   selector: "visuals",
@@ -32,19 +32,19 @@ import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
     Chart1Component,
     Chart2Component,
     Chart3Component,
-    Chart4Component,
-    Chart5Component,
-    Chart6Component,
-    Chart7Component,
-    Chart8Component,
-    Chart9Component,
-    Chart10Component,
-    Chart12Component,
-    Chart11Component,
-    Chart15Component,
-    Chart13Component,
-    Chart14Component,
-    Chart16Component,
+    Chart4BarComponent,
+    Chart5LineComponent,
+    Chart6TimelineComponent,
+    Chart7BarComponent,
+    Chart8BarComponent,
+    Chart9LineComponent,
+    Chart10StackComponent,
+    Chart12ScatterComponent,
+    Chart11PieComponent,
+    Chart15ScatterComponent,
+    Chart13StackComponent,
+    Chart14DonutComponent,
+    Chart16MapComponent,
     PlaySliderComponent,
     AsyncPipe,
     NgFor,
@@ -56,15 +56,15 @@ import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
       <div class="boxes small-1"><chart1 [data]="data"></chart1></div>
       <div class="boxes small-2"><chart2 [data]="data"></chart2></div>
       <div class="boxes small-3"><chart3 [data]="data"></chart3></div>
-      <div class="boxes small-4"><chart4 [data]="data"></chart4></div>
-      <div class="boxes small-5"><chart5 [data]="data"></chart5></div>
+      <div class="boxes small-4"><chart4bar [data]="data"></chart4bar></div>
+      <div class="boxes small-5"><chart5line [data]="data"></chart5line></div>
       <div class="boxes small-6">
-        <chart6 [data]="dataCovidJson$ | async"></chart6>
+        <chart6timeline [data]="dataCovidJson$ | async"></chart6timeline>
       </div>
-      <div class="boxes small-7"><chart7 [data]="data"></chart7></div>
-      <div class="boxes small-8"><chart8 [data]="data"></chart8></div>
+      <div class="boxes small-7"><chart7bar [data]="data"></chart7bar></div>
+      <div class="boxes small-8"><chart8bar [data]="data"></chart8bar></div>
       <div class="boxes small-9">
-        <chart9 [data]="dataCovidJson$ | async"></chart9>
+        <chart9line [data]="dataCovidJson$ | async"></chart9line>
       </div>
       <div class="boxes small-10">
         <div class="chart chart-10">
@@ -76,31 +76,31 @@ import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
               {{ option.label }}
             </option>
           </select>
-          <chart10 [data]="stackedData"></chart10>
+          <chart10stack [data]="stackedData"></chart10stack>
         </div>
       </div>
       <div class="boxes small-11">
-        <div class="chart">
-          <select class="chart-options" (change)="setPieData($event)">
+        <div class="chart-11">
+          <select class="chart-11-options" (change)="setPieData($event)">
             <option value="now" selected>Now</option>
             <option value="before">Before</option>
           </select>
-          <chart11 *ngIf="pieData" [data]="pieData"></chart11>
+          <chart11pie *ngIf="pieData" [data]="pieData"></chart11pie>
         </div>
       </div>
-      <div class="boxes small-12"><chart12 [data]="dataIrisCsv"></chart12></div>
+      <div class="boxes small-12"><chart12scatter [data]="dataIrisCsv"></chart12scatter></div>
       <div class="boxes small-13">
-        <chart13 [data]="stackedData"
-         title="#13: AG Charts: Grouped Stacked Bar Chart"></chart13>
+        <chart13stack [data]="stackedData"
+         title="#13: AG Charts: Grouped Stacked Bar Chart"></chart13stack>
       </div>
       <div class="boxes small-14">
-        <chart14 [data]="browserDataArray"></chart14>
+        <chart14donut [data]="browserDataArray"></chart14donut>
       </div> 
       <div class="boxes small-15">
-        <chart15 [data]="dataIrisCsv"></chart15>
+        <chart15scatter [data]="dataIrisCsv"></chart15scatter>
       </div>
        <div class="boxes small-16">
-        <chart16 [geodata]="geoCountries$ | async" [data]="covidMap.data"></chart16>
+        <chart16map [geodata]="geoCountries$ | async" [data]="covidMap.data"></chart16map>
         <app-play-slider *ngIf="covidMap.fullDataSet.length"
           [min]="covidMap.sliderState.min"
           [max]="covidMap.sliderState.max"
@@ -118,7 +118,7 @@ import { IGroupStackData } from "../../model/interfaces/chart.interfaces";
   styleUrls: ["./visuals.component.scss"],
 })
 export class VisualsComponent {
-  private apiService = inject(ApiService);
+  private apiService = inject(DemoDataService);
 
   irisCsvUrl: string =
     "https://raw.githubusercontent.com/d3taviz/dashboardOne/scatterplot-init/src/assets/iris.csv";

@@ -2,14 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import { VisualsComponent } from './visuals.component';
-import { ApiService } from './api.service';
+import { DemoDataService } from './demos/demo-data.service';
 
 describe('VisualsComponent', () => {
   let component: VisualsComponent;
   let fixture: ComponentFixture<VisualsComponent>;
 
   beforeEach(async () => {
-    const apiService = jasmine.createSpyObj<ApiService>('ApiService', [
+    const apiService = jasmine.createSpyObj<DemoDataService>('DemoDataService', [
   'getDataArray',
   'getD3CsvParseFromUrl',
   'getJsonDataFromUrl',
@@ -37,7 +37,7 @@ apiService.getCountryCodes.and.returnValue(of([]));
     await TestBed.configureTestingModule({
       imports: [VisualsComponent],
       providers: [
-        { provide: ApiService, useValue: apiService },
+        { provide: DemoDataService, useValue: apiService },
       ],
     })
     .compileComponents();
@@ -47,7 +47,30 @@ apiService.getCountryCodes.and.returnValue(of([]));
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should render an empty map without a playback slider when no data is returned', () => {
     expect(component).toBeTruthy();
+    expect(component.covidMap.fullDataSet).toEqual([]);
+    expect(component.covidMap.datesRange).toEqual([0, 0]);
+    expect(fixture.nativeElement.querySelector('app-play-slider')).toBeNull();
+  });
+
+  it('should clear old map data and slider dates when an empty response follows populated data', () => {
+    component.covidMap.setData({
+      location: ['United States'],
+      date: ['2020-04-01'],
+      new_deaths_smoothed_per_million: [1]
+    }, [{ location: 'United States', iso3: 'USA' }]);
+    expect(component.covidMap.fullDataSet.length).toBe(1);
+    expect(component.covidMap.currentDate).toBe(Date.parse('2020-04-01'));
+
+    component.covidMap.setData([], []);
+    fixture.detectChanges();
+
+    expect(component.covidMap.fullDataSet).toEqual([]);
+    expect(component.covidMap.data.data).toEqual([]);
+    expect(component.covidMap.data.title).toBe('Covid-19 new death cases');
+    expect(component.covidMap.sliderState.min).toBe(0);
+    expect(component.covidMap.sliderState.max).toBe(0);
+    expect(fixture.nativeElement.querySelector('app-play-slider')).toBeNull();
   });
 });

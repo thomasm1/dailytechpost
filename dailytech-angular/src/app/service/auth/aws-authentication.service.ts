@@ -109,6 +109,7 @@ constructor(
 
     return this.http.get<any>(`${this.baseUrl}/users/me`).pipe(
       map((data) => {
+        if (token !== sessionStorage.getItem(TOKEN)) return data;
         const currentInfo = this.getAwsUserInfo();
         const userInfoAws: AwsUserInfo = {
           email: data?.email || currentInfo?.email || this.getAuthenticatedUser() || '',

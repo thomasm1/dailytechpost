@@ -8,7 +8,7 @@ import * as d3 from 'd3';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class DemoDataService {
   
   constructor(private http: HttpClient) {}
 

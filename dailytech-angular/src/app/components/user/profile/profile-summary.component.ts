@@ -12,7 +12,7 @@ import { UserProfileService } from '../../../service/user-profile.service';
     <ng-container *ngIf="profiles.state$ | async as state">
       <a *ngIf="state.loading || state.error" routerLink="/profile"><mat-icon>account_circle</mat-icon>Profile</a>
       <a *ngIf="state.profile as profile" routerLink="/profile" aria-label="View and edit profile">
-        <img *ngIf="imageUrl(profile.cusUrl) as photo; else avatar" [src]="photo" alt="" referrerpolicy="no-referrer" (error)="failedImage = photo">
+        <img *ngIf="imageUrl(profiles.image$ | async) as photo; else avatar" [src]="photo" alt="" referrerpolicy="no-referrer" (error)="failedImage = photo">
         <ng-template #avatar><mat-icon aria-hidden="true">account_circle</mat-icon></ng-template>
         <span class="name">{{ profile.firstName || profile.email }} {{ profile.lastName || '' }}</span>
         <span class="email" *ngIf="profile.firstName">{{ profile.email }}</span>
@@ -37,7 +37,7 @@ import { UserProfileService } from '../../../service/user-profile.service';
 export class ProfileSummaryComponent {
   readonly profiles = inject(UserProfileService);
   failedImage = '';
-  imageUrl(url?: string | null): string | null {
-    return url && url !== this.failedImage && /^https?:\/\//i.test(url) ? url : null;
+  imageUrl(url: string | null): string | null {
+    return url && url !== this.failedImage && url.startsWith('blob:') ? url : null;
   }
 }

@@ -11,11 +11,11 @@ interface ScatterDatum {
 }
 
 @Component({
-  selector: "chart15",
+  selector: "chart15scatter",
   standalone: true,
   imports: [NgIf, NgFor, AgCharts],
   template: `
-    <div class="chart-15">
+    <div class="chart-15-scatter-omni">
       <div class="controller">
         <select [value]="xValue" (change)="setOption('x', $event)">
           <option *ngFor="let item of columns" [value]="item">
@@ -30,7 +30,7 @@ interface ScatterDatum {
         </select>
       </div>
 
-      <ag-charts [options]="chart15Options"></ag-charts>
+      <ag-charts [options]="chart15scatterOptions"></ag-charts>
       <div class="no-data" *ngIf="!hasData">No data available</div>
     </div>
   `,
@@ -43,7 +43,7 @@ interface ScatterDatum {
       min-height: 0;
     }
 
-    .chart-15 {
+    .chart-15-scatter-omni {
       position: relative;
       width: 100%;
       height: 100%;
@@ -89,16 +89,16 @@ interface ScatterDatum {
     }
   `],
 })
-export class Chart15Component implements OnChanges {
+export class Chart15ScatterComponent implements OnChanges {
   @Input() data: any[] = [];
-  @Input() title = "#15: AG Charts: Scatterplot Chart";
+  @Input() title = "#15: AG-Scatterplot_";
 
   hasData = false;
 
   xValue = "Petal_Length";
   yValue = "Petal_Width";
 
-  chart15Options: any = this.createChartOptions([]); 
+  chart15scatterOptions: any = this.createChartOptions([]); 
 
   get columns(): string[] {
     const dataColumns = (this.data as any)?.columns;
@@ -138,7 +138,7 @@ export class Chart15Component implements OnChanges {
     this.setDefaultFieldsForData();
     const chartData = this.toScatterData(this.data);
     this.hasData = chartData.length > 0;
-    this.chart15Options = this.createChartOptions(chartData);
+    this.chart15scatterOptions = this.createChartOptions(chartData);
   }
 
 /* Crypto Data versus default Iris Data ----- xValue  yValue */
@@ -151,17 +151,21 @@ export class Chart15Component implements OnChanges {
     const hasPrice24h = this.hasColumn("price_24h_percent_change");
 
     if (hasMarketCap && hasPrice24h) {
+      this.title = this.title + " (Market Cap)";
+     
       this.xValue = this.hasColumn(this.xValue) ? this.xValue : "market_cap_usd";
       this.yValue = this.hasColumn(this.yValue)
         ? this.yValue
-        : "price_24h_percent_change";
-      return;
+        : "price_24h_percent_change"; 
+    } else {
+      this.title = this.title + " (Iris Data)";
+      
+            this.xValue = this.hasColumn(this.xValue) ? this.xValue : this.columns[0] || "";
+      this.yValue = this.hasColumn(this.yValue)
+        ? this.yValue
+        : this.columns[1] || this.columns[0] || "";
     }
 
-    this.xValue = this.hasColumn(this.xValue) ? this.xValue : this.columns[0] || "";
-    this.yValue = this.hasColumn(this.yValue)
-      ? this.yValue
-      : this.columns[1] || this.columns[0] || "";
   }
 
   private hasColumn(column: string): boolean {

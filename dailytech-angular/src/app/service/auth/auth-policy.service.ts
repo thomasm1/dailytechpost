@@ -39,7 +39,7 @@ export class AuthPolicyService {
 
   hasRole(role: string): boolean {
     const session = this.storage.getActiveSession();
-    return !!session && session.roles.includes(role);
+    return !!session && this.isNotExpired(session) && session.roles.includes(role);
   }
 
   getActiveEmail(): string {

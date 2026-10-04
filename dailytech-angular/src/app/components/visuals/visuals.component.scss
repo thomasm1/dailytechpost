@@ -85,7 +85,7 @@
         /* 1 / 5; */
         grid-area: footer;
     }
-
+    //   outside charts options
     .chart-10 {
         position:relative;
         background-color: #9a9a9a;
@@ -100,9 +100,10 @@
        top: 2px;
        right: 5px;
        z-index:2;
+       font-size: .9rem;
     } 
-    /* chart11 */
-    .chart {
+    /* chart11pie */
+    .chart-11 {
         background-color: #9a9a9a;
         width: 100%;
         height: 100%;
@@ -111,10 +112,11 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         position: relative;
     } 
-    .chart-options {
+    select.chart-11-options {
         position: absolute;
         top: 5px;
         right: 5px;
+       font-size: .9rem;
     } 
     
     .small-16 {
@@ -125,7 +127,7 @@
     min-height: 0;
     }
 
-  .small-16 > chart16 {
+  .small-16 > chart16map {
     flex: 1;
     min-height: 0;
     display: block;
